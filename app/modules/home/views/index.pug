@@ -1,0 +1,14 @@
+//- This is how we extend a template using the 'extends' keyword
+extends ../../../templates/master.pug
+
+//- This is how we insert dynamic content to extended templates
+block content
+    h1.title Welcome to ExpressJS!
+    p If you see a list of users below, then that means you have successfully queried data from the database.
+    hr
+    h3.title Users
+    ul
+        //- This is how we iterate through arrays and access
+        //- their elements
+        each user in users
+            li= `${user.id} - ${user.name} - ${user.age}`
