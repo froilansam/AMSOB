@@ -23,7 +23,7 @@ loginRouter.route('/')
 
             req.session.user = user;
 
-            return res.redirect('/');
+            return res.redirect('/index');
         });
     });
 

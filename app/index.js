@@ -47,16 +47,6 @@ module.exports = app => {
             });
         });
 
-        if (!process.env.MAIN) {
-            console.log(`
-                Your .env file should have a MAIN variable like this:
-                MAIN=home/index
-                ...this maps the application's index route ('http://localhost:3009')
-                to home module's routes.js' index method.
-            `);
-            throw 'Kindly update your .env configuration file and include a MAIN variable for your main module';
-        }
-        
         /** Define the main index route of the app and what it should do */
         var mainModule = process.env.MAIN.split('/');
         app.use('/', require(`./modules/${mainModule[0]}/routes`)[mainModule[1]]); 

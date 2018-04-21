@@ -4,6 +4,6 @@ exports.hasAuth = (req, res, next) => {
 }
 
 exports.noAuthed = (req, res, next) => {
-    if (req.session && req.session.user && Object.keys(req.session.user).length > 0) return res.redirect('/');
+    if (req.session && req.session.user && Object.keys(req.session.user).length > 0) return res.redirect('/index');
     return next();
 }

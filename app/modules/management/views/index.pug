@@ -1,0 +1,701 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| Dashboard sales - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
+			| Dashboard
+		link(rel='apple-touch-icon', href='assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='assets/images/ico/favicon.ico')
+		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='assets/css/vendors.min.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
+		link(rel='stylesheet', type='text/css', href='assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css' href='assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		// END Custom CSS
+	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.mr-auto
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='assets/images/logo/logo.png')
+								h3.brand-text Modern Admin
+						li.nav-item.d-none.d-md-block.float-right
+							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.content
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+							li.dropdown.nav-item.mega-dropdown
+								a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') Mega
+								ul.mega-dropdown-menu.dropdown-menu.row
+									li.col-md-2
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-newspaper-o
+											|  News
+										#mega-menu-carousel-example
+											div
+												img.rounded.img-fluid.mb-1(src='assets/images/slider/slider-2.png', alt='First slide')
+												a.news-title.mb-0(href='#') Poster Frame PSD
+												p.news-content
+													span.font-small-2 January 26, 2018
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-random
+											|  Drill down menu
+										ul.drilldown-menu
+											li.menu-list
+												ul
+													li
+														a.dropdown-item(href='layout-2-columns.html')
+															i.ft-file
+															|  Page layouts & Templates
+													li
+														a(href='#')
+															i.ft-align-left
+															|  Multi level menu
+														ul
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-bookmark-o
+																	|   Second level
+															li
+																a(href='#')
+																	i.la.la-lemon-o
+																	|  Second level menu
+																ul
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-heart-o
+																			|   Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-file-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-trash-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-clock-o
+																			|  Third level
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-hdd-o
+																	|  Second level, third link
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-floppy-o
+																	|  Second level, fourth link
+													li
+														a.dropdown-item(href='color-palette-primary.html')
+															i.ft-camera
+															|  Color palette system
+													li
+														a.dropdown-item(href='sk-2-columns.html')
+															i.ft-edit
+															|  Page starter kit
+													li
+														a.dropdown-item(href='changelog.html')
+															i.ft-minimize-2
+															|  Change log
+													li
+														a.dropdown-item(href='https://pixinvent.ticksy.com/')
+															i.la.la-life-ring
+															|  Customer support center
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-list-ul
+											|  Accordion
+										#accordionWrap(role='tablist', aria-multiselectable='true')
+											.card.border-0.box-shadow-0.collapse-icon.accordion-icon-rotate
+												#headingOne.card-header.p-0.pb-2.border-0(role='tab')
+													a(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionOne', aria-expanded='true', aria-controls='accordionOne') Accordion Item #1
+												#accordionOne.card-collapse.collapse.show(role='tabpanel', aria-labelledby='headingOne', aria-expanded='true')
+													.card-content
+														p.accordion-text.text-small-3
+															| Caramels dessert chocolate cake pastry jujubes bonbon.
+															| Jelly wafer jelly beans. Caramels chocolate cake liquorice
+															| cake wafer jelly beans croissant apple pie.
+												#headingTwo.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionTwo', aria-expanded='false', aria-controls='accordionTwo') Accordion Item #2
+												#accordionTwo.card-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Sugar plum bear claw oat cake chocolate jelly tiramisu
+															| dessert pie. Tiramisu macaroon muffin jelly marshmallow
+															| cake. Pastry oat cake chupa chups.
+												#headingThree.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionThree', aria-expanded='false', aria-controls='accordionThree') Accordion Item #3
+												#accordionThree.card-collapse.collapse(role='tabpanel', aria-labelledby='headingThree', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Candy cupcake sugar plum oat cake wafer marzipan jujubes
+															| lollipop macaroon. Cake dragée jujubes donut chocolate
+															| bar chocolate cake cupcake chocolate topping.
+									li.col-md-4
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-envelope-o
+											|  Contact Us
+										form.form.form-horizontal
+											.form-body
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputName1') Name
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputName1.form-control(type='text', placeholder='John Doe')
+															.form-control-position.pl-1
+																i.la.la-user
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputEmail1') Email
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputEmail1.form-control(type='email', placeholder='john@example.com')
+															.form-control-position.pl-1
+																i.la.la-envelope-o
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputMessage1') Message
+													.col-sm-9
+														.position-relative.has-icon-left
+															textarea#inputMessage1.form-control(rows='2', placeholder='Simple Textarea')
+															.form-control-position.pl-1
+																i.la.la-commenting-o
+												.row
+													.col-sm-12.mb-1
+														button.btn.btn-info.float-right(type='button')
+															i.la.la-paper-plane-o
+															|  Send
+							li.nav-item.nav-search
+								a.nav-link.nav-link-search(href='#')
+									i.ficon.ft-search
+								.search-input
+									input.input(type='text', placeholder='Explore Modern...')
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 John Doe
+									span.avatar.avatar-online
+										img(src='assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='#')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-gb
+									span.selected-language
+								.dropdown-menu(aria-labelledby='dropdown-flag')
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-gb
+										|  English
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-fr
+										|  French
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-cn
+										|  Chinese
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-de
+										|  German
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow 5
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+										span.notification-tag.badge.badge-default.badge-danger.float-right.m-0 5 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-plus-square.icon-bg-circle.bg-cyan
+												.media-body
+													h6.media-heading You have new order!
+													p.notification-text.font-small-3.text-muted Lorem ipsum dolor sit amet, consectetuer elit.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') 30 minutes ago
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-download-cloud.icon-bg-circle.bg-red.bg-darken-1
+												.media-body
+													h6.media-heading.red.darken-1 99% Server load
+													p.notification-text.font-small-3.text-muted Aliquam tincidunt mauris eu risus.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Five hour ago
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-alert-triangle.icon-bg-circle.bg-yellow.bg-darken-3
+												.media-body
+													h6.media-heading.yellow.darken-3 Warning notifixation
+													p.notification-text.font-small-3.text-muted Vestibulum auctor dapibus neque.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-check-circle.icon-bg-circle.bg-cyan
+												.media-body
+													h6.media-heading Complete the task
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last week
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-file.icon-bg-circle.bg-teal
+												.media-body
+													h6.media-heading Generate monthly report
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
+			.main-menu-content
+				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+					li.nav-item
+						a(href='index.html')
+							i.fa.fa-dashboard
+							span.menu-title(data-i18n='nav.dash.main') Dashboard
+					li.nav-item
+						a(href='#')
+							i.fa.fa-handshake-o
+							span.menu-title(data-i18n='nav.templates.main') Consignment
+					
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+				.content-body
+					// Revenue, Hit Rate & Deals
+					.row
+						.col-xl-6.col-12
+							.card
+								.card-header
+									h4.card-title Revenue
+									a.heading-elements-toggle
+										i.la.la-ellipsis-v.font-medium-3
+									.heading-elements
+										ul.list-inline.mb-0
+											li
+												a(data-action='reload')
+													i.ft-rotate-cw
+								.card-content.collapse.show
+									.card-body.pt-0
+										.row.mb-1
+											.col-6.col-md-4
+												h5 Current week
+												h2.danger $82,124
+											.col-6.col-md-4
+												h5 Previous week
+												h2.text-muted $52,502
+										.chartjs
+											canvas#thisYearRevenue(width='400', style='position: absolute;')
+											canvas#lastYearRevenue(width='400')
+						.col-xl-6.col-12
+							.row
+								.col-lg-6.col-12
+									.card.pull-up
+										.card-header.bg-hexagons
+											h4.card-title
+												| Hit Rate
+												span.danger -12%
+											a.heading-elements-toggle
+												i.la.la-ellipsis-v.font-medium-3
+											.heading-elements
+												ul.list-inline.mb-0
+													li
+														a(data-action='reload')
+															i.ft-rotate-cw
+										.card-content.collapse.show.bg-hexagons
+											.card-body.pt-0
+												.chartjs
+													canvas#hit-rate-doughnut(height='275')
+								.col-lg-6.col-12
+									.card.pull-up
+										.card-content.collapse.show.bg-gradient-directional-danger
+											.card-body.bg-hexagons-danger
+												h4.card-title.white
+													| Deals
+													span.white -55%
+													span.float-right
+														span.white 152
+														span.red.lighten-4 /200
+												.chartjs
+													canvas#deals-doughnut(height='275')
+							.row
+								.col-lg-6.col-12
+									.card.pull-up
+										.card-content
+											.card-body
+												.media.d-flex
+													.media-body.text-left
+														h6.text-muted Order Value 
+														h3 $ 88,568
+													.align-self-center
+														i.icon-trophy.success.font-large-2.float-right
+								.col-lg-6.col-12
+									.card.pull-up
+										.card-content
+											.card-body
+												.media.d-flex
+													.media-body.text-left
+														h6.text-muted Calls
+														h3 3,568
+													.align-self-center
+														i.icon-call-in.danger.font-large-2.float-right
+					// / Revenue, Hit Rate & Deals
+					// Emails Products & Avg Deals
+					.row
+						.col-12.col-md-3
+							.card
+								.card-header
+									h4.card-title Emails
+									a.heading-elements-toggle
+										i.la.la-ellipsis-v.font-medium-3
+									.heading-elements
+										ul.list-inline.mb-0
+											li
+												a(data-action='reload')
+													i.ft-rotate-cw
+								.card-content.collapse.show
+									.card-body.pt-0
+										p
+											| Open rate
+											span.float-right.text-bold-600 89%
+										.progress.progress-sm.mt-1.mb-0.box-shadow-1
+											.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 80%', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100')
+										p.pt-1
+											| Sent
+											span.float-right
+												span.text-bold-600 310
+												| /500
+										.progress.progress-sm.mt-1.mb-0.box-shadow-1
+											.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 48%', aria-valuenow='48', aria-valuemin='0', aria-valuemax='100')
+						.col-12.col-md-3
+							.card
+								.card-header
+									h4.card-title Top Products
+									a.heading-elements-toggle
+										i.la.la-ellipsis-v.font-medium-3
+									.heading-elements
+										ul.list-inline.mb-0
+											li
+												a(href='#') Show all
+								.card-content.collapse.show
+									.card-body.p-0
+										.table-responsive
+											table.table.mb-0
+												tbody
+													tr
+														th.border-top-0(scope='row') iPone X
+														td.border-top-0 2245
+													tr
+														th(scope='row') One Plus
+														td 1850
+													tr
+														th(scope='row') Samsung S7
+														td 1550
+						.col-12.col-md-6
+							.card
+								.card-header
+									h4.card-title.text-center Average Deal Size
+								.card-content.collapse.show
+									.card-body.pt-0
+										.row
+											.col-md-6.col-12.border-right-blue-grey.border-right-lighten-5.text-center
+												h6.danger.text-bold-600 -30%
+												h4.font-large-2.text-bold-400 $12,536
+												p.blue-grey.lighten-2.mb-0 Per rep
+											.col-md-6.col-12.text-center
+												h6.success.text-bold-600 12%
+												h4.font-large-2.text-bold-400 $18,548
+												p.blue-grey.lighten-2.mb-0 Per team
+					// / Emails Products & Avg Deals
+					// Total earning & Recent Sales
+					.row
+						.col-12.col-md-4
+							.card
+								.card-content
+									.earning-chart.position-relative
+										.chart-title.position-absolute.mt-2.ml-2
+											h1.display-4 $1,596
+											span.text-muted Total Earning
+										canvas#earning-chart.height-450
+										.chart-stats.position-absolute.position-bottom-0.position-right-0.mb-2.mr-3
+											a.btn.round.btn-danger.mr-1.btn-glow(href='#')
+												| Statistics 
+												i.ft-bar-chart
+											span.text-muted
+												| for the 
+												a.danger.darken-2(href='#') last year.
+						#recent-sales.col-12.col-md-8
+							.card
+								.card-header
+									h4.card-title Recent Sales
+									a.heading-elements-toggle
+										i.la.la-ellipsis-v.font-medium-3
+									.heading-elements
+										ul.list-inline.mb-0
+											li
+												a.btn.btn-sm.btn-danger.box-shadow-2.round.btn-min-width.pull-right(href='invoice-summary.html', target='_blank') View all
+								.card-content.mt-1
+									.table-responsive
+										table#recent-orders.table.table-hover.table-xl.mb-0
+											thead
+												tr
+													th.border-top-0 Product
+													th.border-top-0 Customers
+													th.border-top-0 Categories
+													th.border-top-0 Popularity
+													th.border-top-0 Amount
+											tbody
+												tr
+													td.text-truncate iPone X
+													td.text-truncate.p-1
+														ul.list-unstyled.users-list.m-0
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-4.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-5.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Rebecca Jones')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-6.png', alt='Avatar')
+															li.avatar.avatar-sm
+																span.badge.badge-info +8 more
+													td
+														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
+													td
+														.progress.progress-sm.mt-1.mb-0.box-shadow-2
+															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 85%', aria-valuenow='85', aria-valuemin='0', aria-valuemax='100')
+													td.text-truncate $ 1200.00
+												tr
+													td.text-truncate iPad
+													td.text-truncate.p-1
+														ul.list-unstyled.users-list.m-0
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-7.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-8.png', alt='Avatar')
+															li.avatar.avatar-sm
+																span.badge.badge-info +5 more
+													td
+														button.btn.btn-sm.btn-outline-success.round(type='button') Tablet
+													td
+														.progress.progress-sm.mt-1.mb-0.box-shadow-2
+															.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 75%', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100')
+													td.text-truncate $ 1190.00
+												tr
+													td.text-truncate OnePlus
+													td.text-truncate.p-1
+														ul.list-unstyled.users-list.m-0
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-1.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-2.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Rebecca Jones')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-3.png', alt='Avatar')
+															li.avatar.avatar-sm
+																span.badge.badge-info +3 more
+													td
+														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
+													td
+														.progress.progress-sm.mt-1.mb-0.box-shadow-2
+															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 70%', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100')
+													td.text-truncate $ 999.00
+												tr
+													td.text-truncate ZenPad
+													td.text-truncate.p-1
+														ul.list-unstyled.users-list.m-0
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-11.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-12.png', alt='Avatar')
+													td
+														button.btn.btn-sm.btn-outline-success.round(type='button') Tablet
+													td
+														.progress.progress-sm.mt-1.mb-0.box-shadow-2
+															.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 65%', aria-valuenow='65', aria-valuemin='0', aria-valuemax='100')
+													td.text-truncate $ 1150.00
+												tr
+													td.text-truncate Pixel 2
+													td.text-truncate.p-1
+														ul.list-unstyled.users-list.m-0
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-6.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
+																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-4.png', alt='Avatar')
+													td
+														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
+													td
+														.progress.progress-sm.mt-1.mb-0.box-shadow-2
+															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 45%', aria-valuenow='45', aria-valuemin='0', aria-valuemax='100')
+													td.text-truncate $ 1180.00
+					// / Total earning & Recent Sales
+					// Analytics map based session
+					.row
+						.col-12
+							.card.box-shadow-0
+								.card-content
+									.row
+										.col-md-9.col-12
+											#world-map-markers.height-450
+										.col-md-3.col-12
+											.card-body.text-center
+												h4.card-title.mb-0 Visitors Sessions
+												.row
+													.col-12
+														p.pb-1 Sessions by Browser
+														#sessions-browser-donut-chart.height-200
+													.col-12
+														.sales.pr-2.pt-2
+															.sales-today.mb-2
+																p.m-0
+																	| Today's
+																	span.success.float-right
+																		i.ft-arrow-up.success
+																		|  6.89%
+																.progress.progress-sm.mt-1.mb-0
+																	.progress-bar.bg-success(role='progressbar', style='width: 70%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+															.sales-yesterday
+																p.m-0
+																	| Yesterday's
+																	span.danger.float-right
+																		i.ft-arrow-down.danger
+																		|  4.18%
+																.progress.progress-sm.mt-1.mb-0
+																	.progress-bar.bg-danger(role='progressbar', style='width: 65%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+					// Analytics map based session
+		// ///////////////////////////////////////////////////////////////////////////
+		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with 
+					i.ft-heart.pink
+		// BEGIN VENDOR JS
+		script(src='assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(src='assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='assets/data/jvector/visitor-data.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='assets/js/core/app.min.js', type='text/javascript')
+		script(src='assets/js/scripts/customizer.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		// END PAGE LEVEL JS
