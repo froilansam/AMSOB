@@ -10,28 +10,31 @@ html.loading(lang='en', data-textdirection='ltr')
 		title
 			| Dashboard sales - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
 			| Dashboard
-		link(rel='apple-touch-icon', href='assets/images/ico/apple-icon-120.png')
-		link(rel='shortcut icon', type='image/x-icon', href='assets/images/ico/favicon.ico')
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
 		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700', rel='stylesheet')
 		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
 		// BEGIN VENDOR CSS
-		link(rel='stylesheet', type='text/css', href='assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
 		// END VENDOR CSS
 		// BEGIN MODERN CSS
-		link(rel='stylesheet', type='text/css', href='assets/css/app.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
 		// END MODERN CSS
 		// BEGIN Page Level CSS
-		link(rel='stylesheet', type='text/css', href='assets/css/core/menu/menu-types/vertical-menu-modern.css')
-		link(rel='stylesheet', type='text/css', href='assets/css/core/colors/palette-gradient.min.css')
-		link(rel='stylesheet', type='text/css', href='assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
-		link(rel='stylesheet', type='text/css', href='assets/vendors/css/charts/morris.css')
-		link(rel='stylesheet', type='text/css', href='assets/fonts/simple-line-icons/style.min.css')
-		link(rel='stylesheet', type='text/css', href='assets/css/core/colors/palette-gradient.min.css')
-		link(rel='stylesheet', type='text/css' href='assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
 		// END Page Level CSS
 		// BEGIN Custom CSS
-		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
 		// END Custom CSS
+		// FULL CALENDAR
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/calendars/fullcalendar.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/calendars/fullcalendar.min.css')
 	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
 		// fixed-top
 		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
@@ -43,7 +46,7 @@ html.loading(lang='en', data-textdirection='ltr')
 								i.ft-menu.font-large-1
 						li.nav-item.mr-auto
 							a.navbar-brand(href='index.html')
-								img.brand-logo(alt='modern admin logo', src='assets/images/logo/logo.png')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
 								h3.brand-text Modern Admin
 						li.nav-item.d-none.d-md-block.float-right
 							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
@@ -66,7 +69,7 @@ html.loading(lang='en', data-textdirection='ltr')
 											|  News
 										#mega-menu-carousel-example
 											div
-												img.rounded.img-fluid.mb-1(src='assets/images/slider/slider-2.png', alt='First slide')
+												img.rounded.img-fluid.mb-1(src='/assets/images/slider/slider-2.png', alt='First slide')
 												a.news-title.mb-0(href='#') Poster Frame PSD
 												p.news-content
 													span.font-small-2 January 26, 2018
@@ -209,7 +212,7 @@ html.loading(lang='en', data-textdirection='ltr')
 										| Hello,
 										span.user-name.text-bold-700 John Doe
 									span.avatar.avatar-online
-										img(src='assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
 										i
 								.dropdown-menu.dropdown-menu-right
 									a.dropdown-item(href='#')
@@ -313,7 +316,7 @@ html.loading(lang='en', data-textdirection='ltr')
 											.media
 												.media-left
 													span.avatar.avatar-sm.avatar-online.rounded-circle
-														img(src='assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
 														i
 												.media-body
 													h6.media-heading Margaret Govan
@@ -324,7 +327,7 @@ html.loading(lang='en', data-textdirection='ltr')
 											.media
 												.media-left
 													span.avatar.avatar-sm.avatar-busy.rounded-circle
-														img(src='assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
 														i
 												.media-body
 													h6.media-heading Bret Lezama
@@ -335,7 +338,7 @@ html.loading(lang='en', data-textdirection='ltr')
 											.media
 												.media-left
 													span.avatar.avatar-sm.avatar-online.rounded-circle
-														img(src='assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
 														i
 												.media-body
 													h6.media-heading Carie Berra
@@ -346,7 +349,7 @@ html.loading(lang='en', data-textdirection='ltr')
 											.media
 												.media-left
 													span.avatar.avatar-sm.avatar-away.rounded-circle
-														img(src='assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
 														i
 												.media-body
 													h6.media-heading Eric Alsobrook
@@ -374,304 +377,38 @@ html.loading(lang='en', data-textdirection='ltr')
 		.app-content.content
 			.content-wrapper
 				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Auction Schedule
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+								ol.breadcrumb
+									li.breadcrumb-item
+										a(href='/auction/live') Live
+									li.breadcrumb-item.active
+										a(href='/auction') Online
 				.content-body
-					// Revenue, Hit Rate & Deals
-					.row
-						.col-xl-6.col-12
-							.card
-								.card-header
-									h4.card-title Revenue
-									a.heading-elements-toggle
-										i.la.la-ellipsis-v.font-medium-3
-									.heading-elements
-										ul.list-inline.mb-0
-											li
-												a(data-action='reload')
-													i.ft-rotate-cw
-								.card-content.collapse.show
-									.card-body.pt-0
-										.row.mb-1
-											.col-6.col-md-4
-												h5 Current week
-												h2.danger $82,124
-											.col-6.col-md-4
-												h5 Previous week
-												h2.text-muted $52,502
-										.chartjs
-											canvas#thisYearRevenue(width='400', style='position: absolute;')
-											canvas#lastYearRevenue(width='400')
-						.col-xl-6.col-12
-							.row
-								.col-lg-6.col-12
-									.card.pull-up
-										.card-header.bg-hexagons
-											h4.card-title
-												| Hit Rate
-												span.danger -12%
-											a.heading-elements-toggle
-												i.la.la-ellipsis-v.font-medium-3
-											.heading-elements
-												ul.list-inline.mb-0
-													li
-														a(data-action='reload')
-															i.ft-rotate-cw
-										.card-content.collapse.show.bg-hexagons
-											.card-body.pt-0
-												.chartjs
-													canvas#hit-rate-doughnut(height='275')
-								.col-lg-6.col-12
-									.card.pull-up
-										.card-content.collapse.show.bg-gradient-directional-danger
-											.card-body.bg-hexagons-danger
-												h4.card-title.white
-													| Deals
-													span.white -55%
-													span.float-right
-														span.white 152
-														span.red.lighten-4 /200
-												.chartjs
-													canvas#deals-doughnut(height='275')
-							.row
-								.col-lg-6.col-12
-									.card.pull-up
-										.card-content
-											.card-body
-												.media.d-flex
-													.media-body.text-left
-														h6.text-muted Order Value 
-														h3 $ 88,568
-													.align-self-center
-														i.icon-trophy.success.font-large-2.float-right
-								.col-lg-6.col-12
-									.card.pull-up
-										.card-content
-											.card-body
-												.media.d-flex
-													.media-body.text-left
-														h6.text-muted Calls
-														h3 3,568
-													.align-self-center
-														i.icon-call-in.danger.font-large-2.float-right
-					// / Revenue, Hit Rate & Deals
-					// Emails Products & Avg Deals
-					.row
-						.col-12.col-md-3
-							.card
-								.card-header
-									h4.card-title Emails
-									a.heading-elements-toggle
-										i.la.la-ellipsis-v.font-medium-3
-									.heading-elements
-										ul.list-inline.mb-0
-											li
-												a(data-action='reload')
-													i.ft-rotate-cw
-								.card-content.collapse.show
-									.card-body.pt-0
-										p
-											| Open rate
-											span.float-right.text-bold-600 89%
-										.progress.progress-sm.mt-1.mb-0.box-shadow-1
-											.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 80%', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100')
-										p.pt-1
-											| Sent
-											span.float-right
-												span.text-bold-600 310
-												| /500
-										.progress.progress-sm.mt-1.mb-0.box-shadow-1
-											.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 48%', aria-valuenow='48', aria-valuemin='0', aria-valuemax='100')
-						.col-12.col-md-3
-							.card
-								.card-header
-									h4.card-title Top Products
-									a.heading-elements-toggle
-										i.la.la-ellipsis-v.font-medium-3
-									.heading-elements
-										ul.list-inline.mb-0
-											li
-												a(href='#') Show all
-								.card-content.collapse.show
-									.card-body.p-0
-										.table-responsive
-											table.table.mb-0
-												tbody
-													tr
-														th.border-top-0(scope='row') iPone X
-														td.border-top-0 2245
-													tr
-														th(scope='row') One Plus
-														td 1850
-													tr
-														th(scope='row') Samsung S7
-														td 1550
-						.col-12.col-md-6
-							.card
-								.card-header
-									h4.card-title.text-center Average Deal Size
-								.card-content.collapse.show
-									.card-body.pt-0
-										.row
-											.col-md-6.col-12.border-right-blue-grey.border-right-lighten-5.text-center
-												h6.danger.text-bold-600 -30%
-												h4.font-large-2.text-bold-400 $12,536
-												p.blue-grey.lighten-2.mb-0 Per rep
-											.col-md-6.col-12.text-center
-												h6.success.text-bold-600 12%
-												h4.font-large-2.text-bold-400 $18,548
-												p.blue-grey.lighten-2.mb-0 Per team
-					// / Emails Products & Avg Deals
-					// Total earning & Recent Sales
-					.row
-						.col-12.col-md-4
-							.card
-								.card-content
-									.earning-chart.position-relative
-										.chart-title.position-absolute.mt-2.ml-2
-											h1.display-4 $1,596
-											span.text-muted Total Earning
-										canvas#earning-chart.height-450
-										.chart-stats.position-absolute.position-bottom-0.position-right-0.mb-2.mr-3
-											a.btn.round.btn-danger.mr-1.btn-glow(href='#')
-												| Statistics 
-												i.ft-bar-chart
-											span.text-muted
-												| for the 
-												a.danger.darken-2(href='#') last year.
-						#recent-sales.col-12.col-md-8
-							.card
-								.card-header
-									h4.card-title Recent Sales
-									a.heading-elements-toggle
-										i.la.la-ellipsis-v.font-medium-3
-									.heading-elements
-										ul.list-inline.mb-0
-											li
-												a.btn.btn-sm.btn-danger.box-shadow-2.round.btn-min-width.pull-right(href='invoice-summary.html', target='_blank') View all
-								.card-content.mt-1
-									.table-responsive
-										table#recent-orders.table.table-hover.table-xl.mb-0
-											thead
-												tr
-													th.border-top-0 Product
-													th.border-top-0 Customers
-													th.border-top-0 Categories
-													th.border-top-0 Popularity
-													th.border-top-0 Amount
-											tbody
-												tr
-													td.text-truncate iPone X
-													td.text-truncate.p-1
-														ul.list-unstyled.users-list.m-0
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-4.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-5.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Rebecca Jones')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-6.png', alt='Avatar')
-															li.avatar.avatar-sm
-																span.badge.badge-info +8 more
-													td
-														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
-													td
-														.progress.progress-sm.mt-1.mb-0.box-shadow-2
-															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 85%', aria-valuenow='85', aria-valuemin='0', aria-valuemax='100')
-													td.text-truncate $ 1200.00
-												tr
-													td.text-truncate iPad
-													td.text-truncate.p-1
-														ul.list-unstyled.users-list.m-0
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-7.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-8.png', alt='Avatar')
-															li.avatar.avatar-sm
-																span.badge.badge-info +5 more
-													td
-														button.btn.btn-sm.btn-outline-success.round(type='button') Tablet
-													td
-														.progress.progress-sm.mt-1.mb-0.box-shadow-2
-															.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 75%', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100')
-													td.text-truncate $ 1190.00
-												tr
-													td.text-truncate OnePlus
-													td.text-truncate.p-1
-														ul.list-unstyled.users-list.m-0
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-1.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-2.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Rebecca Jones')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-3.png', alt='Avatar')
-															li.avatar.avatar-sm
-																span.badge.badge-info +3 more
-													td
-														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
-													td
-														.progress.progress-sm.mt-1.mb-0.box-shadow-2
-															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 70%', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100')
-													td.text-truncate $ 999.00
-												tr
-													td.text-truncate ZenPad
-													td.text-truncate.p-1
-														ul.list-unstyled.users-list.m-0
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-11.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-12.png', alt='Avatar')
-													td
-														button.btn.btn-sm.btn-outline-success.round(type='button') Tablet
-													td
-														.progress.progress-sm.mt-1.mb-0.box-shadow-2
-															.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 65%', aria-valuenow='65', aria-valuemin='0', aria-valuemax='100')
-													td.text-truncate $ 1150.00
-												tr
-													td.text-truncate Pixel 2
-													td.text-truncate.p-1
-														ul.list-unstyled.users-list.m-0
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-6.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-4.png', alt='Avatar')
-													td
-														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
-													td
-														.progress.progress-sm.mt-1.mb-0.box-shadow-2
-															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 45%', aria-valuenow='45', aria-valuemin='0', aria-valuemax='100')
-													td.text-truncate $ 1180.00
-					// / Total earning & Recent Sales
-					// Analytics map based session
-					.row
+					section.row
 						.col-12
-							.card.box-shadow-0
+							.card
+								.card-head
+									.card-header
+										h4.card-title Online Auction Schedule
+										a.heading-elements-toggle
+											i.la.la-ellipsis-h.font-medium-3
+										.heading-elements
+											button.btn.btn-block.btn-primary.btn-sm(type='button', data-toggle='modal', data-target='#addEntree')
+												i.ft-plus.white
+												|  Add Auction
 								.card-content
-									.row
-										.col-md-9.col-12
-											#world-map-markers.height-450
-										.col-md-3.col-12
-											.card-body.text-center
-												h4.card-title.mb-0 Visitors Sessions
-												.row
-													.col-12
-														p.pb-1 Sessions by Browser
-														#sessions-browser-donut-chart.height-200
-													.col-12
-														.sales.pr-2.pt-2
-															.sales-today.mb-2
-																p.m-0
-																	| Today's
-																	span.success.float-right
-																		i.ft-arrow-up.success
-																		|  6.89%
-																.progress.progress-sm.mt-1.mb-0
-																	.progress-bar.bg-success(role='progressbar', style='width: 70%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
-															.sales-yesterday
-																p.m-0
-																	| Yesterday's
-																	span.danger.float-right
-																		i.ft-arrow-down.danger
-																		|  4.18%
-																.progress.progress-sm.mt-1.mb-0
-																	.progress-bar.bg-danger(role='progressbar', style='width: 65%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+									.card-body
+										.row
+											.col-md-3
+												#external-events
+													h4 Catalogs
+													.fc-events-container
+														.fc-event(data-color='#2D95BF') All Day Event
+											.col-md-9
+												#calendar
 					// Analytics map based session
 		// ///////////////////////////////////////////////////////////////////////////
 		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
@@ -681,25 +418,44 @@ html.loading(lang='en', data-textdirection='ltr')
 					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
 					| , All rights reserved.
 				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
-					| Hand-crafted & Made with 
+					| APPTRADE INC.
 					i.ft-heart.pink
-		
 		// BEGIN VENDOR JS
-		script(src='assets/vendors/js/vendors.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
 		// BEGIN VENDOR JS
 		// BEGIN PAGE VENDOR JS
-		script(src='assets/vendors/js/charts/chart.min.js', type='text/javascript')
-		script(src='assets/vendors/js/charts/raphael-min.js', type='text/javascript')
-		script(src='assets/vendors/js/charts/morris.min.js', type='text/javascript')
-		script(src='assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
-		script(src='assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
-		script(src='assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
 		// END PAGE VENDOR JS
 		// BEGIN MODERN JS
-		script(src='assets/js/core/app-menu.min.js', type='text/javascript')
-		script(src='assets/js/core/app.min.js', type='text/javascript')
-		script(src='assets/js/scripts/customizer.min.js', type='text/javascript')
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
 		// END MODERN JS
 		// BEGIN PAGE LEVEL JS
-		script(src='assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
 		// END PAGE LEVEL JS
+		// FULL CALENDAR
+		script(src='/assets/vendors/js/extensions/moment.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/extensions/fullcalendar.min.js', type='text/javascript')
+		script(src='/assets/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/extensions/fullcalendar.min.js', type='text/javascript')
+		script.
+			$(document).ready(function () {
+				$("#calendar").fullCalendar({
+					header:{
+						left:"prev,next today",
+						center:"title",
+						right:"month,agendaWeek,agendaDay"
+					},
+					editable:!0,
+					droppable:!0,
+					drop: function(){
+						alert('nagdrop');
+						$(this).remove()
+					}
+				});
+			});

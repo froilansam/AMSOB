@@ -1,8 +1,8 @@
-var router = require('express').Router();
+var express = require('express');
+var router = express.Router();
 
-var authMiddleware = require('../auth/middlewares/auth');
-
-router.use(authMiddleware.hasAuth);
-router.use('/users', require('./users/routes'));
+router.get('/', (req, res) =>{
+    res.render('admin/views/dashboard');
+});
 
 exports.admin = router;

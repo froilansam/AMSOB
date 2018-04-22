@@ -360,14 +360,17 @@ html.loading(lang='en', data-textdirection='ltr')
 			.main-menu-content
 				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
 					li.nav-item
-						a(href='index.html')
+						a(href='/')
 							i.fa.fa-dashboard
-							span.menu-title(data-i18n='nav.dash.main') Dashboard
+							span.menu-title Dashboard
 					li.nav-item
-						a(href='#')
+						a(href='/consignment')
 							i.fa.fa-handshake-o
-							span.menu-title(data-i18n='nav.templates.main') Consignment
-					
+							span.menu-title Acquisition
+					li.nav-item
+						a(href='/auction')
+							i.fa.fa-calendar
+							span.menu-title Auction Schedule
 		.app-content.content
 			.content-wrapper
 				.content-header.row

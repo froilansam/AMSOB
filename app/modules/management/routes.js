@@ -9,6 +9,9 @@ router.get('/consignment', (req, res) => {
 	res.render('management/views/consignment')
 });
 
+router.get('/auction', (req, res) => {
+	res.render('management/views/auctionSchedule')
+});
 
 //Router for 404 Page
 router.get('*', (req, res) => {
