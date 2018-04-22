@@ -1,14 +1,14 @@
 {
-  "name": "express-boilerplate",
-  "version": "1.0.0",
-  "description": "A quick and simple ExpressJS boilerplate",
+  "name": "AMSOB",
+  "version": "2.0.0",
+  "description": "Auction Management System with Online Bidding",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PUP-CCIS/express-boilerplate.git"
+    "url": "https://bitbucket.org/lacsinagramar/amsob"
   },
   "keywords": [
     "expressjs",
@@ -16,10 +16,7 @@
   ],
   "author": "Micah Andrew Bule",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PUP-CCIS/express-boilerplate/issues"
-  },
-  "homepage": "https://github.com/PUP-CCIS/express-boilerplate#readme",
+  "homepage": "https://bitbucket.org/lacsinagramar/amsob",
   "dependencies": {
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
