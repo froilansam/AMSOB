@@ -15,5 +15,8 @@ router.get('*', (req, res) => {
 	console.log('404 Page')
 	res.status(404).render('management/views/404');
 })
+router.get('/auction', (req, res) => {
+	res.render('management/views/auctionSchedule')
+});
 
 exports.index = router

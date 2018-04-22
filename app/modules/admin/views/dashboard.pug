@@ -1,0 +1,2034 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title Admin - Dashboard
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/app-assets/images/ico/favicon.ico')
+		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700', rel='stylesheet')
+		link(href='../../../../../maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.html', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
+		// END Custom CSS
+	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-semi-dark.navbar-shadow
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.mr-auto
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AppTrade
+						li.nav-item.d-none.d-md-block.float-right
+							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.content
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+							li.dropdown.nav-item.mega-dropdown
+								a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') Mega
+								ul.mega-dropdown-menu.dropdown-menu.row
+									li.col-md-2
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-newspaper-o
+											|  News
+										#mega-menu-carousel-example
+											div
+												img.rounded.img-fluid.mb-1(src='/assets/images/slider/slider-2.png', alt='First slide')
+												a.news-title.mb-0(href='#') Poster Frame PSD
+												p.news-content
+													span.font-small-2 January 26, 2018
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-random
+											|  Drill down menu
+										ul.drilldown-menu
+											li.menu-list
+												ul
+													li
+														a.dropdown-item(href='layout-2-columns.html')
+															i.ft-file
+															|  Page layouts & Templates
+													li
+														a(href='#')
+															i.ft-align-left
+															|  Multi level menu
+														ul
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-bookmark-o
+																	|   Second level
+															li
+																a(href='#')
+																	i.la.la-lemon-o
+																	|  Second level menu
+																ul
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-heart-o
+																			|   Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-file-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-trash-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-clock-o
+																			|  Third level
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-hdd-o
+																	|  Second level, third link
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-floppy-o
+																	|  Second level, fourth link
+													li
+														a.dropdown-item(href='color-palette-primary.html')
+															i.ft-camera
+															|  Color palette system
+													li
+														a.dropdown-item(href='sk-2-columns.html')
+															i.ft-edit
+															|  Page starter kit
+													li
+														a.dropdown-item(href='changelog.html')
+															i.ft-minimize-2
+															|  Change log
+													li
+														a.dropdown-item(href='https://pixinvent.ticksy.com/')
+															i.la.la-life-ring
+															|  Customer support center
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-list-ul
+											|  Accordion
+										#accordionWrap(role='tablist', aria-multiselectable='true')
+											.card.border-0.box-shadow-0.collapse-icon.accordion-icon-rotate
+												#headingOne.card-header.p-0.pb-2.border-0(role='tab')
+													a(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionOne', aria-expanded='true', aria-controls='accordionOne') Accordion Item #1
+												#accordionOne.card-collapse.collapse.show(role='tabpanel', aria-labelledby='headingOne', aria-expanded='true')
+													.card-content
+														p.accordion-text.text-small-3
+															| Caramels dessert chocolate cake pastry jujubes bonbon.
+															| Jelly wafer jelly beans. Caramels chocolate cake liquorice
+															| cake wafer jelly beans croissant apple pie.
+												#headingTwo.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionTwo', aria-expanded='false', aria-controls='accordionTwo') Accordion Item #2
+												#accordionTwo.card-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Sugar plum bear claw oat cake chocolate jelly tiramisu
+															| dessert pie. Tiramisu macaroon muffin jelly marshmallow
+															| cake. Pastry oat cake chupa chups.
+												#headingThree.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionThree', aria-expanded='false', aria-controls='accordionThree') Accordion Item #3
+												#accordionThree.card-collapse.collapse(role='tabpanel', aria-labelledby='headingThree', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Candy cupcake sugar plum oat cake wafer marzipan jujubes
+															| lollipop macaroon. Cake dragée jujubes donut chocolate
+															| bar chocolate cake cupcake chocolate topping.
+									li.col-md-4
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-envelope-o
+											|  Contact Us
+										form.form.form-horizontal
+											.form-body
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputName1') Name
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputName1.form-control(type='text', placeholder='John Doe')
+															.form-control-position.pl-1
+																i.la.la-user
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputEmail1') Email
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputEmail1.form-control(type='email', placeholder='john@example.com')
+															.form-control-position.pl-1
+																i.la.la-envelope-o
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputMessage1') Message
+													.col-sm-9
+														.position-relative.has-icon-left
+															textarea#inputMessage1.form-control(rows='2', placeholder='Simple Textarea')
+															.form-control-position.pl-1
+																i.la.la-commenting-o
+												.row
+													.col-sm-12.mb-1
+														button.btn.btn-info.float-right(type='button')
+															i.la.la-paper-plane-o
+															|  Send
+							li.nav-item.nav-search
+								a.nav-link.nav-link-search(href='#')
+									i.ficon.ft-search
+								.search-input
+									input.input(type='text', placeholder='Explore Modern...')
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 John Doe
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='#')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-gb
+									span.selected-language
+								.dropdown-menu(aria-labelledby='dropdown-flag')
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-gb
+										|  English
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-fr
+										|  French
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-cn
+										|  Chinese
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-de
+										|  German
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow 5
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+										span.notification-tag.badge.badge-default.badge-danger.float-right.m-0 5 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-plus-square.icon-bg-circle.bg-cyan
+												.media-body
+													h6.media-heading You have new order!
+													p.notification-text.font-small-3.text-muted Lorem ipsum dolor sit amet, consectetuer elit.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') 30 minutes ago
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-download-cloud.icon-bg-circle.bg-red.bg-darken-1
+												.media-body
+													h6.media-heading.red.darken-1 99% Server load
+													p.notification-text.font-small-3.text-muted Aliquam tincidunt mauris eu risus.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Five hour ago
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-alert-triangle.icon-bg-circle.bg-yellow.bg-darken-3
+												.media-body
+													h6.media-heading.yellow.darken-3 Warning notifixation
+													p.notification-text.font-small-3.text-muted Vestibulum auctor dapibus neque.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-check-circle.icon-bg-circle.bg-cyan
+												.media-body
+													h6.media-heading Complete the task
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last week
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-file.icon-bg-circle.bg-teal
+												.media-body
+													h6.media-heading Generate monthly report
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		.main-menu.menu-fixed.menu-dark.menu-accordion.menu-shadow(data-scroll-to-active='true')
+			.main-menu-content
+				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+					li.nav-item
+						a(href='index.html')
+							i.la.la-home
+							span.menu-title(data-i18n='nav.dash.main') Dashboard
+							span.badge.badge.badge-info.badge-pill.float-right.mr-2 3
+						ul.menu-content
+							li
+								a.menu-item(href='dashboard-ecommerce.html', data-i18n='nav.dash.ecommerce') eCommerce
+							li
+								a.menu-item(href='dashboard-crypto.html', data-i18n='nav.dash.crypto') Crypto
+							li.active
+								a.menu-item(href='dashboard-sales.html', data-i18n='nav.dash.sales') Sales
+					li.nav-item
+						a(href='#')
+							i.la.la-television
+							span.menu-title(data-i18n='nav.templates.main') Templates
+						ul.menu-content
+							li
+								a.menu-item(href='#', data-i18n='nav.templates.vert.main') Vertical
+								ul.menu-content
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template', data-i18n='nav.templates.vert.classic_menu') Classic Menu
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template') Modern Menu
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-compact-menu-template', data-i18n='nav.templates.vert.compact_menu') Compact Menu
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-content-menu-template', data-i18n='nav.templates.vert.content_menu') Content Menu
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-overlay-menu-template', data-i18n='nav.templates.vert.overlay_menu') Overlay Menu
+							li
+								a.menu-item(href='#', data-i18n='nav.templates.horz.main') Horizontal
+								ul.menu-content
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/horizontal-menu-template', data-i18n='nav.templates.horz.classic') Classic
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/horizontal-menu-template-nav', data-i18n='nav.templates.horz.top_icon') Full Width
+					li.navigation-header
+						span(data-i18n='nav.category.layouts') Layouts
+						i.la.la-ellipsis-h.ft-minus(data-toggle='tooltip', data-placement='right', data-original-title='Layouts')
+					li.nav-item
+						a(href='#')
+							i.la.la-columns
+							span.menu-title(data-i18n='nav.page_layouts.main') Page layouts
+							span.badge.badge.badge-pill.badge-danger.float-right.mr-2 New
+						ul.menu-content
+							li
+								a.menu-item(href='layout-1-column.html', data-i18n='nav.page_layouts.1_column') 1 column
+							li
+								a.menu-item(href='layout-2-columns.html', data-i18n='nav.page_layouts.2_columns') 2 columns
+							li
+								a.menu-item(href='#', data-i18n='nav.page_layouts.3_columns.main') Content Sidebar
+								ul.menu-content
+									li
+										a.menu-item(href='layout-content-left-sidebar.html', data-i18n='nav.page_layouts.3_columns.left_sidebar') Left sidebar
+									li
+										a.menu-item(href='layout-content-left-sticky-sidebar.html', data-i18n='nav.page_layouts.3_columns.left_sticky_sidebar') Left sticky sidebar
+									li
+										a.menu-item(href='layout-content-right-sidebar.html', data-i18n='nav.page_layouts.3_columns.right_sidebar') Right sidebar
+									li
+										a.menu-item(href='layout-content-right-sticky-sidebar.html', data-i18n='nav.page_layouts.3_columns.right_sticky_sidebar') Right sticky sidebar
+							li
+								a.menu-item(href='#', data-i18n='nav.page_layouts.3_columns_detached.main') Content Det. Sidebar
+								ul.menu-content
+									li
+										a.menu-item(href='layout-content-detached-left-sidebar.html', data-i18n='nav.page_layouts.3_columns_detached.detached_left_sidebar') Detached left sidebar
+									li
+										a.menu-item(href='layout-content-detached-left-sticky-sidebar.html', data-i18n='nav.page_layouts.3_columns_detached.detached_sticky_left_sidebar') Detached sticky left sidebar
+									li
+										a.menu-item(href='layout-content-detached-right-sidebar.html', data-i18n='nav.page_layouts.3_columns_detached.detached_right_sidebar') Detached right sidebar
+									li
+										a.menu-item(href='layout-content-detached-right-sticky-sidebar.html', data-i18n='nav.page_layouts.3_columns_detached.detached_sticky_right_sidebar') Detached sticky right sidebar
+							li.navigation-divider
+							li
+								a.menu-item(href='layout-fixed-navbar.html', data-i18n='nav.page_layouts.fixed_navbar') Fixed navbar
+							li
+								a.menu-item(href='layout-fixed-navigation.html', data-i18n='nav.page_layouts.fixed_navigation') Fixed navigation
+							li
+								a.menu-item(href='layout-fixed-navbar-navigation.html', data-i18n='nav.page_layouts.fixed_navbar_navigation') Fixed navbar & navigation
+							li
+								a.menu-item(href='layout-fixed-navbar-footer.html', data-i18n='nav.page_layouts.fixed_navbar_footer') Fixed navbar & footer
+							li.navigation-divider
+							li
+								a.menu-item(href='layout-fixed.html', data-i18n='nav.page_layouts.fixed_layout') Fixed layout
+							li
+								a.menu-item(href='layout-boxed.html', data-i18n='nav.page_layouts.boxed_layout') Boxed layout
+							li
+								a.menu-item(href='layout-static.html', data-i18n='nav.page_layouts.static_layout') Static layout
+							li.navigation-divider
+							li
+								a.menu-item(href='layout-light.html', data-i18n='nav.page_layouts.light_layout') Light layout
+							li
+								a.menu-item(href='layout-dark.html', data-i18n='nav.page_layouts.dark_layout') Dark layout
+							li
+								a.menu-item(href='layout-semi-dark.html', data-i18n='nav.page_layouts.semi_dark_layout') Semi dark layout
+					li.nav-item
+						a(href='#')
+							i.la.la-navicon
+							span.menu-title(data-i18n='nav.navbars.main') Navbars
+						ul.menu-content
+							li
+								a.menu-item(href='navbar-light.html', data-i18n='nav.navbars.nav_light') Navbar Light
+							li
+								a.menu-item(href='navbar-dark.html', data-i18n='nav.navbars.nav_dark') Navbar Dark
+							li
+								a.menu-item(href='navbar-semi-dark.html', data-i18n='nav.navbars.nav_semi') Navbar Semi Dark
+							li
+								a.menu-item(href='navbar-brand-center.html', data-i18n='nav.navbars.nav_brand_center') Brand Center
+							li
+								a.menu-item(href='navbar-fixed-top.html', data-i18n='nav.navbars.nav_fixed_top') Fixed Top
+							li
+								a.menu-item(href='#', data-i18n='nav.navbars.nav_hide_on_scroll.main') Hide on Scroll
+								ul.menu-content
+									li
+										a.menu-item(href='navbar-hide-on-scroll-top.html', data-i18n='nav.navbars.nav_hide_on_scroll.nav_hide_on_scroll_top') Hide on Scroll Top
+									li
+										a.menu-item(href='navbar-hide-on-scroll-bottom.html', data-i18n='nav.navbars.nav_hide_on_scroll.nav_hide_on_scroll_bottom') Hide on Scroll Bottom
+							li
+								a.menu-item(href='navbar-components.html', data-i18n='nav.navbars.nav_components') Navbar Components
+							li
+								a.menu-item(href='navbar-styling.html', data-i18n='nav.navbars.nav_styling') Navbar Styling
+					li.nav-item
+						a(href='#')
+							i.la.la-arrows-v
+							span.menu-title(data-i18n='nav.vertical_nav.main') Vertical Nav
+						ul.menu-content
+							li
+								a.menu-item(href='#', data-i18n='nav.vertical_nav.vertical_navigation_types.main') Navigation Types
+								ul.menu-content
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-menu-template', data-i18n='nav.vertical_nav.vertical_navigation_types.vertical_menu') Vertical Menu
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template', data-i18n='nav.vertical_nav.vertical_navigation_types.vertical_modern-menu') Vertical Modern Menu
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-overlay-menu-template', data-i18n='nav.vertical_nav.vertical_navigation_types.vertical_overlay') Vertical Overlay
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-compact-menu-template', data-i18n='nav.vertical_nav.vertical_navigation_types.vertical_compact') Vertical Compact
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-content-menu-template', data-i18n='nav.vertical_nav.vertical_navigation_types.vertical_content') Vertical Content
+							li
+								a.menu-item(href='vertical-nav-fixed.html', data-i18n='nav.vertical_nav.vertical_nav_fixed') Fixed Navigation
+							li
+								a.menu-item(href='vertical-nav-static.html', data-i18n='nav.vertical_nav.vertical_nav_static') Static Navigation
+							li
+								a.menu-item(href='vertical-nav-light.html', data-i18n='nav.vertical_nav.vertical_nav_light') Navigation Light
+							li
+								a.menu-item(href='vertical-nav-dark.html', data-i18n='nav.vertical_nav.vertical_nav_dark') Navigation Dark
+							li
+								a.menu-item(href='vertical-nav-accordion.html', data-i18n='nav.vertical_nav.vertical_nav_accordion') Accordion Navigation
+							li
+								a.menu-item(href='vertical-nav-collapsible.html', data-i18n='nav.vertical_nav.vertical_nav_collapsible') Collapsible Navigation
+							li
+								a.menu-item(href='vertical-nav-flipped.html', data-i18n='nav.vertical_nav.vertical_nav_flipped') Flipped Navigation
+							li
+								a.menu-item(href='vertical-nav-native-scroll.html', data-i18n='nav.vertical_nav.vertical_nav_native_scroll') Native scroll
+							li
+								a.menu-item(href='vertical-nav-right-side-icon.html', data-i18n='nav.vertical_nav.vertical_nav_right_side_icon') Right side icons
+							li
+								a.menu-item(href='vertical-nav-bordered.html', data-i18n='nav.vertical_nav.vertical_nav_bordered') Bordered Navigation
+							li
+								a.menu-item(href='vertical-nav-disabled-link.html', data-i18n='nav.vertical_nav.vertical_nav_disabled_link') Disabled Navigation
+							li
+								a.menu-item(href='vertical-nav-styling.html', data-i18n='nav.vertical_nav.vertical_nav_styling') Navigation Styling
+							li
+								a.menu-item(href='vertical-nav-tags-pills.html', data-i18n='nav.vertical_nav.vertical_nav_tags_pills') Tags & Pills
+					li.nav-item
+						a(href='#')
+							i.la.la-arrows-h
+							span.menu-title(data-i18n='nav.horz_nav.main') Horizontal Nav
+						ul.menu-content
+							li
+								a.menu-item(href='#', data-i18n='nav.horz_nav.horizontal_navigation_types.main') Navigation Types
+								ul.menu-content
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/horizontal-menu-template', data-i18n='nav.horz_nav.horizontal_navigation_types.horizontal_left_icon_navigation') Left Icon Navigation
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/horizontal-menu-template-nav', data-i18n='nav.horz_nav.horizontal_navigation_types.horizontal_menu_template_nav') Top Icon Navigation
+					li.nav-item
+						a(href='#')
+							i.la.la-header
+							span.menu-title(data-i18n='nav.page_headers.main') Page Headers
+						ul.menu-content
+							li
+								a.menu-item(href='headers-breadcrumbs-basic.html', data-i18n='nav.page_headers.headers_breadcrumbs_basic') Breadcrumbs basic
+							li
+								a.menu-item(href='headers-breadcrumbs-top.html', data-i18n='nav.page_headers.headers_breadcrumbs_top') Breadcrumbs top
+							li
+								a.menu-item(href='headers-breadcrumbs-bottom.html', data-i18n='nav.page_headers.headers_breadcrumbs_bottom') Breadcrumbs bottom
+							li
+								a.menu-item(href='headers-breadcrumbs-top-with-description.html', data-i18n='nav.page_headers.headers_breadcrumbs_top_with_description') Breadcrumbs top with desc
+							li
+								a.menu-item(href='headers-breadcrumbs-with-button.html', data-i18n='nav.page_headers.headers_breadcrumbs_with_button') Breadcrumbs with button
+							li
+								a.menu-item(href='headers-breadcrumbs-with-round-button.html', data-i18n='nav.page_headers.headers_breadcrumbs_with_round_button') Breadcrumbs with button 2
+							li
+								a.menu-item(href='headers-breadcrumbs-with-button-group.html', data-i18n='nav.page_headers.headers_breadcrumbs_with_button_group') Breadcrumbs with buttons
+							li
+								a.menu-item(href='headers-breadcrumbs-with-description.html', data-i18n='nav.page_headers.headers_breadcrumbs_breadcrumbs_with_description') Breadcrumbs with desc
+							li
+								a.menu-item(href='headers-breadcrumbs-with-search.html', data-i18n='nav.page_headers.headers_breadcrumbs_breadcrumbs_with_search') Breadcrumbs with search
+							li
+								a.menu-item(href='headers-breadcrumbs-with-stats.html', data-i18n='nav.page_headers.headers_breadcrumbs_breadcrumbs_with_stats') Breadcrumbs with stats
+					li.nav-item
+						a(href='#')
+							i.la.la-download
+							span.menu-title(data-i18n='nav.footers.main') Footers
+						ul.menu-content
+							li
+								a.menu-item(href='footer-light.html', data-i18n='nav.footers.footer_light') Footer Light
+							li
+								a.menu-item(href='footer-dark.html', data-i18n='nav.footers.footer_dark') Footer Dark
+							li
+								a.menu-item(href='footer-transparent.html', data-i18n='nav.footers.footer_transparent') Footer Transparent
+							li
+								a.menu-item(href='footer-fixed.html', data-i18n='nav.footers.footer_fixed') Footer Fixed
+							li
+								a.menu-item(href='footer-components.html', data-i18n='nav.footers.footer_components') Footer Components
+					li.navigation-header
+						span(data-i18n='nav.category.general') General
+						i.la.la-ellipsis-h.ft-minus(data-toggle='tooltip', data-placement='right', data-original-title='General')
+					li.nav-item
+						a(href='#')
+							i.la.la-paint-brush
+							span.menu-title(data-i18n='nav.color_palette.main') Color Palette
+						ul.menu-content
+							li
+								a.menu-item(href='color-palette-primary.html', data-i18n='nav.color_palette.color_palette_primary') Primary palette
+							li
+								a.menu-item(href='color-palette-danger.html', data-i18n='nav.color_palette.color_palette_danger') Danger palette
+							li
+								a.menu-item(href='color-palette-success.html', data-i18n='nav.color_palette.color_palette_success') Success palette
+							li
+								a.menu-item(href='color-palette-warning.html', data-i18n='nav.color_palette.color_palette_warning') Warning palette
+							li
+								a.menu-item(href='color-palette-info.html', data-i18n='nav.color_palette.color_palette_info') Info palette
+							li.navigation-divider
+							li
+								a.menu-item(href='color-palette-red.html', data-i18n='nav.color_palette.color_palette_red') Red palette
+							li
+								a.menu-item(href='color-palette-pink.html', data-i18n='nav.color_palette.color_palette_pink') Pink palette
+							li
+								a.menu-item(href='color-palette-purple.html', data-i18n='nav.color_palette.color_palette_purple') Purple palette
+							li
+								a.menu-item(href='color-palette-blue.html', data-i18n='nav.color_palette.color_palette_blue') Blue palette
+							li
+								a.menu-item(href='color-palette-cyan.html', data-i18n='nav.color_palette.color_palette_cyan') Cyan palette
+							li
+								a.menu-item(href='color-palette-teal.html', data-i18n='nav.color_palette.color_palette_teal') Teal palette
+							li
+								a.menu-item(href='color-palette-yellow.html', data-i18n='nav.color_palette.color_palette_yellow') Yellow palette
+							li
+								a.menu-item(href='color-palette-amber.html', data-i18n='nav.color_palette.color_palette_amber') Amber palette
+							li
+								a.menu-item(href='color-palette-blue-grey.html', data-i18n='nav.color_palette.color_palette_blue_grey') Blue Grey palette
+					li.nav-item
+						a(href='#')
+							i.la.la-puzzle-piece
+							span.menu-title(data-i18n='nav.starter_kit.main') Starter kit
+						ul.menu-content
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-1-column.html', data-i18n='nav.starter_kit.1_column') 1 column
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-2-columns.html', data-i18n='nav.starter_kit.2_columns') 2 columns
+							li
+								a.menu-item(href='#', data-i18n='nav.starter_kit.3_columns_detached.main') Content Det. Sidebar
+								ul.menu-content
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-content-detached-left-sidebar.html', data-i18n='nav.starter_kit.3_columns_detached.3_columns_detached_left_sidebar') Detached left sidebar
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-content-detached-left-sticky-sidebar.html', data-i18n='nav.starter_kit.3_columns_detached.3_columns_detached_sticky_left_sidebar') Detached sticky left sidebar
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-content-detached-right-sidebar.html', data-i18n='nav.starter_kit.3_columns_detached.3_columns_detached_right_sidebar') Detached right sidebar
+									li
+										a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-content-detached-right-sticky-sidebar.html', data-i18n='nav.starter_kit.3_columns_detached.3_columns_detached_sticky_right_sidebar') Detached sticky right sidebar
+							li.navigation-divider
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-fixed-navbar.html', data-i18n='nav.starter_kit.fixed_navbar') Fixed navbar
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-fixed-navigation.html', data-i18n='nav.starter_kit.fixed_navigation') Fixed navigation
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-fixed-navbar-navigation.html', data-i18n='nav.starter_kit.fixed_navbar_navigation') Fixed navbar & navigation
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-fixed-navbar-footer.html', data-i18n='nav.starter_kit.fixed_navbar_footer') Fixed navbar & footer
+							li.navigation-divider
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-fixed.html', data-i18n='nav.starter_kit.fixed_layout') Fixed layout
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-boxed.html', data-i18n='nav.starter_kit.boxed_layout') Boxed layout
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-static.html', data-i18n='nav.starter_kit.static_layout') Static layout
+							li.navigation-divider
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-light.html', data-i18n='nav.starter_kit.light_layout') Light layout
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-dark.html', data-i18n='nav.starter_kit.dark_layout') Dark layout
+							li
+								a.menu-item(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/starter-kit/ltr/vertical-modern-menu-template/layout-semi-dark.html', data-i18n='nav.starter_kit.semi_dark_layout') Semi dark layout
+					li.nav-item
+						a(href='changelog.html')
+							i.la.la-copy
+							span.menu-title(data-i18n='nav.changelog.main') Changelog
+							span.badge.badge.badge-pill.badge-warning.float-right 1.0
+					li.disabled.nav-item
+						a(href='#')
+							i.la.la-eye-slash
+							span.menu-title(data-i18n='nav.disabled_menu.main') Disabled Menu
+					li.nav-item
+						a(href='#')
+							i.la.la-android
+							span.menu-title(data-i18n='nav.menu_levels.main') Menu levels
+						ul.menu-content
+							li
+								a.menu-item(href='#', data-i18n='nav.menu_levels.second_level') Second level
+							li
+								a.menu-item(href='#', data-i18n='nav.menu_levels.second_level_child.main') Second level child
+								ul.menu-content
+									li
+										a.menu-item(href='#', data-i18n='nav.menu_levels.second_level_child.third_level') Third level
+									li
+										a.menu-item(href='#', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Third level child
+										ul.menu-content
+											li
+												a.menu-item(href='#', data-i18n='nav.menu_levels.second_level_child.third_level_child.fourth_level1') Fourth level
+											li
+												a.menu-item(href='#', data-i18n='nav.menu_levels.second_level_child.third_level_child.fourth_level2') Fourth level
+					li.navigation-header
+						span(data-i18n='nav.category.pages') Pages
+						i.la.la-ellipsis-h.ft-minus(data-toggle='tooltip', data-placement='right', data-original-title='Pages')
+					li.nav-item
+						a(href='email-application.html')
+							i.la.la-envelope
+							span.menu-title(data-i18n='') Email Application
+					li.nav-item
+						a(href='chat-application.html')
+							i.la.la-comments
+							span.menu-title(data-i18n='') Chat Application
+					li.nav-item
+						a(href='#')
+							i.la.la-briefcase
+							span.menu-title(data-i18n='nav.project.main') Project
+						ul.menu-content
+							li
+								a.menu-item(href='project-summary.html', data-i18n='nav.project.project_summary') Project Summary
+							li
+								a.menu-item(href='project-tasks.html', data-i18n='nav.project.project_tasks') Project Task
+							li
+								a.menu-item(href='project-bugs.html', data-i18n='nav.project.project_bugs') Project Bugs
+					li.nav-item
+						a(href='scrumboard.html')
+							i.la.la-check-square
+							span.menu-title(data-i18n='nav.scrumboard.main') Scrumboard
+							span.badge.badge.badge-info.float-right Update
+					li.nav-item
+						a(href='#')
+							i.la.la-clipboard
+							span.menu-title(data-i18n='nav.invoice.main') Invoice
+						ul.menu-content
+							li
+								a.menu-item(href='invoice-summary.html', data-i18n='nav.invoice.invoice_summary') Invoice Summary
+							li
+								a.menu-item(href='invoice-template.html', data-i18n='nav.invoice.invoice_template') Invoice Template
+							li
+								a.menu-item(href='invoice-list.html', data-i18n='nav.invoice.invoice_list') Invoice List
+					li.nav-item
+						a(href='#')
+							i.la.la-film
+							span.menu-title(data-i18n='nav.timelines.main') Timelines
+						ul.menu-content
+							li
+								a.menu-item(href='timeline-center.html', data-i18n='nav.timelines.timeline_center') Timelines Center
+							li
+								a.menu-item(href='timeline-left.html', data-i18n='nav.timelines.timeline_left') Timelines Left
+							li
+								a.menu-item(href='timeline-right.html', data-i18n='nav.timelines.timeline_right') Timelines Right
+							li
+								a.menu-item(href='timeline-horizontal.html', data-i18n='nav.timelines.timeline_horizontal') Timelines Horizontal
+					li.nav-item
+						a(href='#')
+							i.la.la-user
+							span.menu-title(data-i18n='nav.users.main') Users
+						ul.menu-content
+							li
+								a.menu-item(href='user-profile.html', data-i18n='nav.users.user_profile') Users Profile
+							li
+								a.menu-item(href='user-cards.html', data-i18n='nav.users.user_cards') Users Cards
+							li
+								a.menu-item(href='users-contacts.html', data-i18n='nav.users.users_contacts') Users List
+					li.nav-item
+						a(href='#')
+							i.la.la-image
+							span.menu-title(data-i18n='nav.gallery_pages.main') Gallery
+						ul.menu-content
+							li
+								a.menu-item(href='gallery-grid.html', data-i18n='nav.gallery_pages.gallery_grid') Gallery Grid
+							li
+								a.menu-item(href='gallery-grid-with-desc.html', data-i18n='nav.gallery_pages.gallery_grid_with_desc') Gallery Grid with Desc
+							li
+								a.menu-item(href='gallery-masonry.html', data-i18n='nav.gallery_pages.gallery_masonry') Masonry Gallery
+							li
+								a.menu-item(href='gallery-masonry-with-desc.html', data-i18n='nav.gallery_pages.gallery_masonry_with_desc') Masonry Gallery with Desc
+							li
+								a.menu-item(href='gallery-hover-effects.html', data-i18n='nav.gallery_pages.gallery_hover_effects') Hover Effects
+					li.nav-item
+						a(href='#')
+							i.la.la-search
+							span.menu-title(data-i18n='nav.search_pages.main') Search
+						ul.menu-content
+							li
+								a.menu-item(href='search-page.html', data-i18n='nav.search_pages.search_page') Search Page
+							li
+								a.menu-item(href='search-website.html', data-i18n='nav.search_pages.search_website') Search Website
+							li
+								a.menu-item(href='search-images.html', data-i18n='nav.search_pages.search_images') Search Images
+							li
+								a.menu-item(href='search-videos.html', data-i18n='nav.search_pages.search_videos') Search Videos
+					li.nav-item
+						a(href='#')
+							i.la.la-unlock
+							span.menu-title(data-i18n='nav.login_register_pages.main') Authentication
+						ul.menu-content
+							li
+								a.menu-item(href='login-simple.html', data-i18n='nav.login_register_pages.login_simple') Login Simple
+							li
+								a.menu-item(href='login-with-bg.html', data-i18n='nav.login_register_pages.login_with_bg') Login with Bg
+							li
+								a.menu-item(href='login-with-bg-image.html', data-i18n='nav.login_register_pages.login_with_bg_image') Login with Bg Image
+							li
+								a.menu-item(href='login-with-navbar.html', data-i18n='nav.login_register_pages.login_with_navbar') Login with Navbar
+							li
+								a.menu-item(href='login-advanced.html', data-i18n='nav.login_register_pages.login_advanced') Login Advanced
+							li
+								a.menu-item(href='register-simple.html', data-i18n='nav.login_register_pages.register_simple') Register Simple
+							li
+								a.menu-item(href='register-with-bg.html', data-i18n='nav.login_register_pages.register_with_bg') Register with Bg
+							li
+								a.menu-item(href='register-with-bg-image.html', data-i18n='nav.login_register_pages.register_with_bg_image') Register with Bg Image
+							li
+								a.menu-item(href='register-with-navbar.html', data-i18n='nav.login_register_pages.register_with_navbar') Register with Navbar
+							li
+								a.menu-item(href='register-advanced.html', data-i18n='nav.login_register_pages.register_advanced') Register Advanced
+							li
+								a.menu-item(href='unlock-user.html', data-i18n='nav.login_register_pages.unlock_user') Unlock User
+							li
+								a.menu-item(href='recover-password.html', data-i18n='nav.login_register_pages.recover_password') recover-password
+					li.nav-item
+						a(href='#')
+							i.la.la-warning
+							span.menu-title(data-i18n='nav.error_pages.main') Error
+						ul.menu-content
+							li
+								a.menu-item(href='error-400.html', data-i18n='nav.error_pages.error_400') Error 400
+							li
+								a.menu-item(href='error-400-with-navbar.html', data-i18n='nav.error_pages.error_400_with_navbar') Error 400 with Navbar
+							li
+								a.menu-item(href='error-401.html', data-i18n='nav.error_pages.error_401') Error 401
+							li
+								a.menu-item(href='error-401-with-navbar.html', data-i18n='nav.error_pages.error_401_with_navbar') Error 401 with Navbar
+							li
+								a.menu-item(href='error-403.html', data-i18n='nav.error_pages.error_403') Error 403
+							li
+								a.menu-item(href='error-403-with-navbar.html', data-i18n='nav.error_pages.error_403_with_navbar') Error 403 with Navbar
+							li
+								a.menu-item(href='error-404.html', data-i18n='nav.error_pages.error_404') Error 404
+							li
+								a.menu-item(href='error-404-with-navbar.html', data-i18n='nav.error_pages.error_404_with_navbar') Error 404 with Navbar
+							li
+								a.menu-item(href='error-500.html', data-i18n='nav.error_pages.error_500') Error 500
+							li
+								a.menu-item(href='error-500-with-navbar.html', data-i18n='nav.error_pages.error_500_with_navbar') Error 500 with Navbar
+					li.nav-item
+						a(href='#')
+							i.la.la-file-text
+							span.menu-title(data-i18n='nav.other_pages.main') Others
+						ul.menu-content
+							li
+								a.menu-item(href='#', data-i18n='nav.other_pages.coming_soon.main') Coming Soon
+								ul.menu-content
+									li
+										a.menu-item(href='coming-soon-flat.html', data-i18n='nav.other_pages.coming_soon.coming_soon_flat') Flat
+									li
+										a.menu-item(href='coming-soon-bg-image.html', data-i18n='nav.other_pages.coming_soon.coming_soon_bg_image') Bg image
+									li
+										a.menu-item(href='coming-soon-bg-video.html', data-i18n='nav.other_pages.coming_soon.coming_soon_bg_video') Bg video
+							li
+								a.menu-item(href='under-maintenance.html', data-i18n='nav.other_pages.under_maintenance') Maintenance
+					li.navigation-header
+						span(data-i18n='nav.category.ui') User Interface
+						i.la.la-ellipsis-h.ft-minus(data-toggle='tooltip', data-placement='right', data-original-title='User Interface')
+					li.nav-item
+						a(href='#')
+							i.la.la-tablet
+							span.menu-title(data-i18n='nav.cards.main') Cards
+							span.badge.badge.badge-success.float-right.mr-2 New
+						ul.menu-content
+							li
+								a.menu-item(href='card-bootstrap.html', data-i18n='nav.cards.card_bootstrap') Bootstrap
+							li
+								a.menu-item(href='card-headings.html', data-i18n='nav.cards.card_headings') Headings
+							li
+								a.menu-item(href='card-options.html', data-i18n='nav.cards.card_options') Options
+							li
+								a.menu-item(href='card-actions.html', data-i18n='nav.cards.card_actions') Action
+							li
+								a.menu-item(href='card-draggable.html', data-i18n='nav.cards.card_draggable') Draggable
+					li.nav-item
+						a(href='#')
+							i.la.la-fire
+							span.menu-title(data-i18n='nav.advance_cards.main') Advance Cards
+						ul.menu-content
+							li
+								a.menu-item(href='card-statistics.html', data-i18n='nav.cards.card_statistics') Statistics
+							li
+								a.menu-item(href='card-weather.html', data-i18n='nav.cards.card_weather') Weather
+							li
+								a.menu-item(href='card-charts.html', data-i18n='nav.cards.card_charts') Charts
+							li
+								a.menu-item(href='card-interactive.html', data-i18n='nav.cards.card_interactive') Interactive
+							li
+								a.menu-item(href='card-maps.html', data-i18n='nav.cards.card_maps') Maps
+							li
+								a.menu-item(href='card-social.html', data-i18n='nav.cards.card_social') Social
+							li
+								a.menu-item(href='card-ecommerce.html', data-i18n='nav.cards.card_ecommerce') E-Commerce
+					li.nav-item
+						a(href='#')
+							i.la.la-compass
+							span.menu-title(data-i18n='nav.content.main') Content
+						ul.menu-content
+							li
+								a.menu-item(href='content-grid.html', data-i18n='nav.content.content_grid') Grid
+							li
+								a.menu-item(href='content-typography.html', data-i18n='nav.content.content_typography') Typography
+							li
+								a.menu-item(href='content-text-utilities.html', data-i18n='nav.content.content_text_utilities') Text utilities
+							li
+								a.menu-item(href='content-syntax-highlighter.html', data-i18n='nav.content.content_syntax_highlighter') Syntax highlighter
+							li
+								a.menu-item(href='content-helper-classes.html', data-i18n='nav.content.content_helper_classes') Helper classes
+					li.nav-item
+						a(href='#')
+							i.la.la-server
+							span.menu-title(data-i18n='nav.components.main') Components
+						ul.menu-content
+							li
+								a.menu-item(href='component-alerts.html', data-i18n='nav.components.component_alerts') Alerts
+							li
+								a.menu-item(href='component-callout.html', data-i18n='nav.components.component_callout') Callout
+							li
+								a.menu-item(href='#', data-i18n='nav.components.components_buttons.main') Buttons
+								ul.menu-content
+									li
+										a.menu-item(href='component-buttons-basic.html', data-i18n='nav.components.components_buttons.component_buttons_basic') Basic Buttons
+									li
+										a.menu-item(href='component-buttons-extended.html', data-i18n='nav.components.components_buttons.component_buttons_extended') Extended Buttons
+							li
+								a.menu-item(href='component-carousel.html', data-i18n='nav.components.component_carousel') Carousel
+							li
+								a.menu-item(href='component-collapse.html', data-i18n='nav.components.component_collapse') Collapse
+							li
+								a.menu-item(href='component-dropdowns.html', data-i18n='nav.components.component_dropdowns') Dropdowns
+							li
+								a.menu-item(href='component-list-group.html', data-i18n='nav.components.component_list_group') List Group
+							li
+								a.menu-item(href='component-modals.html', data-i18n='nav.components.component_modals') Modals
+							li
+								a.menu-item(href='component-pagination.html', data-i18n='nav.components.component_pagination') Pagination
+							li
+								a.menu-item(href='component-navs-component.html', data-i18n='nav.components.component_navs_component') Navs Component
+							li
+								a.menu-item(href='component-tabs-component.html', data-i18n='nav.components.component_tabs_component') Tabs Component
+							li
+								a.menu-item(href='component-pills-component.html', data-i18n='nav.components.component_pills_component') Pills Component
+							li
+								a.menu-item(href='component-tooltips.html', data-i18n='nav.components.component_tooltips') Tooltips
+							li
+								a.menu-item(href='component-popovers.html', data-i18n='nav.components.component_popovers') Popovers
+							li
+								a.menu-item(href='component-badges.html', data-i18n='nav.components.component_badges') Badges
+							li
+								a.menu-item(href='component-pill-badges.html') Pill Badges
+							li
+								a.menu-item(href='component-progress.html', data-i18n='nav.components.component_progress') Progress
+							li
+								a.menu-item(href='component-media-objects.html', data-i18n='nav.components.component_media_objects') Media Objects
+							li
+								a.menu-item(href='component-scrollable.html', data-i18n='nav.components.component_scrollable') Scrollable
+							li
+								a.menu-item(href='component-spinners.html', data-i18n='nav.components.component_spinners') Spinners
+					li.nav-item
+						a(href='#')
+							i.la.la-diamond
+							span.menu-title(data-i18n='nav.extra_components.main') Extra Components
+						ul.menu-content
+							li
+								a.menu-item(href='ex-component-sweet-alerts.html', data-i18n='nav.extra_components.ex_component_sweet_alerts') Sweet Alerts
+							li
+								a.menu-item(href='ex-component-tree-views.html', data-i18n='nav.extra_components.ex_component_tree_views') Tree Views
+							li
+								a.menu-item(href='ex-component-toastr.html', data-i18n='nav.extra_components.ex_component_toastr') Toastr
+							li
+								a.menu-item(href='ex-component-ratings.html', data-i18n='nav.extra_components.ex_component_ratings') Ratings
+							li
+								a.menu-item(href='ex-component-noui-slider.html', data-i18n='nav.extra_components.ex_component_noui_slider') NoUI Slider
+							li
+								a.menu-item(href='ex-component-date-time-dropper.html', data-i18n='nav.extra_components.ex_component_date_time_dropper') Date Time Dropper
+							li
+								a.menu-item(href='ex-component-lists.html', data-i18n='nav.extra_components.ex_component_lists') Lists
+							li
+								a.menu-item(href='ex-component-toolbar.html', data-i18n='nav.extra_components.ex_component_toolbar') Toolbar
+							li
+								a.menu-item(href='ex-component-knob.html', data-i18n='nav.extra_components.ex_component_knob') Knob
+							li
+								a.menu-item(href='ex-component-long-press.html', data-i18n='nav.extra_components.ex_component_long_press') Long Press
+							li
+								a.menu-item(href='ex-component-offline.html', data-i18n='nav.extra_components.ex_component_offline') Offline
+							li
+								a.menu-item(href='ex-component-zoom.html', data-i18n='nav.extra_components.ex_component_zoom') Zoom
+					li.nav-item
+						a(href='#')
+							i.la.la-eye
+							span.menu-title(data-i18n='nav.icons.main') Icons
+						ul.menu-content
+							li
+								a.menu-item(href='icons-feather.html', data-i18n='nav.icons.icons_feather') Feather
+							li
+								a.menu-item(href='icons-line-awesome.html', data-i18n='nav.icons.icons_line_awesome') Line Awesome
+							li
+								a.menu-item(href='icons-meteocons.html', data-i18n='nav.icons.icons_meteocons') Meteocons
+							li
+								a.menu-item(href='icons-simple-line-icons.html', data-i18n='nav.icons.icons_linecons') Simple Line Icons
+					li.nav-item
+						a(href='animation.html')
+							i.la.la-spinner.spinner
+							span.menu-title(data-i18n='nav.animation.main') Animation
+					li.navigation-header
+						span(data-i18n='nav.category.forms') Forms
+						i.la.la-ellipsis-h.ft-minus(data-toggle='tooltip', data-placement='right', data-original-title='Forms')
+					li.nav-item
+						a(href='#')
+							i.la.la-terminal
+							span.menu-title(data-i18n='nav.form_elements.main') Form Elements
+						ul.menu-content
+							li
+								a.menu-item(href='form-inputs.html', data-i18n='nav.form_elements.form_inputs') Form Inputs
+							li
+								a.menu-item(href='form-input-groups.html', data-i18n='nav.form_elements.form_input_groups') Input Groups
+							li
+								a.menu-item(href='form-input-grid.html', data-i18n='nav.form_elements.form_input_grid') Input Grid
+							li
+								a.menu-item(href='form-extended-inputs.html', data-i18n='nav.form_elements.form_extended_inputs') Extended Inputs
+							li
+								a.menu-item(href='form-checkboxes-radios.html', data-i18n='nav.form_elements.form_checkboxes_radios') Checkboxes & Radios
+							li
+								a.menu-item(href='form-switch.html', data-i18n='nav.form_elements.form_switch') Switch
+							li
+								a.menu-item(href='#', data-i18n='nav.form_elements.form_select.main') Select
+								ul.menu-content
+									li
+										a.menu-item(href='form-select2.html', data-i18n='nav.form_elements.form_select.form_select2') Select2
+									li
+										a.menu-item(href='form-selectize.html', data-i18n='nav.form_elements.form_select.form_selectize') Selectize
+									li
+										a.menu-item(href='form-selectivity.html', data-i18n='nav.form_elements.form_select.form_selectivity') Selectivity
+									li
+										a.menu-item(href='form-select-box-it.html', data-i18n='nav.form_elements.form_select.form_select_box_it') Select Box It
+							li
+								a.menu-item(href='form-dual-listbox.html', data-i18n='nav.form_elements.form_dual_listbox') Dual Listbox
+							li
+								a.menu-item(href='form-tags-input.html', data-i18n='nav.form_elements.form_tags_input') Tags Input
+							li
+								a.menu-item(href='form-validation.html', data-i18n='nav.form_elements.form_validation') Validation
+					li.nav-item
+						a(href='#')
+							i.la.la-file-text
+							span.menu-title(data-i18n='nav.form_layouts.main') Form Layouts
+						ul.menu-content
+							li
+								a.menu-item(href='form-layout-basic.html', data-i18n='nav.form_layouts.form_layout_basic') Basic Forms
+							li
+								a.menu-item(href='form-layout-horizontal.html', data-i18n='nav.form_layouts.form_layout_horizontal') Horizontal Forms
+							li
+								a.menu-item(href='form-layout-hidden-labels.html', data-i18n='nav.form_layouts.form_layout_hidden_labels') Hidden Labels
+							li
+								a.menu-item(href='form-layout-form-actions.html', data-i18n='nav.form_layouts.form_layout_form_actions') Form Actions
+							li
+								a.menu-item(href='form-layout-row-separator.html', data-i18n='nav.form_layouts.form_layout_row_separator') Row Separator
+							li
+								a.menu-item(href='form-layout-bordered.html', data-i18n='nav.form_layouts.form_layout_bordered') Bordered
+							li
+								a.menu-item(href='form-layout-striped-rows.html', data-i18n='nav.form_layouts.form_layout_striped_rows') Striped Rows
+							li
+								a.menu-item(href='form-layout-striped-labels.html', data-i18n='nav.form_layouts.form_layout_striped_labels') Striped Labels
+					li.nav-item
+						a(href='#')
+							i.la.la-paste
+							span.menu-title(data-i18n='nav.form_wizard.main') Form Wizard
+						ul.menu-content
+							li
+								a.menu-item(href='form-wizard-circle-style.html', data-i18n='nav.form_wizard.form_wizard_circle_style') Circle Style
+							li
+								a.menu-item(href='form-wizard-notification-style.html', data-i18n='nav.form_wizard.form_wizard_notification_style') Notification Style
+					li.nav-item
+						a(href='form-repeater.html')
+							i.la.la-repeat
+							span.menu-title(data-i18n='nav.form_repeater.main') Form Repeater
+					li.navigation-header
+						span(data-i18n='nav.category.tables') Tables
+						i.la.la-ellipsis-h.ft-minus(data-toggle='tooltip', data-placement='right', data-original-title='Tables')
+					li.nav-item
+						a(href='#')
+							i.la.la-table
+							span.menu-title(data-i18n='nav.bootstrap_tables.main') Bootstrap Tables
+						ul.menu-content
+							li
+								a.menu-item(href='table-basic.html', data-i18n='nav.bootstrap_tables.table_basic') Basic Tables
+							li
+								a.menu-item(href='table-border.html', data-i18n='nav.bootstrap_tables.table_border') Table Border
+							li
+								a.menu-item(href='table-sizing.html', data-i18n='nav.bootstrap_tables.table_sizing') Table Sizing
+							li
+								a.menu-item(href='table-styling.html', data-i18n='nav.bootstrap_tables.table_styling') Table Styling
+							li
+								a.menu-item(href='table-components.html', data-i18n='nav.bootstrap_tables.table_components') Table Components
+					li.nav-item
+						a(href='#')
+							i.la.la-th
+							span.menu-title(data-i18n='nav.data_tables.main') DataTables
+						ul.menu-content
+							li
+								a.menu-item(href='dt-basic-initialization.html', data-i18n='nav.data_tables.dt_basic_initialization') Basic Initialisation
+							li
+								a.menu-item(href='dt-advanced-initialization.html', data-i18n='nav.data_tables.dt_advanced_initialization') Advanced initialisation
+							li
+								a.menu-item(href='dt-styling.html', data-i18n='nav.data_tables.dt_styling') Styling
+							li
+								a.menu-item(href='dt-data-sources.html', data-i18n='nav.data_tables.dt_data_sources') Data Sources
+							li
+								a.menu-item(href='dt-api.html', data-i18n='nav.data_tables.dt_api') API
+					li.nav-item
+						a(href='#')
+							i.la.la-th-large
+							span.menu-title(data-i18n='nav.datatable_extensions.main') DataTables Ext.
+						ul.menu-content
+							li
+								a.menu-item(href='dt-extensions-autofill.html', data-i18n='nav.datatable_extensions.dt_extensions_autofill') AutoFill
+							li
+								a.menu-item(href='#', data-i18n='nav.datatable_extensions.datatable_buttons.main') Buttons
+								ul.menu-content
+									li
+										a.menu-item(href='dt-extensions-buttons-basic.html', data-i18n='nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_basic') Basic Buttons
+									li
+										a.menu-item(href='dt-extensions-buttons-html-5-data-export.html', data-i18n='nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_html_5_data_export') HTML 5 Data Export
+									li
+										a.menu-item(href='dt-extensions-buttons-flash-data-export.html', data-i18n='nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_flash_data_export') Flash Data Export
+									li
+										a.menu-item(href='dt-extensions-buttons-column-visibility.html', data-i18n='nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_column_visibility') Column Visibility
+									li
+										a.menu-item(href='dt-extensions-buttons-print.html', data-i18n='nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_print') Print
+									li
+										a.menu-item(href='dt-extensions-buttons-api.html', data-i18n='nav.datatable_extensions.datatable_buttons.dt_extensions_buttons_api') API
+							li
+								a.menu-item(href='dt-extensions-column-reorder.html', data-i18n='nav.datatable_extensions.dt_extensions_column_reorder') Column Reorder
+							li
+								a.menu-item(href='dt-extensions-fixed-columns.html', data-i18n='nav.datatable_extensions.dt_extensions_fixed_columns') Fixed Columns
+							li
+								a.menu-item(href='dt-extensions-key-table.html', data-i18n='nav.datatable_extensions.dt_extensions_key_table') Key Table
+							li
+								a.menu-item(href='dt-extensions-row-reorder.html', data-i18n='nav.datatable_extensions.dt_extensions_row_reorder') Row Reorder
+							li
+								a.menu-item(href='dt-extensions-select.html', data-i18n='nav.datatable_extensions.dt_extensions_select') Select
+							li
+								a.menu-item(href='dt-extensions-fix-header.html', data-i18n='nav.datatable_extensions.dt_extensions_fix_header') Fix Header
+							li
+								a.menu-item(href='dt-extensions-responsive.html', data-i18n='nav.datatable_extensions.dt_extensions_responsive') Responsive
+							li
+								a.menu-item(href='dt-extensions-column-visibility.html', data-i18n='nav.datatable_extensions.dt_extensions_column_visibility') Column Visibility
+					li.nav-item
+						a(href='#')
+							i.la.la-th-list
+							span.menu-title(data-i18n='nav.handson_table.main') Handson Table
+						ul.menu-content
+							li
+								a.menu-item(href='handson-table-appearance.html', data-i18n='nav.handson_table.handson_table_appearance') Appearance
+							li
+								a.menu-item(href='handson-table-rows-columns.html', data-i18n='nav.handson_table.handson_table_rows_columns') Rows Columns
+							li
+								a.menu-item(href='handson-table-rows-only.html', data-i18n='nav.handson_table.handson_table_rows_only') Rows Only
+							li
+								a.menu-item(href='handson-table-columns-only.html', data-i18n='nav.handson_table.handson_table_columns_only') Columns Only
+							li
+								a.menu-item(href='handson-table-data-operations.html', data-i18n='nav.handson_table.handson_table_data_operations') Data Operations
+							li
+								a.menu-item(href='handson-table-cell-features.html', data-i18n='nav.handson_table.handson_table_cell_features') Cell Features
+							li
+								a.menu-item(href='handson-table-cell-types.html', data-i18n='nav.handson_table.handson_table_cell_types') Cell Types
+							li
+								a.menu-item(href='handson-table-integrations.html', data-i18n='nav.handson_table.handson_table_integrations') Integrations
+							li
+								a.menu-item(href='handson-table-utilities.html', data-i18n='nav.handson_table.handson_table_utilities') Utilities
+					li.nav-item
+						a(href='table-jsgrid.html')
+							i.la.la-table
+							span.menu-title(data-i18n='nav.table_jsgrid.main') jsGrid
+					li.navigation-header
+						span(data-i18n='nav.category.addons') Add Ons
+						i.la.la-ellipsis-h.ft-minus(data-toggle='tooltip', data-placement='right', data-original-title='Add Ons')
+					li.nav-item
+						a(href='#')
+							i.la.la-edit
+							span.menu-title(data-i18n='nav.editors.main') Editors
+						ul.menu-content
+							li
+								a.menu-item(href='editor-quill.html', data-i18n='nav.editors.editor_quill') Quill
+							li
+								a.menu-item(href='editor-ckeditor.html', data-i18n='nav.editors.editor_ckeditor') CKEditor
+							li
+								a.menu-item(href='editor-summernote.html', data-i18n='nav.editors.editor_summernote') Summernote
+							li
+								a.menu-item(href='editor-tinymce.html', data-i18n='nav.editors.editor_tinymce') TinyMCE
+							li
+								a.menu-item(href='#', data-i18n='nav.editors.code_editor_codemirror.main') Code Editor
+								ul.menu-content
+									li
+										a.menu-item(href='code-editor-codemirror.html', data-i18n='nav.editors.code_editor_codemirror.code_editor_codemirror') CodeMirror
+									li
+										a.menu-item(href='code-editor-ace.html', data-i18n='nav.editors.code_editor_codemirror.code_editor_ace') Ace
+					li.nav-item
+						a(href='#')
+							i.la.la-calendar
+							span.menu-title(data-i18n='nav.pickers.main') Pickers
+						ul.menu-content
+							li
+								a.menu-item(href='pickers-date-%26-time-picker.html', data-i18n='nav.pickers.pickers_date_time_picker') Date & Time Picker
+							li
+								a.menu-item(href='pickers-color-picker.html', data-i18n='nav.pickers.pickers_color_picker') Color Picker
+					li.nav-item
+						a(href='#')
+							i.la.la-code-fork
+							span.menu-title(data-i18n='nav.jquery_ui.main') jQuery UI
+						ul.menu-content
+							li
+								a.menu-item(href='jquery-ui-interactions.html', data-i18n='nav.jquery_ui.jquery_ui_interactions') Interactions
+							li
+								a.menu-item(href='jquery-ui-navigations.html', data-i18n='nav.jquery_ui.jquery_ui_navigations') Navigations
+							li
+								a.menu-item(href='jquery-ui-date-pickers.html', data-i18n='nav.jquery_ui.jquery_ui_date_pickers') Date Pickers
+							li
+								a.menu-item(href='jquery-ui-autocomplete.html', data-i18n='nav.jquery_ui.jquery_ui_autocomplete') Autocomplete
+							li
+								a.menu-item(href='jquery-ui-buttons-select.html', data-i18n='nav.jquery_ui.jquery_ui_buttons_select') Buttons & Select
+							li
+								a.menu-item(href='jquery-ui-slider-spinner.html', data-i18n='nav.jquery_ui.jquery_ui_slider_spinner') Slider & Spinner
+							li
+								a.menu-item(href='jquery-ui-dialog-tooltip.html', data-i18n='nav.jquery_ui.jquery_ui_dialog_tooltip') Dialog & Tooltip
+					li.nav-item
+						a(href='add-on-block-ui.html')
+							i.la.la-terminal
+							span.menu-title(data-i18n='nav.add_on_block_ui.main') Block UI
+					li.nav-item
+						a(href='add-on-image-cropper.html')
+							i.la.la-crop
+							span.menu-title(data-i18n='nav.add_on_image_cropper.main') Image Cropper
+					li.nav-item
+						a(href='add-on-drag-drop.html')
+							i.la.la-mouse-pointer
+							span.menu-title(data-i18n='nav.add_on_drag_drop.main') Drag & Drop
+					li.nav-item
+						a(href='#')
+							i.la.la-cloud-upload
+							span.menu-title(data-i18n='nav.file_uploaders.main') File Uploader
+						ul.menu-content
+							li
+								a.menu-item(href='file-uploader-dropzone.html', data-i18n='nav.file_uploaders.file_uploader_dropzone') Dropzone
+					li.nav-item
+						a(href='#')
+							i.la.la-calendar
+							span.menu-title(data-i18n='nav.event_calendars.main') Event Calendars
+						ul.menu-content
+							li
+								a.menu-item(href='#', data-i18n='nav.event_calendars.full_calender.main') Full Calendar
+								ul.menu-content
+									li
+										a.menu-item(href='full-calender-basic.html', data-i18n='nav.event_calendars.full_calender.full_calender_basic') Basic
+									li
+										a.menu-item(href='full-calender-events.html', data-i18n='nav.event_calendars.full_calender.full_calender_events') Events
+									li
+										a.menu-item(href='full-calender-advance.html', data-i18n='nav.event_calendars.full_calender.full_calender_advance') Advance
+									li
+										a.menu-item(href='full-calender-extra.html', data-i18n='nav.event_calendars.full_calender.full_calender_extra') Extra
+							li
+								a.menu-item(href='calendars-clndr.html', data-i18n='nav.event_calendars.calendars_clndr') CLNDR
+					li.nav-item
+						a(href='#')
+							i.la.la-flag-o
+							span.menu-title(data-i18n='nav.internationalization.main') Internationalization
+						ul.menu-content
+							li
+								a.menu-item(href='i18n-resources.html', data-i18n='nav.internationalization.i18n_resources') Resources
+							li
+								a.menu-item(href='i18n-xhr-backend.html', data-i18n='nav.internationalization.i18n_xhr_backend') XHR Backend
+							li
+								a.menu-item(href='i18n-query-string6dc5.html?lng=en', data-i18n='nav.internationalization.i18n_query_string') Query String
+							li
+								a.menu-item(href='i18n-on-init.html', data-i18n='nav.internationalization.i18n_on_init') On Init
+							li
+								a.menu-item(href='i18n-after-init.html', data-i18n='nav.internationalization.i18n_after_init') After Init
+							li
+								a.menu-item(href='i18n-fallback.html', data-i18n='nav.internationalization.i18n_fallback') Fallback
+					li.navigation-header
+						span(data-i18n='nav.category.charts_maps') Charts & Maps
+						i.la.la-ellipsis-h.ft-minus(data-toggle='tooltip', data-placement='right', data-original-title='Charts & Maps')
+					li.nav-item
+						a(href='#')
+							i.la.la-bar-chart
+							span.menu-title(data-i18n='nav.google_charts.main') google Charts
+						ul.menu-content
+							li
+								a.menu-item(href='google-bar-charts.html', data-i18n='nav.google_charts.google_bar_charts') Bar charts
+							li
+								a.menu-item(href='google-line-charts.html', data-i18n='nav.google_charts.google_line_charts') Line charts
+							li
+								a.menu-item(href='google-pie-charts.html', data-i18n='nav.google_charts.google_pie_charts') Pie charts
+							li
+								a.menu-item(href='google-scatter-charts.html', data-i18n='nav.google_charts.google_scatter_charts') Scatter charts
+							li
+								a.menu-item(href='google-bubble-charts.html', data-i18n='nav.google_charts.google_bubble_charts') Bubble charts
+							li
+								a.menu-item(href='google-other-charts.html', data-i18n='nav.google_charts.google_other_charts') Other charts
+					li.nav-item
+						a(href='#')
+							i.la.la-file-photo-o
+							span.menu-title(data-i18n='nav.echarts.main') Echarts
+						ul.menu-content
+							li
+								a.menu-item(href='echarts-line-area-charts.html', data-i18n='nav.echarts.echarts_line_area_charts') Line & Area charts
+							li
+								a.menu-item(href='echarts-bar-column-charts.html', data-i18n='nav.echarts.echarts_bar_column_charts') Bar & Column charts
+							li
+								a.menu-item(href='echarts-pie-doughnut-charts.html', data-i18n='nav.echarts.echarts_pie_doughnut_charts') Pie & Doughnut charts
+							li
+								a.menu-item(href='echarts-scatter-charts.html', data-i18n='nav.echarts.echarts_scatter_charts') Scatter charts
+							li
+								a.menu-item(href='echarts-radar-chord-charts.html', data-i18n='nav.echarts.echarts_radar_chord_charts') Radar & Chord charts
+							li
+								a.menu-item(href='echarts-funnel-gauges-charts.html', data-i18n='nav.echarts.echarts_funnel_gauges_charts') Funnel & Gauges charts
+							li
+								a.menu-item(href='echarts-combination-charts.html', data-i18n='nav.echarts.echarts_combination_charts') Combination charts
+							li
+								a.menu-item(href='echarts-advance-charts.html', data-i18n='nav.echarts.echarts_advance_charts') Advance charts
+					li.nav-item
+						a(href='#')
+							i.la.la-area-chart
+							span.menu-title(data-i18n='nav.chartjs.main') Chartjs
+						ul.menu-content
+							li
+								a.menu-item(href='chartjs-line-charts.html', data-i18n='nav.chartjs.chartjs_line_charts') Line charts
+							li
+								a.menu-item(href='chartjs-bar-charts.html', data-i18n='nav.chartjs.chartjs_bar_charts') Bar charts
+							li
+								a.menu-item(href='chartjs-pie-doughnut-charts.html', data-i18n='nav.chartjs.chartjs_pie_doughnut_charts') Pie & Doughnut charts
+							li
+								a.menu-item(href='chartjs-scatter-charts.html', data-i18n='nav.chartjs.chartjs_scatter_charts') Scatter charts
+							li
+								a.menu-item(href='chartjs-polar-radar-charts.html', data-i18n='nav.chartjs.chartjs_polar_radar_charts') Polar & Radar charts
+							li
+								a.menu-item(href='chartjs-advance-charts.html', data-i18n='nav.chartjs.chartjs_advance_charts') Advance charts
+					li.nav-item
+						a(href='#')
+							i.la.la-line-chart
+							span.menu-title(data-i18n='nav.d3_charts.main') D3 Charts
+						ul.menu-content
+							li
+								a.menu-item(href='d3-line-chart.html', data-i18n='nav.d3_charts.d3_line_chart') Line Chart
+							li
+								a.menu-item(href='d3-bar-chart.html', data-i18n='nav.d3_charts.d3_bar_chart') Bar Chart
+							li
+								a.menu-item(href='d3-pie-chart.html', data-i18n='nav.d3_charts.d3_pie_chart') Pie Chart
+							li
+								a.menu-item(href='d3-circle-diagrams.html', data-i18n='nav.d3_charts.d3_circle_diagrams') Circle Diagrams
+							li
+								a.menu-item(href='d3-tree-chart.html', data-i18n='nav.d3_charts.d3_tree_chart') Tree Chart
+							li
+								a.menu-item(href='d3-other-charts.html', data-i18n='nav.d3_charts.d3_other_charts') Other Charts
+					li.nav-item
+						a(href='#')
+							i.la.la-indent
+							span.menu-title(data-i18n='nav.c3_charts.main') C3 Charts
+						ul.menu-content
+							li
+								a.menu-item(href='c3-line-chart.html', data-i18n='nav.c3_charts.c3_line_chart') Line Chart
+							li
+								a.menu-item(href='c3-bar-pie-chart.html', data-i18n='nav.c3_charts.c3_bar_pie_chart') Bar & Pie Chart
+							li
+								a.menu-item(href='c3-axis-chart.html', data-i18n='nav.c3_charts.c3_axis_chart') Axis Chart
+							li
+								a.menu-item(href='c3-data-chart.html', data-i18n='nav.c3_charts.c3_data_chart') Data Chart
+							li
+								a.menu-item(href='c3-grid-chart.html', data-i18n='nav.c3_charts.c3_grid_chart') Grid Chart
+							li
+								a.menu-item(href='c3-transform-chart.html', data-i18n='nav.c3_charts.c3_transform_chart') Transform Chart
+							li
+								a.menu-item(href='c3-other-charts.html', data-i18n='nav.c3_charts.c3_other_charts') Other Charts
+					li.nav-item
+						a(href='#')
+							i.la.la-pie-chart
+							span.menu-title(data-i18n='nav.chartist.main') Chartist
+						ul.menu-content
+							li
+								a.menu-item(href='chartist-line-charts.html', data-i18n='nav.chartist.chartist_line_charts') Line charts
+							li
+								a.menu-item(href='chartist-bar-charts.html', data-i18n='nav.chartist.chartist_bar_charts') Bar charts
+							li
+								a.menu-item(href='chartist-pie-charts.html', data-i18n='nav.chartist.chartist_pie_charts') Pie charts
+					li.nav-item
+						a(href='morris-charts.html')
+							i.la.la-share-alt
+							span.menu-title(data-i18n='nav.morris_charts.main') Morris Charts
+					li.nav-item
+						a(href='#')
+							i.la.la-bolt
+							span.menu-title(data-i18n='nav.flot_charts.main') Flot Charts
+						ul.menu-content
+							li
+								a.menu-item(href='flot-line-charts.html', data-i18n='nav.flot_charts.flot_line_charts') Line charts
+							li
+								a.menu-item(href='flot-bar-charts.html', data-i18n='nav.flot_charts.flot_bar_charts') Bar charts
+							li
+								a.menu-item(href='flot-pie-charts.html', data-i18n='nav.flot_charts.flot_pie_charts') Pie charts
+					li.nav-item
+						a(href='rickshaw-charts.html')
+							i.la.la-bullseye
+							span.menu-title(data-i18n='nav.rickshaw_charts.main') Rickshaw Charts
+					li.nav-item
+						a(href='#')
+							i.la.la-map
+							span.menu-title(data-i18n='nav.maps.main') Maps
+						ul.menu-content
+							li
+								a.menu-item(href='#', data-i18n='nav.maps.google_maps.main') google Maps
+								ul.menu-content
+									li
+										a.menu-item(href='gmaps-basic-maps.html', data-i18n='nav.maps.google_maps.gmaps_basic_maps') Maps
+									li
+										a.menu-item(href='gmaps-services.html', data-i18n='nav.maps.google_maps.gmaps_services') Services
+									li
+										a.menu-item(href='gmaps-overlays.html', data-i18n='nav.maps.google_maps.gmaps_overlays') Overlays
+									li
+										a.menu-item(href='gmaps-routes.html', data-i18n='nav.maps.google_maps.gmaps_routes') Routes
+									li
+										a.menu-item(href='gmaps-utils.html', data-i18n='nav.maps.google_maps.gmaps_utils') Utils
+							li
+								a.menu-item(href='#', data-i18n='nav.maps.vector_maps.main') Vector Maps
+								ul.menu-content
+									li
+										a.menu-item(href='#', data-i18n='nav.maps.vector_maps.jquery_mapael.main') jQuery Mapael
+										ul.menu-content
+											li
+												a.menu-item(href='vector-maps-mapael-basic.html', data-i18n='nav.maps.vector_maps.jquery_mapael.vector_maps_mapael_basic') Basic Maps
+											li
+												a.menu-item(href='vector-maps-mapael-advance.html', data-i18n='nav.maps.vector_maps.jquery_mapael.vector_maps_mapael_advance') Advance Maps
+									li
+										a.menu-item(href='vector-maps-jvector.html', data-i18n='nav.maps.vector_maps.jvector_maps') jVector Map
+									li
+										a.menu-item(href='vector-maps-jvq.html', data-i18n='nav.maps.vector_maps.vector_maps_jvq') JQV Map
+					li.navigation-header
+						span(data-i18n='nav.category.support') Support
+						i.la.la-ellipsis-h.ft-minus(data-toggle='tooltip', data-placement='right', data-original-title='Support')
+					li.nav-item
+						a(href='http://support.pixinvent.com/')
+							i.la.la-support
+							span.menu-title(data-i18n='nav.support_raise_support.main') Raise Support
+					li.nav-item
+						a(href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation')
+							i.la.la-text-height
+							span.menu-title(data-i18n='nav.support_documentation.main') Documentation
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+				.content-body
+					// Revenue, Hit Rate & Deals
+					.row
+						.col-xl-6.col-12
+							.card
+								.card-header
+									h4.card-title Revenue
+									a.heading-elements-toggle
+										i.la.la-ellipsis-v.font-medium-3
+									.heading-elements
+										ul.list-inline.mb-0
+											li
+												a(data-action='reload')
+													i.ft-rotate-cw
+								.card-content.collapse.show
+									.card-body.pt-0
+										.row.mb-1
+											.col-6.col-md-4
+												h5 Current week
+												h2.danger $82,124
+											.col-6.col-md-4
+												h5 Previous week
+												h2.text-muted $52,502
+										.chartjs
+											canvas#thisYearRevenue(width='400', style='position: absolute;')
+											canvas#lastYearRevenue(width='400')
+						.col-xl-6.col-12
+							.row
+								.col-lg-6.col-12
+									.card.pull-up
+										.card-header.bg-hexagons
+											h4.card-title
+												| Hit Rate
+												span.danger -12%
+											a.heading-elements-toggle
+												i.la.la-ellipsis-v.font-medium-3
+											.heading-elements
+												ul.list-inline.mb-0
+													li
+														a(data-action='reload')
+															i.ft-rotate-cw
+										.card-content.collapse.show.bg-hexagons
+											.card-body.pt-0
+												.chartjs
+													canvas#hit-rate-doughnut(height='275')
+								.col-lg-6.col-12
+									.card.pull-up
+										.card-content.collapse.show.bg-gradient-directional-danger
+											.card-body.bg-hexagons-danger
+												h4.card-title.white
+													| Deals
+													span.white -55%
+													span.float-right
+														span.white 152
+														span.red.lighten-4 /200
+												.chartjs
+													canvas#deals-doughnut(height='275')
+							.row
+								.col-lg-6.col-12
+									.card.pull-up
+										.card-content
+											.card-body
+												.media.d-flex
+													.media-body.text-left
+														h6.text-muted Order Value 
+														h3 $ 88,568
+													.align-self-center
+														i.icon-trophy.success.font-large-2.float-right
+								.col-lg-6.col-12
+									.card.pull-up
+										.card-content
+											.card-body
+												.media.d-flex
+													.media-body.text-left
+														h6.text-muted Calls
+														h3 3,568
+													.align-self-center
+														i.icon-call-in.danger.font-large-2.float-right
+					// / Revenue, Hit Rate & Deals
+					// Emails Products & Avg Deals
+					.row
+						.col-12.col-md-3
+							.card
+								.card-header
+									h4.card-title Emails
+									a.heading-elements-toggle
+										i.la.la-ellipsis-v.font-medium-3
+									.heading-elements
+										ul.list-inline.mb-0
+											li
+												a(data-action='reload')
+													i.ft-rotate-cw
+								.card-content.collapse.show
+									.card-body.pt-0
+										p
+											| Open rate
+											span.float-right.text-bold-600 89%
+										.progress.progress-sm.mt-1.mb-0.box-shadow-1
+											.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 80%', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100')
+										p.pt-1
+											| Sent
+											span.float-right
+												span.text-bold-600 310
+												| /500
+										.progress.progress-sm.mt-1.mb-0.box-shadow-1
+											.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 48%', aria-valuenow='48', aria-valuemin='0', aria-valuemax='100')
+						.col-12.col-md-3
+							.card
+								.card-header
+									h4.card-title Top Products
+									a.heading-elements-toggle
+										i.la.la-ellipsis-v.font-medium-3
+									.heading-elements
+										ul.list-inline.mb-0
+											li
+												a(href='#') Show all
+								.card-content.collapse.show
+									.card-body.p-0
+										.table-responsive
+											table.table.mb-0
+												tbody
+													tr
+														th.border-top-0(scope='row') iPone X
+														td.border-top-0 2245
+													tr
+														th(scope='row') One Plus
+														td 1850
+													tr
+														th(scope='row') Samsung S7
+														td 1550
+						.col-12.col-md-6
+							.card
+								.card-header
+									h4.card-title.text-center Average Deal Size
+								.card-content.collapse.show
+									.card-body.pt-0
+										.row
+											.col-md-6.col-12.border-right-blue-grey.border-right-lighten-5.text-center
+												h6.danger.text-bold-600 -30%
+												h4.font-large-2.text-bold-400 $12,536
+												p.blue-grey.lighten-2.mb-0 Per rep
+											.col-md-6.col-12.text-center
+												h6.success.text-bold-600 12%
+												h4.font-large-2.text-bold-400 $18,548
+												p.blue-grey.lighten-2.mb-0 Per team
+					// / Emails Products & Avg Deals
+					// Total earning & Recent Sales
+					.row
+						.col-12.col-md-4
+							.card
+								.card-content
+									.earning-chart.position-relative
+										.chart-title.position-absolute.mt-2.ml-2
+											h1.display-4 $1,596
+											span.text-muted Total Earning
+										canvas#earning-chart.height-450
+										.chart-stats.position-absolute.position-bottom-0.position-right-0.mb-2.mr-3
+											a.btn.round.btn-danger.mr-1.btn-glow(href='#')
+												| Statistics 
+												i.ft-bar-chart
+											span.text-muted
+												| for the 
+												a.danger.darken-2(href='#') last year.
+						#recent-sales.col-12.col-md-8
+							.card
+								.card-header
+									h4.card-title Recent Sales
+									a.heading-elements-toggle
+										i.la.la-ellipsis-v.font-medium-3
+									.heading-elements
+										ul.list-inline.mb-0
+											li
+												a.btn.btn-sm.btn-danger.box-shadow-2.round.btn-min-width.pull-right(href='invoice-summary.html', target='_blank') View all
+								.card-content.mt-1
+									.table-responsive
+										table#recent-orders.table.table-hover.table-xl.mb-0
+											thead
+												tr
+													th.border-top-0 Product
+													th.border-top-0 Customers
+													th.border-top-0 Categories
+													th.border-top-0 Popularity
+													th.border-top-0 Amount
+											tbody
+												tr
+													td.text-truncate iPone X
+													td.text-truncate.p-1
+														ul.list-unstyled.users-list.m-0
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-4.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-5.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Rebecca Jones')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-6.png', alt='Avatar')
+															li.avatar.avatar-sm
+																span.badge.badge-info +8 more
+													td
+														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
+													td
+														.progress.progress-sm.mt-1.mb-0.box-shadow-2
+															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 85%', aria-valuenow='85', aria-valuemin='0', aria-valuemax='100')
+													td.text-truncate $ 1200.00
+												tr
+													td.text-truncate iPad
+													td.text-truncate.p-1
+														ul.list-unstyled.users-list.m-0
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-7.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-8.png', alt='Avatar')
+															li.avatar.avatar-sm
+																span.badge.badge-info +5 more
+													td
+														button.btn.btn-sm.btn-outline-success.round(type='button') Tablet
+													td
+														.progress.progress-sm.mt-1.mb-0.box-shadow-2
+															.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 75%', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100')
+													td.text-truncate $ 1190.00
+												tr
+													td.text-truncate OnePlus
+													td.text-truncate.p-1
+														ul.list-unstyled.users-list.m-0
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-1.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-2.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Rebecca Jones')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-3.png', alt='Avatar')
+															li.avatar.avatar-sm
+																span.badge.badge-info +3 more
+													td
+														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
+													td
+														.progress.progress-sm.mt-1.mb-0.box-shadow-2
+															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 70%', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100')
+													td.text-truncate $ 999.00
+												tr
+													td.text-truncate ZenPad
+													td.text-truncate.p-1
+														ul.list-unstyled.users-list.m-0
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-11.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-12.png', alt='Avatar')
+													td
+														button.btn.btn-sm.btn-outline-success.round(type='button') Tablet
+													td
+														.progress.progress-sm.mt-1.mb-0.box-shadow-2
+															.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 65%', aria-valuenow='65', aria-valuemin='0', aria-valuemax='100')
+													td.text-truncate $ 1150.00
+												tr
+													td.text-truncate Pixel 2
+													td.text-truncate.p-1
+														ul.list-unstyled.users-list.m-0
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-6.png', alt='Avatar')
+															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
+																img.media-object.rounded-circle(src='/assets/images/portrait/small/avatar-s-4.png', alt='Avatar')
+													td
+														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
+													td
+														.progress.progress-sm.mt-1.mb-0.box-shadow-2
+															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 45%', aria-valuenow='45', aria-valuemin='0', aria-valuemax='100')
+													td.text-truncate $ 1180.00
+					// / Total earning & Recent Sales
+					// Analytics map based session
+					.row
+						.col-12
+							.card.box-shadow-0
+								.card-content
+									.row
+										.col-md-9.col-12
+											#world-map-markers.height-450
+										.col-md-3.col-12
+											.card-body.text-center
+												h4.card-title.mb-0 Visitors Sessions
+												.row
+													.col-12
+														p.pb-1 Sessions by Browser
+														#sessions-browser-donut-chart.height-200
+													.col-12
+														.sales.pr-2.pt-2
+															.sales-today.mb-2
+																p.m-0
+																	| Today's
+																	span.success.float-right
+																		i.ft-arrow-up.success
+																		|  6.89%
+																.progress.progress-sm.mt-1.mb-0
+																	.progress-bar.bg-success(role='progressbar', style='width: 70%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+															.sales-yesterday
+																p.m-0
+																	| Yesterday's
+																	span.danger.float-right
+																		i.ft-arrow-down.danger
+																		|  4.18%
+																.progress.progress-sm.mt-1.mb-0
+																	.progress-bar.bg-danger(role='progressbar', style='width: 65%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+					// Analytics map based session
+		// ////////////////////////////////////////////////////////////////////////////
+		.customizer.border-left-blue-grey.border-left-lighten-4.d-none.d-xl-block
+			a.customizer-close(href='#')
+				i.ft-x.font-medium-3
+			a.customizer-toggle.bg-danger.box-shadow-3(href='#')
+				i.ft-settings.font-medium-3.spinner.white
+			.customizer-content.p-2
+				h4.text-uppercase.mb-0 Theme Customizer
+				hr
+				p Customize & Preview in Real Time
+				h5.mt-1.mb-1.text-bold-500 Menu Color Options
+				.form-group
+					// Outline Button group
+					.btn-group.customizer-sidebar-options(role='group', aria-label='Basic example')
+						button.btn.btn-outline-info(type='button', data-sidebar='menu-light') Light Menu
+						button.btn.btn-outline-info(type='button', data-sidebar='menu-dark') Dark Menu
+				hr
+				h5.mt-1.text-bold-500 Layout Options
+				ul.nav.nav-tabs.nav-underline.nav-justified.layout-options
+					li.nav-item
+						a#baseIcon-tab21.nav-link.layouts.active(data-toggle='tab', aria-controls='tabIcon21', href='#tabIcon21', aria-expanded='true') Layouts
+					li.nav-item
+						a#baseIcon-tab22.nav-link.navigation(data-toggle='tab', aria-controls='tabIcon22', href='#tabIcon22', aria-expanded='false') Navigation
+					li.nav-item
+						a#baseIcon-tab23.nav-link.navbar(data-toggle='tab', aria-controls='tabIcon23', href='#tabIcon23', aria-expanded='false') Navbar
+				.tab-content.px-1.pt-1
+					#tabIcon21.tab-pane.active(role='tabpanel', aria-expanded='true', aria-labelledby='baseIcon-tab21')
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#collapsed-sidebar.custom-control-input(type='checkbox', name='collapsed-sidebar')
+								label.custom-control-label(for='collapsed-sidebar') Collapsed Menu
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#fixed-layout.custom-control-input(type='checkbox', name='fixed-layout')
+								label.custom-control-label(for='fixed-layout') Fixed Layout
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#boxed-layout.custom-control-input(type='checkbox', name='boxed-layout')
+								label.custom-control-label(for='boxed-layout') Boxed Layout
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#static-layout.custom-control-input(type='checkbox', name='static-layout')
+								label.custom-control-label(for='static-layout') Static Layout
+					#tabIcon22.tab-pane(aria-labelledby='baseIcon-tab22')
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#native-scroll.custom-control-input(type='checkbox', name='native-scroll')
+								label.custom-control-label(for='native-scroll') Native Scroll
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#right-side-icons.custom-control-input(type='checkbox', name='right-side-icons')
+								label.custom-control-label(for='right-side-icons') Right Side Icons
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#bordered-navigation.custom-control-input(type='checkbox', name='bordered-navigation')
+								label.custom-control-label(for='bordered-navigation') Bordered Navigation
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#flipped-navigation.custom-control-input(type='checkbox', name='flipped-navigation')
+								label.custom-control-label(for='flipped-navigation') Flipped Navigation
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#collapsible-navigation.custom-control-input(type='checkbox', name='collapsible-navigation')
+								label.custom-control-label(for='collapsible-navigation') Collapsible Navigation
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#static-navigation.custom-control-input(type='checkbox', name='static-navigation')
+								label.custom-control-label(for='static-navigation') Static Navigation
+					#tabIcon23.tab-pane(aria-labelledby='baseIcon-tab23')
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#brand-center.custom-control-input(type='checkbox', name='brand-center')
+								label.custom-control-label(for='brand-center') Brand Center
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#navbar-static-top.custom-control-input(type='checkbox', name='navbar-static-top')
+								label.custom-control-label(for='navbar-static-top') Static Top
+				hr
+				h5.mt-1.text-bold-500 Navigation Color Options
+				ul.nav.nav-tabs.nav-underline.nav-justified.color-options
+					li.nav-item
+						a#color-opt-1.nav-link.nav-semi-light.active(data-toggle='tab', aria-controls='clrOpt1', href='#clrOpt1', aria-expanded='false') Semi Light
+					li.nav-item
+						a#color-opt-2.nav-link.nav-semi-dark(data-toggle='tab', aria-controls='clrOpt2', href='#clrOpt2', aria-expanded='false') Semi Dark
+					li.nav-item
+						a#color-opt-3.nav-link.nav-dark(data-toggle='tab', aria-controls='clrOpt3', href='#clrOpt3', aria-expanded='false') Dark
+					li.nav-item
+						a#color-opt-4.nav-link.nav-light(data-toggle='tab', aria-controls='clrOpt4', href='#clrOpt4', aria-expanded='true') Light
+				.tab-content.px-1.pt-1
+					#clrOpt1.tab-pane.active(role='tabpanel', aria-expanded='true', aria-labelledby='color-opt-1')
+						.row
+							.col-6
+								h6 Solid
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#default.custom-control-input.bg-blue-grey(type='radio', name='nav-slight-clr', data-bg='bg-blue-grey')
+										label.custom-control-label(for='default') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#primary.custom-control-input.bg-primary(type='radio', name='nav-slight-clr', data-bg='bg-primary')
+										label.custom-control-label(for='primary') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#danger.custom-control-input.bg-danger(type='radio', name='nav-slight-clr', data-bg='bg-danger')
+										label.custom-control-label(for='danger') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#success.custom-control-input.bg-success(type='radio', name='nav-slight-clr', data-bg='bg-success')
+										label.custom-control-label(for='success') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#blue.custom-control-input.bg-blue(type='radio', name='nav-slight-clr', data-bg='bg-blue')
+										label.custom-control-label(for='blue') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#cyan.custom-control-input.bg-cyan(type='radio', name='nav-slight-clr', data-bg='bg-cyan')
+										label.custom-control-label(for='cyan') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#pink.custom-control-input.bg-pink(type='radio', name='nav-slight-clr', data-bg='bg-pink')
+										label.custom-control-label(for='pink') Pink
+							.col-6
+								h6 Gradient
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-grey-blue.custom-control-input.bg-blue-grey(type='radio', name='nav-slight-clr', checked='', data-bg='bg-gradient-x-grey-blue')
+										label.custom-control-label(for='bg-gradient-x-grey-blue') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-primary.custom-control-input.bg-primary(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-primary')
+										label.custom-control-label(for='bg-gradient-x-primary') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-danger.custom-control-input.bg-danger(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-danger')
+										label.custom-control-label(for='bg-gradient-x-danger') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-success.custom-control-input.bg-success(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-success')
+										label.custom-control-label(for='bg-gradient-x-success') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-blue.custom-control-input.bg-blue(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-blue')
+										label.custom-control-label(for='bg-gradient-x-blue') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-cyan.custom-control-input.bg-cyan(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-cyan')
+										label.custom-control-label(for='bg-gradient-x-cyan') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-pink.custom-control-input.bg-pink(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-pink')
+										label.custom-control-label(for='bg-gradient-x-pink') Pink
+					#clrOpt2.tab-pane(aria-labelledby='color-opt-2')
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-default.custom-control-input.bg-default(type='radio', name='nav-sdark-clr', checked='', data-bg='bg-default')
+								label.custom-control-label(for='opt-default') Default
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-primary.custom-control-input.bg-primary(type='radio', name='nav-sdark-clr', data-bg='bg-primary')
+								label.custom-control-label(for='opt-primary') Primary
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-danger.custom-control-input.bg-danger(type='radio', name='nav-sdark-clr', data-bg='bg-danger')
+								label.custom-control-label(for='opt-danger') Danger
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-success.custom-control-input.bg-success(type='radio', name='nav-sdark-clr', data-bg='bg-success')
+								label.custom-control-label(for='opt-success') Success
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-blue.custom-control-input.bg-blue(type='radio', name='nav-sdark-clr', data-bg='bg-blue')
+								label.custom-control-label(for='opt-blue') Blue
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-cyan.custom-control-input.bg-cyan(type='radio', name='nav-sdark-clr', data-bg='bg-cyan')
+								label.custom-control-label(for='opt-cyan') Cyan
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-pink.custom-control-input.bg-pink(type='radio', name='nav-sdark-clr', data-bg='bg-pink')
+								label.custom-control-label(for='opt-pink') Pink
+					#clrOpt3.tab-pane(aria-labelledby='color-opt-3')
+						.row
+							.col-6
+								h3 Solid
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-blue-grey.custom-control-input.bg-blue-grey(type='radio', name='nav-dark-clr', data-bg='bg-blue-grey')
+										label.custom-control-label(for='solid-blue-grey') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-primary.custom-control-input.bg-primary(type='radio', name='nav-dark-clr', data-bg='bg-primary')
+										label.custom-control-label(for='solid-primary') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-danger.custom-control-input.bg-danger(type='radio', name='nav-dark-clr', data-bg='bg-danger')
+										label.custom-control-label(for='solid-danger') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-success.custom-control-input.bg-success(type='radio', name='nav-dark-clr', data-bg='bg-success')
+										label.custom-control-label(for='solid-success') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-blue.custom-control-input.bg-blue(type='radio', name='nav-dark-clr', data-bg='bg-blue')
+										label.custom-control-label(for='solid-blue') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-cyan.custom-control-input.bg-cyan(type='radio', name='nav-dark-clr', data-bg='bg-cyan')
+										label.custom-control-label(for='solid-cyan') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-pink.custom-control-input.bg-pink(type='radio', name='nav-dark-clr', data-bg='bg-pink')
+										label.custom-control-label(for='solid-pink') Pink
+							.col-6
+								h3 Gradient
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-grey-blue1.custom-control-input.bg-blue-grey(type='radio', name='nav-dark-clr', data-bg='bg-gradient-x-grey-blue')
+										label.custom-control-label(for='bg-gradient-x-grey-blue1') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-primary1.custom-control-input.bg-primary(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-primary')
+										label.custom-control-label(for='bg-gradient-x-primary1') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-danger1.custom-control-input.bg-danger(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-danger')
+										label.custom-control-label(for='bg-gradient-x-danger1') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-success1.custom-control-input.bg-success(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-success')
+										label.custom-control-label(for='bg-gradient-x-success1') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-blue1.custom-control-input.bg-blue(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-blue')
+										label.custom-control-label(for='bg-gradient-x-blue1') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-cyan1.custom-control-input.bg-cyan(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-cyan')
+										label.custom-control-label(for='bg-gradient-x-cyan1') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-pink1.custom-control-input.bg-pink(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-pink')
+										label.custom-control-label(for='bg-gradient-x-pink1') Pink
+					#clrOpt4.tab-pane(aria-labelledby='color-opt-4')
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-blue-grey.custom-control-input.bg-blue-grey(type='radio', name='nav-light-clr', data-bg='bg-blue-grey bg-lighten-4')
+								label.custom-control-label(for='light-blue-grey') Default
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-primary.custom-control-input.bg-primary(type='radio', name='nav-light-clr', data-bg='bg-primary bg-lighten-4')
+								label.custom-control-label(for='light-primary') Primary
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-danger.custom-control-input.bg-danger(type='radio', name='nav-light-clr', data-bg='bg-danger bg-lighten-4')
+								label.custom-control-label(for='light-danger') Danger
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-success.custom-control-input.bg-success(type='radio', name='nav-light-clr', data-bg='bg-success bg-lighten-4')
+								label.custom-control-label(for='light-success') Success
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-blue.custom-control-input.bg-blue(type='radio', name='nav-light-clr', data-bg='bg-blue bg-lighten-4')
+								label.custom-control-label(for='light-blue') Blue
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-cyan.custom-control-input.bg-cyan(type='radio', name='nav-light-clr', data-bg='bg-cyan bg-lighten-4')
+								label.custom-control-label(for='light-cyan') Cyan
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-pink.custom-control-input.bg-pink(type='radio', name='nav-light-clr', data-bg='bg-pink bg-lighten-4')
+								label.custom-control-label(for='light-pink') Pink
+		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with 
+					i.ft-heart.pink
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		// END PAGE LEVEL JS
