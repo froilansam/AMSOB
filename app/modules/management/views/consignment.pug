@@ -424,7 +424,7 @@ html.loading(lang='en', data-textdirection='ltr')
 										p.card-subtitle.line-on-side.text-muted.text-center.font-small-3.mx-2.my-1
 											span OR
 										.text-center
-											button.btn.btn-outline-primary.btn-block
+											button.btn.btn-outline-success.btn-block
 												i.la.la-google-plus-square
 												|  Log in with Google
 										br
@@ -768,12 +768,12 @@ html.loading(lang='en', data-textdirection='ltr')
 				$('#consignmentTable').dataTable();
 				$(document).on('click', '#applyButton', function(){
 					$('#logInModal').modal('toggle');
-							
-									
+					$('#logInModal').on('hidden.bs.modal', function(event){
+						$('#signUpModal').modal('toggle');
+						$('#logInModal').off('hidden.bs.modal')						
+					})	
 				})
-				$('#logInModal').on('hidden.bs.modal', function(event){
-					$('#signUpModal').modal('toggle');						
-				})
+				
 				$('.checkie').iCheck({
 					checkboxClass: 'icheckbox_flat-blue',
 					radioClass: 'iradio_flat-blue'
