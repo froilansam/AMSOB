@@ -41,11 +41,62 @@ html.loading(lang='en', data-textdirection='ltr')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/responsive.dataTables.min.css')
 		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/pickers/daterange/daterange.min.css')
 		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/forms/checkboxes-radios.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/forms/extended/form-extended.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/dropify.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/formValidation.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-callout.min.css')
+
+		
 		// END Page Level CSS
 		// BEGIN Custom CSS
 		link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
 		// END Custom CSS
+		style.
+			.has-error .control-label,
+			.has-error .help-block,
+			.has-error .form-control-feedback {
+				color: #a94442;
+			}
 
+			/* Color of valid field */
+			.has-success .control-label,
+			.has-success .help-block,
+			.has-success .form-control-feedback {
+				color: #3c763d;
+			}
+			.form-group.has-feedback.has-error .form-control,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single:focus{
+				border: 1px solid #a94442 !important;
+			}
+			.form-group.has-feedback.has-success .form-control,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single:focus{
+				border: 1px solid #3c763d !important;
+			}
+
+			.form-control-feedback.fa.fa-check{
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 35px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.form-control-feedback.fa.fa-times {
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 54px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.swal-button.swal-button--DontSave{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Save{
+				background-color: #28D094 !important;
+			}
 		
 
 
@@ -66,7 +117,7 @@ html.loading(lang='en', data-textdirection='ltr')
 								h3.brand-text Modern Admin
 						li.nav-item.d-none.d-md-block.float-right
 							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
-								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right' style='color: blue !important')
 						li.nav-item.d-md-none
 							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
 								i.la.la-ellipsis-v
@@ -139,7 +190,7 @@ html.loading(lang='en', data-textdirection='ltr')
 																	i.la.la-floppy-o
 																	|  Second level, fourth link
 													li
-														a.dropdown-item(href='color-palette-primary.html')
+														a.dropdown-item(href='color-palette-info.html')
 															i.ft-camera
 															|  Color palette system
 													li
@@ -428,7 +479,7 @@ html.loading(lang='en', data-textdirection='ltr')
 											span OR
 										.text-center
 											button.btn.btn-outline-success.btn-block
-												i.la.la-google-plus-square
+												i.la.la-google
 												|  Log in with Google
 										br
 										br
@@ -457,180 +508,336 @@ html.loading(lang='en', data-textdirection='ltr')
 											.card-body
 												form.steps-validation.wizard-circle(action='#')
 													//- Step 1
-													h6 Consignor Profile
+													h6 Profile
 													fieldset
 														.row
 															.col-md-4.col-sm-12
 															.col-md-4.col-sm-12
 																center
 																	fieldset
-																		input#company.checkie(type='radio', name='consignorType', checked='')
-																		span  
-																			label(for='company')  Company &nbsp &nbsp
-																		
-																		input#personal.checkie(type='radio', name='consignorType')
-																		span  
-																			label(for='personal')  Personal
+																		#consignorType
+																			input#company.checkie(type='radio', val='company' name='type')
+																			span  
+																				label(for='company')  Company &nbsp &nbsp
+																			
+																			input#personal.checkie(type='radio', val='personal' name='type'  checked='')
+																			span  
+																				label(for='personal')  Personal
+														#fieldProfile
+															#profilePersonal
+																.row
+																	.col-md-6
+																		.form-group
+																			label(for='firstName')
+																				| First Name:
+																				span.danger *
+																			input#firstName.form-control(type='text', name='firstName' placeholder='E.g. Juana')
+																	.col-md-6
+																		.form-group
+																			label(for='lastName')
+																				| Representative Last Name:
+																				span.danger *
+																			input#lastName.form-control(type='text', name='lastName' placeholder='E.g. dela Cruz')
+																.row
+																	.col-md-12
+																		.form-group
+																			label(for='address')
+																				| Address:
+																				span.danger *
+																			input#address.form-control.required(type='text', name='address' placeholder='E.g. #37 Barangay Sta. Lucia, Pasig City')
+																.row
+																	.col-md-6
+																		.form-group
+																			label(for='phone')
+																				| Phone Number:
+																			input#phone.form-control.phone-formatter(type='text', placeholder='E.g. (+63) 999 999-9999')
+																	.col-md-6
+																		.form-group
+																			label(for='phone')
+																				| Telephone Number:
+																			input#telephone.form-control.phone-formatter(type='text', placeholder='E.g. 999-9999')
 
-														.row
-															.col-md-6
-																.form-group
-																	label(for='firstName3')
-																		| First Name :
-																		span.danger *
-																	input#firstName3.form-control.required(type='text', name='firstName')
-															.col-md-6
-																.form-group
-																	label(for='lastName3')
-																		| Last Name :
-																		span.danger *
-																	input#lastName3.form-control.required(type='text', name='lastName')
-														.row
-															.col-md-6
-																.form-group
-																	label(for='emailAddress5')
-																		| Email Address :
-																		span.danger *
-																	input#emailAddress5.form-control.required(type='email', name='emailAddress')
-															.col-md-6
-																.form-group
-																	label(for='location')
-																		| Select City :
-																		span.danger *
-																	select#location.custom-select.form-control.required(name='location')
-																		option(value='') Select City
-																		option(value='Amsterdam') Amsterdam
-																		option(value='Berlin') Berlin
-																		option(value='Frankfurt') Frankfurt
-														.row
-															.col-md-6
-																.form-group
-																	label(for='phoneNumber3') Phone Number :
-																	input#phoneNumber3.form-control(type='tel')
-															.col-md-6
-																.form-group
-																	label(for='date3') Date of Birth :
-																	input#date3.form-control(type='date')
-														
+																.row
+																	.col-md-12
+																		.form-group
+																			label(for='cpName')
+																				| Check Payable To:
+																				span.danger *
+																			input#cpName.form-control.required(type='text', name='cpName' placeholder='E.g. Juana dela Cruz')
+															#profileCompany(style='display: none')
+																.row
+																	.col-md-12
+																		.form-group
+																			label(for='companyName')
+																				| Company Name:
+																				span.danger *
+																			input#companyName.form-control(type='text', name='companyName' placeholder='E.g. Apptrade Incorporation')
+																.row
+																	.col-md-6
+																		.form-group
+																			label(for='repFirstName')
+																				| Representative First Name:
+																				span.danger *
+																			input#repFirstName.form-control(type='text', name='repFirstName' placeholder='E.g. Juana')
+																	.col-md-6
+																		.form-group
+																			label(for='repLastName')
+																				| Representative Last Name:
+																				span.danger *
+																			input#repLastName.form-control(type='text', name='repLastName' placeholder='E.g. dela Cruz')
+																.row
+																	.col-md-12
+																		.form-group
+																			label(for='companyAddress')
+																				| Company Address:
+																				span.danger *
+																			input#companyAddress.form-control.required(type='text', name='companyAddress' placeholder='E.g. #37 Barangay Sta. Lucia, Pasig City')
+																.row
+																	.col-md-6
+																		.form-group
+																			label(for='phone')
+																				| Phone Number:
+																			input#phone.form-control.phone-formatter(type='text', placeholder='E.g. (+63) 999 999-9999')
+																	.col-md-6
+																		.form-group
+																			label(for='phone')
+																				| Telephone Number:
+																			input#telephone.form-control.phone-formatter(type='text', placeholder='E.g. 999-9999')
+
+																.row
+																	.col-md-12
+																		.form-group
+																			label(for='cpName')
+																				| Check Payable To:
+																				span.danger *
+																			input#cpName.form-control.required(type='text', name='cpName' placeholder='E.g. Juana dela Cruz')
 													//- Step 2
-													h6 Step 2
+													h6 Requirements
 													fieldset
-														.row
-															.col-md-6
-																.form-group
-																	label(for='proposalTitle3')
-																		| Proposal Title :
-																		span.danger *
-																	input#proposalTitle3.form-control.required(type='text', name='proposalTitle')
-																.form-group
-																	label(for='emailAddress6')
-																		| Email Address :
-																		span.danger *
-																	input#emailAddress6.form-control.required(type='email', name='emailAddress')
-																.form-group
-																	label(for='videoUrl3') Video URL :
-																	input#videoUrl3.form-control(type='url', name='videoUrl')
-															.col-md-6
-																.form-group
-																	label(for='jobTitle5')
-																		| Job Title :
-																		span.danger *
-																	input#jobTitle5.form-control.required(type='text', name='jobTitle')
-																.form-group
-																	label(for='shortDescription3') Short Description :
-																	textarea#shortDescription3.form-control(name='shortDescription', rows='4')
+														#requirements
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='personalID') ID:
+																			span.danger *
+																		select#personalID.form-control(name='personalID' style="width: 100%")
+																			option(value="") Select
+																			optgroup(label='Government Issued ID')
+																				option(value='Alien Certificate of Registration (ACR I-Card)') Alien Certificate of Registration (ACR I-Card)
+																				option(value=`Armed Forces of the Philippines (AFP) ID`) Armed Forces of the Philippines (AFP) ID
+																				option(value='Barangay Clearance/Certificate') Barangay Clearance/Certificate
+																				option(value=`Certification from the National Council for the Welfare of Disabled Persons (NCWDP)`) Certification from the National Council for the Welfare of Disabled Persons (NCWDP)
+																				option(value=`Consular ID`) Consular ID
+																				option(value=`Department of Social Welfare and Development (DSWD) ID`) Department of Social Welfare and Development (DSWD) ID
+																				option(value=`Driver's License`) Driver's License
+																				option(value='Government Service Insurance System (GSIS ID)') Government Service Insurance System (GSIS ID)
+																				option(value='Marriage Certificate (PSA Authenticated)') Marriage Certificate (PSA Authenticated)
+																				option(value='National Bureau of Investigation (NBI) Clearance') National Bureau of Investigation (NBI) Clearance
+																				option(value=`OFW ID`) OFW ID
+																				option(value=`Overseas Worker's Welfare Administration (OWWA) ID`) Overseas Worker's Welfare Administration (OWWA) ID
+																				option(value=`PAG-IBIG ID`) PAG-IBIG ID
+																				option(value=`Passport`) Passport
+																				option(value='PhilHealth Identification Card (PIC)') PhilHealth Identification Card (PIC)
+																				option(value=`Philippine Overseas Employment Association (POEA) ID`) Philippine Overseas Employment Association (POEA) ID
+																				option(value='Philippine Statistics Authority (PSA) Birth Certificate') Philippine Statistics Authority (PSA) Birth Certificate
+																				option(value='Philippine National Police (PNP) ID') Philippine National Police (PNP) ID
+																				option(value='Police Clearance') Police Clearance
+																				option(value='Postal ID') Postal ID
+																				option(value=`PRA Special Resident Retiree Visa (SRRV) ID`) PRA Special Resident Retiree Visa (SRRV) ID
+																				option(value='Professional Regulation Commission ID (PRC ID)') Professional Regulation Commission ID (PRC ID)
+																				option(value=`Seaman's Book`) Seaman's Book
+																				option(value=`Senior Citizen's ID Card`) Senior Citizen's ID Card
+																				option(value='Social Security System ID (SSS ID)')  Social Security System ID (SSS ID)
+																				option(value='Tax Identification Number (TIN ID)') Tax Identification Number (TIN ID)
+																				option(value=`Unified Multi-Purpose ID (UMID)`) Unified Multi-Purpose ID (UMID)
+																				option(value=`Voter's ID`) Voter's ID
+																	
+																			
+															.row
+																.col-md-6
+																	.form-group
+																		label(for='idNumber')
+																			| ID Number:
+																			span.danger *
+																		.input-group
+																			.input-group-prepend
+																				span#basic-addon3.input-group-text
+																					i.la.la-user
+																			input#idNumber.form-control(name='idNumber' type='text', placeholder='ID Number')
+																.col-md-6
+																	.form-group
+																		label(for='idBusiness')
+																			| Business Tin Number:
+																			span.danger *
+																		.input-group
+																			.input-group-prepend
+																				span#basic-addon3.input-group-text
+																					i.la.la-building
+																			input#idBusiness.form-control(name='idBusiness' type='text', placeholder='Business Tin Number')
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='proof')
+																			| ID Proof:
+																			span.danger *
+																		#prooffield
+																			input#proof.dropify(type='file', name='proof' accept='image/*' data-height='300' data-allowed-file-extensions="jpeg jpg png")
+														
 													//- Step 3
-													h6 Step 3
+													h6 Credentials
 													fieldset
-														.row
-															.col-md-6
-																.form-group
-																	label(for='eventName3')
-																		| Event Name :
-																		span.danger *
-																	input#eventName3.form-control.required(type='text', name='eventName')
-																.form-group
-																	label(for='eventType3')
-																		| Event Type :
-																		span.danger *
-																	select#eventType3.custom-select.form-control.required(name='eventType')
-																		option(value='Banquet') Banquet
-																		option(value='Fund Raiser') Fund Raiser
-																		option(value='Dinner Party') Dinner Party
-																		option(value='Wedding') Wedding
-																.form-group
-																	label(for='eventLocation3') Event Location :
-																	select#eventLocation3.custom-select.form-control(name='eventLocation')
-																		option(value='') Select City
-																		option(value='Amsterdam') Amsterdam
-																		option(value='Berlin') Berlin
-																		option(value='Frankfurt') Frankfurt
-															.col-md-6
-																.form-group
-																	label(for='eventDate')
-																		| Event Date - Time :
-																		span.danger *
-																	.input-group
-																		input#eventDate.form-control.datetime.required(type='text', name='eventDate')
-																		span.input-group-addon
-																			span.ft-calendar
-																.form-group
-																	label(for='eventStatus3')
-																		| Event Status :
-																		span.danger *
-																	select#eventStatus3.custom-select.form-control.required(name='eventStatus')
-																		option(value='Planning') Planning
-																		option(value='In Progress') In Progress
-																		option(value='Finished') Finished
-																.form-group
-																	label Requirements :
-																	.c-inputs-stacked
-																		.d-inline-block.custom-control.custom-checkbox
-																			input#staffing3.custom-control-input(type='checkbox', name='status3')
-																			label.custom-control-label(for='staffing3') Staffing
-																		.d-inline-block.custom-control.custom-checkbox
-																			input#catering3.custom-control-input(type='checkbox', name='status3')
-																			label.custom-control-label(for='catering3') Catering
+														#credentials
+															.row
+																.col-md-12
+																	.bs-callout-info
+																		.media.align-items-stretch
+																			.media-left.media-middle.bg-info.p-2
+																				i.la.la-info.white.font-medium-5.mt-1
+																			.media-body.p-1
+																				strong Note!
+																				p
+																					| Password link will be sent to your provided e-mail address.
+																					| Hence, you must have an access to your e-mail account.
+															br
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='email')
+																			| E-mail Address:
+																			span.danger *
+																		.input-group
+																			.input-group-prepend
+																				span#basic-addon3.input-group-text
+																					i.la.la-envelope
+																			input#email.form-control(name='email' type='text', placeholder='E-mail Address')
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='username')
+																			| Username:
+																			span.danger *
+																		.input-group
+																			.input-group-prepend
+																				span#basic-addon3.input-group-text
+																					i.la.la-user
+																			input#username.form-control(name='username' type='text', placeholder='Username')
+															//- .row
+															//- 	.col-md-12
+															//- 		.form-group
+															//- 			label(for='password')
+															//- 				| Password
+															//- 				span.danger *
+															//- 			.input-group
+															//- 				.input-group-prepend
+															//- 					span#basic-addon3.input-group-text
+															//- 						i.la.la-key
+															//- 				input#password.form-control(type='password', placeholder='Password')
 													//- Step 4
-													h6 Step 4
+													h6 Agreement
 													fieldset
 														.row
-															.col-md-6
-																.form-group
-																	label(for='meetingName3')
-																		| Name of Meeting :
-																		span.danger *
-																	input#meetingName3.form-control.required(type='text', name='meetingName')
-																.form-group
-																	label(for='meetingLocation3')
-																		| Location :
-																		span.danger *
-																	input#meetingLocation3.form-control.required(type='text', name='meetingLocation')
-																.form-group
-																	label(for='participants3') Names of Participants
-																	textarea#participants3.form-control(name='participants', rows='4')
-															.col-md-6
-																.form-group
-																	label(for='decisions3') Decisions Reached
-																	textarea#decisions3.form-control(name='decisions', rows='4')
-																.form-group
-																	label Agenda Items :
-																	.c-inputs-stacked
-																		.custom-control.custom-checkbox
-																			input#item31.custom-control-input(type='checkbox', name='agenda3')
-																			label.custom-control-label(for='item31') 1st item
-																		.custom-control.custom-checkbox
-																			input#item32.custom-control-input(type='checkbox', name='agenda3')
-																			label.custom-control-label(for='item32') 2nd item
-																		.custom-control.custom-checkbox
-																			input#item33.custom-control-input(type='checkbox', name='agenda3')
-																			label.custom-control-label(for='item33') 3rd item
-																		.custom-control.custom-checkbox
-																			input#item34.custom-control-input(type='checkbox', name='agenda3')
-																			label.custom-control-label(for='item34') 4th item
-																		.custom-control.custom-checkbox
-																			input#item35.custom-control-input(type='checkbox', name='agenda3')
-																			label.custom-control-label(for='item35') 5th item
+															.col-md-12
+																#accordionWrap4(role='tablist', aria-multiselectable='true')
+																	.card.collapse-icon.accordion-icon-rotate
+																		#heading41.card-header.bg-info
+																			a.card-title.lead.white(data-toggle='collapse', data-parent='#accordionWrap4', href='#accordion41', aria-expanded='true', aria-controls='accordion41') Consignor Agreement
+																		#accordion41.border-info.card-collapse.collapse.show(role='tabpanel', aria-labelledby='heading41', aria-expanded='true')
+																			.card-content
+																				.card-body
+																					//- h4.header-title.m-t-0.m-b-30(style="margin-bottom: 15px !important; border-bottom: 3px solid #f3f3f3; padding-bottom: 20px") Consignor Agreement
+																					dl.row
+																						dt.col-sm-3
+																							p CONSIGNMENT:
+																						dd.col-md-9
+																							p(style="text-align: justify") Consignor grants Apptrade the exclusive right to sell a variety of his / her assets (“Assets”), more particularly listed and described in “ASSET LIST” in online auction. Apptrade will decide the online auction at which the assets will be auctioned. Apptrade may divide or combine the assets into one or more separate lots. Apptrade will incur no liability for the postponement of any auction for any reason. Apptrade is not responsible for items left with the Auction House that do not appear on the asset list made out by an Apptrade employee. Any items left with Apptrade that do not appear on the asset list are to be removed from the premises after three (3) auctions or the consignor will be charged storage fees, deductible from future sales proceeds.
+																					dl.row
+																						dt.col-sm-3
+																							p SERVICE FEE:
+																						dd.col-md-9
+																							p(style="text-align: justify") Apptrade will receive 15% of the hammer price.
+																					dl.row
+																						dt.col-sm-3
+																							p RESERVE PRICE: 
+																						dd.col-md-9
+																							p(style="text-align: justify") Reasonable reserve price will be accepted on major or important items only. Reserves are to be agreed upon before the asset will be put in the auction sale and cannot be raised after signing this agreement.
+																					dl.row
+																						dt.col-sm-3
+																							p RESTRICTION: 
+																						dd.col-md-9
+																							p(style="text-align: justify") Upon signing of this agreement, the assets subject of this agreement may not be withdrawn by the consignor. Withdrawing should be in the way of bidding called buy backing, but the item the consignor buy backed will be charged 5% of the hammer price.
+																					dl.row
+																						dt.col-sm-3
+																							p ASSET LIST:
+																						dd.col-md-9
+																							p(style="text-align: justify") Consignor should fill up the Consignment Form completely and clearly to the best of their knowledge as to the true specifications of the items. Condition of the item will be determined by Apptrade.
+																					dl.row
+																						dt.col-sm-3
+																							p MOBILIZATION AND LABOR:
+																						dd.col-sm-9
+																							p(style="text-align: justify") Labor and mobilization shall be at the cost of the owner which can be offset at the gross sale of the consigned items.
+																					dl.row
+																						dt.col-sm-3
+																							p COLLECTION AND REMITTANCE:
+																						dd.col-sm-9
+																							p(style="text-align: justify") Apptrade shall facilitate collection of the Winning Bid Price (“WBP “) and corresponding Buyers Premium (“BP“ ) from the successful bidders within three (3) banking days immediately after the auction. No later than four (4) banking days from collection of the WBP, Apptrade shall remit to the Owner the proceeds of the sale net of the agreed service fee and any other charges together with a full accounting details.
+																					dl.row
+																						dt.col-sm-3
+																							p UNSOLD ASSET:
+																						dd.col-sm-9
+																							p(style="text-align: justify") If a previously unsold item is relisted in a second auction with a reserve, the second attempt will be subject to a 50% decrease on reserved price. If the unsold item is relisted for third auction attempt, it will be subjected to No Reserve Terms.
+																					dl.row
+																						dt.col-sm-3
+																							p WARRANTIES AND INDEMNIFICATION BY CONSIGNOR:
+																						dd.col-sm-9
+																							p(style="text-align: justify") (A) Consignor represents and warrants that he/she has the legal right to consign the assets for sale in the auction. (B) Consignor agrees to indemnify Apptrade against all claims and expenses, including reasonable attorney’s fee arising from the actual or breach of any of the Consignors warranties or representations herein, which shall survive the completion of a sale of the assets. 
+																					dl.row
+																						dt.col-sm-3
+																							p NON-PAYMENT BY PURCHASER:
+																						dd.col-sm-9
+																							p(style="text-align: justify") Apptrade is not obliged to legally enforce payment by any buyer of the assets. If Apptrade is not paid by the purchaser within 3 days of sale, Apptrade may, in its sole discretion, cancel the sale and resell the assets.
+																					dl.row
+																						dt.col-sm-3
+																							p MISCELLANEOUS:
+																						dd.col-sm-9
+																							p(style="text-align: justify") This agreement is binding upon the Consignor’s heirs, beneficiaries, executors, et al; is assignable only with Apptrade consent; may be modified only in writing signed by Apptrade and the Consignor.
+																					dl.row
+																						dt.col-sm-3
+																							p CONTRACT TERM:
+																						dd.col-sm-9
+																							p(style="text-align: justify") This contract will continue in force until notice to cancel is given by either party.
+																					dl.row
+																						dt.col-sm-3
+																							p VENUE OF LEGAL ACTION:
+																						dd.col-sm-9
+																							p(style="text-align: justify") Should it become necessary for either party to bring an action in court for the enforcement of the provisions of this contract, venue of such action shall be the proper courts of Paranaque City.
+																					dl.row
+																						dt.col-sm-3
+																							p THIRD-PARTY LIABILITY:
+																						dd.col-sm-9
+																							p(style="text-align: justify") The Consignor agrees to hold Apptrade and/or its representative free and harmless from and against any and all liability to any third person arising from any act or omission of the Consignor and or its employees or agents.
+																					dl.row
+																						dt.col-sm-3
+																							p LOSS AND DAMAGED ASSET:
+																						dd.col-sm-9
+																							p(style="text-align: justify") Reserved Loss or Damaged asset will be paid with its reserved price by the company. On the other hand, No Reserved Loss or Damaged Item will be defaulted to No Reserved Price worth Php. 100.00.
+																					dl.row
+																						dt.col-sm-3
+																							p INTEGRATION:
+																						dd.col-sm-9
+																							p(style="text-align: justify") This contract with annexes embodied sets forth the entire agreement and understanding of the parties and supersedes all prior oral and written agreements, arrangements and understandings relating to the subject matter hereof.
+														.row
+															.col-md-12
+																.form-group.row.clearfix
+																	.col-lg-12
+																		.checkbox.checkbox-info
+																			input#agree(type='checkbox' name='agree')
+																			label(for='agree')
+																				|  &nbsp I agree with the Consignor Agreement.																		
+																		#errormessage(style='color: red')
+													
+													
+
+
 
 							
 				//- Sign Up Modal End
@@ -656,7 +863,7 @@ html.loading(lang='en', data-textdirection='ltr')
 											a.heading-elements-toggle
 												i.la.la-ellipsis-h.font-medium-3
 											.heading-elements
-												button.btn.btn-block.btn-primary.btn-sm(type='button', data-toggle='modal', data-target='#logInModal')
+												button.btn.btn-block.btn-info.btn-sm(type='button', data-toggle='modal', data-target='#logInModal')
 													i.ft-plus.white
 													|  Create Consignment
 									.card-content
@@ -682,7 +889,7 @@ html.loading(lang='en', data-textdirection='ltr')
 																span.btn.btn-sm.btn-outline-success.round Completed
 															td
 																span.dropdown
-																	button#btnSearchDrop2.btn.btn-primary.dropdown-toggle.dropdown-menu-right(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+																	button#btnSearchDrop2.btn.btn-info.dropdown-toggle.dropdown-menu-right(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
 																		i.ft-settings
 																	span.dropdown-menu.mt-1.dropdown-menu-right(aria-labelledby='btnSearchDrop2')
 																		a.edit.dropdown-item
@@ -697,10 +904,10 @@ html.loading(lang='en', data-textdirection='ltr')
 															td December 11th, 2018
 															td December 13th, 2018
 															td
-																span.btn.btn-sm.btn-outline-primary.round On-going
+																span.btn.btn-sm.btn-outline-info.round On-going
 															td
 																span.dropdown
-																	button#btnSearchDrop2.btn.btn-primary.dropdown-toggle.dropdown-menu-right(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+																	button#btnSearchDrop2.btn.btn-info.dropdown-toggle.dropdown-menu-right(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
 																		i.ft-settings
 																	span.dropdown-menu.mt-1.dropdown-menu-right(aria-labelledby='btnSearchDrop2')
 																		a.edit.dropdown-item
@@ -729,12 +936,19 @@ html.loading(lang='en', data-textdirection='ltr')
 				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
 					| Hand-crafted & Made with dd
 					i.ft-heart.pink
+		input#errorfieldProfileCompany(type='text' hidden)
+		input#errorfieldProfilePersonal(type='text' hidden)
+		input#errorfieldReq(type='text' hidden)
+		input#errorfieldCred(type='text' hidden)
+		#agreement
+			input#errorfieldAgree(type='hidden' name='errorfieldAgree' value='')
+						
 		//- new
 		// BEGIN VENDOR JS
 		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
 		// BEGIN VENDOR JS
 		// BEGIN PAGE VENDOR JS
-		script(src='/assets/vendors/js/extensions/jquery.steps.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/extensions/jquery.steps.js', type='text/javascript')
 		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
 		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
@@ -742,6 +956,13 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
 		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
 		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/typeahead.bundle.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/bloodhound.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/handlebars.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/inputmask/jquery.inputmask.bundle.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/formatter/formatter.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/maxlength/bootstrap-maxlength.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/card/jquery.card.js', type='text/javascript')
 		// END PAGE VENDOR JS
 		// BEGIN MODERN JS
 		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
@@ -749,6 +970,10 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
 		// END MODERN JS
 		// BEGIN PAGE LEVEL JS
+		script(src='/assets/vendors/js/dropify.js', type='text/javascript')
+		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
+		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
 		script(src='/assets/js/scripts/forms/select/form-select2.min.js', type='text/javascript')
 		script(src='/assets/js/scripts/modal/components-modal.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
@@ -759,16 +984,318 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/js/scripts/forms/checkbox-radio.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/pickers/dateTime/moment-with-locales.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/pickers/daterange/daterangepicker.js', type='text/javascript')
-		script(src='/assets/vendors/js/forms/validation/jquery.validate.min.js', type='text/javascript')
+		//- script(src='/assets/vendors/js/forms/validation/jquery.validate.min.js', type='text/javascript')
 		script(src='/assets/js/scripts/forms/wizard-steps.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
-		// END PAGE LEVEL JS
+		script(src='/assets/js/scripts/forms/extended/form-typeahead.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/extended/form-inputmask.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/forms/extended/form-formatter.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/extended/form-maxlength.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/extended/form-card.min.js', type='text/javascript')
+		script.
+			function hiddenModal(){
+				$('#signUpModal').on('hide.bs.modal', function(event){
+					event.preventDefault()
+					swal({
+						title: 'You are about to leave application wizard.',
+						text: 'Do you want to save your information for draft?',
+						icon: 'warning',
+						buttons: {
+							Cancel: 'Cancel',
+							DontSave: `Don't Save`,
+							Save: 'Save',
+						}
+					}).then((value) => {
+						if(value == 'Save'){
+							$('#signUpModal').off('hide.bs.modal').modal('toggle')
+							hiddenModal();
+						}
+						else if(value == 'DontSave'){
+							//Agreement Unchecking Reset
+							$('#agree').iCheck('uncheck');
+
+							//Reset the form Wizard
+							$('.steps-validation.wizard-circle').steps('reset');
+
+							//Resetting Form Validation (destroy technique)
+							$('#profileCompany').data('formValidation').destroy()
+							$('#profilePersonal').data('formValidation').destroy()
+							$('#requirements').data('formValidation').destroy()
+							$('#credentials').data('formValidation').destroy()
+							$('#agreement').data('formValidation').destroy()
+							signupValidation() //Initialization again
+
+							//Resetting the Form
+							$(this).find(':input').val('');
+							$("#personalID").val("");
+							$("#personalID").trigger('change');
+							$('.dropify-clear').trigger('click');
+							$('#signUpModal').off('hide.bs.modal').modal('toggle')
+							hiddenModal();						
+						}
+					})
+					
+										
+													
+				})
+			}
+			function signupValidation(){
+				$('#profileCompany').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						companyName: {
+							validators: {
+								notEmpty: {
+									message: 'What is your company name?'
+								},
+							},
+							
+						},
+						
+						repFirstName: {
+							validators: {
+								notEmpty: {
+									message: `What is the first name of the company's representative?`
+								},
+							}
+						},
+
+						repLastName: {
+							validators: {
+								notEmpty: {
+									message: `What is the first name of the company's representative?`
+								},
+							}
+						},
+						
+						companyAddress: {
+							validators: {
+								notEmpty: {
+									message: 'What is the address of the company?'
+								},
+							}
+						},
+
+						cpName: {
+							validators:{
+								notEmpty:{
+									message: 'Whose name should we issue the check payable once all consignments are finished?'
+								}
+							}
+						}				
+					}
+				})
+				.on('err.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldProfileCompany').val(invalidFields)
+				})
+				.on('success.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldProfileCompany').val(invalidFields)
+				});
+
+				$('#profilePersonal').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						
+						firstName: {
+							validators: {
+								notEmpty: {
+									message: `What is the first name of the company's representative?`
+								},
+							}
+						},
+
+						lastName: {
+							validators: {
+								notEmpty: {
+									message: `What is the first name of the company's representative?`
+								},
+							}
+						},
+						
+						address: {
+							validators: {
+								notEmpty: {
+									message: 'What is the address of the company?'
+								},
+							}
+						},
+
+						cpName: {
+							validators:{
+								notEmpty:{
+									message: 'Whose name should we issue the check payable once all consignments are finished?'
+								}
+							}
+						}				
+					}
+				})
+				.on('err.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldProfilePersonal').val(invalidFields)
+				})
+				.on('success.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldProfilePersonal').val(invalidFields)
+				});
+
+				$('#requirements').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						personalID: {
+							validators: {
+								notEmpty: {
+									message: 'Choose what type of ID you are presenting. This ID will be also use for verification for claiming check payable.'
+								},
+							}
+						},
+						
+						idNumber: {
+							validators: {
+								notEmpty: {
+									message: `Enter ID Number on ID Presented`
+								},
+							}
+						},
+
+						idBusiness: {
+							validators: {
+								notEmpty: {
+									message: `What is your business TIN number?`
+								},
+							}
+						},
+						
+						proof: {
+							validators: {
+								notEmpty: {
+									message: 'Please upload a photo of your ID for verification.'
+								},
+							}
+						},
+		
+					}
+				})
+				.on('err.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldReq').val(invalidFields)
+				})
+				.on('success.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldReq').val(invalidFields)
+				});
+
+				$('#credentials').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						email: {
+							validators: {
+								notEmpty: {
+									message: 'Enter your e-mail address'
+								},
+								emailAddress: {
+									message: 'This is not a valid e-mail address.'
+								},
+							}
+						},
+						username: {
+							validators: {
+								//- remote: {
+								//- 	url: '/api/checkAccounts/username',
+								//- 	message: 'The username is not available',
+								//- 	validKey: 'username',
+								//- 	type: 'POST'
+								//- },
+								notEmpty: {
+									message: `Enter your desired username. You'll use this to sign in to your account.`									
+								},
+								stringLength: {
+									min: 6,
+									max: 30,
+									message: 'The username must be minimum of 6 characters and maximum of 30 characters.'
+								},
+								regexp: {
+									regexp: /^[a-zA-Z0-9_\.]+$/,
+									message: 'The username can only consist of alphabetical, number, dot and underscore'
+								},
+							}
+						},
+
+						
+		
+					}
+				})
+				.on('err.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldCred').val(invalidFields)
+				})
+				.on('success.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldCred').val(invalidFields)
+				});
+
+				$('#agreement').formValidation({
+					framework: 'bootstrap',
+					err: {
+						container: '#errormessage'
+					},
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						errorfieldAgree: {
+							excluded: false,
+							validators: {
+								notEmpty:{
+									message: 'You must agree first to consignor agreement.',
+								}
+							}
+						},
+					}
+				})
+			}
+		
+
 
 		
 		
 		script.
 			$(document).ready(function(){
+				signupValidation()
 				$('#consignmentTable').dataTable();
+
+
 				$(document).on('click', '#applyButton', function(){
 					$('#logInModal').modal('toggle');
 					$('#logInModal').on('hidden.bs.modal', function(event){
@@ -776,10 +1303,83 @@ html.loading(lang='en', data-textdirection='ltr')
 						$('#logInModal').off('hidden.bs.modal')						
 					})	
 				})
+
+				$(document).on('click', '.dropify-clear', function(){
+					$('#requirements').formValidation('revalidateField', 'proof');
+				})
+
+
 				
+				
+				//- iCheck JS
 				$('.checkie').iCheck({
 					checkboxClass: 'icheckbox_flat-blue',
 					radioClass: 'iradio_flat-blue'
 				});
+				$('#agree').iCheck({
+					checkboxClass: 'icheckbox_flat-blue',
+				});
+
+				$('#agree').on('ifChecked', function(event){
+					$('#agreement').find('#errorfieldAgree').val('yes').end();
+					$('#agreement').formValidation('revalidateField', 'errorfieldAgree')
+				});
+
+				$('#agree').on('ifUnchecked', function(event){
+					$('#agreement').find('#errorfieldAgree').val('').end();
+					$('#agreement').formValidation('revalidateField', 'errorfieldAgree')
+				});
+
+				//Formatter JS
+				$('#phone').formatter({pattern:"(+63) {{999}} {{999}}-{{9999}}"})
+				$('#telephone').formatter({pattern:"{{999}}-{{9999}}"})
+
+				$('#personalID').select2({
+					width: 'resolve',
+				});
+
+				//Wizard Reset everytime modal closes
+				
+
+				
+
+				//dropify
+				$('#proof').dropify({
+					allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+					messages: {
+						'default': 'Drag and drop an image here or click',
+						'replace': 'Drag and drop or click to replace',
+						'remove': 'Remove',
+						'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+					},
+					error: {
+						'fileSize': 'The file size is too big (1M max).',
+						'fileFormat': 'The file format is not allowed ({{ value }} only).'
+					}
+				});
+				
+				hiddenModal();
+
+				$('.checkie').on('ifClicked', function(event){
+					if($(this).attr("val") == 'company'){
+						$('#profilePersonal').fadeOut(500, function(){
+							$('#profileCompany').fadeIn(500)
+						})
+					}
+					if($(this).attr("val") == 'personal'){
+						$('#profileCompany').fadeOut(500, function(){
+							$('#profilePersonal').fadeIn(500)
+						})
+					}
+				})
+
+				
 			})
+
+
 		// END PAGE LEVEL JS
+
+
+
+	
+		

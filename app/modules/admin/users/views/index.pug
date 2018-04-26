@@ -1,0 +1,30 @@
+extends ../../../../templates/master
+
+block content
+    h1.title
+        span.fa.fa-users
+        | &nbsp; Users
+    
+    a.button.is-primary.pull-right(href="/admin/users/new")
+        span.fa.fa-plus
+        | &nbsp; Add User
+    table.table.is-fullwidth
+        thead
+            tr
+                th ID
+                th Name
+                th Age
+                th E-mail
+                th Actions
+        
+        tbody
+            each user in users
+                tr
+                    td= user.id
+                    td: a(href=`/admin/users/${user.id}`)= user.name
+                    td= user.age
+                    td= user.email
+                    td
+                        a(href=`/admin/users/${user.id}`): span.fa.fa-edit
+                        | &nbsp;
+                        a(href=`/admin/users/${user.id}/remove`): span.fa.fa-remove
