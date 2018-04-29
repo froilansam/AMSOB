@@ -406,11 +406,11 @@ html.loading(lang='en', data-textdirection='ltr')
 												.col-md-4.col-sm-12
 													center
 														fieldset
-															input#live.checkie(type='radio', name='consignorType', value='1')
+															input#live.checkie(type='radio', name='auctionType', value='1')
 															span  
 																label(for='live')  Live &nbsp &nbsp
 															
-															input#online.checkie(type='radio', name='consignorType' value='2')
+															input#online.checkie(type='radio', name='auctionType' value='2')
 															span  
 																label(for='online')  Online
 										fieldset
@@ -441,12 +441,12 @@ html.loading(lang='en', data-textdirection='ltr')
 													.form-group
 														label(for='hourDuration') Hour Duration:
 														.text-center
-															input#hourDuration.knob.overload-draw(type='text', value='1', data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
+															input#hourDuration.knob.overload-draw(type='text', value='1', name='hours', data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
 												.col-md-6
 													.form-group
 														label(for='hourDuration') Minute Duration:
 														.text-center
-															input#minuteDuration.knob.overload-draw(type='text', value='1', data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
+															input#minuteDuration.knob.overload-draw(type='text', value='1',name='minutes' data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
 
 														
 										.table-responsive
@@ -594,16 +594,4 @@ html.loading(lang='en', data-textdirection='ltr')
 				}).slider("pips",{
 					rest:'label'
 				})
-				
-			
-
-				//- var hourSlider = $('#hourSlider').get(0)
-				//- noUiSlider.create(hourSlider, {
-				//- 	start:0,
-				//- 	step: 1,
-				//- 	range: {
-				//- 		min: 1,
-				//- 		max: 23
-				//- 	}
-				//- })
 			});
