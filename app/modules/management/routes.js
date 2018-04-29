@@ -43,6 +43,15 @@ router.get('/auction', (req, res) => {
 
 router.post('/createAuction', (req, res) => {
 	console.log(req.body);
+	var queryString = `INSERT INTO tbl_auction(jsonDuration, booAuctionType) VALUES (?, 0)`;
+	var jsonInsert = JSON.stringify(req.body);
+	console.log(jsonInsert);
+
+	db.query(queryString,[jsonInsert], (err, results, fields) =>{
+		if(err) console.log(err)
+
+		res.redirect('/auction');
+	});
 });
 
 //Router for 404 Page
