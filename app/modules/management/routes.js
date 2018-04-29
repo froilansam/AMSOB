@@ -41,6 +41,10 @@ router.get('/auction', (req, res) => {
 	});
 });
 
+router.post('/createAuction', (req, res) => {
+	console.log(req.body);
+});
+
 //Router for 404 Page
 router.get('*', (req, res) => {
 	console.log('404 Page')
