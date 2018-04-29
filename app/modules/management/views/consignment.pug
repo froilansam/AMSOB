@@ -506,7 +506,7 @@ html.loading(lang='en', data-textdirection='ltr')
 									.col-12
 										.card-content.collapse.show
 											.card-body
-												form.steps-validation.wizard-circle(action='#')
+												form.steps-validation.wizard-circle(action='/consignment', method='post' enctype="multipart/form-data")
 													//- Step 1
 													h6 Profile
 													fieldset
@@ -516,15 +516,15 @@ html.loading(lang='en', data-textdirection='ltr')
 																center
 																	fieldset
 																		#consignorType
-																			input#company.checkie(type='radio', val='company' name='type')
+																			input#company.checkie(type='radio', val='company' name='type' checked='')
 																			span  
 																				label(for='company')  Company &nbsp &nbsp
 																			
-																			input#personal.checkie(type='radio', val='personal' name='type'  checked='')
+																			input#personal.checkie(type='radio', val='personal' name='type')
 																			span  
 																				label(for='personal')  Personal
 														#fieldProfile
-															#profilePersonal
+															#profilePersonal(style='display: none')
 																.row
 																	.col-md-6
 																		.form-group
@@ -535,7 +535,7 @@ html.loading(lang='en', data-textdirection='ltr')
 																	.col-md-6
 																		.form-group
 																			label(for='lastName')
-																				| Representative Last Name:
+																				| Last Name:
 																				span.danger *
 																			input#lastName.form-control(type='text', name='lastName' placeholder='E.g. dela Cruz')
 																.row
@@ -550,12 +550,12 @@ html.loading(lang='en', data-textdirection='ltr')
 																		.form-group
 																			label(for='phone')
 																				| Phone Number:
-																			input#phone.form-control.phone-formatter(type='text', placeholder='E.g. (+63) 999 999-9999')
+																			input.phone.form-control.phone-formatter(type='text', name='phone' placeholder='E.g. (+63) 999 999-9999')
 																	.col-md-6
 																		.form-group
 																			label(for='phone')
 																				| Telephone Number:
-																			input#telephone.form-control.phone-formatter(type='text', placeholder='E.g. 999-9999')
+																			input.telephone.form-control.phone-formatter(type='text', name='telephone' placeholder='E.g. 999-9999')
 
 																.row
 																	.col-md-12
@@ -563,8 +563,8 @@ html.loading(lang='en', data-textdirection='ltr')
 																			label(for='cpName')
 																				| Check Payable To:
 																				span.danger *
-																			input#cpName.form-control.required(type='text', name='cpName' placeholder='E.g. Juana dela Cruz')
-															#profileCompany(style='display: none')
+																			input#cpNameCompany.form-control.required(type='text', name='cpName' placeholder='E.g. Juana dela Cruz')
+															#profileCompany
 																.row
 																	.col-md-12
 																		.form-group
@@ -597,12 +597,12 @@ html.loading(lang='en', data-textdirection='ltr')
 																		.form-group
 																			label(for='phone')
 																				| Phone Number:
-																			input#phone.form-control.phone-formatter(type='text', placeholder='E.g. (+63) 999 999-9999')
+																			input.phone.form-control.phone-formatter(type='text', name='phone' placeholder='E.g. (+63) 999 999-9999')
 																	.col-md-6
 																		.form-group
 																			label(for='phone')
 																				| Telephone Number:
-																			input#telephone.form-control.phone-formatter(type='text', placeholder='E.g. 999-9999')
+																			input.telephone.form-control.phone-formatter(type='text', name='telephone' placeholder='E.g. 999-9999')
 
 																.row
 																	.col-md-12
@@ -610,7 +610,7 @@ html.loading(lang='en', data-textdirection='ltr')
 																			label(for='cpName')
 																				| Check Payable To:
 																				span.danger *
-																			input#cpName.form-control.required(type='text', name='cpName' placeholder='E.g. Juana dela Cruz')
+																			input#cpNamePersonal.form-control.required(type='text', name='cpName' placeholder='E.g. Juana dela Cruz')
 													//- Step 2
 													h6 Requirements
 													fieldset
@@ -651,10 +651,8 @@ html.loading(lang='en', data-textdirection='ltr')
 																				option(value='Tax Identification Number (TIN ID)') Tax Identification Number (TIN ID)
 																				option(value=`Unified Multi-Purpose ID (UMID)`) Unified Multi-Purpose ID (UMID)
 																				option(value=`Voter's ID`) Voter's ID
-																	
-																			
 															.row
-																.col-md-6
+																#idNumberField.col-md-6
 																	.form-group
 																		label(for='idNumber')
 																			| ID Number:
@@ -664,7 +662,7 @@ html.loading(lang='en', data-textdirection='ltr')
 																				span#basic-addon3.input-group-text
 																					i.la.la-user
 																			input#idNumber.form-control(name='idNumber' type='text', placeholder='ID Number')
-																.col-md-6
+																#idBusinessField.col-md-6
 																	.form-group
 																		label(for='idBusiness')
 																			| Business Tin Number:
@@ -992,7 +990,234 @@ html.loading(lang='en', data-textdirection='ltr')
 		//- script(src='/assets/js/scripts/forms/extended/form-formatter.min.js', type='text/javascript')
 		script(src='/assets/js/scripts/forms/extended/form-maxlength.min.js', type='text/javascript')
 		script(src='/assets/js/scripts/forms/extended/form-card.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/jquery.form.js', type='text/javascript')
 		script.
+			$(document).ready(function(){
+				$('a[href="#finish"]').on('click', function(){//Submit Event
+					$('#agreement').data('formValidation').validate();//Check if no error validation
+					if($('#errorfieldAgree').val() == 'yes'){
+						var contype = $('.checkie:checked').attr('val');//Checking which radio button is checked
+						var formData = new FormData(); //FormData (Pre-requisite: Jquery Form and Multer) use for File Ajax
+											
+						if(contype == 'company'){
+							$('#profileCompany input').each(function(index, obj){
+								formData.append(obj.name, obj.value);
+							});  
+							formData.append('IDPicture', $('#proof')[0].files[0]);
+							formData.append('IDType', $('#personalID').val());
+							formData.append('TINNumber', $('#idBusiness').val());
+							formData.append('IDNumber', $('#idNumber').val());
+							formData.append('consignorType', 0);							
+							$('#credentials input').each(function(index, obj){
+								formData.append(obj.name, obj.value);
+							});
+
+							$.ajax({
+								type: "POST",
+								url: "/consignment",
+								data: formData,
+								processData: false,
+								contentType: false,
+								success: function(data){
+									if(data == 'success'){
+										swal({
+											title: 'Application Successful',
+											icon: 'success',
+											buttons: {
+												Okay: 'Okay',
+											}
+										}).then((value) => {
+											
+											$('#agree').iCheck('uncheck');
+											//Reset the form Wizard
+											$('.steps-validation.wizard-circle').steps('reset');
+
+
+											//Resetting the Form
+											$('#signUpModal').find(':input').val('');
+											$("#personalID").val("");
+											$("#personalID").trigger('change');
+											$('.dropify-clear').trigger('click');
+											$('#signUpModal').off('hide.bs.modal').modal('toggle')
+											//Resetting Form Validation (destroy technique)
+											$('#profileCompany').data('formValidation').destroy()
+											$('#profilePersonal').data('formValidation').destroy()
+											$('#requirements').data('formValidation').destroy()
+											$('#credentials').data('formValidation').destroy()
+											$('#agreement').data('formValidation').destroy()
+											signupValidation() //Initialization again
+											hiddenModal();
+										})
+									}
+								},
+								error: function (e) {
+									console.log("some error", e);
+								}
+							});// Ajax
+						}//If Condition Company
+						if(contype == 'personal'){
+							$('#profilePersonal input').each(function(index, obj){
+								formData.append(obj.name, obj.value);
+							});  
+							formData.append('IDPicture', $('#proof')[0].files[0]);
+							formData.append('IDType', $('#personalID').val());
+							formData.append('IDNumber', $('#idNumber').val());
+							formData.append('consignorType', 1);
+							$('#credentials input').each(function(index, obj){
+								formData.append(obj.name, obj.value);
+							});
+
+							$.ajax({
+								type: "POST",
+								url: "/consignment",
+								data: formData,
+								processData: false,
+								contentType: false,
+								success: function(data){
+									if(data == 'success'){
+										swal({
+											title: 'Application Successful',
+											icon: 'success',
+											buttons: {
+												Okay: 'Okay',
+											}
+										}).then((value) => {
+											
+											$('#agree').iCheck('uncheck');
+											//Reset the form Wizard
+											$('.steps-validation.wizard-circle').steps('reset');
+
+
+											//Resetting the Form
+											$('#signUpModal').find(':input').val('');
+											$("#personalID").val("");
+											$("#personalID").trigger('change');
+											$('.dropify-clear').trigger('click');
+											$('#signUpModal').off('hide.bs.modal').modal('toggle')
+											//Resetting Form Validation (destroy technique)
+											$('#profileCompany').data('formValidation').destroy()
+											$('#profilePersonal').data('formValidation').destroy()
+											$('#requirements').data('formValidation').destroy()
+											$('#credentials').data('formValidation').destroy()
+											$('#agreement').data('formValidation').destroy()
+											signupValidation() //Initialization again
+											hiddenModal();
+										})
+									}
+								},
+								error: function (e) {
+									console.log("some error", e);
+								}
+							});// Ajax
+						}//If Condition Personal
+					}//if Condition
+				})//Click Event
+			})//Document Ready Function
+
+		script.
+			function requirementValidation(){
+				var contype = $('.checkie:checked').attr('val');
+				if(contype == 'company'){
+					$('#requirements').formValidation({
+						framework: 'bootstrap',
+						icon: {
+							valid: 'fa fa-check',
+							invalid: 'fa fa-times',
+							validating: 'fa fa-spinner'
+						},
+						fields: {
+							personalID: {
+								validators: {
+									notEmpty: {
+										message: 'Choose what type of ID you are presenting. This ID will be also use for verification for claiming check payable.'
+									},
+								}
+							},
+							
+							idNumber: {
+								validators: {
+									notEmpty: {
+										message: `Enter ID Number on ID Presented`
+									},
+								}
+							},
+
+							idBusiness: {
+								validators: {
+									notEmpty: {
+										message: `What is your business TIN number?`
+									},
+								}
+							},
+							
+							proof: {
+								validators: {
+									notEmpty: {
+										message: 'Please upload a photo of your ID for verification.'
+									},
+								}
+							},
+			
+						}
+					})
+					.on('err.field.fv', function(e, data) {
+						// Get the first invalid field
+						var invalidFields = data.fv.getInvalidFields().length;
+						$('#errorfieldReq').val(invalidFields)
+					})
+					.on('success.field.fv', function(e, data) {
+						// Get the first invalid field
+						var invalidFields = data.fv.getInvalidFields().length;
+						$('#errorfieldReq').val(invalidFields)
+					});
+				}
+				else if(contype == 'personal'){
+					$('#requirements').formValidation({
+						framework: 'bootstrap',
+						icon: {
+							valid: 'fa fa-check',
+							invalid: 'fa fa-times',
+							validating: 'fa fa-spinner'
+						},
+						fields: {
+							personalID: {
+								validators: {
+									notEmpty: {
+										message: 'Choose what type of ID you are presenting. This ID will be also use for verification for claiming check payable.'
+									},
+								}
+							},
+							
+							idNumber: {
+								validators: {
+									notEmpty: {
+										message: `Enter ID Number on ID Presented`
+									},
+								}
+							},
+							
+							proof: {
+								validators: {
+									notEmpty: {
+										message: 'Please upload a photo of your ID for verification.'
+									},
+								}
+							},
+			
+						}
+					})
+					.on('err.field.fv', function(e, data) {
+						// Get the first invalid field
+						var invalidFields = data.fv.getInvalidFields().length;
+						$('#errorfieldReq').val(invalidFields)
+					})
+					.on('success.field.fv', function(e, data) {
+						// Get the first invalid field
+						var invalidFields = data.fv.getInvalidFields().length;
+						$('#errorfieldReq').val(invalidFields)
+					});
+				}
+			}
 			function hiddenModal(){
 				$('#signUpModal').on('hide.bs.modal', function(event){
 					event.preventDefault()
@@ -1017,13 +1242,6 @@ html.loading(lang='en', data-textdirection='ltr')
 							//Reset the form Wizard
 							$('.steps-validation.wizard-circle').steps('reset');
 
-							//Resetting Form Validation (destroy technique)
-							$('#profileCompany').data('formValidation').destroy()
-							$('#profilePersonal').data('formValidation').destroy()
-							$('#requirements').data('formValidation').destroy()
-							$('#credentials').data('formValidation').destroy()
-							$('#agreement').data('formValidation').destroy()
-							signupValidation() //Initialization again
 
 							//Resetting the Form
 							$(this).find(':input').val('');
@@ -1031,7 +1249,16 @@ html.loading(lang='en', data-textdirection='ltr')
 							$("#personalID").trigger('change');
 							$('.dropify-clear').trigger('click');
 							$('#signUpModal').off('hide.bs.modal').modal('toggle')
-							hiddenModal();						
+													
+							//Resetting Form Validation (destroy technique)
+							$('#profileCompany').data('formValidation').destroy()
+							$('#profilePersonal').data('formValidation').destroy()
+							$('#requirements').data('formValidation').destroy()
+							$('#credentials').data('formValidation').destroy()
+							$('#agreement').data('formValidation').destroy()
+							signupValidation() //Initialization again
+							
+							hiddenModal();
 						}
 					})
 					
@@ -1113,7 +1340,7 @@ html.loading(lang='en', data-textdirection='ltr')
 						firstName: {
 							validators: {
 								notEmpty: {
-									message: `What is the first name of the company's representative?`
+									message: `What is the consignor's first name?`
 								},
 							}
 						},
@@ -1121,7 +1348,7 @@ html.loading(lang='en', data-textdirection='ltr')
 						lastName: {
 							validators: {
 								notEmpty: {
-									message: `What is the first name of the company's representative?`
+									message: `What is the consignor's first name?`
 								},
 							}
 						},
@@ -1129,7 +1356,7 @@ html.loading(lang='en', data-textdirection='ltr')
 						address: {
 							validators: {
 								notEmpty: {
-									message: 'What is the address of the company?'
+									message: `What is the consignor's address?`
 								},
 							}
 						},
@@ -1154,58 +1381,7 @@ html.loading(lang='en', data-textdirection='ltr')
 					$('#errorfieldProfilePersonal').val(invalidFields)
 				});
 
-				$('#requirements').formValidation({
-					framework: 'bootstrap',
-					icon: {
-						valid: 'fa fa-check',
-						invalid: 'fa fa-times',
-						validating: 'fa fa-spinner'
-					},
-					fields: {
-						personalID: {
-							validators: {
-								notEmpty: {
-									message: 'Choose what type of ID you are presenting. This ID will be also use for verification for claiming check payable.'
-								},
-							}
-						},
-						
-						idNumber: {
-							validators: {
-								notEmpty: {
-									message: `Enter ID Number on ID Presented`
-								},
-							}
-						},
-
-						idBusiness: {
-							validators: {
-								notEmpty: {
-									message: `What is your business TIN number?`
-								},
-							}
-						},
-						
-						proof: {
-							validators: {
-								notEmpty: {
-									message: 'Please upload a photo of your ID for verification.'
-								},
-							}
-						},
-		
-					}
-				})
-				.on('err.field.fv', function(e, data) {
-					// Get the first invalid field
-					var invalidFields = data.fv.getInvalidFields().length;
-					$('#errorfieldReq').val(invalidFields)
-				})
-				.on('success.field.fv', function(e, data) {
-					// Get the first invalid field
-					var invalidFields = data.fv.getInvalidFields().length;
-					$('#errorfieldReq').val(invalidFields)
-				});
+				requirementValidation();
 
 				$('#credentials').formValidation({
 					framework: 'bootstrap',
@@ -1217,22 +1393,25 @@ html.loading(lang='en', data-textdirection='ltr')
 					fields: {
 						email: {
 							validators: {
+								
 								notEmpty: {
 									message: 'Enter your e-mail address'
 								},
 								emailAddress: {
 									message: 'This is not a valid e-mail address.'
 								},
+								remote: {
+									url: '/emailavailability',
+									message: 'E-mail address has been taken',
+									validKey: 'email',
+									type: 'POST'
+								},
 							}
 						},
+
 						username: {
 							validators: {
-								//- remote: {
-								//- 	url: '/api/checkAccounts/username',
-								//- 	message: 'The username is not available',
-								//- 	validKey: 'username',
-								//- 	type: 'POST'
-								//- },
+								
 								notEmpty: {
 									message: `Enter your desired username. You'll use this to sign in to your account.`									
 								},
@@ -1245,11 +1424,14 @@ html.loading(lang='en', data-textdirection='ltr')
 									regexp: /^[a-zA-Z0-9_\.]+$/,
 									message: 'The username can only consist of alphabetical, number, dot and underscore'
 								},
+								remote: {
+									url: '/usernameavailability',
+									message: 'Username has been taken',
+									validKey: 'username',
+									type: 'POST'
+								},
 							}
 						},
-
-						
-		
 					}
 				})
 				.on('err.field.fv', function(e, data) {
@@ -1282,9 +1464,9 @@ html.loading(lang='en', data-textdirection='ltr')
 								}
 							}
 						},
-					}
-				})
-			}
+					}//Fields
+				})//Agreement Formvalidation
+			}//Document Ready Function
 		
 
 
@@ -1331,8 +1513,8 @@ html.loading(lang='en', data-textdirection='ltr')
 				});
 
 				//Formatter JS
-				$('#phone').formatter({pattern:"(+63) {{999}} {{999}}-{{9999}}"})
-				$('#telephone').formatter({pattern:"{{999}}-{{9999}}"})
+				$('.phone').formatter({pattern:"(+63) {{999}} {{999}}-{{9999}}"})
+				$('.telephone').formatter({pattern:"{{999}}-{{9999}}"})
 
 				$('#personalID').select2({
 					width: 'resolve',
@@ -1364,14 +1546,27 @@ html.loading(lang='en', data-textdirection='ltr')
 					if($(this).attr("val") == 'company'){
 						$('#profilePersonal').fadeOut(500, function(){
 							$('#profileCompany').fadeIn(500)
+							$('#idNumberField').removeClass('col-md-12').addClass('col-md-6')													
+							$('#idBusinessField').fadeIn(500)
+							$('#requirements').data('formValidation').destroy()
+							requirementValidation();
+
 						})
 					}
 					if($(this).attr("val") == 'personal'){
 						$('#profileCompany').fadeOut(500, function(){
 							$('#profilePersonal').fadeIn(500)
+							$('#idBusinessField').fadeOut(500)
+							$('#idNumberField').removeClass('col-md-6').addClass('col-md-12')
+							$('#requirements').data('formValidation').destroy()
+							requirementValidation();
+							
+							
 						})
 					}
-				})
+				})//IfClicked Function iCheck
+
+				
 
 				
 			})

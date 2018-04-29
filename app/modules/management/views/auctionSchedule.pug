@@ -31,7 +31,6 @@ html.loading(lang='en', data-textdirection='ltr')
 		// END Page Level CSS
 		// BEGIN Custom CSS
 		link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
-		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
 		// END Custom CSS
 		// FULL CALENDAR
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/calendars/fullcalendar.min.css')
@@ -377,107 +376,29 @@ html.loading(lang='en', data-textdirection='ltr')
 							span.menu-title Auction Schedule
 		.app-content.content
 			.content-wrapper
-				//- MODALS
-				#addAuction.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
-					.modal-dialog.modal-lg(role='document')
-						.modal-content
-							.modal-header(style='border-bottom: none;')
-								h4.modal-title.text-center 
-									img(src='assets/images/logo/logo-dark.png', alt='branding logo')
-								button#closeLogin.close(type='button', data-dismiss='modal', aria-label='Close')
-									span(aria-hidden='true') ×
-							.modal-body
-								.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
-									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
-										span Create Auction
-								.card-content
-									.card-body
-										fieldset
-											.row
-												.col-md-4.col-sm-12
-												.col-md-4.col-sm-12
-													center
-														fieldset
-															input#live.checkie(type='radio', name='consignorType', checked='')
-															span  
-																label(for='live')  Live &nbsp &nbsp
-															
-															input#online.checkie(type='radio', name='consignorType')
-															span  
-																label(for='online')  Online
-										fieldset
-											.row
-												.col-md-5
-													.form-group
-														label
-															| Starting Time
-															span.danger *
-														input#firstName3.form-control.required(type='text', name='startTime')
-											.row
-												.col-md-12
-													label Duration:
-													.row
-														.col-md-6
-															.form-group
-																label(for='days')
-																	small No. of Days
-																select#days.custom-select.form-control.required(name='days')
-																	option(value='0') 0
-																	option(value='1') 1
-																	option(value='2') 2
-																	option(value='3') 3
-														.col-md-6
-															.form-group
-																label(for='hours')
-																	small No. of Hours
-																select#hours.custom-select.form-control.required(name='hours')
-																	option(value='1') 1
-																	option(value='2') 2
-																	option(value='3') 3
-																	option(value='4') 4
-																	option(value='5') 5
-																	option(value='6') 6
-																	option(value='7') 7
-																	option(value='8') 8
-																	option(value='9') 9
-																	option(value='10') 10
-																	option(value='11') 11
-																	option(value='12') 12
-																	option(value='13') 13
-																	option(value='14') 14
-																	option(value='15') 15
-																	option(value='16') 16
-																	option(value='17') 17
-																	option(value='18') 18
-																	option(value='19') 19
-																	option(value='20') 20
-																	option(value='21') 21
-																	option(value='22') 22
-																	option(value='23') 23
-										.table-responsive
-											table#itemTable.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
-												thead
-													tr
-														th ID
-														th Item Name
-														th Date Created
-														th Date Received
-														th Status
-														th Action
-												tbody
 				.content-header.row
 					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
 						h3.content-header-title.mb-0.d-inline-block Auction Schedule
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+								ol.breadcrumb
+									li.breadcrumb-item
+										a(href='#') Auction
+									li.breadcrumb-item.active
+										| Schedule
 				.content-body
 					section.row
 						.col-12
 							.card
 								.card-head
 									.card-header
+										h4.card-title Online Auction Schedule
+										a.heading-elements-toggle
+											i.la.la-ellipsis-h.font-medium-3
 										.heading-elements
-											button.btn.btn-block.btn-primary.btn-sm(type='button', data-toggle='modal', data-target='#addAuction')
+											button.btn.btn-block.btn-primary.btn-sm(type='button', data-toggle='modal', data-target='#addEntree')
 												i.ft-plus.white
-												|  Create Auction
+												|  Add Auction
 								.card-content
 									.card-body
 										.row
@@ -485,25 +406,11 @@ html.loading(lang='en', data-textdirection='ltr')
 												#external-events
 													h4 Catalogs
 													.fc-events-container
-														each item in unscheduled
-															.fc-event(data-color='#2D95BF') Auction ##{item.intAuctionID}
+														.fc-event(data-color='#2D95BF') All Day Event
 											.col-md-9
 												#calendar
-				#auctionDetails.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
-					.modal-dialog.modal-lg(role='document')
-						.modal-content
-							.modal-header(style='border-bottom: none;')
-								h4.modal-title.text-center 
-									img(src='assets/images/logo/logo-dark.png', alt='branding logo')
-								button#closeLogin.close(type='button', data-dismiss='modal', aria-label='Close')
-									span(aria-hidden='true') ×
-							.modal-body
-								.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
-									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
-										span Auction Details
-								.card-content
-									.card-body#auctionDetailsBody
-				//- END MODALS
+					// Analytics map based session
+		// ///////////////////////////////////////////////////////////////////////////
 		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
 			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
 				span.float-md-left.d-block.d-md-inline-block
@@ -536,10 +443,8 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/vendors/js/extensions/fullcalendar.min.js', type='text/javascript')
 		script(src='/assets/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
 		script(src='/assets/js/scripts/extensions/fullcalendar.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
-		script(type='text/javascript').
+		script.
 			$(document).ready(function () {
-				var x = !{JSON.stringify(auctionSched)}
 				$("#calendar").fullCalendar({
 					header:{
 						left:"prev,next today",
@@ -551,23 +456,6 @@ html.loading(lang='en', data-textdirection='ltr')
 					drop: function(){
 						alert('nagdrop');
 						$(this).remove()
-					},
-					events:x,
-					displayEventEnd: true,
-					eventClick: function(event){
-						$.post('/eventDetails', {auctionId: event.id})
-						.done(function (data){
-							$('#auctionDetailsBody').append(`<center>
-								<h3>Auction # ${data.intAuctionID}</h3>
-								</center>
-							`)
-							$('#auctionDetails').modal('show');
-						});
 					}
-				});
-
-				$('.checkie').iCheck({
-					checkboxClass: 'icheckbox_flat-blue',
-					radioClass: 'iradio_flat-blue'
 				});
 			});
