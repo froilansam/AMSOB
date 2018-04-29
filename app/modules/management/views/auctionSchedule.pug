@@ -389,7 +389,7 @@ html.loading(lang='en', data-textdirection='ltr')
 			.content-wrapper
 				//- MODALS
 				#addAuction.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
-					.modal-dialog.modal-lg(role='document')
+					.modal-dialog.modal-xl(role='document')
 						.modal-content
 							.modal-header(style='border-bottom: none;')
 								h4.modal-title.text-center 
@@ -420,21 +420,11 @@ html.loading(lang='en', data-textdirection='ltr')
 											.row
 												.col-md-6
 													.form-group
-<<<<<<< HEAD
 														label
 															| Starting Time
 															span.danger *
 														input#startingTime.form-control.input-lg(type='text', name='startingTime' placeholder='Date Dropper')
 
-=======
-														label Starting Time
-															small.danger *
-														.input-group
-															.input-group-prepend
-																span.input-group-text
-																	span.ft-clock
-															input.form-control.pickatime(type='text', placeholder='Auction Starting Time', name='startTime')
->>>>>>> f05ee596b641faec10998a7faed6e86d8decf03c
 											.row
 												.col-md-12
 													.form-group
@@ -517,14 +507,6 @@ html.loading(lang='en', data-textdirection='ltr')
 		// BEGIN VENDOR JS
 		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
 		// BEGIN VENDOR JS
-		// BEGIN PAGE VENDOR JS
-		script(src='/assets/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/ui/jquery-ui-slider-pips.min.js', type='text/javascript')
-		script(src='/assets/js/core/libraries/jquery_ui/globalize/globalize.js', type='text/javascript')
-		script(src='/assets/js/core/libraries/jquery_ui/globalize/cultures/globalize.culture.de-DE.js', type='text/javascript')
-		script(src='/assets/js/core/libraries/jquery_ui/globalize/cultures/globalize.culture.ja-JP.js', type='text/javascript')
-		script(src='/assets/vendors/js/extensions/jquery.mousewheel.min.js', type='text/javascript')
-		// END PAGE VENDOR JS
 		// BEGIN MODERN JS
 		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
 		script(src='/assets/js/core/app.min.js', type='text/javascript')
@@ -544,11 +526,17 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
 		script(src='/assets/js/scripts/extensions/fullcalendar.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/extensions/jquery.knob.min.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/ui/jquery-ui-slider-pips.min.js', type='text/javascript')
+		script(src='/assets/js/core/libraries/jquery_ui/globalize/globalize.js', type='text/javascript')
+		script(src='/assets/js/core/libraries/jquery_ui/globalize/cultures/globalize.culture.de-DE.js', type='text/javascript')
+		script(src='/assets/js/core/libraries/jquery_ui/globalize/cultures/globalize.culture.ja-JP.js', type='text/javascript')
+		script(src='/assets/vendors/js/extensions/jquery.mousewheel.min.js', type='text/javascript')
 		// END PAGE VENDOR JS
 		// BEGIN PAGE LEVEL JS
 		script(src='/assets/js/scripts/extensions/knob.min.js', type='text/javascript')
-<<<<<<< HEAD
 		script(src='/assets/vendors/js/extensions/datedropper.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/extensions/timedropper.min.js', type='text/javascript')
 		// END PAGE VENDOR JS
@@ -558,9 +546,6 @@ html.loading(lang='en', data-textdirection='ltr')
 
 
 
-=======
-		script(src='/assets/js/scripts/pickers/dateTime/pick-a-datetime.js')
->>>>>>> f05ee596b641faec10998a7faed6e86d8decf03c
 		
 		
 
