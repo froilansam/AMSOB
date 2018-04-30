@@ -19,13 +19,13 @@ router.get('/auction', (req, res) => {
 		console.log(results);
 
 		for(var i=0;i<results.length;i++){
-			results[i].jsonDuration = JSON.parse(results[i].jsonDuration)
-			if(results[i].booAuctionType != 0){
+			if(results[i].booAuctionStatus != 0){
+				results[i].jsonDuration = JSON.parse(results[i].jsonDuration)
 				events.push({});
 				events[i].id = results[i].intAuctionID;
 				events[i].title = 'Auction #'+results[i].intAuctionID;
 				events[i].start = moment(results[i].datDateStart).format('YYYY-MM-DD HH:mm');
-				var endDate = moment(events[i].start).add(results[i].jsonDuration.days, 'd').add(results[i].jsonDuration.hours, 'h').format('YYYY-MM-DD HH:mm');
+				var endDate = moment(events[i].start).add(results[i].jsonDuration.days, 'd').add(results[i].jsonDuration.hours, 'h').add(results[i].jsonDuration.minutes, 'm').format('YYYY-MM-DD HH:mm');
 				events[i].end = endDate;
 				if(results[i].booAuctionType == 1)
 					events[i].color = '#122d59'
@@ -67,5 +67,35 @@ router.post('/eventDetails', (req, res) => {
 		res.send(results[0]);
 	});
 })
+
+router.post('/scheduleAuction', (req, res) => {
+	db.query('UPDATE tbl_auction SET datDateStart=?, booAuctionStatus=? WHERE intAuctionID=?', [req.body.datDateStart, 1, req.body.id], (err, results, fields) =>{
+		if(err) console.log(err)
+		return res.send(true)
+	});
+});
+
+router.post('/refetchEvents', (req, res) => {
+	var events = [];
+	db.query('SELECT * FROM tbl_auction WHERE booAuctionStatus = 1', (err, results, fields) => {
+		if(err) console.log(err)
+
+		for(var i=0;i<results.length;i++){
+			results[i].jsonDuration = JSON.parse(results[i].jsonDuration)
+			events.push({});
+			events[i].id = results[i].intAuctionID;
+			events[i].title = 'Auction #'+results[i].intAuctionID;
+			events[i].start = moment(results[i].datDateStart).format('YYYY-MM-DD HH:mm');
+			var endDate = moment(events[i].start).add(results[i].jsonDuration.days, 'd').add(results[i].jsonDuration.hours, 'h').add(results[i].jsonDuration.minutes, 'm').format('YYYY-MM-DD HH:mm');
+			events[i].end = endDate;
+			if(results[i].booAuctionType == 1)
+				events[i].color = '#122d59'
+			else if (results[i].booAuctionType == 2)
+				events[i].color = '#591212'
+		}
+
+		return res.send(events);
+	});
+});
 
 exports.index = router

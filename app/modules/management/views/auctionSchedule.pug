@@ -477,7 +477,10 @@ html.loading(lang='en', data-textdirection='ltr')
 													h4 Catalogs
 													.fc-events-container
 														each item in unscheduled
-															.fc-event(data-color='#2D95BF') Auction ##{item.intAuctionID}
+															- if(item.booAuctionType == 1)
+																.fc-event(data-color='#122d59' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) Auction ##{item.intAuctionID}
+															- if(item.booAuctionType == 2)
+																.fc-event(data-color='#591212' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) Auction ##{item.intAuctionID}
 											.col-md-9
 												#calendar
 				#auctionDetails.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
@@ -558,9 +561,21 @@ html.loading(lang='en', data-textdirection='ltr')
 					},
 					editable:!0,
 					droppable:!0,
-					drop: function(){
-						alert('nagdrop');
+					drop: function(date){
+						var newDate = moment(date).format('YYYY-MM-DD')
+						var id = $(this).attr('auctionId')
+						var jsonAttribute = JSON.parse($(this).attr('jsonDuration'))
+						var datDateStart = ''+newDate+' '+jsonAttribute.startingTime
 						$(this).remove()
+						$.post('/scheduleAuction', {id:id, datDateStart:datDateStart})
+						.done(function(){
+							$.post('/refetchEvents')
+							.done(function (events){
+								$('#calendar').fullCalendar('removeEvents');
+								$('#calendar').fullCalendar('addEventSource', events)
+								$('#calendar').fullCalendar('refetchEvents');
+							});
+						})
 					},
 					events:x,
 					displayEventEnd: true,
