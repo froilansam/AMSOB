@@ -43,11 +43,13 @@ router.get('/auction', (req, res) => {
 
 router.post('/createAuction', (req, res) => {
 	console.log(req.body);
-	var queryString = `INSERT INTO tbl_auction(jsonDuration, booAuctionType) VALUES (?, 0)`;
+	var queryString = `INSERT INTO tbl_auction(jsonDuration, booAuctionType) VALUES (?, ?)`;
+	var auctionType = req.body.auctionType;
+	delete req.body.auctionType;
 	var jsonInsert = JSON.stringify(req.body);
 	console.log(jsonInsert);
 
-	db.query(queryString,[jsonInsert], (err, results, fields) =>{
+	db.query(queryString,[jsonInsert, auctionType], (err, results, fields) =>{
 		if(err) console.log(err)
 
 		res.redirect('/auction');

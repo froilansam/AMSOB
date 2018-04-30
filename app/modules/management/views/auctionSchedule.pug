@@ -32,6 +32,7 @@ html.loading(lang='en', data-textdirection='ltr')
 		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel="stylesheet", href="/assets/vendors/css/extensions/sweetalert.css")
 		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
 		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
 		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
@@ -527,6 +528,7 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/vendors/js/extensions/datedropper.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/extensions/timedropper.min.js', type='text/javascript')
 		script(src='/assets/js/scripts/extensions/date-time-dropper.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
 		// END PAGE LEVEL JS
 		// FULL CALENDAR
 		script(src='/assets/vendors/js/extensions/moment.min.js', type='text/javascript')
@@ -563,19 +565,35 @@ html.loading(lang='en', data-textdirection='ltr')
 					droppable:!0,
 					drop: function(date){
 						var newDate = moment(date).format('YYYY-MM-DD')
-						var id = $(this).attr('auctionId')
-						var jsonAttribute = JSON.parse($(this).attr('jsonDuration'))
-						var datDateStart = ''+newDate+' '+jsonAttribute.startingTime
-						$(this).remove()
-						$.post('/scheduleAuction', {id:id, datDateStart:datDateStart})
-						.done(function(){
+						var dateNow = moment().format('YYYY-MM-DD');
+						if(moment(newDate).isSameOrAfter(dateNow)){
+							var id = $(this).attr('auctionId')
+							var jsonAttribute = JSON.parse($(this).attr('jsonDuration'))
+							var datDateStart = ''+newDate+' '+jsonAttribute.startingTime
+							$(this).remove()
+							$.post('/scheduleAuction', {id:id, datDateStart:datDateStart})
+							.done(function(){
+								$.post('/refetchEvents')
+								.done(function (events){
+									$('#calendar').fullCalendar('removeEvents');
+									$('#calendar').fullCalendar('addEventSource', events)
+									$('#calendar').fullCalendar('refetchEvents');
+								});
+							})
+						}
+						else{
+							swal({
+								icon: 'error',
+								title: 'Invalid Date',
+								text: 'Please drop the event on the date today or after'
+							})
 							$.post('/refetchEvents')
 							.done(function (events){
 								$('#calendar').fullCalendar('removeEvents');
 								$('#calendar').fullCalendar('addEventSource', events)
 								$('#calendar').fullCalendar('refetchEvents');
 							});
-						})
+						}
 					},
 					events:x,
 					displayEventEnd: true,
