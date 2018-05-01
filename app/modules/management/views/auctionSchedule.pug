@@ -436,12 +436,12 @@ html.loading(lang='en', data-textdirection='ltr')
 													.form-group
 														label(for='hourDuration') Hour Duration:
 														.text-center
-															input#hourDuration.knob.overload-draw(type='text', value='1', name='hours', data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
+															input#hourDuration.hourDuration.knob.overload-draw(type='text', value='1', name='hours', data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
 												.col-md-6
 													.form-group
-														label(for='hourDuration') Minute Duration:
+														label(for='minuteDuration') Minute Duration:
 														.text-center
-															input#minuteDuration.knob.overload-draw(type='text', value='1',name='minutes' data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
+															input#minuteDuration.minuteDuration.knob.overload-draw(type='text', value='1',name='minutes' data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
 
 														
 										.table-responsive
@@ -456,7 +456,9 @@ html.loading(lang='en', data-textdirection='ltr')
 														th Action
 												tbody
 								.card-footer
-									button.btn.btn-block.btn-success#createSubmit Create 
+									button.btn.btn-block.btn-outline-success#createSubmit
+										i.ft-user
+										| Create 
 				.content-header.row
 					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
 						h3.content-header-title.mb-0.d-inline-block Auction Schedule
@@ -548,21 +550,54 @@ html.loading(lang='en', data-textdirection='ltr')
 		// BEGIN PAGE LEVEL JS
 		script(src='/assets/js/scripts/pickers/dateTime/pick-a-datetime.js')
 		
+		script.
+			function importModules(daySliderValue){
+				$('.checkie').iCheck({
+					checkboxClass: 'icheckbox_flat-blue',
+					radioClass: 'iradio_flat-blue'
+				});
+				$("#editDayDuration").slider({
+					range: 'min',
+					min:0,
+					max:3,
+					step:1,
+					animate:"fast",
+					change: function(){
+						$('#editDayInput').val($(this).slider('value'))
+					},
+					value: daySliderValue
+				}).slider("pips",{
+					rest:'label'
+				})
+				$("#editStartingTime").timeDropper({
+					format: 'HH:mm',
+					setCurrentTime: false
+				})
+				$('#editHourDuration').knob({
+					min: 0,
+					max: 23,
+				})
+				$('#editMinuteDuration').knob({
+					min: 0,
+					max: 59,
+				})
+			}
 
 		script(type='text/javascript').
 			$(document).ready(function () {
 				$(document).on('click', '#createSubmit', function(){
 					$('#createForm').submit()
 				});
+				$(document).on('click', '#editSubmit', function(){
+					alert($(`input[name='editAuctionType']`).val())
+				});
 				var x = !{JSON.stringify(auctionSched)}
 				$("#calendar").fullCalendar({
 					header:{
-						left:"prev,next today",
+						left: false,
 						center:"title",
-						right:"month,agendaWeek,agendaDay"
 					},
-					editable:!0,
-					droppable:!0,
+					droppable: true,
 					drop: function(date){
 						var newDate = moment(date).format('YYYY-MM-DD')
 						var dateNow = moment().format('YYYY-MM-DD');
@@ -600,11 +635,95 @@ html.loading(lang='en', data-textdirection='ltr')
 					eventClick: function(event){
 						$.post('/eventDetails', {auctionId: event.id})
 						.done(function (data){
+							var jsonAttribute = JSON.parse(data.jsonDuration);
 							$('#auctionDetailsBody').append(`<center>
 								<h3>Auction # ${data.intAuctionID}</h3>
 								</center>
+								<fieldset>
+									<div class="row">
+										<div class="col-md-4 col-sm-12"></div>
+										<div class="col-md-4 col-sm-12">
+										<center>
+											<fieldset id='fieldAuctionType'>
+											</fieldset>
+										</center>
+										</div>
+									</div>
+									<fieldset>
+										<div class="row">
+											<div class="col-md-6">
+											<div class="form-group">
+												<label>Starting Time<span class="danger">*</span></label>
+												<input id="editStartingTime" value='${jsonAttribute.startingTime}' type="text" name="startingTime" placeholder="Date Dropper" class="form-control input-lg"/>
+											</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+											<div class="form-group">
+												<label>Day Duration:</label>
+												<div id="editDayDuration" class="ui-slider-info"></div>
+												<input id="editDayInput" type="hidden" name="days" value="${jsonAttribute.days}"/>
+											</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+											<div class="form-group">
+												<label>Hour Duration:</label>
+												<div class="text-center">
+												<input id="editHourDuration" type="text" value='${jsonAttribute.hours}' name="hours" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="hourDuration knob overload-draw"/>
+												</div>
+											</div>
+											</div>
+											<div class="col-md-6">
+											<div class="form-group">
+												<label>Minute Duration:</label>
+												<div class="text-center">
+												<input id="editMinuteDuration" type="text" value="${jsonAttribute.minutes}" name="minutes" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="minuteDuration knob overload-draw"/>
+												</div>
+											</div>
+											</div>
+										</div>
+										</fieldset>
+										<div class="table-responsive">
+										<table id="itemTable" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
+											<thead>
+											<tr>
+												<th>ID</th>
+												<th>Item Name</th>
+												<th>Date Created</th>
+												<th>Date Received</th>
+												<th>Status</th>
+												<th>Action</th>
+											</tr>
+											</thead>
+											<tbody></tbody>
+										</table>
+										</div>
+										<div class="card-footer">
+											<button id="editSubmit" class="btn btn-block btn-outline-warning">
+											<i class="ft-user"></i>Edit 
+											</button>
+										</div>
+								</fieldset>
 							`)
+							if(data.booAuctionType == 1){
+								$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie" checked=''/><span>
+									<label> Live &nbsp &nbsp</label></span>
+								<input type="radio" name="editAuctionType" value="2" class="checkie"/><span>
+									<label> Online</label></span>
+								`)
+							}
+							else{
+								$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie"/><span>
+									<label> Live &nbsp &nbsp</label></span>
+								<input type="radio" name="editAuctionType" value="2" class="checkie" checked=''/><span>
+									<label> Online</label></span>
+								`)
+							}
 							$('#auctionDetails').modal('show');
+							importModules(jsonAttribute.days);
 						});
 					}
 				});
@@ -630,4 +749,7 @@ html.loading(lang='en', data-textdirection='ltr')
 				$("#startingTime").timeDropper({
 					format: 'HH:mm'
 				})
+				$('#auctionDetails').on('hidden.bs.modal', function(){
+					$('#auctionDetailsBody').empty();
+				});
 			});

@@ -31,7 +31,10 @@ router.get('/auction', (req, res) => {
 					events[i].color = '#122d59'
 				else if (results[i].booAuctionType == 2)
 					events[i].color = '#591212'
-				//events[i].editable = false;
+				if(results[i].booAuctionStatus == 1)
+					events[i].editable = true;
+				else if (results[i].booAuctionStatus == 2)
+					events[i].editable = false;
 				results.splice(i,1)
 			}
 		}
@@ -79,7 +82,7 @@ router.post('/scheduleAuction', (req, res) => {
 
 router.post('/refetchEvents', (req, res) => {
 	var events = [];
-	db.query('SELECT * FROM tbl_auction WHERE booAuctionStatus = 1', (err, results, fields) => {
+	db.query('SELECT * FROM tbl_auction WHERE booAuctionStatus != 0', (err, results, fields) => {
 		if(err) console.log(err)
 
 		for(var i=0;i<results.length;i++){
@@ -94,6 +97,10 @@ router.post('/refetchEvents', (req, res) => {
 				events[i].color = '#122d59'
 			else if (results[i].booAuctionType == 2)
 				events[i].color = '#591212'
+			if(results[i].booAuctionStatus == 1)
+				events[i].editable = true;
+			else if (results[i].booAuctionStatus == 2)
+				events[i].editable = false;
 		}
 
 		return res.send(events);
