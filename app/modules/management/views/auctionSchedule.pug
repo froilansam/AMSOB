@@ -481,9 +481,9 @@ html.loading(lang='en', data-textdirection='ltr')
 													.fc-events-container
 														each item in unscheduled
 															- if(item.booAuctionType == 1)
-																.fc-event(data-color='#122d59' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) Auction ##{item.intAuctionID}
+																.fc-event.auctionEvent(data-color='#122d59' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) Auction ##{item.intAuctionID}
 															- if(item.booAuctionType == 2)
-																.fc-event(data-color='#591212' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) Auction ##{item.intAuctionID}
+																.fc-event.auctionEvent(data-color='#591212' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) Auction ##{item.intAuctionID}
 											.col-md-9
 												#calendar
 				#auctionDetails.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
@@ -582,14 +582,137 @@ html.loading(lang='en', data-textdirection='ltr')
 					max: 59,
 				})
 			}
-
+			function eventDetails(eventId){
+				$.post('/eventDetails', {auctionId: eventId})
+				.done(function (data){
+					var jsonAttribute = JSON.parse(data.jsonDuration);
+					$('#auctionDetailsBody').append(`<center>
+						<h3>Auction # ${data.intAuctionID}</h3>
+						</center>
+						<fieldset>
+							<div class="row">
+								<div class="col-md-4 col-sm-12"></div>
+								<div class="col-md-4 col-sm-12">
+								<center>
+									<fieldset id='fieldAuctionType'>
+									</fieldset>
+								</center>
+								</div>
+							</div>
+							<fieldset>
+								<div class="row">
+									<div class="col-md-6">
+									<div class="form-group">
+										<label>Starting Time<span class="danger">*</span></label>
+										<input id="editStartingTime" value='${jsonAttribute.startingTime}' type="text" name="startingTime" placeholder="Date Dropper" class="form-control input-lg"/>
+									</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+									<div class="form-group">
+										<label>Day Duration:</label>
+										<div id="editDayDuration" class="ui-slider-info"></div>
+										<input id="editDayInput" type="hidden" name="days" value="${jsonAttribute.days}"/>
+									</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+									<div class="form-group">
+										<label>Hour Duration:</label>
+										<div class="text-center">
+										<input id="editHourDuration" type="text" value='${jsonAttribute.hours}' name="hours" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="hourDuration knob overload-draw"/>
+										</div>
+									</div>
+									</div>
+									<div class="col-md-6">
+									<div class="form-group">
+										<label>Minute Duration:</label>
+										<div class="text-center">
+										<input id="editMinuteDuration" type="text" value="${jsonAttribute.minutes}" name="minutes" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="minuteDuration knob overload-draw"/>
+										</div>
+									</div>
+									</div>
+								</div>
+								</fieldset>
+								<div class="table-responsive">
+								<table id="itemTable" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
+									<thead>
+									<tr>
+										<th>ID</th>
+										<th>Item Name</th>
+										<th>Date Created</th>
+										<th>Date Received</th>
+										<th>Status</th>
+										<th>Action</th>
+									</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+								</div>
+								<div class="card-footer">
+									<button id="editSubmit" class="btn btn-block btn-outline-warning" auctionDateStart='${data.datDateStart}' auctionId='${data.intAuctionID}'>
+									<i class="ft-user"></i>Edit 
+									</button>
+								</div>
+						</fieldset>
+					`)
+					if(data.booAuctionType == 1){
+						$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie editAuctionType" checked=''/><span>
+							<label> Live &nbsp &nbsp</label></span>
+						<input type="radio" name="editAuctionType" value="2" class="checkie editAuctionType"/><span>
+							<label> Online</label></span>
+						<input type='hidden' id='editAuctionType' value='1'/>
+						`)
+					}
+					else{
+						$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie editAuctionType"/><span>
+							<label> Live &nbsp &nbsp</label></span>
+						<input type="radio" name="editAuctionType" value="2" class="checkie editAuctionType" checked=''/><span>
+							<label> Online</label></span>
+						<input type='hidden' id='editAuctionType' value='2'/>
+						`)
+					}
+					$('#auctionDetails').modal('show');
+					importModules(jsonAttribute.days);
+				});
+			}
 		script(type='text/javascript').
 			$(document).ready(function () {
 				$(document).on('click', '#createSubmit', function(){
 					$('#createForm').submit()
 				});
+				$(document).on('ifChecked', '.editAuctionType', function(){
+					$('#editAuctionType').val($(this).val())
+				});
+				$(document).on('click', '.auctionEvent', function(){
+					eventDetails($(this).attr('auctionId'))
+				})
 				$(document).on('click', '#editSubmit', function(){
-					alert($(`input[name='editAuctionType']`).val())
+					var id = $('#editSubmit').attr('auctionId');
+					var currentDateStart = $('#editSubmit').attr('auctionDateStart');
+					currentDateStart = moment(currentDateStart).format('YYYY-MM-DD');
+					var editedAuctionType = $('#editAuctionType').val();
+					var editedJsonDuration = {
+						days: $('#editDayInput').val(),
+						hours: $('#editHourDuration').val(),
+						minutes: $('#editMinuteDuration').val(),
+						startingTime: $('#editStartingTime').val()
+					}
+					editedJsonDuration = JSON.stringify(editedJsonDuration);
+					var editedDateStart = ''+currentDateStart+' '+$('#editStartingTime').val();
+
+					$.post('/editAuctionDetails', {editType: 1, jsonDuration:editedJsonDuration, datDateStart:editedDateStart, booAuctionType:editedAuctionType, intAuctionID: id})
+					.done(function(){
+						$.post('/refetchEvents')
+						.done(function (events){
+							$('#calendar').fullCalendar('removeEvents');
+							$('#calendar').fullCalendar('addEventSource', events)
+							$('#calendar').fullCalendar('refetchEvents');
+							$('#auctionDetails').modal('hide');
+						});
+					})
 				});
 				var x = !{JSON.stringify(auctionSched)}
 				$("#calendar").fullCalendar({
@@ -633,98 +756,51 @@ html.loading(lang='en', data-textdirection='ltr')
 					events:x,
 					displayEventEnd: true,
 					eventClick: function(event){
-						$.post('/eventDetails', {auctionId: event.id})
-						.done(function (data){
-							var jsonAttribute = JSON.parse(data.jsonDuration);
-							$('#auctionDetailsBody').append(`<center>
-								<h3>Auction # ${data.intAuctionID}</h3>
-								</center>
-								<fieldset>
-									<div class="row">
-										<div class="col-md-4 col-sm-12"></div>
-										<div class="col-md-4 col-sm-12">
-										<center>
-											<fieldset id='fieldAuctionType'>
-											</fieldset>
-										</center>
-										</div>
-									</div>
-									<fieldset>
-										<div class="row">
-											<div class="col-md-6">
-											<div class="form-group">
-												<label>Starting Time<span class="danger">*</span></label>
-												<input id="editStartingTime" value='${jsonAttribute.startingTime}' type="text" name="startingTime" placeholder="Date Dropper" class="form-control input-lg"/>
-											</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-12">
-											<div class="form-group">
-												<label>Day Duration:</label>
-												<div id="editDayDuration" class="ui-slider-info"></div>
-												<input id="editDayInput" type="hidden" name="days" value="${jsonAttribute.days}"/>
-											</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-6">
-											<div class="form-group">
-												<label>Hour Duration:</label>
-												<div class="text-center">
-												<input id="editHourDuration" type="text" value='${jsonAttribute.hours}' name="hours" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="hourDuration knob overload-draw"/>
-												</div>
-											</div>
-											</div>
-											<div class="col-md-6">
-											<div class="form-group">
-												<label>Minute Duration:</label>
-												<div class="text-center">
-												<input id="editMinuteDuration" type="text" value="${jsonAttribute.minutes}" name="minutes" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="minuteDuration knob overload-draw"/>
-												</div>
-											</div>
-											</div>
-										</div>
-										</fieldset>
-										<div class="table-responsive">
-										<table id="itemTable" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
-											<thead>
-											<tr>
-												<th>ID</th>
-												<th>Item Name</th>
-												<th>Date Created</th>
-												<th>Date Received</th>
-												<th>Status</th>
-												<th>Action</th>
-											</tr>
-											</thead>
-											<tbody></tbody>
-										</table>
-										</div>
-										<div class="card-footer">
-											<button id="editSubmit" class="btn btn-block btn-outline-warning">
-											<i class="ft-user"></i>Edit 
-											</button>
-										</div>
-								</fieldset>
-							`)
-							if(data.booAuctionType == 1){
-								$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie" checked=''/><span>
-									<label> Live &nbsp &nbsp</label></span>
-								<input type="radio" name="editAuctionType" value="2" class="checkie"/><span>
-									<label> Online</label></span>
-								`)
+						eventDetails(event.id)
+					},
+					eventDrop: function(event, delta, revertFunc){
+						var dateNow = moment().format('YYYY-MM-DD');
+						var eventStartTime = moment(event.start).format('HH:mm')
+						var diffMonth = delta._data.months;
+						var diffDay = delta._data.days;
+						var eventNewStart = moment(event.start).format('YYYY-MM-DD')
+						console.log(diffMonth+ ' months and '+diffDay+' days')
+						console.log(eventNewStart)
+						swal({
+							title: 'Are you sure?',
+							text: `Do you want to edit the starting date of Auction #${event.id}?`,
+							icon: 'info',
+							buttons: {
+								yes: 'Yes',
+								no: 'No'
 							}
-							else{
-								$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie"/><span>
-									<label> Live &nbsp &nbsp</label></span>
-								<input type="radio" name="editAuctionType" value="2" class="checkie" checked=''/><span>
-									<label> Online</label></span>
-								`)
+						}).then(function (value){
+							if(value == 'no'){
+								revertFunc()
 							}
-							$('#auctionDetails').modal('show');
-							importModules(jsonAttribute.days);
-						});
+							else if(value == 'yes'){
+								if(moment(eventNewStart).isAfter(dateNow)){
+									eventNewStart = ''+eventNewStart+' '+eventStartTime;
+
+									$.post('/editAuctionDetails', {editType: 2, datDateStart: eventNewStart, intAuctionID: event.id})
+									.done(function(){
+										swal({
+											icon: 'success',
+											title: 'Success',
+											text: 'Auction starting date is successfully edited'
+										})
+									})
+								}
+								else{
+									swal({
+										icon: 'error',
+										title: 'Invalid Date',
+										text: 'Please drop the event on any date after today'
+									})
+									revertFunc()
+								}
+							}
+						})
 					}
 				});
 

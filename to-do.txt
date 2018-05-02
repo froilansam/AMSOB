@@ -1,2 +1,4 @@
-1. #editSubmit functionality
-2. eventDrop (edit drag and drop on full calendar)
+1. #editSubmit functionality *done
+2. eventDrop (edit drag and drop on full calendar) *done
+3. fix unscheduled events query bugs *done
+4. cataloging
