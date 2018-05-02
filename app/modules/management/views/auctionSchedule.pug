@@ -479,9 +479,9 @@ html.loading(lang='en', data-textdirection='ltr')
 										a.heading-elements-toggle
 											i.la.la-ellipsis-h.font-medium-3
 										.heading-elements
-											button.btn.btn-block.btn-primary.btn-sm(type='button', data-toggle='modal', data-target='#addEntree')
+											button.btn.btn-block.btn-primary.btn-sm(type='button', data-toggle='modal', data-target='#addAuction')
 												i.ft-plus.white
-												|  Add Auction
+												|  Create Auction
 								.card-content
 									.card-body
 										.row
@@ -496,8 +496,21 @@ html.loading(lang='en', data-textdirection='ltr')
 																.fc-event.auctionEvent(data-color='#591212' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) Auction ##{item.intAuctionID}
 											.col-md-9
 												#calendar
-					// Analytics map based session
-		// ///////////////////////////////////////////////////////////////////////////
+				#auctionDetails.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+					.modal-dialog.modal-lg(role='document')
+						.modal-content
+							.modal-header(style='border-bottom: none;')
+								h4.modal-title.text-center 
+									img(src='assets/images/logo/logo-dark.png', alt='branding logo')
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+							.modal-body
+								.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
+									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+										span Auction Details
+								.card-content
+									.card-body#auctionDetailsBody
+		//- END MODALS
 		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
 			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
 				span.float-md-left.d-block.d-md-inline-block
