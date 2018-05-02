@@ -1,15 +1,14 @@
 {
-  "name": "express-boilerplate",
-  "version": "1.0.0",
-  "description": "A quick and simple ExpressJS boilerplate",
+  "name": "AMSOB",
+  "version": "2.0.0",
+  "description": "Auction Management System with Online Bidding",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PUP-CCIS/express-boilerplate.git"
+    "url": "https://bitbucket.org/lacsinagramar/amsob"
   },
   "keywords": [
     "expressjs",
@@ -17,10 +16,7 @@
   ],
   "author": "Lacsina Gramar, Malibiran Froilan Sam, Santuico Fritz Jerold",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PUP-CCIS/express-boilerplate/issues"
-  },
-  "homepage": "https://github.com/PUP-CCIS/express-boilerplate#readme",
+  "homepage": "https://bitbucket.org/lacsinagramar/amsob",
   "dependencies": {
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
@@ -29,7 +25,6 @@
     "method-override": "^2.3.9",
     "moment": "^2.22.1",
     "morgan": "^1.8.2",
-    "multer": "^1.3.0",
     "mysql": "^2.13.0",
     "pug": "^2.0.0-rc.2",
     "readable-stream": "^2.3.3",
