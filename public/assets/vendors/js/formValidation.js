@@ -7039,13 +7039,13 @@ if (typeof jQuery === 'undefined') {
                 var xhr = $.ajax(ajaxOptions);
 
                 xhr
-                    .success(function(response) {
+                    .done(function(response) {
                         response.valid = (response[validKey] === true || response[validKey] === 'true')
                                         ? true
                                         : (response[validKey] === false || response[validKey] === 'false' ? false : null);
                         dfd.resolve($field, 'remote', response);
                     })
-                    .error(function(response) {
+                    .fail(function(response) {
                         dfd.resolve($field, 'remote', {
                             valid: false
                         });

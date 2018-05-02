@@ -16,13 +16,11 @@ html.loading(lang='en', data-textdirection='ltr')
 		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
 		// BEGIN VENDOR CSS
 		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
-		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/pickers/pickadate/pickadate.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/custom.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/js/gallery/photo-swipe/photoswipe.css')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/ui/jquery-ui.min.css')
-		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/ui/jquery-ui-slider-pips.min.css')
-		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/extensions/datedropper.min.css')
-		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/extensions/timedropper.min.css')
-
-
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')
 		// END VENDOR CSS
 		// BEGIN MODERN CSS
 		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
@@ -32,21 +30,36 @@ html.loading(lang='en', data-textdirection='ltr')
 		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
-		link(rel="stylesheet", href="/assets/vendors/css/extensions/sweetalert.css")
 		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
 		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
 		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
-
-		// END Page Level CSS
-		// BEGIN Custom CSS
-		link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
-		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/timeline.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/cryptocoins/cryptocoins.css')
 		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/ui/jqueryui.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
+		style.
+			.card .card-body:before {
+				font-family: fontawesome;
+				font-size: 10rem;
+				color: rgba(255,255,255,.15);
+				position: absolute;
+				bottom: -32px;
+				right: 0;
+			}
+			.sales::before {
+				content: "\f0d6";
+			}
+			.consignment::before {
+				content: "\f07a";
+			}
+			.form-control:disabled, .form-control[readonly], .input-group-addon {
+			background-color: transparent;
+			border: none! important;
+			font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+			}
 
-		// END Custom CSS
-		// FULL CALENDAR
-		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/calendars/fullcalendar.min.css')
-		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/calendars/fullcalendar.min.css')
+
 	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
 		// fixed-top
 		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
@@ -388,114 +401,210 @@ html.loading(lang='en', data-textdirection='ltr')
 							span.menu-title Auction Schedule
 		.app-content.content
 			.content-wrapper
-				//- MODALS
-				#addAuction.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
-					.modal-dialog.modal-xl(role='document')
-						.modal-content
-							.modal-header(style='border-bottom: none;')
-								h4.modal-title.text-center 
-									img(src='assets/images/logo/logo-dark.png', alt='branding logo')
-								button#closeLogin.close(type='button', data-dismiss='modal', aria-label='Close')
-									span(aria-hidden='true') ×
-							.modal-body
-								.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
-									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
-										span Create Auction
-								.card-content
-								form#createForm(method='POST' action='/createAuction')
-									.card-body
-										fieldset
-											.row
-												.col-md-4.col-sm-12
-												.col-md-4.col-sm-12
-													center
-														fieldset
-															input#live.checkie(type='radio', name='auctionType', value='1')
-															span  
-																label(for='live')  Live &nbsp &nbsp
-															
-															input#online.checkie(type='radio', name='auctionType' value='2')
-															span  
-																label(for='online')  Online
-										fieldset
-											.row
-												.col-md-6
-													.form-group
-														label
-															| Starting Time
-															span.danger *
-														input#startingTime.form-control.input-lg(type='text', name='startingTime' placeholder='Date Dropper')
+				.content-header.row
+				.content-body
+					.row
+						.col-md-4
+							.card.box-shadow-0
+								.card-body.bg-hexagons
+									.text-center
+										img.rounded-circle.height-150(style='border: 3px solid lightblue' src='/assets/images/portrait/medium/avatar-m-4.png', alt='Card image')
+										br
+										br
+										h2.card-title #{consignorData.strName}
+										-if(consignorData.booConsignorType == 0)
+											h6.card-subtitle.text-muted Company											
+										-else
+											h6.card-subtitle.text-muted Personal
+										br
+										button#editInfo.btn.btn-outline-info.btn-min-width.box-shadow-3.mr-1.mb-1
+											i.la.la-edit
+											|  Edit Information
+								.card-body.bg-hexagons
+									form#infoForm
+										h4.form-section
+											i.ft-user
+											|  Account Details
+										.row
+											.col-md-12
+												fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='E-mail Address')
+													input#email.form-control.input-lg(readonly value=`${consignorData.strEmail}` type='text', placeholder='Icon Left, Large Input')
+													.form-control-position
+														i.fa.fa-envelope.info.font-large-1
+										.row
+											.col-md-12
+												fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Username')
+													input#username.form-control.input-lg(readonly value=`${consignorData.strUsername}` type='text', placeholder='Icon Left, Large Input')
+													.form-control-position
+														i.fa.fa-user.info.font-large-1
+										#passwordField
+											
+										h4.form-section
+											i.ft-info
+											|  Personal Information
+										-if(consignorData)
+											-if(consignorData.booConsignorType == 0)
+												.row
+													.col-md-12
+														p Representative Last Name														
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Representative First Name')
+															input#firstName.form-control.input-lg(readonly value=`${consignorData.strRepresentativeFirstName}` type='text', placeholder='Icon Left, Large Input')
+															.form-control-position
+																i.la.la-user.info.font-large-2
+												.row
+													.col-md-12
+														p Representative First Name
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Representative Last Name')
+															input#lastName.form-control.input-lg(readonly value=`${consignorData.strRepresentativeLastName}` type='text', placeholder='Icon Left, Large Input')
+															.form-control-position
+																i.la.la-user.info.font-large-2
+												hr
+
+										.row
+											.col-md-12
+												fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Address')
+													textarea#address.form-control.input-lg(readonly type='text', placeholder='Icon Left, Large Input')  #{consignorData.strAddress}
+													.form-control-position
+														i.fa.fa-map-marker.info.font-large-2
+										-if(consignorData.strTelephone)
 											.row
 												.col-md-12
-													.form-group
-														label(for='dayDuration') Day Duration:
-														#dayDuration.ui-slider-info
-														input#dayInput(type='hidden' name='days' value='0')
+													fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Telephone Number')
+														input#telephone.form-control.input-lg(readonly value=`${consignorData.strTelephone}` type='text', placeholder='Icon Left, Large Input')
+														.form-control-position
+															i.fa.fa-phone.info.font-large-2
+										-if(consignorData.strPhone)
 											.row
-												.col-md-6
-													.form-group
-														label(for='hourDuration') Hour Duration:
-														.text-center
-															input#hourDuration.hourDuration.knob.overload-draw(type='text', value='1', name='hours', data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
-												.col-md-6
-													.form-group
-														label(for='minuteDuration') Minute Duration:
-														.text-center
-															input#minuteDuration.minuteDuration.knob.overload-draw(type='text', value='1',name='minutes' data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
-
-														
-										.table-responsive
-											table#itemTable.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
-												thead
-													tr
-														th ID
-														th Item Name
-														th Date Created
-														th Date Received
-														th Status
-														th Action
-												tbody
-								.card-footer
-									button.btn.btn-block.btn-outline-success#createSubmit
-										i.ft-user
-										| Create 
-				.content-header.row
-					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
-						h3.content-header-title.mb-0.d-inline-block Auction Schedule
-						.row.breadcrumbs-top.d-inline-block
-							.breadcrumb-wrapper.col-12
-								ol.breadcrumb
-									li.breadcrumb-item
-										a(href='#') Auction
-									li.breadcrumb-item.active
-										| Schedule
-				.content-body
-					section.row
-						.col-12
-							.card
-								.card-head
-									.card-header
-										h4.card-title Online Auction Schedule
-										a.heading-elements-toggle
-											i.la.la-ellipsis-h.font-medium-3
-										.heading-elements
-											button.btn.btn-block.btn-primary.btn-sm(type='button', data-toggle='modal', data-target='#addEntree')
-												i.ft-plus.white
-												|  Add Auction
-								.card-content
-									.card-body
+												.col-md-12
+													fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Phone Number')
+														input#phone.form-control.input-lg(readonly value=`${consignorData.strPhone}` type='text', placeholder='Icon Left, Large Input')
+														.form-control-position
+															i.fa.fa-mobile.info.font-large-2
 										.row
-											.col-md-3
-												#external-events
-													h4 Catalogs
-													.fc-events-container
-														each item in unscheduled
-															- if(item.booAuctionType == 1)
-																.fc-event.auctionEvent(data-color='#122d59' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) Auction ##{item.intAuctionID}
-															- if(item.booAuctionType == 2)
-																.fc-event.auctionEvent(data-color='#591212' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) Auction ##{item.intAuctionID}
-											.col-md-9
-												#calendar
+											.col-md-12
+												p Date Joined:
+												fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Date Joined')
+													input#dateJoin.form-control.input-lg(readonly value=`${consignorData.datDateRegistered}` type='text', placeholder='Icon Left, Large Input')
+													.form-control-position
+														i.fa.fa-clock.info.font-large-2
+											
+						.col-md-5
+							.row
+								.col-md-6
+									.card.bg-success
+										.card-content
+											.card-body.sales.pb-1
+												.row.text-white
+													.col-6
+														h1
+															i.fa.fa-money.background-round.text-white
+														h4.pt-1.m-0.text-white
+															| 34% 
+															i.la.la-arrow-up
+													.col-6.text-right
+														h3.text-white.mb-2 Net Income
+														span P 45,000.00
+								.col-md-6
+									.card.bg-warning
+										.card-content
+											.card-body.consignment.pb-1
+												.row.text-white
+													.col-6
+														h1
+															i.fa.fa-shopping-cart.background-round.text-white
+														h4.pt-1.m-0.text-white
+															| 45% 
+															i.la.la-arrow-up
+													.col-6.text-right
+														h3.text-white.mb-2 Consignments
+														span 34
+							.row
+								.col-12
+									.card.pull-up.bg-gradient-directional-danger
+										.card-header.bg-hexagons-danger
+											h4.card-title.text-white
+												| On-going Consignments
+												span.text-white  - 77%
+												span.success  completed
+
+											a.heading-elements-toggle
+												i.la.la-ellipsis-v.font-medium-3
+											.heading-elements
+												ul.list-inline.mb-0
+													li
+														a(data-action='reload')
+															i.ft-rotate-cw
+										.card-content.collapse.show.bg-hexagons-danger
+											.card-body.pt-0
+												.chartjs
+													canvas#hit-rate-doughnut(height='275')
+											br
+											br
+											br
+											br
+											br
+											br
+											br
+						.col-md-3
+							section#timeline.timeline-left.timeline-wrapper
+								h3.page-title.text-center.text-lg-left Consignor Logs
+								ul.timeline
+									li.timeline-line
+									li.timeline-group
+										a.btn.btn-primary(href='#')
+											i.ft-calendar
+											|  Today
+								ul.timeline
+									li.timeline-line
+									li.timeline-item
+										.timeline-badge
+											span.bg-blue.bg-lighten-1(data-toggle='tooltip', data-placement='right', title='User Logs')
+												i.la.la-clock-o
+										.timeline-card.card.border-grey.border-lighten-2
+											.card-header.bg-hexagons
+												h6.card-title
+													h6
+														a(href='#') Froilan Malibiran
+														span  logged in
+												p.card-subtitle.text-muted.pt-1
+													span.font-small-4.bold 3:09 AM												
+													span.font-small-3 | 5 hours ago
+								ul.timeline
+									li.timeline-line
+									li.timeline-item
+										.timeline-badge
+											span.bg-blue.bg-lighten-1(data-toggle='tooltip', data-placement='right', title='User Logs')
+												i.la.la-clock-o
+										.timeline-card.card.border-grey.border-lighten-2
+											.card-header.bg-hexagons
+												h6.card-title
+													h6
+														a(href='#') Froilan Malibiran
+														span  logged in
+												p.card-subtitle.text-muted.pt-1
+													span.font-small-4.bold 3:09 AM												
+													span.font-small-3 | 5 hours ago
+								ul.timeline
+									li.timeline-line
+									li.timeline-item
+										.timeline-badge
+											span.bg-blue.bg-lighten-1(data-toggle='tooltip', data-placement='right', title='User Logs')
+												i.la.la-clock-o
+										.timeline-card.card.border-grey.border-lighten-2
+											.card-header.bg-hexagons
+												h6.card-title
+													h6
+														a(href='#') Froilan Malibiran
+														span  logged in
+												p.card-subtitle.text-muted.pt-1
+													span.font-small-4.bold 3:09 AM												
+													span.font-small-3 | 5 hours ago
+								ul.timeline
+									li.timeline-line
+									li.timeline-group
+										a.btn.btn-primary(href='#')
+											i.ft-calendar
+											|  See More
 					// Analytics map based session
 		// ///////////////////////////////////////////////////////////////////////////
 		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
@@ -510,319 +619,141 @@ html.loading(lang='en', data-textdirection='ltr')
 		// BEGIN VENDOR JS
 		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
 		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/extensions/jquery.knob.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jquery.sparkline.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/gallery/masonry/masonry.pkgd.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/gallery/photo-swipe/photoswipe.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/echarts/echarts.js', type='text/javascript')
+		script(src='/assets/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+		// END PAGE VENDOR JS
 		// BEGIN MODERN JS
 		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
 		script(src='/assets/js/core/app.min.js', type='text/javascript')
 		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/pickers/pickadate/picker.js', type='text/javascript')
-		script(src='/assets/vendors/js/pickers/pickadate/picker.date.js', type='text/javascript')
-		script(src='/assets/vendors/js/pickers/pickadate/picker.time.js', type='text/javascript')
-		script(src='/assets/vendors/js/pickers/pickadate/legacy.js', type='text/javascript')
-		script(src='/assets/vendors/js/pickers/dateTime/moment-with-locales.min.js', type='text/javascript')
 		// END MODERN JS
 		// BEGIN PAGE LEVEL JS
-		script(src='/assets/js/scripts/ui/jquery-ui/slider-spinner.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/extensions/jquery.knob.min.js', type='text/javascript')
-		script(src='/assets/js/scripts/extensions/knob.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/extensions/datedropper.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/extensions/timedropper.min.js', type='text/javascript')
-		script(src='/assets/js/scripts/extensions/date-time-dropper.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
-		// END PAGE LEVEL JS
-		// FULL CALENDAR
-		script(src='/assets/vendors/js/extensions/moment.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/extensions/fullcalendar.min.js', type='text/javascript')
-		script(src='/assets/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
-		script(src='/assets/js/scripts/extensions/fullcalendar.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
-		// END PAGE VENDOR JS
-		// BEGIN PAGE VENDOR JS
-		script(src='/assets/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
-		script(src='/assets/vendors/js/ui/jquery-ui-slider-pips.min.js', type='text/javascript')
-		script(src='/assets/js/core/libraries/jquery_ui/globalize/globalize.js', type='text/javascript')
-		script(src='/assets/js/core/libraries/jquery_ui/globalize/cultures/globalize.culture.de-DE.js', type='text/javascript')
-		script(src='/assets/js/core/libraries/jquery_ui/globalize/cultures/globalize.culture.ja-JP.js', type='text/javascript')
-		script(src='/assets/vendors/js/extensions/jquery.mousewheel.min.js', type='text/javascript')
-		// END PAGE VENDOR JS
-		// BEGIN PAGE LEVEL JS
-		script(src='/assets/js/scripts/pickers/dateTime/pick-a-datetime.js')
-		
+		//- script(src='/assets/js/scripts/ui/jquery-ui/dialog-tooltip.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/charts/echarts/bar-column/stacked-column.js', type='text/javascript')
+		script(src='/assets/js/scripts/charts/echarts/radar-chord/non-ribbon-chord.js', type='text/javascript')
+		script(src='/assets/js/scripts/gallery/photo-swipe/photoswipe-script.js', type='text/javascript')
+		script(src='/assets/js/scripts/pages/timeline.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+
 		script.
-			function importModules(daySliderValue){
-				$('.checkie').iCheck({
-					checkboxClass: 'icheckbox_flat-blue',
-					radioClass: 'iradio_flat-blue'
-				});
-				$("#editDayDuration").slider({
-					range: 'min',
-					min:0,
-					max:3,
-					step:1,
-					animate:"fast",
-					change: function(){
-						$('#editDayInput').val($(this).slider('value'))
-					},
-					value: daySliderValue
-				}).slider("pips",{
-					rest:'label'
-				})
-				$("#editStartingTime").timeDropper({
-					format: 'HH:mm',
-					setCurrentTime: false
-				})
-				$('#editHourDuration').knob({
-					min: 0,
-					max: 23,
-				})
-				$('#editMinuteDuration').knob({
-					min: 0,
-					max: 59,
-				})
-			}
-			function eventDetails(eventId){
-				$.post('/eventDetails', {auctionId: eventId})
-				.done(function (data){
-					var jsonAttribute = JSON.parse(data.jsonDuration);
-					$('#auctionDetailsBody').append(`<center>
-						<h3>Auction # ${data.intAuctionID}</h3>
-						</center>
-						<fieldset>
-							<div class="row">
-								<div class="col-md-4 col-sm-12"></div>
-								<div class="col-md-4 col-sm-12">
-								<center>
-									<fieldset id='fieldAuctionType'>
-									</fieldset>
-								</center>
-								</div>
-							</div>
-							<fieldset>
-								<div class="row">
-									<div class="col-md-6">
-									<div class="form-group">
-										<label>Starting Time<span class="danger">*</span></label>
-										<input id="editStartingTime" value='${jsonAttribute.startingTime}' type="text" name="startingTime" placeholder="Date Dropper" class="form-control input-lg"/>
-									</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-									<div class="form-group">
-										<label>Day Duration:</label>
-										<div id="editDayDuration" class="ui-slider-info"></div>
-										<input id="editDayInput" type="hidden" name="days" value="${jsonAttribute.days}"/>
-									</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-									<div class="form-group">
-										<label>Hour Duration:</label>
-										<div class="text-center">
-										<input id="editHourDuration" type="text" value='${jsonAttribute.hours}' name="hours" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="hourDuration knob overload-draw"/>
-										</div>
-									</div>
-									</div>
-									<div class="col-md-6">
-									<div class="form-group">
-										<label>Minute Duration:</label>
-										<div class="text-center">
-										<input id="editMinuteDuration" type="text" value="${jsonAttribute.minutes}" name="minutes" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="minuteDuration knob overload-draw"/>
-										</div>
-									</div>
-									</div>
-								</div>
-								</fieldset>
-								<div class="table-responsive">
-								<table id="itemTable" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
-									<thead>
-									<tr>
-										<th>ID</th>
-										<th>Item Name</th>
-										<th>Date Created</th>
-										<th>Date Received</th>
-										<th>Status</th>
-										<th>Action</th>
-									</tr>
-									</thead>
-									<tbody></tbody>
-								</table>
-								</div>
-								<div class="card-footer">
-									<button id="editSubmit" class="btn btn-block btn-outline-warning" auctionDateStart='${data.datDateStart}' auctionId='${data.intAuctionID}'>
-									<i class="ft-user"></i>Edit 
-									</button>
-								</div>
-						</fieldset>
-					`)
-					if(data.booAuctionType == 1){
-						$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie editAuctionType" checked=''/><span>
-							<label> Live &nbsp &nbsp</label></span>
-						<input type="radio" name="editAuctionType" value="2" class="checkie editAuctionType"/><span>
-							<label> Online</label></span>
-						<input type='hidden' id='editAuctionType' value='1'/>
-						`)
-					}
-					else{
-						$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie editAuctionType"/><span>
-							<label> Live &nbsp &nbsp</label></span>
-						<input type="radio" name="editAuctionType" value="2" class="checkie editAuctionType" checked=''/><span>
-							<label> Online</label></span>
-						<input type='hidden' id='editAuctionType' value='2'/>
-						`)
-					}
-					$('#auctionDetails').modal('show');
-					importModules(jsonAttribute.days);
-				});
-			}
-		script(type='text/javascript').
-			$(document).ready(function () {
-				$(document).on('click', '#createSubmit', function(){
-					$('#createForm').submit()
-				});
-				$(document).on('ifChecked', '.editAuctionType', function(){
-					$('#editAuctionType').val($(this).val())
-				});
-				$(document).on('click', '.auctionEvent', function(){
-					eventDetails($(this).attr('auctionId'))
-				})
-				$(document).on('click', '#editSubmit', function(){
-					var id = $('#editSubmit').attr('auctionId');
-					var currentDateStart = $('#editSubmit').attr('auctionDateStart');
-					currentDateStart = moment(currentDateStart).format('YYYY-MM-DD');
-					var editedAuctionType = $('#editAuctionType').val();
-					var editedJsonDuration = {
-						days: $('#editDayInput').val(),
-						hours: $('#editHourDuration').val(),
-						minutes: $('#editMinuteDuration').val(),
-						startingTime: $('#editStartingTime').val()
-					}
-					editedJsonDuration = JSON.stringify(editedJsonDuration);
-					var editedDateStart = ''+currentDateStart+' '+$('#editStartingTime').val();
-
-					$.post('/editAuctionDetails', {editType: 1, jsonDuration:editedJsonDuration, datDateStart:editedDateStart, booAuctionType:editedAuctionType, intAuctionID: id})
-					.done(function(){
-						$.post('/refetchEvents')
-						.done(function (events){
-							$('#calendar').fullCalendar('removeEvents');
-							$('#calendar').fullCalendar('addEventSource', events)
-							$('#calendar').fullCalendar('refetchEvents');
-							$('#auctionDetails').modal('hide');
-						});
-					})
-				});
-				var x = !{JSON.stringify(auctionSched)}
-				$("#calendar").fullCalendar({
-					header:{
-						left: false,
-						center:"title",
-					},
-					droppable: true,
-					drop: function(date){
-						var newDate = moment(date).format('YYYY-MM-DD')
-						var dateNow = moment().format('YYYY-MM-DD');
-						if(moment(newDate).isSameOrAfter(dateNow)){
-							var id = $(this).attr('auctionId')
-							var jsonAttribute = JSON.parse($(this).attr('jsonDuration'))
-							var datDateStart = ''+newDate+' '+jsonAttribute.startingTime
-							$(this).remove()
-							$.post('/scheduleAuction', {id:id, datDateStart:datDateStart})
-							.done(function(){
-								$.post('/refetchEvents')
-								.done(function (events){
-									$('#calendar').fullCalendar('removeEvents');
-									$('#calendar').fullCalendar('addEventSource', events)
-									$('#calendar').fullCalendar('refetchEvents');
-								});
-							})
+			$(window).on('load', function(){
+				Chart.defaults.hitRateDoughnut=Chart.defaults.doughnut;
+				t=Chart.controllers.doughnut.prototype.draw;
+				var r=Chart.controllers.doughnut.extend({
+					draw:function(){
+						t.apply(this,arguments);
+						var e=this.chart.chart.ctx,
+							o=e.fill,
+							a=this.chart.width,
+							r=this.chart.height,
+							i=(r/114).toFixed(2);
+						this.chart.ctx.font=i+"em Verdana",
+						this.chart.ctx.textBaseline="middle";
+						var l=Math.round((a-this.chart.ctx.measureText("77%").width)/2),
+							n=r/2;
+						this.chart.ctx.fillText("77%",l,n),
+						e.fill=function(){
+							e.save(),
+							e.shadowColor="#bbbbbb",
+							e.shadowBlur=30,
+							e.shadowOffsetX=0,
+							e.shadowOffsetY=12,
+							o.apply(this,arguments),
+							e.restore()
 						}
-						else{
-							swal({
-								icon: 'error',
-								title: 'Invalid Date',
-								text: 'Please drop the event on the date today or after'
-							})
-							$.post('/refetchEvents')
-							.done(function (events){
-								$('#calendar').fullCalendar('removeEvents');
-								$('#calendar').fullCalendar('addEventSource', events)
-								$('#calendar').fullCalendar('refetchEvents');
-							});
+					}
+				});
+				Chart.controllers.hitRateDoughnut=r;
+				o=document.getElementById("hit-rate-doughnut"),
+				new Chart(o,{
+					type:"hitRateDoughnut",
+					data:{
+						labels:["Remain","Completed"],
+						datasets:[{
+							label:"Favourite",
+							backgroundColor:["#ffcece",	"#28D094"],
+							data:[23,77]
+						}]
+					},
+					options:{
+						responsive:!0,
+						title:{
+							display:!1
+						},
+						legend:{
+							display:!1
+						},
+						layout:{
+							padding:{
+								left:16,
+								right:16,
+								top:16,
+								bottom:16
+							}
+						},
+						cutoutPercentage:92,
+						animation:{
+							animateScale:!1,
+							duration:2500
 						}
-					},
-					events:x,
-					displayEventEnd: true,
-					eventClick: function(event){
-						eventDetails(event.id)
-					},
-					eventDrop: function(event, delta, revertFunc){
-						var dateNow = moment().format('YYYY-MM-DD');
-						var eventStartTime = moment(event.start).format('HH:mm')
-						var diffMonth = delta._data.months;
-						var diffDay = delta._data.days;
-						var eventNewStart = moment(event.start).format('YYYY-MM-DD')
-						console.log(diffMonth+ ' months and '+diffDay+' days')
-						console.log(eventNewStart)
-						swal({
-							title: 'Are you sure?',
-							text: `Do you want to edit the starting date of Auction #${event.id}?`,
-							icon: 'info',
-							buttons: {
-								yes: 'Yes',
-								no: 'No'
-							}
-						}).then(function (value){
-							if(value == 'no'){
-								revertFunc()
-							}
-							else if(value == 'yes'){
-								if(moment(eventNewStart).isAfter(dateNow)){
-									eventNewStart = ''+eventNewStart+' '+eventStartTime;
-
-									$.post('/editAuctionDetails', {editType: 2, datDateStart: eventNewStart, intAuctionID: event.id})
-									.done(function(){
-										swal({
-											icon: 'success',
-											title: 'Success',
-											text: 'Auction starting date is successfully edited'
-										})
-									})
-								}
-								else{
-									swal({
-										icon: 'error',
-										title: 'Invalid Date',
-										text: 'Please drop the event on any date after today'
-									})
-									revertFunc()
-								}
-							}
-						})
 					}
 				});
-
-				$('.checkie').iCheck({
-					checkboxClass: 'icheckbox_flat-blue',
-					radioClass: 'iradio_flat-blue'
-				});
-
-				$("#dayDuration").slider({
-					range: 'min',
-					min:0,
-					max:3,
-					step:1,
-					animate:"fast",
-					change: function(){
-						$('#dayInput').val($(this).slider('value'))
-					}
-				}).slider("pips",{
-					rest:'label'
+			})
+		script.
+			$(document).ready(function(){
+				$(".tooltip-track-mouse").tooltip({
+					track:!1,
 				})
-				
-				$("#startingTime").timeDropper({
-					format: 'HH:mm'
+
+				$(document).on('click', '#editInfo', function(){
+					$('form#infoForm').find('input[readonly]').removeAttr('readonly');
+					$('form#infoForm').find('textarea[readonly]').removeAttr('readonly');
+					$('#dateJoin').attr('readonly', '');
+					var passwordHTML = $(`<div class="row">
+											<div class="col-md-12">
+												<fieldset title="Old Password" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+												<input id="password" type="password" placeholder="Old Password" class="form-control input-lg"/>
+												<div class="form-control-position"><i class="fa fa-lock info font-large-1"></i></div>
+												</fieldset>
+											</div>
+											</div>
+											<div class="row">
+											<div class="col-md-12">
+												<fieldset title="Enter Password" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+												<input id="password" type="password1" placeholder="Enter Password" class="form-control input-lg"/>
+												<div class="form-control-position"><i class="fa fa-lock info font-large-1"></i></div>
+												</fieldset>
+											</div>
+											</div>
+											<div class="row">
+											<div class="col-md-12">
+												<fieldset title="Re-enter Password" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+												<input id="password" type="password2" placeholder="Re-enter Password" class="form-control input-lg"/>
+												<div class="form-control-position"><i class="fa fa-lock info font-large-1"></i></div>
+												</fieldset>
+											</div>
+											</div>`)
+					$('#passwordField').append( passwordHTML ).hide().fadeIn(1000)
+					
+
 				})
-				$('#auctionDetails').on('hidden.bs.modal', function(){
-					$('#auctionDetailsBody').empty();
-				});
-			});
+			})
+		
+
+
+
+
+		
