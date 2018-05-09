@@ -2,3 +2,15 @@
 2. eventDrop (edit drag and drop on full calendar) *done
 3. fix unscheduled events query bugs *done
 4. cataloging
+    transfer from one auction to another
+    publish
+5. Auction name, description, banner, date created *done
+6. Scheduling constraint(days or months after today, no overlapping) // FullCalendar eventOverlap:false // *done
+7. Automatic auction banner
+
+** NOTES
+* 1 day minimum (Business Rules) 
+* user access
+* banner resolution: 851x315
+* User logs
+* supervised machine learning

@@ -140,7 +140,7 @@ router.get('/auction', (req, res) => {
 				results[i].jsonDuration = JSON.parse(results[i].jsonDuration)
 				var event = {};
 				event.id = results[i].intAuctionID;
-				event.title = 'Auction #'+results[i].intAuctionID;
+				event.title = ''+results[i].strAuctionName+' - Auction #'+results[i].intAuctionID;
 				event.start = moment(results[i].datDateStart).format('YYYY-MM-DD HH:mm');
 				var endDate = moment(event.start).add(results[i].jsonDuration.days, 'd').add(results[i].jsonDuration.hours, 'h').add(results[i].jsonDuration.minutes, 'm').format('YYYY-MM-DD HH:mm');
 				event.end = endDate;
@@ -163,15 +163,21 @@ router.get('/auction', (req, res) => {
 	});
 });
 
-router.post('/createAuction', (req, res) => {
+router.post('/auction/create', upload.single('auctionBanner'), (req, res) => {
+	console.log(req.file);
 	console.log(req.body);
-	var queryString = `INSERT INTO tbl_auction(jsonDuration, booAuctionType) VALUES (?, ?)`;
+	var dateCreated = moment().format('YYYY-MM-DD HH:mm');
+	var queryString = `INSERT INTO tbl_auction(jsonDuration, booAuctionType, strAuctionName, strDescription, datDateCreated, strBanner) VALUES (?, ?, ?, ?, ?, ?)`;
+	var auctionName = req.body.auctionName;
+	var auctionDescription = req.body.auctionDescription;
 	var auctionType = req.body.auctionType;
 	delete req.body.auctionType;
+	delete req.body.auctionName;
+	delete req.body.auctionDescription;
 	var jsonInsert = JSON.stringify(req.body);
 	console.log(jsonInsert);
 
-	db.query(queryString,[jsonInsert, auctionType], (err, results, fields) =>{
+	db.query(queryString,[jsonInsert, auctionType, auctionName, auctionDescription, dateCreated, req.file.filename], (err, results, fields) =>{
 		if(err) console.log(err)
 
 		res.redirect('/auction');
@@ -186,13 +192,13 @@ router.get('*', (req, res) => {
 
 
 //AJAX 
-router.post('/eventDetails', (req, res) => {
+router.post('/eventdetails', (req, res) => {
 	db.query('SELECT * FROM tbl_auction WHERE intAuctionID = ?', [req.body.auctionId], (err, results, fields) =>{
 		res.send(results[0]);
 	});
 })
 
-router.post('/scheduleAuction', (req, res) => {
+router.post('/auction/schedule', (req, res) => {
 	db.query('UPDATE tbl_auction SET datDateStart=?, booAuctionStatus=? WHERE intAuctionID=?', [req.body.datDateStart, 1, req.body.id], (err, results, fields) =>{
 		if(err) console.log(err)
 		return res.send(true)
@@ -203,7 +209,7 @@ router.post('/scheduleAuction', (req, res) => {
 1 - update inside details including datDateStart(TIME)
 2 - datDateStart(DATE) 
 */
-router.post('/editAuctionDetails', (req, res) => {
+router.post('/auction/edit', (req, res) => {
 	var queryString;
 	if(req.body.editType == 1){
 		queryString = `UPDATE tbl_auction SET datDateStart=?, booAuctionType=?, jsonDuration=? WHERE intAuctionID=?`;
@@ -223,7 +229,7 @@ router.post('/editAuctionDetails', (req, res) => {
 	}
 });
 
-router.post('/refetchEvents', (req, res) => {
+router.post('/auction/refetch', (req, res) => {
 	var events = [];
 	db.query('SELECT * FROM tbl_auction WHERE booAuctionStatus != 0', (err, results, fields) => {
 		if(err) console.log(err)
@@ -232,7 +238,7 @@ router.post('/refetchEvents', (req, res) => {
 			results[i].jsonDuration = JSON.parse(results[i].jsonDuration)
 			events.push({});
 			events[i].id = results[i].intAuctionID;
-			events[i].title = 'Auction #'+results[i].intAuctionID;
+			events[i].title = ''+results[i].strAuctionName+' - Auction #'+results[i].intAuctionID;
 			events[i].start = moment(results[i].datDateStart).format('YYYY-MM-DD HH:mm');
 			var endDate = moment(events[i].start).add(results[i].jsonDuration.days, 'd').add(results[i].jsonDuration.hours, 'h').add(results[i].jsonDuration.minutes, 'm').format('YYYY-MM-DD HH:mm');
 			events[i].end = endDate;
