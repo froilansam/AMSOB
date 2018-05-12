@@ -2,3 +2,14 @@
 2. eventDrop (edit drag and drop on full calendar) *done
 3. fix unscheduled events query bugs *done
 4. cataloging
+
+
+// Froilan
+1. Old Password Back-end Form validation
+2. Remove Old password in Admin side
+3. combination ID duplicate
+4. sned email approach for password
+5. fail indicator
+6. put toaster when theres error
+7. Design for Landing Page consignor
+8. Form validation Messages

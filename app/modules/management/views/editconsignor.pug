@@ -21,6 +21,8 @@ html.loading(lang='en', data-textdirection='ltr')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/js/gallery/photo-swipe/photoswipe.css')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/ui/jquery-ui.min.css')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/js/gallery/photo-swipe/default-skin/default-skin.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/selects/select2.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/dropify.css')
 		// END VENDOR CSS
 		// BEGIN MODERN CSS
 		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
@@ -38,6 +40,8 @@ html.loading(lang='en', data-textdirection='ltr')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/cryptocoins/cryptocoins.css')
 		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/ui/jqueryui.css')
 		link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/formValidation.css')
+		
 		style.
 			.card .card-body:before {
 				font-family: fontawesome;
@@ -54,11 +58,67 @@ html.loading(lang='en', data-textdirection='ltr')
 				content: "\f07a";
 			}
 			.form-control:disabled, .form-control[readonly], .input-group-addon {
-			background-color: transparent;
-			border: none! important;
-			font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+				background-color: transparent;
+				border: none! important;
+				font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+			}
+			.has-error .control-label,
+			.has-error .help-block,
+			.has-error .form-control-feedback {
+				color: #a94442;
 			}
 
+			/* Color of valid field */
+			.has-success .control-label,
+			.has-success .help-block,
+			.has-success .form-control-feedback {
+				color: #3c763d;
+			}
+			.form-control-feedback.fv-icon-no-label.fa.fa-times{
+				color: #a94442;				
+			}
+			.help-block{
+				color: #a94442;				
+			}
+			.form-group.has-feedback.has-error .form-control,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single:focus{
+				border: 1px solid #a94442 !important;
+			}
+			.form-group.has-feedback.has-success .form-control,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single:focus{
+				border: 1px solid #3c763d !important;
+			}
+
+			.form-control-feedback.fa.fa-check{
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 35px;
+				right: 2px;
+				margin-top: 0;
+			}
+			.form-control-feedback.fa.fa-times {
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 54px;
+				right: 2px;
+				margin-top: 0;
+			}
+			.swal-button.swal-button--DontSave{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Save{
+				background-color: #28D094 !important;
+			}
+			.nav.nav-tabs.nav-top-border .nav-item a{
+				color:  #1E9FF2 !important;
+			}
+			.nav.nav-tabs.nav-top-border .nav-item a.nav-link.active{
+				border-top: 3px solid #1E9FF2 !important;
+			}
 
 	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
 		// fixed-top
@@ -408,90 +468,226 @@ html.loading(lang='en', data-textdirection='ltr')
 							.card.box-shadow-0
 								.card-body.bg-hexagons
 									.text-center
-										img.rounded-circle.height-150(style='border: 3px solid lightblue' src='/assets/images/portrait/medium/avatar-m-4.png', alt='Card image')
-										br
-										br
-										h2.card-title #{consignorData.strName}
-										-if(consignorData.booConsignorType == 0)
-											h6.card-subtitle.text-muted Company											
-										-else
-											h6.card-subtitle.text-muted Personal
-										br
-										button#editInfo.btn.btn-outline-info.btn-min-width.box-shadow-3.mr-1.mb-1
-											i.la.la-edit
-											|  Edit Information
-								.card-body.bg-hexagons
-									form#infoForm
-										h4.form-section
-											i.ft-user
-											|  Account Details
-										.row
-											.col-md-12
-												fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='E-mail Address')
-													input#email.form-control.input-lg(readonly value=`${consignorData.strEmail}` type='text', placeholder='Icon Left, Large Input')
-													.form-control-position
-														i.fa.fa-envelope.info.font-large-1
-										.row
-											.col-md-12
-												fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Username')
-													input#username.form-control.input-lg(readonly value=`${consignorData.strUsername}` type='text', placeholder='Icon Left, Large Input')
-													.form-control-position
-														i.fa.fa-user.info.font-large-1
-										#passwordField
-											
-										h4.form-section
-											i.ft-info
-											|  Personal Information
-										-if(consignorData)
+											img.rounded-circle.height-150(style='border: 3px solid lightblue' src='/assets/images/portrait/medium/avatar-m-4.png', alt='Card image')
+											br
+											br
+											h2#name.card-title #{consignorData.strName}
 											-if(consignorData.booConsignorType == 0)
-												.row
-													.col-md-12
-														p Representative Last Name														
-														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Representative First Name')
-															input#firstName.form-control.input-lg(readonly value=`${consignorData.strRepresentativeFirstName}` type='text', placeholder='Icon Left, Large Input')
-															.form-control-position
-																i.la.la-user.info.font-large-2
-												.row
-													.col-md-12
-														p Representative First Name
-														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Representative Last Name')
-															input#lastName.form-control.input-lg(readonly value=`${consignorData.strRepresentativeLastName}` type='text', placeholder='Icon Left, Large Input')
-															.form-control-position
-																i.la.la-user.info.font-large-2
-												hr
-
-										.row
-											.col-md-12
-												fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Address')
-													textarea#address.form-control.input-lg(readonly type='text', placeholder='Icon Left, Large Input')  #{consignorData.strAddress}
-													.form-control-position
-														i.fa.fa-map-marker.info.font-large-2
-										-if(consignorData.strTelephone)
-											.row
-												.col-md-12
-													fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Telephone Number')
-														input#telephone.form-control.input-lg(readonly value=`${consignorData.strTelephone}` type='text', placeholder='Icon Left, Large Input')
-														.form-control-position
-															i.fa.fa-phone.info.font-large-2
-										-if(consignorData.strPhone)
-											.row
-												.col-md-12
-													fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Phone Number')
-														input#phone.form-control.input-lg(readonly value=`${consignorData.strPhone}` type='text', placeholder='Icon Left, Large Input')
-														.form-control-position
-															i.fa.fa-mobile.info.font-large-2
-										.row
-											.col-md-12
-												p Date Joined:
-												fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Date Joined')
-													input#dateJoin.form-control.input-lg(readonly value=`${consignorData.datDateRegistered}` type='text', placeholder='Icon Left, Large Input')
-													.form-control-position
-														i.fa.fa-clock.info.font-large-2
+												h6.card-subtitle.text-muted Company											
+											-else
+												h6.card-subtitle.text-muted Personal
+											br
+								.card-body.bg-hexagons
+									ul.nav.nav-tabs.nav-top-border.no-hover-bg.nav-justified
+										li.nav-item
+											a#activeIcon1-tab1.nav-link.active(data-toggle='tab', href='#activeIcon1', aria-controls='activeIcon1', aria-expanded='true')
+												i.ft-user
+												|  
+										li.nav-item
+											a#linkIcon1-tab1.nav-link(data-toggle='tab', href='#linkIcon1', aria-controls='linkIcon1', aria-expanded='false')
+												i.ft-lock
+												| 
+										li.nav-item
+											a#fuck-tab1.nav-link(data-toggle='tab', href='#fuck', aria-controls='fuck', aria-expanded='false')
+												i.fa.fa-folder-open
+												|
+									.tab-content.px-1.pt-1
+										#activeIcon1.tab-pane.active(role='tabpanel', aria-labelledby='activeIcon1-tab1', aria-expanded='true')
+									
 											
+											form#infoForm
+												h4.form-section
+													i.ft-user
+													|  Account Details
+												#alertField
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='E-mail Address')
+															input#email.form-control.input-lg(readonly name='email' value=`${consignorData.strEmail}` type='text', placeholder='E.g. juandelacruz@email.com')
+															.form-control-position
+																i.fa.fa-envelope.info.font-large-1
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Username')
+															input#username.form-control.input-lg(readonly name='username' value=`${consignorData.strUsername}` type='text', placeholder='Icon Left, Large Input')
+															.form-control-position
+																i.fa.fa-user.info.font-large-1
+												
+													
+												h4.form-section
+													i.ft-info
+													|  Personal Information
+												#nameField
+													-if(consignorData)
+														-if(consignorData.booConsignorType == 0)
+															.row
+																.col-md-12
+																	p Representative Last Name														
+																	fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Representative First Name')
+																		input#firstName.form-control.input-lg(readonly name='repFirstName' value=`${consignorData.strRepresentativeFirstName}` type='text', placeholder='Icon Left, Large Input')
+																		.form-control-position
+																			i.la.la-user.info.font-large-2
+															.row
+																.col-md-12
+																	p Representative First Name
+																	fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Representative Last Name')
+																		input#lastName.form-control.input-lg(readonly name='repLastName' value=`${consignorData.strRepresentativeLastName}` type='text', placeholder='Icon Left, Large Input')
+																		.form-control-position
+																			i.la.la-user.info.font-large-2
+															hr
+
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Address')
+															textarea#address.form-control.input-lg(readonly type='text', name='address' placeholder='E.g. L21 B13, Suburbia East Subd., Parang, Marikina City') #{consignorData.strAddress}
+															.form-control-position
+																i.fa.fa-map-marker.info.font-large-2
+												#telephoneField
+													-if(consignorData.strTelephone)
+														.row
+															.col-md-12
+																fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Telephone Number')
+																	input#telephone.form-control.input-lg(readonly name='telephone' value=`${consignorData.strTelephone}` type='text', placeholder='E.g. 997-1997')
+																	.form-control-position
+																		i.fa.fa-phone.info.font-large-2
+												#phoneField
+													-if(consignorData.strPhone)
+														.row
+															.col-md-12
+																fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Phone Number')
+																	input#phone.form-control.input-lg(readonly name='phone' value=`${consignorData.strPhone}` type='text', placeholder='+(63) 946 197-3336')
+																	.form-control-position
+																		i.fa.fa-mobile.info.font-large-2
+												.row
+													.col-md-12
+														p Date Joined:
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Date Joined')
+															input#dateJoin.form-control.input-lg(readonly value=`${consignorData.datDateRegistered}` type='text', placeholder='Icon Left, Large Input')
+															.form-control-position
+																i.fa.fa-clock-o.info.font-large-2
+											#buttonField.text-center
+												button#editInfo.btn.btn-outline-info.btn-min-width.box-shadow-3.mr-1.mb-1
+													i.la.la-edit
+													|  Edit Information
+										#linkIcon1.tab-pane(role='tabpanel', aria-labelledby='linkIcon1-tab1', aria-expanded='false')
+											form#passwordField
+												h4.form-section
+													i.ft-lock
+													|  Change Password
+												.alert.bg-info.alert-icon-left.alert-arrow-left.alert-dismissible.mb-2(role='alert')
+													span.alert-icon
+														i.la.la-key
+													button.close(type='button', data-dismiss='alert', aria-label='Close')
+														span(aria-hidden='true') ×
+													span It is a 
+														strong great idea 
+													| to use a strong password that you're not using elsewhere.
+													
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Old Password')
+															input#password.form-control.input-lg(type='password', placeholder='Old Password')
+															.form-control-position
+																i.fa.fa-lock.info.font-large-1
+															p.badge-default.badge-info.block-tag.text-center
+																small.block-area.white You can leave me blank to leave the password unchanged 😊
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Enter Password')
+															input#password2.form-control.input-lg(name='password2', type='password', placeholder='Enter Password')
+															.form-control-position
+																i.fa.fa-lock.info.font-large-1
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Re-enter Password')
+															input#password3.form-control.input-lg(name='password3', type='password', placeholder='Re-enter Password')
+															.form-control-position
+																i.fa.fa-lock.info.font-large-1
+												.text-right
+													button#passwordChange.btn.btn-outline-success.btn-min-width.box-shadow-3.mr-1.mb-1(type='submit')
+															i.la.la-save
+															|  Save Changes
+
+										#fuck.tab-pane(role='tabpanel', aria-labelledby='fuck-tab1', aria-expanded='false')
+											form#requirementField
+												h4.form-section
+													i.fa.fa-folder-open
+													|  Consignor Requirements
+												.alert.bg-warning.alert-icon-left.alert-arrow-left.alert-dismissible.mb-2(role='alert')
+													span.alert-icon
+														i.fa.fa-id-card
+													button.close(type='button', data-dismiss='alert', aria-label='Close')
+														span(aria-hidden='true') ×
+													-if(consignorData.booConsignorType == 0)
+														strong Representative ID 
+															span
+														| should be presented first before editing these information.
+													-if(consignorData.booConsignorType == 1)
+														strong Consignor ID 
+															span
+														| should be presented first before editing these information.
+											
+													
+												-if(consignorData.booConsignorType == 0)
+													.row
+														.col-md-12
+															label(for='tinNumber') TIN Number:
+															fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Business TIN Number')
+																input#tinNumber.form-control.input-lg(type='text',name='tinNumber' readonly placeholder='Business Tin Number' value=consignorData.strTinNumber)
+																.form-control-position
+																	i.fa.fa-briefcase.info.font-large-1
+												.row
+													.col-md-12
+														label(for='personalID') ID:													
+														select#personalID.form-control(readonly disabled name='personalID' style="width: 100%")
+															
+															optgroup(label='Government Issued ID')
+																option(value='Alien Certificate of Registration (ACR I-Card)') Alien Certificate of Registration (ACR I-Card)
+																option(value=`Armed Forces of the Philippines (AFP) ID`) Armed Forces of the Philippines (AFP) ID
+																option(value='Barangay Clearance/Certificate') Barangay Clearance/Certificate
+																option(value=`Certification from the National Council for the Welfare of Disabled Persons (NCWDP)`) Certification from the National Council for the Welfare of Disabled Persons (NCWDP)
+																option(value=`Consular ID`) Consular ID
+																option(value=`Department of Social Welfare and Development (DSWD) ID`) Department of Social Welfare and Development (DSWD) ID
+																option(value=`Driver's License`) Driver's License
+																option(value='Government Service Insurance System (GSIS ID)') Government Service Insurance System (GSIS ID)
+																option(value='Marriage Certificate (PSA Authenticated)') Marriage Certificate (PSA Authenticated)
+																option(value='National Bureau of Investigation (NBI) Clearance') National Bureau of Investigation (NBI) Clearance
+																option(value=`OFW ID`) OFW ID
+																option(value=`Overseas Worker's Welfare Administration (OWWA) ID`) Overseas Worker's Welfare Administration (OWWA) ID
+																option(value=`PAG-IBIG ID`) PAG-IBIG ID
+																option(value=`Passport`) Passport
+																option(value='PhilHealth Identification Card (PIC)') PhilHealth Identification Card (PIC)
+																option(value=`Philippine Overseas Employment Association (POEA) ID`) Philippine Overseas Employment Association (POEA) ID
+																option(value='Philippine Statistics Authority (PSA) Birth Certificate') Philippine Statistics Authority (PSA) Birth Certificate
+																option(value='Philippine National Police (PNP) ID') Philippine National Police (PNP) ID
+																option(value='Police Clearance') Police Clearance
+																option(value='Postal ID') Postal ID
+																option(value=`PRA Special Resident Retiree Visa (SRRV) ID`) PRA Special Resident Retiree Visa (SRRV) ID
+																option(value='Professional Regulation Commission ID (PRC ID)') Professional Regulation Commission ID (PRC ID)
+																option(value=`Seaman's Book`) Seaman's Book
+																option(value=`Senior Citizen's ID Card`) Senior Citizen's ID Card
+																option(value='Social Security System ID (SSS ID)')  Social Security System ID (SSS ID)
+																option(value='Tax Identification Number (TIN ID)') Tax Identification Number (TIN ID)
+																option(value=`Unified Multi-Purpose ID (UMID)`) Unified Multi-Purpose ID (UMID)
+																option(value=`Voter's ID`) Voter's ID
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='ID Number')
+															input#idNumber.form-control.input-lg(name='idNumber', readonly type='text', placeholder='ID Number' value=consignorData.strIDNumber)
+															.form-control-position
+																i.fa.fa-id-card.info.font-large-1
+												#proofField
+													.row
+														.col-md-12
+															input#idProof.dropify(data-default-file=`/assets/uploads/${consignorData.strIDPicture}` disabled type='file', name='proof' accept='image/*' data-height='300' data-allowed-file-extensions="jpeg jpg png")
+											#editRequirementField.text-center
+												button#editRequirement.btn.btn-outline-info.btn-min-width.box-shadow-3.mr-1.mb-1(type='submit')
+														i.la.la-edit
+														|  Edit Information
 						.col-md-5
 							.row
 								.col-md-6
-									.card.bg-success
+									.card.bg-success.pull-up
 										.card-content
 											.card-body.sales.pb-1
 												.row.text-white
@@ -505,7 +701,7 @@ html.loading(lang='en', data-textdirection='ltr')
 														h3.text-white.mb-2 Net Income
 														span P 45,000.00
 								.col-md-6
-									.card.bg-warning
+									.card.bg-warning.pull-up
 										.card-content
 											.card-body.consignment.pb-1
 												.row.text-white
@@ -616,10 +812,19 @@ html.loading(lang='en', data-textdirection='ltr')
 				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
 					| APPTRADE INC.
 					i.ft-heart.pink
+		input#errorfield(type='text' style='display: none;')
+		input#errorfieldRequirement(type='text' style='display: none;')
+		
 		// BEGIN VENDOR JS
 		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
 		// BEGIN VENDOR JS
 		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/dropify.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/formatter/formatter.min.js', type='text/javascript')
+		script(src='http://oss.maxcdn.com/jquery.mask/1.11.4/jquery.mask.min.js')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.3.0/zxcvbn.js")
 		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
 		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
@@ -642,12 +847,840 @@ html.loading(lang='en', data-textdirection='ltr')
 		// END MODERN JS
 		// BEGIN PAGE LEVEL JS
 		//- script(src='/assets/js/scripts/ui/jquery-ui/dialog-tooltip.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/select/form-select2.min.js', type='text/javascript')
+
 		script(src='/assets/js/scripts/charts/echarts/bar-column/stacked-column.js', type='text/javascript')
 		script(src='/assets/js/scripts/charts/echarts/radar-chord/non-ribbon-chord.js', type='text/javascript')
 		script(src='/assets/js/scripts/gallery/photo-swipe/photoswipe-script.js', type='text/javascript')
 		script(src='/assets/js/scripts/pages/timeline.min.js', type='text/javascript')
-		//- script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
+		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/jquery.form.js', type='text/javascript')
 
+
+		//- script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		
+		//- Script Requirement Field 
+		script.
+			$(document).ready(function(){
+				var proofCounter = 0;
+				$('#personalID').val(!{JSON.stringify(consignorData.strIDType)})
+				$('#personalID').select2({//- Select2 Initialization
+					width: 'resolve',
+				});
+
+				$(document).on('click', '#editRequirement', function(){
+					$('form#requirementField').find('input[readonly]').removeAttr('readonly');
+					$('form#requirementField').find('select[disabled]').removeAttr('readonly');
+					$('form#requirementField').find('select[disabled]').removeAttr('disabled');
+					$('form#requirementField').find('input[disabled]').removeAttr('disabled');
+
+					$(document).on('click', '.dropify-clear', function(){
+						$('form#requirementField').formValidation('revalidateField', 'idProof');
+						proofCounter = 1;
+					})
+					var consignorID = !{JSON.stringify(consignorData.intConsignorID)}
+					$.post(`/consignor/data`,{
+						intConsignorID: consignorID,
+					}).done(function(data){
+						if(data.indicator == 'success'){
+							$('#proofField').empty().append($(`<div class="row">
+													<div class="col-md-12">
+														<input id="idProof" data-default-file="/assets/uploads/${data.consignorData.strIDPicture}" type="file" name="idProof" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" class="dropify"/>
+													</div>
+													</div>`)).hide().fadeIn(1000);
+							$('#idProof').dropify({
+								allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+								messages: {
+									'default': 'Drag and drop an image here or click',
+									'replace': 'Drag and drop or click to replace',
+									'remove': 'Remove',
+									'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+								},
+								error: {
+									'fileSize': 'The file size is too big (1M max).',
+									'fileFormat': 'The file format is not allowed ({{ value }} only).'
+								}
+							});
+
+							$('form#requirementField').formValidation({
+								framework: 'bootstrap',
+								icon: {
+									valid: 'fa fa-check',
+									invalid: 'fa fa-times',
+									validating: 'fa fa-spinner'
+								},
+								fields: {
+									tinNumber: {
+										validators: {
+											notEmpty: {
+												message: 'Enter your business TIN Number, this will be used for company validation.'
+											},
+										}
+									},
+									idNumber: {
+										validators: {
+											notEmpty: {
+												message: 'Enter your your presented ID number.'
+											},
+										}
+									},
+
+									idProof: {
+										validators: {
+											notEmpty: {
+												message: 'Please upload a photo of your ID for verification.'
+											},
+										}
+									},
+								}
+							})
+							.on('err.field.fv', function(e, data) {
+								// Get the first invalid field
+								var invalidFields = data.fv.getInvalidFields().length;
+								$('#errorfieldRequirement').val(invalidFields)
+							})
+							.on('success.field.fv', function(e, data) {
+								// Get the first invalid field
+								var invalidFields = data.fv.getInvalidFields().length;
+								$('#errorfieldRequirement').val(invalidFields)
+							});//- FormValidation for requirments
+						}
+					})
+					
+
+					$('#editRequirementField').fadeOut(1000, function(){
+						var buttonReplace = $(`<button id="discardChangesRequirement" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-times"></i> Discard</button>
+											<button id="saveChangesRequirement" class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-save"></i> Save</button>`)
+						$(this)
+							.empty()
+							.append( buttonReplace ).hide().fadeIn(1000);
+					})
+
+					
+				})// on event
+
+				$(document).on('click', '#discardChangesRequirement', function(){
+					$('form#requirementField').data('formValidation').destroy()
+										
+					var consignorID = !{JSON.stringify(consignorData.intConsignorID)}
+					console.log(consignorID);
+					$.post(`/consignor/data`,{
+						intConsignorID: consignorID,
+					}).done(function(data){
+						if(data.indicator == 'success'){
+							var consignorData = data.consignorData;
+							if(consignorData.booConsignorType == 0)
+								$('#tinNumber').val(consignorData.strTinNumber);
+							$('#idNumber').val(consignorData.strIDNumber);
+							$('#personalID').val(consignorData.strIDType).trigger('change')
+							$('#proofField').empty().append($(`<div class="row">
+															<div class="col-md-12">
+																<input id="idProof" data-default-file="/assets/uploads/${consignorData.strIDPicture}" disabled="disabled" type="file" name="proof" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" class="dropify"/>
+															</div>
+															</div>`)).hide().fadeIn(1000);
+							
+							$('#idProof').dropify({
+								allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+								messages: {
+									'default': 'Drag and drop an image here or click',
+									'replace': 'Drag and drop or click to replace',
+									'remove': 'Remove',
+									'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+								},
+								error: {
+									'fileSize': 'The file size is too big (1M max).',
+									'fileFormat': 'The file format is not allowed ({{ value }} only).'
+								}
+							});
+
+							$('form#requirementField').find('input').attr('readonly', '');
+							$('#personalID').attr('disabled', '');
+
+							$('#editRequirementField')
+													.empty()
+													.append( $(`<button id="editRequirement" type="submit" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)).hide().fadeIn(1000)
+						}
+					})
+				})// on event
+
+				$(document).on('click', '#saveChangesRequirement', function(){
+					$('form#requirementField').data('formValidation').validate();
+					if(proofCounter == 0){
+						$('form#requirementField').data('formValidation').updateStatus('idProof', 'VALID');
+					}
+					if($('#errorfieldRequirement').val() == 0){
+						swal({
+							title: 'Are you sure?',
+							icon: 'warning',
+							buttons: {
+								No: 'No',
+								Yes: 'Yes',
+							},
+						}).then((value) => {
+							if(value == 'Yes'){
+								var consignorType = !{JSON.stringify(consignorData.booConsignorType)}					
+								var consignorID = !{JSON.stringify(consignorData.intConsignorID)};
+								if(consignorType == 0){
+									var formData = new FormData(); //FormData (Pre-requisite: Jquery Form and Multer) use for File Ajax									
+									formData.append('IDPicture', $('#idProof')[0].files[0]);
+									formData.append('strIDNumber', $('#idNumber').val());
+									formData.append('strIDType', $('#personalID').val());
+									formData.append('strTINNumber', $('#tinNumber').val());
+									formData.append('intConsignorID', consignorID);									
+															
+									
+									$.ajax({
+										type: "POST",
+										url: '/consignor/requirement/update',
+										data: formData,
+										processData: false,
+										contentType: false,
+										success: function(data){
+											if(data.indicator == 'success'){
+												var consignorData = data.consignorData;
+												console.log(consignorData)
+												$('form#requirementField').data('formValidation').destroy()
+												if(consignorData.booConsignorType == 0)
+													$('#tinNumber').val(consignorData.strTinNumber);
+												$('#idNumber').val(consignorData.strIDNumber);
+												$('#personalID').val(consignorData.strIDType).trigger('change')
+												$('#proofField').empty().append($(`<div class="row">
+															<div class="col-md-12">
+																<input id="idProof" data-default-file="/assets/uploads/${consignorData.strIDPicture}" disabled="disabled" type="file" name="proof" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" class="dropify"/>
+															</div>
+															</div>`)).hide().fadeIn(1000);
+							
+												$('#idProof').dropify({
+													allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+													messages: {
+														'default': 'Drag and drop an image here or click',
+														'replace': 'Drag and drop or click to replace',
+														'remove': 'Remove',
+														'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+													},
+													error: {
+														'fileSize': 'The file size is too big (1M max).',
+														'fileFormat': 'The file format is not allowed ({{ value }} only).'
+													}
+												});
+												
+												$('form#requirementField').find('input').attr('readonly', '');
+												$('#personalID').attr('disabled', '');
+
+												$('#editRequirementField')
+																		.empty()
+																		.append( $(`<button id="editRequirement" type="submit" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)).hide().fadeIn(1000)
+											}
+										}
+									})
+
+								}//if else
+								if(consignorType == 1){
+									var formData = new FormData(); //FormData (Pre-requisite: Jquery Form and Multer) use for File Ajax								
+									formData.append('IDPicture', $('#idProof')[0].files[0]);
+									formData.append('strIDNumber', $('#idNumber').val());
+									formData.append('strIDType', $('#personalID').val());
+									formData.append('strTINNumber', '');
+									formData.append('intConsignorID', consignorID);									
+															
+									
+									$.ajax({
+										type: "POST",
+										url: '/consignor/requirement/update',
+										data: formData,
+										processData: false,
+										contentType: false,
+										success: function(data){
+											if(data.indicator == 'success'){
+												var consignorData = data.consignorData;
+												console.log(consignorData)
+												$('form#requirementField').data('formValidation').destroy()
+												if(consignorData.booConsignorType == 0)
+													$('#tinNumber').val(consignorData.strTinNumber);
+												$('#idNumber').val(consignorData.strIDNumber);
+												$('#personalID').val(consignorData.strIDType).trigger('change')
+												$('#proofField').empty().append($(`<div class="row">
+															<div class="col-md-12">
+																<input id="idProof" data-default-file="/assets/uploads/${consignorData.strIDPicture}" disabled="disabled" type="file" name="proof" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" class="dropify"/>
+															</div>
+															</div>`)).hide().fadeIn(1000);
+							
+												$('#idProof').dropify({
+													allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+													messages: {
+														'default': 'Drag and drop an image here or click',
+														'replace': 'Drag and drop or click to replace',
+														'remove': 'Remove',
+														'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+													},
+													error: {
+														'fileSize': 'The file size is too big (1M max).',
+														'fileFormat': 'The file format is not allowed ({{ value }} only).'
+													}
+												});
+												
+												$('form#requirementField').find('input').attr('readonly', '');
+												$('#personalID').attr('disabled', '');
+
+												$('#editRequirementField')
+																		.empty()
+																		.append( $(`<button id="editRequirement" type="submit" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)).hide().fadeIn(1000)
+											}
+										}
+									})
+								}
+							}//yes
+						})
+					}
+				})// on event
+
+			})//ready event
+		script.
+			$(document).ready(function(){
+				$(document).on('click', '#saveChanges', function(){// Save Changes
+					$('form#infoForm').data('formValidation').validate();
+					if($('#errorfield').val() == 0){
+						swal({
+							title: 'Are you sure?',
+							icon: 'success',
+							buttons: {
+								No: 'No',
+								Yes: 'Yes',
+							},
+						}).then((value) => {
+							if(value == 'Yes'){
+								var consignorType = !{JSON.stringify(consignorData.booConsignorType)}					
+								var consignorID = !{JSON.stringify(consignorData.intConsignorID)};
+								
+								if(consignorType == 0){
+									alert('fucker1')
+									$.post('/consignor/update/'+consignorID,{
+										strEmail: $('#email').val(),
+										strUsername: $('#username').val(),
+										strName: $('#company').val(),
+										strAddress: $('#address').val(),
+										strPhone: $('#phone').val(),
+										strTelephone: $('#telephone').val(),
+										strRepresentativeFirstName: $('#firstName').val(),
+										strRepresentativeLastName: $('#lastName').val(),
+									}).done(function(data){
+										if(data.indicator == 'success'){
+											var consignorData = data.consignorData;
+											$('form#infoForm').data('formValidation').destroy()
+											$('#name').text(consignorData.strName)
+											$('#email').val(consignorData.strEmail);
+											$('#username').val(consignorData.strUsername);
+											if(consignorData.booConsignorType == '0'){
+												$('#firstName').val(consignorData.strRepresentativeFirstName);
+												$('#lastName').val(consignorData.strRepresentativeLastName);								
+											}
+											$('#address').val(consignorData.strAddress);
+											alert(consignorData.strPhone)
+											if(consignorData.strPhone != ''){
+												$('#phone').val(consignorData.strPhone);
+											}
+											else if(consignorData.strPhone == ''){
+												$('#phoneField').empty()
+											}
+
+											if(consignorData.strTelephone != ''){
+												$('#telephone').val(consignorData.strTelephone);
+											}
+											else if(consignorData.strTelephone == ''){
+												$('#telephoneField').empty()							
+											}
+											$('form#infoForm').find('input').attr('readonly', '');
+											$('form#infoForm').find('textarea').attr('readonly', '');
+											
+											$('#companyName').remove();
+											var consignorType = !{JSON.stringify(consignorData.booConsignorType)}					
+											if(consignorType == 1)//- Personal No name
+												$('#nameField').empty();
+											$('#buttonField').fadeOut(1000, function(){
+												var buttonReplace = $(`<button id="editInfo" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)
+												$(this)
+													.empty()
+													.append( buttonReplace ).hide().fadeIn(1000);
+											})		
+							
+						
+											
+										}// success indicaor
+									})//done
+								}
+								if(consignorType == 1){
+									$.post('/consignor/update/'+consignorID,{
+										strEmail: $('#email').val(),
+										strUsername: $('#username').val(),
+										strName: $('#firstName').val()+' '+$('#lastName').val(),
+										strAddress: $('#address').val(),
+										strPhone: $('#phone').val(),
+										strTelephone: $('#telephone').val(),
+										strRepresentativeFirstName: $('#firstName').val(),
+										strRepresentativeLastName: $('#lastName').val(),
+									}).done(function(data){
+										if(data.indicator == 'success'){
+											var consignorData = data.consignorData;
+											$('form#infoForm').data('formValidation').destroy()
+											$('#name').text(consignorData.strName)
+											$('#email').val(consignorData.strEmail);
+											$('#username').val(consignorData.strUsername);
+											if(consignorData.booConsignorType == '0'){
+												$('#firstName').val(consignorData.strRepresentativeFirstName);
+												$('#lastName').val(consignorData.strRepresentativeLastName);								
+											}
+											$('#address').val(consignorData.strAddress);
+											alert(consignorData.strPhone)
+											if(consignorData.strPhone != ''){
+												$('#phone').val(consignorData.strPhone);
+											}
+											else if(consignorData.strPhone == ''){
+												$('#phoneField').empty()
+											}
+
+											if(consignorData.strTelephone != ''){
+												$('#telephone').val(consignorData.strTelephone);
+											}
+											else if(consignorData.strTelephone == ''){
+												$('#telephoneField').empty()							
+											}
+											$('form#infoForm').find('input').attr('readonly', '');
+											$('form#infoForm').find('textarea').attr('readonly', '');
+											
+											var consignorType = !{JSON.stringify(consignorData.booConsignorType)}					
+											if(consignorType == 1)//- Personal No name
+												$('#nameField').empty();
+											$('#buttonField').fadeOut(1000, function(){
+												var buttonReplace = $(`<button id="editInfo" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)
+												$(this)
+													.empty()
+													.append( buttonReplace ).hide().fadeIn(1000);
+											})		
+							
+						
+											
+										}// success indicaor
+									})//done
+								}
+							}//yes
+						})
+					}
+				})
+			})
+		script.
+			$(document).ready(function(){
+				$('#idProof').dropify({
+					allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+					messages: {
+						'default': 'Drag and drop an image here or click',
+						'replace': 'Drag and drop or click to replace',
+						'remove': 'Remove',
+						'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+					},
+					error: {
+						'fileSize': 'The file size is too big (1M max).',
+						'fileFormat': 'The file format is not allowed ({{ value }} only).'
+					}
+				});
+
+				$('#phone').mask('(+63) 000 000-0000');
+				$('#telephone').mask('000-0000');
+
+				//form validation for password
+				$('#passwordField').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						password2: {
+							validators: {
+								notEmpty: {
+									message: 'The password is required'
+								},
+								callback: {
+									callback: function(value, validator, $field) {
+										var password = $field.val();
+										if (password == '') {
+											return true;
+										}
+
+										var result  = zxcvbn(password),
+											score   = result.score,
+											message = result.feedback.warning || 'The password is weak';
+
+										// Update the progress bar width and add alert class
+										var $bar = $('#strengthBar');
+										switch (score) {
+											case 0:
+												$bar.attr('class', 'progress-bar progress-bar-danger')
+													.css('width', '1%');
+												break;
+											case 1:
+												$bar.attr('class', 'progress-bar progress-bar-danger')
+													.css('width', '25%');
+												break;
+											case 2:
+												$bar.attr('class', 'progress-bar progress-bar-danger')
+													.css('width', '50%');
+												break;
+											case 3:
+												$bar.attr('class', 'progress-bar progress-bar-warning')
+													.css('width', '75%');
+												break;
+											case 4:
+												$bar.attr('class', 'progress-bar progress-bar-success')
+													.css('width', '100%');
+												break;
+										}
+
+										// We will treat the password as an invalid one if the score is less than 3
+										if (score < 3) {
+											return {
+												valid: false,
+												message: message
+											}
+										}
+
+										return true;
+									}
+								}
+							}
+						},
+						password3: {
+							validators: {
+								notEmpty: {
+									message: 'Re-enter your password'
+								},
+								identical: {
+									field: 'password2',
+									message: 'The password and its confirm are not the same.'
+								},
+								
+							}
+						},
+		
+					}
+				})
+				
+				
+				$(document).on('click', '#editInfo', function(){
+					var alertMessage = $(`<div role="alert" class="alert bg-info alert-icon-left alert-arrow-left alert-dismissible mb-2"><span class="alert-icon"><i class="la la-info"></i></span>
+								<button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true">×</span></button><span>Upon changing your e-mail address, please make sure that you have an <strong>access</strong></span> to your e-mail account.
+								</div>`);
+					$('#alertField').append( alertMessage ).hide().fadeIn(1000);
+
+					$('form#infoForm').find('input[readonly]').removeAttr('readonly');
+					$('form#infoForm').find('textarea[readonly]').removeAttr('readonly');
+					var consignorType = !{JSON.stringify(consignorData.booConsignorType)}
+					if(consignorType == 0){
+
+						var nameHTML = $(`<div class="row" id = "companyName">
+											<div class="col-md-12">
+												<p>Company Name</p>
+												<fieldset title="Company Name" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+												<input id="company" name="companyName" value="`+$('#name').text()+`" type="text" placeholder="E.g. `+$('#name').text()+`" class="form-control input-lg"/>
+												<div class="form-control-position"><i class="la la-building info font-large-2"></i></div>
+												</fieldset>
+											</div>
+											</div>`)
+						$('#nameField').prepend(nameHTML).hide().fadeIn(1000);
+					}
+					if($('#phoneField').html() == ''){
+						var phoneHtml = $(`<div class="row">
+											<div class="col-md-12">
+												<fieldset title="Phone Number" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+												<input id="phone" value="" type="text" name="phone" placeholder="E.g. +(63) 946 197-3336" class="form-control input-lg"/>
+												<div class="form-control-position"><i class="fa fa-mobile info font-large-2"></i></div>
+												</fieldset>
+											</div>
+											</div>`);
+						$('#phoneField').append(phoneHtml).hide().fadeIn(1000);
+						$('#phone').mask('(+63) 000 000-0000');
+					}
+											
+
+					if($('#telephoneField').html() == ''){
+						var telephoneHtml = $(`<div class="row">
+												<div class="col-md-12">
+													<fieldset title="Telephone Number" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+													<input name="telephone" id="telephone" value="" type="text" placeholder="E.g. 997-1997" class="form-control input-lg"/>
+													<div class="form-control-position"><i class="fa fa-phone info font-large-2"></i></div>
+													</fieldset>
+												</div>
+												</div>`);
+						$('#telephoneField').append(telephoneHtml).hide().fadeIn(1000);
+						$('#telephone').mask('000-0000');
+					}
+					$('#dateJoin').attr('readonly', '');
+					
+					
+
+					$('#buttonField').fadeOut(1000, function(){
+						var buttonReplace = $(`<button id="discardChanges" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-times"></i> Discard</button>
+											<button id="saveChanges" class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-save"></i> Save</button>`)
+						$(this)
+							.empty()
+							.append( buttonReplace ).hide().fadeIn(1000);
+					})
+					
+
+					var consignorType = !{JSON.stringify(consignorData.booConsignorType)}
+					var strEmail = $('#email').val();
+					var strUsername = $('#username').val();
+					if(consignorType == 0){//Company
+						$('form#infoForm').formValidation({
+							framework: 'bootstrap',
+							icon: {
+								valid: 'fa fa-check',
+								invalid: 'fa fa-times',
+								validating: 'fa fa-spinner'
+							},
+							fields: {
+								email: {
+									validators: {
+										
+										notEmpty: {
+											message: 'You cannot leave me blank 😞'
+										},
+										emailAddress: {
+											message: 'This is not a valid e-mail address.'
+										},
+										remote: {
+											url: '/emailavailability/'+strEmail,
+											message: 'E-mail address has been taken',
+											validKey: 'email',
+											type: 'POST'
+										},
+									}
+								},
+								
+								username: {
+									validators: {
+										
+										notEmpty: {
+											message: `Enter your desired username. You'll use this to sign in to your account.`									
+										},
+										stringLength: {
+											min: 6,
+											max: 30,
+											message: 'The username must be minimum of 6 characters and maximum of 30 characters.'
+										},
+										regexp: {
+											regexp: /^[a-zA-Z0-9_\.]+$/,
+											message: 'The username can only consist of alphabetical, number, dot and underscore'
+										},
+										remote: {
+											url: '/usernameavailability/'+strUsername,
+											message: 'Username has been taken',
+											validKey: 'username',
+											type: 'POST'
+										},
+									}
+								},
+
+								companyName: {
+									validators: {
+										notEmpty: {
+											message: `What is the company name?`
+										},
+									}
+								},
+
+								repFirstName: {
+									validators: {
+										notEmpty: {
+											message: `What is the first name of the company's representative?`
+										},
+									}
+								},
+
+								repLastName: {
+									validators: {
+										notEmpty: {
+											message: `What is the first name of the company's representative?`
+										},
+									}
+								},
+
+								address: {
+									validators: {
+										notEmpty: {
+											message: 'What is the address of your company?'
+										},
+									}
+								},
+								phone: {
+									validators: {
+										regexp: {
+											regexp: /(([(]{1}[+]{1}63[)]{1} [0-9]{3} [0-9]{3}-[0-9]{4}))/,									
+											message: 'Invalid Phone Number Format.'
+										},
+									}
+								},
+								telephone: {
+									validators: {
+										regexp: {
+											regexp: /(([0-9]{3}-[0-9]{4}))/,
+											message: 'Invalid Telephone Number Format.'
+										},
+									}
+								},
+				
+							}
+						})
+						.on('err.field.fv', function(e, data) {
+							// Get the first invalid field
+							var invalidFields = data.fv.getInvalidFields().length;
+							$('#errorfield').val(invalidFields)
+						})
+						.on('success.field.fv', function(e, data) {
+							// Get the first invalid field
+							var invalidFields = data.fv.getInvalidFields().length;
+							$('#errorfield').val(invalidFields)
+						});
+					}
+
+					if(consignorType == 1){//Company
+						$.post('/consignor/data', {
+							intConsignorID: !{JSON.stringify(consignorData.intConsignorID)},
+						}).done(function(data){
+							if(data.indicator == 'success'){
+								var nameHTML = $(`<div class="row">
+										<div class="col-md-12">
+											<p>Last Name</p>
+											<fieldset title="First Name" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+											<input id="firstName" name="firstName" value="${data.consignorData.strRepresentativeFirstName}" type="text" placeholder="E.g. Juan" class="form-control input-lg"/>
+											<div class="form-control-position"><i class="la la-user info font-large-2"></i></div>
+											</fieldset>
+										</div>
+										</div>
+										<div class="row">
+										<div class="col-md-12">
+											<p>First Name</p>
+											<fieldset title="Last Name" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+											<input id="lastName" name="lastName" value="${data.consignorData.strRepresentativeLastName}" type="text" placeholder="E.g. dela Cruz" class="form-control input-lg"/>
+											<div class="form-control-position"><i class="la la-user info font-large-2"></i></div>
+											</fieldset>
+										</div>
+										</div>
+										<hr/>`)
+								$('#nameField').append(nameHTML).hide().fadeIn(1000);
+								$('form#infoForm').formValidation({
+									framework: 'bootstrap',
+									icon: {
+										valid: 'fa fa-check',
+										invalid: 'fa fa-times',
+										validating: 'fa fa-spinner'
+									},
+									fields: {
+										email: {
+											validators: {
+												
+												notEmpty: {
+													message: 'You cannot leave me blank 😞'
+												},
+												emailAddress: {
+													message: 'This is not a valid e-mail address.'
+												},
+												remote: {
+													url: '/emailavailability/'+strEmail,
+													message: 'E-mail address has been taken',
+													validKey: 'email',
+													type: 'POST'
+												},
+											}
+										},
+										
+										username: {
+											validators: {
+												
+												notEmpty: {
+													message: `Enter your desired username. You'll use this to sign in to your account.`									
+												},
+												stringLength: {
+													min: 6,
+													max: 30,
+													message: 'The username must be minimum of 6 characters and maximum of 30 characters.'
+												},
+												regexp: {
+													regexp: /^[a-zA-Z0-9_\.]+$/,
+													message: 'The username can only consist of alphabetical, number, dot and underscore'
+												},
+												remote: {
+													url: '/usernameavailability/'+strUsername,
+													message: 'Username has been taken',
+													validKey: 'username',
+													type: 'POST'
+												},
+											}
+										},
+
+										firstName: {
+											validators: {
+												notEmpty: {
+													message: `What is the first name of the consignor?`
+												},
+											}
+										},
+
+										lastName: {
+											validators: {
+												notEmpty: {
+													message: `What is the last name of the consignor?`
+												},
+											}
+										},
+
+										address: {
+											validators: {
+												notEmpty: {
+													message: 'What is the address of your company?'
+												},
+											}
+										},
+										phone: {
+											validators: {
+												regexp: {
+													regexp: /(([(]{1}[+]{1}63[)]{1} [0-9]{3} [0-9]{3}-[0-9]{4}))/,									
+													message: 'Invalid Phone Number Format.'
+												},
+											}
+										},
+										telephone: {
+											validators: {
+												regexp: {
+													regexp: /(([0-9]{3}-[0-9]{4}))/,
+													message: 'Invalid Telephone Number Format.'
+												},
+											}
+										},
+						
+									}
+								})
+								.on('err.field.fv', function(e, data) {
+									// Get the first invalid field
+									var invalidFields = data.fv.getInvalidFields().length;
+									$('#errorfield').val(invalidFields)
+								})
+								.on('success.field.fv', function(e, data) {
+									// Get the first invalid field
+									var invalidFields = data.fv.getInvalidFields().length;
+									$('#errorfield').val(invalidFields)
+								});
+							}
+						})
+						
+						
+					}
+					
+
+				})//click event Edit Info
+			})
+		//- chartJs
 		script.
 			$(window).on('load', function(){
 				Chart.defaults.hitRateDoughnut=Chart.defaults.doughnut;
@@ -717,38 +1750,51 @@ html.loading(lang='en', data-textdirection='ltr')
 				$(".tooltip-track-mouse").tooltip({
 					track:!1,
 				})
+				$(document).on('click', '#discardChanges', function(){
+					$('form#infoForm').data('formValidation').destroy()
+					var consignorID = !{JSON.stringify(consignorData.intConsignorID)}
+					console.log(consignorID);
+					$.post(`/consignor/data`,{
+						intConsignorID: consignorID,
+					}).done(function(data){
+						if(data.indicator == 'success'){
+							var consignorData = data.consignorData;
+							$('#email').val(consignorData.strEmail);
+							$('#username').val(consignorData.strUsername);
+							if(consignorData.booConsignorType == '0'){
+								$('#firstName').val(consignorData.strRepresentativeFirstName);
+								$('#lastName').val(consignorData.strRepresentativeLastName);								
+							}
+							$('#address').val(consignorData.strAddress);
+							if(consignorData.strPhone != null){
+								$('#phone').val(consignorData.strPhone);
+							}
+							else if( consignorData.strPhone == null || consignorData.strPhone == ''){
+								$('#phoneField').empty()
+							}
 
-				$(document).on('click', '#editInfo', function(){
-					$('form#infoForm').find('input[readonly]').removeAttr('readonly');
-					$('form#infoForm').find('textarea[readonly]').removeAttr('readonly');
-					$('#dateJoin').attr('readonly', '');
-					var passwordHTML = $(`<div class="row">
-											<div class="col-md-12">
-												<fieldset title="Old Password" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
-												<input id="password" type="password" placeholder="Old Password" class="form-control input-lg"/>
-												<div class="form-control-position"><i class="fa fa-lock info font-large-1"></i></div>
-												</fieldset>
-											</div>
-											</div>
-											<div class="row">
-											<div class="col-md-12">
-												<fieldset title="Enter Password" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
-												<input id="password" type="password1" placeholder="Enter Password" class="form-control input-lg"/>
-												<div class="form-control-position"><i class="fa fa-lock info font-large-1"></i></div>
-												</fieldset>
-											</div>
-											</div>
-											<div class="row">
-											<div class="col-md-12">
-												<fieldset title="Re-enter Password" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
-												<input id="password" type="password2" placeholder="Re-enter Password" class="form-control input-lg"/>
-												<div class="form-control-position"><i class="fa fa-lock info font-large-1"></i></div>
-												</fieldset>
-											</div>
-											</div>`)
-					$('#passwordField').append( passwordHTML ).hide().fadeIn(1000)
+							if(consignorData.strTelephone != null){
+								$('#telephone').val(consignorData.strTelephone);
+							}
+							else if(consignorData.strTelephone == null){
+								$('#telephoneField').empty()							
+							}
+							$('#companyName').remove()
+							$('form#infoForm').find('input').attr('readonly', '');
+							$('form#infoForm').find('textarea').attr('readonly', '');
+						}
+					})
 					
-
+					
+					var consignorType = !{JSON.stringify(consignorData.booConsignorType)}					
+					if(consignorType == 1)//- Personal No name
+						$('#nameField').empty();
+					$('#buttonField').fadeOut(1000, function(){
+						var buttonReplace = $(`<button id="editInfo" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)
+						$(this)
+							.empty()
+							.append( buttonReplace ).hide().fadeIn(1000);
+					})					
 				})
 			})
 		
@@ -756,4 +1802,4 @@ html.loading(lang='en', data-textdirection='ltr')
 
 
 
-		
+			
