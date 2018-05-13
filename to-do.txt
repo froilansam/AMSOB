@@ -7,6 +7,7 @@
 5. Auction name, description, banner, date created *done
 6. Scheduling constraint(days or months after today, no overlapping) // FullCalendar eventOverlap:false // *done
 7. Automatic auction banner
+8. Auction Schedule Form Validation
 
 ** NOTES
 * 1 day minimum (Business Rules) 

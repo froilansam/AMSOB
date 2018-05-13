@@ -212,8 +212,8 @@ router.post('/auction/schedule', (req, res) => {
 router.post('/auction/edit', (req, res) => {
 	var queryString;
 	if(req.body.editType == 1){
-		queryString = `UPDATE tbl_auction SET datDateStart=?, booAuctionType=?, jsonDuration=? WHERE intAuctionID=?`;
-		db.query(queryString,[req.body.datDateStart,req.body.booAuctionType,req.body.jsonDuration,req.body.intAuctionID], (err, results, fields) => {
+		queryString = `UPDATE tbl_auction SET datDateStart=?, booAuctionType=?, jsonDuration=?, strAuctionName=?, strDescription=? WHERE intAuctionID=?`;
+		db.query(queryString,[req.body.datDateStart,req.body.booAuctionType,req.body.jsonDuration,req.body.strAuctionName,req.body.strDescription,req.body.intAuctionID], (err, results, fields) => {
 			if(err) console.log(err)
 
 			return res.send(true)
@@ -227,6 +227,16 @@ router.post('/auction/edit', (req, res) => {
 			return res.send(true)
 		})
 	}
+});
+// banner edit separate post request
+router.post('/auction/banner', upload.single('strBanner'), (req, res)=> {
+	console.log(req.file)
+	console.log('ID '+req.body.intAuctionID)
+	db.query('UPDATE tbl_auction SET strBanner = ? WHERE intAuctionID = ?', [req.file.filename, req.body.intAuctionID], (err, results, fields) =>{
+		if (err) console.log(err)
+
+		return res.send(true);
+	});
 });
 
 router.post('/auction/refetch', (req, res) => {
