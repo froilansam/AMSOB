@@ -13,6 +13,11 @@ var storage = multer.diskStorage({
 })
 var upload = multer({storage: storage})
 
+
+
+
+
+//Log In Page
 router
       .get('/', (req, res) => {
           res.render('consignor/views/login')
@@ -66,6 +71,22 @@ router
           })
         }
       })
+	.post('/authentication', (req, res) => {//post for logging in
+		console.log(req.body)
+		var loginQuery = `SELECT * FROM tbl_consignor JOIN tbl_consignor_accounts ON intConsignorID = intCSConsignorID WHERE strUsername = ? AND strPassword = ?`
+        db.query(loginQuery, [req.body.username, req.body.password], (err, results, fields) => {
+			if (err) return console.log(err);
+
+			if(results.length == 0){
+				res.send({indicator: 'failed'});
+			}
+			else{
+				res.send({indicator: 'success'});
+			}
+			
+		})
+	});
+      
 
       //Form Validation
 router

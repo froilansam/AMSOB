@@ -618,202 +618,7 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/js/scripts/pickers/dateTime/pick-a-datetime.js')
 		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
 		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
-		
 		script.
-			function importModules(daySliderValue){
-				$('.checkie').iCheck({
-					checkboxClass: 'icheckbox_flat-blue',
-					radioClass: 'iradio_flat-blue'
-				});
-				$("#editDayDuration").slider({
-					range: 'min',
-					min:1,
-					max:3,
-					step:1,
-					animate:"fast",
-					change: function(){
-						$('#editDayInput').val($(this).slider('value'))
-					},
-					value: daySliderValue
-				}).slider("pips",{
-					rest:'label'
-				})
-				$("#editStartingTime").timeDropper({
-					format: 'HH:mm',
-					setCurrentTime: false
-				})
-				$('#editHourDuration').knob({
-					min: 0,
-					max: 23,
-				})
-				$('#editMinuteDuration').knob({
-					min: 0,
-					max: 59,
-				})
-				$('#editBanner').dropify({
-					allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
-					messages: {
-						'default': 'Drag and drop an image here or click',
-						'replace': 'Drag and drop or click to replace',
-						'remove': 'Remove',
-						'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
-					},
-					error: {
-						'fileSize': 'The file size is too big (1M max).',
-						'fileFormat': 'The file format is not allowed ({{ value }} only).'
-					}
-				})
-				$('#editBanner').on('change', function (){
-					$('#editBannerToggle').val(1);
-				})
-				$('#editBanner').on('dropify.afterClear', function(){
-					$('#editBannerToggle').val(1);
-				})
-				$('#editForm').formValidation({
-					framework: 'bootstrap',
-					icon: {
-						valid: 'fa fa-check',
-						invalid: 'fa fa-times',
-						validating: 'fa fa-spinner'
-					},
-					fields: {
-						auctionName: {
-							validators: {
-								notEmpty: {
-									message: 'Enter an auction name'
-								}
-							}
-						}
-					}
-				})
-			}
-			function eventDetails(eventId){
-				$.post('/eventdetails', {auctionId: eventId})
-				.done(function (data){
-					var jsonAttribute = JSON.parse(data.jsonDuration);
-					$('#auctionDetailsBody').append(`<center>
-						<h3>Auction # ${data.intAuctionID}</h3>
-						</center>
-						<fieldset>
-							<div class="row">
-								<div class="col-md-4 col-sm-12"></div>
-								<div class="col-md-4 col-sm-12">
-								<center>
-									<fieldset id='fieldAuctionType'>
-									</fieldset>
-								</center>
-								</div>
-							</div>
-							<form id='editForm'>
-							<fieldset>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-										<label>Auction Name<span class="danger">*</span></label>
-										<input id='editAuctionName' type="text" name="auctionName" placeholder="E.g Chanel Galore" value="${data.strAuctionName}" class="form-control input-lg"/>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-										<label>Starting Time<span class="danger">*</span></label>
-										<input id="editStartingTime" type="text" name="startingTime" placeholder="Date Dropper" value="${jsonAttribute.startingTime}" class="form-control input-lg"/>
-										</div>
-									</div>
-									</div>
-									<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-										<label>Auction Description</label>
-										<textarea id='editAuctionDescription' rows="3" name="auctionDescription" placeholder='E.g Chanel Designer Bags, Chanel Night Gowns, etc.' class="form-control input-lg">${data.strDescription}</textarea>
-										</div>
-									</div>
-									</div>
-									<div class="row">
-									<div class="col-md-12">
-										<div id='bannerDiv' class="form-group">
-										<label>Auction Banner</label>
-										</div>
-									</div>
-									</div>
-								<div class="row">
-									<div class="col-md-12">
-									<div class="form-group">
-										<label>Day Duration:</label>
-										<div id="editDayDuration" class="ui-slider-info"></div>
-										<input id="editDayInput" type="hidden" name="days" value="${jsonAttribute.days}"/>
-									</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-									<div class="form-group">
-										<label>Hour Duration:</label>
-										<div class="text-center">
-										<input id="editHourDuration" type="text" value='${jsonAttribute.hours}' name="hours" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="hourDuration knob overload-draw"/>
-										</div>
-									</div>
-									</div>
-									<div class="col-md-6">
-									<div class="form-group">
-										<label>Minute Duration:</label>
-										<div class="text-center">
-										<input id="editMinuteDuration" type="text" value="${jsonAttribute.minutes}" name="minutes" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="minuteDuration knob overload-draw"/>
-										</div>
-									</div>
-									</div>
-								</div>
-								</fieldset>
-								<div class="table-responsive">
-								<table id="itemTable" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
-									<thead>
-									<tr>
-										<th>ID</th>
-										<th>Item Name</th>
-										<th>Date Created</th>
-										<th>Date Received</th>
-										<th>Status</th>
-										<th>Action</th>
-									</tr>
-									</thead>
-									<tbody></tbody>
-								</table>
-								</div>
-								<div class="card-footer">
-									<button id="editSubmit" class="btn btn-block btn-outline-info" auctionDateStart='${data.datDateStart}' auctionId='${data.intAuctionID}'>
-									<i class="ft-user"></i>Edit 
-									</button>
-								</div>
-								<input id='editBannerToggle' type='hidden' value='0'/>
-						</fieldset>
-						</form>
-					`)
-					if(data.booAuctionType == 1){
-						$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie editAuctionType" checked=''/><span>
-							<label> Live &nbsp &nbsp</label></span>
-						<input type="radio" name="editAuctionType" value="2" class="checkie editAuctionType"/><span>
-							<label> Online</label></span>
-						<input type='hidden' id='editAuctionType' value='1'/>
-						`)
-					}
-					else{
-						$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie editAuctionType"/><span>
-							<label> Live &nbsp &nbsp</label></span>
-						<input type="radio" name="editAuctionType" value="2" class="checkie editAuctionType" checked=''/><span>
-							<label> Online</label></span>
-						<input type='hidden' id='editAuctionType' value='2'/>
-						`)
-					}
-					if(data.strBanner != ''){
-						$('#bannerDiv').append(`<input id='editBanner' type="file" name="auctionBanner" data-default-file="/assets/uploads/${data.strBanner}" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify"/>`)
-					}
-					else{
-						$('#bannerDiv').append(`<input id='editBanner' type="file" name="auctionBanner" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify"/>`)
-					}
-					$('#auctionDetails').modal('show');
-					importModules(jsonAttribute.days);
-				});
-			}
-		script(type='text/javascript').
 			$(document).ready(function () {
 				$(document).on('ifChecked', '.editAuctionType', function(){
 					$('#editAuctionType').val($(this).val())
@@ -1015,6 +820,201 @@ html.loading(lang='en', data-textdirection='ltr')
 					}
 				});
 			});
+		script.
+			function importModules(daySliderValue){
+				$('.checkie').iCheck({
+					checkboxClass: 'icheckbox_flat-blue',
+					radioClass: 'iradio_flat-blue'
+				});
+				$("#editDayDuration").slider({
+					range: 'min',
+					min:1,
+					max:3,
+					step:1,
+					animate:"fast",
+					change: function(){
+						$('#editDayInput').val($(this).slider('value'))
+					},
+					value: daySliderValue
+				}).slider("pips",{
+					rest:'label'
+				})
+				$("#editStartingTime").timeDropper({
+					format: 'HH:mm',
+					setCurrentTime: false
+				})
+				$('#editHourDuration').knob({
+					min: 0,
+					max: 23,
+				})
+				$('#editMinuteDuration').knob({
+					min: 0,
+					max: 59,
+				})
+				$('#editBanner').dropify({
+					allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+					messages: {
+						'default': 'Drag and drop an image here or click',
+						'replace': 'Drag and drop or click to replace',
+						'remove': 'Remove',
+						'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+					},
+					error: {
+						'fileSize': 'The file size is too big (1M max).',
+						'fileFormat': 'The file format is not allowed ({{ value }} only).'
+					}
+				})
+				$('#editBanner').on('change', function (){
+					$('#editBannerToggle').val(1);
+				})
+				$('#editBanner').on('dropify.afterClear', function(){
+					$('#editBannerToggle').val(1);
+				})
+				$('#editForm').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						auctionName: {
+							validators: {
+								notEmpty: {
+									message: 'Enter an auction name'
+								}
+							}
+						}
+					}
+				})
+			}
+			function eventDetails(eventId){
+				$.post('/eventdetails', {auctionId: eventId})
+				.done(function (data){
+					var jsonAttribute = JSON.parse(data.jsonDuration);
+					$('#auctionDetailsBody').append(`<center>
+						<h3>Auction # ${data.intAuctionID}</h3>
+						</center>
+						<fieldset>
+							<div class="row">
+								<div class="col-md-4 col-sm-12"></div>
+								<div class="col-md-4 col-sm-12">
+								<center>
+									<fieldset id='fieldAuctionType'>
+									</fieldset>
+								</center>
+								</div>
+							</div>
+							<form id='editForm'>
+							<fieldset>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+										<label>Auction Name<span class="danger">*</span></label>
+										<input id='editAuctionName' type="text" name="auctionName" placeholder="E.g Chanel Galore" value="${data.strAuctionName}" class="form-control input-lg"/>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+										<label>Starting Time<span class="danger">*</span></label>
+										<input id="editStartingTime" type="text" name="startingTime" placeholder="Date Dropper" value="${jsonAttribute.startingTime}" class="form-control input-lg"/>
+										</div>
+									</div>
+									</div>
+									<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+										<label>Auction Description</label>
+										<textarea id='editAuctionDescription' rows="3" name="auctionDescription" placeholder='E.g Chanel Designer Bags, Chanel Night Gowns, etc.' class="form-control input-lg">${data.strDescription}</textarea>
+										</div>
+									</div>
+									</div>
+									<div class="row">
+									<div class="col-md-12">
+										<div id='bannerDiv' class="form-group">
+										<label>Auction Banner</label>
+										</div>
+									</div>
+									</div>
+								<div class="row">
+									<div class="col-md-12">
+									<div class="form-group">
+										<label>Day Duration:</label>
+										<div id="editDayDuration" class="ui-slider-info"></div>
+										<input id="editDayInput" type="hidden" name="days" value="${jsonAttribute.days}"/>
+									</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+									<div class="form-group">
+										<label>Hour Duration:</label>
+										<div class="text-center">
+										<input id="editHourDuration" type="text" value='${jsonAttribute.hours}' name="hours" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="hourDuration knob overload-draw"/>
+										</div>
+									</div>
+									</div>
+									<div class="col-md-6">
+									<div class="form-group">
+										<label>Minute Duration:</label>
+										<div class="text-center">
+										<input id="editMinuteDuration" type="text" value="${jsonAttribute.minutes}" name="minutes" data-skin="tron" data-thickness=".2" data-displayprevious="true" data-fgcolor="#666EE8" class="minuteDuration knob overload-draw"/>
+										</div>
+									</div>
+									</div>
+								</div>
+								</fieldset>
+								<div class="table-responsive">
+								<table id="itemTable" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
+									<thead>
+									<tr>
+										<th>ID</th>
+										<th>Item Name</th>
+										<th>Date Created</th>
+										<th>Date Received</th>
+										<th>Status</th>
+										<th>Action</th>
+									</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+								</div>
+								<div class="card-footer">
+									<button id="editSubmit" class="btn btn-block btn-outline-info" auctionDateStart='${data.datDateStart}' auctionId='${data.intAuctionID}'>
+									<i class="ft-user"></i>Edit 
+									</button>
+								</div>
+								<input id='editBannerToggle' type='hidden' value='0'/>
+						</fieldset>
+						</form>
+					`)
+					if(data.booAuctionType == 1){
+						$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie editAuctionType" checked=''/><span>
+							<label> Live &nbsp &nbsp</label></span>
+						<input type="radio" name="editAuctionType" value="2" class="checkie editAuctionType"/><span>
+							<label> Online</label></span>
+						<input type='hidden' id='editAuctionType' value='1'/>
+						`)
+					}
+					else{
+						$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie editAuctionType"/><span>
+							<label> Live &nbsp &nbsp</label></span>
+						<input type="radio" name="editAuctionType" value="2" class="checkie editAuctionType" checked=''/><span>
+							<label> Online</label></span>
+						<input type='hidden' id='editAuctionType' value='2'/>
+						`)
+					}
+					if(data.strBanner != ''){
+						$('#bannerDiv').append(`<input id='editBanner' type="file" name="auctionBanner" data-default-file="/assets/uploads/${data.strBanner}" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify"/>`)
+					}
+					else{
+						$('#bannerDiv').append(`<input id='editBanner' type="file" name="auctionBanner" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify"/>`)
+					}
+					$('#auctionDetails').modal('show');
+					importModules(jsonAttribute.days);
+				});
+			}
+		
 	// FORM VALIDATION
 	script.
 		$(document).ready(function (){
