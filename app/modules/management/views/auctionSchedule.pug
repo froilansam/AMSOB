@@ -448,7 +448,7 @@ html.loading(lang='en', data-textdirection='ltr')
 									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
 										span Create Auction
 								.card-content
-								form#createForm(method='POST' action='/auction/create' enctype="multipart/form-data")
+							form#createForm(method='POST' action='/auction/create' enctype="multipart/form-data")
 									.card-body
 										fieldset
 											.row
@@ -517,10 +517,10 @@ html.loading(lang='en', data-textdirection='ltr')
 														th Status
 														th Action
 												tbody
-								.card-footer
-									button.btn.btn-block.btn-outline-success#createSubmit
-										i.ft-user
-										| Create 
+									.card-footer
+										button.btn.btn-block.btn-outline-success#createSubmit(type='submit')
+											i.ft-user
+											| Create 
 				.content-header.row
 					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
 						h3.content-header-title.mb-0.d-inline-block Auction Schedule
@@ -815,10 +815,6 @@ html.loading(lang='en', data-textdirection='ltr')
 			}
 		script(type='text/javascript').
 			$(document).ready(function () {
-				$(document).on('click', '#createSubmit', function(){
-					$('#createForm').data('formValidation').validate();
-					$('#createForm').submit()
-				});
 				$(document).on('ifChecked', '.editAuctionType', function(){
 					$('#editAuctionType').val($(this).val())
 				});
