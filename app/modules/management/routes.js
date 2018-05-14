@@ -27,7 +27,7 @@ router
 //Consignor Router
 router
 	.get('/consignor', (req, res) => {//list of consignors
-		var consignorQuery = `SELECT * FROM tbl_consignor JOIN tbl_consignor_accounts ON intConsignorID = intCSConsignorID`
+		var consignorQuery = `SELECT * FROM tbl_consignor JOIN tbl_consignor_accounts ON intConsignorID = intCSConsignorID WHERE booStatus != 2`
 		db.query(consignorQuery, (err, results, fields) => {
 			if(err) return console.log(err);
 			res.render('management/views/consignor', {consignorData: results})		
@@ -61,7 +61,7 @@ router
 		}
 		else if(req.body.consignorType == 1){//if data is for personal
 			var consignorQuery = `INSERT INTO tbl_consignor (datDateRegistered, strName, strRepresentativeFirstName, strRepresentativeLastName, strAddress, strPhone, strTelephone, strEmail, 
-				strCheckPayable, strIDType, strIDNumber, booConsignorType, strIDPicture) VALUES (now(),?, ?, ?, ?, ?, ?, ?, ?, ?, ?  1, ?)`
+				strCheckPayable, strIDType, strIDNumber, booConsignorType, strIDPicture) VALUES (now(),?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)`
 			db.query(consignorQuery, [req.body.firstName+' '+req.body.lastName, req.body.firstName, req.body.lastName, req.body.address, req.body.phone, req.body.telephone, req.body.email, req.body.cpName, req.body.IDType, req.body.IDNumber, req.file.filename], (err, results, fields) => {
 				if(err) return console.log(err);
 				console.log(fields)
@@ -90,8 +90,72 @@ router
 			results[0].datDateRegistered = moment(results[0].datDateRegistered).format('lll');
 			res.render('management/views/editconsignor', {consignorData: results[0]});
 		});
-		
 	})
+	.post('/consignor/data', (req, res) => {// get information ajaxly
+		var editQuery = `SELECT * FROM tbl_consignor JOIN tbl_consignor_accounts ON intConsignorID = intCSConsignorID WHERE intConsignorID = ?`
+		db.query(editQuery, [req.body.intConsignorID], (err, results, fields) => {
+			if(err) return console.log(err);
+			console.log(results[0])
+			results[0].datDateRegistered = moment(results[0].datDateRegistered).format('lll');
+			res.send({indicator: 'success', consignorData: results[0]});
+		});
+	})
+	.post('/consignor/update/:intConsignorID', (req, res) => {//- edit information
+		var updateQuery = `UPDATE tbl_consignor SET strEmail = ?, strName = ?, strRepresentativeFirstName = ?, strRepresentativeLastName = ?, strAddress = ?, strPhone = ?, strTelephone = ? WHERE intConsignorID = ?`
+		db.query(updateQuery, [req.body.strEmail, req.body.strName ,req.body.strRepresentativeFirstName, req.body.strRepresentativeLastName, req.body.strAddress, req.body.strPhone, req.body.strTelephone, req.params.intConsignorID], (err, results, fields) => {
+			if(err) return console.log(err);
+
+			var secondUpdateQuery = `UPDATE tbl_consignor_accounts SET strUsername = ? WHERE intCSConsignorID = ?`;
+			db.query(secondUpdateQuery, [req.body.strUsername, req.params.intConsignorID], (err, results, fields) => {
+				if(err) return console.log(err);
+				
+				var consignorQuery = `SELECT * FROM tbl_consignor JOIN tbl_consignor_accounts ON intConsignorID = intCSConsignorID WHERE intConsignorID = ?`
+				db.query(consignorQuery, [req.params.intConsignorID], (err, results, fields) => {
+					if(err){
+						console.log(err);
+						res.send({indicator: 'fail'})	
+					}
+
+					res.send({consignorData: results[0], indicator: 'success'})
+				})
+			})			
+		});
+	})
+	.post('/consignor/requirement/update', upload.single('IDPicture'), (req, res) => {//- edit requirement
+		console.log(req.file)
+		console.log(req.body)
+		if(typeof(req.file) != 'undefined'){
+			var updateQuery = `UPDATE tbl_consignor SET strIDType = ?, strTINNumber = ?, strIDNumber = ?, strIDPicture = ? WHERE intConsignorID = ?`
+			db.query(updateQuery, [req.body.strIDType, req.body.strTINNumber ,req.body.strIDNumber, req.file.filename, req.body.intConsignorID], (err, results, fields) => {
+				if(err) return console.log(err);
+				console.log('updateSuccess')
+			
+				var consignorQuery = `SELECT * FROM tbl_consignor JOIN tbl_consignor_accounts ON intConsignorID = intCSConsignorID WHERE intConsignorID = ?`
+				db.query(consignorQuery, [req.body.intConsignorID], (err, results, fields) => {
+					if(err) return console.log(err);
+					
+					console.log(results[0])
+					res.send({consignorData: results[0], indicator: 'success'})
+				})					
+			});
+		}
+		else{
+			var updateQuery = `UPDATE tbl_consignor SET strIDType = ?, strTINNumber = ?, strIDNumber = ? WHERE intConsignorID = ?`
+			db.query(updateQuery, [req.body.strIDType, req.body.strTINNumber ,req.body.strIDNumber, req.body.intConsignorID], (err, results, fields) => {
+				if(err) return console.log(err);
+				console.log('updateSuccess')
+			
+				var consignorQuery = `SELECT * FROM tbl_consignor JOIN tbl_consignor_accounts ON intConsignorID = intCSConsignorID WHERE intConsignorID = ?`
+				db.query(consignorQuery, [req.body.intConsignorID], (err, results, fields) => {
+					if(err) return console.log(err);
+					
+					console.log(results[0])
+					res.send({consignorData: results[0], indicator: 'success'})
+				})					
+			});
+		}
+	})
+	
 	
 
 //Form Validation
@@ -125,8 +189,39 @@ router
 				res.send({"email": true });
 			}
 		})
+	})
+	.post('/usernameavailability/:strUsername', (req, res) => {//Check if username is existing
+		var usernameQuery = `SELECT * FROM tbl_consignor_accounts WHERE strUsername = ? AND strUsername != ?`;
+		db.query(usernameQuery, [req.body.username, req.params.strUsername], function (err, results, fields) {
+			if (err) return console.log(err);
+			console.log(results)
+			if(results.length > 0){
+				console.log('Username is Existing')
+				res.send({ "username": false });
+			}
+			else{
+				console.log('Username is Available')
+				res.send({ "username": true });
+			}
+		})
+	})
+	.post('/emailavailability/:strEmail', (req, res) => {//check if email is existing
+		var emailQuery = `SELECT * FROM tbl_consignor WHERE strEmail = ? AND strEmail != ?`;
+		db.query(emailQuery, [req.body.email, req.params.strEmail], function (err, results, fields) {
+			if (err) return console.log(err);
+			console.log(results)
+			if(results.length > 0){
+				console.log('E-mail is Existing')
+				res.send({"email": false });
+			}
+			else{
+				console.log('E-mail is Available')
+				res.send({"email": true });
+			}
+		})
 	});
 
+//Auction
 router.get('/auction', (req, res) => {
 	var queryString = `SELECT * FROM tbl_auction`;
 	var events = [];
