@@ -666,6 +666,9 @@ html.loading(lang='en', data-textdirection='ltr')
 				$('#editBanner').on('change', function (){
 					$('#editBannerToggle').val(1);
 				})
+				$('#editBanner').on('dropify.afterClear', function(){
+					$('#editBannerToggle').val(1);
+				})
 				$('#editForm').formValidation({
 					framework: 'bootstrap',
 					icon: {
@@ -727,9 +730,8 @@ html.loading(lang='en', data-textdirection='ltr')
 									</div>
 									<div class="row">
 									<div class="col-md-12">
-										<div class="form-group">
+										<div id='bannerDiv' class="form-group">
 										<label>Auction Banner</label>
-										<input id='editBanner' type="file" name="auctionBanner" data-default-file="/assets/uploads/${data.strBanner}" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify"/>
 										</div>
 									</div>
 									</div>
@@ -800,6 +802,12 @@ html.loading(lang='en', data-textdirection='ltr')
 							<label> Online</label></span>
 						<input type='hidden' id='editAuctionType' value='2'/>
 						`)
+					}
+					if(data.strBanner != ''){
+						$('#bannerDiv').append(`<input id='editBanner' type="file" name="auctionBanner" data-default-file="/assets/uploads/${data.strBanner}" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify"/>`)
+					}
+					else{
+						$('#bannerDiv').append(`<input id='editBanner' type="file" name="auctionBanner" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify"/>`)
 					}
 					$('#auctionDetails').modal('show');
 					importModules(jsonAttribute.days);

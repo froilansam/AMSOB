@@ -232,11 +232,21 @@ router.post('/auction/edit', (req, res) => {
 router.post('/auction/banner', upload.single('strBanner'), (req, res)=> {
 	console.log(req.file)
 	console.log('ID '+req.body.intAuctionID)
-	db.query('UPDATE tbl_auction SET strBanner = ? WHERE intAuctionID = ?', [req.file.filename, req.body.intAuctionID], (err, results, fields) =>{
-		if (err) console.log(err)
-
-		return res.send(true);
-	});
+	if(typeof req.file == 'undefined'){
+		db.query('UPDATE tbl_auction SET strBanner = "" WHERE intAuctionID = ?', [req.body.intAuctionID], (err, results, fields) =>{
+			console.log('hello')
+			if (err) console.log(err)
+	
+			return res.send(true);
+		});
+	}
+	else{
+		db.query('UPDATE tbl_auction SET strBanner = ? WHERE intAuctionID = ?', [req.file.filename, req.body.intAuctionID], (err, results, fields) =>{
+			if (err) console.log(err)
+	
+			return res.send(true);
+		});
+	}
 });
 
 router.post('/auction/refetch', (req, res) => {
