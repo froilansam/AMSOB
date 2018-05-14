@@ -2,7 +2,6 @@
 2. eventDrop (edit drag and drop on full calendar) *done
 3. fix unscheduled events query bugs *done
 4. cataloging
-<<<<<<< HEAD
     transfer from one auction to another
     publish
 5. Auction name, description, banner, date created *done
@@ -16,7 +15,6 @@
 * banner resolution: 851x315
 * User logs
 * supervised machine learning
-=======
 
 
 // Froilan
@@ -30,4 +28,3 @@
 8. Form validation Messages
 9. Hash Password
 10. Banned switch
->>>>>>> d493be95f9c3f149c70c9a59795582ab3d0b30bd
