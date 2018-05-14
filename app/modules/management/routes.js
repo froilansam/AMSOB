@@ -27,7 +27,7 @@ router
 //Consignor Router
 router
 	.get('/consignor', (req, res) => {//list of consignors
-		var consignorQuery = `SELECT * FROM tbl_consignor JOIN tbl_consignor_accounts ON intConsignorID = intCSConsignorID`
+		var consignorQuery = `SELECT * FROM tbl_consignor JOIN tbl_consignor_accounts ON intConsignorID = intCSConsignorID WHERE booStatus != 2`
 		db.query(consignorQuery, (err, results, fields) => {
 			if(err) return console.log(err);
 			res.render('management/views/consignor', {consignorData: results})		
@@ -154,7 +154,6 @@ router
 				})					
 			});
 		}
-		
 	})
 	
 	
@@ -222,7 +221,7 @@ router
 		})
 	});
 
-
+//Auction
 router.get('/auction', (req, res) => {
 	var queryString = `SELECT * FROM tbl_auction`;
 	var events = [];

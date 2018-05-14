@@ -13,3 +13,5 @@
 6. put toaster when theres error
 7. Design for Landing Page consignor
 8. Form validation Messages
+9. Hash Password
+10. Banned switch

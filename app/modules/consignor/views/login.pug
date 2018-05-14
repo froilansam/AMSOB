@@ -510,9 +510,6 @@ html.loading(lang='en', data-textdirection='ltr')
 													.help-block.font-small-3
 												.form-group.row
 													.col-md-6.col-12.text-center.text-md-left
-														fieldset
-															input#remember-me.chk-remember(type='checkbox')
-															label(for='remember-me')  Remember Me
 													.col-md-6.col-12.text-center.text-md-right
 														a.card-link(href='recover-password.html') Forgot Password?
 												button.btn.btn-danger.btn-block.btn-lg(type='submit')
@@ -616,7 +613,7 @@ html.loading(lang='en', data-textdirection='ltr')
 
 							$.ajax({
 								type: "POST",
-								url: "/consignor",
+								url: "/consignorportal",
 								data: formData,
 								processData: false,
 								contentType: false,
@@ -648,61 +645,7 @@ html.loading(lang='en', data-textdirection='ltr')
 											signupValidation() //Initialization again
 											hiddenModal();
 
-											//Add to Row Table
-											var table = $('#consignorTable').DataTable();
-
-											if($('#profileCompany').find('.phone').val() != '' && $('#profileCompany').find('.telephone').val() != '' ){
-												var rows = $(`<tr>
-															<td><span class="dropdown">
-																<button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-info dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button><span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right"><a class="edit dropdown-item" href="/consignor/${consignorData.intConsignorID}"><i class="ft-eye"></i> View</a><a class="remove dropdown-item" style="color: red"><i class="ft-trash-2"></i> Delete</a></span></span></td>
-															<td>Company</td>
-															<td>`+consignorData.strName+`</td>
-															<td><a href="mailto: `+consignorData.email+`">`+consignorData.email+`</a></td>
-															<td>Phone: `+consignorData.strPhone+`<br>Telephone: `+consignorData.strTelephone+`</td>
-															<td><span class="btn btn-sm btn-outline-success round">Active</span></td>
-															<td>`+consignorData.intConsignorID+`</td>
-															</tr>`)
-												table.row.add(rows[0]).draw();
-											}
-											if($('#profileCompany').find('.phone').val() == '' && $('#profileCompany').find('.telephone').val() != '' ){
-												var rows = $(`<tr>
-															<td><span class="dropdown">
-																<button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-info dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button><span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right"><a class="edit dropdown-item" href="/consignor/${consignorData.intConsignorID}"><i class="ft-eye"></i> View</a><a class="remove dropdown-item" style="color: red"><i class="ft-trash-2"></i> Delete</a></span></span></td>
-															<td>Company</td>
-															<td>`+consignorData.strName+`</td>
-															<td><a href="mailto: `+consignorData.email+`">`+consignorData.email+`</a></td>
-															<td>Telephone: `+consignorData.strTelephone+`</td>
-															<td><span class="btn btn-sm btn-outline-success round">Active</span></td>
-															<td>`+consignorData.intConsignorID+`</td>
-															</tr>`)
-												table.row.add(rows[0]).draw();
-											}
-											if($('#profileCompany').find('.phone').val() != '' && $('#profileCompany').find('.telephone').val() == '' ){
-												var rows = $(`<tr>
-															<td><span class="dropdown">
-																<button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-info dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button><span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right"><a class="edit dropdown-item" href="/consignor/${consignorData.intConsignorID}"><i class="ft-eye"></i> View</a><a class="remove dropdown-item" style="color: red"><i class="ft-trash-2"></i> Delete</a></span></span></td>
-															<td>Company</td>
-															<td>`+consignorData.strName+`</td>
-															<td><a href="mailto: `+consignorData.email+`">`+consignorData.email+`</a></td>
-															<td>Phone: `+consignorData.strPhone+`</td>
-															<td><span class="btn btn-sm btn-outline-success round">Active</span></td>
-															<td>`+consignorData.intConsignorID+`</td>
-															</tr>`)
-												table.row.add(rows[0]).draw();
-											}
-											if($('#profileCompany').find('.phone').val() == '' && $('#profileCompany').find('.telephone').val() == '' ){
-												var rows = $(`<tr>
-															<td><span class="dropdown">
-																<button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-info dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button><span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right"><a class="edit dropdown-item" href="/consignor/${consignorData.intConsignorID}"><i class="ft-eye"></i> View</a><a class="remove dropdown-item" style="color: red"><i class="ft-trash-2"></i> Delete</a></span></span></td>
-															<td>Company</td>
-															<td>`+consignorData.strName+`</td>
-															<td><a href="mailto: `+consignorData.email+`">`+consignorData.email+`</a></td>
-															<td>None</td>
-															<td><span class="btn btn-sm btn-outline-success round">Active</span></td>
-															<td>`+consignorData.intConsignorID+`</td>
-															</tr>`)
-												table.row.add(rows[0]).draw();
-											}
+											
 										})
 									}
 								},
@@ -725,7 +668,7 @@ html.loading(lang='en', data-textdirection='ltr')
 
 							$.ajax({
 								type: "POST",
-								url: "/consignor",
+								url: "/consignorportal",
 								data: formData,
 								processData: false,
 								contentType: false,
@@ -1149,7 +1092,7 @@ html.loading(lang='en', data-textdirection='ltr')
 									message: 'This is not a valid e-mail address.'
 								},
 								remote: {
-									url: '/emailavailability',
+									url: '/consignorportal/emailavailability',
 									message: 'E-mail address has been taken',
 									validKey: 'email',
 									type: 'POST'
@@ -1173,7 +1116,7 @@ html.loading(lang='en', data-textdirection='ltr')
 									message: 'The username can only consist of alphabetical, number, dot and underscore'
 								},
 								remote: {
-									url: '/usernameavailability',
+									url: '/consignorportal/usernameavailability',
 									message: 'Username has been taken',
 									validKey: 'username',
 									type: 'POST'
