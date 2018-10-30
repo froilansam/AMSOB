@@ -1,9 +1,0 @@
-** auction status
-0 - unscheduled
-1 - scheduled
-2 - Ongoing
-3 - Done
-
-** auction type
-1 - Live
-2 - Online
