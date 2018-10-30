@@ -66,6 +66,8 @@ The following are the additional features/functionalities* of the project:
 
 4. After installing all the dependencies, open the `.env.sample` file and copy the contents of it. Create a new `.env` file and paste everything in there. The sample file has comments in it for each field present.
 
+5. Run the **AMSOBDatabase.sql** on your [MySQL workbench]() or any SQL Management System, then configure the credential on the `.env` file.
+
 5. Run the application using `node index.js` or `nodemon` if you have installed it (`npm install nodemon -g`).
 
 ### Built With
@@ -85,8 +87,7 @@ The following are the additional features/functionalities* of the project:
 
 See also the list of [contributors](https://github.com/AMSOB/contributors) who participated in this project.
 
-## Acknowledgments
+## Note: 
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* This is a capstone project, a requirement for the course CAPSTONE subject in **Polytechnic University of the Philippines**.
+* *Additional Features/Functionalities are the features/functionalities that is not a must-have for the requirement matrix of the project.
