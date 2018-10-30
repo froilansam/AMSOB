@@ -1,0 +1,1689 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| Dashboard eCommerce - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+			| + Bitcoin Dashboard
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/formValidation.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/weather-icons/climacons.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/meteocons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist-plugin-tooltip.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/responsive.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/custom.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/selects/select2.min.css')
+		link(rel="stylesheet" type="text/css" href="/assets/vendors/css/extensions/toastr.css")
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/gallery.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/pickers/miniColors/jquery.minicolors.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/pickers/spectrum/spectrum.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/extensions/raty/jquery.raty.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/meteocons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/dropify.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/forms/extended/form-extended.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/horizontal-menu.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-callout.min.css')
+
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/timeline.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/dashboard-ecommerce.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel="stylesheet" type="text/css" href="/assets/css/plugins/extensions/toastr.min.css")
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/pickers/colorpicker/colorpicker.min.css')
+		
+
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../assets/css/style.css')
+		// END Custom CSS
+		style.
+			.has-error .control-label,
+			.has-error .help-block,
+			.has-error .form-control-feedback {
+				color: #a94442;
+			}
+
+			/* Color of valid field */
+			.has-success .control-label,
+			.has-success .help-block,
+			.has-success .form-control-feedback {
+				color: #3c763d;
+			}
+			.form-group.has-feedback.has-error .form-control,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single:focus{
+				border: 1px solid #a94442 !important;
+			}
+			.form-group.has-feedback.has-success .form-control,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single:focus{
+				border: 1px solid #3c763d !important;
+			}
+			.appraise{
+				cursor: pointer;
+			}
+
+			.form-control-feedback.fa.fa-check{
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 35px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.form-control-feedback.fa.fa-times {
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 54px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.swal-button.swal-button--Cancel{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Yes{
+				background-color: #28D094 !important;
+			}
+		
+			.card .card-body:before {
+				font-family: fontawesome;
+				font-size: 10rem;
+				color: rgba(255,255,255,.15);
+				position: absolute;
+				bottom: -32px;
+				right: 0;
+			}
+			.sales::before {
+				content: "\f0d6";
+			}
+			.consignment::before {
+				content: "\f07a";
+			}
+			.form-control:disabled, .form-control[readonly], .input-group-addon {
+				background-color: transparent;
+				border: none! important;
+				font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+			}
+			.pull-up{
+				z-index: 0 !important;
+			}
+		style.
+			.has-error .control-label,
+			.has-error .help-block,
+			.has-error .form-control-feedback {
+				color: #a94442;
+			}
+
+			/* Color of valid field */
+			.has-success .control-label,
+			.has-success .help-block,
+			.has-success .form-control-feedback {
+				color: #3c763d;
+			}
+			.form-group.has-feedback.has-error .form-control,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single:focus{
+				border: 1px solid #a94442 !important;
+			}
+			.form-group.has-feedback.has-success .form-control,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single:focus{
+				border: 1px solid #3c763d !important;
+			}
+
+			.help-block{
+				color: red;
+			}
+
+			.form-control-feedback.fa.fa-check{
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 35px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.form-control-feedback.fa.fa-times {
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 54px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.swal-button.swal-button--DontSave{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Save{
+				background-color: #28D094 !important;
+			}
+			#next[disabled], #prev[disabled]{
+				cursor: not-allowed;
+			}
+	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.mr-auto
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AMSOB
+						li.nav-item.d-none.d-md-block.float-right
+							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.content
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+							li.dropdown.nav-item.mega-dropdown
+								a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') Mega
+								ul.mega-dropdown-menu.dropdown-menu.row
+									li.col-md-2
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-newspaper-o
+											|  News
+										#mega-menu-carousel-example
+											div
+												img.rounded.img-fluid.mb-1(src='/assets/images/slider/slider-2.png', alt='First slide')
+												a.news-title.mb-0(href='#') Poster Frame PSD
+												p.news-content
+													span.font-small-2 January 26, 2018
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-random
+											|  Drill down menu
+										ul.drilldown-menu
+											li.menu-list
+												ul
+													li
+														a.dropdown-item(href='layout-2-columns.html')
+															i.ft-file
+															|  Page layouts & Templates
+													li
+														a(href='#')
+															i.ft-align-left
+															|  Multi level menu
+														ul
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-bookmark-o
+																	|   Second level
+															li
+																a(href='#')
+																	i.la.la-lemon-o
+																	|  Second level menu
+																ul
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-heart-o
+																			|   Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-file-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-trash-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-clock-o
+																			|  Third level
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-hdd-o
+																	|  Second level, third link
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-floppy-o
+																	|  Second level, fourth link
+													li
+														a.dropdown-item(href='color-palette-primary.html')
+															i.ft-camera
+															|  Color palette system
+													li
+														a.dropdown-item(href='sk-2-columns.html')
+															i.ft-edit
+															|  Page starter kit
+													li
+														a.dropdown-item(href='changelog.html')
+															i.ft-minimize-2
+															|  Change log
+													li
+														a.dropdown-item(href='https://pixinvent.ticksy.com/')
+															i.la.la-life-ring
+															|  Customer support center
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-list-ul
+											|  Accordion
+										#accordionWrap(role='tablist', aria-multiselectable='true')
+											.card.border-0.box-shadow-0.collapse-icon.accordion-icon-rotate
+												#headingOne.card-header.p-0.pb-2.border-0(role='tab')
+													a(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionOne', aria-expanded='true', aria-controls='accordionOne') Accordion Item #1
+												#accordionOne.card-collapse.collapse.show(role='tabpanel', aria-labelledby='headingOne', aria-expanded='true')
+													.card-content
+														p.accordion-text.text-small-3
+															| Caramels dessert chocolate cake pastry jujubes bonbon.
+															| Jelly wafer jelly beans. Caramels chocolate cake liquorice
+															| cake wafer jelly beans croissant apple pie.
+												#headingTwo.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionTwo', aria-expanded='false', aria-controls='accordionTwo') Accordion Item #2
+												#accordionTwo.card-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Sugar plum bear claw oat cake chocolate jelly tiramisu
+															| dessert pie. Tiramisu macaroon muffin jelly marshmallow
+															| cake. Pastry oat cake chupa chups.
+												#headingThree.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionThree', aria-expanded='false', aria-controls='accordionThree') Accordion Item #3
+												#accordionThree.card-collapse.collapse(role='tabpanel', aria-labelledby='headingThree', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Candy cupcake sugar plum oat cake wafer marzipan jujubes
+															| lollipop macaroon. Cake dragée jujubes donut chocolate
+															| bar chocolate cake cupcake chocolate topping.
+									li.col-md-4
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-envelope-o
+											|  Contact Us
+										form.form.form-horizontal
+											.form-body
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputName1') Name
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputName1.form-control(type='text', placeholder='John Doe')
+															.form-control-position.pl-1
+																i.la.la-user
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputEmail1') Email
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputEmail1.form-control(type='email', placeholder='john@example.com')
+															.form-control-position.pl-1
+																i.la.la-envelope-o
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputMessage1') Message
+													.col-sm-9
+														.position-relative.has-icon-left
+															textarea#inputMessage1.form-control(rows='2', placeholder='Simple Textarea')
+															.form-control-position.pl-1
+																i.la.la-commenting-o
+												.row
+													.col-sm-12.mb-1
+														button.btn.btn-info.float-right(type='button')
+															i.la.la-paper-plane-o
+															|  Send
+							li.nav-item.nav-search
+								a.nav-link.nav-link-search(href='#')
+									i.ficon.ft-search
+								.search-input
+									input.input(type='text', placeholder='Explore Modern...')
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='#')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-ph
+									span.selected-language
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+									li.scrollable-container.media-list.w-100#notificationField
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
+			.main-menu-content
+				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+					li.nav-item
+						a(href='/')
+							i.fa.fa-dashboard
+							span.menu-title Dashboard
+					li.nav-item
+						a(href='#')
+							i.fa.fa-wrench
+							span.menu-title Maintenance
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidders
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Schedule
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') User Management
+								ul.menu-content
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
+					li.nav-item
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='/consignor/auctionresult', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awards
+									li
+										a.menu-item(href='/delivery', data-i18n='nav.menu_levels.second_level_child.third_level_child') Delivery
+					li.nav-item
+						a(href='/queries')
+							i.fa.fa-list
+							span.menu-title Queries
+					li.nav-item
+						a(href='/reports/sales')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='/utilities')
+							i.fa.fa-cogs
+							span.menu-title Utilities
+		.app-content.content
+			.content-wrapper
+				//- Modal for Signature
+				#signatureModal.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+					.modal-dialog.modal-xl(role='document')
+						.modal-content
+							.modal-header(style='border-bottom: none;')
+								h4.modal-title.text-center
+									img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+							.modal-body
+								h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+									span Agreement
+								.row
+									.col-md-6
+										.text-center
+											canvas#signature-pad.signature-pad(style="margin: auto; border: 2px solid #557f90" width='400', height='200')
+											h4.text-center #{admin.strEmployeeFirstName} #{admin.strEmployeeLastName}
+											p Accountant Executive
+											button#undo1.btn.btn-primary(href='#') Undo
+									.col-md-6
+										.text-center
+											canvas#signature-pad2.signature-pad(style="margin: auto; border: 2px solid #557f90" width='400', height='200')
+											h4.text-center #{consignor.strName}
+											p Consignor
+											button#undo2.btn.btn-primary(href='#') Undo
+							.modal-footer
+								button#cancel.btn.btn-outline-danger.btn-md(type='button')
+									| Cancel
+								button#receiveConsignment.btn.btn-outline-success.btn-md(type='button')
+									| Finish
+
+				//- Modal for Appraisal
+				#appraiseModal.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+					.modal-dialog.modal-md(role='document')
+						.modal-content
+							.modal-header(style='border-bottom: none;')
+								h4.modal-title.text-center
+									img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+							.modal-body
+								h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+											span Appraisal
+								.row
+									.col-md-12
+										.bs-callout-warning.callout-border-left.callout-bordered.p-1
+											h4.warning Note:
+											p
+												| Kindly describe your asset accurately with your most honest knowledge as possible.
+								br
+								form#detailForm
+									.row
+										.col-md-6
+											fieldset
+												.form-group
+													h5(style="font-weight: bold;" for='swatches')
+														| Color: 
+														span.danger *
+													.input-group.text-center
+														input#swatches.form-control.minicolors(aria-describedby='checkbox-addon2' readonly name='color' type='text', data-swatches='#fff|#000|#f00|#0f0|#00f|#ff0|#0ff', value='red')
+														.input-group-append
+															span#checkbox-addon2.input-group-text(style="height: 40px;")
+																span.skin.skin-square
+																	input#checkie(type='checkbox')
+														p.badge-default.badge-info.block-tag.text-center
+															small.block-area.white
+																| Check the checkbox if 
+																strong assorted.			
+										.col-md-6
+											fieldset
+												.form-group
+													h5(style="font-weight: bold;" for='item')
+														| Size: 
+														span.danger *
+													.input-group
+														input#size(type='text', name='size' value='1', data-bts-postfix='sqm')
+									.row
+										.col-md-12.text-center
+											.form-group
+												h5(style="font-weight: bold;" for='item')
+													| Condition: 
+													span.danger *
+												#icon-range
+												input#target(type='text' name='condition' hidden)
+									br
+									#image
+										.row
+											.col-md-12
+												fieldset
+													h5(style="font-weight: bold;" for='rp')
+															| Asset Image/s: 
+															span.danger *
+													input.assetImage.dropify(type='file', data-allowed-formats="square" name='strPicture' accept='image/*' data-height='200' data-allowed-file-extensions="jpeg jpg png")
+										
+									#addImage
+										.row
+											.col-md-12
+												button#add.btn.btn-block.btn-outline-primary.btn-md(type='button')
+													i.fa.fa-plus
+													| Add Image
+									br
+									br
+									#depreciation
+											
+										
+													
+
+									.row#formAppraisal
+										.col-md-12
+											fieldset#rpgroup
+												h5(style="font-weight: bold;" for='rp')
+														| Reserved Price: 
+														span.danger * 
+														span ₱ 
+														span.counter1.danger 
+														span  - ₱ 
+														span.counter2.danger
+												.input-group
+													input#ReservePrice.form-control(type='number', readonly name='ReservePrice', placeholder='Enter reserved price here', aria-describedby='button-addon2')
+													.input-group-append
+														button#appraiseButton.btn.btn-success(type='button') Appraise
+												
+							.modal-footer
+								button#cancel.btn.btn-outline-danger.btn-md(type='button')
+									| Cancel
+								button#save.btn.btn-outline-success.btn-md(type='button')
+									| Save
+
+
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Appraisal
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+								ol.breadcrumb
+									li.breadcrumb-item
+										a(href='/consignment') Consignment
+									li.breadcrumb-item
+										a(href='/consignment') Asset Receive
+									li.breadcrumb-item
+										a(href='/consignment') Asset Details
+									li.breadcrumb-item.active
+										| Appraisal
+				.content-body
+					section.row
+						.col-12
+							.card
+								.card-head
+									.card-header
+										.grid-hover.row
+											.col-md-12.col-12
+												figure.effect-dexter(style='max-width: none;')
+													img(src='/assets/images/asset receive.jpg', alt='img19')
+													figcaption
+														h2
+															| Asset 
+															span Appraisal
+														p
+															| Dexter had his own strange way. You could watch him training
+															| ants.
+														a(href='#') View more
+										.row
+											.col-md-6 
+												h4.card-title Asset Appraisal
+											.col-md-6
+								.card-content
+									.card-body
+										// Task List table
+										.table-responsive
+											table#reservedTable.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+												thead
+													tr.text-center
+														th Check
+														th Action
+														th Quantity
+														th Unit of Measurement
+														th Category
+														th Description
+														th Price
+												tbody#reservedTableBody
+													-if(asset)
+														-for(var i = 0; i < asset.length; i++)
+															-var quantity = asset[i].quantity;
+															-var UOM = asset[i].UOM;
+															-var price = asset[i].price
+															-var id = asset[i].id
+															-var category = asset[i].category
+															tr
+																td
+																	-if(appraisal)
+																		-let x = 0 
+																		each app in appraisal
+																			-if(app.AssetID == id)
+																				-x = 1
+							
+																		-if(x == 1)
+																			.checker.text-center(assetid=`${id}`)
+																					i.doneAsset.fa.fa-check.success
+																		-else
+																			.checker.text-center(assetid=`${id}`)
+																				i.fa.fa-times.danger
+																	-else
+																			.checker.text-center(assetid=`${id}`)
+																				i.fa.fa-times.danger
+																td.text-center
+																	i.appraise.ft-edit-2.info(style="font-weight: bold" assetid=`${id}` price=`${price}` data-toggle='modal', data-target='#appraiseModal')
+																td #{quantity}
+																td #{UOM}
+																td #{category}
+																	-if(asset[i].hasOwnProperty('screensize'))
+																		-if(!asset[i].screensize.indexOf('screensize'))
+																			-asset[i]['screensize'] = asset[i]['screensize']+' inches';						
+																	-if(asset[i].hasOwnProperty('wattage'))
+																		-if(asset[i].wattage.indexOf('watts') < 0)
+																			-asset[i]['wattage'] = asset[i]['wattage']+' watts';
+																	-if(asset[i].hasOwnProperty('storage') && asset[i].category == "Mobile")
+																		-if(!asset[i].storage.indexOf('storage'))
+																			-asset[i]['storage'] = asset[i]['storage']+' GB';
+																	-if(asset[i].hasOwnProperty('ram'))
+																		-if(!asset[i].ram.indexOf('RAM'))
+																			-asset[i]['ram'] = 'RAM '+asset[i]['ram']+' GB';
+																	-var valuesOnly = Object.values(asset[i])//-array values
+																	-console.log(valuesOnly)
+																	-var desc = '' 
+																	-for(var x = 1; x < valuesOnly.length; x++)
+																		-if(!(Object.keys(asset[i])[x] == "UOM"))
+																			-if(!(Object.keys(asset[i])[x] == "price")) 
+																				-if(!(Object.keys(asset[i])[x] == "quantity")) 
+																					-if(!(Object.keys(asset[i])[x] == "description")) 
+																						-if(!(Object.keys(asset[i])[x] == "id"))
+																							-if(!(Object.keys(asset[i])[x] == "category"))
+																								-desc = desc+' '+valuesOnly[x]
+																td #{desc}
+																td 
+																	-if(price == 0)
+																		span.btn.btn-sm.btn-outline-info.round Non-reserved
+																	-if(price == 1)
+																		span.btn.btn-sm.btn-outline-success.round Reserved																		
+
+
+
+
+												tfoot
+													tr.text-center
+														th Check
+														th Action
+														th Quantity
+														th Unit of Measurement
+														th Category
+														th Description
+														th Price
+										
+									.card-footer
+										.text-right
+											button#cancelConsignment.btn.btn-danger.bg-darken-1.text-uppercase.p-1(style='border: none; margin-right: 5px' type='button') Cancel										
+											button#signatureConsignment.btn.btn-success.bg-darken-1.text-uppercase.p-1(style='border: none' type='button') NEXT
+		footer.footer.footer-transparent.footer-light.navbar-shadow(style='display: none')
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2.container.center-layout
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with
+					i.ft-heart.pink
+		input#editToggle(val="0" hidden)
+		input#assetID(val="0" hidden)
+		input#tr(val="0" hidden)
+		input#pictureHidden(value='0')
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
+		input#fieldChecker(type='hidden' value=0)
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors2.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/extensions/jquery.raty.js', type='text/javascript')
+		script(src='/assets/vendors/js/dropify.js', type='text/javascript')
+		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
+		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(type='text/javascript', src='/assets/vendors/js/ui/jquery.sticky.js')
+		script(src='/assets/vendors/js/charts/chartist.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/chartist-plugin-tooltip.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/timeline/horizontal-timeline.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/typeahead.bundle.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/bloodhound.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/handlebars.js')
+		script(src='/assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')
+		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+		script(src="/assets/vendors/js/extensions/toastr.min.js" type="text/javascript")
+		script(src='/assets/vendors/js/waypoint.js', type='text/javascript')
+		script(src='/assets/vendors/js/counterup.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		//- script(src='/assets/js/scripts/forms/extended/form-typeahead.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/pages/dashboard-ecommerce.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/pickers/miniColors/jquery.minicolors.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/pickers/spectrum/spectrum.js', type='text/javascript')
+		script(src='/assets/js/scripts/pickers/colorpicker/picker-color.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/checkbox-radio.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/switch.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/input-groups.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/jquery.form.js', type='text/javascript')
+		script(src='/assets/vendors/js/sigpad.js', type='text/javascript')
+		script(src='/assets/vendors/js/jquery.mask.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
+
+		//- script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/cards/card-charts.min.js', type='text/javascript')
+		// END PAGE LEVEL JS
+		//-functions
+		script.
+			$(document).ready(function(){
+				$('#detailForm').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						color: {
+							validators: {
+								notEmpty: {
+									message: 'Uh-oh, this cannot be blank. Please enter color of the asset.'
+								}
+							},
+						},
+						size: {
+							validators: {
+								notEmpty: {
+									message: 'Uh-oh, this cannot be blank. Please enter size of the asset.'
+								}
+							},
+						},
+						condition: {
+							validators: {
+								notEmpty: {
+									message: 'Uh-oh, this cannot be blank. Please enter condition of the asset.'
+								}
+							},
+						},
+						strPicture:{
+							validators: {
+								notEmpty: {
+									message: 'Uh-oh, this cannot be blank. Please enter image.'
+								}
+							},
+						}
+					}
+				});
+			})
+		script.
+			function depre(conditionName){
+				$.post('/condition', {
+					condition: conditionName,
+				}).then(function(data2){
+						minusPercent = parseFloat('.'+data2.condition)
+						var salvage = $('#SalvagePrice').val();
+						var life = $('#Life').val();
+						var ogprice = $('#OGprice').val();
+						var year = $('#YearReleased').val();
+
+						var cost = (ogprice - (ogprice * salvage)) / life;
+						var now = new Date;
+						console.log(now.getFullYear());
+
+						var peryear = now.getFullYear() - year;
+
+						var depamount = ogprice - (cost * peryear);
+						var auctionprice = depamount - (depamount * .60);
+						var amount = auctionprice - (auctionprice * minusPercent)
+						console.log(minusPercent, auctionprice, depamount)
+						//- alert(amount);
+						console.log('amount', amount)
+						if(amount < 110){
+							swal({
+								title: 'Reserve price lower than P 100.00',
+								text: 'Asset that has been appraised lower than P 100.00 is automatically considered as Non-reserved price asset.',
+								icon: 'warning',
+							})
+							$('#ReservePrice').val(100);
+							$('#ReservePrice').attr('disabled', '');
+						}
+						else{
+							$('#ReservePrice').removeAttr('disabled', '');							
+							$('#ReservePrice').val('');
+
+							var tenpercent = amount.toFixed(2) * .10;
+							var min = (amount - tenpercent).toFixed(2);
+							var max = (amount + tenpercent).toFixed(2);
+							var minT = min.replace(/\d(?=(\d{3})+\.)/g, '$&,')
+							var maxT = max.replace(/\d(?=(\d{3})+\.)/g, '$&,')
+							$('.counter1').text(minT)
+							$('.counter2').text(maxT)
+							$('.counter1').counterUp({
+								delay: 10,
+								time: 1000
+							});
+							$('.counter2').counterUp({
+								delay: 10,
+								time: 1000
+							});
+								
+							var betweenOption = {
+													min: min,
+													max: max,
+													message: `The reserve price must be within ₱ ${minT} and ₱ ${maxT}.`
+												}	
+							
+							$('#formAppraisal').formValidation({
+								framework: 'bootstrap',
+								icon: {
+									valid: 'fa fa-check',
+									invalid: 'fa fa-times',
+									validating: 'fa fa-spinner'
+								},
+								fields: {
+									ReservePrice: {
+										validators: {
+											notEmpty: {
+												message: 'Uh-oh, this cannot be blank. Please enter reserved price amount.'
+											},
+											between: betweenOption,
+										},
+										
+									},
+								}
+							});
+						}
+						
+					});
+			}
+		script.
+			$(document).ready(function(){
+
+
+					
+				//- signature pad
+				var canvas = document.getElementById("signature-pad");
+				var signaturePad = new SignaturePad(canvas, {backgroundColor: 'rgb(255, 255, 255)'});
+				
+				
+				$('#undo1').click(function(){	
+					signaturePad.clear()
+				})
+
+				var canvas2 = document.getElementById("signature-pad2");
+				var signaturePad2 = new SignaturePad(canvas2, {backgroundColor: 'rgb(255, 255, 255)'});
+				
+				
+				$('#undo2').click(function(){	
+					signaturePad2.clear()
+				})
+
+					
+				
+
+				$("#reservedTable").dataTable( { "oLanguage": { "sEmptyTable": `<h3>Click <button id="addAsset" type="button" data-toggle="modal" data-target="#addAssetModal" class="btn btn-info btn-sm"><i class="ft-plus white"></i> Add Asset</button> to begin adding assets.<h3>` } } );
+				$("#size").TouchSpin({
+					min: 1,
+					max: 4000,
+					buttondown_class:"btn btn-primary",
+					buttonup_class:"btn btn-primary",
+					buttondown_txt:'<i class="ft-minus"></i>',
+					buttonup_txt:'<i class="ft-plus"></i>'
+				})
+				$('#checkie').iCheck({
+					checkboxClass: 'icheckbox_flat-blue',
+					radioClass: 'iradio_flat-blue'
+				});
+
+				$('#checkie').on('ifChecked', function(event){
+					$('#swatches').val('Assorted')
+					//- $('#swatches').attr('disabled', '')
+					$('#detailForm').formValidation('revalidateField', 'color')
+				});
+
+				$('#checkie').on('ifUnchecked', function(event){
+					$('#swatches').val('')
+					//- $('#swatches').removeAttr('disabled')
+					$('#detailForm').formValidation('revalidateField', 'color')
+				});
+
+				$("#icon-range").raty({
+					hints:['Defective', 'Bad', 'Okay', 'Good', 'Excellent'],
+					targetScore: $('#target'),
+					iconRange:[{
+						range:1,
+						on:"fa fa-thumbs-down font-large-1 red",
+						off:"fa fa-hand-rock-o font-large-1"
+					},{
+						range:2,
+						on:"fa fa-hand-pointer-o font-large-1 pink",
+						off:"fa fa-hand-rock-o font-large-1"
+					},{
+						range:3,
+						on:"fa fa-hand-peace-o font-large-1 blue",
+						off:"fa fa-hand-rock-o font-large-1"
+					},{
+						range:4,
+						on:"fa fa-hand-spock-o font-large-1 cyan",
+						off:"fa fa-hand-rock-o font-large-1"
+					},{
+						range:5,
+						on:"fa fa-thumbs-up font-large-1 success",
+						off:"fa fa-hand-rock-o font-large-1"
+					}],
+					starType:"i"});
+
+				$('.assetImage').dropify({
+					allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+					messages: {
+						'default': 'Drag and drop an image here or click',
+						'replace': 'Drag and drop or click to replace',
+						'remove': 'Remove',
+						'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+					},
+					error: {
+						'fileSize': 'The file size is too big (1M max).',
+						'fileFormat': 'The file format is not allowed ({{ value }} only).'
+					}
+				});
+
+				$(document).on('click', '#compute', function(){
+					if($('#icon-range').raty('score') > 0 && $('#OGprice').val() != '' && $('#YearReleased').val() != ''){
+						$('#ReservePrice').removeAttr('readonly', '')
+						$('#formAppraisal').formValidation();
+						$('#formAppraisal').data('formValidation').destroy();
+						var condition =  $('#icon-range').raty('score');
+						var conditionName = '';
+						var minusPercent = .0;
+						if(condition == 5){
+							conditionName = 'intExcellent'
+							depre(conditionName)
+						}
+						if(condition == 4){
+							conditionName = 'intGood'
+							depre(conditionName)						
+						}
+						if(condition == 3){
+							conditionName = 'intOkay'
+							depre(conditionName)												
+						}
+						if(condition == 2){
+							conditionName = 'intBad'
+							
+							depre(conditionName)																		
+						}
+						if(condition == 1){
+							conditionName = 'Defective'
+							minusPercent = .100;
+							//- alert(100)
+						}
+					}
+					else{
+						swal({
+							title: 'Fill-out the form',
+							text: 'Please do not leave the form blank.',
+							icon: 'error',
+						})	
+					}
+					
+				})
+
+				$(document).on('click', '#appraiseButton', function(){
+					
+					if($('#icon-range').raty('score') > 0){
+						$('#ReservePrice').removeAttr('readonly', '')
+
+						
+
+						var assetID = $('#assetID').val();
+						var condition =  $('#icon-range').raty('score');						
+						console.log(assetID);
+						$.post('/appraise', {
+							assetID: assetID,
+							condition: condition,
+						}).then(function(data){
+							console.log(data.amount)
+							if(data.amount == null){
+								$('#ReservePrice').attr('readonly', '')
+								
+								
+								swal({
+									title: 'New Item',
+									text: 'Asset has not been found in the database.',
+									icon: 'warning',
+								})
+
+								$.post('/depreciation', {
+									assetID: assetID,
+								}).then(function(dep){
+									$('#depreciation').empty();
+									var depreHTML = $(`<br/>
+														<div class="row">
+														<div class="col-md-6">
+															<fieldset>
+															<h5 style="font-weight: bold;" for="rp">Original Price: </h5>
+															<div class="input-group">
+																<div class="input-group-prepend"><span id="basic-addon3" class="input-group-text"><i class="fa fa-money"></i></span></div>
+																<input id="OGprice" type="number" name="OGprice" placeholder="Enter the original price here" aria-describedby="button-addon2" class="form-control"/>
+															</div>
+															</fieldset>
+														</div>
+														<div class="col-md-6">
+															<fieldset>
+															<h5 style="font-weight: bold;" for="rp">Year Released:</h5>
+															<div class="input-group">
+																<div class="input-group-prepend"><span id="basic-addon3" class="input-group-text"><i class="fa fa-calendar-o"></i></span></div>
+																<input id="YearReleased" type="number" name="YearReleased" placeholder="Enter the year the asset was released" aria-describedby="button-addon2" class="form-control"/>
+																<input id="SalvagePrice" hidden="hidden" type="number" name="SalvagePrice" placeholder="Enter the year the asset was released" aria-describedby="button-addon2" class="form-control"/>
+																<input id="Life" hidden="hidden" type="number" name="Life" placeholder="Enter the year the asset was released" aria-describedby="button-addon2" class="form-control"/>
+															</div>
+															</fieldset>
+														</div>
+														</div><br/>
+														<div class="row">
+														<div class="col-md-12">
+															<button id="compute" type="button" class="btn btn-block btn-outline-primary btn-md"><i class="fa fa-calculator"></i>Compute	</button>
+														</div>
+														</div></br>`);
+									$.post('/depreciation/presetcheck', {
+										assetID: assetID
+									}).then(function(info){
+										if(info.indicator == 'success'){
+											$('#OGprice').val(info.OGprice);
+											$('#YearReleased').val(info.YearReleased);
+										}
+									});
+
+									$('#depreciation').append(depreHTML).hide().fadeIn(500);
+									$('#SalvagePrice').val(dep.salvagePrice);
+									$('#Life').val(dep.life);
+									var now = new Date;
+									var maximum = {
+												max: now.getFullYear(),
+												min: 0, 
+												message: `The released year should be on or before ${now.getFullYear()}`,
+											}
+									$('#depreciation').formValidation({
+										framework: 'bootstrap',
+										icon: {
+											valid: 'fa fa-check',
+											invalid: 'fa fa-times',
+											validating: 'fa fa-spinner'
+										},
+										fields: {
+											YearReleased: {
+												validators: {
+													notEmpty: {
+														message: 'Uh-oh, this cannot be blank. Please enter year the asset has been released.'
+													},
+													between: maximum,
+												},
+												
+											},
+											OGprice: {
+												validators: {
+													notEmpty: {
+														message: 'Uh-oh, this cannot be blank. Please enter year the asset has been released.'
+													},
+													between: {
+														min: 0,
+														max: 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+														message: 'The original market price should not be negative.'
+													},
+												},
+												
+											}
+										}
+									})
+								})
+							}
+							else if(data.amount != null){
+								$('#formAppraisal').formValidation();
+								$('#formAppraisal').data('formValidation').destroy();
+								var condition =  $('#icon-range').raty('score');
+								var conditionName = '';
+								var minusPercent = .0;
+								if(condition == 5){
+									conditionName = 'intExcellent'
+								}
+								if(condition == 4){
+									conditionName = 'intGood'
+								}
+								if(condition == 3){
+									conditionName = 'intOkay'
+								}
+								if(condition == 2){
+									conditionName = 'intBad'
+								}
+								if(condition == 1){
+									conditionName = 'Defective'
+									minusPercent = .100;
+								}
+								$.post('/condition', {
+									condition: conditionName,
+								}).then(function(data2){
+
+									console.log('con', data2.condition)
+									minusPercent = parseFloat('.'+data2.condition)
+									console.log(data.amount);
+									var amount = data.amount - (data.amount * minusPercent)
+									console.log('amount', amount)
+									if(amount < 110){
+										swal({
+											title: 'Reserve price lower than P 100.00',
+											text: 'Asset that has been appraised lower than P 100.00 is automatically considered as Non-reserved price asset.',
+											icon: 'warning',
+										})
+										$('#ReservePrice').val(100);
+										$('#ReservePrice').attr('disabled', '');
+									}
+									else{
+										$('#ReservePrice').removeAttr('disabled', '');
+										$('#ReservePrice').val('');			
+										var tenpercent = amount.toFixed(2) * .10;
+										var min = (amount - tenpercent).toFixed(2);
+										var max = (amount + tenpercent).toFixed(2);
+										var minT = min.replace(/\d(?=(\d{3})+\.)/g, '$&,')
+										var maxT = max.replace(/\d(?=(\d{3})+\.)/g, '$&,')
+										$('.counter1').text(minT)
+										$('.counter2').text(maxT)
+										$('.counter1').counterUp({
+											delay: 10,
+											time: 1000
+										});
+										$('.counter2').counterUp({
+											delay: 10,
+											time: 1000
+										});
+											
+										var betweenOption = {
+																min: min,
+																max: max,
+																message: `The reserve price must be within ₱ ${minT} and ₱ ${maxT}.`
+															}
+										$('#formAppraisal').formValidation({
+											framework: 'bootstrap',
+											icon: {
+												valid: 'fa fa-check',
+												invalid: 'fa fa-times',
+												validating: 'fa fa-spinner'
+											},
+											fields: {
+												ReservePrice: {
+													validators: {
+														notEmpty: {
+															message: 'Uh-oh, this cannot be blank. Please enter reserved price amount.'
+														},
+														between: betweenOption,
+													},
+													
+												},
+											}
+										});
+									}
+								})
+							}
+						})
+					}
+					
+					else{
+						swal({
+							title: 'Select Condition',
+							text: 'Please select condition to determine the appraisal value.',
+							icon: 'error',
+
+						})
+					}
+				});
+
+				$(document).on('click', '#signatureConsignment', function(){
+					$.get('/consignment/create/count').then(function(data){
+						if(data.count == $('.doneAsset').length){
+							$('#signatureModal').modal('toggle');
+						}
+						else if(data.count != $('.doneAsset').length){
+							//- alert('count: '+data.count+' '+$('.doneAsset').length);
+
+							swal({
+								title: 'Oh no!',
+								text: 'You must have forgotten some asset. Kindly appraise all the assets.',
+								icon: 'error',
+								button: 'Sure',
+							})
+						}
+					})
+				});				
+
+				$(document).on('click', '#receiveConsignment', function(){
+
+					if (signaturePad.isEmpty() || signaturePad2.isEmpty()){
+						swal({
+							title: 'No Signature',
+							icon: 'error',
+							text: 'Pleas provide signatures in the given canvas.',
+							button: 'Okay',
+						})
+					}
+					else{
+
+
+						swal({
+							title: 'Submit Consignment?',
+							text: 'Please make sure your asset information are all correct, hence, once received, all of the asset information are final.',
+							icon: 'info',
+							buttons: {
+								Cancel: 'Cancel',
+								Sure: 'Sure',
+							},
+						}).then(function(value){
+							if(value == 'Sure'){
+								$.post('/consignment/submit', {
+									signatureAdmin: signaturePad.toDataURL("image/jpeg"),
+									signatureConsignor: signaturePad2.toDataURL("image/jpeg")
+								}).then(function(data){
+									if(data.indicator == 'success'){
+
+
+										var
+											closeInSeconds = 7,
+											displayText = "You are being redirected... Please wait.",
+											timer;
+
+										swal({
+											title: "Redirecting...",   
+											text: displayText.replace(/#1/, closeInSeconds),   
+											timer: closeInSeconds * 1000,
+											icon: 'success',
+											button: false 
+										});
+
+										timer = setInterval(function() {
+
+											closeInSeconds--;
+
+											if (closeInSeconds < 0) {
+
+												clearInterval(timer);
+											}
+
+											$('.sweet-alert > p').text(displayText.replace(/#1/, closeInSeconds));
+
+										}, 1000);
+										setTimeout(function(){
+											location.href = `/consignment/print/${data.intConsignmentID}`;
+										}, 7000)
+									}
+								})
+							}
+						})
+
+					}
+				});
+
+				
+				$(document).on('click', '#add', function(){
+					var number = eval($('#pictureHidden').val()+'+ 1');
+					$('#pictureHidden').val(number)
+					let image = $(`<div class="justParent"><br class="space"/><div class="row">
+									<div class="col-md-12">
+										<fieldset>
+										<input type="file" name="strPicture${number}" accept="image/*" data-height="200" data-allowed-file-extensions="jpeg jpg png" data-allowed-formats="square" class="assetImage dropify"/>
+										</fieldset>
+										<br/>
+										<button type="button" class="remove btn btn-block btn-outline-danger btn-md"><i class="fa fa-times"></i>Remove Image</button>
+									</div>
+									</div>
+									</div>`)
+					$('#image').append(image).hide().fadeIn(500);
+
+					$('.assetImage').dropify({
+						allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+						messages: {
+							'default': 'Drag and drop an image here or click',
+							'replace': 'Drag and drop or click to replace',
+							'remove': 'Remove',
+							'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+						},
+						error: {
+							'fileSize': 'The file size is too big (1M max).',
+							'fileFormat': 'The file format is not allowed ({{ value }} only).'
+						}
+					});
+					$('#detailForm').formValidation().data('formValidation').addField(`strPicture${number}`, {
+						validators: {
+							notEmpty: {
+								message: 'Uh-oh, this cannot be blank. Please enter image.'
+							}
+						}
+					});
+				})
+
+				$(document).on('click', '.remove', function(){
+					$(this).parents('.justParent').fadeOut(1000).remove();
+				})
+
+				$(document).on('click', '.reset', function(){
+					$('#add').fadeIn(500);
+					$('#image').empty();
+					let image = $(`<div class="row">
+									<div class="col-md-12">
+										<fieldset>
+										<h5 style="font-weight: bold;" for="rp">Asset Image/s: <span class="danger">*</span></h5>
+										<input type="file" name="strPicture" accept="image/*" data-height="200" data-allowed-file-extensions="jpeg jpg png" data-allowed-formats="square" class="assetImage dropify"/>
+										</fieldset>
+									</div>
+									</div>`)
+					$('#image').append(image);
+					$('.assetImage').dropify({
+						allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+						messages: {
+							'default': 'Drag and drop an image here or click',
+							'replace': 'Drag and drop or click to replace',
+							'remove': 'Remove',
+							'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+						},
+						error: {
+							'fileSize': 'The file size is too big (1M max).',
+							'fileFormat': 'The file format is not allowed ({{ value }} only).'
+						}
+					});
+				})
+
+				$(document).on('click', '.appraise', function(){
+					
+					let assetid = $(this).attr('assetid');
+					var pricey = $(this).attr('price');
+					$('#assetID').val(assetid);
+					//- alert(assetid)
+					if(pricey == 0){
+						$('#ReservePrice').val(100);
+						$('#rpgroup').fadeOut(1);
+						$('#fieldChecker').val(0)//wala siya sa field
+					}
+					else if(pricey == 1){
+						$('#rpgroup').fadeIn(1);
+						$('#fieldChecker').val(1)//nandon siya sa field							
+					}
+					$('#ReservePrice').val()
+
+					$.post('/consignment/appraisal/edit', {
+						AssetID: assetid,
+					}).done(function(data){
+						console.log(data.appraise);
+						if(data.indicator == 'success'){
+							if(data.appraise.Color == 'Assorted'){
+								$('#checkie').attr('checked', '');
+								$('#swatches').val('Assorted');
+								
+							}
+							else{
+								$('#swatches').minicolors('value', {color: data.appraise.Color, opacity: 1});
+							}
+
+							$('#size').val(data.appraise.Size);
+							$('#icon-range').raty('score', data.appraise.Condition);
+							$('#ReservePrice').val(data.appraise.ReservedPrice);
+							$('#image').empty();
+
+
+							for(var i = 0; i < data.appraise.strPicture.length; i++){
+								if( i == 0){
+									let image = $(`<div class="row">
+													<div class="col-md-12">
+														<fieldset>
+														<h5 style="font-weight: bold;" for="rp">Asset Image/s: <span class="danger">*</span></h5>
+														<input type="file"  data-default-file="/assets/uploads/${data.appraise.strPicture[i]}" name="strPicture" accept="image/*" data-height="200" data-allowed-file-extensions="jpeg jpg png" data-allowed-formats="square" class="assetImage dropify"/>
+														</fieldset>
+													</div>
+													</div>`)
+									$('#image').append(image);
+								}
+								else{
+									let image = $(`<div class="justParent"><br class="space"/><div class="row">
+									<div class="col-md-12">
+										<fieldset>
+										<input type="file" name="strPicture" data-default-file="/assets/uploads/${data.appraise.strPicture[i]}" accept="image/*" data-height="200" data-allowed-file-extensions="jpeg jpg png" data-allowed-formats="square" class="assetImage dropify"/>
+										</fieldset>
+										
+									</div>
+									</div>
+									</div>`)
+									$('#image').append(image).hide().fadeIn(500);
+								}
+
+								if(i == data.appraise.strPicture.length - 1){
+									if(i!=0)
+										$(`#image`).append($(`<br/><button type="button" class="reset btn btn-block btn-outline-danger btn-md"><i class="fa fa-times"></i>Reset</button>`)).hide().fadeIn(500);
+									$('#add').fadeOut(500)
+									
+									$('.assetImage').dropify({
+										allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+										messages: {
+											'default': 'Drag and drop an image here or click',
+											'replace': 'Drag and drop or click to replace',
+											'remove': 'Remove',
+											'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+										},
+										error: {
+											'fileSize': 'The file size is too big (1M max).',
+											'fileFormat': 'The file format is not allowed ({{ value }} only).'
+										}
+									});
+								}
+							}
+						}
+
+					})
+				})
+
+				$('#appraiseModal').on('hide.bs.modal', function(){
+					$('#ReservePrice').attr('readonly', '')
+					//- $('#depreciation').empty()
+					
+					//- $('#swatches').minicolors('value', {color: '#FFFFFF', opacity: 0});
+					//- $('#swatches').val('');
+					$('#detailForm').formValidation().data('formValidation').validate().resetForm(true)
+					$('#formAppraisal').formValidation().data('formValidation').validate().resetForm(true)
+					$('#formAppraisal').formValidation('updateStatus', 'color', 'NOT_VALIDATED')
+					
+					$('.counter1').text('');
+					$('.counter2').text('');
+					$('#checkie').iCheck('uncheck');					
+					$('#size').val(1);
+					$('#icon-range').raty('reload'); 
+					$('#image').empty();
+					let image = $(`<div class="row">
+									<div class="col-md-12">
+										<fieldset>
+										<h5 style="font-weight: bold;" for="rp">Asset Image/s: <span class="danger">*</span></h5>
+										<input type="file" name="strPicture" accept="image/*" data-height="200" data-allowed-file-extensions="jpeg jpg png" data-allowed-formats="square" class="assetImage dropify"/>
+										</fieldset>
+									</div>
+									</div>`)
+					$('#image').append(image);
+					$('.assetImage').dropify({
+						allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+						messages: {
+							'default': 'Drag and drop an image here or click',
+							'replace': 'Drag and drop or click to replace',
+							'remove': 'Remove',
+							'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+						},
+						error: {
+							'fileSize': 'The file size is too big (1M max).',
+							'fileFormat': 'The file format is not allowed ({{ value }} only).'
+						}
+					});
+					//- $('#ReservePrice').val('');
+
+				})
+
+				$(document).on('click', '#save', function(){
+					let assetID = $('#assetID').val();
+					console.log($('#target').val().length != 0)
+					console.log($('#ReservePrice').val().length != 0)
+					var valid = $('#detailForm').formValidation().data('formValidation').validate().isValid()
+					var validReserve;
+					if($('#fieldChecker').val() == 0){
+						validReserve = true;
+					}
+					else{
+						validReserve = $('#formAppraisal').formValidation().data('formValidation').validate().isValid()
+					}
+					//- var validReserve2 = $('#ReservePrice').attr('readonly') == undefined
+					//- alert(validReserve2)
+					
+					if(valid && validReserve  && $('#ReservePrice').val().length != 0 && $('#target').val().length != 0){
+						$.post('/consignment/delete/appraise', {
+							assetId: assetID,
+						}).then(function(data){
+							if(data){	
+								var formData = new FormData(); //FormData (Pre-requisite: Jquery Form and Multer) use for File Ajax
+
+								let colorCheck = $('#checkie:checked').length;
+								let color;
+								let size = $('#size').val();
+								let condition = $('#icon-range').raty('score');
+								let reservedPrice = $('#ReservePrice').val();
+								let assetImage = $('.assetImage').length
+								let images = [];
+								//- alert($('#size').val())
+								if(colorCheck == 1){
+									color = 'assorted';
+								}
+								else{
+									color = $('#swatches').val();
+								}
+								$('.assetImage').map(function(val, i){
+									formData.append('strPicture', $(this)[0].files[0]);
+									if( val == assetImage -1){
+										formData.append('Color', color);
+										formData.append('Size', size);
+										formData.append('Condition', condition);
+										formData.append('ReservedPrice', reservedPrice);
+										formData.append('AssetID', assetID);
+										$.ajax({
+											type: "POST",
+											url: "/consignment/appraisal",
+											data: formData,
+											processData: false,
+											contentType: false,
+											success: function(data){
+												if(data == 'success'){
+													$('.checker').map(function(){
+														var t = this
+														if($(t).attr('assetid') == assetID){
+															$(t).fadeOut(1000).empty().fadeIn(1000);
+															$(t).append($(`<i class="doneAsset fa fa-check success"></i>`)).hide().fadeIn(1000);
+														}
+													})
+													$('#appraiseModal').modal('toggle');
+												}
+											},
+										})
+									} //-if val
+								});//- .map
+							}//- if data
+						})//- .then function										
+					}
+					else{
+						swal({
+							title: 'Fill-out the form',
+							text: 'Please fill-out the form correctly',
+							icon: 'error',
+						})
+					}
+				})
+			})

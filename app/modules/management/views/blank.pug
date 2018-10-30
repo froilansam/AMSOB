@@ -12,7 +12,7 @@ html.loading(lang='en', data-textdirection='ltr')
 			| Dashboard
 		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
 		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
-		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700', rel='stylesheet')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
 		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
 		// BEGIN VENDOR CSS
 		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
@@ -30,7 +30,7 @@ html.loading(lang='en', data-textdirection='ltr')
 		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
 		// END Page Level CSS
 		// BEGIN Custom CSS
-		link(rel='stylesheet', type='text/css', href='../../..//assets/css/style.css')
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
 		// END Custom CSS
 	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
 		// fixed-top
@@ -44,7 +44,7 @@ html.loading(lang='en', data-textdirection='ltr')
 						li.nav-item.mr-auto
 							a.navbar-brand(href='index.html')
 								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
-								h3.brand-text Modern Admin
+								h3.brand-text AMSOB
 						li.nav-item.d-none.d-md-block.float-right
 							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
 								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
@@ -207,7 +207,7 @@ html.loading(lang='en', data-textdirection='ltr')
 								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
 									span.mr-1
 										| Hello,
-										span.user-name.text-bold-700 John Doe
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
 									span.avatar.avatar-online
 										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
 										i
@@ -225,16 +225,16 @@ html.loading(lang='en', data-textdirection='ltr')
 										i.ft-message-square
 										|  Chats
 									.dropdown-divider
-									a.dropdown-item(href='#')
+									a.dropdown-item(href='/logout')
 										i.ft-power
 										|  Logout
 							li.dropdown.dropdown-language.nav-item
 								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-									i.flag-icon.flag-icon-gb
+									i.flag-icon.flag-icon-ph
 									span.selected-language
 								.dropdown-menu(aria-labelledby='dropdown-flag')
 									a.dropdown-item(href='#')
-										i.flag-icon.flag-icon-gb
+										i.flag-icon.flag-icon-ph
 										|  English
 									a.dropdown-item(href='#')
 										i.flag-icon.flag-icon-fr
@@ -248,56 +248,12 @@ html.loading(lang='en', data-textdirection='ltr')
 							li.dropdown.dropdown-notification.nav-item
 								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
 									i.ficon.ft-bell
-									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow 5
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
 								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
 									li.dropdown-menu-header
 										h6.dropdown-header.m-0
 											span.grey.darken-2 Notifications
-										span.notification-tag.badge.badge-default.badge-danger.float-right.m-0 5 New
-									li.scrollable-container.media-list.w-100
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-plus-square.icon-bg-circle.bg-cyan
-												.media-body
-													h6.media-heading You have new order!
-													p.notification-text.font-small-3.text-muted Lorem ipsum dolor sit amet, consectetuer elit.
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') 30 minutes ago
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-download-cloud.icon-bg-circle.bg-red.bg-darken-1
-												.media-body
-													h6.media-heading.red.darken-1 99% Server load
-													p.notification-text.font-small-3.text-muted Aliquam tincidunt mauris eu risus.
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Five hour ago
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-alert-triangle.icon-bg-circle.bg-yellow.bg-darken-3
-												.media-body
-													h6.media-heading.yellow.darken-3 Warning notifixation
-													p.notification-text.font-small-3.text-muted Vestibulum auctor dapibus neque.
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-check-circle.icon-bg-circle.bg-cyan
-												.media-body
-													h6.media-heading Complete the task
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last week
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-file.icon-bg-circle.bg-teal
-												.media-body
-													h6.media-heading Generate monthly report
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last month
+									li.scrollable-container.media-list.w-100#notificationField
 									li.dropdown-menu-footer
 										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
 							li.dropdown.dropdown-notification.nav-item
@@ -364,18 +320,98 @@ html.loading(lang='en', data-textdirection='ltr')
 							i.fa.fa-dashboard
 							span.menu-title Dashboard
 					li.nav-item
-						a(href='/consignment')
-							i.fa.fa-handshake-o
-							span.menu-title Acquisition
+						a(href='#')
+							i.fa.fa-wrench
+							span.menu-title Maintenance
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+									li
+										a.menu-item(href='/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidders
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Schedule
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') User Management
+								ul.menu-content
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
 					li.nav-item
-						a(href='/auction')
-							i.fa.fa-calendar
-							span.menu-title Auction Schedule
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='/consignor/auctionresult', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awards
+									li
+										a.menu-item(href='/delivery', data-i18n='nav.menu_levels.second_level_child.third_level_child') Delivery
+					li.nav-item
+						a(href='/queries')
+							i.fa.fa-list
+							span.menu-title Queries
+					li.nav-item
+						a(href='/reports/sales')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='/utilities')
+							i.fa.fa-cogs
+							span.menu-title Utilities
 		.app-content.content
 			.content-wrapper
 				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Title
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
 				.content-body
-					
+					section.row
+						.col-12
+							.card
+								.card-head
+									.card-header
+										h4.card-title Sub-Title
+										a.heading-elements-toggle
+											i.la.la-ellipsis-h.font-medium-3
+										.heading-elements
+								.card-content
+									.card-body
 					// Analytics map based session
 		// ///////////////////////////////////////////////////////////////////////////
 		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow

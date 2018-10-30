@@ -1,0 +1,976 @@
+doctype html
+html(lang='en')
+	// Mirrored from www.energeticthemes.com/templates/shopmade/elements-team.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Aug 2018 16:38:30 GMT
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		// favicon
+		link(rel='shortcut icon', href='/assets/shopmade/images/favicon.ico')
+		title AMSOB | Profile
+		// Google Fonts
+		link(href='/assets/css/fonts2.css', rel='stylesheet')
+		// Fonts for icons
+		link(href='/assets/shopmade/css/font-awesome.min.css', rel='stylesheet')
+		// bootstrap
+		link(href='/assets/shopmade/css/bootstrap.css', rel='stylesheet')
+		// Styles CSS
+		link(href='/assets/shopmade/css/style.css', rel='stylesheet')
+		// Animate CSS
+		link(href='/assets/shopmade/css/aos.css', rel='stylesheet')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/selects/select2.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/dropify.css')
+
+		// HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+		//if lt IE 9
+			script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+			script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+		style.
+			#dp:hover{
+				border: 5px solid gray;
+				filter: brightness(50%);
+			}
+			.pricing_item:hover{
+				background-color: lightgray
+			}
+			input::placeholder {
+				color: lightgray
+			}
+			textarea::placeholder {
+				color: lightgray
+			}
+			.defaulteryes:hover{
+				background-color: lightgray !important;
+				color: black !important;
+				cursor: pointer;
+			}
+			.defaulterno:hover{
+				background-color: green !important;
+				color: white !important;
+				cursor: pointer;
+			}
+			.defaulterno{
+				background-color: lightgray;
+				color: black;
+			}
+			.defaulteryes{
+				 background-color: green;
+				 color: white;
+			}
+			.swal-button.swal-button--No{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Yes{
+				background-color: #28D094 !important;
+			}
+			td{
+				font-size: 12px;
+			}
+	body
+		#main-contento.m-scene
+			// Header
+			nav.navbar.navbar-toggleable-md.px-5-percent
+				.full-width-container
+					button.navbar-toggler.navbar-toggler-right.hamburger-menu-btn.ml-auto(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+						span toggle menu
+					a.navbar-brand(href='/bid')
+						img(src='/assets/shopmade/images/logo.png', width='162', height='45', alt='Logo')
+					#navbarNavDropdowner.collapse.navbar-collapse
+						ul.navbar-nav.ml-auto
+							-if(bidder)
+								li
+									a.dropdown-toggle(href='#', data-toggle='dropdown')
+										i.fa.fa-user-o(aria-hidden='true')
+										| &nbsp #{bidder.strName}
+									ul.dropdown-menu
+											li
+												a(href='/bid/profile') Profile
+											li
+												a(href='blog-post-single-gallery.html') Bid History
+											li
+												a(href='blog-post-single-video.html') Awards
+											li
+												a(href='/bid/logout')
+													| Log out
+							-else
+								li
+									a(ref='#' data-toggle='modal' data-target='#loginModal')
+										i.fa.fa-user-o(aria-hidden='true')
+										| &nbsp Log in |	
+									a(ref='#' data-toggle='modal' data-target='#regModal')
+										i.fa.fa-user-plus(aria-hidden='true')
+										| &nbsp Sign up
+			#addressModal.modal
+				.modal-dialog.modal-lg(style='max-width: 1160px;' role='document')
+					.modal-content
+						.modal-header(style='border-bottom: none;')
+							h4.modal-title.text-center 
+								img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+							button#closeLogin.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							.row
+								.col-md-5.offset-md-2
+									h2#title.left-dash Add New Address
+									
+
+							
+							form#reg.row
+								.col-md-4
+									br
+									br
+									br
+									img(src='/assets/images/bidding.png', alt='Product Img')
+								#stepOne.col-md-8
+									#formReg
+										.form-group.row
+											.col-sm-8.col-xs-12
+												label Full Name:
+													span(style='color: red')  *
+												input#fullName(type='text', name='fullName' placeholder='E.g Cardo Dalisay')
+											.col-sm-4.col-xs-12
+												label Phone Number:
+													span(style='color: red')  *											
+												input#phoneNumber.validate-required.validate-email(type='text', name='phoneNumber' placeholder='E.g (+63) 999 999-9999 or 999-9999')
+										.form-group.row
+											.col-sm-12.col-xs-12
+												label House Address:
+													span(style='color: red')  *												
+												input#houseAddress(type='text', name='houseAddress' placeholder='House Number, Building Number, Street Name, and Subdivision/Village')
+										.form-group.row
+											.col-sm-6.col-xs-12
+												label Barangay:
+													span(style='color: red')  *												
+												input#barangayName(type='text', name='barangayName' placeholder='E.g Sta. Lucia')
+											.col-sm-6.col-xs-12
+												label City:
+													span(style='color: red')  *												
+												input#cityName(type='text', name='cityName' placeholder='Pasig City')
+										.form-group.row
+											.col-sm-6.col-xs-12
+												label Region:
+													span(style='color: red')  *												
+												input#regionName(type='text', name='regionName' placeholder='E.g National Capital Region')
+											.col-sm-6.col-xs-12
+												label Postcode:
+													span(style='color: red')  *												
+												input#postCode(type='number', name='postCode' placeholder='E.g 1809')
+										.form-group.row
+											.col-sm-12.col-xs-12
+												label Other Notes
+												textarea#otherNotes(rows="5", name='otherNotes' placeholder='Landmarks, comments, etc.')
+										.form-group.row
+											.col-md-3
+											.col-md-6
+												button#saveAddress.btn.btn-block.m-1.btn-outline-info(type='button') Save
+												button#saveChanges.btn.btn-block.m-1.btn-outline-info(style='display: none;' type='button') Save Changes
+			
+			#offlineModal.modal
+				.modal-dialog.modal-lg(role='document')
+					.modal-content
+						.modal-header(style='border-bottom: none;')
+							
+							button#closeLogin.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							.row
+								.col-md-8.offset-md-2
+									h2.left-dash Offline Payment
+									p
+										| Go up with Auction Pride of the Philippines!
+							.fluid-container.px-5-percent
+								.row
+									.col-md-12
+										a.btn.btn-block.btn-default(href='/bid/regprint')
+											i.fa.fa-print
+											| Print Voucher
+								form#regUpload(method='POST', action='/bid/registration/upload')
+									br
+									.row
+										.col-md-12
+											input#strBankReference(type='text', name='strBankReference' placeholder='Please Enter bank Reference Number')
+									br
+									.row
+										.col-md-12
+											input#strReferencePicture.dropify(type='file', name='strReferencePicture' accept='image/*' data-height='300' data-allowed-file-extensions="jpeg jpg png")
+									br
+									.row
+										.col-md-12
+											button#submitUpload.btn.btn-block.btn-default(type='submit')
+												i.fa.fa-check
+												| Submit
+
+								
+								
+
+			#paymentModal.modal
+				.modal-dialog.modal-lg(role='document')
+					.modal-content
+						.modal-header(style='border-bottom: none;')
+							
+							button#closeLogin.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							.row
+								.col-md-8.offset-md-2
+									h2.left-dash Settle Registration
+									p
+										| Go up with Auction Pride of the Philippines!
+							.fluid-container.px-5-percent
+								.row
+									.col-md-12
+										.pricing_item
+											h3.pricing_item_title Registration Fee
+											span.pricing_item_price ₱ 3,000.00
+											span.pricing_item_price_info One time payment only
+
+											
+											a#payOffline.btn.btn-default.btn-radius-l(href='#' style='margin-right: 10px') Pay Offline
+											a#payOnline.btn.btn-default.btn-radius-l(href='#') Pay Online
+								br
+								.row
+									.col-md-12
+										.align-center
+											p Powered By:
+
+												img.align-center(src='/assets/images/paymaya.png' style='width: 200px')
+										
+												
+
+			.page-container.scene-main.scene-main--fade_In
+				// End Header
+				// Page Loader
+				.page_loading
+					.spinner
+				// End Page Loader
+				.hero_title_container.d-flex.align-items-center.height_35.mx-5-percent
+					.fluid-container.px-5-percent
+						.hero_box.w-50
+							.hero_title.hero_title_small
+								h1 Bidder's Profile
+								-if(bidder.booStatus == 0 || bidder.booStatus == 2)
+									.row
+										.col-md-2
+											i.fa.fa-exclamation.fa-5x(style='color: red;')
+										.col-md-10
+											p(style='color:red')
+												| Uh-oh, you cannot discover, bid, and win because you have not paid the registration fee. 
+												| To settle payment, 
+												a.btn-bottom-line(href='#' data-toggle='modal' data-target='#paymentModal') click here.
+			
+				.fluid-container.px-5-percent.mt_80.mb_80
+					
+					.row.mb_80
+						.col-md-3
+							.sticky-top.simple-team-person.align-center
+								br
+								.team-image
+									img#dp.rounded-circle(src='/assets/shopmade/images/team/team6-s.jpg', alt='team', width='350', height='350')
+								.team-info-holder
+									.team-info
+										h5.team-name #{bidder.strName}
+											span.edit(style='display: none;') &nbsp &nbsp
+												a
+													i.fa.fa-edit
+
+										.team-role @#{bidder.strUsername}
+											span.edit(style='display: none;') &nbsp &nbsp
+												a
+													i.fa.fa-edit
+										-if(bidder.booStatus == 0 || bidder.booStatus == 2)
+											i.fa.fa-dot-circle-o.infofont-medium-1.mr-1(style='color: red;')
+											span Unverified
+										-if(bidder.booStatus == 1)
+											i.fa.fa-dot-circle-o.infofont-medium-1.mr-1(style='color: green;')
+											span Active
+										
+						.col-md-9
+							.fluid-container.px-5-percent.mt_80.mb_80
+								.row
+									.col-md-12
+										ul.nav.nav-tabs(role='tablist')
+											li.nav-item
+												a.nav-link.active(href='#ideas', role='tab', data-toggle='tab') Information
+											li.nav-item
+												a.nav-link(href='#code-quality', role='tab', data-toggle='tab') Address Book
+											li.nav-item
+												a.nav-link(href='#visual-design', role='tab', data-toggle='tab') Awards
+										.tab-content
+											#ideas.tab-pane.fade.show.active(role='tabpanel')
+												.row
+													.col-md-12
+														table.table
+															thead
+																tr
+																	th
+																	
+																	th 
+																		button.btn.btn-block.btn-default#editBut
+																			i.fa.fa-edit
+																			|  Edit
+															tbody
+																tr
+																	th#emailHead(scope="row") E-mail Address:
+																	td#emailCol.column 
+																		| #{bidder.strEmailAddress}
+																	td
+																		input.inputie#emailInput(style='display:none' type='text', name='email' value=`${bidder.strEmailAddress}`)
+																	
+																
+																
+																tr
+																		th#addressHead(scope="row") Delivery Address:															
+																		td#addressCol.column 
+																			| #{bidder.strAddress}
+																		td
+																			input.inputie#addressInput(style='display:none' type='text', name='address' value=`${bidder.strAddress}`)
+																		
+																	
+																
+																
+																tr
+																	th#contactHead(scope="row") Contact Number:
+																	td#contactCol.column #{bidder.strContact}
+																	td
+																		input.inputie#contactInput(style='display:none' type='text', name='contact' value=`${bidder.strContact}`)
+																		
+																	
+																tr
+																	th#idHead(scope="row") ID:
+																	td#idCol
+																		.card
+																			<div class="card-header" role="tab" id="headingOne">
+																				<h5 class="mb-0 align-center"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Click here to open
+																				</a></h5>
+																			</div>
+																			#collapseOne.collapse.align-center(style='padding: 10px' role="tabpanel" aria-labelledby="headingOne")
+																				img#idpic(src=`/assets/uploads/${bidder.strIDPicture}` style='height: 150px')
+																				br
+																				button.btn.btn-block.btn-default#uploadButton
+																					i.fa.fa-plus
+																					|  Replace
+																				input#uploadInput(type='file' name='idpicture' style='display: none;')
+																	
+																tr
+																	th#IDTypeHead(scope="row") ID Type:
+																	td#IDTypeCol.column #{bidder.strIDType}
+																	td.inputie(style='display:none')
+																		select#IDTypeInput.form-control(name='IDtype' style="width: 100%;" value=`${bidder.strIDType}`)
+																			option(value="") - ID Type -
+																			optgroup(label='Government Issued ID')
+																				option(value='Alien Certificate of Registration (ACR I-Card)') Alien Certificate of Registration (ACR I-Card)
+																				option(value=`Armed Forces of the Philippines (AFP) ID`) Armed Forces of the Philippines (AFP) ID
+																				option(value='Barangay Clearance/Certificate') Barangay Clearance/Certificate
+																				option(value=`Certification from the National Council for the Welfare of Disabled Persons (NCWDP)`) Certification from the National Council for the Welfare of Disabled Persons (NCWDP)
+																				option(value=`Consular ID`) Consular ID
+																				option(value=`Department of Social Welfare and Development (DSWD) ID`) Department of Social Welfare and Development (DSWD) ID
+																				option(value=`Driver's License`) Driver's License
+																				option(value='Government Service Insurance System (GSIS ID)') Government Service Insurance System (GSIS ID)
+																				option(value='Marriage Certificate (PSA Authenticated)') Marriage Certificate (PSA Authenticated)
+																				option(value='National Bureau of Investigation (NBI) Clearance') National Bureau of Investigation (NBI) Clearance
+																				option(value=`OFW ID`) OFW ID
+																				option(value=`Overseas Worker's Welfare Administration (OWWA) ID`) Overseas Worker's Welfare Administration (OWWA) ID
+																				option(value=`PAG-IBIG ID`) PAG-IBIG ID
+																				option(value=`Passport`) Passport
+																				option(value='PhilHealth Identification Card (PIC)') PhilHealth Identification Card (PIC)
+																				option(value=`Philippine Overseas Employment Association (POEA) ID`) Philippine Overseas Employment Association (POEA) ID
+																				option(value='Philippine Statistics Authority (PSA) Birth Certificate') Philippine Statistics Authority (PSA) Birth Certificate
+																				option(value='Philippine National Police (PNP) ID') Philippine National Police (PNP) ID
+																				option(value='Police Clearance') Police Clearance
+																				option(value='Postal ID') Postal ID
+																				option(value=`PRA Special Resident Retiree Visa (SRRV) ID`) PRA Special Resident Retiree Visa (SRRV) ID
+																				option(value='Professional Regulation Commission ID (PRC ID)') Professional Regulation Commission ID (PRC ID)
+																				option(value=`Seaman's Book`) Seaman's Book
+																				option(value=`Senior Citizen's ID Card`) Senior Citizen's ID Card
+																				option(value='Social Security System ID (SSS ID)')  Social Security System ID (SSS ID)
+																				option(value='Tax Identification Number (TIN ID)') Tax Identification Number (TIN ID)
+																				option(value=`Unified Multi-Purpose ID (UMID)`) Unified Multi-Purpose ID (UMID)
+																				option(value=`Voter's ID`) Voter's ID
+																	
+																tr
+																	th#IDNumberHead(scope="row") ID Number:
+																	td#IDNumberCol.column #{bidder.strIDNumber}
+																	td
+																		input.inputie#IDNumberInput(style='display:none' type='text', name='idnumber' value=`${bidder.strIDNumber}`)
+															tfoot
+																tr
+																	th
+																		.controlButton(style='display: none;')
+																			button.btn.m-1.btn-outline-danger.btn-sm.btn-block#discard
+																				i.fa.fa-times.bg-red
+																				|  Discard
+																	th
+																		.controlButton(style='display: none;')
+																			button.btn.m-1.btn-outline-success.btn-sm.btn-block#save
+																				i.fa.fa-check.bg-green
+																				|  Save Changes
+
+																
+														
+											#code-quality.tab-pane.fade(role='tabpanel')
+												.row
+													.col-md-12
+														table.table
+															thead
+																tr
+																	button.btn.btn-block.btn-default#addModalButton(type='button' data-toggle='modal' data-target='#addressModal')
+																		i.fa.fa-plus
+																		|  Add Address
+															thead
+																tr
+																	th Full Name
+																	th Address
+																	th Postcode
+																	th Phone Number
+																	th 
+																	th Action
+															tbody#addressTable
+																
+														
+											#visual-design.tab-pane.fade(role='tabpanel')
+												.row#errorMessage
+													.col-md-12
+														.bs-callout-warning.callout-border-left.callout-bordered.p-1(style='border: 3px solid red; padding: 1.25rem 1.25rem!important')
+															h6(style='color: red;') Pay before the deadline
+															.row
+																.col-md-2
+																	i.fa.fa-exclamation.fa-3x(style='color: red;')
+																.col-md-10
+																	p(style='color:red; font-size: 12px;')
+																		| Please settle your payment for your award/s on or before the deadline. Failure to settle can get you banned permanently. Thank you.
+												br
+												.row
+													.col-md-12
+														table.table#awardWholeTable
+															thead
+																tr
+																	th.align-center Auction Name
+																	th.align-center Date End
+																	th.align-center Time Left
+																	th.align-center Status
+																	th.align-center Action
+															tbody#awardTable
+																
+
+				.px-5-percent
+					input#message(hidden val=`${message}`)
+					footer
+						.footer_container
+							.fluid-container
+								.row.align-items-center
+									.col-lg-4
+										p
+											| © 2018 AMSOB | PUP
+									.col-lg-4
+										ul.footer_nav.align-center
+									.col-lg-4.align-right
+										ul.list-inline
+											li
+												a(href='https://www.facebook.com/energeticthemes')
+													i.fa.fa-facebook(aria-hidden='true')
+											li
+												a(href='https://instagram.com/energeticthemes')
+													i.fa.fa-instagram(aria-hidden='true')
+											li
+												a(href='https://behance.com/energeticthemes')
+													i.fa.fa-behance(aria-hidden='true')
+											li
+												a(href='https://twitter.com/energeticthemes')
+													i.fa.fa-twitter(aria-hidden='true')
+		form#checkOut(method="POST", action="/bid/checkout/awards")
+			input#salesInvoice(name="intSalesInvoiceID" type="text" hidden)
+		form#receiptForm(method="POST", action="/bid/receipt")
+			input#salesInvoice2(name="intSalesInvoiceID" type="text" hidden)
+		// ==================================================
+		// Placed js files at the end of the document so the pages load faster
+		script(type='text/javascript', src='/assets/shopmade/js/jquery.min.js')
+		script(src='/assets/shopmade/js/bootstrap.min.js')
+		script(type='text/javascript', src='/assets/shopmade/js/plugins.min.js')
+		script(type='text/javascript', src='/assets/shopmade/js/jquery.smoothState.min.js')
+		script(type='text/javascript', src='/assets/shopmade/js/main.js')
+		script(type='text/javascript', src='/assets/vendors/js/sweetalert.js')
+		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/jquery.form.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/dropify.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+		script.
+			$(window).ready(function(){
+				var hostname = `!{hostname}`
+				var port = `!{port}`
+				var socket = io(`http://${hostname}:${port}`);
+
+				$(document).on('click', '#submitUpload', function(e){
+					e.preventDefault();
+					socket.emit('paymentRegistration')
+					$('#regUpload').submit();
+				})
+				$('#strReferencePicture').dropify({
+					allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+					messages: {
+						'default': 'Drag and drop an image here or click',
+						'replace': 'Drag and drop or click to replace',
+						'remove': 'Remove',
+						'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+					},
+					error: {
+						'fileSize': 'The file size is too big (1M max).',
+						'fileFormat': 'The file format is not allowed ({{ value }} only).'
+					}
+				});
+				$("#awardWholeTable").dataTable();
+				$.post('/bid/awards').then(function(data){
+					if(data.indicator){
+						for(var i = 0; i < data.awards.length; i++){
+							var award;
+							console.log('=============')
+							console.log(new Date(data.awards[i].datDateEnd2))
+							console.log((new Date(data.awards[i].datDateEnd) > new Date()))
+								if(data.awards[i].booSIStatus == 0 && (data.awards[i].strBankReference == null || data.awards[i].strBankReference == '')){
+									award = $(`<tr>
+												<td>${data.awards[i].strAuctionName}</td>
+												<td>${data.awards[i].datDateEnd}</td>
+												<td>
+													<div id="countie${data.awards[i].intAuctionID}" class="countdown"></div>
+												</td>
+												<td style="color: red;">Unpaid</td>
+												<td><button class="viewmyAwards btn btn-default add-cart-btn" style="font-size: 11px;" salesid="${data.awards[i].intSalesInvoiceID}"><i class="fa fa-eye"></i> View my awards</span></td>
+												</tr>`)
+								}
+								else if((data.awards[i].booSIStatus == 0 && data.awards[i].strBankReference != null) || (data.awards[i].booSIStatus == 0 && data.awards[i].strBankReference != '')){
+									award = $(`<tr>
+												<td>${data.awards[i].strAuctionName}</td>
+												<td>${data.awards[i].datDateEnd}</td>
+												<td>
+													<div id="countie${data.awards[i].intAuctionID}" class="countdown"></div>
+												</td>
+												<td style="color: orange;">Pending</td>
+												<td><button class="viewmyAwards btn btn-default add-cart-btn" style="font-size: 11px;" salesid="${data.awards[i].intSalesInvoiceID}"><i class="fa fa-eye"></i> View my awards</span></td>
+												</tr>`)
+								}
+								else if(data.awards[i].booSIStatus == 1){
+									award = $(`<tr>
+												<td>${data.awards[i].strAuctionName}</td>
+												<td>${data.awards[i].datDateEnd}</td>
+												<td style="color: orange; font-weight: bold">Processing</td>
+												<td style="color: green; font-weight: bold">Paid</td>
+												<td><button class="viewMyReceipt btn btn-default add-cart-btn" style="font-size: 11px;" salesid="${data.awards[i].intSalesInvoiceID}"><i class="fa fa-eye"></i> View My Receipt</span></td>
+												</tr>`)
+								}
+								else if(data.awards[i].booSIStatus == 2){
+									award = $(`<tr>
+												<td>${data.awards[i].strAuctionName}</td>
+												<td>${data.awards[i].datDateEnd}</td>
+												<td style="color: blue; font-weight: bold">Shipped</td>
+												<td style="color: green; font-weight: bold">Paid</td>
+												<td><button class="viewMyReceipt btn btn-default add-cart-btn" style="font-size: 11px;" salesid="${data.awards[i].intSalesInvoiceID}"><i class="fa fa-eye"></i> View My Receipt</span></td>
+												</tr>`)
+								}
+								else if(data.awards[i].booSIStatus == 3){
+									award = $(`<tr>
+												<td>${data.awards[i].strAuctionName}</td>
+												<td>${data.awards[i].datDateEnd}</td>
+												<td style="color: green; font-weight: bold">Delivered</td>
+												<td style="color: green; font-weight: bold">Paid</td>
+												<td><button class="viewMyReceipt btn btn-default add-cart-btn" style="font-size: 11px;" salesid="${data.awards[i].intSalesInvoiceID}"><i class="fa fa-eye"></i> View My Receipt</span></td>
+												</tr>`)
+								}
+								var table = $('#awardWholeTable').DataTable();
+								table.row.add(award[0]).draw();
+
+								if(data.awards[i].shouldEnd != ''){
+									var $countie = $(`#countie${data.awards[i].intAuctionID}`);
+									if ($countie.length) {
+										$countie.countdown(new Date(data.awards[i].shouldEnd), function (event) {
+											$(this).html(event.strftime('<span class="countdown-value"> %d:</span> <span class="countdown-value"> %H:</span> <span class="countdown-value"> %M:</span> <span class="countdown-value"> %S</span>'));
+										})
+									}	
+								}
+							if(new Date(data.awards[i].datDateEnd2) < new Date() && new Date(data.awards[i].shouldEnd) < new Date()){
+								if(data.awards[i].booSIStatus == 0 || data.awards[i].booSIStatus == 4){
+									$.post('/bid/ban', {
+										intAuctionID: data.awards[i].intSIAuctionID, 
+									}).then(function(data){
+										location.href = '/bid'
+									})
+								}
+							}							
+						}//-for loop
+					}//- indicator
+				})
+				
+				$.get('/bid/address/get').then(function(data){
+
+					if(data.indicator){
+
+						for(var i = 0; i < data.address.length; i++){
+							var address = data.address[i]
+
+							if(address.booDefault == 0){
+								var addressRow = $(`
+												<tr>
+												<td>${address.strFullname}</td>
+												<td>${address.strHouseAddress}</td>
+												<td>${address.strBarangay}, ${address.strCity}, ${address.strRegion}, ${address.strPostcode}</td>
+												<td>${address.strPhoneNumber}</td>
+												<td><span class="badge badge-glow badge-pill defaulterno" addressid="${address.intAddressBookID}">Default</span></td>
+												<td class="align-center"><a class="def" addressid="${address.intAddressBookID}" href="#" data-toggle="modal" data-target="#addressModal"><i class="fa fa-cog"></i></a>
+												<a class="remove" addressid="${address.intAddressBookID}" href="#"><i class="fa fa-trash" style="color: red"></i></a></td>
+												</tr>`)
+							}
+							else if(address.booDefault == 1){
+								var addressRow = $(`
+												<tr>
+												<td>${address.strFullname}</td>
+												<td>${address.strHouseAddress}</td>
+												<td>${address.strBarangay}, ${address.strCity}, ${address.strRegion}, ${address.strPostcode}</td>
+												<td>${address.strPhoneNumber}</td>
+												<td><span class="badge badge-glow badge-pill defaulteryes" addressid="${address.intAddressBookID}">Default</span></td>
+												<td class="align-center"><a class="def" addressid="${address.intAddressBookID}" href="#" data-toggle="modal" data-target="#addressModal"><i class="fa fa-cog"></i></a>
+												<a class="remove" addressid="${address.intAddressBookID}" href="#"><i class="fa fa-trash" style="color: red"></i></a></td>
+												</tr>`)
+
+							}
+							$('#addressTable').append(addressRow).hide().fadeIn(500);
+						}
+					}
+
+				})
+				
+
+				$('#IDTypeInput').select2({
+					width: 'resolve',
+				});
+
+				$('.team-name').hover(
+					function(){
+						$(this).find('.edit').fadeIn(500);
+					},
+					function(){
+						$(this).find('.edit').fadeOut(500);						
+					}
+				)
+
+				$('.team-role').hover(
+					function(){
+						$(this).find('.edit').fadeIn(500);
+					},
+					function(){
+						$(this).find('.edit').fadeOut(500);						
+					}
+				)
+
+				$(document).on('click', '.viewmyAwards', function(){
+					var salesInvoiceID = $(this).attr('salesid')
+					$('#salesInvoice').val(salesInvoiceID);
+					$('#checkOut').submit();
+				})
+
+				$(document).on('click', '.viewMyReceipt', function(){
+					var salesInvoiceID = $(this).attr('salesid')
+					$('#salesInvoice2').val(salesInvoiceID);
+					$('#receiptForm').submit();
+				})
+
+				$(document).on('change', '#uploadInput', function(){
+					swal({
+						title: 'Are you sure?',
+						text: 'You are about to replace your ID picture. This action cannot be undone.',
+						icon: 'warning',
+						buttons: {
+							Yes: 'Yes',
+							No: 'No',
+						}
+					}).then((value) => {
+						if(value == 'Yes'){
+							var formData = new FormData(); //FormData (Pre-requisite: Jquery Form and Multer) use for File Ajax
+							var bidderJSON = !{JSON.stringify(bidder)}
+							var bidderID = bidderJSON.intBidderID
+							formData.append('strIDPicture', $('#uploadInput')[0].files[0])
+							formData.append('intBidderID', bidderID);
+
+							$.ajax({
+								type: "POST",
+								url: "/bid/replace/id",
+								data: formData,
+								processData: false,
+								contentType: false,
+								success: function(data){
+									swal({
+										title: 'Replaced Successfully',
+										text: '               ',
+										timer: 2000,
+										icon: 'success',
+										button: false,
+									})
+
+									$('#idpic').attr('src', `/assets/uploads/${data.strIDPicture}`)
+								}
+							})
+						}
+					})
+				})
+
+				$(document).on('click', '#uploadButton', function(){
+					$('#uploadInput').trigger('click');
+				})
+
+				
+
+				$(document).on('click', '#saveAddress', function(){
+					$.post('/bid/address/add',{
+						strFullname: $('#fullName').val(),
+						strPhoneNumber: $('#phoneNumber').val(),
+						strHouseAddress: $('#houseAddress').val(),
+						strBarangay:$('#barangayName').val(),
+						strCity: $('#cityName').val(),
+						strRegion: $('#regionName').val(),
+						strPostcode: $('#postCode').val(),
+						strOthernotes: $('#otherNotes').val(),
+					}).then(function(data){
+						if(data.indicator){
+							swal({
+								title: 'Successful',
+								text: 'Address added successfully',
+								icon: 'success',
+								button: 'Okay',
+							})
+
+							
+							var strFullname = $('#fullName').val()
+							var strPhoneNumber = $('#phoneNumber').val()
+							var strHouseAddress = $('#houseAddress').val()
+							var strBarangay =$('#barangayName').val()
+							var strCity = $('#cityName').val()
+							var strRegion = $('#regionName').val()
+							var strPostcode = $('#postCode').val()
+							var strOthernotes = $('#otherNotes').val()
+
+							var addressRow = $(`
+											<tr>
+											<td>${strFullname}</td>
+											<td>${strHouseAddress}</td>
+											<td>${strBarangay}, ${strCity}, ${strRegion}, ${strPostcode}</td>
+											<td>${strPhoneNumber}</td>
+											<td><span class="badge badge-glow badge-pill defaulterno" addressid="${data.intAddressBookID}">Default</span></td>
+											<td class="align-center"><a class="def" addressid="${data.intAddressBookID}" href="#" data-toggle="modal" data-target="#addressModal"><i class="fa fa-cog"></i>
+											<a class="remove" addressid="${data.intAddressBookID}" href="#"><i class="fa fa-trash" style="color: red"></i></a></a></td>
+											</tr>`)
+							$('#addressTable').append(addressRow).hide().fadeIn(500);
+							$('#addressModal').modal('toggle');
+						}
+					})
+				})
+
+				$(document).on('click', '#addModalButton', function(){
+					$('#title').text('Add New Address')
+					$('#fullName').val('')
+					$('#phoneNumber').val('')
+					$('#houseAddress').val('')
+					$('#barangayName').val('')
+					$('#cityName').val('')
+					$('#regionName').val('')
+					$('#postCode').val('')
+					$('#otherNotes').val('')
+					$('#saveAddress').fadeIn(500);
+					$('#saveChanges').fadeOut(500);
+				})
+
+				$(document).on('click', '#discard', function(){
+					var $this = $(this);
+					$('.inputie').fadeOut(500,function(){
+						$('#editBut').fadeIn(100)
+						$('thead').fadeIn(500)
+						$('.column').fadeIn(500)
+						$('.controlButton').fadeOut(1000);
+					})
+				});
+
+				$(document).on('click', '.def', function(){
+					var intAddressBookID = $(this).attr('addressid');
+					var $this =  $(this);
+
+					console.log(intAddressBookID)
+					$.post('/bid/address/get/individual',{
+						intAddressBookID: intAddressBookID,
+					}).then(function(data){
+						if(data.indicator){
+							var address = data.address;
+							$('#title').text('Edit Address')						
+							$('#fullName').val(address.strFullname)
+							$('#phoneNumber').val(address.strPhoneNumber)
+							$('#houseAddress').val(address.strHouseAddress)
+							$('#barangayName').val(address.strBarangay)
+							$('#cityName').val(address.strCity)
+							$('#regionName').val(address.strRegion)
+							$('#postCode').val(address.strPostcode)
+							$('#otherNotes').val(address.strOthernotes)
+							$('#saveAddress').fadeOut(500);
+							$('#saveChanges').fadeIn(500);
+
+							$(document).on('click', '#saveChanges', function(){
+								$.post('/bid/address/edit',{
+									strFullname: $('#fullName').val(),
+									strPhoneNumber: $('#phoneNumber').val(),
+									strHouseAddress: $('#houseAddress').val(),
+									strBarangay:$('#barangayName').val(),
+									strCity: $('#cityName').val(),
+									strRegion: $('#regionName').val(),
+									strPostcode: $('#postCode').val(),
+									strOthernotes: $('#otherNotes').val(),
+									intAddressBookID: intAddressBookID,
+								}).then(function(data){
+									if(data.indicator){
+										swal({
+											title: 'Successful',
+											text: 'Address edited successfully',
+											icon: 'success',
+											button: 'Okay',
+										})
+
+										$(document).off('click', '#saveChanges')
+										$this.parents('tr').remove();
+										
+										var strFullname = $('#fullName').val()
+										var strPhoneNumber = $('#phoneNumber').val()
+										var strHouseAddress = $('#houseAddress').val()
+										var strBarangay =$('#barangayName').val()
+										var strCity = $('#cityName').val()
+										var strRegion = $('#regionName').val()
+										var strPostcode = $('#postCode').val()
+										var strOthernotes = $('#otherNotes').val()
+
+										var addressRow = $(`
+														<tr>
+														<td>${strFullname}</td>
+														<td>${strHouseAddress}</td>
+														<td>${strBarangay}, ${strCity}, ${strRegion}, ${strPostcode}</td>
+														<td>${strPhoneNumber}</td>
+														<td><span class="badge badge-glow badge-pill defaulterno" addressid="${intAddressBookID}">Default</span></td>
+														<td class="align-center"><a class="def" addressid="${intAddressBookID}" href="#" data-toggle="modal" data-target="#addressModal"><i class="fa fa-cog"></i></a>
+														<a class="remove" addressid="${intAddressBookID}" href="#"><i class="fa fa-trash" style="color: red"></i></a></td>
+														</tr>`)
+										$('#addressTable').append(addressRow).hide().fadeIn(500);
+										$('#addressModal').modal('toggle');
+									}
+								})
+							})
+						}
+					})
+				})
+				$(document).on('click', '.remove', function(){
+					var $this = $(this);
+					var intAddressBookID = $(this).attr('addressid');
+					swal({
+						title: 'Remove?',
+						text: 'This action cannot be undone. Are you sure?',
+						icon: 'warning',
+						buttons: {
+							Yes: 'Yes',
+							No: 'No',
+						},
+					}).then((value) => {
+						if(value == 'Yes'){
+							$.post('/bid/address/remove', {
+								intAddressBookID: intAddressBookID,
+							}).then(function(data){
+								if(data){
+									swal({
+										title: 'Removed',
+										text: 'Address has been successfully removed',
+										icon: 'success',
+										button: 'Okay',
+									})
+									$this.parents('tr').remove();
+								}
+							})
+						}
+					})
+				})
+
+				$(document).on('click', '#payOffline', function(){
+					$.when($('#paymentModal').modal('toggle')).then(function(){
+						$('#offlineModal').modal('toggle')
+					})
+				})
+
+				$(document).on('click', '#payOnline', function(){
+					$.post('/bid/checkout').then(function(d){
+						location.href = d.url
+					})
+				})
+
+				$(document).on('click', '#save', function(){
+					var $this = $(this);
+					$('.inputie').fadeOut(500,function(){
+						$('#editBut').fadeIn(100)
+						$('thead').fadeIn(500)
+						$('.column').fadeIn(500)
+						$('.controlButton').fadeOut(1000);
+					})
+					
+					var email = $('#emailInput').val();
+					var address = $('#addressInput').val();
+					var contact = $('#contactInput').val();
+					var idtype = $('#IDTypeInput').val();
+					var idnumber = $('#IDNumberInput').val();
+					$.post('/bid/edit/information', {
+						strEmailAddress: email,
+						strAddress: address,
+						strContact: contact,
+						strIDType: idtype,
+						strIDNumber: idnumber
+					}).then(function(data){
+						if(data.indicator == 'success'){
+							$('#emailCol').text(email);
+							$('#addressCol').text(address);
+							$('#contactCol').text(contact);
+							$('#IDTypeCol').text(idtype);
+							$('#IDNumberCol').text(idnumber);
+						}
+					})
+				});		
+
+				$(document).on('click', '.defaulterno', function(){
+					var $this = $(this);
+					$.post('/bid/address/default',{
+						intAddressBookID: $(this).attr('addressid')
+					}).then(function(data){
+						if(data){
+							$('.defaulteryes').addClass('defaulterno').removeClass('defaulteryes');
+							$this.addClass('defaulteryes').removeClass('defaulterno')
+						}
+					})
+				})	
+
+				$(document).on('click', '#editBut', function(){
+					var $this = $(this);
+					$('.column').fadeOut(500,function(){
+						$this.fadeOut(100)
+						$('thead').fadeOut(500)
+						$('.inputie').fadeIn(500)
+						$('.controlButton').fadeIn(1000);
+					})
+				})
+				
+
+				var message = !{JSON.stringify(message)}
+				console.log(message)
+
+				
+
+				if(message == 'Jo7fA6796JNCXohs97s'){
+					swal({
+						title: 'Payment Failed',
+						text: 'Please check your card credentials then try again.',
+						icon: 'error',
+						button: 'Okay',
+					})
+				}
+
+			})

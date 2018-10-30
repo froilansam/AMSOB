@@ -1,0 +1,1418 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| Dashboard sales - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
+			| Dashboard
+		//- new
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/pickers/daterange/daterangepicker.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/selects/select2.min.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/animate/animate.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/forms/wizard.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/custom.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/responsive.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/pickers/daterange/daterange.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/forms/checkboxes-radios.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/forms/extended/form-extended.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/dropify.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/formValidation.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-callout.min.css')
+
+		
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
+		// END Custom CSS
+		style.
+			.has-error .control-label,
+			.has-error .help-block,
+			.has-error .form-control-feedback {
+				color: #a94442;
+			}
+
+			/* Color of valid field */
+			.has-success .control-label,
+			.has-success .help-block,
+			.has-success .form-control-feedback {
+				color: #3c763d;
+			}
+			.form-group.has-feedback.has-error .form-control,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single:focus{
+				border: 1px solid #a94442 !important;
+			}
+			.form-group.has-feedback.has-success .form-control,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single:focus{
+				border: 1px solid #3c763d !important;
+			}
+
+			.form-control-feedback.fa.fa-check{
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 35px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.form-control-feedback.fa.fa-times {
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 54px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.swal-button.swal-button--DontSave{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Save{
+				background-color: #28D094 !important;
+			}
+		
+
+
+
+	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
+		
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.mr-auto
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AMSOB
+						li.nav-item.d-none.d-md-block.float-right
+							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right' style='color: blue !important')
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.content
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+							li.dropdown.nav-item.mega-dropdown
+								a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') Mega
+								ul.mega-dropdown-menu.dropdown-menu.row
+									li.col-md-2
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-newspaper-o
+											|  News
+										#mega-menu-carousel-example
+											div
+												img.rounded.img-fluid.mb-1(src='/assets/images/slider/slider-2.png', alt='First slide')
+												a.news-title.mb-0(href='#') Poster Frame PSD
+												p.news-content
+													span.font-small-2 January 26, 2018
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-random
+											|  Drill down menu
+										ul.drilldown-menu
+											li.menu-list
+												ul
+													li
+														a.dropdown-item(href='layout-2-columns.html')
+															i.ft-file
+															|  Page layouts & Templates
+													li
+														a(href='#')
+															i.ft-align-left
+															|  Multi level menu
+														ul
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-bookmark-o
+																	|   Second level
+															li
+																a(href='#')
+																	i.la.la-lemon-o
+																	|  Second level menu
+																ul
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-heart-o
+																			|   Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-file-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-trash-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-clock-o
+																			|  Third level
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-hdd-o
+																	|  Second level, third link
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-floppy-o
+																	|  Second level, fourth link
+													li
+														a.dropdown-item(href='color-palette-info.html')
+															i.ft-camera
+															|  Color palette system
+													li
+														a.dropdown-item(href='sk-2-columns.html')
+															i.ft-edit
+															|  Page starter kit
+													li
+														a.dropdown-item(href='changelog.html')
+															i.ft-minimize-2
+															|  Change log
+													li
+														a.dropdown-item(href='https://pixinvent.ticksy.com/')
+															i.la.la-life-ring
+															|  Customer support center
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-list-ul
+											|  Accordion
+										#accordionWrap(role='tablist', aria-multiselectable='true')
+											.card.border-0.box-shadow-0.collapse-icon.accordion-icon-rotate
+												#headingOne.card-header.p-0.pb-2.border-0(role='tab')
+													a(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionOne', aria-expanded='true', aria-controls='accordionOne') Accordion Item #1
+												#accordionOne.card-collapse.collapse.show(role='tabpanel', aria-labelledby='headingOne', aria-expanded='true')
+													.card-content
+														p.accordion-text.text-small-3
+															| Caramels dessert chocolate cake pastry jujubes bonbon.
+															| Jelly wafer jelly beans. Caramels chocolate cake liquorice
+															| cake wafer jelly beans croissant apple pie.
+												#headingTwo.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionTwo', aria-expanded='false', aria-controls='accordionTwo') Accordion Item #2
+												#accordionTwo.card-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Sugar plum bear claw oat cake chocolate jelly tiramisu
+															| dessert pie. Tiramisu macaroon muffin jelly marshmallow
+															| cake. Pastry oat cake chupa chups.
+												#headingThree.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionThree', aria-expanded='false', aria-controls='accordionThree') Accordion Item #3
+												#accordionThree.card-collapse.collapse(role='tabpanel', aria-labelledby='headingThree', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Candy cupcake sugar plum oat cake wafer marzipan jujubes
+															| lollipop macaroon. Cake dragée jujubes donut chocolate
+															| bar chocolate cake cupcake chocolate topping.
+									li.col-md-4
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-envelope-o
+											|  Contact Us
+										form.form.form-horizontal
+											.form-body
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputName1') Name
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputName1.form-control(type='text', placeholder='John Doe')
+															.form-control-position.pl-1
+																i.la.la-user
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputEmail1') Email
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputEmail1.form-control(type='email', placeholder='john@example.com')
+															.form-control-position.pl-1
+																i.la.la-envelope-o
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputMessage1') Message
+													.col-sm-9
+														.position-relative.has-icon-left
+															textarea#inputMessage1.form-control(rows='2', placeholder='Simple Textarea')
+															.form-control-position.pl-1
+																i.la.la-commenting-o
+												.row
+													.col-sm-12.mb-1
+														button.btn.btn-info.float-right(type='button')
+															i.la.la-paper-plane-o
+															|  Send
+							li.nav-item.nav-search
+								a.nav-link.nav-link-search(href='#')
+									i.ficon.ft-search
+								.search-input
+									input.input(type='text', placeholder='Explore Modern...')
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='/logout')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-gb
+									span.selected-language
+								.dropdown-menu(aria-labelledby='dropdown-flag')
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-gb
+										|  English
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-fr
+										|  French
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-cn
+										|  Chinese
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-de
+										|  German
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+									li.scrollable-container.media-list.w-100#notificationField
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		// ////////////////////////////////////////////////////////////////////////////
+		.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
+			.main-menu-content
+				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+					li.nav-item
+						a(href='/')
+							i.fa.fa-dashboard
+							span.menu-title Dashboard
+					li.nav-item
+						a(href='#')
+							i.fa.fa-wrench
+							span.menu-title Maintenance
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='#', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction
+					li.nav-item
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='#', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
+									li
+										a.menu-item(href='#', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='#', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction State
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awarding
+					li.nav-item
+						a(href='#')
+							i.fa.fa-list
+							span.menu-title Query
+					li.nav-item
+						a(href='#')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='#')
+							i.fa.fa-cogs
+							span.menu-title Utilities
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Acquisition
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+				.content-detached.content-right
+					.content-body(style='margin-left: 0px !important')
+						section.row
+							.col-12
+								.card
+									.card-head
+										.card-header
+											h4.card-title Pending Auction Result
+											a.heading-elements-toggle
+												i.la.la-ellipsis-h.font-medium-3
+											.heading-elements
+												button.btn.btn-block.btn-info.btn-sm(type='button', data-toggle='modal', data-target='#receiveModal')
+													i.ft-plus.white
+													|  Claim Auction Result
+									.card-content
+										.card-body
+											// Task List table
+											.table-responsive
+												table#consignmentTable.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+													thead
+														tr
+															th Action
+															th Voucher ID
+															th Consignor Number
+															th Auction Number
+															th Status
+													tbody
+														-if(ars)
+															each ar in ars
+																tr
+																	td
+																		span.dropdown
+																			button#btnSearchDrop2.btn.btn-info.dropdown-toggle.dropdown-menu-right(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+																				i.ft-settings
+																			span.dropdown-menu.mt-1.dropdown-menu-right(aria-labelledby='btnSearchDrop2')
+																				a.edit.dropdown-item(href=`/maintenance/auctionresult/${ar.intAuctionResultID}`)
+																					i.la.la-eye
+																					|  View
+																	td #{ar.intAuctionResultID}
+																	td #{ar.intARConsignorID}
+																	td #{ar.intARAuctionID}
+																	
+																	
+																	-if(ar.booARStatus == 0)
+																		td
+																			span.btn.btn-sm.btn-outline-warning.round For Claiming
+																	-if(ar.booARStatus == 1)
+																		td
+																			span.btn.btn-sm.btn-outline-primary.round Claimed
+
+														
+													tfoot
+														tr
+															th Action
+															th Voucher ID
+															th Consignor Number
+															th Auction Number
+															th Status
+		// ///////////////////////////////////////////////////////////////////////////
+		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with dd
+					i.ft-heart.pink
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
+		input#errorfieldProfileCompany(type='text' hidden)
+		input#errorfieldProfilePersonal(type='text' hidden)
+		input#errorfieldReq(type='text' hidden)
+		input#errorfieldCred(type='text' hidden)
+		#agreement
+			input#errorfieldAgree(type='hidden' name='errorfieldAgree' value='')
+		form#codeForm(style='display: hidden', action='/payment/details', method='POST')
+			input#strConsignmentCode(type='hidden', name='strARCode', value='')
+
+						
+		//- new
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/extensions/jquery.steps.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/typeahead.bundle.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/bloodhound.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/handlebars.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/inputmask/jquery.inputmask.bundle.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/formatter/formatter.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/maxlength/bootstrap-maxlength.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/card/jquery.card.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/vendors/js/dropify.js', type='text/javascript')
+		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
+		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/select/form-select2.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/modal/components-modal.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/checkbox-radio.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/pickers/dateTime/moment-with-locales.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/pickers/daterange/daterangepicker.js', type='text/javascript')
+		//- script(src='/assets/vendors/js/forms/validation/jquery.validate.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/wizard-steps.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/extended/form-typeahead.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/extended/form-inputmask.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/forms/extended/form-formatter.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/extended/form-maxlength.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/extended/form-card.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/jquery.form.js', type='text/javascript')
+		script(src='/assets/vendors/js/instascan.min.js')
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
+		script.
+			$(document).ready(function(){
+				$('a[href="#finish"]').on('click', function(){//Submit Event
+					$('#agreement').data('formValidation').validate();//Check if no error validation
+					if($('#errorfieldAgree').val() == 'yes'){
+						var contype = $('.checkie:checked').attr('val');//Checking which radio button is checked
+						var formData = new FormData(); //FormData (Pre-requisite: Jquery Form and Multer) use for File Ajax
+											
+						if(contype == 'company'){
+							$('#profileCompany input').each(function(index, obj){
+								formData.append(obj.name, obj.value);
+							});  
+							formData.append('IDPicture', $('#proof')[0].files[0]);
+							formData.append('IDType', $('#personalID').val());
+							formData.append('TINNumber', $('#idBusiness').val());
+							formData.append('IDNumber', $('#idNumber').val());
+							formData.append('consignorType', 0);							
+							$('#credentials input').each(function(index, obj){
+								formData.append(obj.name, obj.value);
+							});
+
+							$.ajax({
+								type: "POST",
+								url: "/consignor",
+								data: formData,
+								processData: false,
+								contentType: false,
+								success: function(data){
+									if(data == 'success'){
+										swal({
+											title: 'Application Successful',
+											icon: 'success',
+											buttons: {
+												Okay: 'Okay',
+											}
+										}).then((value) => {
+											
+											$('#agree').iCheck('uncheck');
+											//Reset the form Wizard
+											$('.steps-validation.wizard-circle').steps('reset');
+
+
+											//Resetting the Form
+											$('#signUpModal').find(':input').val('');
+											$("#personalID").val("");
+											$("#personalID").trigger('change');
+											$('.dropify-clear').trigger('click');
+											$('#signUpModal').off('hide.bs.modal').modal('toggle')
+											//Resetting Form Validation (destroy technique)
+											$('#profileCompany').data('formValidation').destroy()
+											$('#profilePersonal').data('formValidation').destroy()
+											$('#requirements').data('formValidation').destroy()
+											$('#credentials').data('formValidation').destroy()
+											$('#agreement').data('formValidation').destroy()
+											signupValidation() //Initialization again
+											hiddenModal();
+										})
+									}
+								},
+								error: function (e) {
+									console.log("some error", e);
+								}
+							});// Ajax
+						}//If Condition Company
+						if(contype == 'personal'){
+							$('#profilePersonal input').each(function(index, obj){
+								formData.append(obj.name, obj.value);
+							});  
+							formData.append('IDPicture', $('#proof')[0].files[0]);
+							formData.append('IDType', $('#personalID').val());
+							formData.append('IDNumber', $('#idNumber').val());
+							formData.append('consignorType', 1);
+							$('#credentials input').each(function(index, obj){
+								formData.append(obj.name, obj.value);
+							});
+
+							$.ajax({
+								type: "POST",
+								url: "/consignor",
+								data: formData,
+								processData: false,
+								contentType: false,
+								success: function(data){
+									if(data == 'success'){
+										swal({
+											title: 'Application Successful',
+											icon: 'success',
+											buttons: {
+												Okay: 'Okay',
+											}
+										}).then((value) => {
+											
+											$('#agree').iCheck('uncheck');
+											//Reset the form Wizard
+											$('.steps-validation.wizard-circle').steps('reset');
+
+
+											//Resetting the Form
+											$('#signUpModal').find(':input').val('');
+											$("#personalID").val("");
+											$("#personalID").trigger('change');
+											$('.dropify-clear').trigger('click');
+											$('#signUpModal').off('hide.bs.modal').modal('toggle')
+											//Resetting Form Validation (destroy technique)
+											$('#profileCompany').data('formValidation').destroy()
+											$('#profilePersonal').data('formValidation').destroy()
+											$('#requirements').data('formValidation').destroy()
+											$('#credentials').data('formValidation').destroy()
+											$('#agreement').data('formValidation').destroy()
+											signupValidation() //Initialization again
+											hiddenModal();
+										})
+									}
+								},
+								error: function (e) {
+									console.log("some error", e);
+								}
+							});// Ajax
+						}//If Condition Personal
+					}//if Condition
+				})//Click Event
+			})//Document Ready Function
+
+		script.
+			function requirementValidation(){
+				var contype = $('.checkie:checked').attr('val');
+				if(contype == 'company'){
+					$('#requirements').formValidation({
+						framework: 'bootstrap',
+						icon: {
+							valid: 'fa fa-check',
+							invalid: 'fa fa-times',
+							validating: 'fa fa-spinner'
+						},
+						fields: {
+							personalID: {
+								validators: {
+									notEmpty: {
+										message: 'Choose what type of ID you are presenting. This ID will be also use for verification for claiming check payable.'
+									},
+								}
+							},
+							
+							idNumber: {
+								validators: {
+									notEmpty: {
+										message: `Enter ID Number on ID Presented`
+									},
+								}
+							},
+
+							idBusiness: {
+								validators: {
+									notEmpty: {
+										message: `What is your business TIN number?`
+									},
+								}
+							},
+							
+							proof: {
+								validators: {
+									notEmpty: {
+										message: 'Please upload a photo of your ID for verification.'
+									},
+								}
+							},
+			
+						}
+					})
+					.on('err.field.fv', function(e, data) {
+						// Get the first invalid field
+						var invalidFields = data.fv.getInvalidFields().length;
+						$('#errorfieldReq').val(invalidFields)
+					})
+					.on('success.field.fv', function(e, data) {
+						// Get the first invalid field
+						var invalidFields = data.fv.getInvalidFields().length;
+						$('#errorfieldReq').val(invalidFields)
+					});
+				}
+				else if(contype == 'personal'){
+					$('#requirements').formValidation({
+						framework: 'bootstrap',
+						icon: {
+							valid: 'fa fa-check',
+							invalid: 'fa fa-times',
+							validating: 'fa fa-spinner'
+						},
+						fields: {
+							personalID: {
+								validators: {
+									notEmpty: {
+										message: 'Choose what type of ID you are presenting. This ID will be also use for verification for claiming check payable.'
+									},
+								}
+							},
+							
+							idNumber: {
+								validators: {
+									notEmpty: {
+										message: `Enter ID Number on ID Presented`
+									},
+								}
+							},
+							
+							proof: {
+								validators: {
+									notEmpty: {
+										message: 'Please upload a photo of your ID for verification.'
+									},
+								}
+							},
+			
+						}
+					})
+					.on('err.field.fv', function(e, data) {
+						// Get the first invalid field
+						var invalidFields = data.fv.getInvalidFields().length;
+						$('#errorfieldReq').val(invalidFields)
+					})
+					.on('success.field.fv', function(e, data) {
+						// Get the first invalid field
+						var invalidFields = data.fv.getInvalidFields().length;
+						$('#errorfieldReq').val(invalidFields)
+					});
+				}
+			}
+			function hiddenModal(){
+				$('#signUpModal').on('hide.bs.modal', function(event){
+					event.preventDefault()
+					swal({
+						title: 'You are about to leave application wizard.',
+						text: 'Do you want to save your information for draft?',
+						icon: 'warning',
+						buttons: {
+							Cancel: 'Cancel',
+							DontSave: `Don't Save`,
+							Save: 'Save',
+						}
+					}).then((value) => {
+						if(value == 'Save'){
+							$('#signUpModal').off('hide.bs.modal').modal('toggle')
+							hiddenModal();
+						}
+						else if(value == 'DontSave'){
+							//Agreement Unchecking Reset
+							$('#agree').iCheck('uncheck');
+
+							//Reset the form Wizard
+							$('.steps-validation.wizard-circle').steps('reset');
+
+
+							//Resetting the Form
+							$(this).find(':input').val('');
+							$("#personalID").val("");
+							$("#personalID").trigger('change');
+							$('.dropify-clear').trigger('click');
+							$('#signUpModal').off('hide.bs.modal').modal('toggle')
+													
+							//Resetting Form Validation (destroy technique)
+							$('#profileCompany').data('formValidation').destroy()
+							$('#profilePersonal').data('formValidation').destroy()
+							$('#requirements').data('formValidation').destroy()
+							$('#credentials').data('formValidation').destroy()
+							$('#agreement').data('formValidation').destroy()
+							signupValidation() //Initialization again
+							
+							hiddenModal();
+						}
+					})
+					
+										
+													
+				})
+			}
+			function signupValidation(){
+				$('#profileCompany').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						companyName: {
+							validators: {
+								notEmpty: {
+									message: 'What is your company name?'
+								},
+							},
+							
+						},
+						
+						repFirstName: {
+							validators: {
+								notEmpty: {
+									message: `What is the first name of the company's representative?`
+								},
+							}
+						},
+
+						repLastName: {
+							validators: {
+								notEmpty: {
+									message: `What is the first name of the company's representative?`
+								},
+							}
+						},
+						
+						companyAddress: {
+							validators: {
+								notEmpty: {
+									message: 'What is the address of the company?'
+								},
+							}
+						},
+
+						cpName: {
+							validators:{
+								notEmpty:{
+									message: 'Whose name should we issue the check payable once all consignments are finished?'
+								}
+							}
+						}				
+					}
+				})
+				.on('err.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldProfileCompany').val(invalidFields)
+				})
+				.on('success.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldProfileCompany').val(invalidFields)
+				});
+
+				$('#profilePersonal').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						
+						firstName: {
+							validators: {
+								notEmpty: {
+									message: `What is the consignor's first name?`
+								},
+							}
+						},
+
+						lastName: {
+							validators: {
+								notEmpty: {
+									message: `What is the consignor's first name?`
+								},
+							}
+						},
+						
+						address: {
+							validators: {
+								notEmpty: {
+									message: `What is the consignor's address?`
+								},
+							}
+						},
+
+						cpName: {
+							validators:{
+								notEmpty:{
+									message: 'Whose name should we issue the check payable once all consignments are finished?'
+								}
+							}
+						}				
+					}
+				})
+				.on('err.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldProfilePersonal').val(invalidFields)
+				})
+				.on('success.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldProfilePersonal').val(invalidFields)
+				});
+
+				requirementValidation();
+
+				$('#credentials').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						email: {
+							validators: {
+								
+								notEmpty: {
+									message: 'Enter your e-mail address'
+								},
+								emailAddress: {
+									message: 'This is not a valid e-mail address.'
+								},
+								remote: {
+									url: '/emailavailability',
+									message: 'E-mail address has been taken',
+									validKey: 'email',
+									type: 'POST'
+								},
+							}
+						},
+
+						username: {
+							validators: {
+								
+								notEmpty: {
+									message: `Enter your desired username. You'll use this to sign in to your account.`									
+								},
+								stringLength: {
+									min: 6,
+									max: 30,
+									message: 'The username must be minimum of 6 characters and maximum of 30 characters.'
+								},
+								regexp: {
+									regexp: /^[a-zA-Z0-9_\.]+$/,
+									message: 'The username can only consist of alphabetical, number, dot and underscore'
+								},
+								remote: {
+									url: '/usernameavailability',
+									message: 'Username has been taken',
+									validKey: 'username',
+									type: 'POST'
+								},
+							}
+						},
+					}
+				})
+				.on('err.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldCred').val(invalidFields)
+				})
+				.on('success.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorfieldCred').val(invalidFields)
+				});
+
+				$('#agreement').formValidation({
+					framework: 'bootstrap',
+					err: {
+						container: '#errormessage'
+					},
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						errorfieldAgree: {
+							excluded: false,
+							validators: {
+								notEmpty:{
+									message: 'You must agree first to consignor agreement.',
+								}
+							}
+						},
+					}//Fields
+				})//Agreement Formvalidation
+			}//Document Ready Function
+		
+
+
+		
+		script.
+			//- qr receiving
+			$(document).ready(function(){
+				$('#identityModal').on('hide.bs.modal', function(){
+					$('#idField').empty();
+				})
+
+				$('#receiveModal').on('shown.bs.modal', function () {
+					let strConsignmentCode = ''
+					var scanner = new Instascan.Scanner({ video: document.getElementById('qrscanner') });
+					scanner.addListener('scan', function (content, image) {
+						strConsignmentCode = content;
+						$.post('/identityrequest/auction', {
+							strConsignmentCode: content,
+						}).done(function(data){
+							
+							scanner.stop();
+							if(data == 'none'){
+								swal({
+									title: 'No consignment found!',
+									text: 'Please rescan the consignment code again.',
+									icon: 'error',
+									button: 'Okay'
+								})
+								$('#receiveModal').on('hidden.bs.modal', function () {
+										$('#receiveModal').modal('toggle');
+										$('#receiveModal').off('hidden.bs.modal')
+
+									});
+								$('#receiveModal').modal('toggle');
+							}
+							else{
+								$('#receiveModal').on('hidden.bs.modal', function(){
+									$("#identityModal").on('shown.bs.modal', function(){
+										console.log('shown')
+										var idPic = $(`<input id="IDentity", class="dropify", data-default-file='/assets/uploads/${data.identity.strIDPicture}' disabled type='file', data-height="200" name='proof' accept='image/*' data-allowed-file-extensions="jpeg jpg png"/>`)				
+										$.when($(`#idField`).append(idPic)).then(function(){
+											$('#IDentity').dropify({
+												allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+												messages: {
+													'default': 'Drag and drop an image here or click',
+													'replace': 'Drag and drop or click to replace',
+													'remove': 'Remove',
+													'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+												},
+												error: {
+													'fileSize': 'The file size is too big (1M max).',
+													'fileFormat': 'The file format is not allowed ({{ value }} only).'
+												}
+											});
+										})
+
+										//-put value
+										console.log(data.identity.strIDType)
+										$('#identName').text(data.identity.strName)
+										$('#identNumber').text(data.identity.intConsignorID)
+										if(data.identity.booConsignorType == 0){//company
+											$('#identType').text('Company')
+											$('#identRepName').text(data.identity.strRepresentativeFirstName + ' ' + data.identity.strRepresentativeLastName) 
+										}
+										else{
+											$('#identType').text('Personal')
+											$('#identRepName').parents('dl.row').empty();
+										}
+										$('#identAddress').text(data.identity.strAddress)
+										$('#identRegister').text(data.identity.datDateRegistered)
+										$('#identIDType').text(data.identity.strIDType)
+										$('#identIDNumber').text(data.identity.strIDNumber)
+										$('#identityModal').off('shown.bs.modal')
+													
+									})								
+									$('#identityModal').modal('toggle');
+									$('#receiveModal').off('hidden.bs.modal')
+								});
+								$('#receiveModal').modal('hide')
+								//- continue or cancel identity
+								$(document).on('click', '#cancelIdentity', function(){
+									$('#identityModal').modal('toggle');
+									$(document).off('click', '#cancelIdentity')
+								})
+								$(document).on('click', '#continueIdentity', function(){
+									$('#strConsignmentCode').val(strConsignmentCode);
+									$('#codeForm').submit();
+									$(document).off('click', '#continueIdentity')
+									
+								})
+							}
+						})
+					});
+					Instascan.Camera.getCameras().then(function (cameras) {
+						if (cameras.length > 0) {
+							scanner.start(cameras[0]);
+						}
+					});
+					
+					$('#receiveModal').on('hide.bs.modal', function () {
+						
+						scanner.stop();
+						$(document).off('click', '#manualReceive')
+						$('#receive').empty();
+						var appendItem = $(`<div id="fieldReceive">
+											<video id="qrscanner" width="400px" style="border: 3px solid blue;"></video>
+											</div><br/>
+											<div id="linkReceive"><a id="manualReceive" class="card-link red font-small-3 pt-2"><span><strong>QR code cannot be recognized? </strong><br/>Use manual receiving instead.</span></a></div>`)
+						$('#receive').append(appendItem).hide().fadeIn(100);
+						$(document).off('click', "#consignmentCodeButton");					
+						
+					});
+
+					$(document).on('click', '#manualReceive', function(){
+						
+						$.when($('#manualReceive').fadeOut(500,function(){
+								$(document).on('click', '#qrReceive', function(){
+									$(document).off('click', '#qrReceive');
+									$('#receive').empty();
+									var appendItem = $(`<div id="fieldReceive">
+														<video id="qrscanner" width="400px" style="border: 3px solid blue;"></video>
+														</div><br/>
+														<div id="linkReceive"><a id="manualReceive" class="card-link red font-small-3 pt-2"><span><strong>QR code cannot be recognized? </strong><br/>Use manual receiving instead.</span></a></div>`)
+									$('#receive').append(appendItem).hide().fadeIn(100);
+
+									$('#receiveModal').on('hidden.bs.modal', function () {
+										$('#receiveModal').modal('toggle');
+										$('#receiveModal').off('hidden.bs.modal')
+
+									});
+									$('#receiveModal').modal('toggle');
+									
+								})
+						})).then(function(){
+							$('#qrscanner').fadeOut(500, function(){
+								scanner.stop()
+								var appendItem = $(`<fieldset>
+													<div class="input-group">
+														<input type="text" id="consignmentCode" name="consignmentCode" placeholder="Enter the Consignment Code here" aria-describedby="button-addon2" class="form-control"/>
+														<div class="input-group-append">
+														<button id="consignmentCodeButton" type="button" class="btn btn-success">Go</button>
+														</div>
+													</div>
+													</fieldset>`)
+								var appendLink = $(`<a id="qrReceive" class="card-link red font-small-3 pt-2"><span> <strong>Use Consignment QR Code Scanner instead.</strong></span></a>`)
+								$('#fieldReceive').append(appendItem).hide().fadeIn(500);
+								$('#linkReceive').append(appendLink).hide().fadeIn(500);
+
+								$(document).on('click', '#consignmentCodeButton', function(){
+									let strConsignmentCode = $("#consignmentCode").val();
+
+									$.post('/identityrequest/auction', {
+										strConsignmentCode: strConsignmentCode,
+									}).done(function(data){
+										scanner.stop();
+										if(data == 'none'){
+											swal({
+												title: 'No consignment found!',
+												text: 'Your consignment code is invalid. Please check your code and try again.',
+												icon: 'error',
+												button: 'Okay'
+											})
+										}
+										else{
+											$('#receiveModal').on('hidden.bs.modal', function(){
+												$("#identityModal").on('shown.bs.modal', function(){
+													console.log('shown')
+													var idPic = $(`<input id="IDentity", class="dropify", data-default-file='/assets/uploads/${data.identity.strIDPicture}' disabled type='file', data-height="200" name='proof' accept='image/*' data-allowed-file-extensions="jpeg jpg png"/>`)				
+													$.when($(`#idField`).append(idPic)).then(function(){
+														$('#IDentity').dropify({
+															allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+															messages: {
+																'default': 'Drag and drop an image here or click',
+																'replace': 'Drag and drop or click to replace',
+																'remove': 'Remove',
+																'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+															},
+															error: {
+																'fileSize': 'The file size is too big (1M max).',
+																'fileFormat': 'The file format is not allowed ({{ value }} only).'
+															}
+														});
+													})
+
+													//-put value
+													console.log(data.identity.strIDType)
+													$('#identName').text(data.identity.strName)
+													$('#identNumber').text(data.identity.intConsignorID)
+													if(data.identity.booConsignorType == 0){//company
+														$('#identType').text('Company')
+														$('#identRepName').text(data.identity.strRepresentativeFirstName + ' ' + data.identity.strRepresentativeLastName) 
+													}
+													else{
+														$('#identType').text('Personal')
+														$('#identRepName').parents('dl.row').empty();
+													}
+													$('#identAddress').text(data.identity.strAddress)
+													$('#identRegister').text(data.identity.datDateRegistered)
+													$('#identIDType').text(data.identity.strIDType)
+													$('#identIDNumber').text(data.identity.strIDNumber)
+													$('#identityModal').off('shown.bs.modal')
+													
+												})								
+												$('#identityModal').modal('toggle');
+												$('#receiveModal').off('hidden.bs.modal')
+											});
+											$('#receiveModal').modal('hide')
+											//- continue or cancel identity
+											$(document).on('click', '#cancelIdentity', function(){
+												$('#identityModal').modal('toggle');
+												$(document).off('click', '#cancelIdentity')
+											})
+											$(document).on('click', '#continueIdentity', function(){
+												$('#strConsignmentCode').val(strConsignmentCode);
+												$('#codeForm').submit();
+												$(document).off('click', '#continueIdentity')
+												
+											})
+										}
+									})
+								})
+								
+							})
+						})
+					})
+				})
+
+
+			})
+		
+		script.
+			$(document).ready(function(){
+				signupValidation()
+				$('#consignmentTable').dataTable();
+
+
+				$(document).on('click', '#applyButton', function(){
+					$('#logInModal').modal('toggle');
+					$('#logInModal').on('hidden.bs.modal', function(event){
+						$('#signUpModal').modal('toggle');
+						$('#logInModal').off('hidden.bs.modal')	
+					})	
+				})
+
+				$(document).on('click', '.dropify-clear', function(){
+					$('#requirements').formValidation('revalidateField', 'proof');
+				})
+
+
+				
+				
+				//- iCheck JS
+				$('.checkie').iCheck({
+					checkboxClass: 'icheckbox_flat-blue',
+					radioClass: 'iradio_flat-blue'
+				});
+				$('#agree').iCheck({
+					checkboxClass: 'icheckbox_flat-blue',
+				});
+
+				$('#agree').on('ifChecked', function(event){
+					$('#agreement').find('#errorfieldAgree').val('yes').end();
+					$('#agreement').formValidation('revalidateField', 'errorfieldAgree')
+				});
+
+				$('#agree').on('ifUnchecked', function(event){
+					$('#agreement').find('#errorfieldAgree').val('').end();
+					$('#agreement').formValidation('revalidateField', 'errorfieldAgree')
+				});
+
+				//Formatter JS
+				$('.phone').formatter({pattern:"(+63) {{999}} {{999}}-{{9999}}"})
+				$('.telephone').formatter({pattern:"{{999}}-{{9999}}"})
+
+				$('#personalID').select2({
+					width: 'resolve',
+				});
+
+				//Wizard Reset everytime modal closes
+				
+
+				
+
+				//dropify
+				$('#proof').dropify({
+					allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+					messages: {
+						'default': 'Drag and drop an image here or click',
+						'replace': 'Drag and drop or click to replace',
+						'remove': 'Remove',
+						'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+					},
+					error: {
+						'fileSize': 'The file size is too big (1M max).',
+						'fileFormat': 'The file format is not allowed ({{ value }} only).'
+					}
+				});
+				
+				hiddenModal();
+
+				$('.checkie').on('ifClicked', function(event){
+					if($(this).attr("val") == 'company'){
+						$('#profilePersonal').fadeOut(500, function(){
+							$('#profileCompany').fadeIn(500)
+							$('#idNumberField').removeClass('col-md-12').addClass('col-md-6')													
+							$('#idBusinessField').fadeIn(500)
+							$('#requirements').data('formValidation').destroy()
+							requirementValidation();
+
+						})
+					}
+					if($(this).attr("val") == 'personal'){
+						$('#profileCompany').fadeOut(500, function(){
+							$('#profilePersonal').fadeIn(500)
+							$('#idBusinessField').fadeOut(500)
+							$('#idNumberField').removeClass('col-md-6').addClass('col-md-12')
+							$('#requirements').data('formValidation').destroy()
+							requirementValidation();
+							
+							
+						})
+					}
+				})//IfClicked Function iCheck
+
+				
+
+				
+			})
+
+
+		// END PAGE LEVEL JS
+
+
+
+	
+		

@@ -1,0 +1,1739 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| Dashboard eCommerce - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+			| + Bitcoin Dashboard
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/weather-icons/climacons.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/meteocons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist-plugin-tooltip.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/horizontal-menu.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/timeline.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/dashboard-ecommerce.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		// END Custom CSS
+		style.
+			.card .card-body:before {
+				font-family: fontawesome;
+				font-size: 10rem;
+				color: rgba(255,255,255,.15);
+				position: absolute;
+				bottom: -32px;
+				right: 0;
+			}
+			.sales::before {
+				content: "\f0d6";
+			}
+			.consignment::before {
+				content: "\f07a";
+			}
+			.form-control:disabled, .form-control[readonly], .input-group-addon {
+				background-color: transparent;
+				border: none! important;
+				font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+			}
+			.pull-up{
+				z-index: 0 !important;
+			}
+	body.horizontal-layout.horizontal-menu.horizontal-menu-padding.2-columns.menu-expanded(data-open='click', data-menu='horizontal-menu', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.navbar-static-top.navbar-brand-center.navbar-dark.bg-gradient-x-cyan
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.text-center
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AMSOB
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.container.center-layout
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+									i.ft-menu
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+							li.dropdown.nav-item.mega-dropdown
+								a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') Mega
+								ul.mega-dropdown-menu.dropdown-menu.row
+									li.col-md-2
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-newspaper-o
+											|  News
+										#mega-menu-carousel-example
+											div
+												img.rounded.img-fluid.mb-1(src='/assets/images/slider/slider-2.png', alt='First slide')
+												a.news-title.mb-0(href='#') Poster Frame PSD
+												p.news-content
+													span.font-small-2 January 26, 2018
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-random
+											|  Drill down menu
+										ul.drilldown-menu
+											li.menu-list
+												ul
+													li
+														a.dropdown-item(href='layout-2-columns.html')
+															i.ft-file
+															|  Page layouts & Templates
+													li
+														a(href='#')
+															i.ft-align-left
+															|  Multi level menu
+														ul
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-bookmark-o
+																	|   Second level
+															li
+																a(href='#')
+																	i.la.la-lemon-o
+																	|  Second level menu
+																ul
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-heart-o
+																			|   Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-file-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-trash-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-clock-o
+																			|  Third level
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-hdd-o
+																	|  Second level, third link
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-floppy-o
+																	|  Second level, fourth link
+													li
+														a.dropdown-item(href='color-palette-primary.html')
+															i.ft-camera
+															|  Color palette system
+													li
+														a.dropdown-item(href='sk-2-columns.html')
+															i.ft-edit
+															|  Page starter kit
+													li
+														a.dropdown-item(href='changelog.html')
+															i.ft-minimize-2
+															|  Change log
+													li
+														a.dropdown-item(href='https://pixinvent.ticksy.com/')
+															i.la.la-life-ring
+															|  Customer support center
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-list-ul
+											|  Accordion
+										#accordionWrap(role='tablist', aria-multiselectable='true')
+											.card.border-0.box-shadow-0.collapse-icon.accordion-icon-rotate
+												#headingOne.card-header.p-0.pb-2.border-0(role='tab')
+													a(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionOne', aria-expanded='true', aria-controls='accordionOne') Accordion Item #1
+												#accordionOne.card-collapse.collapse.show(role='tabpanel', aria-labelledby='headingOne', aria-expanded='true')
+													.card-content
+														p.accordion-text.text-small-3
+															| Caramels dessert chocolate cake pastry jujubes bonbon.
+															| Jelly wafer jelly beans. Caramels chocolate cake liquorice
+															| cake wafer jelly beans croissant apple pie.
+												#headingTwo.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionTwo', aria-expanded='false', aria-controls='accordionTwo') Accordion Item #2
+												#accordionTwo.card-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Sugar plum bear claw oat cake chocolate jelly tiramisu
+															| dessert pie. Tiramisu macaroon muffin jelly marshmallow
+															| cake. Pastry oat cake chupa chups.
+												#headingThree.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionThree', aria-expanded='false', aria-controls='accordionThree') Accordion Item #3
+												#accordionThree.card-collapse.collapse(role='tabpanel', aria-labelledby='headingThree', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Candy cupcake sugar plum oat cake wafer marzipan jujubes
+															| lollipop macaroon. Cake dragée jujubes donut chocolate
+															| bar chocolate cake cupcake chocolate topping.
+									li.col-md-4
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-envelope-o
+											|  Contact Us
+										form.form.form-horizontal
+											.form-body
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputName1') Name
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputName1.form-control(type='text', placeholder='John Doe')
+															.form-control-position.pl-1
+																i.la.la-user
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputEmail1') Email
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputEmail1.form-control(type='email', placeholder='john@example.com')
+															.form-control-position.pl-1
+																i.la.la-envelope-o
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputMessage1') Message
+													.col-sm-9
+														.position-relative.has-icon-left
+															textarea#inputMessage1.form-control(rows='2', placeholder='Simple Textarea')
+															.form-control-position.pl-1
+																i.la.la-commenting-o
+												.row
+													.col-sm-12.mb-1
+														button.btn.btn-info.float-right(type='button')
+															i.la.la-paper-plane-o
+															|  Send
+							li.nav-item.nav-search
+								a.nav-link.nav-link-search(href='#')
+									i.ficon.ft-search
+								.search-input
+									input.input(type='text', placeholder='Explore Modern...')
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.consignor.strRepresentativeFirstName} #{session.consignor.strRepresentativeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='#')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-gb
+									span.selected-language
+								.dropdown-menu(aria-labelledby='dropdown-flag')
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-gb
+										|  English
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-fr
+										|  French
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-cn
+										|  Chinese
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-de
+										|  German
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow 5
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+										span.notification-tag.badge.badge-default.badge-danger.float-right.m-0 5 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-plus-square.icon-bg-circle.bg-cyan
+												.media-body
+													h6.media-heading You have new order!
+													p.notification-text.font-small-3.text-muted Lorem ipsum dolor sit amet, consectetuer elit.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') 30 minutes ago
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-download-cloud.icon-bg-circle.bg-red.bg-darken-1
+												.media-body
+													h6.media-heading.red.darken-1 99% Server load
+													p.notification-text.font-small-3.text-muted Aliquam tincidunt mauris eu risus.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Five hour ago
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-alert-triangle.icon-bg-circle.bg-yellow.bg-darken-3
+												.media-body
+													h6.media-heading.yellow.darken-3 Warning notifixation
+													p.notification-text.font-small-3.text-muted Vestibulum auctor dapibus neque.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-check-circle.icon-bg-circle.bg-cyan
+												.media-body
+													h6.media-heading Complete the task
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last week
+										a(href='javascript:void(0)')
+											.media
+												.media-left.align-self-center
+													i.ft-file.icon-bg-circle.bg-teal
+												.media-body
+													h6.media-heading Generate monthly report
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		.header-navbar.navbar-expand-sm.navbar.navbar-horizontal.navbar-fixed.navbar-dark.navbar-without-dd-arrow.navbar-shadow(role='navigation', data-menu='menu-wrapper')
+			.navbar-container.main-menu-content.container.center-layout(data-menu='menu-container')
+				ul#main-menu-navigation.nav.navbar-nav(data-menu='menu-navigation')
+					li.dropdown.nav-item(data-menu='dropdown')
+						a.dropdown-toggle.nav-link(href='index.html', data-toggle='dropdown')
+							i.la.la-area-chart
+							span Dashboard
+					li.dropdown.nav-item(data-menu='dropdown')
+						a.dropdown-toggle.nav-link(href='index.html', data-toggle='dropdown')
+							i.la.la-cart-plus
+							span Consignment
+					li.dropdown.nav-item(data-menu='dropdown')
+						a.dropdown-toggle.nav-link(href='index.html', data-toggle='dropdown')
+							i.fa.fa-handshake-o
+							span Asset
+						ul.dropdown-menu
+							li.dropdown
+								a.dropdown-item(href='#', data-toggle='dropdown') Monitor
+							li.dropdown
+								a.dropdown-item(href='#', data-toggle='dropdown') Pull-out
+							li.dropdown
+								a.dropdown-item(href='#', data-toggle='dropdown') Storage
+							
+					li.dropdown.nav-item(data-menu='dropdown')
+						a.dropdown-toggle.nav-link(href='index.html', data-toggle='dropdown')
+							i.la.la-credit-card
+							span Auction Results Voucher
+				
+
+
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Consignor's Profile
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+				#logModal.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+					.modal-dialog.modal-md(role='document')
+						.modal-content
+							.modal-header(style='border-bottom: none;')
+								h4.modal-title.text-center 
+									img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+							.modal-body
+								.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
+									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+										span Consignor Logs
+								.card-content
+									.card-body
+										.row
+											.col-md-12
+												table.table.table-column
+													thead
+														tr
+															th Date and Time
+															th IP Address
+													tbody#logModalTableBody
+				.content-body
+					.row
+						.col-md-4
+							.card.box-shadow-0
+								.card-body.bg-hexagons
+									.text-center
+											img.rounded-circle.height-150(style='border: 3px solid lightblue' src='/assets/images/portrait/medium/avatar-m-4.png', alt='Card image')
+											br
+											br
+											h2#name.card-title #{consignorData.strName}
+											-if(consignorData.booConsignorType == 0)
+												h6.card-subtitle.text-muted Company											
+											-else
+												h6.card-subtitle.text-muted Personal
+											br
+								.card-body.bg-hexagons
+									ul.nav.nav-tabs.nav-top-border.no-hover-bg.nav-justified
+										li.nav-item
+											a#activeIcon1-tab1.nav-link.active(data-toggle='tab', href='#activeIcon1', aria-controls='activeIcon1', aria-expanded='true')
+												i.ft-user
+												|  
+										li.nav-item
+											a#linkIcon1-tab1.nav-link(data-toggle='tab', href='#linkIcon1', aria-controls='linkIcon1', aria-expanded='false')
+												i.ft-lock
+												| 
+										li.nav-item
+											a#fuck-tab1.nav-link(data-toggle='tab', href='#fuck', aria-controls='fuck', aria-expanded='false')
+												i.fa.fa-folder-open
+												|
+									.tab-content.px-1.pt-1
+										#activeIcon1.tab-pane.active(role='tabpanel', aria-labelledby='activeIcon1-tab1', aria-expanded='true')
+									
+											
+											form#infoForm
+												h4.form-section
+													i.ft-user
+													|  Account Details
+												#alertField
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='E-mail Address')
+															input#email.form-control.input-lg(readonly name='email' value=`${consignorData.strEmail}` type='text', placeholder='E.g. juandelacruz@email.com')
+															.form-control-position
+																i.fa.fa-envelope.info.font-large-1
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Username')
+															input#username.form-control.input-lg(readonly name='username' value=`${consignorData.strUsername}` type='text', placeholder='Icon Left, Large Input')
+															.form-control-position
+																i.fa.fa-user.info.font-large-1
+												
+													
+												h4.form-section
+													i.ft-info
+													|  Personal Information
+												#nameField
+													-if(consignorData)
+														-if(consignorData.booConsignorType == 0)
+															.row
+																.col-md-12
+																	p Representative Last Name														
+																	fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Representative First Name')
+																		input#firstName.form-control.input-lg(readonly name='repFirstName' value=`${consignorData.strRepresentativeFirstName}` type='text', placeholder='Icon Left, Large Input')
+																		.form-control-position
+																			i.la.la-user.info.font-large-2
+															.row
+																.col-md-12
+																	p Representative First Name
+																	fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Representative Last Name')
+																		input#lastName.form-control.input-lg(readonly name='repLastName' value=`${consignorData.strRepresentativeLastName}` type='text', placeholder='Icon Left, Large Input')
+																		.form-control-position
+																			i.la.la-user.info.font-large-2
+															hr
+
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Address')
+															textarea#address.form-control.input-lg(readonly type='text', name='address' placeholder='E.g. L21 B13, Suburbia East Subd., Parang, Marikina City') #{consignorData.strAddress}
+															.form-control-position
+																i.fa.fa-map-marker.info.font-large-2
+												#telephoneField
+													-if(consignorData.strTelephone)
+														.row
+															.col-md-12
+																fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Telephone Number')
+																	input#telephone.form-control.input-lg(readonly name='telephone' value=`${consignorData.strTelephone}` type='text', placeholder='E.g. 997-1997')
+																	.form-control-position
+																		i.fa.fa-phone.info.font-large-2
+												#phoneField
+													-if(consignorData.strPhone)
+														.row
+															.col-md-12
+																fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Phone Number')
+																	input#phone.form-control.input-lg(readonly name='phone' value=`${consignorData.strPhone}` type='text', placeholder='+(63) 946 197-3336')
+																	.form-control-position
+																		i.fa.fa-mobile.info.font-large-2
+												.row
+													.col-md-12
+														p Date Joined:
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Date Joined')
+															input#dateJoin.form-control.input-lg(readonly value=`${consignorData.datDateRegistered}` type='text', placeholder='Icon Left, Large Input')
+															.form-control-position
+																i.fa.fa-clock-o.info.font-large-2
+											#buttonField.text-center
+												button#editInfo.btn.btn-outline-info.btn-min-width.box-shadow-3.mr-1.mb-1
+													i.la.la-edit
+													|  Edit Information
+										#linkIcon1.tab-pane(role='tabpanel', aria-labelledby='linkIcon1-tab1', aria-expanded='false')
+											form#passwordField
+												h4.form-section
+													i.ft-lock
+													|  Change Password
+												.alert.bg-info.alert-icon-left.alert-arrow-left.alert-dismissible.mb-2(role='alert')
+													span.alert-icon
+														i.la.la-key
+													button.close(type='button', data-dismiss='alert', aria-label='Close')
+														span(aria-hidden='true') ×
+													span It is a 
+														strong great idea 
+													| to use a strong password that you're not using elsewhere.
+													
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Old Password')
+															input#password.form-control.input-lg(type='password', placeholder='Old Password')
+															.form-control-position
+																i.fa.fa-lock.info.font-large-1
+															p.badge-default.badge-info.block-tag.text-center
+																small.block-area.white You can leave me blank to leave the password unchanged 😊
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Enter Password')
+															input#password2.form-control.input-lg(name='password2', type='password', placeholder='Enter Password')
+															.form-control-position
+																i.fa.fa-lock.info.font-large-1
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Re-enter Password')
+															input#password3.form-control.input-lg(name='password3', type='password', placeholder='Re-enter Password')
+															.form-control-position
+																i.fa.fa-lock.info.font-large-1
+												.text-right
+													button#passwordChange.btn.btn-outline-success.btn-min-width.box-shadow-3.mr-1.mb-1(type='submit')
+															i.la.la-save
+															|  Save Changes
+
+										#fuck.tab-pane(role='tabpanel', aria-labelledby='fuck-tab1', aria-expanded='false')
+											form#requirementField
+												h4.form-section
+													i.fa.fa-folder-open
+													|  Consignor Requirements
+												.alert.bg-warning.alert-icon-left.alert-arrow-left.alert-dismissible.mb-2(role='alert')
+													span.alert-icon
+														i.fa.fa-id-card
+													button.close(type='button', data-dismiss='alert', aria-label='Close')
+														span(aria-hidden='true') ×
+													-if(consignorData.booConsignorType == 0)
+														strong Representative ID 
+															span
+														| should be presented first before editing these information.
+													-if(consignorData.booConsignorType == 1)
+														strong Consignor ID 
+															span
+														| should be presented first before editing these information.
+											
+													
+												-if(consignorData.booConsignorType == 0)
+													.row
+														.col-md-12
+															label(for='tinNumber') TIN Number:
+															fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='Business TIN Number')
+																input#tinNumber.form-control.input-lg(type='text',name='tinNumber' readonly placeholder='Business Tin Number' value=consignorData.strTinNumber)
+																.form-control-position
+																	i.fa.fa-briefcase.info.font-large-1
+												.row
+													.col-md-12
+														label(for='personalID') ID:													
+														select#personalID.form-control(readonly disabled name='personalID' style="width: 100%")
+															
+															optgroup(label='Government Issued ID')
+																option(value='Alien Certificate of Registration (ACR I-Card)') Alien Certificate of Registration (ACR I-Card)
+																option(value=`Armed Forces of the Philippines (AFP) ID`) Armed Forces of the Philippines (AFP) ID
+																option(value='Barangay Clearance/Certificate') Barangay Clearance/Certificate
+																option(value=`Certification from the National Council for the Welfare of Disabled Persons (NCWDP)`) Certification from the National Council for the Welfare of Disabled Persons (NCWDP)
+																option(value=`Consular ID`) Consular ID
+																option(value=`Department of Social Welfare and Development (DSWD) ID`) Department of Social Welfare and Development (DSWD) ID
+																option(value=`Driver's License`) Driver's License
+																option(value='Government Service Insurance System (GSIS ID)') Government Service Insurance System (GSIS ID)
+																option(value='Marriage Certificate (PSA Authenticated)') Marriage Certificate (PSA Authenticated)
+																option(value='National Bureau of Investigation (NBI) Clearance') National Bureau of Investigation (NBI) Clearance
+																option(value=`OFW ID`) OFW ID
+																option(value=`Overseas Worker's Welfare Administration (OWWA) ID`) Overseas Worker's Welfare Administration (OWWA) ID
+																option(value=`PAG-IBIG ID`) PAG-IBIG ID
+																option(value=`Passport`) Passport
+																option(value='PhilHealth Identification Card (PIC)') PhilHealth Identification Card (PIC)
+																option(value=`Philippine Overseas Employment Association (POEA) ID`) Philippine Overseas Employment Association (POEA) ID
+																option(value='Philippine Statistics Authority (PSA) Birth Certificate') Philippine Statistics Authority (PSA) Birth Certificate
+																option(value='Philippine National Police (PNP) ID') Philippine National Police (PNP) ID
+																option(value='Police Clearance') Police Clearance
+																option(value='Postal ID') Postal ID
+																option(value=`PRA Special Resident Retiree Visa (SRRV) ID`) PRA Special Resident Retiree Visa (SRRV) ID
+																option(value='Professional Regulation Commission ID (PRC ID)') Professional Regulation Commission ID (PRC ID)
+																option(value=`Seaman's Book`) Seaman's Book
+																option(value=`Senior Citizen's ID Card`) Senior Citizen's ID Card
+																option(value='Social Security System ID (SSS ID)')  Social Security System ID (SSS ID)
+																option(value='Tax Identification Number (TIN ID)') Tax Identification Number (TIN ID)
+																option(value=`Unified Multi-Purpose ID (UMID)`) Unified Multi-Purpose ID (UMID)
+																option(value=`Voter's ID`) Voter's ID
+												.row
+													.col-md-12
+														fieldset.form-group.position-relative.has-icon-left.tooltip-track-mouse.mt-1(title='ID Number')
+															input#idNumber.form-control.input-lg(name='idNumber', readonly type='text', placeholder='ID Number' value=consignorData.strIDNumber)
+															.form-control-position
+																i.fa.fa-id-card.info.font-large-1
+												#proofField
+													.row
+														.col-md-12
+															input#idProof.dropify(data-default-file=`/assets/uploads/${consignorData.strIDPicture}` disabled type='file', name='proof' accept='image/*' data-height='300' data-allowed-file-extensions="jpeg jpg png")
+											#editRequirementField.text-center
+												button#editRequirement.btn.btn-outline-info.btn-min-width.box-shadow-3.mr-1.mb-1(type='submit')
+														i.la.la-edit
+														|  Edit Information
+						.col-md-5
+							.row
+								.col-md-6
+									.card.bg-success.pull-up
+										.card-content
+											.card-body.sales.pb-1
+												.row.text-white
+													.col-6
+														h1
+															i.fa.fa-money.background-round.text-white
+														h4.pt-1.m-0.text-white
+															| 34% 
+															i.la.la-arrow-up
+													.col-6.text-right
+														h3.text-white.mb-2 Net Income
+														span P 45,000.00
+								.col-md-6
+									.card.bg-warning.pull-up
+										.card-content
+											.card-body.consignment.pb-1
+												.row.text-white
+													.col-6
+														h1
+															i.fa.fa-shopping-cart.background-round.text-white
+														h4.pt-1.m-0.text-white
+															| 45% 
+															i.la.la-arrow-up
+													.col-6.text-right
+														h3.text-white.mb-2 Consignments
+														span 34
+							.row
+								.col-12
+									.card.pull-up.bg-gradient-directional-danger
+										.card-header.bg-hexagons-danger
+											h4.card-title.text-white
+												| On-going Consignments
+												span.text-white  - 77%
+												span.success  completed
+
+											a.heading-elements-toggle
+												i.la.la-ellipsis-v.font-medium-3
+											.heading-elements
+												ul.list-inline.mb-0
+													li
+														a(data-action='reload')
+															i.ft-rotate-cw
+										.card-content.collapse.show.bg-hexagons-danger
+											.card-body.pt-0
+												.chartjs
+													canvas#hit-rate-doughnut(height='275')
+											br
+											br
+											br
+											br
+											br
+											br
+											br
+						.col-md-3
+							section#timeline.timeline-left.timeline-wrapper
+								h3.page-title.text-center.text-lg-left Consignor Logs
+								ul.timeline
+									li.timeline-line
+									li.timeline-group
+										a.btn.btn-primary(href='#')
+											i.ft-calendar
+											|  Today
+		footer.footer.footer-transparent.footer-light.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2.container.center-layout
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with 
+					i.ft-heart.pink
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(type='text/javascript', src='/assets/vendors/js/ui/jquery.sticky.js')
+		script(src='/assets/vendors/js/charts/chartist.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/chartist-plugin-tooltip.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/timeline/horizontal-timeline.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/pages/dashboard-ecommerce.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/cards/card-charts.min.js', type='text/javascript')
+		// END PAGE LEVEL JS
+		script.
+			$(document).ready(function(){
+				var proofCounter = 0;
+				$('#personalID').val(!{JSON.stringify(consignorData.strIDType)})
+				$('#personalID').select2({//- Select2 Initialization
+					width: 'resolve',
+				});
+
+				$(document).on('click', '#editRequirement', function(){
+					$('form#requirementField').find('input[readonly]').removeAttr('readonly');
+					$('form#requirementField').find('select[disabled]').removeAttr('readonly');
+					$('form#requirementField').find('select[disabled]').removeAttr('disabled');
+					$('form#requirementField').find('input[disabled]').removeAttr('disabled');
+
+					$(document).on('click', '.dropify-clear', function(){
+						$('form#requirementField').formValidation('revalidateField', 'idProof');
+						proofCounter = 1;
+					})
+					var consignorID = !{JSON.stringify(consignorData.intConsignorID)}
+					$.post(`/consignor/data`,{
+						intConsignorID: consignorID,
+					}).done(function(data){
+						if(data.indicator == 'success'){
+							$('#proofField').empty().append($(`<div class="row">
+													<div class="col-md-12">
+														<input id="idProof" data-default-file="/assets/uploads/${data.consignorData.strIDPicture}" type="file" name="idProof" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" class="dropify"/>
+													</div>
+													</div>`)).hide().fadeIn(1000);
+							$('#idProof').dropify({
+								allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+								messages: {
+									'default': 'Drag and drop an image here or click',
+									'replace': 'Drag and drop or click to replace',
+									'remove': 'Remove',
+									'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+								},
+								error: {
+									'fileSize': 'The file size is too big (1M max).',
+									'fileFormat': 'The file format is not allowed ({{ value }} only).'
+								}
+							});
+
+							$('form#requirementField').formValidation({
+								framework: 'bootstrap',
+								icon: {
+									valid: 'fa fa-check',
+									invalid: 'fa fa-times',
+									validating: 'fa fa-spinner'
+								},
+								fields: {
+									tinNumber: {
+										validators: {
+											notEmpty: {
+												message: 'Enter your business TIN Number, this will be used for company validation.'
+											},
+										}
+									},
+									idNumber: {
+										validators: {
+											notEmpty: {
+												message: 'Enter your your presented ID number.'
+											},
+										}
+									},
+
+									idProof: {
+										validators: {
+											notEmpty: {
+												message: 'Please upload a photo of your ID for verification.'
+											},
+										}
+									},
+								}
+							})
+							.on('err.field.fv', function(e, data) {
+								// Get the first invalid field
+								var invalidFields = data.fv.getInvalidFields().length;
+								$('#errorfieldRequirement').val(invalidFields)
+							})
+							.on('success.field.fv', function(e, data) {
+								// Get the first invalid field
+								var invalidFields = data.fv.getInvalidFields().length;
+								$('#errorfieldRequirement').val(invalidFields)
+							});//- FormValidation for requirments
+						}
+					})
+					
+
+					$('#editRequirementField').fadeOut(1000, function(){
+						var buttonReplace = $(`<button id="discardChangesRequirement" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-times"></i> Discard</button>
+											<button id="saveChangesRequirement" class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-save"></i> Save</button>`)
+						$(this)
+							.empty()
+							.append( buttonReplace ).hide().fadeIn(1000);
+					})
+
+					
+				})// on event
+
+				$(document).on('click', '#discardChangesRequirement', function(){
+					$('form#requirementField').data('formValidation').destroy()
+										
+					var consignorID = !{JSON.stringify(consignorData.intConsignorID)}
+					console.log(consignorID);
+					$.post(`/consignor/data`,{
+						intConsignorID: consignorID,
+					}).done(function(data){
+						if(data.indicator == 'success'){
+							var consignorData = data.consignorData;
+							if(consignorData.booConsignorType == 0)
+								$('#tinNumber').val(consignorData.strTinNumber);
+							$('#idNumber').val(consignorData.strIDNumber);
+							$('#personalID').val(consignorData.strIDType).trigger('change')
+							$('#proofField').empty().append($(`<div class="row">
+															<div class="col-md-12">
+																<input id="idProof" data-default-file="/assets/uploads/${consignorData.strIDPicture}" disabled="disabled" type="file" name="proof" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" class="dropify"/>
+															</div>
+															</div>`)).hide().fadeIn(1000);
+							
+							$('#idProof').dropify({
+								allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+								messages: {
+									'default': 'Drag and drop an image here or click',
+									'replace': 'Drag and drop or click to replace',
+									'remove': 'Remove',
+									'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+								},
+								error: {
+									'fileSize': 'The file size is too big (1M max).',
+									'fileFormat': 'The file format is not allowed ({{ value }} only).'
+								}
+							});
+
+							$('form#requirementField').find('input').attr('readonly', '');
+							$('#personalID').attr('disabled', '');
+
+							$('#editRequirementField')
+													.empty()
+													.append( $(`<button id="editRequirement" type="submit" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)).hide().fadeIn(1000)
+						}
+					})
+				})// on event
+
+				$(document).on('click', '#saveChangesRequirement', function(){
+					$('form#requirementField').data('formValidation').validate();
+					if(proofCounter == 0){
+						$('form#requirementField').data('formValidation').updateStatus('idProof', 'VALID');
+					}
+					if($('#errorfieldRequirement').val() == 0){
+						swal({
+							title: 'Are you sure?',
+							icon: 'warning',
+							buttons: {
+								No: 'No',
+								Yes: 'Yes',
+							},
+						}).then((value) => {
+							if(value == 'Yes'){
+								var consignorType = !{JSON.stringify(consignorData.booConsignorType)}					
+								var consignorID = !{JSON.stringify(consignorData.intConsignorID)};
+								if(consignorType == 0){
+									var formData = new FormData(); //FormData (Pre-requisite: Jquery Form and Multer) use for File Ajax									
+									formData.append('IDPicture', $('#idProof')[0].files[0]);
+									formData.append('strIDNumber', $('#idNumber').val());
+									formData.append('strIDType', $('#personalID').val());
+									formData.append('strTINNumber', $('#tinNumber').val());
+									formData.append('intConsignorID', consignorID);									
+															
+									
+									$.ajax({
+										type: "POST",
+										url: '/consignor/requirement/update',
+										data: formData,
+										processData: false,
+										contentType: false,
+										success: function(data){
+											if(data.indicator == 'success'){
+												var consignorData = data.consignorData;
+												console.log(consignorData)
+												$('form#requirementField').data('formValidation').destroy()
+												if(consignorData.booConsignorType == 0)
+													$('#tinNumber').val(consignorData.strTinNumber);
+												$('#idNumber').val(consignorData.strIDNumber);
+												$('#personalID').val(consignorData.strIDType).trigger('change')
+												$('#proofField').empty().append($(`<div class="row">
+															<div class="col-md-12">
+																<input id="idProof" data-default-file="/assets/uploads/${consignorData.strIDPicture}" disabled="disabled" type="file" name="proof" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" class="dropify"/>
+															</div>
+															</div>`)).hide().fadeIn(1000);
+							
+												$('#idProof').dropify({
+													allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+													messages: {
+														'default': 'Drag and drop an image here or click',
+														'replace': 'Drag and drop or click to replace',
+														'remove': 'Remove',
+														'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+													},
+													error: {
+														'fileSize': 'The file size is too big (1M max).',
+														'fileFormat': 'The file format is not allowed ({{ value }} only).'
+													}
+												});
+												
+												$('form#requirementField').find('input').attr('readonly', '');
+												$('#personalID').attr('disabled', '');
+
+												$('#editRequirementField')
+																		.empty()
+																		.append( $(`<button id="editRequirement" type="submit" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)).hide().fadeIn(1000)
+											}
+										}
+									})
+
+								}//if else
+								if(consignorType == 1){
+									var formData = new FormData(); //FormData (Pre-requisite: Jquery Form and Multer) use for File Ajax								
+									formData.append('IDPicture', $('#idProof')[0].files[0]);
+									formData.append('strIDNumber', $('#idNumber').val());
+									formData.append('strIDType', $('#personalID').val());
+									formData.append('strTINNumber', '');
+									formData.append('intConsignorID', consignorID);									
+															
+									
+									$.ajax({
+										type: "POST",
+										url: '/consignor/requirement/update',
+										data: formData,
+										processData: false,
+										contentType: false,
+										success: function(data){
+											if(data.indicator == 'success'){
+												var consignorData = data.consignorData;
+												console.log(consignorData)
+												$('form#requirementField').data('formValidation').destroy()
+												if(consignorData.booConsignorType == 0)
+													$('#tinNumber').val(consignorData.strTinNumber);
+												$('#idNumber').val(consignorData.strIDNumber);
+												$('#personalID').val(consignorData.strIDType).trigger('change')
+												$('#proofField').empty().append($(`<div class="row">
+															<div class="col-md-12">
+																<input id="idProof" data-default-file="/assets/uploads/${consignorData.strIDPicture}" disabled="disabled" type="file" name="proof" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" class="dropify"/>
+															</div>
+															</div>`)).hide().fadeIn(1000);
+							
+												$('#idProof').dropify({
+													allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+													messages: {
+														'default': 'Drag and drop an image here or click',
+														'replace': 'Drag and drop or click to replace',
+														'remove': 'Remove',
+														'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+													},
+													error: {
+														'fileSize': 'The file size is too big (1M max).',
+														'fileFormat': 'The file format is not allowed ({{ value }} only).'
+													}
+												});
+												
+												$('form#requirementField').find('input').attr('readonly', '');
+												$('#personalID').attr('disabled', '');
+
+												$('#editRequirementField')
+																		.empty()
+																		.append( $(`<button id="editRequirement" type="submit" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)).hide().fadeIn(1000)
+											}
+										}
+									})
+								}
+							}//yes
+						})
+					}
+				})// on event
+
+			})//ready event
+		script.
+			$(document).ready(function(){
+				$(document).on('click', '#saveChanges', function(){// Save Changes
+					$('form#infoForm').data('formValidation').validate();
+					if($('#errorfield').val() == 0){
+						swal({
+							title: 'Are you sure?',
+							icon: 'success',
+							buttons: {
+								No: 'No',
+								Yes: 'Yes',
+							},
+						}).then((value) => {
+							if(value == 'Yes'){
+								var consignorType = !{JSON.stringify(consignorData.booConsignorType)}					
+								var consignorID = !{JSON.stringify(consignorData.intConsignorID)};
+								
+								if(consignorType == 0){
+									//alert('fucker1')
+									$.post('/consignor/update/'+consignorID,{
+										strEmail: $('#email').val(),
+										strUsername: $('#username').val(),
+										strName: $('#company').val(),
+										strAddress: $('#address').val(),
+										strPhone: $('#phone').val(),
+										strTelephone: $('#telephone').val(),
+										strRepresentativeFirstName: $('#firstName').val(),
+										strRepresentativeLastName: $('#lastName').val(),
+									}).done(function(data){
+										if(data.indicator == 'success'){
+											var consignorData = data.consignorData;
+											$('form#infoForm').data('formValidation').destroy()
+											$('#name').text(consignorData.strName)
+											$('#email').val(consignorData.strEmail);
+											$('#username').val(consignorData.strUsername);
+											if(consignorData.booConsignorType == '0'){
+												$('#firstName').val(consignorData.strRepresentativeFirstName);
+												$('#lastName').val(consignorData.strRepresentativeLastName);								
+											}
+											$('#address').val(consignorData.strAddress);
+											//alert(consignorData.strPhone)
+											if(consignorData.strPhone != ''){
+												$('#phone').val(consignorData.strPhone);
+											}
+											else if(consignorData.strPhone == ''){
+												$('#phoneField').empty()
+											}
+
+											if(consignorData.strTelephone != ''){
+												$('#telephone').val(consignorData.strTelephone);
+											}
+											else if(consignorData.strTelephone == ''){
+												$('#telephoneField').empty()							
+											}
+											$('form#infoForm').find('input').attr('readonly', '');
+											$('form#infoForm').find('textarea').attr('readonly', '');
+											
+											$('#companyName').remove();
+											var consignorType = !{JSON.stringify(consignorData.booConsignorType)}					
+											if(consignorType == 1)//- Personal No name
+												$('#nameField').empty();
+											$('#buttonField').fadeOut(1000, function(){
+												var buttonReplace = $(`<button id="editInfo" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)
+												$(this)
+													.empty()
+													.append( buttonReplace ).hide().fadeIn(1000);
+											})		
+							
+						
+											
+										}// success indicaor
+									})//done
+								}
+								if(consignorType == 1){
+									$.post('/consignor/update/'+consignorID,{
+										strEmail: $('#email').val(),
+										strUsername: $('#username').val(),
+										strName: $('#firstName').val()+' '+$('#lastName').val(),
+										strAddress: $('#address').val(),
+										strPhone: $('#phone').val(),
+										strTelephone: $('#telephone').val(),
+										strRepresentativeFirstName: $('#firstName').val(),
+										strRepresentativeLastName: $('#lastName').val(),
+									}).done(function(data){
+										if(data.indicator == 'success'){
+											var consignorData = data.consignorData;
+											$('form#infoForm').data('formValidation').destroy()
+											$('#name').text(consignorData.strName)
+											$('#email').val(consignorData.strEmail);
+											$('#username').val(consignorData.strUsername);
+											if(consignorData.booConsignorType == '0'){
+												$('#firstName').val(consignorData.strRepresentativeFirstName);
+												$('#lastName').val(consignorData.strRepresentativeLastName);								
+											}
+											$('#address').val(consignorData.strAddress);
+											//alert(consignorData.strPhone)
+											if(consignorData.strPhone != ''){
+												$('#phone').val(consignorData.strPhone);
+											}
+											else if(consignorData.strPhone == ''){
+												$('#phoneField').empty()
+											}
+
+											if(consignorData.strTelephone != ''){
+												$('#telephone').val(consignorData.strTelephone);
+											}
+											else if(consignorData.strTelephone == ''){
+												$('#telephoneField').empty()							
+											}
+											$('form#infoForm').find('input').attr('readonly', '');
+											$('form#infoForm').find('textarea').attr('readonly', '');
+											
+											var consignorType = !{JSON.stringify(consignorData.booConsignorType)}					
+											if(consignorType == 1)//- Personal No name
+												$('#nameField').empty();
+											$('#buttonField').fadeOut(1000, function(){
+												var buttonReplace = $(`<button id="editInfo" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)
+												$(this)
+													.empty()
+													.append( buttonReplace ).hide().fadeIn(1000);
+											})		
+							
+						
+											
+										}// success indicaor
+									})//done
+								}
+							}//yes
+						})
+					}
+				})
+			})
+		script.
+			$(document).ready(function(){
+				$('#idProof').dropify({
+					allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+					messages: {
+						'default': 'Drag and drop an image here or click',
+						'replace': 'Drag and drop or click to replace',
+						'remove': 'Remove',
+						'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+					},
+					error: {
+						'fileSize': 'The file size is too big (1M max).',
+						'fileFormat': 'The file format is not allowed ({{ value }} only).'
+					}
+				});
+
+				$('#phone').mask('(+63) 000 000-0000');
+				$('#telephone').mask('000-0000');
+
+				//form validation for password
+				$('#passwordField').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						password2: {
+							validators: {
+								notEmpty: {
+									message: 'The password is required'
+								},
+								callback: {
+									callback: function(value, validator, $field) {
+										var password = $field.val();
+										if (password == '') {
+											return true;
+										}
+
+										var result  = zxcvbn(password),
+											score   = result.score,
+											message = result.feedback.warning || 'The password is weak';
+
+										// Update the progress bar width and add alert class
+										var $bar = $('#strengthBar');
+										switch (score) {
+											case 0:
+												$bar.attr('class', 'progress-bar progress-bar-danger')
+													.css('width', '1%');
+												break;
+											case 1:
+												$bar.attr('class', 'progress-bar progress-bar-danger')
+													.css('width', '25%');
+												break;
+											case 2:
+												$bar.attr('class', 'progress-bar progress-bar-danger')
+													.css('width', '50%');
+												break;
+											case 3:
+												$bar.attr('class', 'progress-bar progress-bar-warning')
+													.css('width', '75%');
+												break;
+											case 4:
+												$bar.attr('class', 'progress-bar progress-bar-success')
+													.css('width', '100%');
+												break;
+										}
+
+										// We will treat the password as an invalid one if the score is less than 3
+										if (score < 3) {
+											return {
+												valid: false,
+												message: message
+											}
+										}
+
+										return true;
+									}
+								}
+							}
+						},
+						password3: {
+							validators: {
+								notEmpty: {
+									message: 'Re-enter your password'
+								},
+								identical: {
+									field: 'password2',
+									message: 'The password and its confirm are not the same.'
+								},
+								
+							}
+						},
+		
+					}
+				})
+				
+				
+				$(document).on('click', '#editInfo', function(){
+					var alertMessage = $(`<div role="alert" class="alert bg-info alert-icon-left alert-arrow-left alert-dismissible mb-2"><span class="alert-icon"><i class="la la-info"></i></span>
+								<button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true">×</span></button><span>Upon changing your e-mail address, please make sure that you have an <strong>access</strong></span> to your e-mail account.
+								</div>`);
+					$('#alertField').append( alertMessage ).hide().fadeIn(1000);
+
+					$('form#infoForm').find('input[readonly]').removeAttr('readonly');
+					$('form#infoForm').find('textarea[readonly]').removeAttr('readonly');
+					var consignorType = !{JSON.stringify(consignorData.booConsignorType)}
+					if(consignorType == 0){
+
+						var nameHTML = $(`<div class="row" id = "companyName">
+											<div class="col-md-12">
+												<p>Company Name</p>
+												<fieldset title="Company Name" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+												<input id="company" name="companyName" value="`+$('#name').text()+`" type="text" placeholder="E.g. `+$('#name').text()+`" class="form-control input-lg"/>
+												<div class="form-control-position"><i class="la la-building info font-large-2"></i></div>
+												</fieldset>
+											</div>
+											</div>`)
+						$('#nameField').prepend(nameHTML).hide().fadeIn(1000);
+					}
+					if($('#phoneField').html() == ''){
+						var phoneHtml = $(`<div class="row">
+											<div class="col-md-12">
+												<fieldset title="Phone Number" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+												<input id="phone" value="" type="text" name="phone" placeholder="E.g. +(63) 946 197-3336" class="form-control input-lg"/>
+												<div class="form-control-position"><i class="fa fa-mobile info font-large-2"></i></div>
+												</fieldset>
+											</div>
+											</div>`);
+						$('#phoneField').append(phoneHtml).hide().fadeIn(1000);
+						$('#phone').mask('(+63) 000 000-0000');
+					}
+											
+
+					if($('#telephoneField').html() == ''){
+						var telephoneHtml = $(`<div class="row">
+												<div class="col-md-12">
+													<fieldset title="Telephone Number" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+													<input name="telephone" id="telephone" value="" type="text" placeholder="E.g. 997-1997" class="form-control input-lg"/>
+													<div class="form-control-position"><i class="fa fa-phone info font-large-2"></i></div>
+													</fieldset>
+												</div>
+												</div>`);
+						$('#telephoneField').append(telephoneHtml).hide().fadeIn(1000);
+						$('#telephone').mask('000-0000');
+					}
+					$('#dateJoin').attr('readonly', '');
+					
+					
+
+					$('#buttonField').fadeOut(1000, function(){
+						var buttonReplace = $(`<button id="discardChanges" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-times"></i> Discard</button>
+											<button id="saveChanges" class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-save"></i> Save</button>`)
+						$(this)
+							.empty()
+							.append( buttonReplace ).hide().fadeIn(1000);
+					})
+					
+
+					var consignorType = !{JSON.stringify(consignorData.booConsignorType)}
+					var strEmail = $('#email').val();
+					var strUsername = $('#username').val();
+					if(consignorType == 0){//Company
+						$('form#infoForm').formValidation({
+							framework: 'bootstrap',
+							icon: {
+								valid: 'fa fa-check',
+								invalid: 'fa fa-times',
+								validating: 'fa fa-spinner'
+							},
+							fields: {
+								email: {
+									validators: {
+										
+										notEmpty: {
+											message: 'You cannot leave me blank 😞'
+										},
+										emailAddress: {
+											message: 'This is not a valid e-mail address.'
+										},
+										remote: {
+											url: '/emailavailability/'+strEmail,
+											message: 'E-mail address has been taken',
+											validKey: 'email',
+											type: 'POST'
+										},
+									}
+								},
+								
+								username: {
+									validators: {
+										
+										notEmpty: {
+											message: `Enter your desired username. You'll use this to sign in to your account.`									
+										},
+										stringLength: {
+											min: 6,
+											max: 30,
+											message: 'The username must be minimum of 6 characters and maximum of 30 characters.'
+										},
+										regexp: {
+											regexp: /^[a-zA-Z0-9_\.]+$/,
+											message: 'The username can only consist of alphabetical, number, dot and underscore'
+										},
+										remote: {
+											url: '/usernameavailability/'+strUsername,
+											message: 'Username has been taken',
+											validKey: 'username',
+											type: 'POST'
+										},
+									}
+								},
+
+								companyName: {
+									validators: {
+										notEmpty: {
+											message: `What is the company name?`
+										},
+									}
+								},
+
+								repFirstName: {
+									validators: {
+										notEmpty: {
+											message: `What is the first name of the company's representative?`
+										},
+									}
+								},
+
+								repLastName: {
+									validators: {
+										notEmpty: {
+											message: `What is the first name of the company's representative?`
+										},
+									}
+								},
+
+								address: {
+									validators: {
+										notEmpty: {
+											message: 'What is the address of your company?'
+										},
+									}
+								},
+								phone: {
+									validators: {
+										regexp: {
+											regexp: /(([(]{1}[+]{1}63[)]{1} [0-9]{3} [0-9]{3}-[0-9]{4}))/,									
+											message: 'Invalid Phone Number Format.'
+										},
+									}
+								},
+								telephone: {
+									validators: {
+										regexp: {
+											regexp: /(([0-9]{3}-[0-9]{4}))/,
+											message: 'Invalid Telephone Number Format.'
+										},
+									}
+								},
+				
+							}
+						})
+						.on('err.field.fv', function(e, data) {
+							// Get the first invalid field
+							var invalidFields = data.fv.getInvalidFields().length;
+							$('#errorfield').val(invalidFields)
+						})
+						.on('success.field.fv', function(e, data) {
+							// Get the first invalid field
+							var invalidFields = data.fv.getInvalidFields().length;
+							$('#errorfield').val(invalidFields)
+						});
+					}
+
+					if(consignorType == 1){//Company
+						$.post('/consignor/data', {
+							intConsignorID: !{JSON.stringify(consignorData.intConsignorID)},
+						}).done(function(data){
+							if(data.indicator == 'success'){
+								var nameHTML = $(`<div class="row">
+										<div class="col-md-12">
+											<p>Last Name</p>
+											<fieldset title="First Name" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+											<input id="firstName" name="firstName" value="${data.consignorData.strRepresentativeFirstName}" type="text" placeholder="E.g. Juan" class="form-control input-lg"/>
+											<div class="form-control-position"><i class="la la-user info font-large-2"></i></div>
+											</fieldset>
+										</div>
+										</div>
+										<div class="row">
+										<div class="col-md-12">
+											<p>First Name</p>
+											<fieldset title="Last Name" class="form-group position-relative has-icon-left tooltip-track-mouse mt-1">
+											<input id="lastName" name="lastName" value="${data.consignorData.strRepresentativeLastName}" type="text" placeholder="E.g. dela Cruz" class="form-control input-lg"/>
+											<div class="form-control-position"><i class="la la-user info font-large-2"></i></div>
+											</fieldset>
+										</div>
+										</div>
+										<hr/>`)
+								$('#nameField').append(nameHTML).hide().fadeIn(1000);
+								$('form#infoForm').formValidation({
+									framework: 'bootstrap',
+									icon: {
+										valid: 'fa fa-check',
+										invalid: 'fa fa-times',
+										validating: 'fa fa-spinner'
+									},
+									fields: {
+										email: {
+											validators: {
+												
+												notEmpty: {
+													message: 'You cannot leave me blank 😞'
+												},
+												emailAddress: {
+													message: 'This is not a valid e-mail address.'
+												},
+												remote: {
+													url: '/emailavailability/'+strEmail,
+													message: 'E-mail address has been taken',
+													validKey: 'email',
+													type: 'POST'
+												},
+											}
+										},
+										
+										username: {
+											validators: {
+												
+												notEmpty: {
+													message: `Enter your desired username. You'll use this to sign in to your account.`									
+												},
+												stringLength: {
+													min: 6,
+													max: 30,
+													message: 'The username must be minimum of 6 characters and maximum of 30 characters.'
+												},
+												regexp: {
+													regexp: /^[a-zA-Z0-9_\.]+$/,
+													message: 'The username can only consist of alphabetical, number, dot and underscore'
+												},
+												remote: {
+													url: '/usernameavailability/'+strUsername,
+													message: 'Username has been taken',
+													validKey: 'username',
+													type: 'POST'
+												},
+											}
+										},
+
+										firstName: {
+											validators: {
+												notEmpty: {
+													message: `What is the first name of the consignor?`
+												},
+											}
+										},
+
+										lastName: {
+											validators: {
+												notEmpty: {
+													message: `What is the last name of the consignor?`
+												},
+											}
+										},
+
+										address: {
+											validators: {
+												notEmpty: {
+													message: 'What is the address of your company?'
+												},
+											}
+										},
+										phone: {
+											validators: {
+												regexp: {
+													regexp: /(([(]{1}[+]{1}63[)]{1} [0-9]{3} [0-9]{3}-[0-9]{4}))/,									
+													message: 'Invalid Phone Number Format.'
+												},
+											}
+										},
+										telephone: {
+											validators: {
+												regexp: {
+													regexp: /(([0-9]{3}-[0-9]{4}))/,
+													message: 'Invalid Telephone Number Format.'
+												},
+											}
+										},
+						
+									}
+								})
+								.on('err.field.fv', function(e, data) {
+									// Get the first invalid field
+									var invalidFields = data.fv.getInvalidFields().length;
+									$('#errorfield').val(invalidFields)
+								})
+								.on('success.field.fv', function(e, data) {
+									// Get the first invalid field
+									var invalidFields = data.fv.getInvalidFields().length;
+									$('#errorfield').val(invalidFields)
+								});
+							}
+						})
+						
+						
+					}
+					
+
+				})//click event Edit Info
+			})
+		//- chartJs
+		script.
+			$(window).on('load', function(){
+				Chart.defaults.hitRateDoughnut=Chart.defaults.doughnut;
+				t=Chart.controllers.doughnut.prototype.draw;
+				var r=Chart.controllers.doughnut.extend({
+					draw:function(){
+						t.apply(this,arguments);
+						var e=this.chart.chart.ctx,
+							o=e.fill,
+							a=this.chart.width,
+							r=this.chart.height,
+							i=(r/114).toFixed(2);
+						this.chart.ctx.font=i+"em Verdana",
+						this.chart.ctx.textBaseline="middle";
+						var l=Math.round((a-this.chart.ctx.measureText("77%").width)/2),
+							n=r/2;
+						this.chart.ctx.fillText("77%",l,n),
+						e.fill=function(){
+							e.save(),
+							e.shadowColor="#bbbbbb",
+							e.shadowBlur=30,
+							e.shadowOffsetX=0,
+							e.shadowOffsetY=12,
+							o.apply(this,arguments),
+							e.restore()
+						}
+					}
+				});
+				Chart.controllers.hitRateDoughnut=r;
+				o=document.getElementById("hit-rate-doughnut"),
+				new Chart(o,{
+					type:"hitRateDoughnut",
+					data:{
+						labels:["Remain","Completed"],
+						datasets:[{
+							label:"Favourite",
+							backgroundColor:["#ffcece",	"#28D094"],
+							data:[23,77]
+						}]
+					},
+					options:{
+						responsive:!0,
+						title:{
+							display:!1
+						},
+						legend:{
+							display:!1
+						},
+						layout:{
+							padding:{
+								left:16,
+								right:16,
+								top:16,
+								bottom:16
+							}
+						},
+						cutoutPercentage:92,
+						animation:{
+							animateScale:!1,
+							duration:2500
+						}
+					}
+				});
+			})
+		script.
+			$(document).ready(function(){
+				$(document).on('click', '#seeMore', function(){
+					$('#logModal').modal('toggle');
+				})
+				var consignor = !{JSON.stringify(consignorData)}
+				$.post(`/consignorhome/consignor/logs/${consignor.intConsignorAccountsID}`).done(function(data){
+					for(var x=0; x<data.length; x++){
+						if(x == 3){
+							$('#timeline').append(`<ul class="timeline">
+								<li class="timeline-line"></li>
+								<li class="timeline-group"><a id='seeMore' class="btn btn-primary" href="javascript:void(0)"><i class="ft-calendar"></i> See More</a></li>
+							</ul>`)
+							break;
+						} 
+						$('#timeline').append(`<ul class="timeline">
+							<li class="timeline-line"></li>
+							<li class="timeline-item">
+								<div class="timeline-badge"><span class="bg-blue bg-lighten-1" data-toggle="tooltip" data-placement="right" title="User Logs"><i class="la la-clock-o"></i></span></div>
+								<div class="timeline-card card border-grey border-lighten-2">
+									<div class="card-header bg-hexagons">
+										<h6 class="card-title">
+											<h6><a href="#">${consignor.strRepresentativeFirstName} ${consignor.strRepresentativeLastName}</a><span> logged in</span></h6>
+										</h6>
+										<p class="card-subtitle text-muted pt-1"><span class="font-small-4 bold">${data[x].datDateLogin}</span><span class="font-small-3"> ${data[x].strPublicIP}</span></p>
+									</div>
+								</div>
+							</li>
+						</ul>`)
+					}
+					for(var z=0; z<data.length; z++){
+						$('#logModalTableBody').append(`<tr>
+							<td>${data[z].datDateLogin}</td>
+							<td>${data[z].strPublicIP}</td>
+						</tr>`)
+					}
+				})
+				$(".tooltip-track-mouse").tooltip({
+					track:!1,
+				})
+				$(document).on('click', '#discardChanges', function(){
+					$('form#infoForm').data('formValidation').destroy()
+					var consignorID = !{JSON.stringify(consignorData.intConsignorID)}
+					console.log(consignorID);
+					$.post(`/consignor/data`,{
+						intConsignorID: consignorID,
+					}).done(function(data){
+						if(data.indicator == 'success'){
+							var consignorData = data.consignorData;
+							$('#email').val(consignorData.strEmail);
+							$('#username').val(consignorData.strUsername);
+							if(consignorData.booConsignorType == '0'){
+								$('#firstName').val(consignorData.strRepresentativeFirstName);
+								$('#lastName').val(consignorData.strRepresentativeLastName);								
+							}
+							$('#address').val(consignorData.strAddress);
+							if(consignorData.strPhone != null){
+								$('#phone').val(consignorData.strPhone);
+							}
+							else if( consignorData.strPhone == null || consignorData.strPhone == ''){
+								$('#phoneField').empty()
+							}
+
+							if(consignorData.strTelephone != null){
+								$('#telephone').val(consignorData.strTelephone);
+							}
+							else if(consignorData.strTelephone == null){
+								$('#telephoneField').empty()							
+							}
+							$('#companyName').remove()
+							$('form#infoForm').find('input').attr('readonly', '');
+							$('form#infoForm').find('textarea').attr('readonly', '');
+						}
+					})
+					
+					
+					var consignorType = !{JSON.stringify(consignorData.booConsignorType)}					
+					if(consignorType == 1)//- Personal No name
+						$('#nameField').empty();
+					$('#buttonField').fadeOut(1000, function(){
+						var buttonReplace = $(`<button id="editInfo" class="btn btn-outline-info btn-min-width box-shadow-3 mr-1 mb-1"><i class="la la-edit"></i> Edit Information</button>`)
+						$(this)
+							.empty()
+							.append( buttonReplace ).hide().fadeIn(1000);
+					})					
+				})
+			})

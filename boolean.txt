@@ -1,0 +1,83 @@
+** Consignment status
+0 - Pending
+1 - On going
+2 - Finished
+3 - Cancelled
+
+** auction status
+0 - unscheduled
+1 - scheduled
+2 - Ongoing
+3 - Done
+4 - Deleted
+5 - Published
+
+** auction type
+1 - Live
+2 - Online
+
+** consignment item status / bundle status
+0 - available
+1 - Published
+2 - sold
+3 - for pullout
+4 pulled out
+
+**bidder
+0 - not evaluated
+1 - verified
+2 - evaluated
+3 - banned
+
+
+SI status
+0 unpaid
+1 paid to be delivered
+2 Delivering
+3 Delivered
+4 FOrfeit
+
+bidder
+0 unverified
+1 verified
+2 ban
+
+bidlist
+0 not
+1 win
+
+SIDTYpe
+0 item
+1 bundle
+
+1 payable
+2 cancelled
+3 unsold
+4 lost and damage
+5 somthing
+
+
+Bugs
+
+
+TO DO
+Machine learning Suggestion --
+notification --
+storage 
+responsive -- //medyo
+report -
+queries -g
+utilities -g
+validation -g
+polish the edit profile - 
+excel
+dynamic -
+machine learning time series analysis--
+messaging
+consignor report
+facebook
+
+
+
+
+

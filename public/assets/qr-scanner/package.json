@@ -1,0 +1,95 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "github:nimiq/qr-scanner",
+        "scope": null,
+        "escapedName": "qr-scanner",
+        "name": "qe-scanner",
+        "rawSpec": "github:nimiq/qr-scanner",
+        "spec": "github:nimiq/qr-scanner",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:nimiq/qr-scanner.git",
+          "sshUrl": "git+ssh://git@github.com/nimiq/qr-scanner.git",
+          "httpsUrl": "git+https://github.com/nimiq/qr-scanner.git",
+          "gitUrl": "git://github.com/nimiq/qr-scanner.git",
+          "shortcut": "github:nimiq/qr-scanner",
+          "directUrl": "https://raw.githubusercontent.com/nimiq/qr-scanner/master/package.json"
+        }
+      },
+      "C:\\Users\\Dell\\Documents\\JavaScript\\amsob"
+    ]
+  ],
+  "_from": "nimiq/qr-scanner",
+  "_id": "qr-scanner@0.4.0",
+  "_inCache": true,
+  "_location": "/qr-scanner",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "github:nimiq/qr-scanner",
+    "scope": null,
+    "escapedName": "qr-scanner",
+    "name": "qe-scanner",
+    "rawSpec": "github:nimiq/qr-scanner",
+    "spec": "github:nimiq/qr-scanner",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:nimiq/qr-scanner.git",
+      "sshUrl": "git+ssh://git@github.com/nimiq/qr-scanner.git",
+      "httpsUrl": "git+https://github.com/nimiq/qr-scanner.git",
+      "gitUrl": "git://github.com/nimiq/qr-scanner.git",
+      "shortcut": "github:nimiq/qr-scanner",
+      "directUrl": "https://raw.githubusercontent.com/nimiq/qr-scanner/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git://github.com/nimiq/qr-scanner.git#ebac8e53cc036a75a5d706a767f1bacaa9bff685",
+  "_shasum": "5402ad18245498302470d3324abad9f0ba50408e",
+  "_shrinkwrap": null,
+  "_spec": "github:nimiq/qr-scanner",
+  "_where": "C:\\Users\\Dell\\Documents\\JavaScript\\amsob",
+  "author": {
+    "name": "Nimiq"
+  },
+  "bugs": {
+    "url": "https://github.com/nimiq/qr-scanner/issues"
+  },
+  "dependencies": {},
+  "description": "A javascript QR scanner library",
+  "devDependencies": {
+    "google-closure-compiler": "^20171112.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.1"
+  },
+  "gitHead": "ebac8e53cc036a75a5d706a767f1bacaa9bff685",
+  "homepage": "https://github.com/nimiq/qr-scanner#readme",
+  "keywords": [
+    "qr",
+    "scanner",
+    "reader",
+    "js",
+    "javascript",
+    "web"
+  ],
+  "license": "MIT",
+  "main": "qr-scanner.js",
+  "name": "qr-scanner",
+  "optionalDependencies": {},
+  "readme": "# QR Scanner\r\n\r\nJavascript QR Code Scanner based on [Lazar Lazslo's javascript port](https://github.com/LazarSoft/jsqrcode) of [Google's ZXing library](https://github.com/zxing/zxing).\r\n\r\nIn this library, several improvements have been applied over the original port:\r\n\r\n- Lightweight: ~33.7 kB (~12 kB gzipped) minified with Google's closure compiler.\r\n- Improved binarizer which makes it more tolerant to shades and reflections on the screen.\r\n- Can be configured for better performance on colored QR codes.\r\n- Runs in a WebWorker which keeps the main / UI thread responsive.\r\n- Works on higher resolution pictures by default.\r\n\r\nThe library supports scanning a continuous video stream from a web cam as well as scanning of single images.\r\n\r\n## Demo\r\nSee https://nimiq.github.io/qr-scanner/demo/\r\n\r\n## Usage\r\n\r\n### Web Cam Scanning\r\n\r\n#### 1. Import the library:\r\n```\r\n<script src=\"qr-scanner.min.js\"></script>\r\n```\r\n\r\n#### 2. Create HTML\r\nCreate a `<video>` element where the web cam video stream should get rendered: \r\n```html\r\n<video></video>\r\n```\r\n\r\n#### 3. Create a QrScanner Instance\r\n```js\r\nconst qrScanner = new QrScanner(videoElem, result => console.log('decoded qr code:', result));\r\n```\r\nAs an optional third parameter a specific resolution that should be worked on can be specified. The default is 400.\r\n\r\n\r\n\r\n### Single Image Scanning\r\n\r\n#### 1. Import the library:\r\n```\r\n<script src=\"qr-scanner.min.js\"></script>\r\n```\r\n\r\n#### 2. Scan your image\r\n```js\r\nQrScanner.scanImage(image)\r\n    .then(result => console.log(result))\r\n    .catch(error => console.log(error || 'No QR code found.'));\r\n```\r\nSupported image sources are:\r\n[HTMLImageElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement),\r\n[SVGImageElement](https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement),\r\n[HTMLVideoElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement),\r\n[HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement),\r\n[ImageBitmap](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap),\r\n[OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas),\r\n[File](https://developer.mozilla.org/en-US/docs/Web/API/File) / [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob)\r\n\r\n\r\n\r\n\r\n### Color Correction\r\nChange the weights for red, green and blue in the grayscale computation to improve contrast for QR codes of a\r\nspecific color:\r\n\r\n```js\r\nqrScanner.setGrayscaleWeights(red, green, blue)\r\n```\r\n\r\n## Build the project\r\nThe project is prebuild in qr-scanner.min.js in combination with qr-scanner-worker.min.js. Building yourself is only neccessary if you want to change the code in\r\nthe /src folder. Nodejs and Java are required for building.\r\n\r\nInstall required build packages:\r\n```batch\r\nnpm install\r\n```\r\n\r\nBuilding:\r\n```batch\r\ngulp\r\n```\r\n\r\n## Debug Mode\r\n\r\nTo enable debug mode:\r\n```js\r\nqrScanner._qrWorker.postMessage({\r\n    type: 'setDebug',\r\n    data: true\r\n});\r\n```\r\n\r\nTo handle the debug image:\r\n```js\r\nqrScanner._qrWorker.addEventListener('message', event => {\r\n  if (event.data.type === 'debugImage') {\r\n      canvasContext.putImageData(event.data.data, 0, 0);\r\n  }\r\n});\r\n```\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimiq/qr-scanner.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.4.0"
+}

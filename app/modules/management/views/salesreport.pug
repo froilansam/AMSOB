@@ -1,0 +1,835 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| AMSOB Admin | Sales Report
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/rickshaw.css')
+
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/selects/select2.min.css')
+
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		// END Custom CSS
+		style.
+			.card .card-body:before {
+				font-family: fontawesome;
+				font-size: 10rem;
+				color: rgba(255,255,255,.15);
+				position: absolute;
+				bottom: -32px;
+				right: 0;
+			}
+			.sales::before {
+				content: "\f0d6";
+			}
+			.consignment::before {
+				content: "\f07a";
+			}
+			.form-control:disabled, .form-control[readonly], .input-group-addon {
+				background-color: transparent;
+				border: none! important;
+				font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+			}
+			.pull-up{
+				z-index: 0 !important;
+			}
+	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.mr-auto
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AMSOB
+						li.nav-item.d-none.d-md-block.float-right
+							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.content
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+							
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='/logout')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-gb
+									span.selected-language
+								.dropdown-menu(aria-labelledby='dropdown-flag')
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-gb
+										|  English
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-fr
+										|  French
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-cn
+										|  Chinese
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-de
+										|  German
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+									li.scrollable-container.media-list.w-100#notificationField
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		// ////////////////////////////////////////////////////////////////////////////
+		.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
+			.main-menu-content
+				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+					li.nav-item
+						a(href='/')
+							i.fa.fa-dashboard
+							span.menu-title Dashboard
+					li.nav-item
+						a(href='#')
+							i.fa.fa-wrench
+							span.menu-title Maintenance
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+									li
+										a.menu-item(href='/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidders
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Schedule
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') User Management
+								ul.menu-content
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
+					li.nav-item
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='/consignor/auctionresult', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awards
+									li
+										a.menu-item(href='/delivery', data-i18n='nav.menu_levels.second_level_child.third_level_child') Delivery
+					li.nav-item
+						a(href='/queries')
+							i.fa.fa-list
+							span.menu-title Queries
+					li.nav-item
+						a(href='/reports/sales')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='/utilities')
+							i.fa.fa-cogs
+							span.menu-title Utilities
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Sales Report
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+								ol.breadcrumb
+									li.breadcrumb-item
+										a(href='/consignment') Reports
+									li.breadcrumb-item.active
+										| Sales
+				.content-body
+					.row
+						.col-md-4
+							.card.bg-success.pull-up
+								.card-content
+									.card-body.sales.pb-1
+										.row.text-white
+											.col-6
+												h1
+													i.fa.fa-money.background-round.text-white
+												h4.pt-1.m-0.text-white
+													span#percentageNICounter 
+													i#percentageNIIcon.la
+											.col-6.text-right
+												h3.text-white.mb-2 Net Profit
+												span#netIncomeCounter
+						.col-md-4
+							.card.bg-info.pull-up
+								.card-content
+									.card-body.sales.pb-1
+										.row.text-white
+											.col-6
+												h1
+													i.fa.fa-money.background-round.text-white
+												h4.pt-1.m-0.text-white
+													| 34% 
+													i.la.la-arrow-up
+											.col-6.text-right
+												h3.text-white.mb-2 Total Sales
+												span P 45,000.00
+						.col-md-4
+							.card.bg-danger.pull-up
+								.card-content
+									.card-body.sales.pb-1
+										.row.text-white
+											.col-6
+												h1
+													i.fa.fa-money.background-round.text-white
+												h4.pt-1.m-0.text-white
+													| 34% 
+													i.la.la-arrow-up
+											.col-6.text-right
+												h3.text-white.mb-2 Expenses Incurred
+												span P 45,000.00
+					// Revenue, Hit Rate & Deals
+					.row
+						.col-xl-12.col-12
+							.card
+								.card-content
+									.earning-chart.position-relative
+										.chart-title.position-absolute.mt-2.ml-2
+											h1#currentMonth.display-4
+											span.text-muted Revenues
+										canvas#earning-chart.height-450
+										.chart-stats.position-absolute.position-bottom-0.position-right-0.mb-2.mr-3
+											a.btn.round.btn-danger.mr-1.btn-glow(href='#')
+												| Revenue 
+												i.ft-bar-chart
+											span.text-muted
+												| for the 
+												a.danger.darken-2(href='#') month.
+					.row
+						.col-xl-12
+							.card
+								.card-content
+									.card-header
+										h3.content-header-title.mb-0.d-inline-block Sales Report
+									.card-body
+										.row
+											.col-md-12
+												.row
+													.col-md-3
+														.form-group
+															label 
+																h5 Date Range: &nbsp
+															select#dateRange.select2.form-control
+																optgroup(label='--Data Range--')
+																	option(value='Yearly') Yearly
+																	option(value='Monthly') Monthly
+													.col-md-3
+														.form-group
+															label 
+																h5 Number of Months/Years: &nbsp
+															select#rows.select2.form-control
+																optgroup(label='--Data Range--')
+																	option(value=5) 5
+																	option(value=8) 8
+																	option(value=10) 10																	
+																	option(value=12) 12
+																	option(value=20) 20
+																	option(value=25) 25
+													.col-md-6
+														.form-group
+															label
+																h5 Columns: &nbsp
+															select#columns.select2.form-control(multiple='multiple')
+																optgroup(label='--Columns--')
+																	option(value='Revenue') Revenue
+																	option(value='Forecast Revenue') Forecast Revenue
+																	option(value='Net Payment') Net Payment
+																	option(value='Sales') Sales
+																	option(value='Profit') Profit
+													
+										.row
+											.col-md-12.text-center
+												button#generate.btn.btn-info.bg-cyan.bg-darken-1.btn-block.text-uppercase.p-1 Generate
+										br
+										.row
+											.col-md-12
+												.table-responsive
+													table#reportSheet.table.table-xs.table-striped.table-bordered.table
+														thead#reportHead
+															tr
+																th#dateTable Month
+																th#revenueTable(style='display: none') Revenue
+																th#forecastTable(style='display: none') Forecast Revenue
+																th#netPaymentTable(style='display: none') Net Payment
+																th#salesTable(style='display: none') Asset Sales
+																th#profitTable(style='display: none') Profit
+														tbody#reportTable
+										br
+										.row
+											.col-md-3
+											.col-md-6.text-center
+												button#saveExcel.btn.btn-success.bg-darken-1.btn-block.text-uppercase.p-1 Save as excel file
+											.col-md-3
+
+														
+						// Analytics map based session
+		// ///////////////////////////////////////////////////////////////////////////
+		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with 
+					i.ft-heart.pink
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/d3.min.js', type='text/javascript')
+		script(src='/assets/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/rickshaw.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		script(src='/assets/file-saver/src/FileSaver.js')
+		script(src='/assets/js/scripts/xlsx.full.min.js')
+		script(src='/assets/vendors/js/extensions/moment.min.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		// END PAGE VENDOR JS
+
+
+		// END PAGE LEVEL JS
+		script.
+			const numberWithCommas = (x) => {
+				var parts = x.toString().split(".");
+				parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+				return parts.join(".");
+			}
+		script.
+			$(document).ready(function(){
+
+				$(document).on('click', '#saveExcel', function(){
+					$('th[style="display: none;"]').remove();
+					$('td[style="display: none;"]').remove();
+					console.log($('#reportSheet')[0])
+					var wb = XLSX.utils.table_to_book($('#reportSheet')[0], {sheet:"Sales Report"});
+					var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
+					function s2ab(s) {
+						var buf = new ArrayBuffer(s.length);
+						var view = new Uint8Array(buf);
+						for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+						return buf;
+					}
+					var dateNow = moment().format('YYYY-MM-DD')
+					saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), `${dateNow}_salesreport.xlsx`);
+				})
+
+				$('.select2').select2({
+				});
+
+				$('#generate').click(function(){
+
+					$('#reportHead').empty();
+					$('#reportHead').append(`<tr>
+										<th id="dateTable">Month</th>
+										<th id="revenueTable" style="display: none;">Revenue</th>
+										<th id="forecastTable" style="display: none;">Forecast Revenue</th>
+										<th id="netPaymentTable" style="display: none;">Net Payment</th>
+										<th id="salesTable" style="display: none;">Asset Sales</th>
+										<th id="profitTable" style="display: none;">Profit</th>
+									</tr>`)
+					var choice = $('#dateRange').select2('val');
+					var reportTable = $('#reportTable');
+					reportTable.empty();
+					
+					if(choice == 'Monthly'){
+
+						$('#dateTable').text('Month')
+					
+						$.post('/reports/sales/monthly', {
+							rows: $('#rows').select2('val'),
+						}).then(function(data){
+							if(data.indicator){
+								
+								for(var i = data.report.length - 1; i >= 0 ; i--){
+
+									var sales = data.report[i][0];
+
+									var rows = $(`<tr>
+														<td class="dateTable">${sales.datDate}</td>
+														<td class="revenueTable">₱${numberWithCommas(parseFloat(sales.totalRevenue).toFixed(2)) != 'NaN' ? numberWithCommas(parseFloat(sales.totalRevenue).toFixed(2)) : parseFloat(0.00).toFixed(2)}</td>
+														<td class="forecastTable">₱${numberWithCommas(parseFloat(sales.forecastValue).toFixed(2)) != 'NaN' ? numberWithCommas(parseFloat(sales.forecastValue).toFixed(2)) : parseFloat(0.00).toFixed(2)}</td>
+														<td class="netPaymentTable">₱${numberWithCommas(parseFloat(sales.netPayment).toFixed(2)) != 'NaN' ? numberWithCommas(parseFloat(sales.netPayment).toFixed(2)) : parseFloat(0.00).toFixed(2)}</td>
+														<td class="salesTable">${numberWithCommas(sales.assetSales) || 0}</td>
+														<td class="profitTable">₱${numberWithCommas(parseFloat(sales.totalProfit).toFixed(2)) != 'NaN' ? numberWithCommas(parseFloat(sales.totalProfit).toFixed(2)) : parseFloat(0.00).toFixed(2)}</td>
+													</tr>`)
+									reportTable.append(rows);
+
+									if(i == 0){
+										var arr = $('#columns').select2('val');
+										console.log(arr)
+										if(arr.includes('Revenue')){
+											$('#revenueTable').fadeIn(1000);
+											$('.revenueTable').fadeIn(1000);
+										}
+										else{
+											$('#revenueTable').hide();						
+											$('.revenueTable').hide();						
+										}
+										if(arr.includes('Forecast Revenue')){
+											$('#forecastTable').fadeIn(1000);
+											$('.forecastTable').fadeIn(1000);
+										}
+										else{
+											$('#forecastTable').hide();						
+											$('.forecastTable').hide();						
+										}
+										if(arr.includes('Net Payment')){
+											$('#netPaymentTable').fadeIn(1000);
+											$('.netPaymentTable').fadeIn(1000);
+										}
+										else{
+											$('#netPaymentTable').hide();						
+											$('.netPaymentTable').hide();						
+										}
+										if(arr.includes('Sales')){
+											$('#salesTable').fadeIn(1000);
+											$('.salesTable').fadeIn(1000);
+										}
+										else{
+											$('#salesTable').hide();						
+											$('.salesTable').hide();						
+										}
+										if(arr.includes('Profit')){
+											$('#profitTable').fadeIn(1000);
+											$('.profitTable').fadeIn(1000);
+										}
+										else{
+											$('#profitTable').hide();						
+											$('.profitTable').hide();						
+										}
+									}
+								}
+								
+							}
+						})
+					}
+
+					if(choice == 'Yearly'){
+						$('#dateTable').text('Year')
+						
+						$.post('/reports/sales/yearly', {
+							rows: $('#rows').select2('val'),
+						}).then(function(data){
+							if(data.indicator){
+								
+								for(var i = data.report.length - 1; i >= 0 ; i--){
+
+									var sales = data.report[i][0];
+
+									var rows = $(`<tr>
+														<td class="dateTable">${sales.datDate}</td>
+														<td class="revenueTable">₱${numberWithCommas(parseFloat(sales.totalRevenue).toFixed(2)) != 'NaN' ? numberWithCommas(parseFloat(sales.totalRevenue).toFixed(2)) : parseFloat(0.00).toFixed(2)}</td>
+														<td class="forecastTable">₱${numberWithCommas(parseFloat(sales.forecastValue).toFixed(2)) != 'NaN' ? numberWithCommas(parseFloat(sales.forecastValue).toFixed(2)) : parseFloat(0.00).toFixed(2)}</td>
+														<td class="netPaymentTable">₱${numberWithCommas(parseFloat(sales.netPayment).toFixed(2)) != 'NaN' ? numberWithCommas(parseFloat(sales.netPayment).toFixed(2)) : parseFloat(0.00).toFixed(2)}</td>
+														<td class="salesTable">${numberWithCommas(sales.assetSales) || 0}</td>
+														<td class="profitTable">₱${numberWithCommas(parseFloat(sales.totalProfit).toFixed(2)) != 'NaN' ? numberWithCommas(parseFloat(sales.totalProfit).toFixed(2)) : parseFloat(0.00).toFixed(2)}</td>
+													</tr>`)
+									reportTable.append(rows);
+
+									if(i == 0){
+										var arr = $('#columns').select2('val');
+										console.log(arr)
+										if(arr.includes('Revenue')){
+											$('#revenueTable').fadeIn(1000);
+											$('.revenueTable').fadeIn(1000);
+										}
+										else{
+											$('#revenueTable').hide();						
+											$('.revenueTable').hide();						
+										}
+										if(arr.includes('Forecast Revenue')){
+											$('#forecastTable').fadeIn(1000);
+											$('.forecastTable').fadeIn(1000);
+										}
+										else{
+											$('#forecastTable').hide();						
+											$('.forecastTable').hide();						
+										}
+										if(arr.includes('Net Payment')){
+											$('#netPaymentTable').fadeIn(1000);
+											$('.netPaymentTable').fadeIn(1000);
+										}
+										else{
+											$('#netPaymentTable').hide();						
+											$('.netPaymentTable').hide();						
+										}
+										if(arr.includes('Sales')){
+											$('#salesTable').fadeIn(1000);
+											$('.salesTable').fadeIn(1000);
+										}
+										else{
+											$('#salesTable').hide();						
+											$('.salesTable').hide();						
+										}
+										if(arr.includes('Profit')){
+											$('#profitTable').fadeIn(1000);
+											$('.profitTable').fadeIn(1000);
+										}
+										else{
+											$('#profitTable').hide();						
+											$('.profitTable').hide();						
+										}
+									}
+								}
+								
+							}
+						})
+					}					
+
+
+
+
+					
+				})
+				//-Time-series Analysis -//
+				$.post('/reports/categories/timeseries').then(function(data){
+					if(data.indicator){
+						var forecast = data.forecast;
+						console.log(forecast)
+
+						$('#categoryOne').text(forecast[0].category)
+						$('#categoryTwo').text(forecast[1].category)
+						$('#categoryThree').text(forecast[2].category)
+						$('#predictionOne').text(forecast[0].predict)
+						$('#predictionTwo').text(forecast[1].predict)
+						$('#predictionThree').text(forecast[2].predict)
+					}
+				})
+
+				
+
+				$.post('/reports/netincome/currentmonth').then(function(data){
+					if(data.indicator){
+						console.log(data)
+						$('#netIncomeCounter').text(data.netIncome)
+
+
+						if(data.percentage > 0){
+							$('#percentageNICounter').text(data.percentage+'%');
+							$('#percentageNIIcon').addClass('la-arrow-up').removeClass('la-arrow-down').removeClass('la-minus')
+						}
+						else if(data.percentage < 0){
+							$('#percentageNICounter').text(data.percentage+'%');		
+							$('#percentageNIIcon').addClass('la-arrow-down').removeClass('la-arrow-up').removeClass('la-minus	')
+											
+						}
+						else if(data.percentage == 0){
+							$('#percentageNICounter').text(data.percentage+'%');		
+							$('#percentageNIIcon').removeClass('la-arrow-up').removeClass('la-arrow-down').addClass('la-minus')
+						}
+					}
+				})
+
+				$.post('/reports/revenue/currentmonth').then(function(data){
+					if(data.indicator){
+						console.log('Total revenue for this month: ' + data.totalRevenue);
+						$('#currentMonth').text(`₱`+numberWithCommas(data.totalRevenue.toFixed(2)));
+					}else{
+						$('#currentMonth').text(`₱0.00`);						
+					}
+				})
+
+				$.post('/reports/revenue/prevmonth').then(function(data){
+					if(data.indicator){
+						console.log('Total revenue for this month: ' + data.totalRevenue);
+						$('#prevMonth').text(`₱`+numberWithCommas(data.totalRevenue.toFixed(2)));
+					}else{
+						$('#prevMonth').text(`₱0.00`);						
+					}
+				})
+
+				
+			})
+		script.
+			// for revenue graph
+			$(window).on("load",function(){
+
+				$.post('/reports/revenue/graphical').then(function(data){
+					if(data.indicator){
+						var revenues = [];
+						var months = []
+						for(var i = data.totalRevenue.length -1; i >= 0 ; i--){
+							if(data.totalRevenue[i][0].totalRevenue != null){
+								revenues.push(data.totalRevenue[i][0].totalRevenue);
+								months.push(data.monthReport[i])
+							}
+							else{
+								revenues.push(0);
+								months.push(data.monthReport[i])								
+							}
+							if(i == 0){
+								console.log(Math.max.apply(Math, revenues))
+								console.log('=')
+								Chart.defaults.derivedLine=Chart.defaults.line;
+								var t=Chart.controllers.line.prototype.draw,
+									e=Chart.controllers.line.extend({
+										draw:function(){
+											t.apply(this,arguments);
+											var e=this.chart.chart.ctx,
+												o=e.stroke;
+											e.stroke=function(){
+												e.save(),
+												e.shadowColor="#ffb6c0",
+												e.shadowBlur=30,
+												e.shadowOffsetX=0,
+												e.shadowOffsetY=20,
+												o.apply(this,arguments),
+												e.restore()
+											}
+										}
+									});
+								var l=document.getElementById("earning-chart").getContext("2d");
+								new Chart(l,{
+									type:"line",
+									options:{
+										responsive:!0,
+										maintainAspectRatio:!1,
+										datasetStrokeWidth:3,
+										pointDotStrokeWidth:4,
+										tooltipFillColor:"rgba(0,0,0,0.8)",
+										legend:{
+											display:!1,
+											position:"bottom"
+										},
+										hover:{
+											mode:"label"
+										},
+										scales:{
+											xAxes:[{
+												display:!1
+											}],
+											yAxes:[{
+												display:!1,
+												ticks:{
+													min:0,
+													max:Math.max.apply(Math, revenues) + Math.max.apply(Math, revenues) / 5
+												}
+											}]
+										},
+										title:{
+											display:!1,
+											fontColor:"#FFF",
+											fullWidth:!1,
+											fontSize:40,
+											text:"82%"
+										}
+									},
+									data:{
+										labels: months,
+										datasets:[{
+											label:"Revenue",
+											data: revenues,
+											backgroundColor:"rgba(255,117,136,0.12)",
+											borderColor:"#FF4961",
+											borderWidth:3,
+											strokeColor:"#FF4961",
+											capBezierPoints:!0,
+											pointColor:"#fff",
+											pointBorderColor:"#FF4961",
+											pointBackgroundColor:"#FFF",
+											pointBorderWidth:3,
+											pointRadius:5,
+											pointHoverBackgroundColor:"#FFF",
+											pointHoverBorderColor:"#FF4961",
+											pointHoverRadius:7
+										},
+										{
+											label:"Revee",
+											data: [1000,1200,1200,3000,1000,560,390,290,475,1234,833,288],
+											backgroundColor:"rgba(88,157,253,0.12)",
+											borderColor:"#589dfd",
+											borderWidth:3,
+											strokeColor:"#589dfd",
+											capBezierPoints:!0,
+											pointColor:"#fff",
+											pointBorderColor:"#589dfd",
+											pointBackgroundColor:"#FFF",
+											pointBorderWidth:3,
+											pointRadius:5,
+											pointHoverBackgroundColor:"#FFF",
+											pointHoverBorderColor:"#589dfd",
+											pointHoverRadius:7
+										}]
+									}
+								});
+		
+							}
+						}
+					}
+				})
+
+				
+			})
+

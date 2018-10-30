@@ -1,0 +1,280 @@
+doctype html
+html(lang='en', data-cookies-popup='true')
+  // Mirrored from suelo.pl/themes/okno/index-onepage-agency-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Oct 2018 14:16:16 GMT
+  head
+    // Meta
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Title
+    title AMSOB Consignor | Landing Page
+    // Favicons
+    link(rel='shortcut icon', href='/okno/img/favicon.png')
+    link(rel='apple-touch-icon', href='/okno/img/favicon_60x60.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/okno/img/favicon_76x76.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='/okno/img/favicon_120x120.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='/okno/img/favicon_152x152.png')
+    // Google Web Fonts
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600', rel='stylesheet', type='text/css')
+    // CSS Styles
+    link(rel='stylesheet', href='/okno/css/styles.css')
+    // CSS Base
+    link#theme(rel='stylesheet', href='/okno/css/themes/theme-fire.css')
+  body.one-page.header-absolute
+    // Loader
+    #page-loader
+      svg.loader-1.loader-primary(width='65px', height='65px', viewBox='0 0 66 66', xmlns='http://www.w3.org/2000/svg')
+        circle.circle(fill='none', stroke-width='3', stroke-linecap='round', cx='33', cy='33', r='30')
+    // Loader / End
+    // Header
+    header#header.absolute.fullwidth.transparent
+      // Navigation Bar
+      #nav-bar
+        // Logo
+        a.logo-wrapper(href='index.html')
+          img.logo.logo-dark(src='/assets/shopmade/images/logo.png', alt='Okno')
+          img.logo.logo-light(src='/assets/shopmade/images/logo.png', alt='Okno')
+        nav.module-group.right
+          // Panel
+          .module.left
+            a(href='/consignorportal') Log In &nbsp | &nbsp
+            a(href='/consignorportal') Sign Up
+      // Notification Bar
+      #notification-bar
+      // Search Bar
+      #search-bar
+        form#search-form
+          input.search-bar-input(type='text', placeholder='Search...')
+          button.search-bar-submit
+            i.ti-search
+        a.search-bar-close(href='#', data-toggle='search-bar')
+          i.ti-close
+    // Header / End
+    // Content
+    #content
+      // Section / Home
+      section#home.fullheight.dark.bg-black
+        .bg-image.zooming
+          img(src='/okno/img/photos/agency_bg01.jpg', alt='')
+        .v-center.text-center
+          .carousel(data-single-item='true', data-autoplay='4000', data-transition='fade', data-pagination='false')
+            h1
+              img(src='/background.png', alt='Creativity')
+      // Section / Services
+      section#services.bg-primary.dark
+        .container.text-center
+          .row
+            .col-lg-4.col-lg-push-1.col-md-6
+              // Icon Box
+              .feature.feature-1.mb-0.animated(data-animation='fadeInLeft')
+                span.icon.icon-white.icon-circle.icon-lg
+                  i.ti-user
+                h3 Free Sign-up
+                p.text-muted
+                  | You do not need to pay to register, just upload one valid ID, the you are set!
+            .col-lg-4.col-lg-push-3.col-md-6
+              // Icon Box
+              .feature.feature-1.mb-0.animated(data-animation='fadeInRight')
+                span.icon.icon-white.icon-circle.icon-lg
+                  i.ti-money
+                h3 Higher Appraisal Value
+                p.text-muted
+                  | Liquify your assets to money.
+          hr.sep-line.mt-40.mb-40
+          .row
+            .col-lg-4.col-lg-push-1.col-md-6
+              // Icon Box
+              .feature.feature-1.mb-0.animated(data-animation='fadeInLeft')
+                span.icon.icon-white.icon-circle.icon-lg
+                  i.ti-dashboard
+                h3 Monitor Your Asset
+                p.text-muted
+                  | See what happens with your consigned asset with monitoring feature
+            .col-lg-4.col-lg-push-3.col-md-6
+              // Icon Box
+              .feature.feature-1.mb-0.animated(data-animation='fadeInRight')
+                span.icon.icon-white.icon-circle.icon-lg
+                  i.ti-timer
+                h3 Faster
+                p.text-muted
+                  | Faster Process like no other
+      // Section / Portfolio
+      section#portfolio.cover.bg-dark
+        // Works List
+        #works-list.masonry.row.no-padding
+          .masonry-sizer.col-md-4.col-sm-6.col-xs-12
+          .masonry-item.corporate-identity.col-md-4.col-sm-6.col-xs-12
+            // Media Item
+            .image-box.image-hover.bg-black.text-center
+              .image
+                .hover.dark
+                  a(href='#')
+                    h5.mb-0 iWatch App
+                    span.text-muted Webdesign
+                img(src='/okno/img/works/work12_v.jpg', alt='')
+          .masonry-item.webdesign.col-md-4.col-sm-6.col-xs-12
+            // Media Item
+            .image-box.image-hover.bg-black.text-center
+              .image
+                .hover.dark
+                  a(href='#')
+                    h5.mb-0 iPad Showcase
+                    span.text-muted Webdesign
+                img(src='/okno/img/works/work09.jpg', alt='')
+          .masonry-item.development.col-md-4.col-sm-6.col-xs-12
+            // Media Item
+            .image-box.image-hover.bg-black.text-center
+              .image
+                .hover.dark
+                  a(href='#')
+                    h5.mb-0 iPad App
+                    span.text-muted Webdesign
+                img(src='/okno/img/works/work13_v.jpg', alt='')
+          .masonry-item.webdesign.col-md-4.col-sm-6.col-xs-12
+            // Media Item
+            .image-box.image-hover.bg-black.text-center
+              .image
+                .hover.dark
+                  a(href='#')
+                    h5.mb-0 iPhone Wallpapers
+                    span.text-muted Webdesign
+                img(src='/okno/img/works/work10.jpg', alt='')
+      // Section / Clients
+      section#clients
+        .container
+          .row.text-center
+            .col-lg-8.col-lg-push-2
+              h3.mb-60 Consignor Testimonials
+              .row.carousel.mb-90(data-items='2', data-pagination='true', data-navigation='true', data-autoplay='3000')
+                .col-xs-12
+                  // Testimonial
+                  .testimonial.testimonial-2
+                    .quote
+                      | Creativity is allowing yourself to make mistakes. Art is knowing which ones to keep.
+                    .author.with-image
+                      img(src='/okno/img/avatars/avatar01.jpg', alt='')
+                      .name Johnatan Doe
+                      span.text-muted XYZ Inc., LA, USA
+                .col-xs-12
+                  // Testimonial
+                  .testimonial.testimonial-primary.testimonial-2
+                    .quote
+                      | Success consists of going from failure to failure without loss of enthusiasm.
+                    .author.with-image
+                      img(src='/okno/img/avatars/avatar02.jpg', alt='')
+                      .name Johnatan Doe
+                      span.text-muted XYZ Inc., LA, USA
+                .col-xs-12
+                  // Testimonial
+                  .testimonial.testimonial-2
+                    .quote
+                      | Without change there is no innovation, creativity, or incentive for improvement.
+                    .author.with-image
+                      img(src='/okno/img/avatars/avatar03.jpg', alt='')
+                      .name Johnatan Doe
+                      span.text-muted XYZ Inc., LA, USA
+                .col-xs-12
+                  // Testimonial
+                  .testimonial.testimonial-primary.testimonial-2
+                    .quote
+                      | Creativity is allowing yourself to make mistakes. Art is knowing which ones to keep.
+                    .author.with-image
+                      img(src='/okno/img/avatars/avatar04.jpg', alt='')
+                      .name Johnatan Doe
+                      span.text-muted XYZ Inc., LA, USA
+              h3.mb-40 Some of our clients...
+              .carousel(data-single-item='true', data-autoplay='800', data-transition='fade')
+                a(href='#')
+                  img.gray-to-color.mb-50(src='/okno/img/logotypes/sass.png', alt='')
+                a(href='#')
+                  img.gray-to-color.mb-50(src='/okno/img/logotypes/envato.png', alt='')
+                a(href='#')
+                  img.gray-to-color.mb-50(src='/okno/img/logotypes/suelo.png', alt='')
+                a(href='#')
+                  img.gray-to-color.mb-50(src='/okno/img/logotypes/html.png', alt='')
+              p.lead(data-target='local-scroll')
+                | We always do our best! 
+                a.link-underline.text-primary(href='#video') Check how we work!
+      section#video.section.bg-dark.cover.dark
+        .video-box.placeholder-image
+          .image
+            img(src='/okno/img/photos/agency_bg02.jpg', alt='')
+          a.btn-play.btn-lg(href='https://www.youtube.com/embed/uVju5--RqtY?rel=0&autoplay=1')
+      // Section / Contact
+      section#contact.section-lg.bg-dark.dark
+        #google-map.bg-map.dark-overlay(data-latitude='40.758895', data-longitude='-73.985131', data-style='dark')
+        .container
+          .row
+            .col-md-6
+              // Icon Box
+              .feature.feature-2.feature-sm
+                span.icon.icon-sm.icon-primary
+                  i.ti-files
+                .feature-content
+                  h4.mb-0.text-muted Call Us
+                  span.h3 +48 123 456 789
+            .col-md-6
+              // Icon Box
+              .feature.feature-2.feature-sm
+                span.icon.icon-sm.icon-primary
+                  i.ti-files
+                .feature-content
+                  h4.mb-0.text-muted Write to Us!
+                  span.h3
+                    a.text-primary(href='#') example@mail.com
+    // Content / End
+    // Footer
+    footer#footer.dark.bg-secondary.pb-60
+      .container.text-center
+        img.mb-20(src='/okno/img/logo-sm.png', alt='Okno')
+        .text-muted.mb-30 Copyright Okno 2016©. All rights reserved.
+        a.icon.icon-circle.icon-facebook.icon-xs(href='#')
+          i.fa.fa-facebook
+        a.icon.icon-circle.icon-twitter.icon-xs(href='#')
+          i.fa.fa-twitter
+        a.icon.icon-circle.icon-google-plus.icon-xs(href='#')
+          i.fa.fa-google-plus
+    // Footer / End
+    // Side Panel
+    nav#side-panel.right.bg-dark.dark
+      .side-panel-wrapper
+        img.logo.mb-30(src='/okno/img/logo-light.png', alt='Okno', width='100')
+        // Widget - Links
+        .widget.widget-links
+          ul.nav.nav-panel(data-target='local-scroll')
+            li
+              a(href='#home') Home
+            li
+              a(href='#services') Services
+            li
+              a(href='#portfolio') Portfolio
+            li
+              a(href='#clients') Clients
+            li
+              a(href='#contact') Contact
+        // Widget - Follow
+        .widget.widget-social
+          h6.text-uppercase.text-muted Connect Us
+          a.icon.icon-square.icon-facebook.icon-xs(href='#')
+            i.fa.fa-facebook
+          a.icon.icon-square.icon-twitter.icon-xs(href='#')
+            i.fa.fa-twitter
+          a.icon.icon-square.icon-google-plus.icon-xs(href='#')
+            i.fa.fa-google-plus
+          a.icon.icon-square.icon-behance.icon-xs(href='#')
+            i.fa.fa-behance
+          a.icon.icon-square.icon-dribbble.icon-xs(href='#')
+            i.fa.fa-dribbble
+      a.close(href='#', data-toggle='side-panel')
+        i.ti-close
+    // JS Libraries
+    script(src='/okno/js/jquery-1.12.3.min.js')
+    // JS Plugins
+    script(src='/okno/js/plugins.js')
+    // JS Core
+    script(src='/okno/js/core.js')
+    //- // JS Google Map
+    //- script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false')
+    // Styleswitcher
+    script(src='/okno/styleswitcher/styleswitcher.js')
+    // Mirrored from suelo.pl/themes/okno/index-onepage-agency-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Oct 2018 14:16:56 GMT

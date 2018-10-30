@@ -1,13 +1,12 @@
-1. #editSubmit functionality *done
-2. eventDrop (edit drag and drop on full calendar) *done
-3. fix unscheduled events query bugs *done
-4. cataloging
-    transfer from one auction to another
-    publish
-5. Auction name, description, banner, date created *done
-6. Scheduling constraint(days or months after today, no overlapping) // FullCalendar eventOverlap:false // *done
-7. Automatic auction banner
-8. Auction Schedule Form Validation
+1. Dynamic queries/reports(find module)
+
+
+
+
+1. Edit Asset sa /inventory
+2. Adjustment ng asset
+3. Query ng edit asset
+4. .deleteImage function kailangan masesave strPicture para madelete sa db
 
 ** NOTES
 * 1 day minimum (Business Rules) 
@@ -15,6 +14,21 @@
 * banner resolution: 851x315
 * User logs
 * supervised machine learning
+* pwede magoverlap kapag di pareho auction type
+* Catalog Bundle items must:
+    - have same consignment
+    - all items are no reserved price
+* Catalog Bundle temp logic:
+    - Bundle Toggle button
+    - check items to be bundled
+    - Ok Button
+    - Enter Bundle Title/Description using sweetalert
+    - kapag 0 yung length ng title/desc toastr error, if not save sa req.session tapos toastr success
+* Catalog Bundle Questions:
+    - Kapag nabundle tapos hindi nabili, mabubuwag ba yon or bundled forever na?
+
+** BUGS
+* Pag maraming asset may error sa adding ng consignment
 
 
 // Froilan
@@ -28,3 +42,79 @@
 8. Form validation Messages
 9. Hash Password
 10. Banned switch
+11. Feed Back / UI
+12. Category pic better be similar sizes
+13 No password first time
+15 color size and condition asset Recive
+17. Pawn hero WARNINGS
+18. HMR Warnings
+21. Add 2 female shoe size
+22. ID Not same
+maglagay ng legend
+Size on asset Recive
+
+//Next
+Evaluation
+Asset Receiving
+Category Machinelearning
+
+//Presentation
+1. We're not just doing the typical crud but we suggest blah blah
+2. The hierarchy
+
+Storage staus
+
+COnsignment Status
+
+1. Pending
+2. On-going
+3. finsihed
+4. Cancelled
+
+sold
+
+
+
+
+
+BR
+Same day lapping
+live and online
+auction business Rules
+
+Docu
+Fishbone
+Gen merch
+Business Rules
+
+
+Tech to be tried
+-Finger Print
+koajs
+pdf
+
+
+Pasabog
+Paymaya
+QR Code
+ML&DA
+Finger print
+
+
+
+SELECT t1.intBidlistBidderID,
+       t1.dblBidPrice,
+       t1.intBidlistID,
+       t1.intBidlistCatalogID
+FROM   tbl_bidlist t1
+       INNER JOIN (SELECT Max(dblBidPrice) AS maxi,
+                          intBidlistCatalogID
+                   FROM   tbl_bidlist
+                   GROUP  BY intBidlistCatalogID) t2
+               ON t1.intBidlistCatalogID = t2.intBidlistCatalogID
+                  AND t1.dblBidPrice = t2.maxi
+
+
+
+
+Compute commision

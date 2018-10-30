@@ -8,14 +8,15 @@ html.loading(lang='en', data-textdirection='ltr')
 		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
 		meta(name='author', content='PIXINVENT')
 		title
-			| Dashboard sales - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
-			| Dashboard
+			| AMSOB Admin | Dashboard
 		link(rel='apple-touch-icon', href='assets/images/ico/apple-icon-120.png')
 		link(rel='shortcut icon', type='image/x-icon', href='assets/images/ico/favicon.ico')
-		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700', rel='stylesheet')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
 		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
 		// BEGIN VENDOR CSS
 		link(rel='stylesheet', type='text/css', href='assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/rickshaw.css')
+
 		// END VENDOR CSS
 		// BEGIN MODERN CSS
 		link(rel='stylesheet', type='text/css', href='assets/css/app.min.css')
@@ -32,6 +33,34 @@ html.loading(lang='en', data-textdirection='ltr')
 		// BEGIN Custom CSS
 		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
 		// END Custom CSS
+		style.
+			.card .card-body:before {
+				font-family: fontawesome;
+				font-size: 10rem;
+				color: rgba(255,255,255,.15);
+				position: absolute;
+				bottom: -32px;
+				right: 0;
+			}
+			.sales::before {
+				content: "\f0d6";
+			}
+			.consignment::before {
+				content: "\f07a";
+			}
+
+			.down::before {
+				content: "\f063";
+			}
+			
+			.form-control:disabled, .form-control[readonly], .input-group-addon {
+				background-color: transparent;
+				border: none! important;
+				font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+			}
+			.pull-up{
+				z-index: 0 !important;
+			}
 	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
 		// fixed-top
 		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
@@ -44,7 +73,7 @@ html.loading(lang='en', data-textdirection='ltr')
 						li.nav-item.mr-auto
 							a.navbar-brand(href='index.html')
 								img.brand-logo(alt='modern admin logo', src='assets/images/logo/logo.png')
-								h3.brand-text Modern Admin
+								h3.brand-text AMSOB
 						li.nav-item.d-none.d-md-block.float-right
 							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
 								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
@@ -57,157 +86,13 @@ html.loading(lang='en', data-textdirection='ltr')
 							li.nav-item.d-none.d-md-block
 								a.nav-link.nav-link-expand(href='#')
 									i.ficon.ft-maximize
-							li.dropdown.nav-item.mega-dropdown
-								a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') Mega
-								ul.mega-dropdown-menu.dropdown-menu.row
-									li.col-md-2
-										h6.dropdown-menu-header.text-uppercase.mb-1
-											i.la.la-newspaper-o
-											|  News
-										#mega-menu-carousel-example
-											div
-												img.rounded.img-fluid.mb-1(src='assets/images/slider/slider-2.png', alt='First slide')
-												a.news-title.mb-0(href='#') Poster Frame PSD
-												p.news-content
-													span.font-small-2 January 26, 2018
-									li.col-md-3
-										h6.dropdown-menu-header.text-uppercase
-											i.la.la-random
-											|  Drill down menu
-										ul.drilldown-menu
-											li.menu-list
-												ul
-													li
-														a.dropdown-item(href='layout-2-columns.html')
-															i.ft-file
-															|  Page layouts & Templates
-													li
-														a(href='#')
-															i.ft-align-left
-															|  Multi level menu
-														ul
-															li
-																a.dropdown-item(href='#')
-																	i.la.la-bookmark-o
-																	|   Second level
-															li
-																a(href='#')
-																	i.la.la-lemon-o
-																	|  Second level menu
-																ul
-																	li
-																		a.dropdown-item(href='#')
-																			i.la.la-heart-o
-																			|   Third level
-																	li
-																		a.dropdown-item(href='#')
-																			i.la.la-file-o
-																			|  Third level
-																	li
-																		a.dropdown-item(href='#')
-																			i.la.la-trash-o
-																			|  Third level
-																	li
-																		a.dropdown-item(href='#')
-																			i.la.la-clock-o
-																			|  Third level
-															li
-																a.dropdown-item(href='#')
-																	i.la.la-hdd-o
-																	|  Second level, third link
-															li
-																a.dropdown-item(href='#')
-																	i.la.la-floppy-o
-																	|  Second level, fourth link
-													li
-														a.dropdown-item(href='color-palette-primary.html')
-															i.ft-camera
-															|  Color palette system
-													li
-														a.dropdown-item(href='sk-2-columns.html')
-															i.ft-edit
-															|  Page starter kit
-													li
-														a.dropdown-item(href='changelog.html')
-															i.ft-minimize-2
-															|  Change log
-													li
-														a.dropdown-item(href='https://pixinvent.ticksy.com/')
-															i.la.la-life-ring
-															|  Customer support center
-									li.col-md-3
-										h6.dropdown-menu-header.text-uppercase
-											i.la.la-list-ul
-											|  Accordion
-										#accordionWrap(role='tablist', aria-multiselectable='true')
-											.card.border-0.box-shadow-0.collapse-icon.accordion-icon-rotate
-												#headingOne.card-header.p-0.pb-2.border-0(role='tab')
-													a(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionOne', aria-expanded='true', aria-controls='accordionOne') Accordion Item #1
-												#accordionOne.card-collapse.collapse.show(role='tabpanel', aria-labelledby='headingOne', aria-expanded='true')
-													.card-content
-														p.accordion-text.text-small-3
-															| Caramels dessert chocolate cake pastry jujubes bonbon.
-															| Jelly wafer jelly beans. Caramels chocolate cake liquorice
-															| cake wafer jelly beans croissant apple pie.
-												#headingTwo.card-header.p-0.pb-2.border-0(role='tab')
-													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionTwo', aria-expanded='false', aria-controls='accordionTwo') Accordion Item #2
-												#accordionTwo.card-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo', aria-expanded='false')
-													.card-content
-														p.accordion-text
-															| Sugar plum bear claw oat cake chocolate jelly tiramisu
-															| dessert pie. Tiramisu macaroon muffin jelly marshmallow
-															| cake. Pastry oat cake chupa chups.
-												#headingThree.card-header.p-0.pb-2.border-0(role='tab')
-													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionThree', aria-expanded='false', aria-controls='accordionThree') Accordion Item #3
-												#accordionThree.card-collapse.collapse(role='tabpanel', aria-labelledby='headingThree', aria-expanded='false')
-													.card-content
-														p.accordion-text
-															| Candy cupcake sugar plum oat cake wafer marzipan jujubes
-															| lollipop macaroon. Cake dragée jujubes donut chocolate
-															| bar chocolate cake cupcake chocolate topping.
-									li.col-md-4
-										h6.dropdown-menu-header.text-uppercase.mb-1
-											i.la.la-envelope-o
-											|  Contact Us
-										form.form.form-horizontal
-											.form-body
-												.form-group.row
-													label.col-sm-3.form-control-label(for='inputName1') Name
-													.col-sm-9
-														.position-relative.has-icon-left
-															input#inputName1.form-control(type='text', placeholder='John Doe')
-															.form-control-position.pl-1
-																i.la.la-user
-												.form-group.row
-													label.col-sm-3.form-control-label(for='inputEmail1') Email
-													.col-sm-9
-														.position-relative.has-icon-left
-															input#inputEmail1.form-control(type='email', placeholder='john@example.com')
-															.form-control-position.pl-1
-																i.la.la-envelope-o
-												.form-group.row
-													label.col-sm-3.form-control-label(for='inputMessage1') Message
-													.col-sm-9
-														.position-relative.has-icon-left
-															textarea#inputMessage1.form-control(rows='2', placeholder='Simple Textarea')
-															.form-control-position.pl-1
-																i.la.la-commenting-o
-												.row
-													.col-sm-12.mb-1
-														button.btn.btn-info.float-right(type='button')
-															i.la.la-paper-plane-o
-															|  Send
-							li.nav-item.nav-search
-								a.nav-link.nav-link-search(href='#')
-									i.ficon.ft-search
-								.search-input
-									input.input(type='text', placeholder='Explore Modern...')
+							
 						ul.nav.navbar-nav.float-right
 							li.dropdown.dropdown-user.nav-item
 								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
 									span.mr-1
 										| Hello,
-										span.user-name.text-bold-700 John Doe
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
 									span.avatar.avatar-online
 										img(src='assets/images/portrait/small/avatar-s-19.png', alt='avatar')
 										i
@@ -225,7 +110,7 @@ html.loading(lang='en', data-textdirection='ltr')
 										i.ft-message-square
 										|  Chats
 									.dropdown-divider
-									a.dropdown-item(href='#')
+									a.dropdown-item(href='/logout')
 										i.ft-power
 										|  Logout
 							li.dropdown.dropdown-language.nav-item
@@ -248,56 +133,12 @@ html.loading(lang='en', data-textdirection='ltr')
 							li.dropdown.dropdown-notification.nav-item
 								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
 									i.ficon.ft-bell
-									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow 5
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
 								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
 									li.dropdown-menu-header
 										h6.dropdown-header.m-0
 											span.grey.darken-2 Notifications
-										span.notification-tag.badge.badge-default.badge-danger.float-right.m-0 5 New
-									li.scrollable-container.media-list.w-100
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-plus-square.icon-bg-circle.bg-cyan
-												.media-body
-													h6.media-heading You have new order!
-													p.notification-text.font-small-3.text-muted Lorem ipsum dolor sit amet, consectetuer elit.
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') 30 minutes ago
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-download-cloud.icon-bg-circle.bg-red.bg-darken-1
-												.media-body
-													h6.media-heading.red.darken-1 99% Server load
-													p.notification-text.font-small-3.text-muted Aliquam tincidunt mauris eu risus.
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Five hour ago
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-alert-triangle.icon-bg-circle.bg-yellow.bg-darken-3
-												.media-body
-													h6.media-heading.yellow.darken-3 Warning notifixation
-													p.notification-text.font-small-3.text-muted Vestibulum auctor dapibus neque.
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-check-circle.icon-bg-circle.bg-cyan
-												.media-body
-													h6.media-heading Complete the task
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last week
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-file.icon-bg-circle.bg-teal
-												.media-body
-													h6.media-heading Generate monthly report
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last month
+									li.scrollable-container.media-list.w-100#notificationField
 									li.dropdown-menu-footer
 										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
 							li.dropdown.dropdown-notification.nav-item
@@ -356,6 +197,7 @@ html.loading(lang='en', data-textdirection='ltr')
 									li.dropdown-menu-footer
 										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
 		// ////////////////////////////////////////////////////////////////////////////
+		// ////////////////////////////////////////////////////////////////////////////
 		.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
 			.main-menu-content
 				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
@@ -364,50 +206,151 @@ html.loading(lang='en', data-textdirection='ltr')
 							i.fa.fa-dashboard
 							span.menu-title Dashboard
 					li.nav-item
-						a(href='/consignment')
-							i.fa.fa-handshake-o
-							span.menu-title Acquisition
+						a(href='#')
+							i.fa.fa-wrench
+							span.menu-title Maintenance
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+									li
+										a.menu-item(href='/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidders
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Schedule
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') User Management
+								ul.menu-content
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
 					li.nav-item
-						a(href='/auction')
-							i.fa.fa-calendar
-							span.menu-title Auction Schedule
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='/consignor/auctionresult', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awards
+									li
+										a.menu-item(href='/delivery', data-i18n='nav.menu_levels.second_level_child.third_level_child') Delivery
+					li.nav-item
+						a(href='/queries')
+							i.fa.fa-list
+							span.menu-title Queries
+					li.nav-item
+						a(href='/reports/sales')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='/utilities')
+							i.fa.fa-cogs
+							span.menu-title Utilities
 		.app-content.content
 			.content-wrapper
 				.content-header.row
 				.content-body
+					.row
+						.col-md-4
+							.card.bg-success.pull-up
+								.card-content
+									.card-body.sales.pb-1
+										.row.text-white
+											.col-6
+												h1
+													i.fa.fa-money.background-round.text-white
+												h4.pt-1.m-0.text-white
+													span#percentageNICounter 
+													i#percentageNIIcon.la
+											.col-6.text-right
+												h3.text-white.mb-2 Net Income
+												span#netIncomeCounter
+						.col-md-4
+							.card.bg-info.pull-up
+								.card-content
+									.card-body.consignment.pb-1
+										.row.text-white
+											.col-6
+												h1
+													i.fa.fa-shopping-cart.background-round.text-white
+												h4.pt-1.m-0.text-white
+													span#percentageCounter 
+													i#percentageIcon.la
+											.col-6.text-right
+												h3.text-white.mb-2 Consignment
+												span#consignmentCounter
+						.col-md-4
+							.card.bg-danger.pull-up
+								.card-content
+									.card-body.down.pb-1
+										.row.text-white
+											.col-6
+												h1
+													i.fa.fa-arrow-down.background-round.text-white
+												h4.pt-1.m-0.text-white
+													span#percentageNLCounter 													
+													i#percentageNLIcon.la
+											.col-6.text-right
+												h3.text-white.mb-2 Expenses Incurred
+												span#netLossCounter
 					// Revenue, Hit Rate & Deals
 					.row
 						.col-xl-6.col-12
 							.card
-								.card-header
-									h4.card-title Revenue
-									a.heading-elements-toggle
-										i.la.la-ellipsis-v.font-medium-3
-									.heading-elements
-										ul.list-inline.mb-0
-											li
-												a(data-action='reload')
-													i.ft-rotate-cw
-								.card-content.collapse.show
-									.card-body.pt-0
-										.row.mb-1
-											.col-6.col-md-4
-												h5 Current week
-												h2.danger $82,124
-											.col-6.col-md-4
-												h5 Previous week
-												h2.text-muted $52,502
-										.chartjs
-											canvas#thisYearRevenue(width='400', style='position: absolute;')
-											canvas#lastYearRevenue(width='400')
+								.card-content
+									.earning-chart.position-relative
+										.chart-title.position-absolute.mt-2.ml-2
+											h1#currentMonth.display-4
+											span.text-muted Total Revenue
+										canvas#earning-chart.height-450
+										.chart-stats.position-absolute.position-bottom-0.position-right-0.mb-2.mr-3
+											a.btn.round.btn-danger.mr-1.btn-glow(href='#')
+												| Revenue 
+												i.ft-bar-chart
+											span.text-muted
+												| for the 
+												a.danger.darken-2(href='#') month.
 						.col-xl-6.col-12
 							.row
 								.col-lg-6.col-12
 									.card.pull-up
 										.card-header.bg-hexagons
 											h4.card-title
-												| Hit Rate
-												span.danger -12%
+												| Inventory Capacity 
+												span.danger#remaining 
 											a.heading-elements-toggle
 												i.la.la-ellipsis-v.font-medium-3
 											.heading-elements
@@ -424,11 +367,11 @@ html.loading(lang='en', data-textdirection='ltr')
 										.card-content.collapse.show.bg-gradient-directional-danger
 											.card-body.bg-hexagons-danger
 												h4.card-title.white
-													| Deals
-													span.white -55%
+													| Items - 
+													span.white#percentageItemRemaining
 													span.float-right
-														span.white 152
-														span.red.lighten-4 /200
+														span.white#countItemFilled
+														span.red.lighten-4#countItemTotal
 												.chartjs
 													canvas#deals-doughnut(height='275')
 							.row
@@ -455,192 +398,94 @@ html.loading(lang='en', data-textdirection='ltr')
 					// / Revenue, Hit Rate & Deals
 					// Emails Products & Avg Deals
 					.row
-						.col-12.col-md-3
-							.card
+						.col-12.col-md-6
+							
+							.card.pull-up
 								.card-header
-									h4.card-title Emails
-									a.heading-elements-toggle
-										i.la.la-ellipsis-v.font-medium-3
-									.heading-elements
-										ul.list-inline.mb-0
-											li
-												a(data-action='reload')
-													i.ft-rotate-cw
-								.card-content.collapse.show
-									.card-body.pt-0
-										p
-											| Open rate
-											span.float-right.text-bold-600 89%
-										.progress.progress-sm.mt-1.mb-0.box-shadow-1
-											.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 80%', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100')
-										p.pt-1
-											| Sent
-											span.float-right
-												span.text-bold-600 310
-												| /500
-										.progress.progress-sm.mt-1.mb-0.box-shadow-1
-											.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 48%', aria-valuenow='48', aria-valuemin='0', aria-valuemax='100')
-						.col-12.col-md-3
-							.card
-								.card-header
-									h4.card-title Top Products
-									a.heading-elements-toggle
-										i.la.la-ellipsis-v.font-medium-3
-									.heading-elements
-										ul.list-inline.mb-0
-											li
-												a(href='#') Show all
+									h4.card-title Category Trend Time-series Analysis
 								.card-content.collapse.show
 									.card-body.p-0
 										.table-responsive
 											table.table.mb-0
 												tbody
 													tr
-														th.border-top-0(scope='row') iPone X
-														td.border-top-0 2245
+														th#categoryOne.border-top-0(scope='row')
+														td#predictionOne.border-top-0
 													tr
-														th(scope='row') One Plus
-														td 1850
+														th#categoryTwo(scope='row')
+														td#predictionTwo
 													tr
-														th(scope='row') Samsung S7
-														td 1550
+														th#categoryThree(scope='row')
+														td#predictionThree
 						.col-12.col-md-6
 							.card
 								.card-header
-									h4.card-title.text-center Average Deal Size
+									h4.card-title.text-center User Counter
 								.card-content.collapse.show
 									.card-body.pt-0
 										.row
 											.col-md-6.col-12.border-right-blue-grey.border-right-lighten-5.text-center
-												h6.danger.text-bold-600 -30%
-												h4.font-large-2.text-bold-400 $12,536
-												p.blue-grey.lighten-2.mb-0 Per rep
+												h6.danger.text-bold-600#consignorPerc
+												h4.font-large-2.text-bold-400#consignorCount
+												p.blue-grey.lighten-2.mb-0 Consignor
 											.col-md-6.col-12.text-center
-												h6.success.text-bold-600 12%
-												h4.font-large-2.text-bold-400 $18,548
-												p.blue-grey.lighten-2.mb-0 Per team
+												h6.success.text-bold-600#bidderPerc
+												h4.font-large-2.text-bold-400#bidderCount
+												p.blue-grey.lighten-2.mb-0 Bidder
 					// / Emails Products & Avg Deals
 					// Total earning & Recent Sales
 					.row
-						.col-12.col-md-4
-							.card
-								.card-content
-									.earning-chart.position-relative
-										.chart-title.position-absolute.mt-2.ml-2
-											h1.display-4 $1,596
-											span.text-muted Total Earning
-										canvas#earning-chart.height-450
-										.chart-stats.position-absolute.position-bottom-0.position-right-0.mb-2.mr-3
-											a.btn.round.btn-danger.mr-1.btn-glow(href='#')
-												| Statistics 
-												i.ft-bar-chart
-											span.text-muted
-												| for the 
-												a.danger.darken-2(href='#') last year.
-						#recent-sales.col-12.col-md-8
+						.col-12.col-md-6
 							.card
 								.card-header
-									h4.card-title Recent Sales
+									h4.card-title Online Users
 									a.heading-elements-toggle
-										i.la.la-ellipsis-v.font-medium-3
+										i.la.la-ellipsis-h.font-medium-3
 									.heading-elements
 										ul.list-inline.mb-0
 											li
-												a.btn.btn-sm.btn-danger.box-shadow-2.round.btn-min-width.pull-right(href='invoice-summary.html', target='_blank') View all
+												a(data-action='collapse')
+													i.ft-minus
+											li
+												a(data-action='reload')
+													i.ft-rotate-cw
+											li
+												a(data-action='expand')
+													i.ft-maximize
+											li
+												a(data-action='close')
+													i.ft-x
+
+								.card-content
+									.rickshaw-wrap
+										#line-chart
+										.rickshaw-legend-wrap
+											#line-chart-legend
+
+
+						#recent-sales.col-12.col-md-6
+							.card
+								.card-header
+									h4.card-title Top Bidders
+									a.heading-elements-toggle
+										i.la.la-ellipsis-v.font-medium-3
+									
 								.card-content.mt-1
 									.table-responsive
 										table#recent-orders.table.table-hover.table-xl.mb-0
 											thead
 												tr
-													th.border-top-0 Product
-													th.border-top-0 Customers
-													th.border-top-0 Categories
-													th.border-top-0 Popularity
-													th.border-top-0 Amount
-											tbody
-												tr
-													td.text-truncate iPone X
-													td.text-truncate.p-1
-														ul.list-unstyled.users-list.m-0
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-4.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-5.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Rebecca Jones')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-6.png', alt='Avatar')
-															li.avatar.avatar-sm
-																span.badge.badge-info +8 more
-													td
-														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
-													td
-														.progress.progress-sm.mt-1.mb-0.box-shadow-2
-															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 85%', aria-valuenow='85', aria-valuemin='0', aria-valuemax='100')
-													td.text-truncate $ 1200.00
-												tr
-													td.text-truncate iPad
-													td.text-truncate.p-1
-														ul.list-unstyled.users-list.m-0
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-7.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-8.png', alt='Avatar')
-															li.avatar.avatar-sm
-																span.badge.badge-info +5 more
-													td
-														button.btn.btn-sm.btn-outline-success.round(type='button') Tablet
-													td
-														.progress.progress-sm.mt-1.mb-0.box-shadow-2
-															.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 75%', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100')
-													td.text-truncate $ 1190.00
-												tr
-													td.text-truncate OnePlus
-													td.text-truncate.p-1
-														ul.list-unstyled.users-list.m-0
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-1.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-2.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Rebecca Jones')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-3.png', alt='Avatar')
-															li.avatar.avatar-sm
-																span.badge.badge-info +3 more
-													td
-														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
-													td
-														.progress.progress-sm.mt-1.mb-0.box-shadow-2
-															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 70%', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100')
-													td.text-truncate $ 999.00
-												tr
-													td.text-truncate ZenPad
-													td.text-truncate.p-1
-														ul.list-unstyled.users-list.m-0
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-11.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-12.png', alt='Avatar')
-													td
-														button.btn.btn-sm.btn-outline-success.round(type='button') Tablet
-													td
-														.progress.progress-sm.mt-1.mb-0.box-shadow-2
-															.progress-bar.bg-gradient-x-success(role='progressbar', style='width: 65%', aria-valuenow='65', aria-valuemin='0', aria-valuemax='100')
-													td.text-truncate $ 1150.00
-												tr
-													td.text-truncate Pixel 2
-													td.text-truncate.p-1
-														ul.list-unstyled.users-list.m-0
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Kimberly Simmons')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-6.png', alt='Avatar')
-															li.avatar.avatar-sm.pull-up(data-toggle='tooltip', data-popup='tooltip-custom', data-original-title='Willie Torres')
-																img.media-object.rounded-circle(src='assets/images/portrait/small/avatar-s-4.png', alt='Avatar')
-													td
-														button.btn.btn-sm.btn-outline-danger.round(type='button') Mobile
-													td
-														.progress.progress-sm.mt-1.mb-0.box-shadow-2
-															.progress-bar.bg-gradient-x-danger(role='progressbar', style='width: 45%', aria-valuenow='45', aria-valuemin='0', aria-valuemax='100')
-													td.text-truncate $ 1180.00
+													
+													th.border-top-0 #
+													th.border-top-0 Sales
+													th.border-top-0 Customer Username
+													th.border-top-0 Customer Name
+											tbody#topTable
+												
+													
 					// / Total earning & Recent Sales
 					// Analytics map based session
-					.row
+					.row(hidden)
 						.col-12
 							.card.box-shadow-0
 								.card-content
@@ -683,7 +528,8 @@ html.loading(lang='en', data-textdirection='ltr')
 				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
 					| Hand-crafted & Made with 
 					i.ft-heart.pink
-		
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
 		// BEGIN VENDOR JS
 		script(src='assets/vendors/js/vendors.min.js', type='text/javascript')
 		// BEGIN VENDOR JS
@@ -694,6 +540,9 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
 		script(src='assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
 		script(src='assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/d3.min.js', type='text/javascript')
+		script(src='/assets/js/core/libraries/jquery_ui/jquery-ui.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/rickshaw.min.js', type='text/javascript')
 		// END PAGE VENDOR JS
 		// BEGIN MODERN JS
 		script(src='assets/js/core/app-menu.min.js', type='text/javascript')
@@ -701,5 +550,439 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='assets/js/scripts/customizer.min.js', type='text/javascript')
 		// END MODERN JS
 		// BEGIN PAGE LEVEL JS
-		script(src='assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/charts/rickshaw/line.min.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
+		
+
+		// END PAGE VENDOR JS
+
+
 		// END PAGE LEVEL JS
+		script.
+			const numberWithCommas = (x) => {
+				var parts = x.toString().split(".");
+				parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+				return parts.join(".");
+			}
+		script.
+			$(document).ready(function(){
+				
+
+				$.post('/reports/graphical/topbidder').then(function(data){
+					if(data.indicator){
+						for(var i = 0; i < data.topbidders.length; i++){
+							var topbidder = data.topbidders[i];
+
+							$('#topTable').append(`<tr>
+														<td>${i+1}</td>
+														<td><button class="btn btn-sm btn-outline-danger round count" type="button">${topbidder.winCount}</button></td>
+														<td class="text-truncate customerUserName">${topbidder.strUsername}</td>
+														<td class="text-truncate customerName">${topbidder.strName}</td>
+													</tr>`)
+						}
+					}
+				})
+
+				//-Time-series Analysis -//
+				$.post('/reports/categories/timeseries').then(function(data){
+					if(data.indicator){
+						var forecast = data.forecast;
+						console.log(forecast)
+
+						$('#categoryOne').text(forecast[0].category)
+						$('#categoryTwo').text(forecast[1].category)
+						$('#categoryThree').text(forecast[2].category)
+						$('#predictionOne').text(forecast[0].predict)
+						$('#predictionTwo').text(forecast[1].predict)
+						$('#predictionThree').text(forecast[2].predict)
+					}
+				})
+
+				//-Time-series Analysis -//
+
+				$.post('/reports/registeredconsignor/count').then(function(data){
+					if(data.indicator){
+
+
+
+						if(data.percentage > 0){
+							$('#consignorPerc').text(data.percentage+'%').css('color', 'green');;
+
+						}
+						else if(data.percentage < 0){
+							$('#consignorPerc').text(data.percentage+'%').css('color', 'red');;		
+											
+						}
+						else if(data.percentage == 0){
+							$('#consignorPerc').text(data.percentage+'%').css('color', 'lightblue');;		
+						}
+
+
+						if(data.consignorCount == null){
+							$('#consignorCount').text(0);							
+						}
+						else
+							$('#consignorCount').text(data.consignorCount);
+					}
+				})
+
+				$.post('/reports/registeredbidder/count').then(function(data){
+					if(data.indicator){
+						
+						if(data.percentage > 0){
+							$('#bidderPerc').text(data.percentage+'%').css('color', 'green');;
+
+						}
+						else if(data.percentage < 0){
+							$('#bidderPerc').text(data.percentage+'%').css('color', 'red');;		
+											
+						}
+						else if(data.percentage == 0){
+							$('#bidderPerc').text(data.percentage+'%').css('color', 'lightblue');;		
+						}
+
+						if(data.bidderCount == null){
+							$('#bidderCount').text(0);							
+						}
+						else
+							$('#bidderCount').text(data.bidderCount);
+					}
+				})
+
+				$.post('/reports/consignment/counter').then(function(data){
+					if(data.indicator){
+						console.log(data)
+						$('#consignmentCounter').text(data.consignmentCount)
+
+
+						if(data.percentage > 0){
+							$('#percentageCounter').text(data.percentage+'%');
+							$('#percentageIcon').addClass('la-arrow-up').removeClass('la-arrow-down').removeClass('la-minus')
+						}
+						else if(data.percentage < 0){
+							$('#percentageCounter').text(data.percentage+'%');		
+							$('#percentageIcon').addClass('la-arrow-down').removeClass('la-arrow-up').removeClass('la-minus	')
+											
+						}
+						else if(data.percentage == 0){
+							$('#percentageCounter').text(data.percentage+'%');		
+							$('#percentageIcon').removeClass('la-arrow-up').removeClass('la-arrow-down').addClass('la-minus')
+						}
+					}
+				})
+
+				$.post('/reports/netincome/currentmonth').then(function(data){
+					if(data.indicator){
+						console.log(data)
+						$('#netIncomeCounter').text('₱'+parseFloat(data.netIncome).toFixed(2))
+
+
+						if(data.percentage > 0){
+							$('#percentageNICounter').text(data.percentage+'%');
+							$('#percentageNIIcon').addClass('la-arrow-up').removeClass('la-arrow-down').removeClass('la-minus')
+						}
+						else if(data.percentage < 0){
+							$('#percentageNICounter').text(data.percentage+'%');		
+							$('#percentageNIIcon').addClass('la-arrow-down').removeClass('la-arrow-up').removeClass('la-minus	')
+											
+						}
+						else if(data.percentage == 0){
+							$('#percentageNICounter').text(data.percentage+'%');		
+							$('#percentageNIIcon').removeClass('la-arrow-up').removeClass('la-arrow-down').addClass('la-minus')
+						}
+					}
+				})
+
+				$.post('/reports/netloss/currentmonth').then(function(data){
+					if(data.indicator){
+						console.log(data)
+						$('#netLossCounter').text(data.Loss)
+
+
+						if(data.percentage > 0){
+							$('#percentageNLCounter').text(data.percentage+'%');
+							$('#percentageNLIcon').addClass('la-arrow-up').removeClass('la-arrow-down').removeClass('la-minus')
+						}
+						else if(data.percentage < 0){
+							$('#percentageNLCounter').text(data.percentage+'%');		
+							$('#percentageNLIcon').addClass('la-arrow-down').removeClass('la-arrow-up').removeClass('la-minus	')
+											
+						}
+						else if(data.percentage == 0){
+							$('#percentageNLCounter').text(data.percentage+'%');		
+							$('#percentageNLIcon').removeClass('la-arrow-up').removeClass('la-arrow-down').addClass('la-minus')
+						}
+					}
+				})
+
+				$.post('/reports/revenue/currentmonth').then(function(data){
+					if(data.indicator){
+						console.log('Total revenue for this month: ' + data.totalRevenue);
+						$('#currentMonth').text(`₱`+numberWithCommas(data.totalRevenue.toFixed(2)));
+					}else{
+						$('#currentMonth').text(`₱0.00`);						
+					}
+				})
+
+				$.post('/reports/revenue/prevmonth').then(function(data){
+					if(data.indicator){
+						console.log('Total revenue for this month: ' + data.totalRevenue);
+						$('#prevMonth').text(`₱`+numberWithCommas(data.totalRevenue.toFixed(2)));
+					}else{
+						$('#prevMonth').text(`₱0.00`);						
+					}
+				})
+
+				
+			})
+		script.
+			// for revenue graph
+			$(window).on("load",function(){
+
+				$.post('/reports/graphical/items').then(function(data){
+					if(data.indicator){
+						var percentageFilled = parseFloat(data.percentageFilled).toFixed(2);
+						var percentageRemaining = parseFloat(data.percentageRemaining).toFixed(2);
+						var doneItems = parseFloat(data.doneItems)
+						var totalItems = parseFloat(data.totalItems)
+						$("#percentageItemRemaining").text(percentageRemaining + '%')
+						$("#countItemFilled").text(doneItems)
+						$("#countItemTotal").text('/'+totalItems)
+						Chart.defaults.dealsDoughnut=Chart.defaults.doughnut;
+						t=Chart.controllers.doughnut.prototype.draw;
+						var i=Chart.controllers.doughnut.extend({
+							draw:function(){
+								t.apply(this,arguments);
+								var e=this.chart.chart.ctx,
+								o=e.fill,
+								a=this.chart.width,
+								r=this.chart.height,
+								i=(r/114).toFixed(2);
+								this.chart.ctx.font=i+"em Verdana",
+								this.chart.ctx.textBaseline="middle";
+								var l=Math.round((a-this.chart.ctx.measureText(`${percentageFilled}%`).width)/2),
+								n=r/2;this.chart.ctx.fillText(`${percentageFilled}%`,l,n),
+								e.fill=function(){
+									e.save(),
+									e.shadowColor="#FF4961",
+									e.shadowBlur=30,
+									e.shadowOffsetX=0,
+									e.shadowOffsetY=12,
+									o.apply(this,arguments),
+									e.restore()
+								}
+							}
+						});
+						Chart.controllers.dealsDoughnut=i;
+						o=document.getElementById("deals-doughnut"),
+						new Chart(o,{
+							type:"dealsDoughnut",
+							data:{
+								labels:["Remain","Completed"],
+								datasets:[{
+									label:"Favourite",
+									borderWidth:0,
+									backgroundColor:["#ff7b8c","#FFF"],
+									data:[100-percentageFilled,percentageFilled]
+								}]
+							},
+							options:{
+								responsive:!0,
+								title:{
+									display:!1
+								},
+								legend:{
+									display:!1
+								},
+								layout:{
+									padding:{
+										left:16,right:16,top:16,bottom:16
+									}
+								},
+								cutoutPercentage:94,
+								animation:{
+									animateScale:!1,
+									duration:5e3
+								}
+							}
+						});
+
+					}
+				})
+
+				$.post('/reports/graphical/storage').then(function(data){
+					if(data.indicator){
+						var percentageFilled = parseFloat(data.percentageFilled).toFixed(2);
+						var percentageRemaining = parseFloat(data.percentageRemaining).toFixed(2);
+						if(percentageRemaining <= 10){
+							$('#remaining').text(`- ${percentageRemaining} % Remaining (Critical Level)`)
+						}
+						else{
+							$('#remaining').text(`- ${percentageRemaining} % Remaining`)							
+						}
+						Chart.defaults.hitRateDoughnut=Chart.defaults.doughnut;
+						t=Chart.controllers.doughnut.prototype.draw;
+						var r=Chart.controllers.doughnut.extend({
+							draw:function(){
+								t.apply(this,arguments);
+								var e=this.chart.chart.ctx,
+									o=e.fill,
+									a=this.chart.width,
+									r=this.chart.height,
+									i=(r/114).toFixed(2);
+								this.chart.ctx.font=i+"em Verdana",
+								this.chart.ctx.textBaseline="middle";
+								var l=Math.round((a-this.chart.ctx.measureText(percentageFilled + '%').width)/2),
+									n=r/2;
+								this.chart.ctx.fillText(percentageFilled+ '%',l,n),
+								e.fill=function(){
+									e.save(),
+									e.shadowColor="#bbbbbb",
+									e.shadowBlur=30,
+									e.shadowOffsetX=0,
+									e.shadowOffsetY=12,
+									o.apply(this,arguments),
+									e.restore()
+								}
+							}
+						});
+						Chart.controllers.hitRateDoughnut=r;
+						o=document.getElementById("hit-rate-doughnut"),
+						new Chart(o,{
+							type:"hitRateDoughnut",
+							data:{
+								labels:["Remain","Completed"],
+								datasets:[{
+									label:"Favourite",
+									backgroundColor:["#28D094","#FF4961"],
+									data:[percentageRemaining, percentageFilled]
+								}]
+							},
+							options:{
+								responsive:!0,
+								title:{
+									display:!1
+								},
+								legend:{
+									display:!1
+								},
+								layout:{
+									padding:{
+										left:16,
+										right:16,
+										top:16,
+										bottom:16
+									}
+								},
+								cutoutPercentage:92,
+								animation:{
+									animateScale:!1,
+									duration:2500
+								}
+							}
+						});
+					}
+				})
+
+				$.post('/reports/revenue/graphical').then(function(data){
+					if(data.indicator){
+						var revenues = [];
+						var months = []
+						for(var i = data.totalRevenue.length -1; i >= 0 ; i--){
+							if(data.totalRevenue[i][0].totalRevenue != null){
+								revenues.push(data.totalRevenue[i][0].totalRevenue);
+								months.push(data.monthReport[i])
+							}	
+							else{
+								revenues.push(0);
+								months.push(data.monthReport[i])								
+							}
+							if(i == 0){
+								console.log(Math.max.apply(Math, revenues))
+								console.log('=')
+								Chart.defaults.derivedLine=Chart.defaults.line;
+								var t=Chart.controllers.line.prototype.draw,
+									e=Chart.controllers.line.extend({
+										draw:function(){
+											t.apply(this,arguments);
+											var e=this.chart.chart.ctx,
+												o=e.stroke;
+											e.stroke=function(){
+												e.save(),
+												e.shadowColor="#ffb6c0",
+												e.shadowBlur=30,
+												e.shadowOffsetX=0,
+												e.shadowOffsetY=20,
+												o.apply(this,arguments),
+												e.restore()
+											}
+										}
+									});
+								var l=document.getElementById("earning-chart").getContext("2d");
+								new Chart(l,{
+									type:"line",
+									options:{
+										responsive:!0,
+										maintainAspectRatio:!1,
+										datasetStrokeWidth:3,
+										pointDotStrokeWidth:4,
+										tooltipFillColor:"rgba(0,0,0,0.8)",
+										legend:{
+											display:!1,
+											position:"bottom"
+										},
+										hover:{
+											mode:"label"
+										},
+										scales:{
+											xAxes:[{
+												display:!1
+											}],
+											yAxes:[{
+												display:!1,
+												ticks:{
+													min:0,
+													max:Math.max.apply(Math, revenues) + Math.max.apply(Math, revenues) / 5
+												}
+											}]
+										},
+										title:{
+											display:!1,
+											fontColor:"#FFF",
+											fullWidth:!1,
+											fontSize:40,
+											text:"82%"
+										}
+									},
+									data:{
+										labels: months,
+										datasets:[{
+											label:"Revenue",
+											data: revenues,
+											backgroundColor:"rgba(255,117,136,0.12)",
+											borderColor:"#FF4961",
+											borderWidth:3,
+											strokeColor:"#FF4961",
+											capBezierPoints:!0,
+											pointColor:"#fff",
+											pointBorderColor:"#FF4961",
+											pointBackgroundColor:"#FFF",
+											pointBorderWidth:3,
+											pointRadius:5,
+											pointHoverBackgroundColor:"#FFF",
+											pointHoverBorderColor:"#FF4961",
+											pointHoverRadius:7
+										}]
+									}
+								});
+		
+							}
+						}
+					}
+				})
+
+				
+			})
+

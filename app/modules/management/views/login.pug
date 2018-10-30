@@ -1,0 +1,198 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| Login Page - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
+			| Dashboard
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/app-assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/custom.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/login-register.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/formValidation.css')
+		link(rel='stylesheet', type='text/css', href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel="stylesheet" type="text/css" href="/assets/vendors/css/extensions/toastr.css")
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
+		// END Custom CSS
+		style.
+			.has-error .control-label,
+			.has-error .help-block,
+			.has-error .form-control-feedback {
+				color: #a94442;
+			}
+
+			/* Color of valid field */
+			.has-success .control-label,
+			.has-success .help-block,
+			.has-success .form-control-feedback {
+				color: #3c763d;
+			}
+			.form-group.has-feedback.has-error .form-control,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single:focus{
+				border: 1px solid #a94442 !important;
+			}
+			.form-group.has-feedback.has-success .form-control,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single:focus{
+				border: 1px solid #3c763d !important;
+			}
+
+			.form-control-feedback.fa.fa-check{
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 35px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.form-control-feedback.fa.fa-times {
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 54px;
+				right: 24px;
+				margin-top: 0;
+			}
+	body.vertical-layout.vertical-menu-modern.1-column.menu-expanded.blank-page.blank-page(data-open='click', data-menu='vertical-menu-modern', data-col='1-column')
+		// ////////////////////////////////////////////////////////////////////////////
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+				.content-body
+					section.flexbox-container
+						.col-12.d-flex.align-items-center.justify-content-center
+							.col-md-4.col-10.box-shadow-2.p-0
+								.card.border-grey.border-lighten-3.m-0
+									.card-header.border-0
+										.card-title.text-center
+											.p-1
+												img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+										h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2
+											span Login with Modern
+									.card-content
+										.card-body
+											form#loginForm.form-horizontal.form-simple
+												fieldset.form-group.position-relative.has-icon-left.mb-0
+													input#username.form-control.form-control-lg.input-lg(type='text', placeholder='Username', name="username")
+													.form-control-position
+														i.la.la-user
+												fieldset.form-group.position-relative.has-icon-left
+													input#password.form-control.form-control-lg.input-lg(type='password', placeholder='Password', name="password")
+													.form-control-position
+														i.la.la-key
+									.card-footer
+										button.btn.btn-info.btn-lg.btn-block#loginButton
+											i.ft-unlock
+											|  Login
+		// ////////////////////////////////////////////////////////////////////////////
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
+		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/forms/form-login-register.min.js', type='text/javascript')
+		script(src="/assets/vendors/js/extensions/toastr.min.js" type="text/javascript")
+		// END PAGE LEVEL JS
+		script.
+			$(document).ready(function(){
+				$('form#loginForm').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						username: {
+							validators: {
+								notEmpty: {
+									message: 'Every account has its username, enter your username in order to login.'
+								},
+							}
+						},
+						password: {
+							validators: {
+								notEmpty:{
+									message: 'You should enter your password in order to log in.',
+								}
+							}
+						}			
+					}
+				})
+				$(document).on('click', '#loginButton', function(){
+					var query = !{JSON.stringify(reqQuery)}
+					$('#loginForm').data('formValidation').validate();
+					$.post('/login', {username:$('#username').val(), password:$('#password').val()})
+					.done(function(data){
+						if(data.done == true){
+							if(query.redirect){
+								location.href = query.redirect
+							}
+							else{
+								location.href = '/'
+							}
+						}
+						else if(data.done == false){
+							toastr.error("Oh no! That account doesn't exist. Please check if your username and password are correct","Account doesn't exist",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
+							})
+						}
+					})
+				});
+				$(document).keypress(function(e){
+					var query = !{JSON.stringify(reqQuery)}
+					if(e.which == 13){
+						$('#loginForm').data('formValidation').validate();
+						$.post('/login', {username:$('#username').val(), password:$('#password').val()})
+						.done(function(data){
+							if(data.done == true){
+								if(query.redirect){
+									location.href = query.redirect
+								}
+								else{
+									location.href = '/'
+								}
+							}
+							else if(data.done == false){
+								toastr.error("Oh no! That account doesn't exist. Please check if your username and password are correct","Account doesn't exist",{
+									showMethod:"slideDown",
+									hideMethod:"slideUp",
+									positionClass:"toast-bottom-right",
+									timeOut:5000
+								})
+							}
+						})
+					}
+				})
+			});

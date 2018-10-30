@@ -1,0 +1,1269 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		// favicon
+		link(rel='shortcut icon', href='/assets/shopmade/images/favicon.ico')
+		title AMSOB | Home 
+		// Google Fonts
+		link(href='/assets/css/fonts2.css', rel='stylesheet')
+		// Fonts for icons
+		link(href='/assets/shopmade/css/font-awesome.min.css', rel='stylesheet')
+		// bootstrap
+		link(href='/assets/shopmade/css/bootstrap.css', rel='stylesheet')
+		// Styles CSS
+		link(href='/assets/shopmade/css/style.css', rel='stylesheet')
+		// Animate CSS
+		link(href='/assets/shopmade/css/aos.css', rel='stylesheet')
+		link(href='/assets/shopmade/css/animate.css', rel='stylesheet')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/dropify.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/formValidation.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/selects/select2.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
+		link(href='/assets/shopmade/sm-minified.css', rel='stylesheet')
+		link(href='/assets/odometer/themes/odometer-theme-train-station.css', rel='stylesheet')
+
+		style.
+			.modalBig {
+				width: 800px;
+				height: 700px;
+			}
+			.has-error .control-label,
+			.has-error .help-block,
+			.has-error .form-control-feedback {
+				color: #a94442;
+			}
+			input::placeholder {
+				color: lightgray
+			}
+			/* Color of valid field */
+			.has-success .control-label,
+			.has-success .help-block,
+			.has-success .form-control-feedback {
+				color: #3c763d;
+			}
+			.form-group.has-feedback.has-error .form-control,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single:focus{
+				border: 1px solid #a94442 !important;
+			}
+			.form-group.has-feedback.has-success .form-control,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single:focus{
+				border: 1px solid #3c763d !important;
+			}
+
+			.form-control-feedback.fa.fa-check{
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 25px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.form-control-feedback.fa.fa-times {
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 54px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.swal-button.swal-button--DontSave{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Save{
+				background-color: #28D094 !important;
+			}	
+		// HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+		//if lt IE 9
+			script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+			script(src='https://oss.maxcdn.com/libs/respond./assets/shopmade/js/1.4.2/respond.min.js')
+	body
+		#main-content.m-scene
+			// Header
+			nav.navbar.navbar-toggleable-md.header-center.px-5-percent
+				.full-width-container
+					button.navbar-toggler.navbar-toggler-right.hamburger-menu-btn.ml-auto(type='button', data-toggle='collapse', data-target='#navbarNavDropdowner', aria-controls='navbarNavDropdowner', aria-expanded='false', aria-label='Toggle navigation')
+						span toggle menu
+					.row.align-items-center
+						.col-md-5
+									
+						.col-md-2
+							a.navbar-brand(href='index.html')
+								img(src='/assets/shopmade/images/logo.png', width='162', height='45', alt='Logo')
+						.col-md-5
+							#navbarNavDropdowner.collapse.navbar-collapse
+								ul.navbar-nav.ml-auto
+									-if(bidder)
+										li
+											a.dropdown-toggle(href='#', data-toggle='dropdown')
+												i.fa.fa-user-o(aria-hidden='true')
+												| &nbsp #{bidder.strName}
+											ul.dropdown-menu
+													li
+														a(href='/bid/profile') Profile
+													li
+														a(href='blog-post-single-gallery.html') Bid History
+													li
+														a(href='blog-post-single-video.html') Awards
+													li
+														a(href='/bid/logout')
+															| Log out
+									-else
+										li
+											a(ref='#' data-toggle='modal' data-target='#loginModal')
+												i.fa.fa-user-o(aria-hidden='true')
+												| &nbsp Log in |	
+											a(ref='#' data-toggle='modal' data-target='#regModal')
+												i.fa.fa-user-plus(aria-hidden='true')
+												| &nbsp Sign up
+			// End Header
+			#loginModal.modal
+				.modal-dialog.modal-md(role='document')
+					.modal-content
+						.modal-header(style='border-bottom: none;')
+							
+							button#closeLogin.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							.row#errorMessage(style='display: none;')
+								.col-md-12
+									.bs-callout-warning.callout-border-left.callout-bordered.p-1(style='border: 3px solid red; padding: 1.25rem 1.25rem!important')
+										h6(style='color: red;') Log in Failed
+										.row
+											.col-md-2
+												i.fa.fa-exclamation.fa-5x(style='color: red;')
+											.col-md-10
+												p(style='color:red')
+													| Username and/or Password cannot be found on our records.
+											//- 	p(style='color:red')
+											//- 		| Uh-oh, you cannot discover, bid, and win because you have not paid the registration fee. 
+											//- 		| To settle payment, 
+											//- 		a.btn-bottom-line(href='#' data-toggle='modal' data-target='#paymentModal') click here.
+							.row
+								.col-md-8.offset-md-2
+									h2.left-dash Log in
+									p
+										| Go up with Auction Pride of the Philippines!
+							.row
+							form#loginForm
+								.form-group.row
+									.col-sm-12.col-xs-12
+										label Username:
+											span(style='color: red')  *
+										input#usernamie(type='text', name='usernamie')
+								.form-group.row
+									.col-sm-12.col-xs-12
+										label Password:
+											span(style='color: red')  *
+										input#passwordie(type='password', name='passwordie')
+								.form-group.row
+									.col-sm-12.col-xs-12
+										button#logInButton.btn.btn-block.m-1.btn-default(type='button') Log in
+										
+										
+
+			#regModal.modal
+				.modal-dialog.modal-lg(style='max-width: 1160px;' role='document')
+					.modal-content
+						.modal-header(style='border-bottom: none;')
+							h4.modal-title.text-center 
+								img(src='assets/images/logo/logo-dark.png', alt='branding logo')
+							button#closeLogin.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							.row
+								.col-md-5.offset-md-2
+									h2.left-dash Bidder Registration
+									p
+										| Register now in Auction Pride of the Philippines 
+										br
+										| Online Bidding Portal to fully experiece bidding 
+										br
+										| anytime and anywhere you like with ease!
+								.col-md-5.align-center
+									span.reveal-title 1
+									h4#subReveal Bidder Information
+									
+
+							
+							form#reg.row(method='POST', action='/bid/register' enctype='multipart/form-data')
+								.col-md-4
+									br
+									br
+									br
+									img(src='/assets/images/bidding.png', alt='Product Img')
+								#stepOne.col-md-8
+									#formReg
+										.form-group.row
+											.col-sm-4.col-xs-12
+												label First Name:
+													span(style='color: red')  *
+												input(type='text', name='firstName' placeholder='Juan')
+											.col-sm-4.col-xs-12
+												label Middle Name:
+												input(type='text', name='midName' placeholder='Dela')
+											.col-sm-4.col-xs-12
+												label Last Name:
+													span(style='color: red')  *
+												input(type='text', name='lastName' placeholder='Cruz')
+										.form-group.row
+											.col-sm-12.col-xs-12
+												label Home Address:
+													span(style='color: red')  *											
+												input.validate-required.validate-email(type='text', name='homeAddress' placeholder='Lot 21 Blk 13, 13th Avenue, Parang, Marikina City')
+										.form-group.row
+											.col-sm-6.col-xs-12
+												label Contact Number:
+													span(style='color: red')  *												
+												input#contactNumber(type='text', name='contactNumber' placeholder='E.g (+63) 999 999-9999 or 999-9999')
+											.col-sm-6.col-xs-12
+												label E-mail Address:
+													span(style='color: red')  *											
+												input.validate-required.validate-email(type='text', name='emailAddress' placeholder='juana@email.com')
+										.form-group.row
+											.col-md-2
+											.col-md-8
+												label ID Proof:
+													span(style='color: red')  *											
+												input#id.dropify(type='file', name='id' accept='image/*' data-height='300' data-allowed-file-extensions="jpeg jpg png")
+											.col-md-2
+										.form-group.row
+											.col-md-2
+											.col-md-8
+												label(for='personalID') ID:
+													span(style='color: red')  *
+												select#personalID.form-control(name='personalID' style="width: 100%")
+													option(value="") Select
+													optgroup#idOptions(label='Government Issued ID')
+														//- option(value='Alien Certificate of Registration (ACR I-Card)') Alien Certificate of Registration (ACR I-Card)
+														//- option(value=`Armed Forces of the Philippines (AFP) ID`) Armed Forces of the Philippines (AFP) ID
+														//- option(value='Barangay Clearance/Certificate') Barangay Clearance/Certificate
+														//- option(value=`Certification from the National Council for the Welfare of Disabled Persons (NCWDP)`) Certification from the National Council for the Welfare of Disabled Persons (NCWDP)
+														//- option(value=`Consular ID`) Consular ID
+														//- option(value=`Department of Social Welfare and Development (DSWD) ID`) Department of Social Welfare and Development (DSWD) ID
+														//- option(value=`Driver's License`) Driver's License
+														//- option(value='Government Service Insurance System (GSIS ID)') Government Service Insurance System (GSIS ID)
+														//- option(value='Marriage Certificate (PSA Authenticated)') Marriage Certificate (PSA Authenticated)
+														//- option(value='National Bureau of Investigation (NBI) Clearance') National Bureau of Investigation (NBI) Clearance
+														//- option(value=`OFW ID`) OFW ID
+														//- option(value=`Overseas Worker's Welfare Administration (OWWA) ID`) Overseas Worker's Welfare Administration (OWWA) ID
+														//- option(value=`PAG-IBIG ID`) PAG-IBIG ID
+														//- option(value=`Passport`) Passport
+														//- option(value='PhilHealth Identification Card (PIC)') PhilHealth Identification Card (PIC)
+														//- option(value=`Philippine Overseas Employment Association (POEA) ID`) Philippine Overseas Employment Association (POEA) ID
+														//- option(value='Philippine Statistics Authority (PSA) Birth Certificate') Philippine Statistics Authority (PSA) Birth Certificate
+														//- option(value='Philippine National Police (PNP) ID') Philippine National Police (PNP) ID
+														//- option(value='Police Clearance') Police Clearance
+														//- option(value='Postal ID') Postal ID
+														//- option(value=`PRA Special Resident Retiree Visa (SRRV) ID`) PRA Special Resident Retiree Visa (SRRV) ID
+														//- option(value='Professional Regulation Commission ID (PRC ID)') Professional Regulation Commission ID (PRC ID)
+														//- option(value=`Seaman's Book`) Seaman's Book
+														//- option(value=`Senior Citizen's ID Card`) Senior Citizen's ID Card
+														//- option(value='Social Security System ID (SSS ID)')  Social Security System ID (SSS ID)
+														//- option(value='Tax Identification Number (TIN ID)') Tax Identification Number (TIN ID)
+														//- option(value=`Unified Multi-Purpose ID (UMID)`) Unified Multi-Purpose ID (UMID)
+														//- option(value=`Voter's ID`) Voter's ID
+
+										.form-group.row
+											.col-md-2
+											.col-md-8
+												label ID Number:
+													span(style='color: red')  *											
+												input#idNumber.validate-required.validate-email(type='text', name='idNumber')
+										.form-group.row
+											.col-md-3
+											.col-md-6
+												button#nextOne.btn.btn-block.m-1.btn-outline-info(type='button') Next
+								#stepTwo.col-md-8(style='display: none')
+									#formCred
+										br
+										br
+										br
+										.form-group.row
+											.col-sm-6.col-xs-12
+												label Username:
+													span(style='color: red')  *
+												input(type='text', name='userName')
+											.col-sm-6.col-xs-12
+												label Password:
+													span(style='color: red')  *												
+												input(type='password', name='passWord')
+								
+										.row
+											.col-md-12
+												.form-group.row.clearfix
+													.col-lg-12
+														.checkbox.checkbox-info
+															input#agree(type='checkbox' name='agree')
+															label(for='agree')
+																|  &nbsp I agree with the
+																a#biddersAgreement(style='color:blue') &nbsp; Bidder's Agreement
+														#errormessage(style='color: red')
+										.form-group.row
+											.col-md-6
+												button#prev.btn.btn-block.m-1.btn-outline-info(type='button') Back												
+											.col-md-6
+												button#nextTwo.btn.btn-block.m-1.btn-outline-success(type='button') Signup
+
+
+
+			.page-container.scene-main.scene-main--fade_In
+				
+
+				// main page
+				.fluid-container.px-5-percent
+					.row
+						.col-md-12
+							#main-carousel.owl-carousel.default-carousel
+								.carousel-item
+									.carousel-item-content.top_40
+										.fluid-container
+											.row
+												.col-md-5.offset-1
+													h1
+														| Auction Pride of 
+														br
+														|  the Philippines
+													p.lead.mb_30.hidden-md-down
+														| Bid Now. Save Big!
+													-if(bidder)
+														-if(bidder.booStatus == 1)
+															a.btn.btn-default(href='#catalog') Bid Now
+														-else									
+															button.btn.btn-default(type='button', data-toggle='modal', data-target='#regModal') Join Now
+													-else									
+														button.btn.btn-default(type='button', data-toggle='modal', data-target='#regModal') Join Now
+																	
+									-if(auction)
+										-if(auction.strBanner)
+											div
+												img(src=`/assets/uploads/${auction.strBanner}`, alt='Product Img', width='1728', height='840')
+										-else
+											div
+												img(src='/assets/shopmade/images/image-credit-nendo-25.jpg', alt='Product Img', width='1728', height='840')
+									-else
+										div
+											img(src='/assets/shopmade/images/image-credit-nendo-25.jpg', alt='Product Img', width='1728', height='840')
+								.carousel-item
+									.carousel-item-content
+										.fluid-container
+											.row.align-items-center
+												.col-md-5.offset-1
+													h1
+														| Beautiful
+														br
+														|  Tonella Sofa
+												
+									div
+										img(src='/assets/shopmade/images/image-credit-nendo-49.jpg', alt='Product Img', width='1920', height='932')
+								.carousel-item
+									.carousel-item-content
+										.fluid-container
+											.row.align-items-center
+												.col-md-5.offset-1
+													h1
+														| Bid
+														br
+														|  Seamlessly
+													
+									div
+										img(src='/assets/shopmade/images/image-credit-nendo-50.jpg', alt='Product Img', width='1920', height='932')
+				.container.mt_70.mb_50
+					-if(auction)
+						.row
+							.col-md-8
+								h2 Auction Number ##{auction.intAuctionID}: #{auction.strAuctionName}
+						.row
+							.col-md-12
+								#getting-started.countdown.mb_40
+								p  #{auction.strDescription}
+					-else if(auctionlist)
+						.row
+							.col-md-8.offset-md-2
+								h2.left-dash Upcoming Auction Schedules
+					-else
+						.row
+							.col-md-8.offset-md-2
+								h2.left-dash No Upcoming Auction Schedules
+
+
+				
+				.fluid-container.px-5-percent
+					-if(auctionlist)
+						.row
+							.col-md-12
+								table.table
+									thead
+										tr
+											th Date Schedule
+											th Auction Name
+											th Description
+											th Action
+									tbody
+										each auct in auctionlist
+											tr
+												td #{auct.datDateStart} - #{auct.datDateEnd} 
+												td #{auct.strAuctionName}
+												td #{auct.strDescription}
+												td
+													a.btn.btn-default(href='/bid/catalog/'+auct.intAuctionID)
+														i.fa.fa-eye
+														|  View Catalog	
+													
+										
+																	
+					ul#catalog.row.products
+						//- <li class="product col-md-3 col-sm-6">
+						//- 	<a href="/bid/single">
+						//- 		<img alt="items", src="/assets/shopmade/images/image-credit-nendo-40.jpg", width="430", height="480"/>
+						//- 		<h2> Mango </h2>
+						//- 		<span class="price">
+						//- 			<span class="amount">
+						//- 				<span class="currencySymbol"> P 550.00s
+						//- 				</span>
+						//- 			</span>
+						//- 		</span>
+						//- 	</a>
+						//- 	<a class="btn-bottom-line" href="#" data-toggle="modal" data-target="#loginModal"> Bid </a>
+						//- </li>
+						//- li.product.col-md-3.col-sm-6
+						//- 	a(href='single-product.html')
+						//- 		img(alt='product', src='/assets/shopmade/images/image-credit-nendo-40.jpg', width='430', height='480')
+						//- 		h2 Mango Sofa Won
+						//- 		span.price
+						//- 			span.amount
+						//- 				span.currencySymbol P
+						//- 				| 559.00
+						//- 	a.btn-bottom-line(href='#' data-toggle='modal', data-target='#loginModal')  Bid
+						//- li.product.col-md-3.col-sm-6
+						//- 	a(href='single-product.html')
+						//- 		img(alt='product', src='/assets/shopmade/images/products/image-credit-nendo-10.jpg', width='430', height='480')
+						//- 		h2 Campfire series for Mitab
+						//- 		span.price
+						//- 			span.amount
+						//- 				span.currencySymbol P
+						//- 				| 750.00
+						//- 	a.btn-bottom-line(href='#' data-toggle='modal', data-target='#loginModal')  Bid
+						//- li.product.col-md-3.col-sm-6
+						//- 	a(href='single-product.html')
+						//- 		img(alt='product', src='/assets/shopmade/images/products/image-credit-nendo-11.jpg', width='430', height='480')
+						//- 		h2 Shell stool brwon
+						//- 		span.price
+						//- 			span.amount
+						//- 				span.currencySymbol P
+						//- 				| 399.00
+						//- 	a.btn-bottom-line(href='#' data-toggle='modal', data-target='#loginModal')  Bid
+						//- li.product.col-md-3.col-sm-6
+						//- 	a(href='single-product.html')
+						//- 		img(alt='product', src='/assets/shopmade/images/image-credit-nendo-42.jpg', width='430', height='480')
+						//- 		h2 Shell stool black
+						//- 		span.price
+						//- 			span.amount
+						//- 				span.currencySymbol P
+						//- 				| 399.00
+						//- 	a.btn-bottom-line(href='#' data-toggle='modal', data-target='#loginModal')  Bid
+						//- li.product.col-md-3.col-sm-6
+						//- 	a(href='single-product.html')
+						//- 		img(alt='product', src='/assets/shopmade/images/products/image-credit-nendo-12.jpg', width='430', height='480')
+						//- 		h2 Mango Sofa Won
+						//- 		span.price
+						//- 			span.amount
+						//- 				span.currencySymbol P
+						//- 				| 559.00
+						//- 	a.btn-bottom-line(href='#' data-toggle='modal', data-target='#loginModal')  Bid
+						//- li.product.col-md-3.col-sm-6
+						//- 	a(href='single-product.html')
+						//- 		img(alt='product', src='/assets/shopmade/images/products/image-credit-nendo-13.jpg', width='430', height='480')
+						//- 		h2 Campfire series for Mitab
+						//- 		span.price
+						//- 			span.amount
+						//- 				span.currencySymbol P
+						//- 				| 750.00
+						//- 	a.btn-bottom-line(href='#' data-toggle='modal', data-target='#loginModal')  Bid
+						//- li.product.col-md-3.col-sm-6
+						//- 	a(href='single-product.html')
+						//- 		img(alt='product', src='/assets/shopmade/images/image-credit-nendo-41.jpg', width='430', height='480')
+						//- 		h2 Shell stool brwon
+						//- 		span.price
+						//- 			span.amount
+						//- 				span.currencySymbol P
+						//- 				| 399.00
+						//- 	a.btn-bottom-line(href='#' data-toggle='modal', data-target='#loginModal')  Bid
+						//- li.product.col-md-3.col-sm-6
+						//- 	a(href='single-product.html')
+						//- 		img(alt='product', src='/assets/shopmade/images/image-credit-nendo-9.jpg', width='430', height='480')
+						//- 		h2 Shell stool black
+						//- 		span.price
+						//- 			span.amount
+						//- 				span.currencySymbol P
+						//- 				| 399.00
+						//- 	a.btn-bottom-line(href='#' data-toggle='modal', data-target='#loginModal')  Bid
+				.bg-grey-light.pt_100.pb_100.align-center.mx-5-percent
+					.container
+						.row
+							.col-md-6.offset-md-3.align-center
+								h2 Discount News
+								p
+									| Lorem ipsum dolor sit amet, omittam nam saepe tibique no, eum evertitur vero adversarium et.
+									| Efficiantur consequuntur et evertitur. Cum ei omittam repudiare evertitur.
+								.row.mt_40
+									.input-group.col-md-8.offset-md-2
+										input.form-control(type='text', placeholder='Enter your email')
+										span.input-group-btn
+											button.btn.btn-default(type='button') Submit
+
+				// main page end
+				.px-5-percent
+					footer
+						.footer_container
+							.fluid-container
+								.row.align-items-center
+									.col-lg-4
+										p
+											| © 2018 AMSOB | PUP
+									.col-lg-4
+										ul.footer_nav.align-center
+									.col-lg-4.align-right
+										ul.list-inline
+											li
+												a(href='https://www.facebook.com/energeticthemes')
+													i.fa.fa-facebook(aria-hidden='true')
+											li
+												a(href='https://instagram.com/energeticthemes')
+													i.fa.fa-instagram(aria-hidden='true')
+											li
+												a(href='https://behance.com/energeticthemes')
+													i.fa.fa-behance(aria-hidden='true')
+											li
+												a(href='https://twitter.com/energeticthemes')
+													i.fa.fa-twitter(aria-hidden='true')
+		// ==================================================
+		// Placed js files at the end of the document so the pages load faster
+		input#errorFieldOne(hidden type='text')
+		input#errorFieldTwo(hidden type='text')
+		#agreement
+			input#errorfieldAgree(type='hidden' name='errorfieldAgree' value='')
+		-if(auction)
+			input#datDateEnd(type='hidden' name='datDateEnd' value=auction.datDateEnd)
+			input#auctionName(type='hidden' name='datDateEnd' value=auction.strAuctionName)
+		-else
+			input#datDateEnd(type='hidden' name='datDateEnd' value='')
+			input#auctionName(type='hidden' name='datDateEnd' value='')
+		-if(bidder)
+			input#bidder(value=1 hidden)
+		-else
+			input#bidder(value=0 hidden)
+		script(type='text/javascript', src='/assets/shopmade/js/jquery.min.js')
+		script(src='/assets/shopmade/js/bootstrap.min.js')
+		script(type='text/javascript', src='/assets/shopmade/js/plugins.min.js')
+		script(type='text/javascript', src='/assets/shopmade/js/jquery.smoothState.min.js')
+		script(type='text/javascript', src='http://maps.google.com/maps/api/js?key=AIzaSyAE_JprYsi2sHzUcl8u1DbcUgQnDveJWs4')
+		script(type='text/javascript', src='/assets/shopmade/js/main.js')
+		script(src='/assets/vendors/js/dropify.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
+		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/extended/form-inputmask.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/jquery.mask.min.js')
+		script(src='/assets/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/inputmask/jquery.inputmask.bundle.min.js', type='text/javascript')
+		script(src="/assets/vendors/js/zxcvbn.js")
+		script(src='/assets/vendors/js/jquery.form.js', type='text/javascript')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+		script(type='text/javascript', src='/assets/odometer/odometer.js')
+		script(src='/assets/js/scripts/forms/extended/form-inputmask.min.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+		script.
+			$(document).ready(function(){
+				var utilities = !{JSON.stringify(util)}
+				console.log(utilities)
+				$(document).on('click', '#biddersAgreement', function(){
+					var test =`<br><p>
+						The company shall facilitate collection of the Winning Bid Price and
+						corresponding Buyer’s Premium from the successful bidders within ${utilities.intPaymentDays}
+						banking days immediately after the auction.<br><br>
+						The Bidder understands and agrees that they are buying the items/lot “AS IS,
+						WHERE IS” and “WITH ALL FAULTS”, means no warranty will be granted.<br><br>
+						Upon the fall of the hammer, title to the Item/Lot passes to the highest Bidder
+						acknowledged by the Auctioneer, subject to the condition set forth herein, and
+						at such time Buyer assumes full risk and responsibility for the Item/Lot and
+						neither the Owner, Auctioneer nor its agent shall be responsible for the loss of,
+						or any damage to, any Item/Lot due to theft, fire, breakage or any cause
+						whatsoever.<br><br>
+						The Auctioneer shall not release the Item/Lot to the Bidder unless the
+						Bidder/Buyer settled all of his account and presents adequate proof of payment
+						for the Item/Lot claimed.<p>`
+					swal({
+						html: true,
+						title: `Bidder's Agreement`,
+						text: 'Agreement',
+						icon: 'info',
+						className: 'modalBig',
+						button: false
+					})
+					$('.modalBig').eq(0).children('.swal-text')[0].innerHTML = test;
+				})
+				$.post('/bid/query/idtypes').done(function(data){
+					console.log(data.ids)
+					for(var i=0; i<data.ids.length; i++){
+						$('#idOptions').append(`<option class='idOption' value='${data.ids[i].strIDTypeDesc}' format='${data.ids[i].strIDTypeFormat}'>${data.ids[i].strIDTypeDesc}</option>'`)
+					}
+				})
+				$(document).on('change', '#personalID', function(){
+					$('.idOption:selected').each(function(){
+						$('#idNumber').mask($(this).attr('format'), {
+							translation: {
+								'A': {
+									pattern: /[A-Z]/
+								},
+								'0': {
+									pattern: /[0-9]/
+								}
+							}
+						})
+					})
+				})
+			})
+		script.
+
+			function putBD(bundle, info){
+				var $lot;
+				if($('#bidder').val() == 0){
+					$lot = $(`<li class="product col-md-3 col-sm-6">
+									<a href="single-product.html">
+										<img alt="product" src="/assets/uploads/${bundle.strBundlePicture}" width="430" height="480"/>
+										<h2>${bundle.strBundleTitle}
+										<span class="badge badge-glow badge-pill badge-success">Bundle</span></h2>
+										<span class="price">
+											<span class="currencySymbol">P
+											</span>
+											<span class="amount odometer" id="catalog${bundle.intCatalogID}" catalogid=${bundle.intCatalogID}>
+											</span>
+										</span>
+									</a>
+									<a href="#" data-toggle="modal" data-target="#loginModal" class="btn-bottom-line"> Bid</a>
+								</li>`)
+				}
+				else if($('#bidder').val() == 1){
+					$lot = $(`<li class="product col-md-3 col-sm-6">
+									<a href="single-product.html">
+										<img alt="product" src="/assets/uploads/${bundle.strBundlePicture}" width="430" height="480"/>
+										<a href="/bid/bundle/${bundle.intCatalogID}"><h2>${bundle.strBundleTitle}
+										 <span class="badge badge-glow badge-pill badge-success">Bundle</span></h2></a>
+										<span class="price">
+											<span class="currencySymbol">P
+											</span>
+											<span class="amount odometer" id="catalog${bundle.intCatalogID}" catalogid=${bundle.intCatalogID}>
+											</span>
+										</span>
+									</a>
+									<a href="/bid/bundle/${bundle.intCatalogID}" class="btn-bottom-line"> Bid</a>
+								</li>`)
+				}
+				$('#catalog').append($lot).hide().fadeIn(500)
+
+				console.log(info.bid.dblBidPrice)
+					
+				var el = document.querySelector(`#catalog${bundle.intCatalogID}`);
+
+				od = new Odometer({
+				el: el,
+
+				// Any option (other than auto and selector) can be passed in here
+				format: '(,ddd).ddd',
+				});
+
+				od.update((info.bid.dblBidPrice).toFixed(2))
+				
+
+			}
+			function putRP(item, info){
+				var tempObj= JSON.parse(item.jsonOtherSpecifications)
+				var $lot;
+				if(tempObj.hasOwnProperty('Screensize')){
+					tempObj['Screensize'] = tempObj['Screensize']+' inches';						
+				}
+				if(tempObj.hasOwnProperty('Wattage')){
+					tempObj['Wattage'] = tempObj['Wattage']+' watts';						
+				}
+				if(tempObj.hasOwnProperty('Storage') && item.strCategory == "Mobile"){
+					tempObj['Storage'] = tempObj['Storage']+' GB';						
+				}
+				if(tempObj.hasOwnProperty('Ram')){
+					tempObj['Ram'] = 'RAM '+tempObj['Ram']+' GB';						
+				}								
+				var valuesOnly = Object.values(tempObj)//-array values
+				console.log(valuesOnly)
+				var desc = valuesOnly[0]
+				for(var x = 1; x < valuesOnly.length; x++){
+					desc = desc+' '+valuesOnly[x]
+				}
+				if($('#bidder').val() == 0){
+					$lot = $(`<li class="product col-md-3 col-sm-6">
+									<a href="single-product.html">
+										<img alt="product" src="/assets/uploads/${item.strPicture}" width="430" height="480"/>
+										<h2>${desc} &nbsp<span class="badge badge-glow badge-pill badge-info">Single</span></h2>
+										<span class="price">
+											<span class="currencySymbol">P
+											</span>
+											<span class="amount odometer" id="catalog${item.intCatalogID}" catalogid=${item.intCatalogID}>
+											</span>
+										</span>
+									</a>
+									<a href="#" data-toggle="modal" data-target="#loginModal" class="btn-bottom-line"> Bid</a>
+								</li>`)
+				}
+				else if($('#bidder').val() == 1){
+					$lot = $(`<li class="product col-md-3 col-sm-6">
+									<a href="/bid/item/${item.intCatalogID}">
+										<img alt="product" src="/assets/uploads/${item.strPicture}" width="430" height="480"/>
+										<h2>${desc} &nbsp<span class="badge badge-glow badge-pill badge-info">Single</span></h2>
+										<span class="price">
+											<span class="currencySymbol">P
+											</span>
+											<span class="amount odometer" id="catalog${item.intCatalogID}" catalogid=${item.intCatalogID}>
+											</span>
+										</span>
+									</a>
+									<a href="/bid/item/${item.intCatalogID}" class="btn-bottom-line"> Bid</a>
+								</li>`)
+				}
+				$('#catalog').append($lot).hide().fadeIn(500)
+
+				console.log(info.bid.dblBidPrice)
+					
+				var el = document.querySelector(`#catalog${item.intCatalogID}`);
+
+				od = new Odometer({
+				el: el,
+
+				// Any option (other than auto and selector) can be passed in here
+				format: '(,ddd).ddd',
+				});
+
+				od.update((info.bid.dblBidPrice).toFixed(2))
+				
+
+			}
+
+
+			function getRP(item){
+				
+				$.post('/bid/bidlist/access', {
+					intCatalogID: item.intCatalogID,
+					booPrice: item.booPrice,
+					intConsignmentItemID: item.intConsignmentItemID,
+				}).then(function(info){
+					if(info.indicator){
+						putRP(item, info)
+
+
+					}//if
+					else{
+						swal({
+							title: 'Something went wrong!',
+							icon: 'error'
+						})
+					}//else
+				})
+			}
+
+
+			function getBD(bundle){
+				
+				$.post('/bid/bidlist/access', {
+					intCatalogID: bundle.intCatalogID,
+					booPrice: 0,
+				}).then(function(info){
+					if(info.indicator){
+						putBD(bundle, info)
+					}//if
+					else{
+						swal({
+							title: 'Something went wrong!',
+							icon: 'error'
+						})
+					}//else
+				})
+			}
+		
+
+		
+
+		// Mirrored from www.energeticthemes.com/templates/shopmade/home-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Aug 2018 16:32:00 GMT
+		script.
+			$(window).ready(function(){
+				var hostname = `!{hostname}`
+				var port = `!{port}`
+				var socket = io(`http://${hostname}:${port}`);
+
+				socket.on('bidding', function(price, catalogid){
+						var pri = parseFloat(price).toFixed(2)
+						console.log($("#catalog"+catalogid).text())
+						$("#catalog"+catalogid).text(pri)
+						
+					
+				});
+
+
+				$.post('/bid/awards').then(function(data){
+					if(data.indicator){
+						for(var i = 0; i < data.awards.length; i++){
+							var award;
+							console.log('=============')
+							console.log(new Date(data.awards[i].datDateEnd))
+							console.log((new Date(data.awards[i].datDateEnd) > new Date()))
+							if(new Date(data.awards[i].datDateEnd2) < new Date() && new Date(data.awards[i].shouldEnd) < new Date()){
+								if(data.awards[i].booSIStatus == 0 || data.awards[i].booSIStatus == 4){
+									$.post('/bid/ban', {
+										intAuctionID: data.awards[i].intSIAuctionID, 
+									}).then(function(data){
+										location.href = '/bid'
+									})
+								}
+							}							
+						}//-for loop
+					}//- indicator
+				})
+				
+
+				$.post('/bid/catalog').then(function(data){
+					if(data.indicator){
+						if(data.items){
+
+							for(var i = 0; i < data.items.length; i ++){
+								var item = data.items[i];
+								console.log('yup', item)
+
+								getRP(item)						
+							}
+						}
+						if(data.bundles){
+							for(var i = 0; i < data.bundles.length; i ++){
+								var bundle = data.bundles[i]; 	 	
+								getBD(bundle)
+							}
+						}
+					}
+					else{
+						//- console.log('something went wrong')
+					}
+				})	
+
+				//- countdown
+				var dateEnd = $('#datDateEnd').val();
+				var auctionName =  $('#auctionName').val();
+
+				if(dateEnd != ''){
+					var $getting_started = $('#getting-started');
+					if ($getting_started.length) {
+						$getting_started.countdown(dateEnd, function (event) {
+							$(this).html(event.strftime('<span class="countdown_value"> %d <span class="countdown_lable"> Days </span> </span> <span class="countdown_value"> %H <span class="countdown_lable"> Hours </span></span> <span class="countdown_value"> %M <span class="countdown_lable"> Minutes </span></span> <span class="countdown_value"> %S <span class="countdown_lable"> Seconds </span></span>'));
+						})
+						.on('finish.countdown', function(event){
+								swal({
+									title: 'Auction Finished!',
+									text: `Thank you for joining Auction ${auctionName}!`,
+									icon: 'success',
+									timer: 5000,
+								})
+								setTimeout(function(){
+									location.href = '/bid'
+								}, 5000)
+						});
+					}	
+				}
+				
+
+				$('#id').dropify({
+					allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+					messages: {
+						'default': 'Drag and drop an image here or click',
+						'replace': 'Drag and drop or click to replace',
+						'remove': 'Remove',
+						'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+					},
+					error: {
+						'fileSize': 'The file size is too big (1M max).',
+						'fileFormat': 'The file format is not allowed ({{ value }} only).'
+					}
+				});
+
+				$('#personalID').select2({
+					width: 'resolve',
+				});
+
+				$('#agree').iCheck({
+					checkboxClass: 'icheckbox_flat-blue',
+				});
+
+				$('#agree').on('ifChecked', function(event){
+					$('#agreement').find('#errorfieldAgree').val('yes').end();
+					$('#agreement').formValidation('revalidateField', 'errorfieldAgree')
+				});
+
+				$('#agree').on('ifUnchecked', function(event){
+					$('#agreement').find('#errorfieldAgree').val('').end();
+					$('#agreement').formValidation('revalidateField', 'errorfieldAgree')
+				});
+
+				$(document).on('click', '.dropify-clear', function(){
+					
+					$('#formReg').formValidation('revalidateField', 'id');
+				})
+
+				$(document).on('click', '#nextOne', function(){
+					$('#formReg').data('formValidation').validate();
+					if($('#errorFieldOne').val() == 0){
+						$('#stepOne').fadeOut(500, function(){
+							$('#stepTwo').fadeIn(500)
+							$('.reveal-title').text(2)
+							$('#subReveal').text('Bidder Credentials')
+						})
+					}
+				})
+
+				$(document).on('click', '#prev', function(){
+					$('#stepTwo').fadeOut(500, function(){
+						$('#stepOne').fadeIn(500);
+					})
+				})
+
+				$(document).on('click', '#logInButton', function(){
+					var username = $('#usernamie').val();
+					var password = $('#passwordie').val();
+
+					$.post('/bid', {
+						username: username,
+						password: password,
+					}).then(function(data){
+						if(data.indicator == 'success'){
+							location.href = '/bid'
+						}
+						else{
+							$('#loginModal').on('hide.bs.modal', function(){
+								$('#errorMessage').fadeOut(1000);
+								$('#loginModal').on('hide.bs.modal');
+							})
+
+							$('#loginModal').addClass('animated shake');
+
+							$('#errorMessage').fadeIn(1000);
+							
+							setTimeout(function(){
+
+								$('#loginModal').removeClass('animated shake');
+							}, 2000)
+								
+							
+							
+						}
+					})
+				})
+
+				$(document).on('click', '#nextTwo', function(){
+					$('#formCred').data('formValidation').validate();
+					$('#agreement').data('formValidation').validate();
+					console.log($('#errorFieldOne').val());
+					if($('#errorFieldOne').val() == 0 && $('#errorfieldAgree').val() == 'yes'){
+						//- console.log('yes')
+						var formData = new FormData(); //FormData (Pre-requisite: Jquery Form and Multer) use for File Ajax
+						$('#formReg input').each(function(index, obj){
+							formData.append(obj.name, obj.value);
+						})
+						$('#formCred input').each(function(index, obj){
+							formData.append(obj.name, obj.value);
+						})
+						formData.append('personalID', $('#personalID').val());						
+						formData.append('IDPicture', $('#id')[0].files[0]);
+
+						console.log(formData)
+
+						$.ajax({
+							type: "POST",
+							url: "/bid/register",
+							data: formData,
+							processData: false,
+							contentType: false,
+							success: function(data){
+								if(data.indicator == 'duplicate'){
+									swal({
+										title: 'Duplicate Account',
+										text: 'The bidder has already registered.',
+										icon: 'error'
+									})
+									$('#stepTwo').fadeOut(500, function(){
+										$('#stepOne').fadeIn(500);
+									})
+								}
+								else{
+
+									var hostname = `!{hostname}`
+									var port = `!{port}`
+									var socket = io(`http://${hostname}:${port}`);
+
+									socket.emit('newBidder');
+
+									var
+											closeInSeconds = 5,
+											displayText = "Redirecting to homepage in #1 second/s.",
+											timer;
+
+										swal({
+											title: "Successfully Registered",   
+											text: displayText.replace(/#1/, closeInSeconds),   
+											timer: closeInSeconds * 1000,
+											icon: 'success',
+											button: false 
+										});
+
+
+										timer = setInterval(function() {
+
+											closeInSeconds--;
+
+											if (closeInSeconds < 0) {
+
+												clearInterval(timer);
+											}
+
+											$('.sweet-alert > p').text(displayText.replace(/#1/, closeInSeconds));
+
+										}, 1000);
+										setTimeout(function(){
+											console.log('yes')
+										}, closeInSeconds*1000)
+
+										$('#regModal').modal('toggle');
+									
+
+
+								}
+							}
+						})
+					
+
+
+					}
+				})
+
+				$('#formCred').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						userName: {
+							validators: {
+								
+								notEmpty: {
+									message: `Enter your desired username. You'll use this to sign in to your account.`									
+								},
+								stringLength: {
+									min: 6,
+									max: 30,
+									message: 'The username must be minimum of 6 characters and maximum of 30 characters.'
+								},
+								regexp: {
+									regexp: /^[a-zA-Z0-9_\.]+$/,
+									message: 'The username can only consist of alphabetical, number, dot and underscore'
+								},
+								remote: {
+									url: '/bid/usernameavailability',
+									message: 'Username has been taken',
+									validKey: 'username',
+									type: 'POST'
+								},
+							}
+						},
+						passWord: {
+							validators: {
+								notEmpty: {
+									message: 'The password is required'
+								},
+								callback: {
+									callback: function(value, validator, $field) {
+										var password = $field.val();
+										if (password == '') {
+											return true;
+										}
+
+										var result  = zxcvbn(password),
+											score   = result.score,
+											message = result.feedback.warning || 'The password is weak';
+
+										// Update the progress bar width and add alert class
+										var $bar = $('#strengthBar');
+										switch (score) {
+											case 0:
+												$bar.attr('class', 'progress-bar progress-bar-danger')
+													.css('width', '1%');
+												break;
+											case 1:
+												$bar.attr('class', 'progress-bar progress-bar-danger')
+													.css('width', '25%');
+												break;
+											case 2:
+												$bar.attr('class', 'progress-bar progress-bar-danger')
+													.css('width', '50%');
+												break;
+											case 3:
+												$bar.attr('class', 'progress-bar progress-bar-warning')
+													.css('width', '75%');
+												break;
+											case 4:
+												$bar.attr('class', 'progress-bar progress-bar-success')
+													.css('width', '100%');
+												break;
+										}
+
+										// We will treat the password as an invalid one if the score is less than 3
+										if (score < 3) {
+											return {
+												valid: false,
+												message: message
+											}
+										}
+
+										return true;
+									}
+								}
+							}
+						},
+					}
+				})
+				.on('err.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorFieldTwo').val(invalidFields)
+				})
+				.on('success.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorFieldTwo').val(invalidFields)
+				});
+				
+				
+
+
+				$('#formReg').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						firstName: {
+							validators: {
+								notEmpty: {
+									message: 'Please enter your first name'
+								},
+							}
+						},
+						lastName: {
+							validators: {
+								notEmpty:{
+									message: 'Please enter your last name',
+								}
+							}
+						},
+						homeAddress: {
+							validators: {
+								notEmpty: {
+									message: 'Please enter your home address'
+								},
+							}
+						},
+						contactNumber: {
+							validators: {
+								notEmpty: {
+									message: 'Please enter your contact number'
+								},
+								regexp: {
+									regexp: /(([0-9]{3}-[0-9]{4}))/ || /(([(]{1}[+]{1}63[)]{1} [0-9]{3} [0-9]{3}-[0-9]{4}))/,
+									message: 'Invalid Contact Format.'
+								},
+							}
+						},
+						emailAddress: {
+							validators: {
+								
+								notEmpty: {
+									message: 'Enter your e-mail address'
+								},
+								emailAddress: {
+									message: 'This is not a valid e-mail address.'
+								},
+								remote: {
+									url: '/bid/emailavailability',
+									message: 'E-mail address has been taken',
+									validKey: 'email',
+									type: 'POST'
+								},
+							}
+						},
+						personalID: {
+							validators: {
+								notEmpty: {
+									message: 'Choose what type of ID you are presenting'
+								},
+							}
+						},
+						idNumber: {
+							validators: {
+								notEmpty: {
+									message: `Enter ID Number on ID Presented`
+								},
+							}
+						},
+						id: {
+							validators: {
+								notEmpty: {
+									message: 'Please upload a photo of your ID for verification.'
+								},
+							}
+						},
+					}
+				})
+				.on('err.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorFieldOne').val(invalidFields)
+				})
+				.on('success.field.fv', function(e, data) {
+					// Get the first invalid field
+					var invalidFields = data.fv.getInvalidFields().length;
+					$('#errorFieldOne').val(invalidFields)
+				});
+
+				$('#agreement').formValidation({
+					framework: 'bootstrap',
+					err: {
+						container: '#errormessage'
+					},
+					icon: {
+						valid: 'fa fa-check',
+						invalid: 'fa fa-times',
+						validating: 'fa fa-spinner'
+					},
+					fields: {
+						errorfieldAgree: {
+							excluded: false,
+							validators: {
+								notEmpty:{
+									message: 'You must agree first to consignor agreement.',
+								}
+							}
+						},
+					}//Fields
+				})//Agreement Formvalidation
+			})

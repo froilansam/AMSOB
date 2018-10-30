@@ -1,0 +1,720 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| AMSOB Consignor Portal | Dashboard
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/weather-icons/climacons.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/meteocons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist-plugin-tooltip.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/horizontal-menu.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/timeline.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/dashboard-ecommerce.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		// END Custom CSS
+		style.
+			.card .card-body:before {
+				font-family: fontawesome;
+				font-size: 10rem;
+				color: rgba(255,255,255,.15);
+				position: absolute;
+				bottom: -32px;
+				right: 0;
+			}
+			.sales::before {
+				content: "\f0d6";
+			}
+			.consignment::before {
+				content: "\f07a";
+			}
+			.form-control:disabled, .form-control[readonly], .input-group-addon {
+				background-color: transparent;
+				border: none! important;
+				font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+			}
+			.pull-up{
+				z-index: 0 !important;
+			}
+	body.horizontal-layout.horizontal-menu.horizontal-menu-padding.2-columns.menu-expanded(data-open='click', data-menu='horizontal-menu', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.navbar-static-top.navbar-brand-center.navbar-dark.bg-gradient-x-cyan
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.text-center
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AMSOB
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.container.center-layout
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+									i.ft-menu
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+							
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.consignor.strRepresentativeFirstName} #{session.consignor.strRepresentativeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									.dropdown-divider
+									a.dropdown-item(href='/consignorhome/logout')
+										i.ft-power
+										|  Logout
+							
+		// ////////////////////////////////////////////////////////////////////////////
+		.header-navbar.navbar-expand-sm.navbar.navbar-horizontal.navbar-fixed.navbar-dark.navbar-without-dd-arrow.navbar-shadow(role='navigation', data-menu='menu-wrapper')
+			.navbar-container.main-menu-content.container.center-layout(data-menu='menu-container')
+				ul#main-menu-navigation.nav.navbar-nav(data-menu='menu-navigation')
+					li.dropdown.nav-item(data-menu='dropdown')
+						a.dropdown-toggle.nav-link(href='index.html', data-toggle='dropdown')
+							i.la.la-area-chart
+							span Menu
+						ul.dropdown-menu
+							li.dropdown
+								a.dropdown-item(href='/consignorhome', data-toggle='dropdown') Dashboard
+							li.dropdown
+								a.dropdown-item(href='/consignorhome/consignment', data-toggle='dropdown') Consignment
+							li.dropdown
+								a.dropdown-item(href='/consignorhome/auctionresults', data-toggle='dropdown') Auction Result
+					
+				
+
+
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Consignor's Dashboard
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+								ol.breadcrumb
+									li.breadcrumb-item.active
+										| Dashboard
+				.content-body
+					// eCommerce statistic
+					
+					.row
+						.col-md-6
+							.card.bg-success.pull-up
+								.card-content
+									.card-body.sales.pb-1
+										.row.text-white
+											.col-6
+												h1
+													i.fa.fa-money.background-round.text-white
+												h4.pt-1.m-0.text-white
+													span#percentageNICounter 
+													i#percentageNIIcon.la
+											.col-6.text-right
+												h3.text-white.mb-2 Net Income
+												span#netIncomeCounter
+						.col-md-6
+							.card.bg-red.pull-up
+								.card-content
+									.card-body.consignment.pb-1
+										.row.text-white
+											.col-6
+												h1
+													i.fa.fa-shopping-cart.background-round.text-white
+												h4.pt-1.m-0.text-white
+													span#percentageCounter 
+													i#percentageIcon.la
+											.col-6.text-right
+												h3.text-white.mb-2 Consignment
+												span#consignmentCounter
+						// / eCommerce statistic
+					// Products sell and New Orders
+					.row.match-height
+
+						.col-xl-12.col-lg-12
+							.card.text-white.bg-info
+								.card-content
+									.position-relative
+										.chart-title.position-absolute.mt-2.ml-2.white
+											h1.display-4.text-white 84%
+											span Monthly Net Income
+										//- Cards-chart.min.js
+										canvas#netIncomeChart.height-450.block
+										.chart-stats.position-absolute.position-bottom-0.position-right-0.mb-2.mr-3.white
+											a.btn.bg-info.bg-darken-3.mr-1.white(href='#')
+												| Statistics 
+												i.ft-bar-chart
+											|                       for the last year.
+					.row
+						.col-12.col-md-12
+							
+							.card.pull-up
+								.card-header
+									h4.card-title Category Trend Time-series Analysis
+								.card-content.collapse.show
+									.card-body.p-0
+										.table-responsive
+											table.table.mb-0
+												tbody
+													tr
+														th#categoryOne.border-top-0(scope='row')
+														td#predictionOne.border-top-0
+													tr
+														th#categoryTwo(scope='row')
+														td#predictionTwo
+													tr
+														th#categoryThree(scope='row')
+														td#predictionThree
+													tr
+														th#categoryFour(scope='row')
+														td#predictionFour
+													tr
+														th#categoryFive(scope='row')
+														td#predictionFive
+		.customizer.border-left-blue-grey.border-left-lighten-4.d-none.d-xl-block
+			a.customizer-close(href='#')
+				i.ft-x.font-medium-3
+			a.customizer-toggle.bg-danger.box-shadow-3(href='#')
+				i.ft-settings.font-medium-3.spinner.white
+			.customizer-content.p-2
+				h4.text-uppercase.mb-0 Theme Customizer
+				hr
+				p Customize & Preview in Real Time
+				h5.mt-1.mb-1.text-bold-500 Menu Color Options
+				.form-group
+					// Outline Button group
+					.btn-group.customizer-sidebar-options(role='group', aria-label='Basic example')
+						button.btn.btn-outline-info(type='button', data-sidebar='menu-light') Light Menu
+						button.btn.btn-outline-info(type='button', data-sidebar='menu-dark') Dark Menu
+				hr
+				h5.mt-1.text-bold-500 Layout Options
+				ul.nav.nav-tabs.nav-underline.nav-justified.layout-options
+					li.nav-item
+						a#baseIcon-tab21.nav-link.layouts.active(data-toggle='tab', aria-controls='tabIcon21', href='#tabIcon21', aria-expanded='true') Layouts
+					li.nav-item
+						a#baseIcon-tab22.nav-link.navigation(data-toggle='tab', aria-controls='tabIcon22', href='#tabIcon22', aria-expanded='false') Navigation
+					li.nav-item
+						a#baseIcon-tab23.nav-link.navbar(data-toggle='tab', aria-controls='tabIcon23', href='#tabIcon23', aria-expanded='false') Navbar
+				.tab-content.px-1.pt-1
+					#tabIcon21.tab-pane.active(role='tabpanel', aria-expanded='true', aria-labelledby='baseIcon-tab21')
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#collapsed-sidebar.custom-control-input(type='checkbox', name='collapsed-sidebar')
+								label.custom-control-label(for='collapsed-sidebar') Collapsed Menu
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#fixed-layout.custom-control-input(type='checkbox', name='fixed-layout')
+								label.custom-control-label(for='fixed-layout') Fixed Layout
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#boxed-layout.custom-control-input(type='checkbox', name='boxed-layout')
+								label.custom-control-label(for='boxed-layout') Boxed Layout
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#static-layout.custom-control-input(type='checkbox', name='static-layout')
+								label.custom-control-label(for='static-layout') Static Layout
+					#tabIcon22.tab-pane(aria-labelledby='baseIcon-tab22')
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#native-scroll.custom-control-input(type='checkbox', name='native-scroll')
+								label.custom-control-label(for='native-scroll') Native Scroll
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#right-side-icons.custom-control-input(type='checkbox', name='right-side-icons')
+								label.custom-control-label(for='right-side-icons') Right Side Icons
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#bordered-navigation.custom-control-input(type='checkbox', name='bordered-navigation')
+								label.custom-control-label(for='bordered-navigation') Bordered Navigation
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#flipped-navigation.custom-control-input(type='checkbox', name='flipped-navigation')
+								label.custom-control-label(for='flipped-navigation') Flipped Navigation
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#collapsible-navigation.custom-control-input(type='checkbox', name='collapsible-navigation')
+								label.custom-control-label(for='collapsible-navigation') Collapsible Navigation
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#static-navigation.custom-control-input(type='checkbox', name='static-navigation')
+								label.custom-control-label(for='static-navigation') Static Navigation
+					#tabIcon23.tab-pane(aria-labelledby='baseIcon-tab23')
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#brand-center.custom-control-input(type='checkbox', name='brand-center')
+								label.custom-control-label(for='brand-center') Brand Center
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#navbar-static-top.custom-control-input(type='checkbox', name='navbar-static-top')
+								label.custom-control-label(for='navbar-static-top') Static Top
+				hr
+				h5.mt-1.text-bold-500 Navigation Color Options
+				ul.nav.nav-tabs.nav-underline.nav-justified.color-options
+					li.nav-item
+						a#color-opt-1.nav-link.nav-semi-light.active(data-toggle='tab', aria-controls='clrOpt1', href='#clrOpt1', aria-expanded='false') Semi Light
+					li.nav-item
+						a#color-opt-2.nav-link.nav-semi-dark(data-toggle='tab', aria-controls='clrOpt2', href='#clrOpt2', aria-expanded='false') Semi Dark
+					li.nav-item
+						a#color-opt-3.nav-link.nav-dark(data-toggle='tab', aria-controls='clrOpt3', href='#clrOpt3', aria-expanded='false') Dark
+					li.nav-item
+						a#color-opt-4.nav-link.nav-light(data-toggle='tab', aria-controls='clrOpt4', href='#clrOpt4', aria-expanded='true') Light
+				.tab-content.px-1.pt-1
+					#clrOpt1.tab-pane.active(role='tabpanel', aria-expanded='true', aria-labelledby='color-opt-1')
+						.row
+							.col-6
+								h6 Solid
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#default.custom-control-input.bg-blue-grey(type='radio', name='nav-slight-clr', data-bg='bg-blue-grey')
+										label.custom-control-label(for='default') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#primary.custom-control-input.bg-primary(type='radio', name='nav-slight-clr', data-bg='bg-primary')
+										label.custom-control-label(for='primary') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#danger.custom-control-input.bg-danger(type='radio', name='nav-slight-clr', data-bg='bg-danger')
+										label.custom-control-label(for='danger') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#success.custom-control-input.bg-success(type='radio', name='nav-slight-clr', data-bg='bg-success')
+										label.custom-control-label(for='success') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#blue.custom-control-input.bg-blue(type='radio', name='nav-slight-clr', data-bg='bg-blue')
+										label.custom-control-label(for='blue') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#cyan.custom-control-input.bg-cyan(type='radio', name='nav-slight-clr', data-bg='bg-cyan')
+										label.custom-control-label(for='cyan') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#pink.custom-control-input.bg-pink(type='radio', name='nav-slight-clr', data-bg='bg-pink')
+										label.custom-control-label(for='pink') Pink
+							.col-6
+								h6 Gradient
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-grey-blue.custom-control-input.bg-blue-grey(type='radio', name='nav-slight-clr', checked='', data-bg='bg-gradient-x-grey-blue')
+										label.custom-control-label(for='bg-gradient-x-grey-blue') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-primary.custom-control-input.bg-primary(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-primary')
+										label.custom-control-label(for='bg-gradient-x-primary') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-danger.custom-control-input.bg-danger(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-danger')
+										label.custom-control-label(for='bg-gradient-x-danger') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-success.custom-control-input.bg-success(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-success')
+										label.custom-control-label(for='bg-gradient-x-success') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-blue.custom-control-input.bg-blue(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-blue')
+										label.custom-control-label(for='bg-gradient-x-blue') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-cyan.custom-control-input.bg-cyan(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-cyan')
+										label.custom-control-label(for='bg-gradient-x-cyan') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-pink.custom-control-input.bg-pink(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-pink')
+										label.custom-control-label(for='bg-gradient-x-pink') Pink
+					#clrOpt2.tab-pane(aria-labelledby='color-opt-2')
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-default.custom-control-input.bg-default(type='radio', name='nav-sdark-clr', checked='', data-bg='bg-default')
+								label.custom-control-label(for='opt-default') Default
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-primary.custom-control-input.bg-primary(type='radio', name='nav-sdark-clr', data-bg='bg-primary')
+								label.custom-control-label(for='opt-primary') Primary
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-danger.custom-control-input.bg-danger(type='radio', name='nav-sdark-clr', data-bg='bg-danger')
+								label.custom-control-label(for='opt-danger') Danger
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-success.custom-control-input.bg-success(type='radio', name='nav-sdark-clr', data-bg='bg-success')
+								label.custom-control-label(for='opt-success') Success
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-blue.custom-control-input.bg-blue(type='radio', name='nav-sdark-clr', data-bg='bg-blue')
+								label.custom-control-label(for='opt-blue') Blue
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-cyan.custom-control-input.bg-cyan(type='radio', name='nav-sdark-clr', data-bg='bg-cyan')
+								label.custom-control-label(for='opt-cyan') Cyan
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-pink.custom-control-input.bg-pink(type='radio', name='nav-sdark-clr', data-bg='bg-pink')
+								label.custom-control-label(for='opt-pink') Pink
+					#clrOpt3.tab-pane(aria-labelledby='color-opt-3')
+						.row
+							.col-6
+								h3 Solid
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-blue-grey.custom-control-input.bg-blue-grey(type='radio', name='nav-dark-clr', data-bg='bg-blue-grey')
+										label.custom-control-label(for='solid-blue-grey') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-primary.custom-control-input.bg-primary(type='radio', name='nav-dark-clr', data-bg='bg-primary')
+										label.custom-control-label(for='solid-primary') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-danger.custom-control-input.bg-danger(type='radio', name='nav-dark-clr', data-bg='bg-danger')
+										label.custom-control-label(for='solid-danger') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-success.custom-control-input.bg-success(type='radio', name='nav-dark-clr', data-bg='bg-success')
+										label.custom-control-label(for='solid-success') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-blue.custom-control-input.bg-blue(type='radio', name='nav-dark-clr', data-bg='bg-blue')
+										label.custom-control-label(for='solid-blue') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-cyan.custom-control-input.bg-cyan(type='radio', name='nav-dark-clr', data-bg='bg-cyan')
+										label.custom-control-label(for='solid-cyan') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-pink.custom-control-input.bg-pink(type='radio', name='nav-dark-clr', data-bg='bg-pink')
+										label.custom-control-label(for='solid-pink') Pink
+							.col-6
+								h3 Gradient
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-grey-blue1.custom-control-input.bg-blue-grey(type='radio', name='nav-dark-clr', data-bg='bg-gradient-x-grey-blue')
+										label.custom-control-label(for='bg-gradient-x-grey-blue1') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-primary1.custom-control-input.bg-primary(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-primary')
+										label.custom-control-label(for='bg-gradient-x-primary1') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-danger1.custom-control-input.bg-danger(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-danger')
+										label.custom-control-label(for='bg-gradient-x-danger1') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-success1.custom-control-input.bg-success(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-success')
+										label.custom-control-label(for='bg-gradient-x-success1') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-blue1.custom-control-input.bg-blue(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-blue')
+										label.custom-control-label(for='bg-gradient-x-blue1') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-cyan1.custom-control-input.bg-cyan(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-cyan')
+										label.custom-control-label(for='bg-gradient-x-cyan1') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-pink1.custom-control-input.bg-pink(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-pink')
+										label.custom-control-label(for='bg-gradient-x-pink1') Pink
+					#clrOpt4.tab-pane(aria-labelledby='color-opt-4')
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-blue-grey.custom-control-input.bg-blue-grey(type='radio', name='nav-light-clr', data-bg='bg-blue-grey bg-lighten-4')
+								label.custom-control-label(for='light-blue-grey') Default
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-primary.custom-control-input.bg-primary(type='radio', name='nav-light-clr', data-bg='bg-primary bg-lighten-4')
+								label.custom-control-label(for='light-primary') Primary
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-danger.custom-control-input.bg-danger(type='radio', name='nav-light-clr', data-bg='bg-danger bg-lighten-4')
+								label.custom-control-label(for='light-danger') Danger
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-success.custom-control-input.bg-success(type='radio', name='nav-light-clr', data-bg='bg-success bg-lighten-4')
+								label.custom-control-label(for='light-success') Success
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-blue.custom-control-input.bg-blue(type='radio', name='nav-light-clr', data-bg='bg-blue bg-lighten-4')
+								label.custom-control-label(for='light-blue') Blue
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-cyan.custom-control-input.bg-cyan(type='radio', name='nav-light-clr', data-bg='bg-cyan bg-lighten-4')
+								label.custom-control-label(for='light-cyan') Cyan
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-pink.custom-control-input.bg-pink(type='radio', name='nav-light-clr', data-bg='bg-pink bg-lighten-4')
+								label.custom-control-label(for='light-pink') Pink
+		footer.footer.footer-transparent.footer-light.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2.container.center-layout
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') AMSOB 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with 
+					i.ft-heart.pink
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(type='text/javascript', src='/assets/vendors/js/ui/jquery.sticky.js')
+		script(src='/assets/vendors/js/charts/chartist.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/chartist-plugin-tooltip.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/timeline/horizontal-timeline.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/pages/dashboard-ecommerce.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/cards/card-charts.min.js', type='text/javascript')
+		// END PAGE LEVEL JS
+		script.
+			$(document).ready(function(){
+
+				$.post('/consignorhome/reports/categories/timeseries').then(function(data){
+					if(data.indicator){
+						var forecast = data.forecast;
+						console.log(forecast)
+
+						$('#categoryOne').text(forecast[0].category)
+						$('#categoryTwo').text(forecast[1].category)
+						$('#categoryThree').text(forecast[2].category)
+						$('#categoryFour').text(forecast[3].category)
+						$('#categoryFive').text(forecast[4].category)
+						$('#predictionOne').text(forecast[0].predict)
+						$('#predictionTwo').text(forecast[1].predict)
+						$('#predictionThree').text(forecast[2].predict)
+						$('#predictionFour').text(forecast[3].predict)
+						$('#predictionFive').text(forecast[4].predict)
+					}
+				})
+
+				$.post('/consignorhome/reports/netincome/currentmonth').then(function(data){
+					if(data.indicator){
+						console.log(data)
+						if(data.netIncome){
+
+							$('#netIncomeCounter').text('₱'+parseFloat(data.netIncome).toFixed(2))
+						}
+						else{
+							$('#netIncomeCounter').text('₱'+parseFloat(0).toFixed(2))
+							
+						}
+
+
+						if(data.percentage > 0){
+							$('#percentageNICounter').text(data.percentage+'%');
+							$('#percentageNIIcon').addClass('la-arrow-up').removeClass('la-arrow-down').removeClass('la-minus')
+						}
+						else if(data.percentage < 0){
+							$('#percentageNICounter').text(data.percentage+'%');		
+							$('#percentageNIIcon').addClass('la-arrow-down').removeClass('la-arrow-up').removeClass('la-minus	')
+											
+						}
+						else if(data.percentage == 0){
+							$('#percentageNICounter').text(data.percentage+'%');		
+							$('#percentageNIIcon').removeClass('la-arrow-up').removeClass('la-arrow-down').addClass('la-minus')
+						}
+					}
+				})
+			})
+
+			$.post('/consignorhome/reports/consignment/counter').then(function(data){
+					if(data.indicator){
+						console.log(data)
+						$('#consignmentCounter').text(data.consignmentCount)
+
+
+						if(data.percentage > 0){
+							$('#percentageCounter').text(data.percentage+'%');
+							$('#percentageIcon').addClass('la-arrow-up').removeClass('la-arrow-down').removeClass('la-minus')
+						}
+						else if(data.percentage < 0){
+							$('#percentageCounter').text(data.percentage+'%');		
+							$('#percentageIcon').addClass('la-arrow-down').removeClass('la-arrow-up').removeClass('la-minus	')
+											
+						}
+						else if(data.percentage == 0){
+							$('#percentageCounter').text(data.percentage+'%');		
+							$('#percentageIcon').removeClass('la-arrow-up').removeClass('la-arrow-down').addClass('la-minus')
+						}
+					}
+				})
+		script.
+			$(window).on('load', function(){
+				Chart.defaults.hitRateDoughnut=Chart.defaults.doughnut;
+				t=Chart.controllers.doughnut.prototype.draw;
+				var r=Chart.controllers.doughnut.extend({
+					draw:function(){
+						t.apply(this,arguments);
+						var e=this.chart.chart.ctx,
+							o=e.fill,
+							a=this.chart.width,
+							r=this.chart.height,
+							i=(r/114).toFixed(2);
+						this.chart.ctx.font=i+"em Verdana",
+						this.chart.ctx.textBaseline="middle";
+						var l=Math.round((a-this.chart.ctx.measureText("77%").width)/2),
+							n=r/2;
+						this.chart.ctx.fillText("77%",l,n),
+						e.fill=function(){
+							e.save(),
+							e.shadowColor="#bbbbbb",
+							e.shadowBlur=30,
+							e.shadowOffsetX=0,
+							e.shadowOffsetY=12,
+							o.apply(this,arguments),
+							e.restore()
+						}
+					}
+				});
+				Chart.controllers.hitRateDoughnut=r;
+				o=document.getElementById("hit-rate-doughnut"),
+				new Chart(o,{
+					type:"hitRateDoughnut",
+					data:{
+						labels:["Remain","Completed"],
+						datasets:[{
+							label:"Favourite",
+							backgroundColor:["#ffcece",	"#28D094"],
+							data:[23,77]
+						}]
+					},
+					options:{
+						responsive:!0,
+						title:{
+							display:!1
+						},
+						legend:{
+							display:!1
+						},
+						layout:{
+							padding:{
+								left:16,
+								right:16,
+								top:16,
+								bottom:16
+							}
+						},
+						cutoutPercentage:92,
+						animation:{
+							animateScale:!1,
+							duration:2500
+						}
+					}
+				});
+			})
+		script.
+			!function(e,o,a){"use strict";
+				var t=o.getElementById("netIncomeChart").getContext("2d"),
+					r=t.createLinearGradient(0,0,0,400);
+				r.addColorStop(0,"rgba(255,255,255,0.5)"),
+				r.addColorStop(1,"rgba(255,255,255,0)");
+				new Chart(t,
+					{
+						type:"line",
+						options:{
+							responsive:!0,
+							maintainAspectRatio:!1,
+							datasetStrokeWidth:3,
+							pointDotStrokeWidth:4,
+							tooltipFillColor:"rgba(0,0,0,0.8)",
+							legend:{
+								display:!1
+							},
+							hover:{
+								mode:"label"
+							},
+							scales:{
+								xAxes:[
+									{
+										display:!1
+									}
+								],
+								yAxes:
+								[
+									{
+										display:!1,
+										ticks:{
+											min:0,
+											max:15000
+										}
+									}
+								]
+							},
+							title:{
+								display:!1,
+								fontColor:"#FFF",
+								fullWidth:!1,
+								fontSize:40,
+								text:"82%"
+							}
+						},
+						data:{
+							labels:["January","February","March","April","May","June","July"],
+							datasets:[
+								{
+									label:"Net Income",
+									data:[1800,7300,2999,4800,4600,4221,10232],
+									backgroundColor:r,
+									borderColor:"rgba(255,255,255,1)",
+									borderWidth:2,
+									strokeColor:"#ff6c23",
+									pointColor:"#fff",
+									pointBorderColor:"rgba(255,255,255,1)",
+									pointBackgroundColor:"#1E9FF2",
+									pointBorderWidth:2,
+									pointHoverBorderWidth:2,
+									pointRadius:5
+								}
+							]
+						}
+					});
+					}(window,document,jQuery);
+
+		

@@ -8,11 +8,10 @@ html.loading(lang='en', data-textdirection='ltr')
 		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
 		meta(name='author', content='PIXINVENT')
 		title
-			| Login Page - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
-			| Dashboard
+			| AMSOB Consignor Portal | Log In
 		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
 		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
-		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700', rel='stylesheet')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
 		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
 		// BEGIN VENDOR CSS
 		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
@@ -98,29 +97,7 @@ html.loading(lang='en', data-textdirection='ltr')
 			}
 	body.horizontal-layout.horizontal-menu.1-column.bg-lighten-2.menu-expanded.fixed-navbar(data-open='hover', data-menu='horizontal-menu', data-col='1-column')
 		// fixed-top
-		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-dark.navbar-brand-center.bg-gradient-x-cyan
-			.navbar-wrapper
-				.navbar-header
-					ul.nav.navbar-nav.flex-row
-						li.nav-item.mobile-menu.d-md-none.mr-auto
-							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
-								i.ft-menu.font-large-1
-						li.nav-item
-							a.navbar-brand(href='index.html')
-								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
-								h3.brand-text Modern Admin
-						li.nav-item.d-md-none
-							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
-								i.la.la-ellipsis-v
-				.navbar-container
-					#navbar-mobile.collapse.navbar-collapse.justify-content-end
-						ul.nav.navbar-nav
-							li.nav-item
-								a.nav-link.mr-2.nav-link-label(href='index.html')
-									i.ficon.ft-arrow-left
-							li.dropdown.nav-item
-								a.nav-link.mr-2.nav-link-label(href='#', data-toggle='dropdown')
-									i.ficon.ft-settings
+		
 		// ////////////////////////////////////////////////////////////////////////////
 		.app-content.content
 			.content-wrapper
@@ -257,35 +234,35 @@ html.loading(lang='en', data-textdirection='ltr')
 																			span.danger *
 																		select#personalID.form-control(name='personalID' style="width: 100%")
 																			option(value="") Select
-																			optgroup(label='Government Issued ID')
-																				option(value='Alien Certificate of Registration (ACR I-Card)') Alien Certificate of Registration (ACR I-Card)
-																				option(value=`Armed Forces of the Philippines (AFP) ID`) Armed Forces of the Philippines (AFP) ID
-																				option(value='Barangay Clearance/Certificate') Barangay Clearance/Certificate
-																				option(value=`Certification from the National Council for the Welfare of Disabled Persons (NCWDP)`) Certification from the National Council for the Welfare of Disabled Persons (NCWDP)
-																				option(value=`Consular ID`) Consular ID
-																				option(value=`Department of Social Welfare and Development (DSWD) ID`) Department of Social Welfare and Development (DSWD) ID
-																				option(value=`Driver's License`) Driver's License
-																				option(value='Government Service Insurance System (GSIS ID)') Government Service Insurance System (GSIS ID)
-																				option(value='Marriage Certificate (PSA Authenticated)') Marriage Certificate (PSA Authenticated)
-																				option(value='National Bureau of Investigation (NBI) Clearance') National Bureau of Investigation (NBI) Clearance
-																				option(value=`OFW ID`) OFW ID
-																				option(value=`Overseas Worker's Welfare Administration (OWWA) ID`) Overseas Worker's Welfare Administration (OWWA) ID
-																				option(value=`PAG-IBIG ID`) PAG-IBIG ID
-																				option(value=`Passport`) Passport
-																				option(value='PhilHealth Identification Card (PIC)') PhilHealth Identification Card (PIC)
-																				option(value=`Philippine Overseas Employment Association (POEA) ID`) Philippine Overseas Employment Association (POEA) ID
-																				option(value='Philippine Statistics Authority (PSA) Birth Certificate') Philippine Statistics Authority (PSA) Birth Certificate
-																				option(value='Philippine National Police (PNP) ID') Philippine National Police (PNP) ID
-																				option(value='Police Clearance') Police Clearance
-																				option(value='Postal ID') Postal ID
-																				option(value=`PRA Special Resident Retiree Visa (SRRV) ID`) PRA Special Resident Retiree Visa (SRRV) ID
-																				option(value='Professional Regulation Commission ID (PRC ID)') Professional Regulation Commission ID (PRC ID)
-																				option(value=`Seaman's Book`) Seaman's Book
-																				option(value=`Senior Citizen's ID Card`) Senior Citizen's ID Card
-																				option(value='Social Security System ID (SSS ID)')  Social Security System ID (SSS ID)
-																				option(value='Tax Identification Number (TIN ID)') Tax Identification Number (TIN ID)
-																				option(value=`Unified Multi-Purpose ID (UMID)`) Unified Multi-Purpose ID (UMID)
-																				option(value=`Voter's ID`) Voter's ID
+																			optgroup#idOptions(label='Government Issued ID')
+																				//- option(value='Alien Certificate of Registration (ACR I-Card)') Alien Certificate of Registration (ACR I-Card)
+																				//- option(value=`Armed Forces of the Philippines (AFP) ID`) Armed Forces of the Philippines (AFP) ID
+																				//- option(value='Barangay Clearance/Certificate') Barangay Clearance/Certificate
+																				//- option(value=`Certification from the National Council for the Welfare of Disabled Persons (NCWDP)`) Certification from the National Council for the Welfare of Disabled Persons (NCWDP)
+																				//- option(value=`Consular ID`) Consular ID
+																				//- option(value=`Department of Social Welfare and Development (DSWD) ID`) Department of Social Welfare and Development (DSWD) ID
+																				//- option(value=`Driver's License`) Driver's License
+																				//- option(value='Government Service Insurance System (GSIS ID)') Government Service Insurance System (GSIS ID)
+																				//- option(value='Marriage Certificate (PSA Authenticated)') Marriage Certificate (PSA Authenticated)
+																				//- option(value='National Bureau of Investigation (NBI) Clearance') National Bureau of Investigation (NBI) Clearance
+																				//- option(value=`OFW ID`) OFW ID
+																				//- option(value=`Overseas Worker's Welfare Administration (OWWA) ID`) Overseas Worker's Welfare Administration (OWWA) ID
+																				//- option(value=`PAG-IBIG ID`) PAG-IBIG ID
+																				//- option(value=`Passport`) Passport
+																				//- option(value='PhilHealth Identification Card (PIC)') PhilHealth Identification Card (PIC)
+																				//- option(value=`Philippine Overseas Employment Association (POEA) ID`) Philippine Overseas Employment Association (POEA) ID
+																				//- option(value='Philippine Statistics Authority (PSA) Birth Certificate') Philippine Statistics Authority (PSA) Birth Certificate
+																				//- option(value='Philippine National Police (PNP) ID') Philippine National Police (PNP) ID
+																				//- option(value='Police Clearance') Police Clearance
+																				//- option(value='Postal ID') Postal ID
+																				//- option(value=`PRA Special Resident Retiree Visa (SRRV) ID`) PRA Special Resident Retiree Visa (SRRV) ID
+																				//- option(value='Professional Regulation Commission ID (PRC ID)') Professional Regulation Commission ID (PRC ID)
+																				//- option(value=`Seaman's Book`) Seaman's Book
+																				//- option(value=`Senior Citizen's ID Card`) Senior Citizen's ID Card
+																				//- option(value='Social Security System ID (SSS ID)')  Social Security System ID (SSS ID)
+																				//- option(value='Tax Identification Number (TIN ID)') Tax Identification Number (TIN ID)
+																				//- option(value=`Unified Multi-Purpose ID (UMID)`) Unified Multi-Purpose ID (UMID)
+																				//- option(value=`Voter's ID`) Voter's ID
 															.row
 																#idNumberField.col-md-6
 																	.form-group
@@ -494,7 +471,7 @@ html.loading(lang='en', data-textdirection='ltr')
 										.card-title.text-center
 											img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
 										h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2
-											span Login with Modern
+											span Login
 									.card-content
 										.card-body
 											form#loginForm.form-horizontal
@@ -518,13 +495,12 @@ html.loading(lang='en', data-textdirection='ltr')
 												.form-group.row
 													.col-md-6.col-12.text-center.text-md-left
 													.col-md-6.col-12.text-center.text-md-right
-														a.card-link(href='recover-password.html') Forgot Password?
 											button#loginButton.btn.btn-danger.btn-block.btn-lg
 												i.ft-unlock
 												|  Login
 									.card-footer.border-0
 										p.card-subtitle.line-on-side.text-muted.text-center.font-small-3.mx-2.my-1
-											span New to Modern ?
+											span New to AMSOB?
 										button.btn.btn-info.btn-block.btn-lg.mt-3(type='button', data-toggle='modal', data-target='#signUpModal')
 											i.ft-user
 											|  Apply
@@ -533,10 +509,10 @@ html.loading(lang='en', data-textdirection='ltr')
 			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
 				span.float-md-left.d-block.d-md-inline-block
 					| Copyright © 2018 
-					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') AMSOB 
 					| , All rights reserved.
 				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
-					| Hand-crafted & Made with 
+					| Made with 
 					i.ft-heart.pink
 		input#errorfieldProfileCompany(type='text' hidden)
 		input#errorfieldProfilePersonal(type='text' hidden)
@@ -551,8 +527,9 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
 		// BEGIN VENDOR JS
 		// BEGIN PAGE VENDOR JS
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.3.0/zxcvbn.js")
+		script(src="/assets/vendors/js/zxcvbn.js")
 		script(src='/assets/vendors/js/extensions/jquery.steps.js', type='text/javascript')
+		script(src='/assets/vendors/js/jquery.mask.min.js')
 		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
 		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
@@ -597,10 +574,31 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/js/scripts/forms/extended/form-maxlength.min.js', type='text/javascript')
 		script(src='/assets/js/scripts/forms/extended/form-card.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/jquery.form.js', type='text/javascript')
-		script(src='http://oss.maxcdn.com/jquery.mask/1.11.4/jquery.mask.min.js')
+		script(src='/socket.io/socket.io.js')
+
 		//- script for Log in
 		script.
 			$(document).ready(function(){
+				$.post('/consignorportal/query/idtypes').done(function(data){
+					console.log(data.ids)
+					for(var i=0; i<data.ids.length; i++){
+						$('#idOptions').append(`<option class='idOption' value='${data.ids[i].strIDTypeDesc}' format='${data.ids[i].strIDTypeFormat}'>${data.ids[i].strIDTypeDesc}</option>'`)
+					}
+				})
+				$(document).on('change', '#personalID', function(){
+					$('.idOption:selected').each(function(){
+						$('#idNumber').mask($(this).attr('format'), {
+							translation: {
+								'A': {
+									pattern: /[A-Z]/
+								},
+								'0': {
+									pattern: /[0-9]/
+								}
+							}
+						})
+					})
+				})
 				$('form#loginForm').formValidation({
 					framework: 'bootstrap',
 					icon: {
@@ -635,12 +633,45 @@ html.loading(lang='en', data-textdirection='ltr')
 					var invalidFields = data.fv.getInvalidFields().length;
 					$('#errorfieldLogin').val(invalidFields)
 				});
+				$(document).keypress(function(e){
+					if(e.which == 13) {
+						$('#loginForm').data('formValidation').validate();
+						if($('#errorfieldLogin').val() == 0){
+							$.post('/consignorportal/authentication', {
+								username: $('#usernamelogin').val(),
+								password: $('#passwordlogin').val(),
+							}).done(function(data){
+								if(data.indicator == 'failed'){
+									$('#alertLogin').empty();
+									$('#alertLogin').append($(`<div class="row">
+																<div class="col-md-12">
+																	<div role="alert" class="alert bg-danger alert-icon-left alert-arrow-left alert-dismissible mb-2"><span class="alert-icon"><i class="fa fa-exclamation-circle"></i></span>
+																	<button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true">×</span></button><span>We think you have entered <strong>the wrong </strong></span>username or password. But do not worry, you can try again.
+																	</div>
+																</div>
+																</div>`)).hide().fadeIn(1000);
+								}
+								else if(data.indicator == 'success'){
+									if(typeof url == 'undefined'){
+										location.href =  '/consignorhome';									
+									}
+									else{
+										location.href =  '/consignorhome'+url;
+									}
+								}
+							})
+						}
+					}
+				})
+
+				var url = !{JSON.stringify(url)}
+				console.log(url)
 				$(document).on('click', '#loginButton', function(){
 					$('#loginForm').data('formValidation').validate();
 					if($('#errorfieldLogin').val() == 0){
 						$.post('/consignorportal/authentication', {
 							username: $('#usernamelogin').val(),
-							password: $('#passwordlogin').val(),
+							password: $('#passwordlogin').val()
 						}).done(function(data){
 							if(data.indicator == 'failed'){
 								$('#alertLogin').empty();
@@ -653,7 +684,12 @@ html.loading(lang='en', data-textdirection='ltr')
 															</div>`)).hide().fadeIn(1000);
 							}
 							else if(data.indicator == 'success'){
-								alert('Login Success')
+								if(typeof url == 'undefined'){
+									location.href =  '/consignorhome';									
+								}
+								else{
+									location.href =  '/consignorhome'+url;
+								}
 							}
 						})
 					}
@@ -662,6 +698,11 @@ html.loading(lang='en', data-textdirection='ltr')
 			})
 		script.
 			$(document).ready(function(){
+
+				var hostname = `!{hostname}`
+				var port = `!{port}`
+				var socket = io(`http://${hostname}:${port}`);
+
 				$('a[href="#finish"]').on('click', function(){//Submit Event
 					$('#agreement').data('formValidation').validate();//Check if no error validation
 					if($('#errorfieldAgree').val() == 'yes'){
@@ -689,14 +730,24 @@ html.loading(lang='en', data-textdirection='ltr')
 								contentType: false,
 								success: function(data){
 									if(data.indicator == 'success'){
+										console.log('weho')
+										socket.emit('newConsignor');
+
 										var consignorData = data.consignorData; 
 										swal({
 											title: 'Application Successful',
+											text: 'We will notify you on your e-mail upon approval. Kindly check it from time-to-time.',
 											icon: 'success',
 											buttons: {
 												Okay: 'Okay',
 											}
 										}).then((value) => {
+
+
+											
+											
+
+
 											$('#agree').iCheck('uncheck');
 											//Reset the form Wizard
 											$('.steps-validation.wizard-circle').steps('reset');
@@ -752,6 +803,7 @@ html.loading(lang='en', data-textdirection='ltr')
 												Okay: 'Okay',
 											}
 										}).then((value) => {
+											socket.emit('newConsignor');
 											
 											$('#agree').iCheck('uncheck');
 											//Reset the form Wizard
@@ -1022,7 +1074,7 @@ html.loading(lang='en', data-textdirection='ltr')
 						repLastName: {
 							validators: {
 								notEmpty: {
-									message: `What is the first name of the company's representative?`
+									message: `What is the last name of the company's representative?`
 								},
 							}
 						},
@@ -1250,7 +1302,7 @@ html.loading(lang='en', data-textdirection='ltr')
 						reenterPassword: {
 							validators: {
 								notEmpty: {
-									message: 'Re-enter your password'
+									message: `Re-enter your password <br>`
 								},
 								identical: {
 									field: 'enterPassword',
@@ -1327,7 +1379,7 @@ html.loading(lang='en', data-textdirection='ltr')
 					$('#agreement').formValidation('revalidateField', 'errorfieldAgree')
 				});
 
-				//Formatter JS
+				//Jquery Inputmask
 				$('.phone').mask('(+63) 000 000-0000');
 				$('.telephone').mask('000-0000');
 				$(document)

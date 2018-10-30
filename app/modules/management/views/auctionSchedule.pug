@@ -12,7 +12,7 @@ html.loading(lang='en', data-textdirection='ltr')
 			| Dashboard
 		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
 		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
-		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700', rel='stylesheet')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
 		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
 		// BEGIN VENDOR CSS
 		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
@@ -22,6 +22,9 @@ html.loading(lang='en', data-textdirection='ltr')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/extensions/datedropper.min.css')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/extensions/timedropper.min.css')
 		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/dropify.css')
+		link(rel="stylesheet" type="text/css" href="/assets/vendors/css/extensions/toastr.css")
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-callout.min.css')
+
 
 
 		// END VENDOR CSS
@@ -37,6 +40,10 @@ html.loading(lang='en', data-textdirection='ltr')
 		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
 		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
 		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel="stylesheet" type="text/css" href="/assets/css/plugins/extensions/toastr.min.css")
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/responsive.dataTables.min.css')
 
 		// END Page Level CSS
 		// FULL CALENDAR
@@ -87,6 +94,12 @@ html.loading(lang='en', data-textdirection='ltr')
 				right: 24px;
 				margin-top: 0;
 			}
+			.swal-button.swal-button--no{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--yes{
+				background-color: #28D094 !important;
+			}
 		// END Custom CSS
 	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
 		// fixed-top
@@ -100,7 +113,7 @@ html.loading(lang='en', data-textdirection='ltr')
 						li.nav-item.mr-auto
 							a.navbar-brand(href='index.html')
 								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
-								h3.brand-text Modern Admin
+								h3.brand-text AMSOB
 						li.nav-item.d-none.d-md-block.float-right
 							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
 								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
@@ -113,157 +126,13 @@ html.loading(lang='en', data-textdirection='ltr')
 							li.nav-item.d-none.d-md-block
 								a.nav-link.nav-link-expand(href='#')
 									i.ficon.ft-maximize
-							li.dropdown.nav-item.mega-dropdown
-								a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') Mega
-								ul.mega-dropdown-menu.dropdown-menu.row
-									li.col-md-2
-										h6.dropdown-menu-header.text-uppercase.mb-1
-											i.la.la-newspaper-o
-											|  News
-										#mega-menu-carousel-example
-											div
-												img.rounded.img-fluid.mb-1(src='/assets/images/slider/slider-2.png', alt='First slide')
-												a.news-title.mb-0(href='#') Poster Frame PSD
-												p.news-content
-													span.font-small-2 January 26, 2018
-									li.col-md-3
-										h6.dropdown-menu-header.text-uppercase
-											i.la.la-random
-											|  Drill down menu
-										ul.drilldown-menu
-											li.menu-list
-												ul
-													li
-														a.dropdown-item(href='layout-2-columns.html')
-															i.ft-file
-															|  Page layouts & Templates
-													li
-														a(href='#')
-															i.ft-align-left
-															|  Multi level menu
-														ul
-															li
-																a.dropdown-item(href='#')
-																	i.la.la-bookmark-o
-																	|   Second level
-															li
-																a(href='#')
-																	i.la.la-lemon-o
-																	|  Second level menu
-																ul
-																	li
-																		a.dropdown-item(href='#')
-																			i.la.la-heart-o
-																			|   Third level
-																	li
-																		a.dropdown-item(href='#')
-																			i.la.la-file-o
-																			|  Third level
-																	li
-																		a.dropdown-item(href='#')
-																			i.la.la-trash-o
-																			|  Third level
-																	li
-																		a.dropdown-item(href='#')
-																			i.la.la-clock-o
-																			|  Third level
-															li
-																a.dropdown-item(href='#')
-																	i.la.la-hdd-o
-																	|  Second level, third link
-															li
-																a.dropdown-item(href='#')
-																	i.la.la-floppy-o
-																	|  Second level, fourth link
-													li
-														a.dropdown-item(href='color-palette-primary.html')
-															i.ft-camera
-															|  Color palette system
-													li
-														a.dropdown-item(href='sk-2-columns.html')
-															i.ft-edit
-															|  Page starter kit
-													li
-														a.dropdown-item(href='changelog.html')
-															i.ft-minimize-2
-															|  Change log
-													li
-														a.dropdown-item(href='https://pixinvent.ticksy.com/')
-															i.la.la-life-ring
-															|  Customer support center
-									li.col-md-3
-										h6.dropdown-menu-header.text-uppercase
-											i.la.la-list-ul
-											|  Accordion
-										#accordionWrap(role='tablist', aria-multiselectable='true')
-											.card.border-0.box-shadow-0.collapse-icon.accordion-icon-rotate
-												#headingOne.card-header.p-0.pb-2.border-0(role='tab')
-													a(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionOne', aria-expanded='true', aria-controls='accordionOne') Accordion Item #1
-												#accordionOne.card-collapse.collapse.show(role='tabpanel', aria-labelledby='headingOne', aria-expanded='true')
-													.card-content
-														p.accordion-text.text-small-3
-															| Caramels dessert chocolate cake pastry jujubes bonbon.
-															| Jelly wafer jelly beans. Caramels chocolate cake liquorice
-															| cake wafer jelly beans croissant apple pie.
-												#headingTwo.card-header.p-0.pb-2.border-0(role='tab')
-													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionTwo', aria-expanded='false', aria-controls='accordionTwo') Accordion Item #2
-												#accordionTwo.card-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo', aria-expanded='false')
-													.card-content
-														p.accordion-text
-															| Sugar plum bear claw oat cake chocolate jelly tiramisu
-															| dessert pie. Tiramisu macaroon muffin jelly marshmallow
-															| cake. Pastry oat cake chupa chups.
-												#headingThree.card-header.p-0.pb-2.border-0(role='tab')
-													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionThree', aria-expanded='false', aria-controls='accordionThree') Accordion Item #3
-												#accordionThree.card-collapse.collapse(role='tabpanel', aria-labelledby='headingThree', aria-expanded='false')
-													.card-content
-														p.accordion-text
-															| Candy cupcake sugar plum oat cake wafer marzipan jujubes
-															| lollipop macaroon. Cake dragée jujubes donut chocolate
-															| bar chocolate cake cupcake chocolate topping.
-									li.col-md-4
-										h6.dropdown-menu-header.text-uppercase.mb-1
-											i.la.la-envelope-o
-											|  Contact Us
-										form.form.form-horizontal
-											.form-body
-												.form-group.row
-													label.col-sm-3.form-control-label(for='inputName1') Name
-													.col-sm-9
-														.position-relative.has-icon-left
-															input#inputName1.form-control(type='text', placeholder='John Doe')
-															.form-control-position.pl-1
-																i.la.la-user
-												.form-group.row
-													label.col-sm-3.form-control-label(for='inputEmail1') Email
-													.col-sm-9
-														.position-relative.has-icon-left
-															input#inputEmail1.form-control(type='email', placeholder='john@example.com')
-															.form-control-position.pl-1
-																i.la.la-envelope-o
-												.form-group.row
-													label.col-sm-3.form-control-label(for='inputMessage1') Message
-													.col-sm-9
-														.position-relative.has-icon-left
-															textarea#inputMessage1.form-control(rows='2', placeholder='Simple Textarea')
-															.form-control-position.pl-1
-																i.la.la-commenting-o
-												.row
-													.col-sm-12.mb-1
-														button.btn.btn-info.float-right(type='button')
-															i.la.la-paper-plane-o
-															|  Send
-							li.nav-item.nav-search
-								a.nav-link.nav-link-search(href='#')
-									i.ficon.ft-search
-								.search-input
-									input.input(type='text', placeholder='Explore Modern...')
+							
 						ul.nav.navbar-nav.float-right
 							li.dropdown.dropdown-user.nav-item
 								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
 									span.mr-1
 										| Hello,
-										span.user-name.text-bold-700 John Doe
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
 									span.avatar.avatar-online
 										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
 										i
@@ -281,16 +150,16 @@ html.loading(lang='en', data-textdirection='ltr')
 										i.ft-message-square
 										|  Chats
 									.dropdown-divider
-									a.dropdown-item(href='#')
+									a.dropdown-item(href='/logout')
 										i.ft-power
 										|  Logout
 							li.dropdown.dropdown-language.nav-item
 								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-									i.flag-icon.flag-icon-gb
+									i.flag-icon.flag-icon-ph
 									span.selected-language
 								.dropdown-menu(aria-labelledby='dropdown-flag')
 									a.dropdown-item(href='#')
-										i.flag-icon.flag-icon-gb
+										i.flag-icon.flag-icon-ph
 										|  English
 									a.dropdown-item(href='#')
 										i.flag-icon.flag-icon-fr
@@ -304,56 +173,12 @@ html.loading(lang='en', data-textdirection='ltr')
 							li.dropdown.dropdown-notification.nav-item
 								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
 									i.ficon.ft-bell
-									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow 5
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
 								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
 									li.dropdown-menu-header
 										h6.dropdown-header.m-0
 											span.grey.darken-2 Notifications
-										span.notification-tag.badge.badge-default.badge-danger.float-right.m-0 5 New
-									li.scrollable-container.media-list.w-100
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-plus-square.icon-bg-circle.bg-cyan
-												.media-body
-													h6.media-heading You have new order!
-													p.notification-text.font-small-3.text-muted Lorem ipsum dolor sit amet, consectetuer elit.
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') 30 minutes ago
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-download-cloud.icon-bg-circle.bg-red.bg-darken-1
-												.media-body
-													h6.media-heading.red.darken-1 99% Server load
-													p.notification-text.font-small-3.text-muted Aliquam tincidunt mauris eu risus.
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Five hour ago
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-alert-triangle.icon-bg-circle.bg-yellow.bg-darken-3
-												.media-body
-													h6.media-heading.yellow.darken-3 Warning notifixation
-													p.notification-text.font-small-3.text-muted Vestibulum auctor dapibus neque.
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-check-circle.icon-bg-circle.bg-cyan
-												.media-body
-													h6.media-heading Complete the task
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last week
-										a(href='javascript:void(0)')
-											.media
-												.media-left.align-self-center
-													i.ft-file.icon-bg-circle.bg-teal
-												.media-body
-													h6.media-heading Generate monthly report
-													small
-														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Last month
+									li.scrollable-container.media-list.w-100#notificationField
 									li.dropdown-menu-footer
 										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
 							li.dropdown.dropdown-notification.nav-item
@@ -421,20 +246,109 @@ html.loading(lang='en', data-textdirection='ltr')
 							span.menu-title Dashboard
 					li.nav-item
 						a(href='#')
-							i.fa.fa-handshake-o
-							span.menu-title Acquisition
+							i.fa.fa-wrench
+							span.menu-title Maintenance
 						ul.menu-content
 							li
-								a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level') Consignment
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+									li
+										a.menu-item(href='/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidders
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Schedule
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
 							li
-								a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level') Consignor
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') User Management
+								ul.menu-content
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
 					li.nav-item
-						a(href='/auction')
-							i.fa.fa-calendar
-							span.menu-title Auction Schedule
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='/consignor/auctionresult', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awards
+									li
+										a.menu-item(href='/delivery', data-i18n='nav.menu_levels.second_level_child.third_level_child') Delivery
+					li.nav-item
+						a(href='/queries')
+							i.fa.fa-list
+							span.menu-title Queries
+					li.nav-item
+						a(href='/reports/sales')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='/utilities')
+							i.fa.fa-cogs
+							span.menu-title Utilities
 		.app-content.content
 			.content-wrapper
 				//- MODALS
+				#bundleItems.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+					.modal-dialog.modal-xl(role='document')
+						.modal-content
+							.modal-header(style='border-bottom: none;')
+								h4.modal-title.text-center 
+									img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+							.modal-body
+								.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
+									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+										span Items in this Bundle
+								.card-content
+									.card-body#bundleItemsBody
+				#auctionDetails.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+					.modal-dialog.modal-xl(role='document')
+						.modal-content
+							.modal-header(style='border-bottom: none;')
+								h4.modal-title.text-center 
+									img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+							.modal-body
+								.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
+									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+										span Auction Catalog
+								.card-content
+									.card-body#auctionDetailsBody
 				#addAuction.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
 					.modal-dialog.modal-xl(role='document')
 						.modal-content
@@ -456,11 +370,11 @@ html.loading(lang='en', data-textdirection='ltr')
 												.col-md-4.col-sm-12
 													center
 														fieldset
-															input#live.checkie(type='radio', name='auctionType', value='1')
+															input#live(type='radio', style="display:none" name='auctionType', value='1')
 															span  
-																label(for='live')  Live &nbsp &nbsp
+																label(for='live' style="display:none")  Live &nbsp &nbsp
 															
-															input#online.checkie(type='radio', name='auctionType' value='2')
+															input#online.checkie(type='radio', name='auctionType' value='2' checked)
 															span  
 																label(for='online')  Online
 										fieldset
@@ -471,12 +385,12 @@ html.loading(lang='en', data-textdirection='ltr')
 															| Auction Name
 															span.danger *
 														input.form-control.input-lg(type='text' name='auctionName' placeholder='E.g Chanel Galore')
-												.col-md-6
+												.col-md-6.startingTimeColumn
 													.form-group
 														label
 															| Starting Time
 															span.danger *
-														input#startingTime.form-control.input-lg(type='text', name='startingTime' placeholder='Date Dropper' value='00:00')
+														input#startingTime.startingTime.form-control.input-lg(type='text', name='startingTime' placeholder='Date Dropper' value='00:00')
 											.row
 												.col-md-12
 													.form-group
@@ -486,14 +400,14 @@ html.loading(lang='en', data-textdirection='ltr')
 												.col-md-12
 													.form-group
 														label Auction Banner
-														input.dropify(type='file', name='auctionBanner' accept='image/*' data-height='300' data-allowed-file-extensions="jpeg jpg png")
-											.row
+														input.dropify(type='file', name='auctionBanner' accept='image/*' data-height='300' data-allowed-file-extensions="jpeg jpg png" data-allowed-formats="landscape")
+											.row.dayRow
 												.col-md-12
 													.form-group
 														label(for='dayDuration') Day Duration:
 														#dayDuration.ui-slider-info
-														input#dayInput(type='hidden' name='days' value='1')
-											.row
+														input#dayInput.dayInput(type='hidden' name='days' value='1')
+											.row.durationRow
 												.col-md-6
 													.form-group
 														label(for='hourDuration') Hour Duration:
@@ -504,23 +418,10 @@ html.loading(lang='en', data-textdirection='ltr')
 														label(for='minuteDuration') Minute Duration:
 														.text-center
 															input#minuteDuration.minuteDuration.knob.overload-draw(type='text', value='0',name='minutes' data-skin='tron', data-thickness='.2', data-displayprevious='true', data-fgcolor='#666EE8')
-
-														
-										.table-responsive
-											table#itemTable.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
-												thead
-													tr
-														th ID
-														th Item Name
-														th Date Created
-														th Date Received
-														th Status
-														th Action
-												tbody
 									.card-footer
 										button.btn.btn-block.btn-outline-success#createSubmit(type='submit')
 											i.ft-user
-											| Create 
+											| Create
 				.content-header.row
 					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
 						h3.content-header-title.mb-0.d-inline-block Auction Schedule
@@ -541,31 +442,56 @@ html.loading(lang='en', data-textdirection='ltr')
 								.card-content
 									.card-body
 										.row
+											.col-md-12
+										.row
 											.col-md-3
+												.bs-callout-info.callout-border-right.callout-bordered.p-1
+													h4.info Instruction:
+													p(style='font-size: 10px')
+														| Drag these auctions to begin scheduling.
+												br
 												#external-events
 													h4 Catalogs
+													small These are your unscheduled catalogs. Please drag it to the Calendar
 													.fc-events-container
 														each item in unscheduled
 															- if(item.booAuctionType == 1)
-																a.fc-event.auctionEvent(href='javascript:void(0);' data-color='#122d59' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) #{item.strAuctionName} - Auction ##{item.intAuctionID}
+																a.fc-event.auctionEvent(href='javascript:void(0);' data-color='#122d59' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}` booAuctionType=`${item.booAuctionType}`) #{item.strAuctionName} - Auction ##{item.intAuctionID}
 															- if(item.booAuctionType == 2)
-																a.fc-event.auctionEvent(href='javascript:void(0);' data-color='#591212' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}`) #{item.strAuctionName} - Auction ##{item.intAuctionID}
+																a.fc-event.auctionEvent(href='javascript:void(0);' data-color='#591212' auctionId=`${item.intAuctionID}` jsonDuration=`${item.jsonDuration}` booAuctionType=`${item.booAuctionType}`) #{item.strAuctionName} - Auction ##{item.intAuctionID}
+												br
+												br
+												a#trash.btn.btn-block.btn-outline-danger(href='javascript:void(0)') Drag here to Delete
+												br
+												table.table
+													thead
+														tr
+															th Legend
+															th
+													tbody
+														tr
+															th
+																i.fa.fa-circle(style='color: #591212')
+															td
+																h5 Default
+														tr
+															th
+																i.fa.fa-circle(style='color: #630860')
+															td
+																h5 Published
+														tr
+															th
+																i.fa.fa-circle(style='color: #125559')
+															td
+																h5 Ongoing
+														tr
+															th
+																i.fa.fa-circle(style='color: #125913')
+															td
+																h5 Done
+												
 											.col-md-9
 												#calendar
-				#auctionDetails.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
-					.modal-dialog.modal-lg(role='document')
-						.modal-content
-							.modal-header(style='border-bottom: none;')
-								h4.modal-title.text-center 
-									img(src='assets/images/logo/logo-dark.png', alt='branding logo')
-								button.close(type='button', data-dismiss='modal', aria-label='Close')
-									span(aria-hidden='true') ×
-							.modal-body
-								.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
-									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
-										span Auction Details
-								.card-content
-									.card-body#auctionDetailsBody
 		//- END MODALS
 		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
 			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
@@ -576,6 +502,8 @@ html.loading(lang='en', data-textdirection='ltr')
 				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
 					| APPTRADE INC.
 					i.ft-heart.pink
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
 		// BEGIN VENDOR JS
 		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
 		// BEGIN VENDOR JS
@@ -597,6 +525,10 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/vendors/js/extensions/timedropper.min.js', type='text/javascript')
 		script(src='/assets/js/scripts/extensions/date-time-dropper.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
 		// END PAGE LEVEL JS
 		// FULL CALENDAR
 		script(src='/assets/vendors/js/extensions/moment.min.js', type='text/javascript')
@@ -613,37 +545,134 @@ html.loading(lang='en', data-textdirection='ltr')
 		script(src='/assets/js/core/libraries/jquery_ui/globalize/cultures/globalize.culture.ja-JP.js', type='text/javascript')
 		script(src='/assets/vendors/js/extensions/jquery.mousewheel.min.js', type='text/javascript')
 		script(src='/assets/vendors/js/dropify.js', type='text/javascript')
+		script(src="/assets/vendors/js/extensions/toastr.min.js" type="text/javascript")
 		// END PAGE VENDOR JS
 		// BEGIN PAGE LEVEL JS
 		script(src='/assets/js/scripts/pickers/dateTime/pick-a-datetime.js')
 		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
 		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
 		script.
 			$(document).ready(function () {
+				var reqSession = !{JSON.stringify(session)}
 				$(document).on('ifChecked', '.editAuctionType', function(){
 					$('#editAuctionType').val($(this).val())
 				});
 				$(document).on('click', '.auctionEvent', function(){
 					eventDetails($(this).attr('auctionId'))
-				})
+				});
+				$(document).on('ifChecked', '.checkie[value="1"]', function(){
+					$('.dayInput').attr('disabled', true);
+					$('.hourDuration').attr('disabled', true);
+					$('.minuteDuration').attr('disabled', true);
+					$('.startingTime').attr('disabled', true);
+					$('.dayRow').fadeOut(1000)
+					$('.durationRow').fadeOut(1000)
+					$('.startingTimeColumn').fadeOut(1000)
+				});
+				$(document).on('ifChecked', '.checkie[value="2"]', function(){
+					$('.dayInput').attr('disabled', false);
+					$('.hourDuration').attr('disabled', false);
+					$('.minuteDuration').attr('disabled', false);
+					$('.startingTime').attr('disabled', false);
+					$('.dayRow').fadeIn(1000)
+					$('.durationRow').fadeIn(1000)
+					$('.startingTimeColumn').fadeIn(1000)
+				});
+
+
+				
+
+				$(document).on('click', '#publishButton', function(){
+					var minD = moment().add(reqSession.utilities.intAuctionGracePeriod, 'd').format('YYYY-MM-DD');
+					var id = $(this).attr('auctionId')
+					var start = $(this).attr('auctionDateStart')
+					if(moment(start).isSameOrAfter(minD)){
+						swal({
+							title: 'Publish Auction?',
+							text: `After publishing auction, you can no longer edit details of it. Do you want to continue?`,
+							icon: 'info',
+							buttons: {
+								no: 'No',
+								yes: 'Yes',
+							}
+						}).then(function(value){
+							if(value=='yes'){
+								$.post('/auction/publish', {auctionId: id})
+								.done(function(data){
+									if(data.done){
+										toastr.success("Yay, you have successfully published an auction. Happy Bidding!","Success!",{
+											showMethod:"slideDown",
+											hideMethod:"slideUp",
+											positionClass:"toast-bottom-right",
+											timeOut:5000
+										})
+										$.post('/auction/refetch')
+										.done(function (events){
+											$('#calendar').fullCalendar('removeEvents');
+											$('#calendar').fullCalendar('addEventSource', events)
+											$('#calendar').fullCalendar('refetchEvents');
+											$('#auctionDetails').modal('hide');
+										});
+									}
+									else{
+										toastr.error(`Oh no! This auction is not valid for publishing. Please add items in this auction`,"No Items!",{
+											showMethod:"slideDown",
+											hideMethod:"slideUp",
+											positionClass:"toast-bottom-right",
+											timeOut:5000
+										})
+									}
+								})
+							}
+						});
+					}
+					else{
+						toastr.error(`Oh no! This auction is not valid for publishing. Please adjust the date ${reqSession.utilities.intAuctionGracePeriod} day/s after today`,"Invalid Date!",{
+							showMethod:"slideDown",
+							hideMethod:"slideUp",
+							positionClass:"toast-bottom-right",
+							timeOut:5000
+						})
+					}
+				});
+				$(document).on('click', '#cancelButton', function(){
+					var id = $(this).attr('auctionId')
+					swal({
+						title: 'Cancel Auction?',
+						text: `This will remove the auction details to the Bidder's Portal. Do you want to continue?`,
+						icon: 'info',
+						buttons: {
+							no: 'No',
+							yes: 'Yes',
+						}
+					}).then(function(value){
+						if(value=='yes'){
+							$.post('/auction/cancel', {auctionId: id})
+							.done(function(){
+								toastr.success("Yay, you have successfully cancelled an auction","Success!",{
+									showMethod:"slideDown",
+									hideMethod:"slideUp",
+									positionClass:"toast-bottom-right",
+									timeOut:5000
+								})
+								$.post('/auction/refetch')
+								.done(function (events){
+									$('#calendar').fullCalendar('removeEvents');
+									$('#calendar').fullCalendar('addEventSource', events)
+									$('#calendar').fullCalendar('refetchEvents');
+									$('#auctionDetails').modal('hide');
+								});
+							})
+						}
+					});
+				});
 				$(document).on('click', '#editSubmit', function(){
 					var editBannerToggle = $('#editBannerToggle').val();
 					var id = $('#editSubmit').attr('auctionId');
-					if(editBannerToggle == 1){
-						var formData =  new FormData();
-						formData.append('strBanner', $('#editBanner')[0].files[0])
-						formData.append('intAuctionID', id);
-						$.ajax({
-							type: 'POST',
-							url: '/auction/banner',
-							data: formData,
-							processData: false,
-							contentType: false
-						})
-					}
 					$('#editForm').data('formValidation').validate();
 					var currentDateStart = $('#editSubmit').attr('auctionDateStart');
-					currentDateStart = moment(currentDateStart).format('YYYY-MM-DD');
 					var editedAuctionName = $('#editAuctionName').val()
 					var editedAuctionDescription = $('#editAuctionDescription').val()
 					var editedAuctionType = $('#editAuctionType').val();
@@ -653,59 +682,142 @@ html.loading(lang='en', data-textdirection='ltr')
 						minutes: $('#editMinuteDuration').val(),
 						startingTime: $('#editStartingTime').val()
 					}
-					editedJsonDuration = JSON.stringify(editedJsonDuration);
-					var editedDateStart = ''+currentDateStart+' '+$('#editStartingTime').val();
-
-					$.post('/auction/edit', {editType: 1, strAuctionName:editedAuctionName, strDescription:editedAuctionDescription, jsonDuration:editedJsonDuration, datDateStart:editedDateStart, booAuctionType:editedAuctionType, intAuctionID: id})
-					.done(function(){
-						swal({
-							title: 'Success',
-							icon: 'success',
-							buttons: {
-								Okay: 'Okay',
+					var newDateStart = ''+moment(currentDateStart).format('YYYY-MM-DD')+' '+editedJsonDuration.startingTime;
+					var newDateEnd = moment(newDateStart).add(editedJsonDuration.days, 'd').add(editedJsonDuration.hours, 'h').add(editedJsonDuration.minutes, 'm').format('YYYY-MM-DD HH:mm');
+					console.log(newDateStart);
+					console.log(newDateEnd);
+					$.post('/auction/schedule/validate', {validateDateStart: newDateStart, validateDateEnd: newDateEnd, validateAuctionType: editedAuctionType, validateId:id})
+					.done(function(data){
+						if(data.validity=='valid'){
+							if(editBannerToggle == 1){
+								var formData =  new FormData();
+								formData.append('strBanner', $('#editBanner')[0].files[0])
+								formData.append('intAuctionID', id);
+								$.ajax({
+									type: 'POST',
+									url: '/auction/banner',
+									data: formData,
+									processData: false,
+									contentType: false
+								})
 							}
-						})
-						$.post('/auction/refetch')
-						.done(function (events){
-							$('#calendar').fullCalendar('removeEvents');
-							$('#calendar').fullCalendar('addEventSource', events)
-							$('#calendar').fullCalendar('refetchEvents');
-							$('#auctionDetails').modal('hide');
-						});
-					})
-				});
-				var x = !{JSON.stringify(auctionSched)}
-				$("#calendar").fullCalendar({
-					header:{
-						left: false,
-						center:"title",
-					},
-					droppable: true,
-					drop: function(date){
-						var newDate = moment(date).format('YYYY-MM-DD')
-						var minDate = moment().add(3, 'd').format('YYYY-MM-DD');
-						var maxDate = moment().add(1, 'M').format('YYYY-MM-DD');
-						if(moment(newDate).isSameOrAfter(minDate)){
-							if(moment(newDate).isSameOrBefore(maxDate)){
-								var id = $(this).attr('auctionId')
-								var jsonAttribute = JSON.parse($(this).attr('jsonDuration'))
-								var datDateStart = ''+newDate+' '+jsonAttribute.startingTime
-								$(this).remove()
-								$.post('/auction/schedule', {id:id, datDateStart:datDateStart})
+							editedJsonDuration = JSON.stringify(editedJsonDuration);
+							if(currentDateStart != 'null'){
+								currentDateStart = moment(currentDateStart).format('YYYY-MM-DD');
+								var editedDateStart = ''+currentDateStart+' '+$('#editStartingTime').val();
+
+								$.post('/auction/edit', {editType: 1, strAuctionName:editedAuctionName, strDescription:editedAuctionDescription, jsonDuration:editedJsonDuration, datDateStart:editedDateStart, booAuctionType:editedAuctionType, intAuctionID: id})
 								.done(function(){
+									toastr.success("Yay, you have successfully edited the auction schedule!","Success!",{
+										showMethod:"slideDown",
+										hideMethod:"slideUp",
+										positionClass:"toast-bottom-right",
+										timeOut:5000
+									})
 									$.post('/auction/refetch')
 									.done(function (events){
 										$('#calendar').fullCalendar('removeEvents');
 										$('#calendar').fullCalendar('addEventSource', events)
 										$('#calendar').fullCalendar('refetchEvents');
+										$('#auctionDetails').modal('hide');
 									});
 								})
 							}
 							else{
-								swal({
-									icon: 'error',
-									title: 'Invalid Date',
-									text: 'Please drop the event on a date at least 3 days after today'
+								$.post('/auction/edit', {editType: 1, strAuctionName:editedAuctionName, strDescription:editedAuctionDescription, jsonDuration:editedJsonDuration, booAuctionType:editedAuctionType, intAuctionID: id})
+								.done(function(){
+									toastr.success("Yay, you have successfully edited the auction schedule!","Success!",{
+										showMethod:"slideDown",
+										hideMethod:"slideUp",
+										positionClass:"toast-bottom-right",
+										timeOut:5000
+									})
+									if(editedAuctionType == 1){
+										$(`.auctionEvent[auctionId = '${id}']`).attr('booAuctionType', 1)
+										$(`.auctionEvent[auctionId = '${id}']`).css('background-color', '#122d59')
+										$(`.auctionEvent[auctionId = '${id}']`).css('border-color', '#122d59')
+									}
+									else if(editedAuctionType == 2){
+										$(`.auctionEvent[auctionId = '${id}']`).attr('booAuctionType', 2)
+										$(`.auctionEvent[auctionId= '${id}']`).css('background-color', '#591212')
+										$(`.auctionEvent[auctionId= '${id}']`).css('border-color', '#591212')
+									}
+									$(`.auctionEvent[auctionId = '${id}']`).empty();
+									$(`.auctionEvent[auctionId = '${id}']`).text(`${editedAuctionName} - Auction #${id}`)
+									$('#auctionDetails').modal('hide');
+								})
+							}
+						}
+						else if(data.validity=='invalid'){
+							toastr.error("Oh no! Auctions with same auction type cannot overlap. Please schedule it on another date.","Invalid Date!",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
+							})
+						}
+					});
+				});
+				var x = !{JSON.stringify(auctionSched)}
+				var minDaysForAuction = reqSession.utilities.intMinimumDaysForAuction;
+				var maxDaysForAuction = reqSession.utilities.intMaximumDaysForAuction;
+				console.log(minDaysForAuction)
+				$("#calendar").fullCalendar({
+					droppable: true,
+					drop: function(date){
+						var thisCatalog = $(this);
+						var newDate = moment(date).format('YYYY-MM-DD')
+						var minDate = moment().add(reqSession.utilities.intAuctionGracePeriod, 'd').format('YYYY-MM-DD');
+						var maxDate = moment().add(reqSession.utilities.intAuctionMonthLimit, 'M').format('YYYY-MM-DD');
+						if(moment(newDate).isSameOrAfter(minDate)){
+							if(moment(newDate).isSameOrBefore(maxDate)){
+								var id = $(this).attr('auctionId');
+								var jsonAttribute = JSON.parse($(this).attr('jsonDuration'));
+								console.log(jsonAttribute)
+								var datDateStart = ''+newDate+' '+jsonAttribute.startingTime
+								var datDateEnd = moment(datDateStart).add(jsonAttribute.days, 'd').add(jsonAttribute.hours, 'h').add(jsonAttribute.minutes, 'm').format('YYYY-MM-DD HH:mm')
+								$.post('/auction/schedule/validate', {validateDateStart:datDateStart, validateDateEnd: datDateEnd, validateAuctionType: $(this).attr('booAuctionType'), validateId:id})
+								.done(function (data){
+									if(data.validity == 'valid'){
+										$.post('/auction/schedule', {id:id, datDateStart:datDateStart})
+										.done(function(){
+											thisCatalog.remove()
+											$.post('/auction/refetch')
+											.done(function (events){
+												$('#calendar').fullCalendar('removeEvents');
+												$('#calendar').fullCalendar('addEventSource', events)
+												$('#calendar').fullCalendar('refetchEvents');
+											});
+											toastr.success("Yay, you successfully scheduled an auction","Success!",{
+												showMethod:"slideDown",
+												hideMethod:"slideUp",
+												positionClass:"toast-bottom-right",
+												timeOut:5000
+											})
+										})
+									}
+									else if(data.validity == 'invalid'){
+										toastr.error("Oh no! Auctions with same auction type cannot overlap. Please schedule it on another date.","Invalid Date!",{
+											showMethod:"slideDown",
+											hideMethod:"slideUp",
+											positionClass:"toast-bottom-right",
+											timeOut:5000
+										})
+										$.post('/auction/refetch')
+										.done(function (events){
+											$('#calendar').fullCalendar('removeEvents');
+											$('#calendar').fullCalendar('addEventSource', events)
+											$('#calendar').fullCalendar('refetchEvents');
+										});
+									}
+								})
+							}
+							else{
+								toastr.error(`Please drop the event on a date not more than ${reqSession.utilities.intAuctionMonthLimit} month/s after today`,"Invalid Date!",{
+									showMethod:"slideDown",
+									hideMethod:"slideUp",
+									positionClass:"toast-bottom-right",
+									timeOut:5000
 								})
 								$.post('/auction/refetch')
 								.done(function (events){
@@ -716,10 +828,11 @@ html.loading(lang='en', data-textdirection='ltr')
 							}
 						}
 						else{
-							swal({
-								icon: 'error',
-								title: 'Invalid Date',
-								text: 'Please drop the event on a date at least 3 days after today'
+							toastr.error(`Please drop the event on a date at least ${reqSession.utilities.intAuctionGracePeriod} day/s after today`,"Invalid Date!",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
 							})
 							$.post('/auction/refetch')
 							.done(function (events){
@@ -735,50 +848,167 @@ html.loading(lang='en', data-textdirection='ltr')
 						eventDetails(event.id)
 					},
 					eventDrop: function(event, delta, revertFunc){
-						var dateNow = moment().format('YYYY-MM-DD');
+						var minDate = moment().add(reqSession.utilities.intAuctionGracePeriod, 'd').format('YYYY-MM-DD');
+						var maxDate = moment().add(reqSession.utilities.intAuctionMonthLimit, 'M').format('YYYY-MM-DD');
 						var eventStartTime = moment(event.start).format('HH:mm')
 						var diffMonth = delta._data.months;
 						var diffDay = delta._data.days;
 						var eventNewStart = moment(event.start).format('YYYY-MM-DD')
+						var eventNewDateTime = ''+eventNewStart +' '+eventStartTime;
 						console.log(diffMonth+ ' months and '+diffDay+' days')
 						console.log(eventNewStart)
-						swal({
-							title: 'Are you sure?',
-							text: `Do you want to edit the starting date of Auction #${event.id}?`,
-							icon: 'info',
-							buttons: {
-								yes: 'Yes',
-								no: 'No'
-							}
-						}).then(function (value){
-							if(value == 'no'){
-								revertFunc()
-							}
-							else if(value == 'yes'){
-								if(moment(eventNewStart).isAfter(dateNow)){
-									eventNewStart = ''+eventNewStart+' '+eventStartTime;
+						console.log(eventStartTime)
 
-									$.post('/auction/edit', {editType: 2, datDateStart: eventNewStart, intAuctionID: event.id})
-									.done(function(){
-										swal({
-											icon: 'success',
-											title: 'Success',
-											text: 'Auction starting date is successfully edited'
-										})
-									})
-								}
-								else{
+						// get jsonDuration ajax
+						$.post('/eventdetails',{auctionId: event.id})
+						.done(function (data){
+							var jsonDuration = JSON.parse(data.jsonDuration);
+							var eventNewEndDateTime = moment(eventNewDateTime).add(jsonDuration.days, 'd').add(jsonDuration.hours, 'h').add(jsonDuration.minutes, 'm').format('YYYY-MM-DD HH:mm');
+							$.post('/auction/schedule/validate', {validateDateStart: eventNewDateTime, validateDateEnd:eventNewEndDateTime, validateAuctionType: data.booAuctionType, validateId: event.id})
+							.done(function (data2){
+								if(data2.validity == 'valid'){
 									swal({
-										icon: 'error',
-										title: 'Invalid Date',
-										text: 'Please drop the event on any date after today'
+										title: 'Are you sure?',
+										text: `Do you want to edit the starting date of Auction #${event.id}?`,
+										icon: 'info',
+										buttons: {
+											no: 'No',
+											yes: 'Yes',
+										}
+									}).then(function (value){
+										if(value == 'yes'){
+											if(moment(eventNewStart).isSameOrAfter(minDate)){
+												if(moment(eventNewStart).isSameOrBefore(maxDate)){
+													eventNewStart = ''+eventNewStart+' '+eventStartTime;
+
+													$.post('/auction/edit', {editType: 2, datDateStart: eventNewStart, intAuctionID: event.id})
+													.done(function(){
+														toastr.success("Yay, auction starting date is successfully edited!","Success!",{
+															showMethod:"slideDown",
+															hideMethod:"slideUp",
+															positionClass:"toast-bottom-right",
+															timeOut:5000
+														})
+													})
+												}
+												else{
+													toastr.error(`Please drop the event on a date not more than ${reqSession.utilities.intAuctionMonthLimit} month/s after today`,"Invalid Date!",{
+														showMethod:"slideDown",
+														hideMethod:"slideUp",
+														positionClass:"toast-bottom-right",
+														timeOut:5000
+													})
+													revertFunc()
+												}
+											}
+											else{
+												toastr.error(`Please drop the event on a date at least ${reqSession.utilities.intAuctionGracePeriod} day/s after today`,"Invalid Date!",{
+													showMethod:"slideDown",
+													hideMethod:"slideUp",
+													positionClass:"toast-bottom-right",
+													timeOut:5000
+												})
+												revertFunc()
+											}
+										}
+										else{
+											revertFunc()
+										}
 									})
-									revertFunc()
 								}
-							}
+								else if(data2.validity == 'invalid'){
+									toastr.error("Oh no! Auctions with same auction type cannot overlap. Please schedule it on another date.","Invalid Date!",{
+										showMethod:"slideDown",
+										hideMethod:"slideUp",
+										positionClass:"toast-bottom-right",
+										timeOut:5000
+									})
+									revertFunc();
+								}
+							})
 						})
 					},
-					eventOverlap: false,
+					eventDragStop: function(event, jsEvent){
+						var trash = $('#trash');
+						var ofs = trash.offset();
+
+						var x1 = ofs.left;
+						var x2 = ofs.left + trash.outerWidth(true);
+						var y1 = ofs.top;
+						var y2 = ofs.top + trash.outerHeight(true);
+
+						if (jsEvent.pageX >= x1 && jsEvent.pageX<= x2 && jsEvent.pageY >= y1 && jsEvent.pageY <= y2) {
+							swal({
+								title: 'Are you sure?',
+								text: `Do you want to delete Auction #${event.id}?`,
+								icon: 'info',
+								buttons: {
+									yes: 'Yes',
+									no: 'No'
+								}
+							}).then(function(value){
+								if(value == 'yes'){
+									$.post('/auction/delete', {id: event.id})
+									.done(function(data){
+										if(data.done == true){
+											toastr.success("Yay, you have successfully deleted an auction!","Success!",{
+												showMethod:"slideDown",
+												hideMethod:"slideUp",
+												positionClass:"toast-bottom-right",
+												timeOut:5000
+											})
+											$.post('/auction/refetch')
+											.done(function (events){
+												$('#calendar').fullCalendar('removeEvents');
+												$('#calendar').fullCalendar('addEventSource', events)
+												$('#calendar').fullCalendar('refetchEvents');
+											});
+										}
+									});
+								}
+							})
+						}
+					}
+					//- eventResize: function(event, delta, revertFunc, jsEvent, ui, view){
+					//- 	$.post('/eventdetails', {auctionId: event.id})
+					//- 	.done(function (data){
+					//- 		var jsonDuration = JSON.parse(data.jsonDuration);
+					//- 		var addedDuration = {
+					//- 			days: delta._data.days,
+					//- 			hours: delta._data.hours,
+					//- 			minutes: delta._data.minutes
+					//- 		}
+					//- 		var newDuration = moment.duration(jsonDuration).add(addedDuration);
+					//- 		var sumDuration = {
+					//- 			days: newDuration._data.days,
+					//- 			hours: newDuration._data.hours,
+					//- 			minutes: newDuration._data.minutes,
+					//- 			startingTime: jsonDuration.startingTime
+					//- 		}
+					//- 		console.log(jsonDuration)
+					//- 		console.log(addedDuration)
+					//- 		console.log(sumDuration)
+					//- 		if(sumDuration.days>=1 && sumDuration.days<=3){
+					//- 			$.post('/auction/edit', {editType:3 ,intAuctionID: event.id, jsonDuration:sumDuration})
+					//- 			.done(function(){
+					//- 				swal({
+					//- 					icon: 'success',
+					//- 					title: 'Success',
+					//- 					text: 'Auction duration is successfully edited'
+					//- 				})
+					//- 			})
+					//- 		}
+					//- 		else{
+					//- 			swal({
+					//- 				icon: 'error',
+					//- 				title: 'Invalid Time',
+					//- 				text: 'Oh no! Minimum duration of an auction is 1 day, and maximum duration of an auction is 4 days. Please try again.'
+					//- 			})
+					//- 			revertFunc()
+					//- 		}
+					//- 	})
+					//- },
+					
 				});
 
 				$('.checkie').iCheck({
@@ -786,10 +1016,11 @@ html.loading(lang='en', data-textdirection='ltr')
 					radioClass: 'iradio_flat-blue'
 				});
 
+				console.log("minDaysForAuction"+minDaysForAuction)
 				$("#dayDuration").slider({
 					range: 'min',
-					min:1,
-					max:3,
+					min:minDaysForAuction,
+					max:maxDaysForAuction,
 					step:1,
 					animate:"fast",
 					change: function(){
@@ -806,6 +1037,17 @@ html.loading(lang='en', data-textdirection='ltr')
 				$('#auctionDetails').on('hidden.bs.modal', function(){
 					$('#auctionDetailsBody').empty();
 				});
+				$('#addAuction').on('hidden.bs.modal', function(){
+					$('#live').iCheck('uncheck');
+					$('#online').iCheck('check');
+					$('.dayInput').attr('disabled', false);
+					$('.hourDuration').attr('disabled', false);
+					$('.minuteDuration').attr('disabled', false);
+					$('.startingTime').attr('disabled', false);
+					$('.dayRow').fadeIn(1000)
+					$('.durationRow').fadeIn(1000)
+					$('.startingTimeColumn').fadeIn(1000)
+				})
 				$('.dropify').dropify({
 					allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
 					messages: {
@@ -819,17 +1061,69 @@ html.loading(lang='en', data-textdirection='ltr')
 						'fileFormat': 'The file format is not allowed ({{ value }} only).'
 					}
 				});
+				$(document).on('click', '.viewButton', function(){
+					$.post('/bundle/view', {bundleId: $(this).attr('bundleId')})
+					.done(function(data){
+						$('#bundleItemsBody').append(`<div class="row">
+							<div class="col-md-12">
+								<table id="bundleItemsTable" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
+								<thead>
+									<tr>
+										<th>Item Description</th>
+										<th>Quantity</th>
+										<th>Unit Of Measurement</th>
+									</tr>
+								</thead>
+								<tbody id="bundleItemsTableBody"></tbody>
+								</table>
+							</div>
+							</div>`
+						)
+						for(var k=0;k<data.items.length;k++){
+							data.items[k].jsonOtherSpecifications = JSON.parse(data.items[k].jsonOtherSpecifications);
+							if(data.items[k].jsonOtherSpecifications.hasOwnProperty('Screensize'))
+								if(!data.items[k].jsonOtherSpecifications.Screensize.indexOf('Screensize'))
+									data.items[k].jsonOtherSpecifications['Screensize'] = data.items[k].jsonOtherSpecifications['Screensize']+' inches';						
+							if(data.items[k].jsonOtherSpecifications.hasOwnProperty('Wattage'))
+								if(data.items[k].jsonOtherSpecifications.Wattage.indexOf('watts') < 0)
+									data.items[k].jsonOtherSpecifications['Wattage'] = data.items[k].jsonOtherSpecifications['Wattage']+' watts';
+							if(data.items[k].jsonOtherSpecifications.hasOwnProperty('Storage') && data.items[k].jsonOtherSpecifications.category == "Mobile")
+								if(!data.items[k].jsonOtherSpecifications.Storage.indexOf('Storage'))
+									data.items[k].jsonOtherSpecifications['Storage'] = data.items[k].jsonOtherSpecifications['Storage']+' GB';
+							if(data.items[k].jsonOtherSpecifications.hasOwnProperty('Ram'))
+								if(!data.items[k].jsonOtherSpecifications.Ram.indexOf('RAM'))
+									data.items[k].jsonOtherSpecifications['Ram'] = 'RAM '+data.items[k].jsonOtherSpecifications['Ram']+' GB';
+							var valuesOnly = Object.values(data.items[k].jsonOtherSpecifications)//array values
+							var desc = data.items[k].jsonOtherSpecifications.Item+' ' 
+							for(var l = 1; l < valuesOnly.length; l++){
+								desc = desc+' '+valuesOnly[l]
+							}
+							$('#bundleItemsTableBody').append(`<tr>
+									<td>${desc}</td>
+									<td>${data.items[k].intQTY}</td>
+									<td>${data.items[k].strUOM}</td>
+								</tr>`
+							)
+						}
+						$('#auctionDetails').modal('toggle')
+						$('#bundleItems').modal('toggle')
+					})
+				})
+				$('#bundleItems').on('hidden.bs.modal', function(){
+					$('#bundleItemsBody').empty();
+				})
 			});
 		script.
-			function importModules(daySliderValue){
+			function importModules(daySliderValue,auctionId){
+				var reqSession = !{JSON.stringify(session)}
 				$('.checkie').iCheck({
 					checkboxClass: 'icheckbox_flat-blue',
 					radioClass: 'iradio_flat-blue'
 				});
 				$("#editDayDuration").slider({
 					range: 'min',
-					min:1,
-					max:3,
+					min:reqSession.utilities.intMinimumDaysForAuction,
+					max:reqSession.utilities.intMaximumDaysForAuction,
 					step:1,
 					animate:"fast",
 					change: function(){
@@ -887,6 +1181,73 @@ html.loading(lang='en', data-textdirection='ltr')
 						}
 					}
 				})
+				$('#itemTable').dataTable({"oLanguage": { "sEmptyTable": `<h3>Click <a href='/auction/catalog/${auctionId}' class="btn btn-info btn-sm"><i class="ft-plus white"></i> Add Items</a> to begin adding items to this auction.<h3>` }})
+				getCatalog(auctionId);
+			}
+			function getCatalog(auctionId){
+				$.post('/catalog', {id:auctionId})
+				.done(function(data){
+					var itemTable = $('#itemTable').DataTable()
+
+					for(var x = 0; x < data.items.length ; x++){
+						if(data.items[x].intConsignmentItemID){
+							data.items[x].jsonOtherSpecifications = JSON.parse(data.items[x].jsonOtherSpecifications);
+							if(data.items[x].jsonOtherSpecifications.hasOwnProperty('Screensize'))
+								if(!data.items[x].jsonOtherSpecifications.Screensize.indexOf('Screensize'))
+									data.items[x].jsonOtherSpecifications['Screensize'] = data.items[x].jsonOtherSpecifications['Screensize']+' inches';						
+							if(data.items[x].jsonOtherSpecifications.hasOwnProperty('Wattage'))
+								if(data.items[x].jsonOtherSpecifications.Wattage.indexOf('watts') < 0)
+									data.items[x].jsonOtherSpecifications['Wattage'] = data.items[x].jsonOtherSpecifications['Wattage']+' watts';
+							if(data.items[x].jsonOtherSpecifications.hasOwnProperty('Storage') && data.items[x].jsonOtherSpecifications.category == "Mobile")
+								if(!data.items[x].jsonOtherSpecifications.Storage.indexOf('Storage'))
+									data.items[x].jsonOtherSpecifications['Storage'] = data.items[x].jsonOtherSpecifications['Storage']+' GB';
+							if(data.items[x].jsonOtherSpecifications.hasOwnProperty('Ram'))
+								if(!data.items[x].jsonOtherSpecifications.Ram.indexOf('RAM'))
+									data.items[x].jsonOtherSpecifications['Ram'] = 'RAM '+data.items[x].jsonOtherSpecifications['Ram']+' GB';
+							var valuesOnly = Object.values(data.items[x].jsonOtherSpecifications)//array values
+							console.log(valuesOnly)
+							var desc = data.items[x].jsonOtherSpecifications.Item+' ' 
+							for(var l = 1; l < valuesOnly.length; l++){
+								desc = desc+' '+valuesOnly[l]
+							}
+							if(data.items[x].booPrice == 1){
+								var row = $(`<tr>
+									<td>${data.items[x].strName}</td>
+									<td>${desc}</td>
+									<td>${data.items[x].intQTY}</td>
+									<td>
+										<button class="btn btn-sm btn-outline-success">Reserved Price</button>
+									</td>
+									</tr>`
+								);
+							}
+							else{
+								var row = $(`<tr>
+									<td>${data.items[x].strName}</td>
+									<td>${desc}</td>
+									<td>${data.items[x].intQTY}</td>
+									<td>
+										<button class="btn btn-sm btn-outline-info">No Reserved Price</button>
+									</td>
+									</tr>`
+								);
+							}
+						}
+						else{
+							var row = $(`<tr>
+								<td>${data.items[x].strName}</td>
+								<td>${data.items[x].strBundleTitle}</td>
+								<td>
+									<button class="btn btn-info btn-sm viewButton" bundleId='${data.items[x].intBundleID}'>View</button>
+								</td>
+								<td>100</td>
+								</tr>`
+							);
+						}
+						itemTable.row.add(row);
+					}
+					itemTable.draw()
+				});
 			}
 			function eventDetails(eventId){
 				$.post('/eventdetails', {auctionId: eventId})
@@ -895,6 +1256,36 @@ html.loading(lang='en', data-textdirection='ltr')
 					$('#auctionDetailsBody').append(`<center>
 						<h3>Auction # ${data.intAuctionID}</h3>
 						</center>
+						<table id="itemTable" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
+							<thead>
+								<tr>
+									<th>Consignor Name</th>
+									<th>Item Description</th>
+									<th>Quantity</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<th>Consignor Name</th>
+									<th>Item Description</th>
+									<th>Quantity</th>
+									<th>Price</th>
+								</tr>
+							</tfoot>
+							<tbody></tbody>
+						</table>
+						<br/>
+						<br/>
+						<div class="row">
+							<div class='col-md-12'>
+								<a id='editCatalog' href='/auction/catalog/${eventId}' class='btn btn-info' style='float:right;'>Edit Catalog</a>
+							</div>
+						</div>
+						<br/>
+						<br/>
+						<br/>
+						<h6 style="margin: -38px 0 20px;" class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>Auction Details</span></h6>
 						<fieldset>
 							<div class="row">
 								<div class="col-md-4 col-sm-12"></div>
@@ -914,10 +1305,10 @@ html.loading(lang='en', data-textdirection='ltr')
 										<input id='editAuctionName' type="text" name="auctionName" placeholder="E.g Chanel Galore" value="${data.strAuctionName}" class="form-control input-lg"/>
 										</div>
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-6 startingTimeColumn">
 										<div class="form-group">
 										<label>Starting Time<span class="danger">*</span></label>
-										<input id="editStartingTime" type="text" name="startingTime" placeholder="Date Dropper" value="${jsonAttribute.startingTime}" class="form-control input-lg"/>
+										<input id="editStartingTime" type="text" name="startingTime" placeholder="Date Dropper" value="${jsonAttribute.startingTime}" class="form-control input-lg startingTime"/>
 										</div>
 									</div>
 									</div>
@@ -936,16 +1327,16 @@ html.loading(lang='en', data-textdirection='ltr')
 										</div>
 									</div>
 									</div>
-								<div class="row">
+								<div class="row dayRow">
 									<div class="col-md-12">
 									<div class="form-group">
 										<label>Day Duration:</label>
 										<div id="editDayDuration" class="ui-slider-info"></div>
-										<input id="editDayInput" type="hidden" name="days" value="${jsonAttribute.days}"/>
+										<input class="dayInput" id="editDayInput" type="hidden" name="days" value="${jsonAttribute.days}"/>
 									</div>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row durationRow">
 									<div class="col-md-6">
 									<div class="form-group">
 										<label>Hour Duration:</label>
@@ -965,53 +1356,62 @@ html.loading(lang='en', data-textdirection='ltr')
 								</div>
 								</fieldset>
 								<div class="table-responsive">
-								<table id="itemTable" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
-									<thead>
-									<tr>
-										<th>ID</th>
-										<th>Item Name</th>
-										<th>Date Created</th>
-										<th>Date Received</th>
-										<th>Status</th>
-										<th>Action</th>
-									</tr>
-									</thead>
-									<tbody></tbody>
-								</table>
 								</div>
 								<div class="card-footer">
-									<button id="editSubmit" class="btn btn-block btn-outline-info" auctionDateStart='${data.datDateStart}' auctionId='${data.intAuctionID}'>
-									<i class="ft-user"></i>Edit 
+									<button id="editSubmit" style='float:right;margin:5px' class="btn btn-outline-info" auctionDateStart='${data.datDateStart}' auctionId='${data.intAuctionID}'>
+									<i class="ft-user"></i>Edit Auction Details
+									</button>
+									<button id="publishButton" style='float:right;margin:5px' class="btn btn-outline-warning" auctionId='${data.intAuctionID}' auctionDateStart='${data.datDateStart}'>
+									<i class="ft-user"></i>Publish Auction
+									</button>
+									<button id="cancelButton" style='float:right;margin:5px;display:none;' class="btn btn-outline-danger" auctionId='${data.intAuctionID}'>
+									<i class="ft-user"></i>Cancel Auction
 									</button>
 								</div>
 								<input id='editBannerToggle' type='hidden' value='0'/>
 						</fieldset>
 						</form>
 					`)
+					if(data.booAuctionStatus == 3 || data.booAuctionStatus == 5 || data.booAuctionStatus == 2){
+						$('#editCatalog').fadeOut(1000);
+						$('#editSubmit').fadeOut(1000);
+						$('#publishButton').fadeOut(1000);
+						if(data.booAuctionStatus == 5){
+							$('#cancelButton').fadeIn(1000);
+						}
+					}
+					if(data.datDateStart == null){
+						$('#publishButton').fadeOut(1000);
+					}
 					if(data.booAuctionType == 1){
-						$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie editAuctionType" checked=''/><span>
-							<label> Live &nbsp &nbsp</label></span>
+						$('.dayInput').attr('disabled', true);
+						$('.hourDuration').attr('disabled', true);
+						$('.minuteDuration').attr('disabled', true);
+						$('.startingTime').attr('disabled', true);
+						$('.dayRow').fadeOut(1000)
+						$('.durationRow').fadeOut(1000)
+						$('.startingTimeColumn').fadeOut(1000)
+						$('#fieldAuctionType').append(`
 						<input type="radio" name="editAuctionType" value="2" class="checkie editAuctionType"/><span>
 							<label> Online</label></span>
 						<input type='hidden' id='editAuctionType' value='1'/>
 						`)
 					}
 					else{
-						$('#fieldAuctionType').append(`<input type="radio" name="editAuctionType" value="1" class="checkie editAuctionType"/><span>
-							<label> Live &nbsp &nbsp</label></span>
+						$('#fieldAuctionType').append(`
 						<input type="radio" name="editAuctionType" value="2" class="checkie editAuctionType" checked=''/><span>
 							<label> Online</label></span>
 						<input type='hidden' id='editAuctionType' value='2'/>
 						`)
 					}
 					if(data.strBanner != ''){
-						$('#bannerDiv').append(`<input id='editBanner' type="file" name="auctionBanner" data-default-file="/assets/uploads/${data.strBanner}" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify"/>`)
+						$('#bannerDiv').append(`<input id='editBanner' type="file" name="auctionBanner" data-default-file="/assets/uploads/${data.strBanner}" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify" data-allowed-formats="landscape"/>`)
 					}
 					else{
-						$('#bannerDiv').append(`<input id='editBanner' type="file" name="auctionBanner" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify"/>`)
+						$('#bannerDiv').append(`<input id='editBanner' type="file" name="auctionBanner" accept="image/*" data-height="300" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' class="dropify" data-allowed-formats="landscape"/>`)
 					}
 					$('#auctionDetails').modal('show');
-					importModules(jsonAttribute.days);
+					importModules(jsonAttribute.days,data.intAuctionID);
 				});
 			}
 		

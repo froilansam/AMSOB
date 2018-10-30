@@ -1,0 +1,1031 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| AMSOB Admin | Bundle
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/custom.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/dropify.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/responsive.dataTables.min.css')
+		link(rel="stylesheet" type="text/css" href="/assets/vendors/css/extensions/toastr.css")
+		link(rel="stylesheet" type="text/css" href="/assets/css/plugins/extensions/toastr.min.css")
+		link(rel="stylesheet", href="/assets/vendors/css/extensions/sweetalert.css")
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/formValidation.css')
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		// END Custom CSS
+		style.
+			.has-error .control-label,
+			.has-error .help-block,
+			.has-error .form-control-feedback {
+				color: #a94442;
+			}
+
+			/* Color of valid field */
+			.has-success .control-label,
+			.has-success .help-block,
+			.has-success .form-control-feedback {
+				color: #3c763d;
+			}
+			.form-group.has-feedback.has-error .form-control,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single:focus{
+				border: 1px solid #a94442 !important;
+			}
+			.form-group.has-feedback.has-success .form-control,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single:focus{
+				border: 1px solid #3c763d !important;
+			}
+
+			.form-control-feedback.fa.fa-check{
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 35px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.form-control-feedback.fa.fa-times {
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 54px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.swal-button.swal-button--No{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Yes{
+				background-color: #28D094 !important;
+			}
+			.is-table-row {
+				display: table;
+			}
+			.is-table-row [class*="col-"] {
+				float: none;
+				display: table-cell;
+				vertical-align: top;
+			}
+	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.mr-auto
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AMSOB
+						li.nav-item.d-none.d-md-block.float-right
+							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.content
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='/logout')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-ph
+									span.selected-language
+								.dropdown-menu(aria-labelledby='dropdown-flag')
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-ph
+										|  English
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-fr
+										|  French
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-cn
+										|  Chinese
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-de
+										|  German
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+									li.scrollable-container.media-list.w-100#notificationField
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
+			.main-menu-content
+				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+					li.nav-item
+						a(href='/')
+							i.fa.fa-dashboard
+							span.menu-title Dashboard
+					li.nav-item
+						a(href='#')
+							i.fa.fa-wrench
+							span.menu-title Maintenance
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+									li
+										a.menu-item(href='/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidders
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Schedule
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') User Management
+								ul.menu-content
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
+					li.nav-item
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='/consignor/auctionresult', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awards
+									li
+										a.menu-item(href='/delivery', data-i18n='nav.menu_levels.second_level_child.third_level_child') Delivery
+					li.nav-item
+						a(href='/queries')
+							i.fa.fa-list
+							span.menu-title Queries
+					li.nav-item
+						a(href='/reports/sales')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='/utilities')
+							i.fa.fa-cogs
+							span.menu-title Utilities
+		// MODALS
+		#createBundle.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+			.modal-dialog.modal-xl(role='document')
+				.modal-content
+					.modal-header(style='border-bottom: none;')
+						h4.modal-title.text-center 
+							img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+						button.close(type='button', data-dismiss='modal', aria-label='Close')
+							span(aria-hidden='true') ×
+					.modal-body
+						.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
+							h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+								span Create Asset Bundle
+						.card-content
+							.card-body#createBundleBody
+		#bundleItems.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+			.modal-dialog.modal-xl(role='document')
+				.modal-content
+					.modal-header(style='border-bottom: none;')
+						h4.modal-title.text-center 
+							img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+						button.close(type='button', data-dismiss='modal', aria-label='Close')
+							span(aria-hidden='true') ×
+					.modal-body
+						.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
+							h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+								span Items in this Bundle
+						.card-content
+							.card-body#bundleItemsBody
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Bundle
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+								ol.breadcrumb
+									li.breadcrumb-item
+										a(href='#') Maintenance
+									li.breadcrumb-item
+										a(href='#') Auction Management
+									li.breadcrumb-item.active
+										| Bundle
+				.content-body
+					section.row.is-table-row
+						.col-md-8
+							.card
+								.card-head
+									.card-header
+										h4.card-title Available Bundles
+										a.heading-elements-toggle
+											i.la.la-ellipsis-h.font-medium-3
+										.heading-elements
+											button#createButton.btn.btn-block.btn-primary.btn-sm(type='button')
+												i.ft-plus.white
+												|  Create Bundle
+								.card-content
+									.card-body
+										.table-responsive
+											table#table.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+												thead
+													tr
+														th Bundle Description
+														th Status
+														th Actions
+												tbody
+													each bundle in bundles
+														-if(bundle.booBundleStatus == 0)
+															tr
+																td #{bundle.strBundleTitle}
+																td 
+																	span.btn.btn-sm.btn-outline-success.round Available																
+																td
+																	span.dropdown
+																		button.btn.btn-info.dropdown-toggle.dropdown-menu-right(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+																			i.ft-settings
+																		span.dropdown-menu.mt-1.dropdown-menu-right
+																			a.delete.dropdown-item(href='javascript:void(0)' value=`${bundle.intBundleID}`)
+																				i.ft-trash-2
+																				|  Delete
+																			a.viewButton.dropdown-item(href='javascript:void(0)' value=`${bundle.intBundleID}`)
+																				i.la.la-eye
+																				|  View
+												tfoot
+													tr
+														th Bundle Description
+														th Status
+														th Actions
+					
+						.col-md-4
+							.card
+								.card-head
+									.card-header
+										h4.card-title Auctioned Bundle
+										a.heading-elements-toggle
+											i.la.la-ellipsis-h.font-medium-3
+										.heading-elements
+								.card-content
+									.card-body
+										.table-responsive
+											table#table2.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+												thead
+													tr
+														th Bundle Description
+														th Status
+												tbody
+													each bundle in bundles
+															tr
+																-if(bundle.booBundleStatus == 1)
+																	td #{bundle.strBundleTitle}
+																	td
+																		span.btn.btn-sm.btn-outline-info.round On-going
+																-if(bundle.booBundleStatus == 2)
+																	td #{bundle.strBundleTitle}
+																	td
+																		span.btn.btn-sm.btn-outline-success.round Sold
+												tfoot
+													tr
+														th Bundle Description
+														th Status
+						
+					// Analytics map based session
+		// ///////////////////////////////////////////////////////////////////////////
+		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') AMSOB
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Polytechnic University of the Philippines
+					i.ft-heart.pink
+		input#editBannerToggle(type='hidden' value='0')
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/dropify.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+		script(src="/assets/vendors/js/forms/icheck/icheck.min.js" type='text/javascript')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+		script(src="/assets/vendors/js/extensions/toastr.min.js" type="text/javascript")
+		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
+		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
+		// END PAGE LEVEL JS
+		script.
+			$(document).ready(function(){
+				$(document).on('click', '.removeItemFromBundle', function(){
+					var itemId = $(this).attr('itemId');
+					var bundleId = $(this).attr('bundleId');
+					var desc = $(this).attr('desc');
+					var qty = $(this).attr('qty');
+					var uom = $(this).attr('uom');
+					var bundleTable = $('#bundleItemsTable').DataTable()
+					var bundleItemCount = $('#bundleItemsTable').DataTable().rows().count()
+					var editBundleTable = $('#editBundleTable').DataTable()
+					var rowNow = $(this).parent('td').parent('tr');
+					if(bundleItemCount <= 2){
+						toastr.error("Oh no! Bundle must have two or more items inside. Please try again.","Invalid Bundle!",{
+							showMethod:"slideDown",
+							hideMethod:"slideUp",
+							positionClass:"toast-bottom-right",
+							timeOut:5000
+						})
+					}
+					else{
+						$.post('/bundle/remove/item', {id: itemId, bundle: bundleId})
+						.done(function(){
+							bundleTable.row(rowNow).remove()
+							bundleTable.draw()
+							var row = $(`<tr>
+								<td>${desc}</td>
+								<td>${qty}</td>
+								<td>${uom}</td>
+								<td><input class='editCheckie' type='checkbox' itemId='${itemId}' bundleId='${bundleId}'/></td>
+							</tr>`)
+							editBundleTable.row.add(row)
+							editBundleTable.draw()
+						})
+					}
+				})
+				$('#bundleItems').on('hidden.bs.modal', function(){
+					$('#bundleItemsBody').empty();
+				})
+				$(document).on('click', '.viewButton', function(){
+					var bundleId = $(this).attr('value');
+					var consignmentId;
+					$.post('/bundle/details', {bundleId: bundleId})
+					.done(function(data){
+						consignmentId = data.bundleDetails.intBundleConsignmentID
+						$('#bundleItemsBody').append(`<div class="row">
+							<div class="col-md-12">
+								<form id="editBundleForm">
+									<div class="col-md-6">
+										<fieldset>
+											<div class="form-group">
+												<label>Bundle Description<small style="color:red">*</small></label>
+												<input type="text" name="editBundleInput" value="${data.bundleDetails.strBundleTitle}" placeholder="E.g Assorted Accessories" class="form-control"/>
+											</div>
+										</fieldset>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Bundle Picture<small style="color:red">*</small></label>
+											<input id='editBanner' data-default-file="/assets/uploads/${data.bundleDetails.strBundlePicture}" type="file" name="bundlePicture" accept="image/*" data-height="200" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' data-allowed-formats="square" class="dropify"/>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>`)	
+						$.post('/bundle/view', {bundleId: bundleId})
+						.done(function(data){
+							$('#bundleItemsBody').append(`<div class="row">
+								<div class="col-md-12">
+									<table id="bundleItemsTable" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
+									<thead>
+										<tr>
+											<th>Item Description</th>
+											<th>Quantity</th>
+											<th>Unit Of Measurement</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody id="bundleItemsTableBody"></tbody>
+									</table>
+								</div>
+								</div>`
+							)
+							for(var k=0;k<data.items.length;k++){
+								data.items[k].jsonOtherSpecifications = JSON.parse(data.items[k].jsonOtherSpecifications);
+								if(data.items[k].jsonOtherSpecifications.hasOwnProperty('Screensize'))
+									if(!data.items[k].jsonOtherSpecifications.Screensize.indexOf('Screensize'))
+										data.items[k].jsonOtherSpecifications['Screensize'] = data.items[k].jsonOtherSpecifications['Screensize']+' inches';						
+								if(data.items[k].jsonOtherSpecifications.hasOwnProperty('Wattage'))
+									if(data.items[k].jsonOtherSpecifications.Wattage.indexOf('watts') < 0)
+										data.items[k].jsonOtherSpecifications['Wattage'] = data.items[k].jsonOtherSpecifications['Wattage']+' watts';
+								if(data.items[k].jsonOtherSpecifications.hasOwnProperty('Storage') && data.items[k].jsonOtherSpecifications.category == "Mobile")
+									if(!data.items[k].jsonOtherSpecifications.Storage.indexOf('Storage'))
+										data.items[k].jsonOtherSpecifications['Storage'] = data.items[k].jsonOtherSpecifications['Storage']+' GB';
+								if(data.items[k].jsonOtherSpecifications.hasOwnProperty('Ram'))
+									if(!data.items[k].jsonOtherSpecifications.Ram.indexOf('RAM'))
+										data.items[k].jsonOtherSpecifications['Ram'] = 'RAM '+data.items[k].jsonOtherSpecifications['Ram']+' GB';
+								var valuesOnly = Object.values(data.items[k].jsonOtherSpecifications)//array values
+								var desc = data.items[k].jsonOtherSpecifications.Item+' ' 
+								for(var l = 1; l < valuesOnly.length; l++){
+									desc = desc+' '+valuesOnly[l]
+								}
+								$('#bundleItemsTableBody').append(`<tr>
+										<td>${desc}</td>
+										<td>${data.items[k].intQTY}</td>
+										<td>${data.items[k].strUOM}</td>
+										<td>
+											<button class="btn btn-danger btn-sm removeItemFromBundle" desc='${desc}' uom='${data.items[k].strUOM}' qty='${data.items[k].intQTY}' itemId='${data.items[k].intConsignmentItemID}' bundleId='${bundleId}'>Remove</button>
+										</td>
+									</tr>`
+								)
+							}
+							$('#bundleItemsTable').DataTable()
+							$('#editBundleForm').formValidation({
+								framework: 'bootstrap',
+								icon: {
+									valid: 'fa fa-check',
+									invalid: 'fa fa-times',
+									validating: 'fa fa-spinner'
+								},
+								fields:{
+									bundleInput:{
+										validators:{
+											notEmpty:{
+												message:'Please enter a description for this bundle'
+											}
+										}
+									},
+								}
+							})
+							$('.dropify').dropify({
+								allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+								messages: {
+									'default': 'Drag and drop an image here or click',
+									'replace': 'Drag and drop or click to replace',
+									'remove': 'Remove',
+									'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+								},
+								error: {
+									'fileSize': 'The file size is too big (1M max).',
+									'fileFormat': 'The file format is not allowed ({{ value }} only).'
+								}
+							});
+							$.post(`/bundle/item/query/${consignmentId}`)
+							.done(function(data){
+								$('#bundleItemsBody').append(`<br/>
+								<br/>
+								<div class="table-responsive">
+									<table id="editBundleTable" class="datatable table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
+										<thead>
+											<tr>
+												<th>Item Description</th>
+												<th>Quantity</th>
+												<th>Unit of Measurement</th>
+												<th>Select</th>
+											</tr>
+										</thead>
+										<tbody id="editBundleTableBody"></tbody>
+										<tfoot>
+											<tr>
+												<th>Item Description</th>
+												<th>Quantity</th>
+												<th>Unit of Measurement</th>
+												<th>Select</th>
+											</tr>
+										</tfoot>
+									</table>
+									</div>
+									<br/>
+									<br/>
+									<div class="row">
+										<div class="col-md-12">
+											<button id="editSubmitButton" class="btn btn-success btn-block">Edit Bundle</button>
+										</div>
+									</div>`
+								)
+								for(var i=0;i<data.items.length;i++){
+									if(data.items[i].jsonOtherSpecifications.hasOwnProperty('Screensize'))
+										if(!data.items[i].jsonOtherSpecifications.Screensize.indexOf('Screensize'))
+											data.items[i].jsonOtherSpecifications['Screensize'] = data.items[i].jsonOtherSpecifications['Screensize']+' inches';						
+									if(data.items[i].jsonOtherSpecifications.hasOwnProperty('Wattage'))
+										if(data.items[i].jsonOtherSpecifications.Wattage.indexOf('watts') < 0)
+											data.items[i].jsonOtherSpecifications['Wattage'] = data.items[i].jsonOtherSpecifications['Wattage']+' watts';
+									if(data.items[i].jsonOtherSpecifications.hasOwnProperty('Storage') && data.items[i].jsonOtherSpecifications.category == "Mobile")
+										if(!data.items[i].jsonOtherSpecifications.Storage.indexOf('Storage'))
+											data.items[i].jsonOtherSpecifications['Storage'] = data.items[i].jsonOtherSpecifications['Storage']+' GB';
+									if(data.items[i].jsonOtherSpecifications.hasOwnProperty('Ram'))
+										if(!data.items[i].jsonOtherSpecifications.Ram.indexOf('RAM'))
+											data.items[i].jsonOtherSpecifications['Ram'] = 'RAM '+data.items[i].jsonOtherSpecifications['Ram']+' GB';
+									var valuesOnly = Object.values(data.items[i].jsonOtherSpecifications)//array values
+									var desc = data.items[i].jsonOtherSpecifications.Item+' ' 
+									for(var x = 1; x < valuesOnly.length; x++){
+										desc = desc+' '+valuesOnly[x]
+									}
+									$('#editBundleTableBody').append(`<tr>
+										<td>${desc}</td>
+										<td>${data.items[i].intQTY}</td>
+										<td>${data.items[i].strUOM}</td>
+										<td><input class='editCheckie' type='checkbox' itemId='${data.items[i].intConsignmentItemID}' bundleId='${bundleId}'/></td>
+									</tr>`
+									)
+								}
+								$('#editBundleTable').DataTable({
+									fnDrawCallback: function(){
+										$('.editCheckie').iCheck({
+											checkboxClass: 'icheckbox_flat-blue',
+										});
+									}
+								})
+							})
+							$('#editBanner').on('dropify.afterClear', function(){
+								$('#editBannerToggle').val(1);
+							})
+							$('#editBanner').on('change', function(){
+								$('#editBannerToggle').val(1);
+							})
+							$('#bundleItems').modal('toggle')
+						})
+					})
+				})
+				$('#table').dataTable()
+				$(document).on('click', '#editSubmitButton', function(){
+					var valid = $('#editBundleForm').data('formValidation').validate().isValid()
+					var valid2;
+					var editBanner = $('#editBanner').val()
+					var pictureChanged = false;
+					var editCheckies = $('.editCheckie')
+					var checkedEdits = [];
+					var bundle = $('.editCheckie')[0].getAttribute('bundleId')
+					console.log(bundle)
+					if($('#editBannerToggle').val() == 1){
+						if(editBanner != ''){
+							valid2 = true;
+							pictureChanged = true;
+						}
+						else{
+							toastr.error("Oh no! Bundle Picture is required to be filled out. Please input a picture.","Invalid Bundle!",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
+							})
+						}
+					}
+					else{
+						valid2 = true;
+					}
+					if(valid && valid2){
+						for(var j=0;j<editCheckies.length;j++){
+							if(editCheckies[j].checked == true){
+								checkedEdits.push(editCheckies[j].getAttribute('itemId'))
+							}
+						}
+						var formData = new FormData()
+						formData.append('items', JSON.stringify(checkedEdits))
+						formData.append('bundleDesc', $('input[name="editBundleInput"]').val())
+						formData.append('bundleId', bundle)
+						if(pictureChanged){
+							formData.append('bundlePicture', $('#editBanner')[0].files[0])
+						}
+						$.ajax({
+							type: "POST",
+							url: "/bundle/edit",
+							data: formData,
+							processData: false,
+							contentType: false,
+							success: function(){
+								$('#bundleItems').modal('toggle')
+								toastr.success("Yay, you have successfully edited the bundle","Success!",{
+									showMethod:"slideDown",
+									hideMethod:"slideUp",
+									positionClass:"toast-bottom-right",
+									timeOut:5000
+								})
+							}
+						})
+					}
+				})
+				$(document).on('click', '.dropify-clear', function(){
+					$('#bundleForm').formValidation('revalidateField', 'bundlePicture');
+				})
+				$(document).on('click', '.delete', function(){
+					var id = $(this).attr('value')
+					swal({
+						title: 'Are you sure?',
+						text: 'This will split all of the items in this bundle into single items',
+						icon: 'info',
+						buttons: {
+							No: 'No',
+							Yes: 'Yes',
+						}
+					}).then(function(value){
+						if(value == 'Yes'){
+							$.post('/bundle/split', {bundleId: id})
+							.done(function(){
+								location.href = '/bundle'
+							})
+						}
+					})
+				})
+				$(document).on('ifUnchecked', '.checkie', function(){
+					$.post('/catalog/revert/item', {itemId: $(this).attr('stritemId')})
+				})
+				$(document).on('ifChecked', '.checkie', function(){
+					var checkieNow = $(this)
+					var error = 0;
+					var table = $('#createBundleTable').DataTable()
+					var pageLength = table.page.info()
+					var pageNow = table.page.info().page
+					table.page(0).draw('page')
+					for(var c=1;c<=pageLength.pages;c++){
+						var checkies = $('.checkie');
+						for(var x=0;x<checkies.length;x++){
+							if(checkies[x].checked == true){
+								if(checkies[x].getAttribute('consignmentId') != checkieNow.attr('consignmentId')){
+									error = 1;
+									setTimeout(function(){checkieNow.iCheck('uncheck')}, 1);
+								}
+							}
+						}
+						table.page('next').draw('page')
+					}
+					table.page(pageNow).draw('page')
+					if(error == 1){
+						toastr.error("Oh no! Items inside a bundle must be on one consignment only. Please try again.","Invalid Bundle!",{
+							showMethod:"slideDown",
+							hideMethod:"slideUp",
+							positionClass:"toast-bottom-right",
+							timeOut:5000
+						})
+					}
+					else{
+						$.post('/catalog/validate', {itemId: checkieNow.attr('stritemId')})
+						.done(function(data){
+							var send = data.confirm;
+							if(data.valid== false){
+								swal({
+									title: 'Do you wish to continue?',
+									text: data.warning,
+									icon: 'info',
+									buttons: {
+										No: 'No',
+										Yes: 'Yes',
+									}
+								}).then(function(value){
+									if(value == 'Yes'){
+										$.post('/catalog/remove/item', {obj: send})
+									}
+									else{
+										setTimeout(function(){checkieNow.iCheck('uncheck')}, 1);
+									}
+								})
+							}
+						})
+					}
+				})
+				$(document).on('click', '#submitButton', function(){
+					var valid = $('#bundleForm').data('formValidation').validate().isValid()
+					if(valid == true){
+						var checked = [];
+						var table = $('#createBundleTable').DataTable()
+						var pageLength = table.page.info()
+						table.page(0).draw('page')
+						for(var a=1;a<=pageLength.pages;a++){
+							var checkies = $('.checkie');
+							for(var x=0;x<checkies.length;x++){
+								if(checkies[x].checked == true){
+									checked.push({itemId: checkies[x].getAttribute('itemId'), consignmentId: checkies[x].getAttribute('consignmentId')})
+								}
+							}
+							table.page('next').draw('page')
+						}
+						if(checked.length>1){
+							swal({
+								title: 'Are you sure?',
+								text: 'Do you really want to bundle these items?',
+								icon: 'info',
+								buttons: {
+									No: 'No',
+									Yes: 'Yes',
+								}
+							}).then(function(value){
+								if(value == 'Yes'){
+									var formData = new FormData();
+									formData.append('bundleDesc', $('input[name="bundleInput"]').val());
+									formData.append('items', JSON.stringify(checked) );
+									formData.append('bundlePicture', $('input[name="bundlePicture"]')[0].files[0])
+									formData.append('consignmentId', checked[0].consignmentId);
+									$.ajax({
+										type: "POST",
+										url: "/bundle/submit",
+										data: formData,
+										processData: false,
+										contentType: false,
+										success: function(data){
+											location.reload()
+										}
+									})
+								}
+							})
+						}
+						else{
+							toastr.error("Oh no! Bundle must have two or more items inside. Please try again.","Invalid Bundle!",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
+							})
+						}
+					}
+					else{
+						$('#bundleForm').data('formValidation').validate()
+					}
+				});
+				$(document).on('click', '#createButton', function(){
+					$.post('/bundle/item/query').done(function(data){
+						$('#createBundleBody').append(`<form id="bundleForm">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="col-md-3"></div>								
+										<div class="col-md-6">
+											<fieldset>
+												<div class="form-group">
+													<label>Bundle Description: <small style="color:red">*</small></label>
+													<input type="text" name="bundleInput" placeholder="E.g Assorted Accessories" class="form-control"/>
+												</div>
+											</fieldset>
+										</div>
+										<div class="col-md-3"></div>																		
+									</div>
+									<div class="row">
+										<div class="col-md-3"></div>								
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Bundle Picture: <small style="color:red">*</small></label>
+												<input id='addBanner' type="file" name="bundlePicture" accept="image/*" data-height="200" data-allowed-file-extensions="jpeg jpg png" data-min-height='351' data-allowed-formats="square" class="dropify"/>
+											</div>
+										</div>
+										<div class="col-md-3"></div>																		
+									</div>
+								</div>
+							</form>`
+						)
+						$('#createBundleBody').append(`<div class="table-responsive">
+							<table id="createBundleTable" class="datatable table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
+								<thead>
+									<tr>
+										<th>Consignor</th>
+										<th>Consignment ID</th>
+										<th>Item Description</th>
+										<th>Quantity</th>
+										<th>Select</th>
+									</tr>
+								</thead>
+								<tbody id="createBundleTableBody"></tbody>
+								<tfoot>
+									<tr>
+										<th>Consignor</th>
+										<th>Consignment ID</th>
+										<th>Item Description</th>
+										<th>Quantity</th>
+										<th>Select</th>
+									</tr>
+								</tfoot>
+							</table>
+							</div>
+							<br/>
+							<br/>
+							<div class="row">
+								<div class="col-md-12">
+									<button id="submitButton" class="btn btn-success btn-block">Submit</button>
+								</div>
+							</div>`
+						)
+						for(var i=0;i<data.items.length;i++){
+							if(data.items[i].jsonOtherSpecifications.hasOwnProperty('Screensize'))
+								if(!data.items[i].jsonOtherSpecifications.Screensize.indexOf('Screensize'))
+									data.items[i].jsonOtherSpecifications['Screensize'] = data.items[i].jsonOtherSpecifications['Screensize']+' inches';						
+							if(data.items[i].jsonOtherSpecifications.hasOwnProperty('Wattage'))
+								if(data.items[i].jsonOtherSpecifications.Wattage.indexOf('watts') < 0)
+									data.items[i].jsonOtherSpecifications['Wattage'] = data.items[i].jsonOtherSpecifications['Wattage']+' watts';
+							if(data.items[i].jsonOtherSpecifications.hasOwnProperty('Storage') && data.items[i].jsonOtherSpecifications.category == "Mobile")
+								if(!data.items[i].jsonOtherSpecifications.Storage.indexOf('Storage'))
+									data.items[i].jsonOtherSpecifications['Storage'] = data.items[i].jsonOtherSpecifications['Storage']+' GB';
+							if(data.items[i].jsonOtherSpecifications.hasOwnProperty('Ram'))
+								if(!data.items[i].jsonOtherSpecifications.Ram.indexOf('RAM'))
+									data.items[i].jsonOtherSpecifications['Ram'] = 'RAM '+data.items[i].jsonOtherSpecifications['Ram']+' GB';
+							var valuesOnly = Object.values(data.items[i].jsonOtherSpecifications)//array values
+							var desc = data.items[i].jsonOtherSpecifications.Item+' ' 
+							for(var x = 1; x < valuesOnly.length; x++){
+								desc = desc+' '+valuesOnly[x]
+							}
+							$('#createBundleTableBody').append(`<tr>
+								<td>${data.items[i].strName}</td>
+								<td>${data.items[i].intCIConsignment}</td>
+								<td>${desc}</td>
+								<td>${data.items[i].intQTY}</td>
+								<td><input class='checkie' type='checkbox' itemId='${data.items[i].intConsignmentItemID}' strItemId='${data.items[i].strItemID}' consignmentId='${data.items[i].intCIConsignment}'/></td>
+							</tr>`
+							)
+						}
+						$('#createBundleTable').DataTable({
+							fnDrawCallback: function(){
+								$('.checkie').iCheck({
+									checkboxClass: 'icheckbox_flat-blue',
+								});
+							}
+						})
+						$('#bundleForm').formValidation({
+							framework: 'bootstrap',
+							icon: {
+								valid: 'fa fa-check',
+								invalid: 'fa fa-times',
+								validating: 'fa fa-spinner'
+							},
+							fields:{
+								bundleInput:{
+									validators:{
+										notEmpty:{
+											message:'Please enter a description for this bundle'
+										}
+									}
+								},
+								bundlePicture:{
+									validators:{
+										notEmpty:{
+											message:'Please enter a picture for this bundle'
+										}
+									}
+								}
+							}
+						})
+						$('.dropify').dropify({
+							allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+							messages: {
+								'default': 'Drag and drop an image here or click',
+								'replace': 'Drag and drop or click to replace',
+								'remove': 'Remove',
+								'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+							},
+							error: {
+								'fileSize': 'The file size is too big (1M max).',
+								'fileFormat': 'The file format is not allowed ({{ value }} only).'
+							}
+						});
+					})
+					$('#createBundle').modal('toggle')
+				});
+				$('#createBundle').on('hidden.bs.modal', function(){
+					$('#createBundleBody').empty();
+				})
+			});

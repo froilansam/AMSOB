@@ -1,0 +1,310 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| AMSOB Consignor Portal | Consignments
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/weather-icons/climacons.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/meteocons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist-plugin-tooltip.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/responsive.dataTables.min.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/horizontal-menu.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/timeline.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/dashboard-ecommerce.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel="stylesheet" type="text/css" href="/assets/vendors/css/extensions/toastr.css")
+		link(rel="stylesheet" type="text/css" href="/assets/css/plugins/extensions/toastr.min.css")
+
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		// END Custom CSS
+		style.
+			.card .card-body:before {
+				font-family: fontawesome;
+				font-size: 10rem;
+				color: rgba(255,255,255,.15);
+				position: absolute;
+				bottom: -32px;
+				right: 0;
+			}
+			.sales::before {
+				content: "\f0d6";
+			}
+			.consignment::before {
+				content: "\f07a";
+			}
+			.form-control:disabled, .form-control[readonly], .input-group-addon {
+				background-color: transparent;
+				border: none! important;
+				font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+			}
+			.pull-up{
+				z-index: 0 !important;
+			}
+			.swal-button.swal-button--No{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Yes{
+				background-color: #28D094 !important;
+			}
+	body.horizontal-layout.horizontal-menu.horizontal-menu-padding.2-columns.menu-expanded(data-open='click', data-menu='horizontal-menu', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.navbar-static-top.navbar-brand-center.navbar-dark.bg-gradient-x-cyan
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.text-center
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AMSOB
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.container.center-layout
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+									i.ft-menu
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+							
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.consignor.strRepresentativeFirstName} #{session.consignor.strRepresentativeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									.dropdown-divider
+									a.dropdown-item(href='/consignorhome/logout')
+										i.ft-power
+										|  Logout
+							
+		// ////////////////////////////////////////////////////////////////////////////
+		.header-navbar.navbar-expand-sm.navbar.navbar-horizontal.navbar-fixed.navbar-dark.navbar-without-dd-arrow.navbar-shadow(role='navigation', data-menu='menu-wrapper')
+			.navbar-container.main-menu-content.container.center-layout(data-menu='menu-container')
+				ul#main-menu-navigation.nav.navbar-nav(data-menu='menu-navigation')
+					li.dropdown.nav-item(data-menu='dropdown')
+						a.dropdown-toggle.nav-link(href='index.html', data-toggle='dropdown')
+							i.la.la-area-chart
+							span Menu
+						ul.dropdown-menu
+							li.dropdown
+								a.dropdown-item(href='/consignorhome', data-toggle='dropdown') Dashboard
+							li.dropdown
+								a.dropdown-item(href='/consignorhome/consignment', data-toggle='dropdown') Consignment
+							li.dropdown
+								a.dropdown-item(href='/consignorhome/auctionresults', data-toggle='dropdown') Auction Result
+					
+		.app-content.content
+			.content-wrapper
+								
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Consignment
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+								ol.breadcrumb
+									li.breadcrumb-item.active
+										| Consignment
+				.content-body
+					section.row
+							.col-12
+								.card
+									.card-head
+										.card-header
+											h4.card-title Consignment
+											a.heading-elements-toggle
+												i.la.la-ellipsis-h.font-medium-3
+											.heading-elements
+												button#createConsignment.btn.btn-block.btn-info.btn-sm(type='button', data-toggle='modal', data-target='#logInModal')
+													i.ft-plus.white
+													|  Create Consignment
+									.card-content
+										.card-body
+											// Task List table
+											.table-responsive
+												table#consignmentTable.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+													thead
+														tr
+															th Consignment ID
+															th Date Created
+															th Date Received
+															th Status
+															th Action
+													tbody
+														-if(consignments)
+															-for(var i = 0; i < consignments.length; i++)
+																tr
+																	td #{consignments[i].intConsignmentID}
+																	td #{consignments[i].datDateCreated}																	
+																	-if(consignments[i].datDateReceived == null)
+																		td Pending
+																	-else
+																		td #{consignments[i].datDateReceived}
+																	
+																	-if(consignments[i].booStatus == 0)
+																		td
+																			span.btn.btn-sm.btn-outline-warning.round For Receiving
+																	-if(consignments[i].booStatus == 1)
+																		td
+																			span.btn.btn-sm.btn-outline-success.round Received
+																	-if(consignments[i].booStatus == 2)
+																		td
+																			span.btn.btn-sm.btn-outline-danger.round Cancelled
+																	td
+																		span.dropdown
+																			button#btnSearchDrop2.btn.btn-info.dropdown-toggle.dropdown-menu-right(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+																				i.ft-settings
+																			span.dropdown-menu.mt-1.dropdown-menu-right(aria-labelledby='btnSearchDrop2')
+																				a.monitor.dropdown-item(href=`/consignorhome/consignment/monitor/${consignments[i].intConsignmentID}`)
+																					i.la.la-eye
+																					|  View
+																				a.edit.dropdown-item(href=`/consignorhome/consignment/print/${consignments[i].intConsignmentID}`)
+																					i.la.la-eye
+																					|  Voucher
+																				-if(consignments[i].booStatus == 0)
+																					a.remove.dropdown-item(consignmentid=`${consignments[i].intConsignmentID}`)
+																						i.la.la-remove
+																						|  Cancel
+		footer.footer.footer-transparent.footer-light.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2.container.center-layout
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank')  AMSOB 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with 
+					i.ft-heart.pink
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(type='text/javascript', src='/assets/vendors/js/ui/jquery.sticky.js')
+		script(src='/assets/vendors/js/charts/chartist.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/chartist-plugin-tooltip.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/timeline/horizontal-timeline.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/pages/dashboard-ecommerce.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/instascan.min.js')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+		script(src="/assets/vendors/js/extensions/toastr.min.js" type="text/javascript")
+
+
+		//- script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/cards/card-charts.min.js', type='text/javascript')
+		// END PAGE LEVEL JS
+		script.
+			$(document).ready(function(){
+				$('#consignmentTable').dataTable();
+
+				$(document).on('click', '.remove', function(){
+					var $this = $(this);
+					var consignmentid = $this.attr('consignmentid');
+
+					swal({
+						title: 'Delete this consignment?',
+						text: 'Are you sure to delete this consignment? This action cannot be undone.',
+						icon: 'warning',
+						buttons:{
+							No: 'No',
+							Yes: 'Yes',
+						}
+					}).then((value) => {
+						if(value == 'Yes'){
+							$.post('/consignorhome/delete/consignment', {
+								consignmentid: consignmentid,
+							}).then(function(data){
+								//alert(data.indicator)
+								if(data.indicator){
+									toastr.success("You have successfully deleted a consignment","Yey!",{
+									showMethod:"slideDown",
+									hideMethod:"slideUp",
+									positionClass:"toast-bottom-right",
+									timeOut:5000})
+
+									var table = $('#consignmentTable').DataTable();
+									table.row( $this.parents('tr') )
+										.remove()
+										.draw();
+								}
+							})
+						}
+					})
+				})
+
+				$(document).on('click', '#createConsignment', function(){
+					$('.app-content.content').fadeOut(1000, function(){
+						location.href = '/consignorhome/consignment/create'
+					})
+					$('footer').fadeOut(1000)
+				})
+				var scanner = new Instascan.Scanner({ video: document.getElementById('qrscanner') });
+				scanner.addListener('scan', function (content, image) {
+					console.log(content);
+				});
+			
+				$('#addAssetModal2').on('hide.bs.modal', function () {
+					scanner.stop();
+				});				
+
+				$('#addAssetModal2').on('shown.bs.modal', function () {
+					Instascan.Camera.getCameras().then(function (cameras) {
+						if (cameras.length > 0) {
+							scanner.start(cameras[0]);
+						}
+					});
+				})
+			})
+	

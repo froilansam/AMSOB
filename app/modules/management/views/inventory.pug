@@ -1,0 +1,885 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| Dashboard sales - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
+			| Dashboard
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/dropify.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/responsive.dataTables.min.css')
+		link(rel="stylesheet" type="text/css" href="/assets/vendors/css/extensions/toastr.css")
+		link(rel="stylesheet" type="text/css" href="/assets/css/plugins/extensions/toastr.min.css")
+		link(rel="stylesheet", href="/assets/vendors/css/extensions/sweetalert.css")
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/pickers/miniColors/jquery.minicolors.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/pickers/spectrum/spectrum.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/pickers/colorpicker/colorpicker.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/custom.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/formValidation.css')
+
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		// END Custom CSS
+		style.
+			.has-error .control-label,
+			.has-error .help-block,
+			.has-error .form-control-feedback {
+				color: #a94442;
+			}
+
+			/* Color of valid field */
+			.has-success .control-label,
+			.has-success .help-block,
+			.has-success .form-control-feedback {
+				color: #3c763d;
+			}
+			.form-group.has-feedback.has-error .form-control,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single:focus{
+				border: 1px solid #a94442 !important;
+			}
+			.form-group.has-feedback.has-success .form-control,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single:focus{
+				border: 1px solid #3c763d !important;
+			}
+
+			.form-control-feedback.fa.fa-check{
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 35px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.form-control-feedback.fa.fa-times {
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 54px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.swal-button.swal-button--No{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Yes{
+				background-color: #28D094 !important;
+			}
+	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.mr-auto
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text Modern Admin
+						li.nav-item.d-none.d-md-block.float-right
+							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.content
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+							li.dropdown.nav-item.mega-dropdown
+								a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') Mega
+								ul.mega-dropdown-menu.dropdown-menu.row
+									li.col-md-2
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-newspaper-o
+											|  News
+										#mega-menu-carousel-example
+											div
+												img.rounded.img-fluid.mb-1(src='/assets/images/slider/slider-2.png', alt='First slide')
+												a.news-title.mb-0(href='#') Poster Frame PSD
+												p.news-content
+													span.font-small-2 January 26, 2018
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-random
+											|  Drill down menu
+										ul.drilldown-menu
+											li.menu-list
+												ul
+													li
+														a.dropdown-item(href='layout-2-columns.html')
+															i.ft-file
+															|  Page layouts & Templates
+													li
+														a(href='#')
+															i.ft-align-left
+															|  Multi level menu
+														ul
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-bookmark-o
+																	|   Second level
+															li
+																a(href='#')
+																	i.la.la-lemon-o
+																	|  Second level menu
+																ul
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-heart-o
+																			|   Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-file-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-trash-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-clock-o
+																			|  Third level
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-hdd-o
+																	|  Second level, third link
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-floppy-o
+																	|  Second level, fourth link
+													li
+														a.dropdown-item(href='color-palette-primary.html')
+															i.ft-camera
+															|  Color palette system
+													li
+														a.dropdown-item(href='sk-2-columns.html')
+															i.ft-edit
+															|  Page starter kit
+													li
+														a.dropdown-item(href='changelog.html')
+															i.ft-minimize-2
+															|  Change log
+													li
+														a.dropdown-item(href='https://pixinvent.ticksy.com/')
+															i.la.la-life-ring
+															|  Customer support center
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-list-ul
+											|  Accordion
+										#accordionWrap(role='tablist', aria-multiselectable='true')
+											.card.border-0.box-shadow-0.collapse-icon.accordion-icon-rotate
+												#headingOne.card-header.p-0.pb-2.border-0(role='tab')
+													a(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionOne', aria-expanded='true', aria-controls='accordionOne') Accordion Item #1
+												#accordionOne.card-collapse.collapse.show(role='tabpanel', aria-labelledby='headingOne', aria-expanded='true')
+													.card-content
+														p.accordion-text.text-small-3
+															| Caramels dessert chocolate cake pastry jujubes bonbon.
+															| Jelly wafer jelly beans. Caramels chocolate cake liquorice
+															| cake wafer jelly beans croissant apple pie.
+												#headingTwo.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionTwo', aria-expanded='false', aria-controls='accordionTwo') Accordion Item #2
+												#accordionTwo.card-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Sugar plum bear claw oat cake chocolate jelly tiramisu
+															| dessert pie. Tiramisu macaroon muffin jelly marshmallow
+															| cake. Pastry oat cake chupa chups.
+												#headingThree.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionThree', aria-expanded='false', aria-controls='accordionThree') Accordion Item #3
+												#accordionThree.card-collapse.collapse(role='tabpanel', aria-labelledby='headingThree', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Candy cupcake sugar plum oat cake wafer marzipan jujubes
+															| lollipop macaroon. Cake dragée jujubes donut chocolate
+															| bar chocolate cake cupcake chocolate topping.
+									li.col-md-4
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-envelope-o
+											|  Contact Us
+										form.form.form-horizontal
+											.form-body
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputName1') Name
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputName1.form-control(type='text', placeholder='John Doe')
+															.form-control-position.pl-1
+																i.la.la-user
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputEmail1') Email
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputEmail1.form-control(type='email', placeholder='john@example.com')
+															.form-control-position.pl-1
+																i.la.la-envelope-o
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputMessage1') Message
+													.col-sm-9
+														.position-relative.has-icon-left
+															textarea#inputMessage1.form-control(rows='2', placeholder='Simple Textarea')
+															.form-control-position.pl-1
+																i.la.la-commenting-o
+												.row
+													.col-sm-12.mb-1
+														button.btn.btn-info.float-right(type='button')
+															i.la.la-paper-plane-o
+															|  Send
+							li.nav-item.nav-search
+								a.nav-link.nav-link-search(href='#')
+									i.ficon.ft-search
+								.search-input
+									input.input(type='text', placeholder='Explore Modern...')
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='/logout')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-gb
+									span.selected-language
+								.dropdown-menu(aria-labelledby='dropdown-flag')
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-gb
+										|  English
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-fr
+										|  French
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-cn
+										|  Chinese
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-de
+										|  German
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+									li.scrollable-container.media-list.w-100#notificationField
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
+			.main-menu-content
+				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+					li.nav-item
+						a(href='/')
+							i.fa.fa-dashboard
+							span.menu-title Dashboard
+					li.nav-item
+						a(href='#')
+							i.fa.fa-wrench
+							span.menu-title Maintenance
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+									li
+										a.menu-item(href='/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidders
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Schedule
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') User Management
+								ul.menu-content
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
+					li.nav-item
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='/consignor/auctionresult', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awards
+									li
+										a.menu-item(href='/delivery', data-i18n='nav.menu_levels.second_level_child.third_level_child') Delivery
+					li.nav-item
+						a(href='/queries')
+							i.fa.fa-list
+							span.menu-title Queries
+					li.nav-item
+						a(href='/reports/sales')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='/utilities')
+							i.fa.fa-cogs
+							span.menu-title Utilities
+		// MODALS
+		#viewAsset.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+			.modal-dialog.modal-md(role='document')
+				.modal-content
+					.modal-header(style='border-bottom: none;')
+						h4.modal-title.text-center 
+							img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+						button.close(type='button', data-dismiss='modal', aria-label='Close')
+							span(aria-hidden='true') ×
+					.modal-body
+						.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
+							h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+								span Asset Details
+						.card-content
+							.card-body#viewAssetBody
+							button#editSubmit.btn.btn-outline-info.btn-block(type='button') Edit Asset
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Inventory
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+				.content-body
+					section.row
+						.col-12
+							.card
+								.card-head
+									.card-header
+										h4.card-title Available Assets
+										a.heading-elements-toggle
+											i.la.la-ellipsis-h.font-medium-3
+										.heading-elements
+								.card-content
+									.card-body
+										.table-responsive
+											table#table.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+												thead
+													tr
+														th Asset Description
+														th Category
+														th Available Qty
+														th Measurement
+														th Actions
+												tbody
+													- for(var k=0;k<assets.length;k++)
+														- var asset = assets[k]
+														-assets[k].jsonOtherSpecifications = JSON.parse(assets[k].jsonOtherSpecifications);
+														-if(assets[k].jsonOtherSpecifications.hasOwnProperty('Screensize'))
+															-if(!assets[k].jsonOtherSpecifications.Screensize.indexOf('Screensize'))
+																-assets[k].jsonOtherSpecifications['Screensize'] = assets[k].jsonOtherSpecifications['Screensize']+' inches';						
+														-if(assets[k].jsonOtherSpecifications.hasOwnProperty('Wattage'))
+															-if(assets[k].jsonOtherSpecifications.Wattage.indexOf('watts') < 0)
+																-assets[k].jsonOtherSpecifications['Wattage'] = assets[k].jsonOtherSpecifications['Wattage']+' watts';
+														-if(assets[k].jsonOtherSpecifications.hasOwnProperty('Storage') && assets[k].jsonOtherSpecifications.category == "Mobile")
+															-if(!assets[k].jsonOtherSpecifications.Storage.indexOf('Storage'))
+																-assets[k].jsonOtherSpecifications['Storage'] = assets[k].jsonOtherSpecifications['Storage']+' GB';
+														-if(assets[k].jsonOtherSpecifications.hasOwnProperty('Ram'))
+															-if(!assets[k].jsonOtherSpecifications.Ram.indexOf('RAM'))
+																-assets[k].jsonOtherSpecifications['Ram'] = 'RAM '+assets[k].jsonOtherSpecifications['Ram']+' GB';
+														-var valuesOnly = Object.values(assets[k].jsonOtherSpecifications)//array values
+														-var desc = assets[k].jsonOtherSpecifications.Item+' ' 
+														-for(var l = 1; l < valuesOnly.length; l++)
+															-desc = desc+' '+valuesOnly[l]
+														tr
+															td #{desc}
+															td #{asset.strCategory}
+															td #{asset.intQTY}
+															td #{asset.strUOM}
+															- if(assets[k].booItemStatus == 0)
+																td
+																	span.dropdown
+																			button.btn.btn-info.dropdown-toggle.dropdown-menu-right(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+																				i.ft-settings
+																			span.dropdown-menu.mt-1.dropdown-menu-right
+																				a.viewButton.dropdown-item(href='javascript:void(0)' value=`${asset.intConsignmentItemID}`)
+																					i.la.la-eye
+																					|  View
+															- if(assets[k].booItemStatus == 3)
+																td
+																	a.btn.btn-outline-danger.btn-sm.btn-round(href='javascript:void(0)') For pullout
+		input#deletePic(type='hidden')
+		// Analytics map based session
+		// ///////////////////////////////////////////////////////////////////////////
+		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| APPTRADE INC.
+					i.ft-heart.pink
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/dropify.js', type='text/javascript')
+		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
+		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+		script(src="/assets/vendors/js/forms/icheck/icheck.min.js" type='text/javascript')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+		script(src='/assets/vendors/js/pickers/miniColors/jquery.minicolors.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/pickers/spectrum/spectrum.js', type='text/javascript')
+		script(src='/assets/js/scripts/pickers/colorpicker/picker-color.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/checkbox-radio.min.js', type='text/javascript')
+		script(src="/assets/vendors/js/extensions/toastr.min.js" type="text/javascript")
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
+		// END PAGE LEVEL JS
+		script.
+			$(document).ready(function(){
+				$('#table').dataTable();
+				$(document).on('click', '.cancelImage', function(){
+					$(this).parents('.imageRow').remove()
+				})
+				$(document).on('click', '.deleteImage', function(){
+					$(this).parents('.editImageRow').remove()
+					var current = $('#deletePic').val()
+					console.log($(this).siblings('.dropify-wrapper').children('.editImage').attr('dbFile'))
+					if(current==''){
+						$('#deletePic').val($(this).siblings('.dropify-wrapper').children('.editImage').attr('dbFile'))	
+					}
+					else{
+						$('#deletePic').val(current+','+$(this).siblings('.dropify-wrapper').children('.editImage').attr('dbFile'))
+					}
+				})
+				$(document).on('change', '.editImage', function(){
+					var current = $('#deletePic').val()
+					if(current==''){
+						$('#deletePic').val($(this).attr('dbFile'))	
+					}
+					else{
+						$('#deletePic').val(current+','+$(this).attr('dbFile'))
+					}
+				})
+				$(document).on('click', '.dropify-clear', function(){
+					//console.log($(this).siblings('.editImage').attr('data-default-file'))
+					var editImage = $(this).siblings('.editImage')
+					if(editImage.length > 0){
+						$(this).siblings('.editImage').attr('data-default-file', '')
+						//console.log($(this).siblings('.editImage').attr('data-default-file'))
+					}
+					else{
+						//- $('#editForm').formValidation('revalidateField', 'strAddPicture');
+					}
+				})
+				$(document).on('click', '#editSubmit', function(){
+					var editImages = $('.editImage')
+					var checkie = $('#checkie')[0]
+					var swatch = $('#swatches').val()
+					var size = $('#size').val()
+					var addImages = $('.addImage')
+					var editImagesValidPoints = 0;
+					var addImagesValidPoints = 0;
+					var editImageArray = [];
+					var addImageArray = [];
+					var formData = new FormData()
+					if(editImages.length == 0){
+						if(addImages.length == 0){
+							toastr.error("Oh no! Asset must have at least one picture","Asset Image is required",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
+							})
+							return;
+						}
+					}
+					else{
+						for(var o=0;o<editImages.length;o++){
+							//- editImageArray.push(editImages[o].files[0])
+							formData.append('editImages', editImages[o].files[0])
+						}
+					}
+					if(addImages.length != 0){
+						for(var o=0;o<addImages.length;o++){
+							//- addImageArray.push(addImages[o].files[0])
+							formData.append('addImages', addImages[o].files[0])
+						}
+					}
+					if(checkie.checked){
+						validateEditImages()
+						validateAddImages()
+						formData.append('color', 'Assorted')
+						formData.append('size', size)
+						formData.append('delete', $('#deletePic').val())
+						formData.append('id', $('#editSubmit').attr('itemId'))
+						//- formData.append('editImages', JSON.stringify(editImageArray))
+						//- formData.append('addImages', JSON.stringify(addImageArray))
+						submitThis()
+					}
+					else{
+						if(swatch.length != 0){
+							validateEditImages()
+							validateAddImages()
+							if(editImages.length == editImagesValidPoints){
+								if(addImages.length == addImagesValidPoints){
+									formData.append('color', swatch)
+									formData.append('size', size)
+									formData.append('delete', $('#deletePic').val())
+									formData.append('id', $('#editSubmit').attr('itemId'))
+									//- formData.append('editImages', JSON.stringify(editImageArray))
+									//- formData.append('addImages', JSON.stringify(addImageArray))
+									submitThis()
+								}
+								else{
+									toastr.error("Oh no! Asset Image has no value. If you wish to remove asset image please click the respective cancel button","Asset Image is required",{
+										showMethod:"slideDown",
+										hideMethod:"slideUp",
+										positionClass:"toast-bottom-right",
+										timeOut:5000
+									})
+								}
+							}
+							else{
+								toastr.error("Oh no! Asset Image has no value. If you wish to remove previous asset image please click the respective delete button","Asset Image is required",{
+									showMethod:"slideDown",
+									hideMethod:"slideUp",
+									positionClass:"toast-bottom-right",
+									timeOut:5000
+								})
+							}
+						}
+						else{
+							toastr.error("Oh no! Asset Color has no value.","Asset Color is required",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
+							})
+						}
+					}
+					function validateEditImages(){
+						for(var m=0; m<editImages.length; m++){
+							if(editImages[m].getAttribute('data-default-file') != ''){
+								editImagesValidPoints++;
+							}
+						}
+					}
+					function validateAddImages(){
+						for(var n=0; n<addImages.length;n++){
+							if(addImages.eq(n).val() != ''){
+								addImagesValidPoints++;
+							}
+						}
+					}
+					function submitThis(){
+						$.ajax({
+							type: "POST",
+							url: "/inventory/edit",
+							data: formData,
+							processData: false,
+							contentType: false,
+							success: function(){
+								$('#viewAsset').modal('toggle')
+								toastr.success("Yay, you have successfully edited the asset","Success!",{
+									showMethod:"slideDown",
+									hideMethod:"slideUp",
+									positionClass:"toast-bottom-right",
+									timeOut:5000
+								})
+							}
+						})
+					}
+				})
+				$(document).on('click', '.viewButton', function (){
+					$('#editSubmit').attr('itemId', $(this).attr('value'))
+					$.post('/inventory/asset/details', {id: $(this).attr('value')})
+					.done(function(data){
+						$('#viewAssetBody').append(`
+							<div class="row">
+								<div class="col-md-12">
+									<h5 style="font-weight: bold;">Consignor: ${data.itemDetails[0].strName}</h5>
+									<h5 style="font-weight: bold;">Original Quantity: ${data.itemDetails[0].originalQuantity}</h5>
+								</div>
+							</div>
+							<br/>
+							<form id='editForm'>
+								<div class="row">
+									<div class="col-md-6">
+										<fieldset>
+										<div class="form-group">
+											<h5 style="font-weight: bold;" for="swatches">Color:</h5>
+											<div class="input-group text-center">
+											<input class="form-control minicolors" readonly id="swatches" aria-describedby="checkbox-addon2" type="text" data-swatches="#fff|#000|#f00|#0f0|#00f|#ff0|#0ff"/>
+											<div class="input-group-append"><span class="input-group-text" id="checkbox-addon2" style="height: 40px;"><span class="skin skin-square">
+												<input id="checkie" type="checkbox"/></span></span></div>
+											</div>
+										</div>
+										</fieldset>
+									</div>
+									<div class="col-md-6">
+										<fieldset>
+										<div class="form-group">
+											<h5 style="font-weight: bold;">Size: </h5>
+											<input class="form-control" value='${data.itemDetails[0].intStorage}' min='1' id="size" type="number"/>
+										</div>
+										</fieldset>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class='form-group' id='pictureCol'>
+											<h5 style="font-weight: bold;">Images: </h5>
+										</div>	
+									</div>
+								</div>
+							</form>
+							<div class="row">
+								<div class="col-md-12">
+									<br/>
+									<button class='btn btn-info' id='addImage' style='float:right'>+ Add Image</button	
+								</div>
+							</div>
+							`
+						)
+						for(var f = 0; f<data.pictures.length;f++){
+							$('#pictureCol').append(`
+								<div class="row editImageRow">
+									<br/>
+									<div class="col-md-12">
+										<a class='deleteImage' href='javascript:void(0)' style='float:right;color:red'>
+											<i class='fa fa-times'/>
+											<h6 style="font-weight: bold;color:red;">Delete</h>
+										</a>
+										<br/>
+										<input class="dropify editImage" type="file" dbFile='${data.pictures[f].strPicture}' data-default-file="/assets/uploads/${data.pictures[f].strPicture}" data-allowed-formats="square" name="strPicture" accept="image/*" data-height="200" data-allowed-file-extensions="jpeg jpg png"/>
+									</div>
+								</div>`
+							)
+						}
+						$('#addImage').on('click', function(){
+							$('#pictureCol').append(`
+								<div class="row imageRow">
+									<br/>
+									<div class="col-md-12">
+										<a class='cancelImage' href='javascript:void(0)' style='float:right;color:red'>
+											<i class='fa fa-times'/>
+											<h6 style="font-weight: bold;color:red;">Cancel</h>
+										</a>
+										<br/>
+										<input class="dropify addImage" type="file" data-allowed-formats="square" name="strAddPicture" accept="image/*" data-height="200" data-allowed-file-extensions="jpeg jpg png"/>
+									</div>
+								</div>`
+							)
+							$('.addImage').dropify({
+								allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+								messages: {
+									'default': 'Drag and drop an image here or click',
+									'replace': 'Drag and drop or click to replace',
+									'remove': 'Remove',
+									'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+								},
+								error: {
+									'fileSize': 'The file size is too big (1M max).',
+									'fileFormat': 'The file format is not allowed ({{ value }} only).'
+								}
+							});
+						})
+						$('#viewAsset').modal('show')
+						$('#swatches').minicolors({
+							control: $(this).attr('data-control') || 'hue',
+							defaultValue: $(this).attr('data-defaultValue') || '',
+							format: $(this).attr('data-format') || 'hex',
+							keywords: $(this).attr('data-keywords') || '',
+							inline: $(this).attr('data-inline') === 'true',
+							letterCase: $(this).attr('data-letterCase') || 'lowercase',
+							opacity: $(this).attr('data-opacity'),
+							position: $(this).attr('data-position') || 'bottom left',
+							swatches: $(this).attr('data-swatches') ? $(this).attr('data-swatches').split('|') : [],
+							change: function(value, opacity) {
+								if( !value ) return;
+								if( opacity ) value += ', ' + opacity;
+							},
+							theme: 'bootstrap'
+						});
+						$('#swatches').minicolors('value', {color: data.itemDetails[0].strColor, opacity:1})						
+						$('#checkie').iCheck({
+							checkboxClass: 'icheckbox_flat-blue',
+							radioClass: 'iradio_flat-blue'
+						});
+						$('#checkie').on('ifChecked', function(event){
+							$('#swatches').minicolors('value', {color: '#FFFFFF', opacity:0})
+							$('#swatches').val('')
+							$('#swatches').attr('disabled', '')
+						});
+						$('#checkie').on('ifUnchecked', function(event){
+							$('#swatches').removeAttr('disabled')
+						});
+						$('.dropify').dropify({
+							allowedFiles: ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+							messages: {
+								'default': 'Drag and drop an image here or click',
+								'replace': 'Drag and drop or click to replace',
+								'remove': 'Remove',
+								'error': 'Ooops, you can only upload JPG, JPEG, and PNG files.'
+							},
+							error: {
+								'fileSize': 'The file size is too big (1M max).',
+								'fileFormat': 'The file format is not allowed ({{ value }} only).'
+							}
+						});
+					})
+				});
+				$('#viewAsset').on('hidden.bs.modal', function(){
+					$('#viewAssetBody').empty()
+				})
+			})

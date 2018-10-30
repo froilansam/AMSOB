@@ -1,0 +1,694 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| AMSOB Admin | Inventory Adjustment
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/responsive.dataTables.min.css')
+		link(rel="stylesheet" type="text/css" href="/assets/vendors/css/extensions/toastr.css")
+		link(rel="stylesheet" type="text/css" href="/assets/css/plugins/extensions/toastr.min.css")
+		link(rel="stylesheet", href="/assets/vendors/css/extensions/sweetalert.css")
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		// END Custom CSS
+	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.mr-auto
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AMSOB
+						li.nav-item.d-none.d-md-block.float-right
+							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.content
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='/logout')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-ph
+									span.selected-language
+								.dropdown-menu(aria-labelledby='dropdown-flag')
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-ph
+										|  English
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-fr
+										|  French
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-cn
+										|  Chinese
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-de
+										|  German
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+									li.scrollable-container.media-list.w-100#notificationField
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
+			.main-menu-content
+				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+					li.nav-item
+						a(href='/')
+							i.fa.fa-dashboard
+							span.menu-title Dashboard
+					li.nav-item
+						a(href='#')
+							i.fa.fa-wrench
+							span.menu-title Maintenance
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+									li
+										a.menu-item(href='/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidders
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Schedule
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') User Management
+								ul.menu-content
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
+					li.nav-item
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='/consignor/auctionresult', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awards
+									li
+										a.menu-item(href='/delivery', data-i18n='nav.menu_levels.second_level_child.third_level_child') Delivery
+					li.nav-item
+						a(href='/queries')
+							i.fa.fa-list
+							span.menu-title Queries
+					li.nav-item
+						a(href='/reports/sales')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='/utilities')
+							i.fa.fa-cogs
+							span.menu-title Utilities
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Adjustment
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+				.content-body
+					section.row
+						.col-12
+							.card
+								.card-head
+									.card-header
+										h4.card-title Assets
+										a.heading-elements-toggle
+											i.la.la-ellipsis-h.font-medium-3
+										.heading-elements
+											button#adjustButton.btn.btn-block.btn-primary.btn-sm(type='button')
+												i.ft-sliders.white
+												|  Adjust Inventory
+								.card-content
+									.card-body
+										.table-responsive
+											table#table.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+												thead
+													tr
+														th Consignment
+														th Item Description
+														th Original Qty
+														th Available Qty
+														th UOM
+														th.lostHead Lost
+														th.damagedHead Damaged
+												tbody#tableBody
+										br
+										.row
+											.col-md-12
+												button#printButton.btn.btn-success(style='display:none; float:right') Save and Print Report
+					// Analytics map based session
+		// ///////////////////////////////////////////////////////////////////////////
+		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| APPTRADE INC.
+					i.ft-heart.pink
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+		script(src="/assets/vendors/js/extensions/toastr.min.js" type="text/javascript")
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		// END PAGE LEVEL JS
+		script.
+			function fetch(){
+				$.post('/adjustment/query').done(function(data){
+					for(var k=0;k<data.length;k++){
+						data[k].jsonOtherSpecifications = JSON.parse(data[k].jsonOtherSpecifications);
+						if(data[k].jsonOtherSpecifications.hasOwnProperty('Screensize'))
+							if(!data[k].jsonOtherSpecifications.Screensize.indexOf('Screensize'))
+								data[k].jsonOtherSpecifications['Screensize'] = data[k].jsonOtherSpecifications['Screensize']+' inches';						
+						if(data[k].jsonOtherSpecifications.hasOwnProperty('Wattage'))
+							if(data[k].jsonOtherSpecifications.Wattage.indexOf('watts') < 0)
+								data[k].jsonOtherSpecifications['Wattage'] = data[k].jsonOtherSpecifications['Wattage']+' watts';
+						if(data[k].jsonOtherSpecifications.hasOwnProperty('Storage') && data[k].jsonOtherSpecifications.category == "Mobile")
+							if(!data[k].jsonOtherSpecifications.Storage.indexOf('Storage'))
+								data[k].jsonOtherSpecifications['Storage'] = data[k].jsonOtherSpecifications['Storage']+' GB';
+						if(data[k].jsonOtherSpecifications.hasOwnProperty('Ram'))
+							if(!data[k].jsonOtherSpecifications.Ram.indexOf('RAM'))
+								data[k].jsonOtherSpecifications['Ram'] = 'RAM '+data[k].jsonOtherSpecifications['Ram']+' GB';
+						var valuesOnly = Object.values(data[k].jsonOtherSpecifications)//array values
+						var desc = data[k].jsonOtherSpecifications.Item+' ' 
+						for(var l = 1; l < valuesOnly.length; l++){
+							desc = desc+' '+valuesOnly[l]
+						}
+						$('#tableBody').append(`<tr>
+								<td>${data[k].intCIConsignment}</td>
+								<td>${desc}</td>
+								<td>${data[k].originalQuantity}</td>
+								<td itemId='${data[k].intConsignmentItemID}'>${data[k].availableQuantity}</td>
+								<td>${data[k].strUOM}</td>
+								<td class='lostCell'>
+									<input class='lostCellInput form-control' type='number' bundled='${data[k].booIsBundled}' itemId='${data[k].intConsignmentItemID}' style='width:90px' readonly min='${data[k].lost}' max='${eval(data[k].lost+'+'+data[k].availableQuantity)}' saveMax='${eval(data[k].lost+'+'+data[k].availableQuantity)}' value='${data[k].lost}'>
+									<p class='hiddenP' style='display: none;'>${data[k].lost}</p>
+									<input type='hidden' class='saveData' value='${data[k].lost}' available='${data[k].availableQuantity}'/>
+								</td>
+								<td class='damagedCell'>
+									<input class='damagedCellInput form-control' type='number' bundled='${data[k].booIsBundled}' itemId='${data[k].intConsignmentItemID}' style='width:90px' readonly min='${data[k].damaged}' max='${eval(data[k].damaged+'+'+data[k].availableQuantity)}' saveMax='${eval(data[k].damaged+'+'+data[k].availableQuantity)}'  value='${data[k].damaged}'>
+									<p class='hiddenP' style='display: none;'>${data[k].damaged}</p>
+									<input type='hidden' class='saveData' value='${data[k].damaged}' available='${data[k].availableQuantity}'/>	
+								</td>
+							</tr>`
+						)
+					}
+					$('#table').dataTable({
+						pageLength: 50,
+					})
+				})
+			}
+		script.
+			$(document).ready(function(){
+				fetch();
+				$(document).on('click', '#printButton', function(){
+					var lostCells = $('.lostCellInput')
+					var damagedCells = $('.damagedCellInput')
+					var insIssue = [];
+					var temp = [];
+					for(var s=0;s<lostCells.length;s++){
+						if(lostCells.eq(s).val() > lostCells.eq(s).siblings('.saveData').val()){
+							var x = lostCells.eq(s).val()+'-'+lostCells.eq(s).siblings('.saveData').val()
+							var y = lostCells.eq(s).siblings('.saveData').attr('available')+'-'+lostCells.eq(s).val()+'+'+lostCells.eq(s).siblings('.saveData').val();
+							insIssue.push({
+								id:lostCells.eq(s).attr('itemId'), 
+								lostQty: eval(x),
+								damagedQty: 0,
+								updateQty: eval(y)
+							})
+						}
+						if(s == lostCells.length - 1 && insIssue.length>0){
+							for(var u=0; u<damagedCells.length; u++){
+								var valid = true;
+								for(var t=0; t<insIssue.length; t++){
+									if(damagedCells.eq(u).val() > damagedCells.eq(u).siblings('.saveData').val()){
+										if(damagedCells.eq(u).attr('itemId') == insIssue[t].id){
+											var a = damagedCells.eq(u).val()+'-'+damagedCells.eq(u).siblings('.saveData').val()
+											insIssue[t].damagedQty = eval(insIssue[t].damagedQty+'+'+eval(a));
+											insIssue[t].updateQty = eval(insIssue[t].updateQty+'-'+eval(a))
+											valid = false;
+										}
+									}
+									if(t == eval(insIssue.length+'-'+1)){
+										if(valid){
+											if(damagedCells.eq(u).val() > damagedCells.eq(u).siblings('.saveData').val()){
+												var b = damagedCells.eq(u).val()+'-'+damagedCells.eq(u).siblings('.saveData').val();
+												var c = damagedCells.eq(u).siblings('.saveData').attr('available')+'-'+damagedCells.eq(u).val()+'+'+damagedCells.eq(u).siblings('.saveData').val();
+												temp.push({
+													id: damagedCells.eq(u).attr('itemId'),
+													lostQty: 0,
+													damagedQty: eval(b),
+													updateQty: eval(c)
+												});
+											}
+										}
+									}
+								}
+							}
+						}
+						else if(s == lostCells.length - 1 && insIssue.length==0){
+							for(var b=0;b<damagedCells.length;b++){
+								if(damagedCells.eq(b).val() > damagedCells.eq(b).siblings('.saveData').val()){
+									var e = damagedCells.eq(b).val()+'-'+damagedCells.eq(b).siblings('.saveData').val()
+									var f = damagedCells.eq(b).siblings('.saveData').attr('available')+'-'+damagedCells.eq(b).val()+'+'+damagedCells.eq(b).siblings('.saveData').val();
+									//- alert(f)
+									//- alert(eval(f))
+									insIssue.push({
+										id:damagedCells.eq(b).attr('itemId'), 
+										lostQty: 0,
+										damagedQty: eval(e),
+										updateQty: eval(f)
+									})
+								}
+							}
+						}
+					}
+					for(var v=0; v<temp.length; v++){
+						insIssue.push(temp[v])
+					}
+					console.log(insIssue);
+					$.post('/adjust/items', {items:insIssue}).done(function(){
+						for(var x=0; x<insIssue.length; x++){
+							$(`td[itemId='${insIssue[x].id}']`).text(`${insIssue[x].updateQty}`)
+						}
+						$('#table').DataTable().destroy()
+						$('.lostCellInput').css('display','none');
+						$('.damagedCellInput').css('display','none');
+						$('.hiddenP').css('display','block');
+						var table = $('.table-responsive').html()
+						var original = $('body').html()
+						document.body.innerHTML = table;
+						window.print()
+						document.body.innerHTML = original
+						$('#table').dataTable()
+						$('.lostCellInput').css('display','block');
+						$('.damagedCellInput').css('display','block');
+						$('.hiddenP').css('display','none')
+						location.href = '/adjustment'
+					})
+				});
+				$(document).on('click', '#adjustButton', function(){
+					$('.lostCellInput').removeAttr('readonly')
+					$('.damagedCellInput').removeAttr('readonly')
+					$('#printButton').fadeIn(1000)
+				})
+				$(document).on('change', '.lostCellInput', function(){
+					var ito = $(this);
+					var thisMin = $(this).attr('min')
+					var thisMax = $(this).attr('max')
+					var thisVal = $(this).val();
+					var valid = true;
+					var bundleId;
+					if($(this).attr('bundled') == '1'){
+						$.post('/check/bundle', {id: $(this).attr('itemId')}).done(function(data){
+							bundleId = data.bundleId;
+							if(data.valid && eval(thisMin+'-'+thisVal) != 0){
+								if(thisVal>thisMax){
+									ito.val(thisMin)
+									toastr.error(`Oh no! You cannot exceed to ${thisMax}. Please try again.`,"Invalid Quantity!",{
+										showMethod:"slideDown",
+										hideMethod:"slideUp",
+										positionClass:"toast-bottom-right",
+										timeOut:5000
+									})
+									valid = false;
+								}
+								if(thisVal<thisMin){
+									ito.val(thisMin)
+									toastr.error(`Oh no! There is/are ${thisMin} lost item already. Please try again.`,"Invalid Quantity!",{
+										showMethod:"slideDown",
+										hideMethod:"slideUp",
+										positionClass:"toast-bottom-right",
+										timeOut:5000
+									})
+									valid = false;
+								}
+								if(valid){
+									ito.siblings('p').text(thisVal)
+									var siblingMax = ito.parent().siblings('.damagedCell').children('input').attr('saveMax')
+									ito.parent().siblings('.damagedCell').children('input').attr('max', eval(siblingMax+'-'+thisVal));
+								}
+							}
+							else{
+								swal({
+									title: 'Unbundle?',
+									text: `You are adjusting an item that is included in a bundle. If you wish to continue, the bundle will be dissolved.`,
+									icon: 'info',
+									buttons: {
+										yes: 'Yes',
+										no: 'No'
+									}
+								}).then(function(value){
+									if(value == 'yes'){
+										$.post('/bundle/split',{bundleId: bundleId})
+										if(thisVal>thisMax){
+											ito.val(thisMin)
+											toastr.error(`Oh no! You cannot exceed to ${thisMax}. Please try again.`,"Invalid Quantity!",{
+												showMethod:"slideDown",
+												hideMethod:"slideUp",
+												positionClass:"toast-bottom-right",
+												timeOut:5000
+											})
+											valid = false;
+										}
+										if(thisVal<thisMin){
+											ito.val(thisMin)
+											toastr.error(`Oh no! There is/are ${thisMin} lost item already. Please try again.`,"Invalid Quantity!",{
+												showMethod:"slideDown",
+												hideMethod:"slideUp",
+												positionClass:"toast-bottom-right",
+												timeOut:5000
+											})
+											valid = false;
+										}
+										if(valid){
+											ito.siblings('p').text(thisVal)
+											var siblingMax = ito.parent().siblings('.damagedCell').children('input').attr('saveMax')
+											ito.parent().siblings('.damagedCell').children('input').attr('max', eval(siblingMax+'-'+thisVal));
+										}
+									}
+									else{
+										ito.val(ito.siblings('.saveData').val())
+									}
+								})
+							}
+						})
+					}
+					else{
+						if(thisVal>thisMax){
+							ito.val(thisMin)
+							toastr.error(`Oh no! You cannot exceed to ${thisMax}. Please try again.`,"Invalid Quantity!",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
+							})
+							valid = false;
+						}
+						if(thisVal<thisMin){
+							ito.val(thisMin)
+							toastr.error(`Oh no! There is/are ${thisMin} lost item already. Please try again.`,"Invalid Quantity!",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
+							})
+							valid = false;
+						}
+						if(valid){
+							ito.siblings('p').text(thisVal)
+							var siblingMax = ito.parent().siblings('.damagedCell').children('input').attr('saveMax')
+							ito.parent().siblings('.damagedCell').children('input').attr('max', eval(siblingMax+'-'+thisVal));
+						}
+					}
+				})
+				$(document).on('change', '.damagedCellInput', function(){
+					var ito = $(this);
+					var thisMin = $(this).attr('min')
+					var thisMax = $(this).attr('max')
+					var thisVal = $(this).val();
+					var bundleId;
+					var valid = true;
+					if($(this).attr('bundled') == '1'){
+						$.post('/check/bundle', {id: $(this).attr('itemId')}).done(function(data){
+							bundleId = data.bundleId
+							if(data.valid && eval(thisMin+'-'+thisVal) != 0){
+								if(thisVal>thisMax){
+									ito.val(thisMin)
+									toastr.error(`Oh no! You cannot exceed to ${thisMax}. Please try again.`,"Invalid Quantity!",{
+										showMethod:"slideDown",
+										hideMethod:"slideUp",
+										positionClass:"toast-bottom-right",
+										timeOut:5000
+									})
+									valid = false;
+								}
+								if(thisVal<thisMin){
+									ito.val(thisMin)
+									toastr.error(`Oh no! There is/are ${thisMin} damaged item already. Please try again.`,"Invalid Quantity!",{
+										showMethod:"slideDown",
+										hideMethod:"slideUp",
+										positionClass:"toast-bottom-right",
+										timeOut:5000
+									})
+									valid = false;
+								}
+								if(valid){
+									ito.siblings('p').text(thisVal)
+									var siblingMax = ito.parent().siblings('.lostCell').children('input').attr('saveMax')
+									ito.parent().siblings('.lostCell').children('input').attr('max', eval(siblingMax+'-'+thisVal));
+								}
+							}
+							else{
+								swal({
+									title: 'Unbundle?',
+									text: `You are adjusting an item that is included in a bundle. If you wish to continue, the bundle will be dissolved.`,
+									icon: 'info',
+									buttons: {
+										yes: 'Yes',
+										no: 'No'
+									}
+								}).then(function(value){
+									if(value == 'yes'){
+										$.post('/bundle/split',{bundleId: bundleId})
+										if(thisVal>thisMax){
+											ito.val(thisMin)
+											toastr.error(`Oh no! You cannot exceed to ${thisMax}. Please try again.`,"Invalid Quantity!",{
+												showMethod:"slideDown",
+												hideMethod:"slideUp",
+												positionClass:"toast-bottom-right",
+												timeOut:5000
+											})
+											valid = false;
+										}
+										if(thisVal<thisMin){
+											ito.val(thisMin)
+											toastr.error(`Oh no! There is/are ${thisMin} damaged item already. Please try again.`,"Invalid Quantity!",{
+												showMethod:"slideDown",
+												hideMethod:"slideUp",
+												positionClass:"toast-bottom-right",
+												timeOut:5000
+											})
+											valid = false;
+										}
+										if(valid){
+											ito.siblings('p').text(thisVal)
+											var siblingMax = ito.parent().siblings('.lostCell').children('input').attr('saveMax')
+											ito.parent().siblings('.lostCell').children('input').attr('max', eval(siblingMax+'-'+thisVal));
+										}
+									}
+									else{
+										ito.val(ito.siblings('.saveData').val())
+									}
+								})
+							}
+						})
+					}
+					else{
+						if(thisVal>thisMax){
+							ito.val(thisMin)
+							toastr.error(`Oh no! You cannot exceed to ${thisMax}. Please try again.`,"Invalid Quantity!",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
+							})
+							valid = false;
+						}
+						if(thisVal<thisMin){
+							ito.val(thisMin)
+							toastr.error(`Oh no! There is/are ${thisMin} damaged item already. Please try again.`,"Invalid Quantity!",{
+								showMethod:"slideDown",
+								hideMethod:"slideUp",
+								positionClass:"toast-bottom-right",
+								timeOut:5000
+							})
+							valid = false;
+						}
+						if(valid){
+							ito.siblings('p').text(thisVal)
+							var siblingMax = ito.parent().siblings('.lostCell').children('input').attr('saveMax')
+							ito.parent().siblings('.lostCell').children('input').attr('max', eval(siblingMax+'-'+thisVal));
+						}
+					}
+				})
+			})

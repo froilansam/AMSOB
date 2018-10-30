@@ -1,0 +1,935 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='author', content='Paluto Nga Po! Restaurant')
+		title
+			| AMSOB Admin | Awards
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/responsive.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/custom.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/toggle/switchery.min.css')
+
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/dropify.css')
+
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/users.min.css')
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/style.css')
+		// END Custom CSS
+		style.
+			@media print {
+				html {
+					visibility: hidden;
+				}
+				.myDivToPrint, .myDivToPrint * {
+					visibility: visible;
+				}
+				.myDivToPrint {
+					background-color: white;
+					height: 100%;
+					width: 100%;
+					position: fixed;
+					top: 0;
+					left: 0;
+					margin: 0;
+					padding: 15px;
+				}
+				#print{
+					visibility: hidden;					
+				}
+				html body{
+					background-color: white;
+				}
+				}
+	body.vertical-layout.vertical-menu-modern.content-detached-left-sidebar.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='content-detached-left-sidebar')
+		
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.mr-auto
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AMSOB
+						li.nav-item.d-none.d-md-block.float-right
+							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.content
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+							li.dropdown.nav-item.mega-dropdown
+								a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') Mega
+								ul.mega-dropdown-menu.dropdown-menu.row
+									li.col-md-2
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-newspaper-o
+											|  News
+										#mega-menu-carousel-example
+											div
+												img.rounded.img-fluid.mb-1(src='/assets/images/slider/slider-2.png', alt='First slide')
+												a.news-title.mb-0(href='#') Poster Frame PSD
+												p.news-content
+													span.font-small-2 January 26, 2018
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-random
+											|  Drill down menu
+										ul.drilldown-menu
+											li.menu-list
+												ul
+													li
+														a.dropdown-item(href='layout-2-columns.html')
+															i.ft-file
+															|  Page layouts & Templates
+													li
+														a(href='#')
+															i.ft-align-left
+															|  Multi level menu
+														ul
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-bookmark-o
+																	|   Second level
+															li
+																a(href='#')
+																	i.la.la-lemon-o
+																	|  Second level menu
+																ul
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-heart-o
+																			|   Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-file-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-trash-o
+																			|  Third level
+																	li
+																		a.dropdown-item(href='#')
+																			i.la.la-clock-o
+																			|  Third level
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-hdd-o
+																	|  Second level, third link
+															li
+																a.dropdown-item(href='#')
+																	i.la.la-floppy-o
+																	|  Second level, fourth link
+													li
+														a.dropdown-item(href='color-palette-primary.html')
+															i.ft-camera
+															|  Color palette system
+													li
+														a.dropdown-item(href='sk-2-columns.html')
+															i.ft-edit
+															|  Page starter kit
+													li
+														a.dropdown-item(href='changelog.html')
+															i.ft-minimize-2
+															|  Change log
+													li
+														a.dropdown-item(href='https://pixinvent.ticksy.com/')
+															i.la.la-life-ring
+															|  Customer support center
+									li.col-md-3
+										h6.dropdown-menu-header.text-uppercase
+											i.la.la-list-ul
+											|  Accordion
+										#accordionWrap(role='tablist', aria-multiselectable='true')
+											.card.border-0.box-shadow-0.collapse-icon.accordion-icon-rotate
+												#headingOne.card-header.p-0.pb-2.border-0(role='tab')
+													a(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionOne', aria-expanded='true', aria-controls='accordionOne') Accordion Item #1
+												#accordionOne.card-collapse.collapse.show(role='tabpanel', aria-labelledby='headingOne', aria-expanded='true')
+													.card-content
+														p.accordion-text.text-small-3
+															| Caramels dessert chocolate cake pastry jujubes bonbon.
+															| Jelly wafer jelly beans. Caramels chocolate cake liquorice
+															| cake wafer jelly beans croissant apple pie.
+												#headingTwo.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionTwo', aria-expanded='false', aria-controls='accordionTwo') Accordion Item #2
+												#accordionTwo.card-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Sugar plum bear claw oat cake chocolate jelly tiramisu
+															| dessert pie. Tiramisu macaroon muffin jelly marshmallow
+															| cake. Pastry oat cake chupa chups.
+												#headingThree.card-header.p-0.pb-2.border-0(role='tab')
+													a.collapsed(data-toggle='collapse', data-parent='#accordionWrap', href='#accordionThree', aria-expanded='false', aria-controls='accordionThree') Accordion Item #3
+												#accordionThree.card-collapse.collapse(role='tabpanel', aria-labelledby='headingThree', aria-expanded='false')
+													.card-content
+														p.accordion-text
+															| Candy cupcake sugar plum oat cake wafer marzipan jujubes
+															| lollipop macaroon. Cake dragée jujubes donut chocolate
+															| bar chocolate cake cupcake chocolate topping.
+									li.col-md-4
+										h6.dropdown-menu-header.text-uppercase.mb-1
+											i.la.la-envelope-o
+											|  Contact Us
+										form.form.form-horizontal
+											.form-body
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputName1') Name
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputName1.form-control(type='text', placeholder='John Doe')
+															.form-control-position.pl-1
+																i.la.la-user
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputEmail1') Email
+													.col-sm-9
+														.position-relative.has-icon-left
+															input#inputEmail1.form-control(type='email', placeholder='john@example.com')
+															.form-control-position.pl-1
+																i.la.la-envelope-o
+												.form-group.row
+													label.col-sm-3.form-control-label(for='inputMessage1') Message
+													.col-sm-9
+														.position-relative.has-icon-left
+															textarea#inputMessage1.form-control(rows='2', placeholder='Simple Textarea')
+															.form-control-position.pl-1
+																i.la.la-commenting-o
+												.row
+													.col-sm-12.mb-1
+														button.btn.btn-info.float-right(type='button')
+															i.la.la-paper-plane-o
+															|  Send
+							li.nav-item.nav-search
+								a.nav-link.nav-link-search(href='#')
+									i.ficon.ft-search
+								.search-input
+									input.input(type='text', placeholder='Explore Modern...')
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='#')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-ph
+									span.selected-language
+								.dropdown-menu(aria-labelledby='dropdown-flag')
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-ph
+										|  English
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-fr
+										|  French
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-cn
+										|  Chinese
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-de
+										|  German
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+									li.scrollable-container.media-list.w-100#notificationField
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
+			.main-menu-content
+				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+					li.nav-item
+						a(href='/')
+							i.fa.fa-dashboard
+							span.menu-title Dashboard
+					li.nav-item
+						a(href='#')
+							i.fa.fa-wrench
+							span.menu-title Maintenance
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+									li
+										a.menu-item(href='/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidders
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Schedule
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') User Management
+								ul.menu-content
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
+					li.nav-item
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='/consignor/auctionresult', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awards
+									li
+										a.menu-item(href='/delivery', data-i18n='nav.menu_levels.second_level_child.third_level_child') Delivery
+					li.nav-item
+						a(href='/queries')
+							i.fa.fa-list
+							span.menu-title Queries
+					li.nav-item
+						a(href='/reports/sales')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='/utilities')
+							i.fa.fa-cogs
+							span.menu-title Utilities
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Award Details
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+								ol.breadcrumb
+									li.breadcrumb-item
+										a(href="#") Maintenance
+									li.breadcrumb-item
+										a(href='/admin/order') Awards
+									li.breadcrumb-item.active
+										| Award Details
+				
+				.content-detached.content-right
+					.content-body(style='margin-left: 0px !important')
+						section.row
+							.col-12
+								.card
+									.card-header
+										h4.card-title Award
+										a.heading-elements-toggle
+											i.la.la-ellipsis-v.font-medium-3
+										.heading-elements
+											ul.list-inline.mb-0
+												
+										
+												li
+													a(data-action='expand')
+														i.ft-maximize
+												li
+													a.btn.btn-block.btn-danger.btn-sm(href='/admin/order')
+														i.fa.fa-times
+														|    Discard Changes
+												li
+													button#save.btn.btn-block.btn-success.btn-sm(type='button' style='margin-left: 10px')
+														i.fa.fa-floppy-o
+														|    Save Changes
+												
+									.row
+										.col-6
+											.card-content.collpase.show
+												.card-body
+													form.form
+														.form-body
+															h4.form-section
+																i.fa.fa-cutlery
+																|  Award Details
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='OrderId' style='font-weight: bold') Award ID
+																		input.form-control(disabled value=award[0].intOrderID)
+																		input#OrderId(hidden readonly type='text', placeholder='Order ID', name='OrderId' value=award[0].intOrderID)
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='date' style='font-weight: bold') Date
+																		input#date.form-control( readonly type='text', placeholder='Date-Time', name='date' value=award[0].datDate)
+															.row
+																.col-md-3(style='border-right: 1px solid gray; padding-right: 10px')
+																	.form-group
+																		label(for='status' style='font-weight: bold') Award Status
+																		br
+																		-if(award[0].booSIStatus == 1)
+																			span.badge.badge-glow.badge-pill.badge-warning • Processing
+																		-if(award[0].booSIStatus == 2)
+																			span.badge.badge-glow.badge-pill.badge-info • Shipping
+																		-if(award[0].booSIStatus == 3)
+																			span.badge.badge-glow.badge-pill.badge-success • Delivered
+																.col-md-9
+																	.form-group
+																		label(for='note' style='font-weight: bold') Note
+																		textarea#note.form-control(readonly rows='5', name='comment', placeholder='No Order Note') #{award[0].strOthernotes}
+										.col-3
+											.card-content.collpase.show
+												.card-body
+													form.form
+														.form-body
+															h4.form-section
+																i.fa.fa-user
+																|  Customer Information
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='name' style='font-weight: bold') Name
+																		input#name.form-control(readonly type='text', placeholder='Name', name='name' value=award[0].strName)
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='email' style='font-weight: bold') E-mail Address
+																		input#email.form-control( readonly type='text', placeholder='E-mail Address', name='email' value=award[0].strEmailAddress)
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='address' style='font-weight: bold') Delivery Address
+																		input#address.form-control( readonly type='text', placeholder='Delivery Address', name='address' value=award[0].strHouseAddress+', '+award[0].strBarangay+', '+award[0].strCity+', '+award[0].strRegion+'~'+award[0].strPostcode)
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='phone' style='font-weight: bold') Phone Number
+																		input#phone.form-control( readonly type='text', placeholder='Phone Number', name='phone' value=award[0].strPhoneNumber)
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='ipaddress' style='font-weight: bold') IP Address
+																		input#ipaddress.form-control( readonly type='text', placeholder='IP Address', name='ipaddress' value='192.168.0.4')
+										.col-3
+											.card-content.collpase.show
+												.card-body
+													form.form
+														.form-body
+															h4.form-section
+																i.fa.fa-file
+																|  Receipt
+															
+															.row(style="padding: 20px")
+																a.btn.btn-block.btn-primary(type='button' href="javascript:window.print()")
+																	i.la.la-print
+																	|  Print
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='total' style='font-weight: bold') Total: 
+																		input#total.form-control( readonly type='text', placeholder='total', name='total')
+															.row
+																.col-md-12
+																	.form-group
+																		label(for='dateDelivered' style='font-weight: bold') Date Delivered: 
+																		input#dateDelivered.form-control(readonly name='dateDelivered', placeholder='Date Delivered')
+									.row
+										.col-8(style='border-right: 1px solid gray; padding-right: 10px')
+											.card-content.collpase.show
+												.card-body
+													form.form
+														.form-body
+															h4.form-section
+																i.fa.fa-history
+																|  Status History
+															.row
+																.col-md-12
+																	.table-responsive
+																		table.table.mb-0
+																			thead
+																				tr
+																					th Date-Time
+																					th Status
+																					th Comment
+																			tbody#statusTable
+																				
+																		
+																			
+										.col-4
+											.card-content.collpase.show
+												.card-body
+													form.form
+														.form-body
+															h4.form-section
+																i.fa.fa-spinner
+																|  Update Status
+															.row
+																-if(award[0].booSIStatus == 1)
+																	.col-md-12
+																		fieldset.form-group
+																			label(for='basicSelect' style='font-weight: bold') Status
+																			select#basicSelect.form-control
+																				option(value="") - Status -
+																				option(selected value=1) Processing
+																				option(value=2) Shipping
+																				option(value=3) Delivered
+																	.col-md-12
+																		.form-group
+																			label(for='comment' style='font-weight: bold') Order Status Comment
+																			textarea#comment.form-control(rows='5', name='comment', placeholder='No Order Comment')
+																-if(award[0].booSIStatus == 2)
+																	.col-md-12
+																		fieldset.form-group
+																			label(for='basicSelect' style='font-weight: bold') Status
+																			select#basicSelect.form-control
+																				option(value="") - Status -
+																				option(value=1) Processing
+																				option(selected value=2) Shipping
+																				option(value=3) Delivered
+																	.col-md-12
+																		.form-group
+																			label(for='comment' style='font-weight: bold') Order Status Comment
+																			textarea#comment.form-control(rows='5', name='comment', placeholder='No Order Comment')
+																-if(award[0].booSIStatus == 3)
+																	.col-md-12
+																		fieldset.form-group
+																			label(for='basicSelect' style='font-weight: bold') Status
+																			select#basicSelect.form-control(disabled)
+																				option(value="") - Status -
+																				option(value=1) Processing
+																				option(value=2) Shipping
+																				option(selected value=3) Delivered
+																	.col-md-12
+																		.form-group
+																			label(for='comment' style='font-weight: bold') Order Status Comment
+																			textarea#comment.form-control(readonly rows='5', name='comment', placeholder='No Order Comment')
+															
+									.row
+										.col-12
+											.card-content.collpase.show
+												.card-body
+													form.form
+														.form-body
+															h4.form-section
+																i.fa.fa-cutlery
+																|  Awards
+															.row
+																.col-md-12
+																	.table-responsive
+																		table.table.mb-0
+																			thead
+																				tr
+																					th Quantity
+																					th
+																					th Item
+																					th Hammer Price
+																					th Buyer's Premium
+																					th Total
+																			tbody.awardTable
+						section.card.myDivToPrint(style='visibility: hidden;')
+							#invoice-template.card-body
+								// Invoice Company Details
+								#invoice-company-details.row
+									.col-md-6.col-sm-12.text-center.text-md-left
+										.media
+											img(src='/assets/images/logo/logo-80x80.png', alt='company logo')
+											.media-body
+												ul.ml-2.px-0.list-unstyled
+													li
+														h3.text-bold-800 Auction Pride of the Philippines 
+													li
+														h3.text-bold-800 Incorporation
+													li 4025 Oak Avenue,
+													li Melbourne,
+													li Florida 32940,
+													li USA
+									.col-md-6.col-sm-12.text-center.text-md-right
+										h2 Invoice Number
+										p.pb-3 # #{award[0].intOrderID}
+										
+								// / Invoice Company Details
+								// Invoice Customer Details
+								#invoice-customer-details.row.pt-2
+									.col-md-6.col-sm-12.text-center.text-md-left
+										h3.text-muted Bidder Name: 
+											span 
+												h4.red #{award[0].strName}
+										ul.px-0.list-unstyle
+											li #{award[0].strPhoneNumber}
+											li #{award[0].strHouseAddress+', '+award[0].strBarangay+', '+award[0].strCity+', '+award[0].strRegion+'~'+award[0].strPostcode}
+									.col-md-6.col-sm-12.text-center.text-md-right
+										ul.px-0.list-unstyled
+											br
+										p
+											span.text-muted Date Printed:
+											|  #{new Date()}
+											
+																			
+													
+													
+													
+										p
+											span.text-muted Terms:
+											|  Due on Receipt
+								// / Invoice Customer Details
+								// Invoice Items Details
+								#invoice-items-details.pt-2
+									.row
+										.table-responsive.col-sm-12
+												table.table.mb-0
+													thead
+														tr
+															th Quantity
+															th
+															th Item
+															th Hammer Price
+															th Buyer's Premium
+															th Total
+													tbody.awardTable
+													
+									
+								// Invoice Footer
+								#invoice-footer
+									.row
+										.col-xl-12
+											.row
+												.col-xl-6
+													h6 Terms & Condition
+													p
+														| I hereby certify that the above information is true and correct to the best of my knowledge
+														|  and belief. Any false statement found shall constitute a ban or sufficient cause of rejection 
+														| of payment of my items.
+													br
+													h6.text-center
+														h5.text-center #{award[0].strName}
+														h6.text-center Receiver's Signature
+									br
+
+
+												
+
+		
+		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/Paluto Nga Po! Restaurant/portfolio?ref=Paluto Nga Po! Restaurant', target='_blank') Paluto Nga Po! Restaurant 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with 
+					i.ft-heart.pink
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/pages/users-contacts.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/toggle/switchery.min.js', type='text/javascript')
+		script(src='/assets/js/dropify.js')
+		script(src='/assets/js/sigpad.js')
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
+
+
+		// END PAGE LEVEL JS
+		script.
+			$(document).ready(function(){
+
+				var intSalesInvoiceID = !{JSON.stringify(award[0].intSalesInvoiceID)}
+
+				
+				$.post('/bid/awarded', {
+					intSalesInvoiceID: intSalesInvoiceID,
+				}).then(function(data){
+					if(data.indicator){
+						awards = data.awards;
+						utilities = data.utilities;
+						var checkoutbidprice = 0;
+						var checkoutbuyerspremium = 0;
+						checkouttotal = 0;					
+						$('#itemQ').text(awards.length)
+						
+						for(var i = 0; i < awards.length; i++){
+							var award = awards[i];
+							console.log(award)
+							
+							if(award.info.hasOwnProperty('strItemID')){
+								award.info.jsonOtherSpecifications = JSON.parse(award.info.jsonOtherSpecifications);
+								if(award.info.jsonOtherSpecifications.hasOwnProperty('Screensize'))
+									if(!award.info.jsonOtherSpecifications.Screensize.indexOf('Screensize'))
+										award.info.jsonOtherSpecifications['Screensize'] = award.info.jsonOtherSpecifications['Screensize']+' inches';						
+								if(award.info.jsonOtherSpecifications.hasOwnProperty('Wattage'))
+									if(award.info.jsonOtherSpecifications.Wattage.indexOf('watts') < 0)
+										award.info.jsonOtherSpecifications['Wattage'] = award.info.jsonOtherSpecifications['Wattage']+' watts';
+								if(award.info.jsonOtherSpecifications.hasOwnProperty('Storage') && award.info.jsonOtherSpecifications.category == "Mobile")
+									if(!award.info.jsonOtherSpecifications.Storage.indexOf('Storage'))
+										award.info.jsonOtherSpecifications['Storage'] = award.info.jsonOtherSpecifications['Storage']+' GB';
+								if(award.info.jsonOtherSpecifications.hasOwnProperty('Ram'))
+									if(!award.info.jsonOtherSpecifications.Ram.indexOf('RAM'))
+										award.info.jsonOtherSpecifications['Ram'] = 'RAM '+award.info.jsonOtherSpecifications['Ram']+' GB';
+								var valuesOnly = Object.values(award.info.jsonOtherSpecifications)//array values
+								var desc = award.info.jsonOtherSpecifications.Item+' ' 
+								for(var l = 1; l < valuesOnly.length; l++){
+									desc = desc+' '+valuesOnly[l]
+								}
+								var percentBuyersPremium = (data.utilities.dblBuyersPremium).toFixed(2);
+								var buyersPremium = (award.dblBidPrice * percentBuyersPremium).toFixed(2);
+								var rowAward = $(`<tr style="font-weight: bold">
+													<td>${award.intSIDQty}</div>												
+													<td><img src="/assets/uploads/${award.info.strPicture}" width="100px"/></td>												
+													<td>${desc}</td>
+													<td class='bidPrice' id="bidPrice${award.info.strItemID}" value="${(award.dblBidPrice).toFixed(2)}">${(award.dblBidPrice).toFixed(2) * award.intSIDQty}</td>
+													<td class='buyersPremium' id="buyersPremium${award.info.strItemID}" value="${(buyersPremium)}">${(buyersPremium) * award.intSIDQty}</td>
+													<td class='total' id="total${award.info.strItemID}" value="${(parseFloat(award.dblBidPrice) + parseFloat(buyersPremium)).toFixed(2)}">${((parseFloat(award.dblBidPrice) + parseFloat(buyersPremium)).toFixed(2)) * award.intSIDQty}</td>
+												</tr>`)
+								$('.awardTable').append(rowAward);
+								
+							}
+							if(award.info.hasOwnProperty('intBundleID')){
+
+
+								var percentBuyersPremium = (data.utilities.dblBuyersPremium).toFixed(2);
+								var buyersPremium = (award.dblBidPrice * percentBuyersPremium).toFixed(2);
+								var rowAward = $(`<tr>
+													<td class="align-center">1</div>
+													<td><img src="/assets/uploads/${award.info.strBundlePicture}" width="100px"/></td>
+													<td>${award.info.strBundleTitle}</td>
+													<td class='bidPrice' id="bidPrice${award.info.intBundleID}" value="${(award.dblBidPrice).toFixed(2)}">${(award.dblBidPrice).toFixed(2)}</td>
+													<td class='buyersPremium' id="buyersPremium${award.info.intBundleID}" value="${(buyersPremium)}">${(buyersPremium)}</td>
+													<td class='total' id="total${award.info.intBundleID}" value="${(parseFloat(award.dblBidPrice) + parseFloat(buyersPremium)).toFixed(2)}">${(parseFloat(award.dblBidPrice) + parseFloat(buyersPremium)).toFixed(2)}</td>
+												</tr>`)
+								$('.awardTable').append(rowAward);	
+							}	
+									
+
+
+							if(i==awards.length-1){
+								$('.bidPrice').map(function(index, e){
+									checkoutbidprice += parseFloat($(this).text())
+									if(index == $('.bidPrice').length - 1){
+										$('#receiptHammerPrice').text('₱'+(checkoutbidprice).toFixed(2))								
+
+									}
+								})
+
+								$('.buyersPremium').map(function(index, e){
+									checkoutbuyerspremium += parseFloat($(this).text())
+									if(index == $('.buyersPremium').length - 1){
+										$('#receiptBuyersPremium').text('₱'+(checkoutbuyerspremium).toFixed(2))
+
+									}
+								})
+
+								$('.total').map(function(index, e){
+									checkouttotal += parseFloat($(this).text())
+									//- alert(checkouttotal)
+									if(index == $('.total').length - 1){
+										
+										$('#total').val('₱'+(checkouttotal).toFixed(2)/2)
+
+									}
+								})
+							}
+							
+						}
+					}
+				})
+
+				$(document).on('change', '#basicSelect', function(){
+					var option = $('#basicSelect option:selected').val();
+
+					if(option == 1){
+						$('#comment').val('Thank you for bidding! We are now processing your awards to be delivered.');
+					}
+					else if(option == 2){
+						$('#comment').val('Your award has been shipped. Please expect a call from courier.');
+					}
+					else if(option == 3){
+						$('#comment').val('your award has been delivered. Thank you for bidding with Auction Pride of the Philippines! Bid again!');
+					}
+				})
+				$.post('/statushistory', {
+					intSalesInvoiceID: intSalesInvoiceID,
+				}).done(function(data){
+					console.log(data.status)
+					for(var i = 0; i < data.status.length; i++){
+						if(data.status[i].booStatus == 1)						
+							$('#statusTable').append(`<tr><td>`+data.status[i].datDateChange+`</td><td><div class="badge badge-glow badge-pill badge-warning">Processing</div></td><td>`+data.status[i].Comment+`</td></tr>`)
+						if(data.status[i].booStatus == 2)						
+							$('#statusTable').append(`<tr><td>`+data.status[i].datDateChange+`</td><td><div class="badge badge-glow badge-pill badge-info">Shipping</div></td><td>`+data.status[i].Comment+`</td></tr>`)                        
+						if(data.status[i].booStatus == 3)						
+							$('#statusTable').append(`<tr><td>`+data.status[i].datDateChange+`</td><td><div class="badge badge-glow badge-pill badge-success">Delivered</div></td><td>`+data.status[i].Comment+`</td></tr>`)
+					}
+				})
+
+				$(document).on('click', '#save', function(){
+
+					if($("#basicSelect option:selected").val() == ""){
+						swal({
+							title: 'Please Select Status',
+							icon: 'error',
+						})
+					}
+					else{
+						swal({
+							title: 'Are you sure?',
+							text: 'Once delivered, the status cannot be reversed.',
+							icon: 'warning',
+							buttons: {
+								Yes: 'Yes',
+								No: 'No',
+							}
+						}).then((value)=>{
+							if(value == 'Yes'){
+								$.post('/updatestatus',{
+									intSalesInvoiceID: intSalesInvoiceID,
+									status: $("#basicSelect option:selected").val(),
+									statuscomment: $('#comment').val()
+								}).done(function(data){
+									if(data.indicator){
+										location.href = `/award/detail/${intSalesInvoiceID}`
+									}
+								})
+							}
+						})
+					}
+				})
+
+
+			})

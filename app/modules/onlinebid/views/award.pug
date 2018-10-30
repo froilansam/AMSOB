@@ -1,0 +1,946 @@
+doctype html
+html(lang='en')
+	// Mirrored from www.energeticthemes.com/templates/shopmade/elements-team.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Aug 2018 16:38:30 GMT
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		// favicon
+		link(rel='shortcut icon', href='/assets/shopmade/images/favicon.ico')
+		title Shop Made - A Modern, Minimalist eCommerce Theme
+		// Google Fonts
+		link(href='/assets/css/fonts2.css', rel='stylesheet')
+		// Fonts for icons
+		link(href='/assets/shopmade/css/font-awesome.min.css', rel='stylesheet')
+		// bootstrap
+		link(href='/assets/shopmade/css/bootstrap.css', rel='stylesheet')
+		// Styles CSS
+		link(href='/assets/shopmade/css/style.css', rel='stylesheet')
+		// Animate CSS
+		link(href='/assets/shopmade/css/aos.css', rel='stylesheet')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/selects/select2.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/formValidation.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')
+
+
+
+		// HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+		//if lt IE 9
+			script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+			script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+		style.
+			#dp:hover{
+				border: 5px solid gray;
+				filter: brightness(50%);
+			}
+			.pricing_item:hover{
+				background-color: lightgray
+			}
+			input::placeholder {
+				color: lightgray
+			}
+			textarea::placeholder {
+				color: lightgray
+			}
+			.defaulteryes:hover{
+				background-color: lightgray !important;
+				color: black !important;
+				cursor: pointer;
+			}
+			.defaulterno:hover{
+				background-color: green !important;
+				color: white !important;
+				cursor: pointer;
+			}
+			.defaulterno{
+				background-color: lightgray;
+				color: black;
+			}
+			.defaulteryes{
+				background-color: green;
+				color: white;
+			}
+			.swal-button.swal-button--No{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Yes{
+				background-color: #28D094 !important;
+			}
+			td{
+				font-size: 12px;
+			}
+			.btn-custom{
+				padding: 0.85rem 0.5rem;
+			}
+	body
+		#main-contento.m-scene
+			// Header
+			nav.navbar.navbar-toggleable-md.px-5-percent
+				.full-width-container
+					button.navbar-toggler.navbar-toggler-right.hamburger-menu-btn.ml-auto(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+						span toggle menu
+					a.navbar-brand(href='index.html')
+						img(src='/assets/shopmade/images/logo.png', width='162', height='45', alt='Logo')
+					#navbarNavDropdown.collapse.navbar-collapse
+						ul.navbar-nav.ml-auto
+							li.active
+								a.dropdown-toggle(href='index.html', data-toggle='dropdown') Home
+								ul.dropdown-menu
+									li
+										a(href='index.html') Main Homepage
+									li
+										a(href='home-2.html') Home 2
+									li
+										a(href='home-3.html') Home 3
+									li
+										a(href='home-4.html') Home 4
+									li
+										a(href='home-5.html') Home 5
+									li
+										a(href='home-6.html') Home 6
+									li
+										a(href='landing-page.html') Landing Page
+							li
+								a.dropdown-toggle(href='#', data-toggle='dropdown') Pages
+								ul.dropdown-menu
+									li
+										a.dropdown-toggle(href='about-us.html', data-toggle='dropdown') About
+										ul.dropdown-menu
+											li
+												a(href='about-us.html') About Us
+											li
+												a(href='page-about-us-2.html') About Us 2
+									li
+										a.dropdown-toggle(href='page-services.html', data-toggle='dropdown') Services
+										ul.dropdown-menu
+											li
+												a(href='page-services.html') Services
+											li
+												a(href='page-services-2.html') Services page 2
+									li
+										a.dropdown-toggle(href='page-contact-map.html', data-toggle='dropdown') Contact
+										ul.dropdown-menu
+											li
+												a(href='page-contact-map.html') Contact Map 1
+											li
+												a(href='page-contact-map-2.html') Contact Map 2
+							li.mega_menu_holder
+								a.dropdown-toggle(href='#', data-toggle='dropdown') Portfolio
+								ul.dropdown-menu.mega_menu
+									li
+										a.dropdown-toggle(href='#', data-toggle='dropdown') Outside Titles
+										ul.dropdown-menu
+											li
+												a(href='portfolio-outside-title-wide-2col-grid.html') Grid Two Colunms
+											li
+												a(href='portfolio-outside-title-wide-3col-grid.html') Grid Three Colunms
+											li
+												a(href='portfolio-outside-title-wide-4col-grid.html') Grid Four Colunms
+											li.dropdown-divider
+											li
+												a(href='portfolio-outside-title-2col-masonry.html') Masonry Two Colunms
+											li
+												a(href='portfolio-outside-title-3col-masonry.html') Masonry Three Colunms
+											li
+												a(href='portfolio-outside-title-4col-masonry.html') Masonry Four Colunms
+									li
+										a.dropdown-toggle(href='#', data-toggle='dropdown') Grid Inside Titles
+										ul.dropdown-menu
+											li
+												a(href='portfolio-inside-title-wide-2col-grid.html') Grid Two Colunms
+											li
+												a(href='portfolio-inside-title-wide-3col-grid.html') Grid Three Colunms
+											li
+												a(href='portfolio-inside-title-wide-4col-grid.html') Grid Four Colunms
+											li.dropdown-divider
+											li
+												a(href='portfolio-inside-title-2col-masonry.html') Masonry Two Colunms
+											li
+												a(href='portfolio-inside-title-3col-masonry.html') Masonry Three Colunms
+											li
+												a(href='portfolio-inside-title-4col-masonry.html') Masonry Four Colunms
+									li
+										a.dropdown-toggle(href='#', data-toggle='dropdown') Single Portfolio
+										ul.dropdown-menu
+											li
+												a(href='single-portfolio-small-images.html') Small Images
+											li
+												a(href='single-portfolio-small-gallery.html') Small Gallery
+											li
+												a(href='single-portfolio-small-masonry.html') Small Masonry
+											li
+												a(href='single-portfolio-small-slider.html') Small Slider
+											li.dropdown-divider
+											li
+												a(href='single-portfolio-big-images.html') Big Images
+											li
+												a(href='single-portfolio-big-gallery.html') Big Gallery
+											li
+												a(href='single-portfolio-big-masonry.html') Big Masonry
+											li
+												a(href='single-portfolio-big-slider.html') Big Slider
+							li
+								a.dropdown-toggle(href='#', data-toggle='dropdown') Blog
+								ul.dropdown-menu
+									li
+										a.dropdown-toggle(href='#', data-toggle='dropdown') Blog Style
+										ul.dropdown-menu
+											li
+												a(href='blog-grid.html') Blog Grid
+											li
+												a(href='blog-standard.html') Stander Blog
+											li
+												a(href='blog-single-post.html') Blog Single Psot
+											li
+												a(href='blog-cards.html') Cards Blog
+											li
+												a(href='#') About
+									li.dropdown-divider
+									li
+										a.dropdown-toggle(href='#', data-toggle='dropdown') Single Post Style
+										ul.dropdown-menu
+											li
+												a(href='blog-single-post.html') Stander Single Post
+											li
+												a(href='blog-post-single-gallery.html') Gallery Post
+											li
+												a(href='blog-post-single-video.html') Video Post
+											li
+												a(href='blog-post-single-audio.html') Audio Post
+							li
+								a.dropdown-toggle(href='#', data-toggle='dropdown') Shop
+								ul.dropdown-menu
+									li
+										a(href='shop-full-width.html') Shop
+									li
+										a(href='shop-right-sidebar.html') Shop Right Sidebar
+									li
+										a(href='shop-left-sidebar.html') Shop Left Sidebar
+									li.dropdown-divider
+									li
+										a(href='single-product.html') Shop Single Product
+							li.mega_menu_holder
+								a.dropdown-toggle(href='#', data-toggle='dropdown') Elements
+								ul.dropdown-menu.mega_menu
+									li
+										a.dropdown-toggle(href='#', data-toggle='dropdown')
+										ul.dropdown-menu
+											li
+												a(href='elements-accordions.html') Accordions
+											li
+												a(href='elements-banner.html') Banner
+											li
+												a(href='elements-blockquote.html') Blockquote
+											li
+												a(href='elements-blog-post.html') Blog Post
+											li
+												a(href='elements-buttons.html') Buttons
+											li
+												a(href='elements-call-to-action.html') Call To Action
+											li
+												a(href='elements-clients.html') Clients
+											li
+												a(href='elements-columns.html') Columns
+											li
+												a(href='elements-contact-form.html') Contact Form
+											li
+												a(href='elements-countdown.html') Countdown
+									li
+										a.dropdown-toggle(href='#', data-toggle='dropdown')
+										ul.dropdown-menu
+											li
+												a(href='elements-counters.html') Counters
+											li
+												a(href='elements-dropcaps.html') Dropcaps
+											li
+												a(href='elements-google-maps.html') Google Maps
+											li
+												a(href='elements-headings.html') Headings
+											li
+												a(href='elements-highlights.html') Highlights
+											li
+												a(href='elements-icon-content-box.html') Icon Content Box
+											li
+												a(href='elements-image-content-box.html') Image Content Box
+											li
+												a(href='elements-lists.html') Lists
+											li
+												a(href='elements-numbered-process.html') Numbered Process
+											li
+												a(href='elements-pricing-table.html') Pricing Table
+									li
+										a.dropdown-toggle(href='#', data-toggle='dropdown')
+										ul.dropdown-menu
+											li
+												a(href='elements-progress-bar.html') Progress Bar
+											li
+												a(href='elements-slider.html') Slider
+											li
+												a(href='elements-social-icons.html') Social Icons
+											li
+												a(href='elements-tables.html') Tables
+											li
+												a(href='elements-tabs.html') Tabs
+											li
+												a(href='elements-team.html') Team
+											li
+												a(href='elements-typography.html') Typography
+											li
+												a(href='elements-testimonials.html') Testimonials
+							li
+								a(href='#')
+									i.fa.fa-search(aria-hidden='true')
+							li
+								a(href='#')
+									i.fa.fa-shopping-bag(aria-hidden='true')
+								span.counter-shop-box 2
+			#checkoutModal.modal
+				.modal-dialog.modal-lg(style='max-width: 1160px;' role='document')
+					.modal-content
+						.modal-header(style='border-bottom: none;')
+							h4.modal-title.text-center 
+								img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+							button#closeLogin.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							.row
+								.col-md-12.align.center
+									h2#title Methods of Payment
+							.row
+								.col-md-12
+									ul.nav.nav-tabs(role='tablist')
+										li.nav-item
+											a.nav-link.active(href='#bank', role='tab', data-toggle='tab') Offline
+										li.nav-item
+											a.nav-link(href='#paymaya', role='tab', data-toggle='tab') Online
+
+									.tab-content
+										#bank.tab-pane.fade.show.active(role='tabpanel')
+											.row
+												.col-md-12.align-center
+													h2#title Pay Offline through 
+														br 
+														| Bank Over-The-Counter
+											.row
+												.col-md-12
+													form#payForm(method='POST', action='/bid/payment/upload')
+														br
+														.row
+															.col-md-12
+																input#strBankReference(type='text', name='strBankReference' placeholder='Please Enter bank Reference Number')
+														br
+														.row(hidden)
+															.col-md-12
+																input#intSalesInvoiceID(type='text', name='intSalesInvoiceID' value=intSalesInvoiceID)
+														.row
+															.col-md-12
+																button#submitButton.btn.btn-block.btn-default
+																	i.fa.fa-check
+																	| Submit
+										#paymaya.tab-pane.fade(role='tabpanel')
+											.row
+												
+												.col-md-12.align-center
+													h2#title Pay Online Through
+													img.align-center(src='/assets/images/paymaya.png' style='width: 200px')
+											br
+											.row.mb_80
+												.col-xl-6.col-lg-12
+													.card-wrapper
+												.col-xl-6.col-lg-12
+													form.card-form(action='#')
+														fieldset.mb-1
+															h5 Card Number: 
+																span(style='color: red') *
+															.form-group
+																input#card-number.card-number(type='text', name='number', maxlength='19', placeholder='Card Number')
+														fieldset.mb-1
+															h5 Card Name: 
+																span(style='color: red') *
+															.form-group
+																input#card-name.card-name(type='text', name='name', placeholder='Card Holder Name')
+														.row
+															.col-md-6
+																fieldset.mb-1
+																	h5 Expiry Date: 
+																		span(style='color: red') *
+																	.form-group
+																		input#card-expiry.card-expiry(type='text', name='expiry', placeholder='Card Expiry Date')
+															.col-md-6
+																fieldset.mb-1
+																	h5 Card CVC Number: 
+																		span(style='color: red') *
+																	.form-group
+																		input#card-cvc.card-cvc(type='text', name='cvc', maxlength='16', placeholder='Card CVC Number')
+														.row
+															.col-md-12
+																button#confirm.btn.btn-block.m-1.btn-default(type='button') Confirm
+														
+													
+
+			#addressModal.modal
+				.modal-dialog.modal-lg(style='max-width: 1160px;' role='document')
+					.modal-content
+						.modal-header(style='border-bottom: none;')
+							h4.modal-title.text-center 
+								img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+							button#closeLogin.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							.row
+								.col-md-12.align.center
+									h2#title Select shipping address
+							.row
+								.col-md-12
+									table.table
+										
+										thead
+											tr
+												th Full Name
+												th Address
+												th Postcode
+												th Phone Number
+												th 
+										tbody#addressTable
+					
+									
+
+							
+							
+		
+												
+
+			.page-container.scene-main.scene-main--fade_In
+				// End Header
+				// Page Loader
+				.page_loading
+					.spinner
+				// End Page Loader
+				.hero_title_container.d-flex.align-items-center.height_35.mx-5-percent
+					.fluid-container.px-5-percent
+						.hero_box.w-50
+							.hero_title.hero_title_small
+								h1 Bidder's Profile
+								-if(bidder.booStatus == 0)
+									.row
+										.col-md-2
+											i.fa.fa-exclamation.fa-5x(style='color: red;')
+										.col-md-10
+											p(style='color:red')
+												| Uh-oh, you cannot discover, bid, and win because you have not paid the registration fee. 
+												| To settle payment, 
+												a.btn-bottom-line(href='#' data-toggle='modal' data-target='#paymentModal') click here.
+			
+				.fluid-container.px-5-percent.mt_80.mb_80
+					
+					.row.mb_80
+						.col-md-8
+							.fluid-container.px-5-percent.mt_80.mb_80
+								.row
+									form#quantityForm.col-md-12
+										table.table
+											thead
+												tr
+													th Quantity
+													th
+													th Item
+													th Hammer Price
+													th Buyer's Premium
+													th Total
+											tbody#awardTable
+													
+												
+						.col-md-4
+							.sticky-top
+								br
+								#checkieoutie(style="border-left: 3px solid black; padding: 15px")
+									button#checkOutButton.btn.btn-default.btn-block(type='button' data-toggle='modal' data-target='#checkoutModal') Check Out
+									br
+									.row
+										.col-md-12
+											h4.align-left(style="color: #aec6cf") Shipping Address
+									.row
+										.col-md-8
+											h5#shippingName  
+										.col-md-4.align-right
+											a#editShippingAddress.btn-bottom-line(href="#" ) EDIT
+									.row
+										.col-md-12
+											p(style='font-size: 14px;')#shippingAddress 
+											p(style='font-size: 14px;')#shippingContact 
+									hr(style="border-top: 1px solid black")
+									.row
+										.col-md-12
+											h4.align-left(style="color: #aec6cf") Awards Summary
+										.col-md-12
+											table.table
+												tbody
+													tr
+														th Subtotal (
+															span#itemQ 3 
+															|  Items)
+														td#checkOutHammerPrice 
+													tr
+														th Buyer's Premium
+														td#checkOutBuyersPremium 
+													tr
+														th
+															h4 Total
+														td
+															h3#checkOutTotal(style="color: #77dd77") 
+									button#checkOutButton.btn.btn-default.btn-block(type='button' data-toggle='modal' data-target='#checkoutModal') Check Out
+										
+
+
+										
+					footer
+						.footer_container
+							.fluid-container
+								.row.align-items-center
+									.col-lg-4
+										p
+											| © 2017 Energetic Themes
+									.col-lg-4
+										ul.footer_nav.align-center
+											li
+												a(href='portfolio-outside-title-wide-2col-grid.html', target='blank', title='portfolio') Portfolio
+											li
+												a(href='blog-grid.html', target='blank', title=' blog') Blog
+											li
+												a(href='shop-full-width.html', target='blank', title='shop') Shop
+											li
+												a.color.youtube(href='elements-accordions.html', target='blank', title='elements') Elements
+									.col-lg-4.align-right
+										ul.list-inline
+											li
+												a(href='https://www.facebook.com/energeticthemes')
+													i.fa.fa-facebook(aria-hidden='true')
+											li
+												a(href='https://instagram.com/energeticthemes')
+													i.fa.fa-instagram(aria-hidden='true')
+											li
+												a(href='https://behance.com/energeticthemes')
+													i.fa.fa-behance(aria-hidden='true')
+											li
+												a(href='https://twitter.com/energeticthemes')
+													i.fa.fa-twitter(aria-hidden='true')
+		// ==================================================
+		// Placed js files at the end of the document so the pages load faster
+		script(type='text/javascript', src='/assets/shopmade/js/jquery.min.js')
+		script(src='/assets/shopmade/js/bootstrap.min.js')
+		script(type='text/javascript', src='/assets/shopmade/js/plugins.min.js')
+		script(type='text/javascript', src='/assets/shopmade/js/jquery.smoothState.min.js')
+		script(type='text/javascript', src='/assets/shopmade/js/main.js')
+		script(type='text/javascript', src='/assets/vendors/js/sweetalert.js')
+		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/jquery.form.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
+		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')
+		script(src='/assets/vendors/js/forms/extended/card/jquery.card.js', type='text/javascript')
+		script(src='/assets/js/scripts/forms/extended/form-card.min.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+
+	script.
+		function delayPayment(award){
+			if(award.info.hasOwnProperty('strItemID')){
+				var bidPrice = parseFloat($(`#bidPrice${award.info.strItemID}`).attr('value'));
+				var buyersPremium = parseFloat($(`#buyersPremium${award.info.strItemID}`).attr('value'));
+				var quantity = parseInt($(`#quantity${award.info.strItemID}`).val());
+
+				$.post('/bid/awards/sold/offline', {
+					bidPrice: bidPrice,
+					buyersPremium: buyersPremium,
+					quantity: quantity,
+					strItemID: award.info.strItemID,
+					intSalesInvoiceDetailsID: award.intSalesInvoiceDetailsID,
+				}).then(function(datung){
+					if(datung.indicator){
+						console.log('Updated');
+					}
+				})
+			}
+			else{
+				var bidPrice = parseFloat($(`#bidPrice${award.info.intBundleID}`).text());
+				var buyersPremium = parseFloat($(`#buyersPremium${award.info.intBundleID}`).text());
+				var quantity = 1;
+
+				$.post('/bid/awards/sold/offline', {
+					bidPrice: bidPrice,
+					buyersPremium: buyersPremium,
+					quantity: quantity,
+					intBundleID: award.info.intBundleID,
+					intSalesInvoiceDetailsID: award.intSalesInvoiceDetailsID,
+				}).then(function(datung){
+					if(datung.indicator){
+						console.log('Updated');
+					}
+				})
+			}
+
+			//- if(i== awards.length - 1){
+			//- 	//- $('#payForm').submit()					
+			//- 	alert('fucker')		
+			//- }
+		}
+		async function offlinePayment(awards){
+			for(var award of awards){
+				await delayPayment(award)
+			}
+			
+
+			$('#payForm').submit()					
+
+			
+		}
+		function initializeAddress(){
+			$.post('/bid/shippingaddress').then(function(data){
+				if(data.indicator){
+					var addressBook = data.addressBook;
+					$('#shippingName').text(addressBook.strFullname);
+					$('#shippingAddress').text(addressBook.strHouseAddress+', '+addressBook.strBarangay+', '+addressBook.strCity+', '+addressBook.strRegion+'~'+addressBook.strPostcode);
+					$('#shippingContact').text(addressBook.strPhoneNumber);
+				}	
+				else{
+					$('#addressModal').modal('toggle')
+					$.get('/bid/address/get').then(function(data){
+
+						if(data.indicator){
+
+							for(var i = 0; i < data.address.length; i++){
+								var address = data.address[i]
+
+								if(address.booDefault == 0){
+									var addressRow = $(`
+													<tr>
+													<td>${address.strFullname}</td>
+													<td>${address.strHouseAddress}</td>
+													<td>${address.strBarangay}, ${address.strCity}, ${address.strRegion}, ${address.strPostcode}</td>
+													<td>${address.strPhoneNumber}</td>
+													<td><span class="badge badge-glow badge-pill defaulterno" addressid="${address.intAddressBookID}">Default</span></td>
+													</tr>`)
+								}
+								else if(address.booDefault == 1){
+									var addressRow = $(`
+													<tr>
+													<td>${address.strFullname}</td>
+													<td>${address.strHouseAddress}</td>
+													<td>${address.strBarangay}, ${address.strCity}, ${address.strRegion}, ${address.strPostcode}</td>
+													<td>${address.strPhoneNumber}</td>
+													<td><span class="badge badge-glow badge-pill defaulteryes" addressid="${address.intAddressBookID}">Default</span></td>
+													</tr>`)
+
+								}
+								$('#addressTable').append(addressRow).hide().fadeIn(500);
+							}
+						}
+
+					})
+				}
+			})
+		}
+	script.
+		$(window).ready(function(){
+			var checkouttotal;
+			var intSalesInvoiceID = !{JSON.stringify(intSalesInvoiceID)}
+			var awards;
+			initializeAddress();
+
+			$(document).on('click', '#confirm', function(){
+				var date = $("#card-expiry").val().split(' / ');
+				var cardNumber = $('#card-number').val().split(' ')
+				var card = {
+						'card': {
+							'number': cardNumber[0]+cardNumber[1]+cardNumber[2]+cardNumber[3],
+							'expMonth': date[0],
+							'expYear': date[1],
+							'cvc': $('#card-cvc').val(),	
+						}
+				}
+				console.log(card)
+
+
+				$.post('/bid/paymentawards/online', {
+					card: card,
+					amount: checkouttotal,
+					intSalesInvoiceID: intSalesInvoiceID,
+				}).then(function(data){
+					if(data.indicator){
+						url = data.url;
+						for(var i = 0; i < awards.length; i++){
+							var award = awards[i];
+							if(award.info.hasOwnProperty('strItemID')){
+								var bidPrice = parseFloat($(`#bidPrice${award.info.strItemID}`).text());
+								var buyersPremium = parseFloat($(`#buyersPremium${award.info.strItemID}`).text());
+								var quantity = parseInt($(`#quantity${award.info.strItemID}`).val());
+
+								$.post('/bid/awards/sold/online', {
+									bidPrice: bidPrice,
+									buyersPremium: buyersPremium,
+									quantity: quantity,
+									strItemID: award.info.strItemID,
+									intSalesInvoiceDetailsID: award.intSalesInvoiceDetailsID,
+								}).then(function(datung){
+									if(datung.indicator){
+										console.log('Updated');
+									}
+								})
+							}
+							else{
+								var bidPrice = parseFloat($(`#bidPrice${award.info.intBundleID}`).text());
+								var buyersPremium = parseFloat($(`#buyersPremium${award.info.intBundleID}`).text());
+								var quantity = 1;
+
+								$.post('/bid/awards/sold/online', {
+									bidPrice: bidPrice,
+									buyersPremium: buyersPremium,
+									quantity: quantity,
+									intBundleID: award.info.intBundleID,
+									intSalesInvoiceDetailsID: award.intSalesInvoiceDetailsID,
+								}).then(function(datung){
+									if(datung.indicator){
+										console.log('Updated');
+									}
+								})
+							}
+
+							if(i== awards.length - 1){
+								location.href = url;								
+							}
+						}
+					}
+					else{
+						swal({
+							title: 'Invalid',
+							text: 'Your credentials are invalid, please check if there is mistake.',
+							icon: 'error',
+							button: 'Okay',
+						})
+					}
+
+
+				})
+
+			})
+
+			
+
+			$(document).on('click', '#editShippingAddress', function(){
+				$('#addressModal').modal('toggle');
+				$('#addressTable').empty();
+				$.get('/bid/address/get').then(function(data){
+
+						if(data.indicator){
+
+							for(var i = 0; i < data.address.length; i++){
+								var address = data.address[i]
+
+								if(address.booDefault == 0){
+									var addressRow = $(`
+													<tr>
+													<td>${address.strFullname}</td>
+													<td>${address.strHouseAddress}</td>
+													<td>${address.strBarangay}, ${address.strCity}, ${address.strRegion}, ${address.strPostcode}</td>
+													<td>${address.strPhoneNumber}</td>
+													<td><span class="badge badge-glow badge-pill defaulterno" addressid="${address.intAddressBookID}">Default</span></td>
+													</tr>`)
+								}
+								else if(address.booDefault == 1){
+									var addressRow = $(`
+													<tr>
+													<td>${address.strFullname}</td>
+													<td>${address.strHouseAddress}</td>
+													<td>${address.strBarangay}, ${address.strCity}, ${address.strRegion}, ${address.strPostcode}</td>
+													<td>${address.strPhoneNumber}</td>
+													<td><span class="badge badge-glow badge-pill defaulteryes" addressid="${address.intAddressBookID}">Default</span></td>
+													</tr>`)
+
+								}
+								$('#addressTable').append(addressRow).hide().fadeIn(500);
+								
+							}
+						}
+
+					})
+				
+			})
+
+			$(document).on('click', '.defaulterno', function(){
+				var $this = $(this);
+				$.post('/bid/address/default',{
+					intAddressBookID: $(this).attr('addressid')
+				}).then(function(data){
+					if(data){
+						$('.defaulteryes').addClass('defaulterno').removeClass('defaulteryes');
+						$this.addClass('defaulteryes').removeClass('defaulterno')
+						$('#addressModal').modal('toggle');
+						initializeAddress();
+					}
+				})
+			})	
+
+			$(document).on('click', '#submitButton', function(e){
+				e.preventDefault()
+				var hostname = `!{hostname}`
+				var port = `!{port}`
+				var socket = io(`http://${hostname}:${port}`);
+				
+				socket.emit('paymentAwards')
+				offlinePayment(awards);
+			})
+
+
+			
+
+			var utilities = {};
+			var total
+			$(document).on('change', '.quantifier', function(){
+				if($(this).val() < 0 || $(this).val() > $(this).attr('quantityMax') || $(this).val() == ''){
+					$(this).val(1)
+				}
+				var $this = $(this);
+				var itemID = $this.attr('itemid');
+				var ogBidPrice = parseFloat($(`#bidPrice${itemID}`).attr('value')) * parseFloat($this.val());
+				console.log($(`#bidPrice${itemID}`).text());
+				var percentBuyersPremium = (utilities.dblBuyersPremium).toFixed(2);
+				var buyersPremium = (ogBidPrice * percentBuyersPremium).toFixed(2);
+				$(`#bidPrice${itemID}`).text((ogBidPrice).toFixed(2));
+				$(`#buyersPremium${itemID}`).text(buyersPremium);
+				$(`#total${itemID}`).text((parseFloat(ogBidPrice) + parseFloat(buyersPremium)).toFixed(2))
+				var checkoutbidprice = 0;
+				var checkoutbuyerspremium = 0;
+				checkouttotal = 0;
+				$('.bidPrice').map(function(index, e){
+					checkoutbidprice += parseFloat($(this).text())
+					if(index == $('.bidPrice').length - 1){
+						$('#checkOutHammerPrice').text('₱'+(checkoutbidprice).toFixed(2))
+
+					}
+				})
+
+				$('.buyersPremium').map(function(index, e){
+					checkoutbuyerspremium += parseFloat($(this).text())
+					if(index == $('.buyersPremium').length - 1){
+						$('#checkOutBuyersPremium').text('₱'+(checkoutbuyerspremium).toFixed(2))
+
+					}
+				})
+
+				$('.total').map(function(index, e){
+					checkouttotal += parseFloat($(this).text())
+					if(index == $('.total').length - 1){
+						$('#checkOutTotal').text('₱'+(checkouttotal).toFixed(2))
+
+					}
+				})
+
+			})
+
+			$.post('/bid/checkout/items', {
+				intSalesInvoiceID: intSalesInvoiceID,
+			}).then(function(data){
+				if(data.indicator){
+					awards = data.awards;
+					utilities = data.utilities;
+					var checkoutbidprice = 0;
+					var checkoutbuyerspremium = 0;
+					checkouttotal = 0;					
+					$('#itemQ').text(awards.length)
+					
+					for(var i = 0; i < awards.length; i++){
+						var award = awards[i];
+						console.log(award)
+						
+						if(award.info.hasOwnProperty('strItemID')){
+							award.info.jsonOtherSpecifications = JSON.parse(award.info.jsonOtherSpecifications);
+							if(award.info.jsonOtherSpecifications.hasOwnProperty('Screensize'))
+								if(!award.info.jsonOtherSpecifications.Screensize.indexOf('Screensize'))
+									award.info.jsonOtherSpecifications['Screensize'] = award.info.jsonOtherSpecifications['Screensize']+' inches';						
+							if(award.info.jsonOtherSpecifications.hasOwnProperty('Wattage'))
+								if(award.info.jsonOtherSpecifications.Wattage.indexOf('watts') < 0)
+									award.info.jsonOtherSpecifications['Wattage'] = award.info.jsonOtherSpecifications['Wattage']+' watts';
+							if(award.info.jsonOtherSpecifications.hasOwnProperty('Storage') && award.info.jsonOtherSpecifications.category == "Mobile")
+								if(!award.info.jsonOtherSpecifications.Storage.indexOf('Storage'))
+									award.info.jsonOtherSpecifications['Storage'] = award.info.jsonOtherSpecifications['Storage']+' GB';
+							if(award.info.jsonOtherSpecifications.hasOwnProperty('Ram'))
+								if(!award.info.jsonOtherSpecifications.Ram.indexOf('RAM'))
+									award.info.jsonOtherSpecifications['Ram'] = 'RAM '+award.info.jsonOtherSpecifications['Ram']+' GB';
+							var valuesOnly = Object.values(award.info.jsonOtherSpecifications)//array values
+							var desc = award.info.jsonOtherSpecifications.Item+' ' 
+							for(var l = 1; l < valuesOnly.length; l++){
+								desc = desc+' '+valuesOnly[l]
+							}
+							var percentBuyersPremium = (data.utilities.dblBuyersPremium).toFixed(2);
+							var buyersPremium = (award.dblBidPrice * percentBuyersPremium).toFixed(2);
+							var rowAward = $(`<tr>
+												<td> <div class="input-group"><input class="touchspin quantifier" id="quantity${award.info.strItemID}" name="quantity" type="text" value=${award.info.intQTY} quantityMax=${award.info.intQTY}  itemid="${award.info.strItemID}"/></div>												
+												<td><img src="/assets/uploads/${award.info.strPicture}" width="100px"/></td>												
+												<td>${desc}</td>
+												<td class='bidPrice' id="bidPrice${award.info.strItemID}" value="${(award.dblBidPrice).toFixed(2)}">${(award.dblBidPrice).toFixed(2)}</td>
+												<td class='buyersPremium' id="buyersPremium${award.info.strItemID}" value="${(buyersPremium)}">${(buyersPremium)}</td>
+												<td class='total' id="total${award.info.strItemID}" value="${(parseFloat(award.dblBidPrice) + parseFloat(buyersPremium)).toFixed(2)}">${(parseFloat(award.dblBidPrice) + parseFloat(buyersPremium)).toFixed(2)}</td>
+											</tr>`)
+							$('#awardTable').append(rowAward);
+							$(".touchspin").TouchSpin({
+								min: 1,
+								max: award.info.intQTY,
+								buttondown_class:"btn btn-primary btn-custom",
+								buttonup_class:"btn btn-primary btn-custom",
+								buttondown_txt:'<i class="fa fa-minus"></i>',
+								buttonup_txt:'<i class="fa fa-plus"></i>'
+							})
+						}
+						if(award.info.hasOwnProperty('intBundleID')){
+
+
+							var percentBuyersPremium = (data.utilities.dblBuyersPremium).toFixed(2);
+							var buyersPremium = (award.dblBidPrice * percentBuyersPremium).toFixed(2);
+							var rowAward = $(`<tr>
+												<td class="align-center">1</div>
+												<td><img src="/assets/uploads/${award.info.strBundlePicture}" width="100px"/></td>
+												<td>${award.info.strBundleTitle}</td>
+												<td class='bidPrice' id="bidPrice${award.info.intBundleID}" value="${(award.dblBidPrice).toFixed(2)}">${(award.dblBidPrice).toFixed(2)}</td>
+												<td class='buyersPremium' id="buyersPremium${award.info.intBundleID}" value="${(buyersPremium)}">${(buyersPremium)}</td>
+												<td class='total' id="total${award.info.intBundleID}" value="${(parseFloat(award.dblBidPrice) + parseFloat(buyersPremium)).toFixed(2)}">${(parseFloat(award.dblBidPrice) + parseFloat(buyersPremium)).toFixed(2)}</td>
+											</tr>`)
+							$('#awardTable').append(rowAward);	
+						}			
+
+
+						if(i==awards.length-1){
+
+							$('.bidPrice').map(function(index, e){
+								checkoutbidprice += parseFloat($(this).text())
+								if(index == $('.bidPrice').length - 1){
+									$('#checkOutHammerPrice').text('₱'+(checkoutbidprice).toFixed(2))								
+
+								}
+							})
+
+							$('.buyersPremium').map(function(index, e){
+								checkoutbuyerspremium += parseFloat($(this).text())
+								if(index == $('.buyersPremium').length - 1){
+									$('#checkOutBuyersPremium').text('₱'+(checkoutbuyerspremium).toFixed(2))
+
+								}
+							})
+
+							$('.total').map(function(index, e){
+								checkouttotal += parseFloat($(this).text())
+								if(index == $('.total').length - 1){
+									$('#checkOutTotal').text('₱'+(checkouttotal).toFixed(2))
+
+								}
+							})
+						}
+						
+					}
+				}
+			})
+		})

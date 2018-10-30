@@ -1,0 +1,167 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| Dashboard sales - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
+			| Dashboard
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		// END Custom CSS
+	body
+		.app-content.content
+			.content-wrapper
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+				.content-body
+					section.row
+						.col-12
+							.card
+								.card-head
+									.card-header
+										h4.card-title
+										a.heading-elements-toggle
+											i.la.la-ellipsis-h.font-medium-3
+										.heading-elements
+								.card-content
+									.card-body#printBody
+										.row
+											.col-md-12
+												.card-box
+													.panel-body
+														.clearfix
+															.row
+																.col-md-6
+																	h4
+																		strong #{session.utilities.strCompanyName}
+																		br
+																		- var address = JSON.parse(session.utilities.jsonCompanyAddress)
+																		| #{address.address} #{address.baranggay} #{address.city}
+																	br
+																	h1 
+																		strong BIDDER'S REGISTRATION
+																.col-md-6
+																	.alert.alert-light(role='alert')
+																		h4
+																			strong TOTAL AMOUNT DUE: PhP&nbsp;&nbsp;
+																			| #{session.utilities.intRegFee}.00
+																			br
+																			strong Bank Service Fee: PhP&nbsp;&nbsp;
+																			| 25.00
+														hr
+														.row
+															.col-md-12
+																.pull-left.m-t-30
+																	h3
+																		strong Name: 
+																		|  Ariana Butera Grande
+																	h3
+																		strong Username: 
+																		|  arianagrande
+																	h3
+																		strong Clearing Account Number: 
+																		|  #{session.utilities.strAccountNumber}
+														br
+														.row
+															.col-md-12
+																.pull-left.m-t-30
+																	h2 Instructions on what to do next?
+																	h4 Follow these instructions to complete your account verification process.
+																	br
+																	h4
+																		strong Print this document: 
+																		| Print this document and present to the Bank Teller when you pay your Registration Fee.
+																	br
+																	h4
+																		strong Pay your Registration Fee: 
+																		| Pay at any Bank near your residence.
+																		strong NOTE:
+																		| Reference number will be indicated on your invoice.
+																	br
+																	h4
+																		strong Make a soft copy: 
+																		| Scan your invoice or simply take a clear shot of picture of it, make sure the reference number is readable for it is required for the staff to verify your payment and give you access to the bidding website.
+																	br
+																	h4
+																		strong Send your proof of payment: 
+																		| Login to your account and upload the soft copy you made.
+														hr
+														.d-print-none
+															.pull-right
+																a.btn.btn-inverse.waves-effect.waves-light#printButton(href='javascript:void(0)')
+																	i.fa.fa-print
+																	span Print
+															.clearfix
+					// Analytics map based session
+		// ///////////////////////////////////////////////////////////////////////////
+		footer.footer.footer-static.footer-light.navbar-border.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| APPTRADE INC.
+					i.ft-heart.pink
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		// END PAGE LEVEL JS
+		script.
+			$(document).ready(function(){
+				console.log(JSON.stringify({
+					address: '1642 Block 5 corner Block 10',
+					baranggay: 'Baranggay 362',
+					city: 'Mandaluyong City',
+				}))
+				$('#printButton').click(function(){
+					var print = $('#printBody').html()
+					var orig = $('body').html()
+
+					document.body.innerHTML = print;
+					window.print();
+					document.body.innerHTML = orig;
+				})
+			})

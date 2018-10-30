@@ -1,0 +1,3078 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| AMSOB Admin | Asset Pricing
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/formValidation.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/weather-icons/climacons.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/meteocons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist-plugin-tooltip.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/tables/extensions/responsive.dataTables.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/icheck.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/icheck/custom.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/forms/selects/select2.min.css')
+		link(rel="stylesheet" type="text/css" href="/assets/vendors/css/extensions/toastr.css")
+		link(rel='stylesheet', type='text/css', href=' 	/assets/css/pages/gallery.min.css')
+
+
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/plugins/forms/extended/form-extended.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/horizontal-menu.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-callout.min.css')
+
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/timeline.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/dashboard-ecommerce.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel="stylesheet" type="text/css" href="/assets/css/plugins/extensions/toastr.min.css")
+		
+
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../assets/css/style.css')
+		// END Custom CSS
+		style.
+			.swal-button.swal-button--Cancel{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Yes{
+				background-color: #28D094 !important;
+			}
+		
+			.card .card-body:before {
+				font-family: fontawesome;
+				font-size: 10rem;
+				color: rgba(255,255,255,.15);
+				position: absolute;
+				bottom: -32px;
+				right: 0;
+			}
+			.sales::before {
+				content: "\f0d6";
+			}
+			.consignment::before {
+				content: "\f07a";
+			}
+			.form-control:disabled, .form-control[readonly], .input-group-addon {
+				background-color: transparent;
+				border: none! important;
+				font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+			}
+			.pull-up{
+				z-index: 0 !important;
+			}
+		style.
+			.has-error .control-label,
+			.has-error .help-block,
+			.has-error .form-control-feedback {
+				color: #a94442;
+			}
+
+			/* Color of valid field */
+			.has-success .control-label,
+			.has-success .help-block,
+			.has-success .form-control-feedback {
+				color: #3c763d;
+			}
+			.form-group.has-feedback.has-error .form-control,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-error .select2-selection.select2-selection--single:focus{
+				border: 1px solid #a94442 !important;
+			}
+			.form-group.has-feedback.has-success .form-control,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single,
+			.form-group.has-feedback.has-success .select2-selection.select2-selection--single:focus{
+				border: 1px solid #3c763d !important;
+			}
+
+			.form-control-feedback.fa.fa-check{
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 35px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.form-control-feedback.fa.fa-times {
+				z-index: 1;
+				position: absolute;
+				width: auto;
+				bottom: 54px;
+				right: 24px;
+				margin-top: 0;
+			}
+			.swal-button.swal-button--DontSave{
+				background-color: #FF4961 !important;
+			}
+			.swal-button.swal-button--Save{
+				background-color: #28D094 !important;
+			}
+			#next[disabled], #prev[disabled]{
+				cursor: not-allowed;
+			}
+	body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
+		// fixed-top
+		nav.header-navbar.navbar-expand-md.navbar.navbar-with-menu.navbar-without-dd-arrow.fixed-top.navbar-shadow.navbar-semi-light.bg-gradient-x-blue
+			.navbar-wrapper
+				.navbar-header
+					ul.nav.navbar-nav.flex-row
+						li.nav-item.mobile-menu.d-md-none.mr-auto
+							a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+								i.ft-menu.font-large-1
+						li.nav-item.mr-auto
+							a.navbar-brand(href='index.html')
+								img.brand-logo(alt='modern admin logo', src='/assets/images/logo/logo.png')
+								h3.brand-text AMSOB
+						li.nav-item.d-none.d-md-block.float-right
+							a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+								i.toggle-icon.ft-toggle-right.font-medium-3.white(data-ticon='ft-toggle-right')
+						li.nav-item.d-md-none
+							a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+								i.la.la-ellipsis-v
+				.navbar-container.content
+					#navbar-mobile.collapse.navbar-collapse
+						ul.nav.navbar-nav.mr-auto.float-left
+							li.nav-item.d-none.d-md-block
+								a.nav-link.nav-link-expand(href='#')
+									i.ficon.ft-maximize
+						ul.nav.navbar-nav.float-right
+							li.dropdown.dropdown-user.nav-item
+								a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+									span.mr-1
+										| Hello,
+										span.user-name.text-bold-700 #{session.user.strEmployeeFirstName} #{session.user.strEmployeeLastName}
+									span.avatar.avatar-online
+										img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+										i
+								.dropdown-menu.dropdown-menu-right
+									a.dropdown-item(href='#')
+										i.ft-user
+										|  Edit Profile
+									a.dropdown-item(href='#')
+										i.ft-mail
+										|  My Inbox
+									a.dropdown-item(href='#')
+										i.ft-check-square
+										|  Task
+									a.dropdown-item(href='#')
+										i.ft-message-square
+										|  Chats
+									.dropdown-divider
+									a.dropdown-item(href='#')
+										i.ft-power
+										|  Logout
+							li.dropdown.dropdown-language.nav-item
+								a#dropdown-flag.dropdown-toggle.nav-link(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.flag-icon.flag-icon-ph
+									span.selected-language
+								.dropdown-menu(aria-labelledby='dropdown-flag')
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-ph
+										|  English
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-fr
+										|  French
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-cn
+										|  Chinese
+									a.dropdown-item(href='#')
+										i.flag-icon.flag-icon-de
+										|  German
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-bell
+									span.badge.badge-pill.badge-default.badge-danger.badge-default.badge-up.badge-glow#numberNotif 
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Notifications
+									li.scrollable-container.media-list.w-100#notificationField
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all notifications
+							li.dropdown.dropdown-notification.nav-item
+								a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+									i.ficon.ft-mail              
+								ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+									li.dropdown-menu-header
+										h6.dropdown-header.m-0
+											span.grey.darken-2 Messages
+										span.notification-tag.badge.badge-default.badge-warning.float-right.m-0 4 New
+									li.scrollable-container.media-list.w-100
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-19.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Margaret Govan
+													p.notification-text.font-small-3.text-muted I like your portfolio, let's start.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Today
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-busy.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-2.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Bret Lezama
+													p.notification-text.font-small-3.text-muted I have seen your work, there is
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Tuesday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-online.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-3.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Carie Berra
+													p.notification-text.font-small-3.text-muted Can we have call in this week ?
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') Friday
+										a(href='javascript:void(0)')
+											.media
+												.media-left
+													span.avatar.avatar-sm.avatar-away.rounded-circle
+														img(src='/assets/images/portrait/small/avatar-s-6.png', alt='avatar')
+														i
+												.media-body
+													h6.media-heading Eric Alsobrook
+													p.notification-text.font-small-3.text-muted We have project party this saturday.
+													small
+														time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00') last month
+									li.dropdown-menu-footer
+										a.dropdown-item.text-muted.text-center(href='javascript:void(0)') Read all messages
+		// ////////////////////////////////////////////////////////////////////////////
+		.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
+			.main-menu-content
+				ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+					li.nav-item
+						a(href='/')
+							i.fa.fa-dashboard
+							span.menu-title Dashboard
+					li.nav-item
+						a(href='#')
+							i.fa.fa-wrench
+							span.menu-title Maintenance
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor
+									li
+										a.menu-item(href='/consignment/maintenance', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignment
+									li
+										a.menu-item(href='/bundle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bundle
+									li
+										a.menu-item(href='/assets', data-i18n='nav.menu_levels.second_level_child.third_level_child') Assets
+									li
+										a.menu-item(href='/inventory', data-i18n='nav.menu_levels.second_level_child.third_level_child') Inventory
+									li
+										a.menu-item(href='/lostanddamage', data-i18n='nav.menu_levels.second_level_child.third_level_child') Lost and Damage
+									li
+										a.menu-item(href='/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidders
+									li
+										a.menu-item(href='/auction', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Schedule
+									li
+										a.menu-item(href='/maintenance/auctionresults', data-i18n='nav.menu_levels.second_level_child.third_level_child') Auction Results
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') User Management
+								ul.menu-content
+									li
+										a.menu-item(href='/uom', data-i18n='nav.menu_levels.second_level_child.third_level_child') Unit of Measurement
+									li
+										a.menu-item(href='/idtypes', data-i18n='nav.menu_levels.second_level_child.third_level_child') ID Types
+									li
+										a.menu-item(href='/jobtitle', data-i18n='nav.menu_levels.second_level_child.third_level_child') Job Title
+									li
+										a.menu-item(href='/employee', data-i18n='nav.menu_levels.second_level_child.third_level_child') Employee
+					li.nav-item
+						a(href='javascript:void(0)')
+							i.fa.fa-handshake-o
+							span.menu-title Transaction
+						ul.menu-content
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Auction Management
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/consignor', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Consignor Evaluation
+									li
+										a.menu-item(href='/consignment', data-i18n='nav.menu_levels.second_level_child.third_level_child') Asset Receiving
+									li
+										a.menu-item(href='/consignor/auctionresult', data-i18n='nav.menu_levels.second_level_child.third_level_child') Consignor Payment
+							li
+								a.menu-item(href='javascript:void(0)', data-i18n='nav.menu_levels.second_level') Online Bidding
+								ul.menu-content
+									li
+										a.menu-item(href='/evaluation/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child.main') Bidder Evaluation
+									li
+										a.menu-item(href='/verify/bidder', data-i18n='nav.menu_levels.second_level_child.third_level_child') Bidder Verification
+									li
+										a.menu-item(href='/awards', data-i18n='nav.menu_levels.second_level_child.third_level_child') Awards
+									li
+										a.menu-item(href='/delivery', data-i18n='nav.menu_levels.second_level_child.third_level_child') Delivery
+					li.nav-item
+						a(href='/queries')
+							i.fa.fa-list
+							span.menu-title Queries
+					li.nav-item
+						a(href='/reports/sales')
+							i.fa.fa-line-chart
+							span.menu-title Reports
+					li.nav-item
+						a(href='/utilities')
+							i.fa.fa-cogs
+							span.menu-title Utilities
+		.app-content.content(style='display: none')
+			.content-wrapper
+				//- Add Asset Modal
+				#addAssetModal2.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+					.modal-dialog.modal-md(role='document')
+						.modal-content
+							.modal-header(style='border-bottom: none;')
+								h4.modal-title.text-center
+									img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+							.modal-body
+								form#assetForm.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
+									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+										span Add Asset
+									fieldset
+										.row.text-center
+											.col-md-12
+												h1#chosenCategory.pt-2 
+										.row
+											.col-md-12
+												.bs-callout-warning.callout-border-left.callout-bordered.p-1
+													h4.warning Note:
+													p
+														| Kindly describe your asset accurately with your most honest knowledge as possible.
+										br
+										.row
+											.col-md-12
+												.alert.bs-callout-primary.callout-border-left.callout-bordered.p-1
+													button.close(type='button', data-dismiss='alert', aria-label='Close')
+														span(aria-hidden='true') ×
+													h4.primary Instruction:
+													p
+														| • Write
+														span
+															strong.primary  Not Applicable
+														span
+															|  if the given attribute is not applicable for your asset.
+													p
+														| • Write
+														span
+															strong.primary  Generic
+														span
+															|  if your asset is unbranded, except for custom-made furniture.
+				
+
+									br
+									fieldset
+										.row
+											<div class="col-md-6">
+												<fieldset>
+												<h5 style="font-weight: bold;" for="rp">Original Price: </h5>
+												<div class="input-group">
+													<div class="input-group-prepend"><span id="basic-addon3" class="input-group-text"><i class="fa fa-money"></i></span></div>
+													<input id="OGprice" type="number" name="OGprice" placeholder="Enter the original price here" aria-describedby="button-addon2" class="form-control"/>
+												</div>
+												</fieldset>
+											</div>
+											<div class="col-md-6">
+												<fieldset>
+												<h5 style="font-weight: bold;" for="rp">Year Released:</h5>
+												<div class="input-group">
+													<div class="input-group-prepend"><span id="basic-addon3" class="input-group-text"><i class="fa fa-calendar-o"></i></span></div>
+													<input id="YearReleased" type="number" name="YearReleased" placeholder="Enter the year the asset was released" aria-describedby="button-addon2" class="form-control"/>
+													
+												</div>
+												</fieldset>
+											</div>
+										
+									br
+									fieldset
+										.row
+											.col-md-12
+												.form-group
+													h5(style="font-weight: bold;" for='item')
+														| Item: 
+														span.danger *
+													input#item.form-control.typeahead-basic(type='text', name='item' placeholder='E.g., Refrigerator, Television, etc.')
+								
+															
+							.modal-footer
+								button#prev.btn.btn-outline-info.btn-md(type='button' disabled)
+									| Previous
+								button#next.btn.btn-outline-success.btn-md(type='button' disabled)
+									| Next
+								button#add.btn.btn-outline-success.btn-md(type='button' style='display: none')
+									| Add
+								button#saveChanges.btn.btn-outline-success.btn-md(type='button' style='display: none')
+									| Save Changes
+								input#steps(type='text' hidden value='0')
+												
+
+				#addAssetModal.modal.fade.text-left(tabindex='-1', role='dialog', aria-hidden='true')
+					.modal-dialog.modal-xl(role='document')
+						.modal-content
+							.modal-header(style='border-bottom: none;')
+								h4.modal-title.text-center
+									img(src='/assets/images/logo/logo-dark.png', alt='branding logo')
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+							.modal-body
+								.card-header.border-0(style='padding-top: 1.5rem; padding-bottom: 0rem;')
+									h6.card-subtitle.line-on-side.text-muted.text-center.font-small-3.pt-2(style='margin: -38px 0 20px;')
+										span Add Asset
+									fieldset
+										.row
+											.col-md-2
+											.col-md-8
+												.bs-callout-primary.callout-border-left.callout-bordered.p-1
+													h4.primary Hello, #{user.strEmployeeFirstName} #{user.strEmployeeLastName}!
+													p
+														| To start, select the item you wish to consign.
+
+										br
+										.row.match-height
+											.col-xl-1
+											.col-xl-3.mr-auto
+												.card
+													.card-content
+														.card-body.p-0
+															.bg-cyan.bg-darken-1.pl-2.pr-2.pt-2.text-white
+																h2.text-white.pt-2 Appliances
+																br
+																br
+																br
+																img.float-right.img-fluid.card-image-position-right(src='/assets/images/appliances.png', alt='Relax', width='500')
+															.card-body.p-2
+																h5
+																	b Appliances
+																.text-center
+																	br
+																	br
+																	button.selectButton.btn.btn-info.bg-cyan.bg-darken-1.btn-block.btn-glow.text-uppercase.p-1(style='border: none' type='button') Select
+
+
+											.col-xl-3.mr-auto
+												.card
+													.card-content
+														.card-body.p-0
+															.bg-teal.pl-2.pr-2.pt-2.text-white
+																h2.text-white.pt-2 Bags
+																br
+																br
+																br
+																img.float-right.img-fluid.card-image-position-right(src='/assets/images/bags.png', style='width: 185px; margin-left: 99px' alt='Relax', width='500')
+															.card-body.p-2
+																h5
+																	b Bags
+																.text-center
+																	br
+																	br
+																	button.selectButton.btn.btn-info.bg-teal.btn-block.btn-glow.text-uppercase.p-1(style='border: none' type='button') Select
+
+
+											.col-xl-3.mr-auto
+												.card
+													.card-content
+														.card-body.p-0
+															.bg-cyan.bg-darken-3.pl-2.pr-2.pt-2.text-white
+																h2.text-white.pt-2 Furniture
+																br
+																br
+																br
+																img.float-right.img-fluid.card-image-position-right(src='/assets/images/furniture.png', style='width: 211px; margin-left: 99px' alt='Relax', width='500')
+															.card-body.p-2
+																h5
+																	b Furniture
+																.text-center
+																	br
+																	br
+																	button.selectButton.btn.btn-info.bg-cyan.bg-darken-3.btn-block.btn-glow.text-uppercase.p-1(style='border: none' type='button') Select
+											.col-xl-1
+										.row.match-height
+											.col-xl-1
+											.col-xl-3.mr-auto
+												.card
+													.card-content
+														.card-body.p-0
+															.bg-teal.bg-lighten-1.pl-2.pr-2.pt-2.text-white
+																h2.text-white.pt-2 Camera
+																br
+																br
+																br
+																img.float-right.img-fluid.card-image-position-right(src='/assets/images/camera.png', style='width: 260px; margin-left: 50px' alt='Relax', width='500')
+															.card-body.p-2
+																h5
+																	b Camera
+																.text-center
+																	br
+																	br
+																	br
+																	button.selectButton.btn.btn-info.bg-teal.bg-lighten-1.btn-block.btn-glow.text-uppercase.p-1(style='border: none' type='button') Select
+
+
+											.col-xl-3.mr-auto
+												.card
+													.card-content
+														.card-body.p-0
+															.bg-cyan.bg-lighten-1.pl-2.pr-2.pt-2.text-white
+																h2.text-white.pt-2 Mobile
+																br
+																br
+																br
+																br
+																img.float-right.img-fluid.card-image-position-right(src='/assets/images/gadget.png', style='width: 185px; margin-left: 99px' alt='Relax', width='500')
+															.card-body.p-2
+																h5
+																	b Mobile
+																.text-center
+																	br
+																	br
+																	button.selectButton.btn.btn-info.bg-cyan.bg-lighten-1.btn-block.btn-glow.text-uppercase.p-1(style='border: none' type='button') Select
+
+
+											.col-xl-3.mr-auto
+												.card
+													.card-content
+														.card-body.p-0
+															.bg-teal.bg-lighten-3.pl-2.pr-2.pt-2.text-white
+																h2.text-white.pt-2 Shoes
+																br
+																br
+																br
+																br
+																img.float-right.img-fluid.card-image-position-right(src='/assets/images/shoes.png', style='width: 260px; margin-left: 88px; margin-top: 47px;' alt='Relax', width='500')
+															.card-body.p-2
+																h5
+																	b Shoes
+																.text-center
+																	br
+																	br
+																	button.selectButton.btn.btn-info.bg-teal.bg-lighten-3.btn-block.btn-glow.text-uppercase.p-1(style='border: none' type='button') Select
+											.col-xl-1
+										.row.match-height
+											.col-xl-1
+											.col-xl-3.mr-auto
+												.card
+													.card-content
+														.card-body.p-0
+															.bg-teal.bg-lighten-1.pl-2.pr-2.pt-2.text-white
+																h2.text-white.pt-2 Computer Machine
+																br
+																br
+																br
+																img.float-right.img-fluid.card-image-position-right(src='/assets/images/computer.png', style='width: 260px; margin-left: 50px' alt='Relax', width='500')
+															.card-body.p-2
+																h5
+																	b Computer Machine
+																.text-center
+																	br
+																	br
+																	br
+																	button.selectButton.btn.btn-info.bg-teal.bg-lighten-1.btn-block.btn-glow.text-uppercase.p-1(style='border: none' type='button') Select
+
+											.col-xl-3.mr-auto
+												.card
+													.card-content
+														.card-body.p-0
+															.bg-cyan.bg-darken-2.pl-2.pr-2.pt-2.text-white
+																h2.text-white.pt-2 Toys
+																br
+																br
+																br
+																br
+																img.float-right.img-fluid.card-image-position-right(src='/assets/images/toys.png', style='margin-top: 52px' alt='Relax', width='500')
+															.card-body.p-2
+																h5
+																	b Toys
+																.text-center
+																	br
+																	br
+																	button.selectButton.btn.btn-info.bg-cyan.bg-darken-2.btn-block.btn-glow.text-uppercase.p-1(style='border: none' type='button') Select
+
+
+											.col-xl-3.mr-auto
+												.card
+													.card-content
+														.card-body.p-0
+															.bg-teal.bg-lighten-1.pl-2.pr-2.pt-2.text-white
+																h2.text-white.pt-2 Television
+																br
+																br
+																br
+																img.float-right.img-fluid.card-image-position-right(src='/assets/images/tv.png', style='width: 210px; margin-left: 50px' alt='Relax', width='500')
+															.card-body.p-2
+																h5
+																	b Television
+																.text-center
+																	br
+																	br
+																	br
+																	button.selectButton.btn.btn-info.bg-teal.bg-lighten-1.btn-block.btn-glow.text-uppercase.p-1(style='border: none' type='button') Select
+											.col-xl-1
+										.row.match-height
+											.col-xl-1
+											.col-xl-3.mr-auto
+									
+											.col-xl-3.mr-auto
+												.card
+													.card-content
+														.card-body.p-0
+															.bg-cyan.bg-darken-1.pl-2.pr-2.pt-2.text-white
+																h2.text-white.pt-2 Generic Gadget
+																br
+																br
+																br
+																br
+																img.float-right.img-fluid.card-image-position-right(src='/assets/images/drone.png', style='margin-top: 52px' alt='Relax', width='500')
+															.card-body.p-2
+																h5
+																	b Generic Gadget
+																.text-center
+																	br
+																	br
+																	button.selectButton.btn.btn-info.bg-cyan.bg-darken-1.btn-block.btn-glow.text-uppercase.p-1(style='border: none' type='button') Select
+
+
+											.col-xl-3.mr-auto
+												
+											.col-xl-1
+				.content-header.row
+					.content-header-left.col-md-6.col-12.mb-2.breadcrumb-new
+						h3.content-header-title.mb-0.d-inline-block Asset Pricing
+						.row.breadcrumbs-top.d-inline-block
+							.breadcrumb-wrapper.col-12
+								ol.breadcrumb
+									li.breadcrumb-item
+										a(href='#') Maintenance
+									li.breadcrumb-item
+										a(href='#') Auction Management
+									li.breadcrumb-item.active
+										| Asset Pricing
+				.content-body
+					section.row
+						.col-12
+							.card
+								.card-head
+									.card-header
+										.grid-hover.row
+											.col-md-12.col-12
+												figure.effect-dexter(style='max-width: none;')
+													img(src='/assets/images/asset receive.jpg', alt='img19')
+													figcaption
+														h2
+															| Asset 
+															span Details
+														p
+															| Dexter had his own strange way. You could watch him training
+															| ants.
+														a(href='#') View more
+										.row
+											.col-md-6 
+												h4.card-title Asset Details
+											.col-md-6
+												.text-right
+													button#addAsset.btn.btn-info.btn-sm(type='button', data-toggle='modal', data-target='#addAssetModal')
+														i.ft-plus.white
+														|  Add Asset
+								.card-content
+									.card-body
+										// Task List table
+										.table-responsive
+											table#consignmentTable.table.table-white-space.table-bordered.row-grouping.display.no-wrap.icheck.table-middle
+												thead
+													tr.text-center
+														th Action
+														th Category
+														th Description
+														th Original Market Price
+														th Year Released
+												tbody#consignmentTableBody
+													-if(asset)
+														-for(var i = 0; i < asset.length; i++)
+															-var id = asset[i].intMachineLearningID
+															-var category = asset[i].strCategory
+															-var bundle = asset[i].booIsBundled
+															-var price = asset[i].dblOGPrice
+															-var year = asset[i].datYearReleased
+															tr
+																td 
+																	span.dropdown
+																		button#btnSearchDrop2.btn.btn-info.dropdown-toggle.dropdown-menu-right(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+																			i.ft-settings
+																		span.dropdown-menu.mt-1.dropdown-menu-right(aria-labelledby='btnSearchDrop2')
+																			a.edit.dropdown-item(assetid=`${id}`)
+																				i.ft-edit-2  Edit
+																			a.remove.dropdown-item(assetid=`${id}`)
+																				i.ft-trash-2  Delete
+																td #{category}
+																	-if(asset[i].jsonAttributes.hasOwnProperty('screensize'))
+																		-if(!asset[i].jsonAttributes.screensize.indexOf('screensize'))
+																			-asset[i].jsonAttributes['screensize'] = asset[i].jsonAttributes['screensize']+' inches';						
+																	-if(asset[i].jsonAttributes.hasOwnProperty('wattage'))
+																		-if(asset[i].jsonAttributes.wattage.indexOf('watts') < 0)
+																			-asset[i].jsonAttributes['wattage'] = asset[i].jsonAttributes['wattage']+' watts';
+																	-if(asset[i].jsonAttributes.hasOwnProperty('storage') && asset[i].jsonAttributes.category == "Mobile")
+																		-if(!asset[i].jsonAttributes.storage.indexOf('storage'))
+																			-asset[i].jsonAttributes['storage'] = asset[i].jsonAttributes['storage']+' GB';
+																	-if(asset[i].jsonAttributes.hasOwnProperty('ram'))
+																		-if(!asset[i].jsonAttributes.ram.indexOf('RAM'))
+																			-asset[i].jsonAttributes['ram'] = 'RAM '+asset[i].jsonAttributes['ram']+' GB';
+																	-var valuesOnly = Object.values(asset[i].jsonAttributes)//-array values
+																	-var desc = asset[i].jsonAttributes.Item+' ' 
+																	-for(var x = 1; x < valuesOnly.length; x++)
+																		-desc = desc+' '+valuesOnly[x]
+																td #{desc}
+																td ₱ #{(price).toFixed(2)}
+																td #{year}
+
+
+
+												tfoot
+													tr.text-center
+														th Action
+														th Category
+														th Description
+														th Original Market Price
+														th Released Date
+									.card-footer
+										.text-right
+											button#cancelConsignment.btn.btn-danger.bg-darken-1.text-uppercase.p-1(style='border: none; margin-right: 5px' type='button') Cancel										
+											button#nextConsignment.btn.btn-success.bg-darken-1.text-uppercase.p-1(style='border: none' type='button') Next
+		footer.footer.footer-transparent.footer-light.navbar-shadow(style='display: none')
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2.container.center-layout
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with
+					i.ft-heart.pink
+		input#editToggle(val="0" hidden)
+		input#assetID(val="0" hidden)
+		input#tr(val="0" hidden)
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/formValidation.js', type='text/javascript')
+		script(src='/assets/vendors/js/bootstrap.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/sweetalert.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(type='text/javascript', src='/assets/vendors/js/ui/jquery.sticky.js')
+		script(src='/assets/vendors/js/charts/chartist.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/chartist-plugin-tooltip.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/timeline/horizontal-timeline.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/jquery.dataTables.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.responsive.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/icheck/icheck.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/typeahead.bundle.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/bloodhound.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/forms/extended/typeahead/handlebars.js')
+		script(src='/assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js')
+		script(src='/assets/vendors/js/forms/select/select2.full.min.js', type='text/javascript')
+		script(src="/assets/vendors/js/extensions/toastr.min.js" type="text/javascript")
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		//- script(src='/assets/js/scripts/forms/extended/form-typeahead.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/pages/dashboard-ecommerce.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/cards/card-charts.min.js', type='text/javascript')
+		// END PAGE LEVEL JS
+
+		script.
+			function objectifyForm(formArray) {//serialize data functio
+				var returnArray = {};
+				for (var i = 0; i < formArray.length; i++){
+					returnArray[formArray[i]['name']] = formArray[i]['value'];
+				}
+				return returnArray;
+			}
+			function hideModal(){
+				$('#addAssetModal2').on('hide.bs.modal', function(e){//- reset form everytime clicked outside.
+					e.preventDefault();
+
+					swal({
+						title: 'You are about to close the asset form.',
+						text: 'This action cannot be undone. Are you sure?',
+						icon: 'warning',
+						buttons: {
+							Cancel: 'Cancel',
+							Yes: 'Yes',
+						}
+					}).then((value)=>{
+						if(value == 'Yes'){
+							$('#item')
+									.val('') 
+									.parents('fieldset').nextAll().remove()
+							$('#item').removeAttr('disabled', '')
+							$('#YearReleased').val('')
+							$('#OGprice').val('')
+							$('#steps').val(0)
+							$('#addAssetModal2').off('hide.bs.modal').modal('toggle')
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});
+							$('#prev').attr('disabled', '');
+							hideModal();
+						}
+					})
+					
+				})
+			}
+		script.
+			$(document).ready(function(){
+				$(document).on('click', '#prev', function(){
+					chosenCategory = $('#chosenCategory').text(); 
+					$('#saveChanges').fadeOut(1)
+					if(chosenCategory == "Appliances"){//Appliances
+						if($('#steps').val() == 'type'){
+							$('#steps').val('brand')
+							$('#item').removeAttr('disabled', '')
+							$('#brand').parents('fieldset').fadeOut(1000).remove();	
+							$('#prev').attr('disabled', '');													
+						}
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('type')
+							$('#brand').removeAttr('disabled', '')
+							$('#type').parents('fieldset').fadeOut(1000).remove();							
+						}
+						else if($('#steps').val() == 'wattage'){
+							$('#steps').val('model')
+							$('#type').removeAttr('disabled', '')
+							$('#model').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('wattage')
+							$('#model').removeAttr('disabled', '')
+							$('#wattage').parents('fieldset').fadeOut(1000).remove();
+							
+						}
+						else if($('#steps').val() == 'finish'){
+							$('#steps').val('description')
+							$('#wattage').removeAttr('disabled', '')
+							$('#description').parents('fieldset').fadeOut(1000).remove();
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});					
+						}
+					}
+
+					
+					//Appliances
+
+					else if(chosenCategory == "Bags"){
+						if($('#steps').val() ==  'finish'){
+							$('#steps').val('description')
+							$('#material').removeAttr('disabled', '')
+							$('#description').parents('fieldset').fadeOut(1000).remove();
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});	
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('material')
+							$('#brand').removeAttr('disabled', '')
+							$('#material').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'material'){
+							$('#steps').val('brand')
+							$('#item').removeAttr('disabled', '')
+							$('#brand').parents('fieldset').fadeOut(1000).remove();
+							$('#prev').attr('disabled', '');													
+							
+						}
+					}
+
+
+					else if(chosenCategory == "Furniture"){
+						if($('#steps').val() ==  'finish'){
+							$('#steps').val('description')
+							$('#material').removeAttr('disabled', '')
+							$('#description').parents('fieldset').fadeOut(1000).remove();
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});	
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('material')
+							$('#brand').removeAttr('disabled', '')
+							$('#material').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'material'){
+							$('#steps').val('brand')
+							$('#type').removeAttr('disabled', '')
+							$('#brand').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'brand'){
+							$('#steps').val('type')
+							$('#item').removeAttr('disabled', '')
+							$('#type').parents('fieldset').fadeOut(1000).remove();
+							$('#prev').attr('disabled', '');													
+							
+						}
+					}
+
+					else if(chosenCategory == "Shoes"){
+						if($('#steps').val() ==  'finish'){
+							$('#steps').val('description')
+							$('#feetsize').removeAttr('disabled', '')
+							$('#description').parents('fieldset').fadeOut(1000).remove();
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});	
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('feetsize')
+							$('#model').removeAttr('disabled', '')
+							$('#feetsize').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'feetsize'){
+							$('#steps').val('model')
+							$('#brand').removeAttr('disabled', '')
+							$('#model').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('brand')
+							$('#item').removeAttr('disabled', '')
+							$('#brand').parents('fieldset').fadeOut(1000).remove();
+							$('#prev').attr('disabled', '');													
+							
+						}
+					}
+					
+					else if(chosenCategory == "Toys"){
+						if($('#steps').val() ==  'finish'){
+							$('#steps').val('description')
+							$('#brand').removeAttr('disabled', '')
+							$('#description').parents('fieldset').fadeOut(1000).remove();
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});	
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('brand')
+							$('#item').removeAttr('disabled', '')
+							$('#brand').parents('fieldset').fadeOut(1000).remove();
+							$('#prev').attr('disabled', '');													
+							
+						}
+					}
+
+					else if(chosenCategory == "Mobile"){
+						if($('#steps').val() ==  'finish'){
+							$('#steps').val('description')
+							$('#storage').removeAttr('disabled', '')
+							$('#description').parents('fieldset').fadeOut(1000).remove();
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});	
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('storage')
+							$('#model').removeAttr('disabled', '')
+							$('#storage').parents('fieldset').fadeOut(1000).remove();
+							
+						}
+						else if($('#steps').val() == 'storage'){
+							$('#steps').val('model')
+							$('#brand').removeAttr('disabled', '')
+							$('#model').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('brand')
+							$('#item').removeAttr('disabled', '')
+							$('#brand').parents('fieldset').fadeOut(1000).remove();
+							$('#prev').attr('disabled', '');							
+						}
+					}
+
+					else if(chosenCategory == "Camera"){
+						if($('#steps').val() ==  'finish'){
+							$('#steps').val('description')
+							$('#model').removeAttr('disabled', '')
+							$('#description').parents('fieldset').fadeOut(1000).remove();
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});	
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('model')
+							$('#lens').removeAttr('disabled', '')
+							$('#model').parents('fieldset').fadeOut(1000).remove();
+							
+						}
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('lens')
+							$('#brand').removeAttr('disabled', '')
+							$('#lens').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'lens'){
+							$('#steps').val('brand')
+							$('#item').removeAttr('disabled', '')
+							$('#brand').parents('fieldset').fadeOut(1000).remove();
+							$('#prev').attr('disabled', '');							
+						}
+					}
+
+					else if(chosenCategory == "Computer Machine"){
+						if($('#steps').val() ==  'finish'){
+							$('#steps').val('description')
+							$('#storage').removeAttr('disabled', '')
+							$('#description').parents('fieldset').fadeOut(1000).remove();
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});	
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('storage')
+							$('#ram').removeAttr('disabled', '')
+							$('#storage').parents('fieldset').fadeOut(1000).remove();
+							
+						}
+						else if($('#steps').val() == 'storage'){
+							$('#steps').val('ram')
+							$('#processor').removeAttr('disabled', '')
+							$('#ram').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'ram'){
+							$('#steps').val('processor')
+							$('#model').removeAttr('disabled', '')
+							$('#processor').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'processor'){
+							$('#steps').val('model')
+							$('#brand').removeAttr('disabled', '')
+							$('#model').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('brand')
+							$('#item').removeAttr('disabled', '')
+							$('#brand').parents('fieldset').fadeOut(1000).remove();
+							$('#prev').attr('disabled', '');							
+						}
+					}
+					else if(chosenCategory == "Television"){
+						if($('#steps').val() ==  'finish'){
+							$('#steps').val('description')
+							$('#resolution').removeAttr('disabled', '')
+							$('#description').parents('fieldset').fadeOut(1000).remove();
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});	
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('resolution')
+							$('#screensize').removeAttr('disabled', '')
+							$('#resolution').parents('fieldset').fadeOut(1000).remove();
+							
+						}
+						else if($('#steps').val() == 'resolution'){
+							$('#steps').val('screensize')
+							$('#model').removeAttr('disabled', '')
+							$('#screensize').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'screensize'){
+							$('#steps').val('model')
+							$('#type').removeAttr('disabled', '')
+							$('#model').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('type')
+							$('#brand').removeAttr('disabled', '')
+							$('#type').parents('fieldset').fadeOut(1000).remove();
+						}
+						else if($('#steps').val() == 'type'){
+							$('#steps').val('brand')
+							$('#item').removeAttr('disabled', '')
+							$('#brand').parents('fieldset').fadeOut(1000).remove();
+							$('#prev').attr('disabled', '');							
+						}
+					}
+
+					else if(chosenCategory == "Generic Gadget"){
+						if($('#steps').val() ==  'finish'){
+							$('#steps').val('description')
+							$('#model').removeAttr('disabled', '')
+							$('#description').parents('fieldset').fadeOut(1000).remove();
+							$('#add').fadeOut(1000, function(){
+								$('#next').fadeIn(1000)
+							});	
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('model')
+							$('#brand').removeAttr('disabled', '')
+							$('#model').parents('fieldset').fadeOut(1000).remove();
+							
+						}
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('brand')
+							$('#item').removeAttr('disabled', '')
+							$('#brand').parents('fieldset').fadeOut(1000).remove();
+							$('#prev').attr('disabled', '');							
+						}
+					}
+
+					if($('#assetForm').find('input:last').val() == ''){
+						$('#next').attr('disabled', '');	
+					}
+					else{
+						$('#next').removeAttr('disabled', '');	
+					}
+					
+				})
+			})
+
+		script.
+			$(document).ready(function(){
+				hideModal();
+
+				$(document).on('click', '#nextConsignment', function(){
+					location.href = '/consignment/appraisal'
+				})
+
+				$(document).on('click', '#saveChanges', function(){
+					
+					var assetId = $('#assetID').val()
+					//- //- alert(assetId)
+					if($('#UOM').val() == ''){
+						toastr.error("You haven't selected Unit of Measurement yet 😪. To continue, please select Unit of Measurement.","Uh-oh!",{
+						showMethod:"slideDown",
+						hideMethod:"slideUp",
+						positionClass:"toast-bottom-right",
+						timeOut:5000})
+					}
+					else{
+
+						$('#assetForm').find(':disabled').attr('readonly', '').removeAttr('disabled', '');
+						var formArray = $('#assetForm').serializeArray()
+						$('#assetForm').find('[readonly]').attr('disabled', '').removeAttr('readonly', '');
+						var chosenCategory = $("#chosenCategory").text()
+						//- //- alert(chosenCategory)
+						var objectForm = objectifyForm(formArray)
+						objectForm['category'] = chosenCategory;
+
+						$.post('/assets/edit/save', {
+							assetId: assetId,
+							asset: objectForm,
+						}).then(function(data){
+							if(data.indicator){
+
+
+
+
+								var tempObj = data.asset;
+								var id = data.id;
+								var OGprice = data.OGprice;
+								var YearReleased = data.YearReleased;
+								var Category = data.Category;
+
+								var table = $('#consignmentTable').DataTable();					
+								table.row( $(`.edit.dropdown-item[assetid="${id}"]`).parents('tr') )
+									.remove()
+									.draw();
+								
+								if(tempObj.hasOwnProperty('screensize')){
+									tempObj['screensize'] = tempObj['screensize']+' inches';						
+								}
+								if(tempObj.hasOwnProperty('wattage')){
+									tempObj['wattage'] = tempObj['wattage']+' watts';						
+								}
+								if(tempObj.hasOwnProperty('storage') && $('#chosenCategory').text() == "Mobile"){
+									tempObj['storage'] = tempObj['storage']+' GB';						
+								}
+								if(tempObj.hasOwnProperty('ram')){
+									tempObj['ram'] = 'RAM '+tempObj['ram']+' GB';						
+								}								
+								var valuesOnly = Object.values(tempObj)//-array values
+								var table = $('#consignmentTable').DataTable();
+								console.log(valuesOnly)
+								var desc = valuesOnly[0]
+								for(var i = 1; i < valuesOnly.length; i++){
+									desc = desc+' '+valuesOnly[i]
+								}
+								var rows = $(`<tr>
+											<td><span class="dropdown">
+																<button class="btn btn-info dropdown-toggle dropdown-menu-right" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="btnSearchDrop2">
+																		<i class="ft-settings"></i>
+																</button>
+																<span class="dropdown-menu mt-1 dropdown-menu-right" aria-labelledby="btnSearchDrop2">
+																	<a class="edit dropdown-item" assetid="${id}">
+																		<i class="ft-edit-2"> Edit</i>
+																	</a>
+																	<a class="remove dropdown-item" assetid="${id}">
+																		<i class="ft-trash-2"> Delete</i>
+																	</a>
+																</span>
+															</span></td>
+											<td>${Category}</td>
+											<td>${desc}</td>
+											<td>₱ ${OGprice}</td>
+											<td>${YearReleased}</td>
+										</tr>`)
+								
+								table.row.add(rows[0]).draw();
+								toastr.success("Yay, you have added asset!","Success!",{
+									showMethod:"slideDown",
+									hideMethod:"slideUp",
+									positionClass:"toast-bottom-right",
+									timeOut:5000})
+								$('#item')
+										.val('') 
+										.parents('fieldset').nextAll().remove()
+								$('#item').removeAttr('disabled', '')
+								$('#OGprice').val('')
+								$('#YearReleased').val('')
+								$('#steps').val(0)
+								$('#addAssetModal2').off('hide.bs.modal').modal('toggle')
+								$('#add').fadeOut(1000, function(){
+									$('#next').fadeIn(1000)
+								});
+								$('#prev').attr('disabled', '');
+								hideModal();
+							}
+							else{
+								
+							}
+						})												
+					}
+						
+				})
+				
+				$(document).on('click', '.remove', function(){
+					var assetId = $(this).attr('assetid');
+					var tr = $(this);
+					swal({
+						title: 'Are you sure to delete this asset?',
+						text: 'This action cannot be undone.',
+						icon: 'warning',
+						buttons:{
+							No: 'No',
+							Yes: 'Yes',
+						}
+					}).then(function(value){
+						if(value=='Yes'){
+							//- //- alert(assetId)
+							$.post('/assets/delete',{
+								assetId: assetId,
+							}).then(function(data){
+								console.log(data)
+								if(data.indicator){
+									var table = $('#consignmentTable').DataTable();					
+										table.row( $(`.edit.dropdown-item[assetid="${data.id}"]`).parents('tr') )
+											.remove()
+											.draw();
+										toastr.success("You have successfully deleted an asset suggestion.","Yey!",{
+										showMethod:"slideDown",
+										hideMethod:"slideUp",
+										positionClass:"toast-bottom-right",
+										timeOut:5000})
+								}
+							})
+							
+						}
+					})
+				})
+
+
+				
+				$(document).on('click', '#add', function(){
+					$('#assetForm').find(':disabled').attr('readonly', '').removeAttr('disabled', '');
+					var formArray = $('#assetForm').serializeArray()
+					$('#assetForm').find('[readonly]').attr('disabled', '').removeAttr('readonly', '');
+					var chosenCategory = $("#chosenCategory").text()
+					//- //- alert(chosenCategory)
+					var objectForm = objectifyForm(formArray)
+					objectForm['category'] = chosenCategory;
+						$.post('/assets/add',{
+							asset: objectForm,
+						}).then(function(data){
+							if(data.indicator == 'success'){
+								var tempObj = data.asset;
+								var id = data.id;
+								var OGprice = data.OGprice;
+								var YearReleased = data.YearReleased;
+								var Category = data.Category;
+								if(tempObj.hasOwnProperty('screensize')){
+									tempObj['screensize'] = tempObj['screensize']+' inches';						
+								}
+								if(tempObj.hasOwnProperty('wattage')){
+									tempObj['wattage'] = tempObj['wattage']+' watts';						
+								}
+								if(tempObj.hasOwnProperty('storage') && $('#chosenCategory').text() == "Mobile"){
+									tempObj['storage'] = tempObj['storage']+' GB';						
+								}
+								if(tempObj.hasOwnProperty('ram')){
+									tempObj['ram'] = 'RAM '+tempObj['ram']+' GB';						
+								}								
+								var valuesOnly = Object.values(tempObj)//-array values
+								var table = $('#consignmentTable').DataTable();
+								console.log(valuesOnly)
+								var desc = valuesOnly[0]
+								for(var i = 1; i < valuesOnly.length; i++){
+									desc = desc+' '+valuesOnly[i]
+								}
+								var rows = $(`<tr>
+											<td><span class="dropdown">
+																<button class="btn btn-info dropdown-toggle dropdown-menu-right" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="btnSearchDrop2">
+																		<i class="ft-settings"></i>
+																</button>
+																<span class="dropdown-menu mt-1 dropdown-menu-right" aria-labelledby="btnSearchDrop2">
+																	<a class="edit dropdown-item" assetid="${id}">
+																		<i class="ft-edit-2"> Edit</i>
+																	</a>
+																	<a class="remove dropdown-item" assetid="${id}">
+																		<i class="ft-trash-2"> Delete</i>
+																	</a>
+																</span>
+															</span></td>
+											<td>${Category}</td>
+											<td>${desc}</td>
+											<td>₱ ${OGprice}</td>
+											<td>${YearReleased}</td>
+										</tr>`)
+								
+								table.row.add(rows[0]).draw();
+								toastr.success("Yay, you have added asset!","Success!",{
+									showMethod:"slideDown",
+									hideMethod:"slideUp",
+									positionClass:"toast-bottom-right",
+									timeOut:5000})
+								$('#item')
+										.val('') 
+										.parents('fieldset').nextAll().remove()
+								$('#item').removeAttr('disabled', '')
+								$('#OGprice').val('')
+								$('#YearReleased').val('')
+								$('#steps').val(0)
+								$('#addAssetModal2').off('hide.bs.modal').modal('toggle')
+								$('#add').fadeOut(1000, function(){
+									$('#next').fadeIn(1000)
+								});
+								$('#prev').attr('disabled', '');
+								hideModal();
+							}
+							else{//outlet for duplicate
+								swal({
+									title: 'Duplicate',
+									text: 'This asset has been added to your consignment.',
+									icon: 'error',
+									button: 'Okay'
+								})
+							}
+						})
+											
+					
+
+
+								
+				})
+
+				$(document).on('keyup', '#assetForm input:last', function(){//Enabling next button depends on last input field
+					if($(this).val()==''){
+						$('#next').attr('disabled', '');
+					}
+					else{
+						$('#next').removeAttr('disabled', '');
+					}
+				})
+
+				$(document).on('change', '#assetForm input:last', function(){//Enabling next button depends on last input field
+					if($(this).val()==''){
+						$('#next').attr('disabled', '');
+					}
+					else{
+						$('#next').removeAttr('disabled', '');
+					}
+				})
+
+				$(document).on('keyup', '#assetForm #brand', function(){//Enabling next button depends on last input field
+					if($(this).val()==''){
+						$('#next').attr('disabled', '');
+					}
+					else{
+						$('#next').removeAttr('disabled', '');
+					}
+				})
+
+				
+
+				$(document).on('change', 'select', function(){//Enabling next button depends on last select
+					if($(this).val()=='' && $('#assetForm').find('select').length > 1){
+						$('#next').attr('disabled', '');
+					}
+					else if($(this).val()!='' && $('#assetForm').find('select').length > 1){
+						$('#next').removeAttr('disabled', '');
+					}
+				})
+
+				$(document).keypress(function(e) {
+					if(e.which == 13) {
+						$('#next').trigger('click');
+					}
+				});
+
+
+
+				//- transition
+				$('#consignmentTable').dataTable( { "oLanguage": { "sEmptyTable": `<h3>Click <button id="addAsset" type="button" data-toggle="modal" data-target="#addAssetModal" class="btn btn-info btn-sm"><i class="ft-plus white"></i> Add Asset</button> to begin adding assets.<h3>` } } );
+				$('.app-content.content').fadeTo(10000, 100);
+				$('footer').fadeTo(10000, 100);
+
+				//- iCheck JS
+				$('.checkie').iCheck({
+					checkboxClass: 'icheckbox_flat-blue',
+					radioClass: 'iradio_flat-blue'
+				});
+
+				//Touch Spin
+				$(".touchspin").TouchSpin({
+					min: 1,
+					buttondown_class:"btn btn-primary",
+					buttonup_class:"btn btn-primary",
+					buttondown_txt:'<i class="ft-minus"></i>',
+					buttonup_txt:'<i class="ft-plus"></i>'
+				})
+
+				//Select 2
+				$('#UOM').select2({
+					width: 'resolve',
+				});
+			})
+
+		script.
+			$(document).ready(function(){
+				var chosenCategory=''
+				$(document).on('click', '.edit', function(){
+					$('#editToggle').val(1);
+					var assetId = $(this).attr('assetid');
+					$('#assetID').val(assetId);
+					$('#tr').val($(this).parents('tr'));
+					
+					$.ajax({
+						type: "POST",
+						url: "/assets/edit",
+						data: {assetId: assetId},
+						success: function(data){
+							console.log('accessed.')
+							console.log('asset', data.asset)
+							chosenCategory = data.asset.category;
+							$('#chosenCategory').text(chosenCategory);
+							$('#addAssetModal2').modal('toggle');
+							$('#addAssetModal2').on('shown.bs.modal', function () {
+								$('#addAssetModal2').off('shown.bs.modal')
+								$('#item').val(data.asset.item)
+								console.log('item',data.asset.item); 
+								$('#OGprice').val(data.asset.ogprice)
+								$('#YearReleased').val(data.asset.YearReleased)
+								if(data.asset.hasOwnProperty('wattage')){
+									if(data.asset.wattage.indexOf('watts') > 0){
+										data.asset.wattage = data.asset.wattage.split(' ')[0]
+									}
+								}
+
+								
+
+								if(chosenCategory == "Generic Gadget"){
+									$('#next').removeAttr('disabled', '')
+									$.when($('#next').trigger('click')).done(function(){
+										$('#brand').val(data.asset.brand)
+										$('#next').removeAttr('disabled', '')
+										$.when($('#next').trigger('click')).done(function(){
+											$('#model').val(data.asset.model)
+											$('#next').removeAttr('disabled', '')
+											$.when($('#next').trigger('click')).done(function(){
+												$('#description').val(data.asset.description)
+												$('#add').fadeOut(function(){
+													$('#saveChanges').fadeIn(100)
+												})
+											})																											
+										})
+									})
+								}
+
+								else if(chosenCategory == "Toys"){
+									$('#next').removeAttr('disabled', '')
+									$.when($('#next').trigger('click')).done(function(){
+										$('#brand').val(data.asset.brand)
+										$('#next').removeAttr('disabled', '')
+										$.when($('#next').trigger('click')).done(function(){
+											$('#description').val(data.asset.description)
+											$('#add').fadeOut(function(){
+													$('#saveChanges').fadeIn(100)
+												})
+										})
+									})
+								}
+
+								else if(chosenCategory == "Appliances"){
+									$('#next').removeAttr('disabled', '')
+									$.when($('#next').trigger('click')).done(function(){
+										$('#brand').val(data.asset.brand)
+										$('#next').removeAttr('disabled', '')
+										$.when($('#next').trigger('click')).done(function(){
+											$('#type').val(data.asset.type)
+											$('#next').removeAttr('disabled', '')
+											$.when($('#next').trigger('click')).done(function(){
+												$('#model').val(data.asset.model)
+												$('#next').removeAttr('disabled', '')
+												$.when($('#next').trigger('click')).done(function(){
+													
+													$('#wattage').val(data.asset.wattage).trigger('change')
+													$('#next').removeAttr('disabled', '')
+													$.when($('#next').trigger('click')).done(function(){
+														$('#description').val(data.asset.description)
+														$('#add').fadeOut(function(){
+															$('#saveChanges').fadeIn(100)
+														})
+													})	
+												})	
+											})									
+										})									
+									})
+								}
+
+								else if(chosenCategory == 'Bags'){
+									$('#next').removeAttr('disabled', '')
+									$.when($('#next').trigger('click')).done(function(){
+										$('#brand').val(data.asset.brand)
+										$('#next').removeAttr('disabled', '')
+										$.when($('#next').trigger('click')).done(function(){
+											$('#material').val(data.asset.material)
+											$('#next').removeAttr('disabled', '')
+											$.when($('#next').trigger('click')).done(function(){
+												$('#description').val(data.asset.description)		
+												$('#add').fadeOut(function(){
+													$('#saveChanges').fadeIn(100)
+												})								
+											})
+										})
+									})
+								}
+
+								else if(chosenCategory == 'Furniture'){
+									$('#next').removeAttr('disabled', '')
+									$.when($('#next').trigger('click')).done(function(){
+										$('#type').val(data.asset.type)
+										$('#next').removeAttr('disabled', '')
+										$.when($('#next').trigger('click')).done(function(){
+											$('#brand').val(data.asset.brand)
+											$('#next').removeAttr('disabled', '')
+											$.when($('#next').trigger('click')).done(function(){
+												$('#material').val(data.asset.material)
+												$('#next').removeAttr('disabled', '')
+												$.when($('#next').trigger('click')).done(function(){
+													$('#description').val(data.asset.description)
+													$('#add').fadeOut(function(){
+														$('#saveChanges').fadeIn(100)
+													})										
+												})										
+											})
+										})
+									})
+								}
+
+								else if(chosenCategory == 'Camera'){
+									$('#next').removeAttr('disabled', '')
+									$.when($('#next').trigger('click')).done(function(){
+										$('#brand').val(data.asset.brand)
+										$('#next').removeAttr('disabled', '')
+										$.when($('#next').trigger('click')).done(function(){
+											$('#lens').val(data.asset.lens).trigger('change')
+											$('#next').removeAttr('disabled', '')
+											$.when($('#next').trigger('click')).done(function(){
+												$('#model').val(data.asset.model)
+												$('#next').removeAttr('disabled', '')
+												$.when($('#next').trigger('click')).done(function(){
+													$('#description').val(data.asset.description)	
+													$('#add').fadeOut(function(){
+														$('#saveChanges').fadeIn(100)
+													})											
+												})										
+											})
+										})
+									})
+								}
+
+								else if(chosenCategory == 'Mobile'){
+									$('#next').removeAttr('disabled', '')
+									$.when($('#next').trigger('click')).done(function(){
+										$('#brand').val(data.asset.brand)
+										$('#next').removeAttr('disabled', '')
+										$.when($('#next').trigger('click')).done(function(){
+											$('#model').val(data.asset.model)
+											$('#next').removeAttr('disabled', '')
+											$.when($('#next').trigger('click')).done(function(){
+												$('#storage').val(data.asset.storage).trigger('change')
+												$('#next').removeAttr('disabled', '')
+												$.when($('#next').trigger('click')).done(function(){
+													$('#description').val(data.asset.description)
+													$('#add').fadeOut(function(){
+														$('#saveChanges').fadeIn(100)
+													})												
+												})										
+											})
+										})
+									})
+								}
+
+								else if(chosenCategory == 'Shoes'){
+									$('#next').removeAttr('disabled', '')
+									$.when($('#next').trigger('click')).done(function(){
+										$('#brand').val(data.asset.brand)
+										$('#next').removeAttr('disabled', '')
+										$.when($('#next').trigger('click')).done(function(){
+											$('#model').val(data.asset.model)
+											$('#next').removeAttr('disabled', '')
+											$.when($('#next').trigger('click')).done(function(){
+												$('#feetsize').val(data.asset.feetsize).trigger('change')
+												$('#next').removeAttr('disabled', '')
+												$.when($('#next').trigger('click')).done(function(){
+													$('#description').val(data.asset.description)
+													$('#add').fadeOut(function(){
+														$('#saveChanges').fadeIn(100)
+													})										
+												})										
+											})
+										})
+									})
+								}
+
+								else if(chosenCategory == 'Computer Machine'){
+									$('#next').removeAttr('disabled', '')
+									$.when($('#next').trigger('click')).done(function(){
+										$('#brand').val(data.asset.brand)
+										$('#next').removeAttr('disabled', '')
+										$.when($('#next').trigger('click')).done(function(){
+											$('#model').val(data.asset.model)
+											$('#next').removeAttr('disabled', '')
+											$.when($('#next').trigger('click')).done(function(){
+												$('#processor').val(data.asset.processor).trigger('change')
+												$('#next').removeAttr('disabled', '')
+												$.when($('#next').trigger('click')).done(function(){
+													$('#ram').val(data.asset.ram).trigger('change')
+													$('#next').removeAttr('disabled', '')
+													$.when($('#next').trigger('click')).done(function(){
+														$('#storage').val(data.asset.storage).trigger('change')
+														$('#next').removeAttr('disabled', '')
+														$.when($('#next').trigger('click')).done(function(){
+															$('#description').val(data.asset.description)	
+															$('#add').fadeOut(function(){
+																$('#saveChanges').fadeIn(100)
+															})													
+														})															
+													})												
+												})										
+											})
+										})
+									})
+								}
+
+								else if(chosenCategory == 'Television'){
+									$('#next').removeAttr('disabled', '')
+									$.when($('#next').trigger('click')).done(function(){
+										$('#brand').val(data.asset.brand)
+										$('#next').removeAttr('disabled', '')
+										$.when($('#next').trigger('click')).done(function(){
+											$('#type').val(data.asset.type).trigger('change')
+											$('#next').removeAttr('disabled', '')
+											$.when($('#next').trigger('click')).done(function(){
+												$('#model').val(data.asset.model)
+												$('#next').removeAttr('disabled', '')
+												$.when($('#next').trigger('click')).done(function(){
+													$('#screensize').val(data.asset.screensize).trigger('change')
+													$('#next').removeAttr('disabled', '')
+													$.when($('#next').trigger('click')).done(function(){
+														$('#resolution').val(data.asset.resolution).trigger('change')
+														$('#next').removeAttr('disabled', '')
+														$.when($('#next').trigger('click')).done(function(){
+															$('#description').val(data.asset.description)	
+															$('#add').fadeOut(function(){
+																$('#saveChanges').fadeIn()
+															})													
+														})															
+													})												
+												})										
+											})
+										})
+									})
+								}
+
+							})
+							
+							
+							if($('#steps').val() == 0){
+								if(chosenCategory == 'Furniture'){
+									$('#steps').val("type")
+								}
+								else{
+									$('#steps').val("brand")
+								}
+
+								$.ajax({
+									type: "POST",
+									url: "/preset/next",
+									data: {
+										category: chosenCategory,
+										query: 'strCategory = ?',
+										credential: '[req.body.category]',
+										find: 'jsonAttributes.Item',
+									},
+									success: function(data){
+										if(data.indicator == 'success'){
+											var item = data.item;
+											typeaheadInitialize('#item', item)
+										}//success
+									}
+								});//Ajax
+							}//if steps ==0
+						},
+						error: function (e) {
+							console.log("some error", e);
+						}
+					});// Ajax
+
+
+
+				})
+
+				
+				$(document).on('click', '.selectButton', function(){
+					$('#editToggle').val(0)
+					$('#saveChanges').fadeOut(1)
+					chosenCategory = $(this).parents('.card-body.p-2').find('b').text();
+					$('#chosenCategory').text(chosenCategory);
+					$('#addAssetModal2').off('shown.bs.modal')
+					$('#addAssetModal').on('hidden.bs.modal', function(event){
+						$('#addAssetModal2').on('show.bs.modal', function(event){
+							$('#addAssetModal').off('hidden.bs.modal')
+						})
+						$('#addAssetModal2').modal('toggle');
+					})
+					$('#addAssetModal').modal('toggle');
+					
+					if($('#steps').val() == 0){
+						if(chosenCategory == 'Furniture'){
+							$('#steps').val("type")
+						}
+						else{
+							$('#steps').val("brand")
+						}
+						$.post('/preset/next', {
+							category: chosenCategory,
+							query: 'strCategory = ?',
+							credential: '[req.body.category]',
+							find: 'jsonAttributes.Item',
+						})
+						.done(function(data){
+							if(data.indicator == 'success'){
+								var item = data.item;
+								typeaheadInitialize('#item', item)
+							}//success
+						})//done function
+					}//if steps ==0
+				})//click .select button
+
+				$(document).on('click', '#next', function(){
+					$('#next').attr('disabled', '');
+					
+					if(chosenCategory == "Appliances"){//Appliances
+						
+						if($('#steps').val() == 'brand'){
+							$('#prev').removeAttr('disabled', '')
+							$('#steps').val('type')
+							$('#item').attr('disabled', '')							
+							var brandField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="brand">Brand: <span class="danger">*</span></h5>
+													<input id="brand" name="brand" type="text" placeholder="E.g., LG, Samsung, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(brandField).find('#brand').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ?',
+								credential: '[req.body.item, req.body.category]',
+								find: 'jsonAttributes.Brand',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#brand', item)
+								}//success
+							})
+						}
+						else if($('#steps').val() == 'type'){
+							$('#steps').val('model')
+							$('#brand').attr('disabled', '')
+							var typeField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="type">Type: <span class="danger">*</span></h5>
+													<input id="type" name="type" type="text" placeholder="E.g., Split Type, Flat Type, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(typeField).find('#type').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								brand: $('#brand').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ?',
+								credential: '[req.body.item, req.body.category, req.body.brand]',
+								find: 'jsonAttributes.Type',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#type', item)
+								}//success
+							})
+						}
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('wattage')
+							$('#type').attr('disabled', '')
+							var modelField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="model">Model: <span class="danger">*</span></h5>
+													<input id="model" name="model" type="text" placeholder="E.g., EUR-800, RT0I87, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(modelField).find('#model').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								brand: $('#brand').val(),
+								type: $('#type').val(),
+								query: 'JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ? AND JSON_EXTRACT(jsonAttributes, "$.Type") = ?',
+								credential: '[req.body.item, req.body.category, req.body.brand, req.body.type]',
+								find: 'jsonAttributes.Model',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#model', item)
+								}//success
+							})
+						}
+						else if($('#steps').val() == 'wattage'){
+							$('#steps').val('description')
+							$('#model').attr('disabled', '')
+							var wattField = $(`<fieldset>
+												<div class="row">
+													<div class="col-md-12">
+													<div class="form-group">
+														<h5 style="font-weight: bold;" for="UOM">Wattage:<span class="danger">*</span></h5>
+														<select name="wattage" id="wattage" name="wattage" style="width: 100%" class="form-control">
+														<option value="">Select Wattage Range</option>
+														<optgroup label="Wattage Range">
+															<option value="0-199">0-199 Watts</option>
+															<option value="200-399">200-399 Watts</option>
+															<option value="400-599">400-599 Watts</option>
+															<option value="600-799">600-799 Watts</option>
+															<option value="800-999">800-999 Watts</option>
+															<option value="1000-1999">1000-1999 Watts</option>
+															<option value="2000-4000">2000-4000 Watts</option>
+															<option value="Above 4000">Above 4000 Watts</option>
+														</optgroup>
+														</select>
+													</div>
+													</div>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(wattField).find('#wattage').parents('fieldset').hide().fadeIn(1000);
+
+							$('#wattage').select2({
+								width: 'resolve',
+							});
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('finish')
+							$('#wattage').attr('disabled', '')
+							var descField = $(`<fieldset class="mb-1">
+												<h5 style="font-weight: bold;">Description<span class="danger">*</span>	</h5>
+												<p class="text-muted">You can put here some extra details about the asset.</p>
+												<div class="form-group">
+													<textarea id="description" name="description" placeholder="Enter up to 250 characters.." maxlength="250" rows="5" class="form-control textarea-maxlength"></textarea>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(descField).find('#description').parents('fieldset').hide().fadeIn(1000);
+							$('#next').fadeOut(1000, function(){
+								if($('#editToggle').val() == 1){
+									$("#saveChanges").fadeIn(1000)
+								}
+								else
+									$('#add').fadeIn(1000)
+							});
+						}
+					}
+					//Appliances
+
+					else if(chosenCategory == "Bags"){//Appliances
+						
+						if($('#steps').val() == 'brand'){
+							$('#prev').removeAttr('disabled', '')
+							$('#steps').val('material')
+							$('#item').attr('disabled', '')							
+							var brandField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="brand">Brand: <span class="danger">*</span></h5>
+													<input id="brand" name="brand" type="text" placeholder="E.g., Chanel, Jansport, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(brandField).find('#brand').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ?',
+								credential: '[req.body.item, req.body.category]',
+								find: 'jsonAttributes.Brand',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#brand', item)
+								}//success
+							})
+						}
+						else if($('#steps').val() == 'material'){
+							$('#steps').val('description')
+							$('#brand').attr('disabled', '')
+							var materialField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="material">Material: <span class="danger">*</span></h5>
+													<input id="material" name="material" type="text" placeholder="E.g., Leather, Synthetic, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(materialField).find('#material').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								brand: $('#brand').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ?',
+								credential: '[req.body.item, req.body.category, req.body.brand]',
+								find: 'jsonAttributes.Material',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#material', item)
+								}//success
+							})
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('finish')
+							$('#material').attr('disabled', '')
+							var descField = $(`<fieldset class="mb-1">
+												<h5 style="font-weight: bold;">Description<span class="danger">*</span>	</h5>
+												<p class="text-muted">You can put here some extra details about the asset.</p>
+												<div class="form-group">
+													<textarea id="description" name="description" placeholder="Enter up to 250 characters.." maxlength="250" rows="5" class="form-control textarea-maxlength"></textarea>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(descField).find('#description').parents('fieldset').hide().fadeIn(1000);
+							$('#next').fadeOut(1000, function(){
+								if($('#editToggle').val() == 1){
+									$("#saveChanges").fadeIn(1000)
+								}
+								else
+									$('#add').fadeIn(1000)
+							});
+						}
+					}
+					//Bags
+
+					else if(chosenCategory == 'Furniture'){//Furniture
+						
+						if($('#steps').val() == 'type'){
+							$('#prev').removeAttr('disabled', '')
+							$('#steps').val('brand')
+							$('#item').attr('disabled', '')							
+							var typeField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="type">Type: <span class="danger">*</span></h5>
+													<input id="type" name="type" type="text" placeholder="E.g., Sofa Bed, Study Table, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(typeField).find('#type').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ?',
+								credential: '[req.body.item, req.body.category]',
+								find: 'jsonAttributes.Type',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#type', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'brand'){
+							$('#steps').val('material')
+							$('#type').attr('disabled', '')
+							var brandField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="brand">Brand: <span class="danger">*</span></h5>
+													<input id="brand" name="brand" type="text" placeholder="E.g., IKEA, Uratex, etc." class="form-control typeahead-basic"/>
+													<p class="badge-default badge-info block-tag text-center"><small class="block-area white">Is your furniture customized, or made by you? Just type "<strong>Custom-made</strong>".</small></p>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(brandField).find('#brand').parents('fieldset').hide().fadeIn(1000);
+							
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								type: $('#type').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Type") = ?',
+								credential: '[req.body.item, req.body.category, req.body.type]',
+								find: 'jsonAttributes.Brand',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#brand', item)
+								}//success
+							})							
+						}
+						else if($('#steps').val() == 'material'){
+							$('#steps').val('description')
+							$('#brand').attr('disabled', '')
+							var materialField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="material">Material: <span class="danger">*</span></h5>
+													<input id="material" name="material" type="text" placeholder="E.g., Leather, Synthetic, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(materialField).find('#material').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								type: $('#type').val(),
+								brand: $('#brand').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Type") = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ?',
+								credential: '[req.body.item, req.body.category, req.body.type, req.body.brand]',
+								find: 'jsonAttributes.Material',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#material', item)
+								}//success
+							})
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('finish')
+							$('#material').attr('disabled', '')
+							var descField = $(`<fieldset class="mb-1">
+												<h5 style="font-weight: bold;">Description<span class="danger">*</span>	</h5>
+												<p class="text-muted">You can put here some extra details about the asset.</p>
+												<div class="form-group">
+													<textarea id="description" name="description" placeholder="Enter up to 250 characters.." maxlength="250" rows="5" class="form-control textarea-maxlength"></textarea>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(descField).find('#description').parents('fieldset').hide().fadeIn(1000);
+							$('#next').fadeOut(1000, function(){
+								if($('#editToggle').val() == 1){
+									$("#saveChanges").fadeIn(1000)
+								}
+								else
+									$('#add').fadeIn(1000)
+							});
+						}
+					}//Furniture
+
+					else if(chosenCategory == 'Shoes'){//Shoes
+						
+						if($('#steps').val() == 'brand'){
+							$('#prev').removeAttr('disabled', '')
+							$('#steps').val('model')
+							$('#item').attr('disabled', '')							
+							var brandField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="brand">Brand: <span class="danger">*</span></h5>
+													<input id="brand" name="brand" type="text" placeholder="E.g., Adidas, Nike, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(brandField).find('#brand').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ?',
+								credential: '[req.body.item, req.body.category]',
+								find: 'jsonAttributes.Brand',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#brand', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('feetsize')
+							$('#brand').attr('disabled', '')
+							var modelField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="model">Model: <span class="danger">*</span></h5>
+													<input id="model" name="model" type="text" placeholder="E.g., Nike Air, Rosche Run, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(modelField).find('#model').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								brand: $('#brand').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ?',
+								credential: '[req.body.item, req.body.category, req.body.brand]',
+								find: 'jsonAttributes.Model',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#model', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'feetsize'){
+							$('#steps').val('description')
+							$('#model').attr('disabled', '')
+							var feetField = $(`<fieldset>
+												<div class="row">
+													<div class="col-md-12">
+													<div class="form-group">
+														<h5 style="font-weight: bold;" for="feetsize">Shoe Size:<span class="danger">*</span></h5>
+														<select name="feetsize" id="feetsize" style="width: 100%" class="form-control">
+														<option value="">Select Shoe Size</option>
+														<optgroup label="American Shoe Size">
+															<option value="3">3</option>
+															<option value="3.5">3.5</option>
+															<option value="4">4</option>
+															<option value="4.5">4.5</option>
+															<option value="5">5</option>
+															<option value="5.5">5.5s</option>
+															<option value="6">6</option>
+															<option value="6.5">6.5</option>
+															<option value="7">7</option>
+															<option value="7.5">7.5</option>															
+															<option value="8">8</option>
+															<option value="8.5">8.5</option>
+															<option value="9">9</option>
+															<option value="9.5">9.5</option>															
+															<option value="10">10</option>
+															<option value="10.5">10.5</option>
+															<option value="11">11</option>
+															<option value="11.5">11.5</option>
+															<option value="12">12</option>
+															<option value="12.5">12.5</option>
+															<option value="13">13</option>
+															<option value="13.5">13.5</option>
+															<option value="14">14</option>
+															<option value="14.5">14.5</option>
+															<option value="15">15</option>
+															<option value="15.5">15.5</option>
+															<option value="16">16</option>
+															<option value="16.5">16.5</option>
+															<option value="17">17</option>
+															<option value="17.5">17.5</option>
+															<option value="18 and Above">18 and Above</option>
+														</optgroup>
+														</select>
+													</div>
+													</div>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(feetField).find('#feetsize').parents('fieldset').hide().fadeIn(1000);
+
+							$('#feetsize').select2({
+								width: 'resolve',
+							});
+						}
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('finish')
+							$('#feetsize').attr('disabled', '')
+							var descField = $(`<fieldset class="mb-1">
+												<h5 style="font-weight: bold;">Description<span class="danger">*</span>	</h5>
+												<p class="text-muted">You can put here some extra details about the asset.</p>
+												<div class="form-group">
+													<textarea id="description" name="description" placeholder="Enter up to 250 characters.." maxlength="250" rows="5" class="form-control textarea-maxlength"></textarea>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(descField).find('#description').parents('fieldset').hide().fadeIn(1000);
+							$('#next').fadeOut(1000, function(){
+								if($('#editToggle').val() == 1){
+									$("#saveChanges").fadeIn(1000)
+								}
+								else
+									$('#add').fadeIn(1000)
+							});
+						}
+					}//SHoes
+
+					else if(chosenCategory == 'Toys'){//Toys
+						
+						if($('#steps').val() == 'brand'){
+							$('#prev').removeAttr('disabled', '')
+							$('#steps').val('description')
+							$('#item').attr('disabled', '')							
+							var brandField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="brand">Brand: <span class="danger">*</span></h5>
+													<input id="brand" name="brand" type="text" placeholder="E.g., Toy R Us, Bandai, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(brandField).find('#brand').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ?',
+								credential: '[req.body.item, req.body.category]',
+								find: 'jsonAttributes.Brand',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#brand', item)
+								}//success
+							})
+						}
+						
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('finish')
+							$('#brand').attr('disabled', '')
+							var descField = $(`<fieldset class="mb-1">
+												<h5 style="font-weight: bold;">Description<span class="danger">*</span>	</h5>
+												<p class="text-muted">You can put here some extra details about the asset.</p>
+												<div class="form-group">
+													<textarea id="description" name="description" placeholder="Enter up to 250 characters.." maxlength="250" rows="5" class="form-control textarea-maxlength"></textarea>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(descField).find('#description').parents('fieldset').hide().fadeIn(1000);
+							$('#next').fadeOut(1000, function(){
+								if($('#editToggle').val() == 1){
+									$("#saveChanges").fadeIn(1000)
+								}
+								else
+									$('#add').fadeIn(1000)
+							});
+						}
+					}
+					//Toys
+
+					else if(chosenCategory == 'Mobile'){//
+						
+						if($('#steps').val() == 'brand'){
+							$('#prev').removeAttr('disabled', '')
+							$('#steps').val('model')
+							$('#item').attr('disabled', '')							
+							var brandField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="brand">Brand: <span class="danger">*</span></h5>
+													<input id="brand" name="brand" type="text" placeholder="E.g., Apple, Samsung, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(brandField).find('#brand').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ?',
+								credential: '[req.body.item, req.body.category]',
+								find: 'jsonAttributes.Brand',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#brand', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('storage')
+							$('#brand').attr('disabled', '')							
+							var modelField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="model">Model: <span class="danger">*</span></h5>
+													<input id="model" name="model" type="text" placeholder="E.g., iPhone 6s, Galaxy Y, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(modelField).find('#model').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								brand: $('#brand').val(),								
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ?',
+								credential: '[req.body.item, req.body.category, req.body.brand]',
+								find: 'jsonAttributes.Model',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#model', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'storage'){
+							$('#steps').val('description')
+							$('#model').attr('disabled', '')							
+							var storageField = $(`<fieldset>
+												<div class="row">
+													<div class="col-md-12">
+													<div class="form-group">
+														<h5 style="font-weight: bold;" for="storage">Storage:<span class="danger">*</span></h5>
+														<select name="storage" id="storage" name="storage" style="width: 100%" class="form-control">
+														<option value="">Select Storage Allocation</option>
+														<optgroup label="Phone Storage">
+															<option value="0">0 GB</option>
+															<option value="4">4 GB</option>
+															<option value="8">8 GB</option>
+															<option value="16">16 GB</option>
+															<option value="32">32 GB</option>
+															<option value="64">64 GB</option>
+															<option value="128 or above">128 GB or above</option>
+														</optgroup>
+														</select>
+													</div>
+													</div>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(storageField).find('#storage').parents('fieldset').hide().fadeIn(1000);
+							$('#storage').select2({
+								width: 'resolve',
+							});
+						}
+						
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('finish')
+							$('#storage').attr('disabled', '')
+							var descField = $(`<fieldset class="mb-1">
+												<h5 style="font-weight: bold;">Description<span class="danger">*</span>	</h5>
+												<p class="text-muted">You can put here some extra details about the asset.</p>
+												<div class="form-group">
+													<textarea id="description" name="description" placeholder="Enter up to 250 characters.." maxlength="250" rows="5" class="form-control textarea-maxlength"></textarea>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(descField).find('#description').parents('fieldset').hide().fadeIn(1000);
+							$('#next').fadeOut(1000, function(){
+								if($('#editToggle').val() == 1){
+									$("#saveChanges").fadeIn(1000)
+								}
+								else
+									$('#add').fadeIn(1000)
+							});
+						}
+					}
+					//Mobile
+
+					else if(chosenCategory == 'Camera'){//camera
+						
+						if($('#steps').val() == 'brand'){
+							$('#prev').removeAttr('disabled', '')
+							$('#steps').val('lens')
+							$('#item').attr('disabled', '')							
+							var brandField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="brand">Brand: <span class="danger">*</span></h5>
+													<input id="brand" name="brand" type="text" placeholder="E.g., Nikon, Canon, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(brandField).find('#brand').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ?',
+								credential: '[req.body.item, req.body.category]',
+								find: 'jsonAttributes.Brand',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#brand', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'lens'){
+							$('#steps').val('model')
+							$('#brand').attr('disabled', '')							
+							var lensField = $(`<fieldset>
+												<div class="row">
+													<div class="col-md-12">
+													<div class="form-group">
+														<h5 style="font-weight: bold;" for="lens">Lens:<span class="danger">*</span></h5>
+														<select name="lens" id="lens" name="lens" style="width: 100%" class="form-control">
+														<option value="">Select Lens</option>
+														<optgroup label="Camera Lenses">
+															<option value="Standard Lens">Standard Lens</option>
+															<option value="Macro Lens">Macro Lens</option>
+															<option value="Telephoto Lens">Telephoto Lens</option>
+															<option value="Wide Angle Lens">Wide Angle Lens</option>
+															<option value="Specialist Lens">Specialist Lens</option>
+															<option value="Kit Lens">Kit Lens</option>
+															<option value="Non-detachable Lens">Non-detachable Lens</option>
+															<option value="Not Applicable">Not Applicable</option>
+														</optgroup>
+														</select>
+													</div>
+													</div>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(lensField).find('#lens').parents('fieldset').hide().fadeIn(1000);
+							$('#lens').select2({
+								width: 'resolve',
+							});
+					
+						}
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('description')
+							$('#lens').attr('disabled', '')							
+							var modelField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="model">Model: <span class="danger">*</span></h5>
+													<input id="model" name="model" type="text" placeholder="E.g., D3500, D650, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(modelField).find('#model').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								brand: $('#brand').val(),
+								lens: $('#lens').val(),								
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ? AND JSON_EXTRACT(jsonAttributes, "$.Lens") = ?',
+								credential: '[req.body.item, req.body.category, req.body.brand, req.body.lens]',
+								find: 'jsonAttributes.Model',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#model', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('finish')
+							$('#model').attr('disabled', '')
+							var descField = $(`<fieldset class="mb-1">
+												<h5 style="font-weight: bold;">Description<span class="danger">*</span>	</h5>
+												<p class="text-muted">You can put here some extra details about the asset.</p>
+												<div class="form-group">
+													<textarea id="description" name="description" placeholder="Enter up to 250 characters.." maxlength="250" rows="5" class="form-control textarea-maxlength"></textarea>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(descField).find('#description').parents('fieldset').hide().fadeIn(1000);
+							$('#next').fadeOut(1000, function(){
+								if($('#editToggle').val() == 1){
+									$("#saveChanges").fadeIn(1000)
+								}
+								else
+									$('#add').fadeIn(1000)
+							});
+						}
+					}
+
+					else if(chosenCategory == 'Computer Machine'){//computer
+						
+						if($('#steps').val() == 'brand'){
+							$('#prev').removeAttr('disabled', '')
+							$('#steps').val('model')
+							$('#item').attr('disabled', '')							
+							var brandField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="brand">Brand: <span class="danger">*</span></h5>
+													<input id="brand" name="brand" type="text" placeholder="E.g., Asus, Dell, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(brandField).find('#brand').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ?',
+								credential: '[req.body.item, req.body.category]',
+								find: 'jsonAttributes.Brand',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#brand', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('processor')
+							$('#brand').attr('disabled', '')							
+							var modelField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="model">Model: <span class="danger">*</span></h5>
+													<input id="model" name="model" type="text" placeholder="E.g., Inspiron 15, HP Pavillion, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(modelField).find('#model').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								brand: $('#brand').val(),							
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ?',
+								credential: '[req.body.item, req.body.category, req.body.brand]',
+								find: 'jsonAttributes.Model',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#model', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'processor'){
+							$('#steps').val('ram')
+							$('#model').attr('disabled', '')							
+							var processorField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="processor">Processor: <span class="danger">*</span></h5>
+													<input id="processor" name="processor" type="text" placeholder="E.g., Intel Core i5, AMD, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(processorField).find('#processor').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								brand: $('#brand').val(),							
+								model: $('#model').val(),							
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ? AND JSON_EXTRACT(jsonAttributes, "$.Model") = ?',
+								credential: '[req.body.item, req.body.category, req.body.brand, req.body.model]',
+								find: 'jsonAttributes.Processor',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#processor', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'ram'){
+							$('#steps').val('storage')
+							$('#processor').attr('disabled', '')							
+							var ramField = $(`<fieldset>
+												<div class="row">
+													<div class="col-md-12">
+													<div class="form-group">
+														<h5 style="font-weight: bold;" for="ram">RAM:<span class="danger">*</span></h5>
+														<select name="ram" id="ram" name="ram" style="width: 100%" class="form-control">
+														<option value="">Select RAM</option>
+														<optgroup label="RAM Allocation">
+															<option value="0">0 GB</option>
+															<option value="4">4 GB</option>
+															<option value="8">8 GB</option>
+															<option value="16">16 GB</option>
+															<option value="32 or above">32 GB or above</option>
+														</optgroup>
+														</select>
+													</div>
+													</div>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(ramField).find('#ram').parents('fieldset').hide().fadeIn(1000);
+							$('#ram').select2({
+								width: 'resolve',
+							});
+						}
+
+						else if($('#steps').val() == 'storage'){
+							$('#steps').val('description')
+							$('#ram').attr('disabled', '')							
+							var storageField = $(`<fieldset>
+												<div class="row">
+													<div class="col-md-12">
+													<div class="form-group">
+														<h5 style="font-weight: bold;" for="storage">Storage:<span class="danger">*</span></h5>
+														<select name="storage" id="storage" name="storage" style="width: 100%" class="form-control">
+														<option value="">Select Storage</option>
+														<optgroup label="HDD Storage">
+															<option value="0-500 GB">0-500 GB</option>
+															<option value="501-999 GB">501-999 GB</option>
+															<option value="1 TB">1 TB</option>
+															<option value="Above 1 TB">Above 1 TB</option>
+														</optgroup>
+														</select>
+													</div>
+													</div>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(storageField).find('#storage').parents('fieldset').hide().fadeIn(1000);
+							$('#storage').select2({
+								width: 'resolve',
+							});
+						}
+
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('finish')
+							$('#storage').attr('disabled', '')
+							var descField = $(`<fieldset class="mb-1">
+												<h5 style="font-weight: bold;">Description<span class="danger">*</span>	</h5>
+												<p class="text-muted">You can put here some extra details about the asset.</p>
+												<div class="form-group">
+													<textarea id="description" name="description" placeholder="Enter up to 250 characters.." maxlength="250" rows="5" class="form-control textarea-maxlength"></textarea>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(descField).find('#description').parents('fieldset').hide().fadeIn(1000);
+							$('#next').fadeOut(1000, function(){
+								if($('#editToggle').val() == 1){
+									$("#saveChanges").fadeIn(1000)
+								}
+								else
+									$('#add').fadeIn(1000)
+							});
+						}
+					}
+
+					else if(chosenCategory == 'Television'){//
+						
+						if($('#steps').val() == 'brand'){
+							$('#prev').removeAttr('disabled', '')
+							$('#steps').val('type')
+							$('#item').attr('disabled', '')							
+							var brandField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="brand">Brand: <span class="danger">*</span></h5>
+													<input id="brand" name="brand" type="text" placeholder="E.g., LG, Samsung, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(brandField).find('#brand').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ?',
+								credential: '[req.body.item, req.body.category]',
+								find: 'jsonAttributes.Brand',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#brand', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'type'){
+							$('#steps').val('model')
+							$('#brand').attr('disabled', '')							
+							var typeField = $(`<fieldset>
+												<div class="row">
+													<div class="col-md-12">
+													<div class="form-group">
+														<h5 style="font-weight: bold;" for="type">Type:<span class="danger">*</span></h5>
+														<select name="type" id="type" name="type" style="width: 100%" class="form-control">
+														<option value="">Select Television Type</option>
+														<optgroup label="Television Types">
+															<option value="LED">LED</option>
+															<option value="LCD">LCD</option>
+															<option value="OLED">OLED</option>
+															<option value="DLP">DLP</option>
+															<option value="CRT">CRT</option>
+														</optgroup>
+														</select>
+													</div>
+													</div>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(typeField).find('#type').parents('fieldset').hide().fadeIn(1000);
+							$('#type').select2({
+								width: 'resolve',
+							});
+						}
+
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('screensize')
+							$('#type').attr('disabled', '')							
+							var modelField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="model">Model: <span class="danger">*</span></h5>
+													<input id="model" name="model" type="text" placeholder="E.g., KJH9809, DFS-000, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(modelField).find('#model').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								brand: $('#brand').val(),								
+								type: $('#type').val(),								
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ? AND JSON_EXTRACT(jsonAttributes, "$.Type") = ?',
+								credential: '[req.body.item, req.body.category, req.body.brand, req.body.type]',
+								find: 'jsonAttributes.Model',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#model', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'screensize'){
+							$('#steps').val('resolution')
+							$('#model').attr('disabled', '')							
+							var screensizeField = $(`<fieldset>
+												<div class="row">
+													<div class="col-md-12">
+													<div class="form-group">
+														<h5 style="font-weight: bold;" for="screensize">Screen Size:<span class="danger">*</span></h5>
+														<select name="screensize" id="screensize" name="screensize" style="width: 100%" class="form-control">
+														<option value="">Select Television Screen Size</option>
+														<optgroup label="Television Screen Sizes">
+															<option value="38 and below">38 and below</option>
+															<option value="39-49">39-49</option>
+															<option value="50-59">50-59</option>
+															<option value="60-69">60-69</option>
+															<option value="70-79">70-79</option>															
+															<option value="80 and above">80 and above</option>															
+														</optgroup>
+														</select>
+													</div>
+													</div>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(screensizeField).find('#screensize').parents('fieldset').hide().fadeIn(1000);
+							$('#screensize').select2({
+								width: 'resolve',
+							});
+						}
+
+						else if($('#steps').val() == 'resolution'){
+							$('#steps').val('description')
+							$('#screensize').attr('disabled', '')							
+							var resolutionField = $(`<fieldset>
+												<div class="row">
+													<div class="col-md-12">
+													<div class="form-group">
+														<h5 style="font-weight: bold;" for="resolution">Screen Resolution:<span class="danger">*</span></h5>
+														<select name="resolution" id="resolution" name="resolution" style="width: 100%" class="form-control">
+														<option value="">Select Television Screen Resolution</option>
+														<optgroup label="Television Screen Resolutions">
+															<option value="PAL">PAL</option>															
+															<option value="PALplus">PALplus</option>															
+															<option value="PAL">PAL</option>															
+															<option value="NTSC">NTSC</option>															
+															<option value="Laserdisc">Laserdisc</option>															
+															<option value="Betamax">Betamax</option>															
+															<option value="VHS">VHS</option>															
+															<option value="S-VHS">S-VHS</option>															
+															<option value="Hi-Vision">Hi-Vision</option>															
+															<option value="PixelVision">PixelVision</option>															
+															<option value="UMD">UMD</option>															
+															<option value="China Video Disc">China Video Disc</option>															
+															<option value="SVCD">SVCD</option>															
+															<option value="SDTV">SDTV</option>															
+															<option value="DVD">DVD</option>															
+															<option value="720P">720P</option>														
+															<option value="1080P">1080P</option>														
+															<option value="4K">4K</option>														
+															<option value="8K">8K</option>														
+															<option value="16K">16K</option>														
+															<option value="Nano Crystal">Nano Crystal</option>														
+														</optgroup>
+														</select>
+													</div>
+													</div>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(resolutionField).find('#resolution').parents('fieldset').hide().fadeIn(1000);
+							$('#resolution').select2({
+								width: 'resolve',
+							});
+						}
+
+						
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('finish')
+							$('#resolution').attr('disabled', '')
+							var descField = $(`<fieldset class="mb-1">
+												<h5 style="font-weight: bold;">Description<span class="danger">*</span>	</h5>
+												<p class="text-muted">You can put here some extra details about the asset.</p>
+												<div class="form-group">
+													<textarea id="description" name="description" placeholder="Enter up to 250 characters.." maxlength="250" rows="5" class="form-control textarea-maxlength"></textarea>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(descField).find('#description').parents('fieldset').hide().fadeIn(1000);
+							$('#next').fadeOut(1000, function(){
+								if($('#editToggle').val() == 1){
+									$("#saveChanges").fadeIn(1000)
+								}
+								else
+									$('#add').fadeIn(1000)
+							});
+						}
+					}
+
+					else if(chosenCategory == 'Generic Gadget'){//Shoes
+						
+						if($('#steps').val() == 'brand'){
+							$('#prev').removeAttr('disabled', '')
+							$('#steps').val('model')
+							$('#item').attr('disabled', '')							
+							var brandField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="brand">Brand: <span class="danger">*</span></h5>
+													<input id="brand" name="brand" type="text" placeholder="E.g., Logitech, CD-R King, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(brandField).find('#brand').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ?',
+								credential: '[req.body.item, req.body.category]',
+								find: 'jsonAttributes.Brand',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#brand', item)
+								}//success
+							})
+						}
+
+						else if($('#steps').val() == 'model'){
+							$('#steps').val('description')
+							$('#brand').attr('disabled', '')
+							var modelField = $(`<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+												<div class="form-group">
+													<h5 style="font-weight: bold" for="model">Model: <span class="danger">*</span></h5>
+													<input id="model" name="model" type="text" placeholder="E.g., UTHO908, 8997A8, etc." class="form-control typeahead-basic"/>
+												</div>
+												</div>
+											</div>
+											</fieldset>`)
+							$('#assetForm').append(modelField).find('#model').parents('fieldset').hide().fadeIn(1000);
+
+							$.post('/preset/next', {
+								category: chosenCategory,
+								item: $('#item').val(),
+								brand: $('#brand').val(),
+								query: ' JSON_EXTRACT(jsonAttributes, "$.Item") = ? AND strCategory = ? AND JSON_EXTRACT(jsonAttributes, "$.Brand") = ?',
+								credential: '[req.body.item, req.body.category, req.body.brand]',
+								find: 'jsonAttributes.Model',
+							})
+							.done(function(data){
+								if(data.indicator == 'success'){
+									var item = data.item;
+									typeaheadInitialize('#model', item)
+								}//success
+							})
+						}
+
+					
+						else if($('#steps').val() == 'description'){
+							$('#steps').val('finish')
+							$('#model').attr('disabled', '')
+							var descField = $(`<fieldset class="mb-1">
+												<h5 style="font-weight: bold;">Description<span class="danger">*</span>	</h5>
+												<p class="text-muted">You can put here some extra details about the asset.</p>
+												<div class="form-group">
+													<textarea id="description" name="description" placeholder="Enter up to 250 characters.." maxlength="250" rows="5" class="form-control textarea-maxlength"></textarea>
+												</div>
+												</fieldset>`)
+							$('#assetForm').append(descField).find('#description').parents('fieldset').hide().fadeIn(1000);
+							$('#next').fadeOut(1000, function(){
+								if($('#editToggle').val() == 1){
+									$("#saveChanges").fadeIn(1000)
+								}
+								else
+									$('#add').fadeIn(1000)
+							});
+						}
+					}//genric gadget
+					
+				})//#next
+			})
+		script.
+			function typeaheadInitialize(field, item){
+				!function(e,a,o){
+					"use strict";
+					var t,
+						n=item;
+					o(field).typeahead('destroy')
+
+					o(field).typeahead({
+						hint:!0,
+						highlight:!0,minLength:1
+					},
+					{
+						name:"states",
+						source:(t=n,function(e,a){
+							var n,
+								s;
+							n=[],
+							s=new RegExp(e,"i"),
+							o.each(t,function(e,a){
+								s.test(a)&&n.push(a)
+							}),
+							a(n)
+						})
+					});
+				}(window,document,jQuery);
+			}

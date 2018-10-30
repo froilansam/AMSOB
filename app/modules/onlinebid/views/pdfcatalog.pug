@@ -1,0 +1,572 @@
+doctype html
+html.loading(lang='en', data-textdirection='ltr')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+		meta(name='description', content='Modern admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.')
+		meta(name='keywords', content='admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard')
+		meta(name='author', content='PIXINVENT')
+		title
+			| Consignment Asset list
+		link(rel='apple-touch-icon', href='/assets/images/ico/apple-icon-120.png')
+		link(rel='shortcut icon', type='image/x-icon', href='/assets/images/ico/favicon.ico')
+		link(href='/assets/css/fonts.css', rel='stylesheet')
+		link(href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css', rel='stylesheet')
+		// BEGIN VENDOR CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/vendors.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/vertical-menu-modern.css')
+
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/weather-icons/climacons.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/meteocons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/morris.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist.css')
+		link(rel='stylesheet', type='text/css', href='/assets/vendors/css/charts/chartist-plugin-tooltip.css')
+		// END VENDOR CSS
+		// BEGIN MODERN CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/app.min.css')
+		// END MODERN CSS
+		// BEGIN Page Level CSS
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/menu/menu-types/horizontal-menu.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/fonts/simple-line-icons/style.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-gradient.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/timeline.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/core/colors/palette-callout.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/dashboard-ecommerce.min.css')
+		link(rel='stylesheet', type='text/css' href='/assets/font-awesome-4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet', type='text/css', href='/assets/css/pages/gallery.min.css')
+
+
+		// END Page Level CSS
+		// BEGIN Custom CSS
+		link(rel='stylesheet', type='text/css', href='../../../assets/css/style.css')
+		// END Custom CSS
+		style.
+			.card .card-body:before {
+				font-family: fontawesome;
+				font-size: 10rem;
+				color: rgba(255,255,255,.15);
+				position: absolute;
+				bottom: -32px;
+				right: 0;
+			}
+			.sales::before {
+				content: "\f0d6";
+			}
+			.consignment::before {
+				content: "\f07a";
+			}
+			.form-control:disabled, .form-control[readonly], .input-group-addon {
+				background-color: transparent;
+				border: none! important;
+				font-family: Quicksand,Georgia,'Times New Roman',Times,serif;
+			}
+			.pull-up{
+				z-index: 0 !important;
+			}
+			@media print {
+				html {
+					visibility: hidden;
+				}
+				.myDivToPrint, .myDivToPrint * {
+					visibility: visible;
+				}
+				.myDivToPrint {
+					background-color: white;
+					height: 100%;
+					width: 100%;
+					position: fixed;
+					top: 0;
+					left: 0;
+					margin: 0;
+					padding: 15px;
+				}
+				#print{
+					visibility: hidden;					
+				}
+				html body{
+					background-color: white;
+				}
+				}
+	body
+		
+		.app-content.content
+			.content-wrapper
+			
+				.content-body
+					section.row
+						.col-12
+							.card
+								.card-head
+									.card-header
+										
+										.row
+											.col-md-6 
+												h4.card-title Asset List
+											.col-md-6
+												.text-right
+													a#print.btn.btn-info.btn-sma(type='button' href="javascript:window.print()")
+														i.la.la-print
+														|  Print
+								.card-content
+									.card-body
+										
+										div
+											.container
+												.row
+													.col-md-4
+													.col-md-4.text-center
+														img(src='/assets/shopmade/images/logo.png')
+													.col-md-4
+										div
+											.container
+												.row
+													.col-md-12
+														p.text-center(style='font-family:Montserrat, sans-serif;font-size:37px; font-weigh: bold') Auction Pride of the Philippines
+										div
+											.container
+												.row
+													.col-md-12
+														p.text-center(style='font-family:Montserrat, sans-serif;') Lot 21 Block 13, 13th Avenue, Suburbia East Subdivision
+														p.text-center(style='font-family:Montserrat, sans-serif;') +(63) 946 928-3820 / 985-8738
+														h1.text-center(style='font-family:Montserrat, sans-serif;font-size:36px;') Auction Number # #{items[0].intAuctionID}: #{items[0].strAuctionName}
+														p.text-center(style='font-family:Montserrat, sans-serif;') #{items[0].datDateStart} - #{items[0].datDateEnd}
+										h2.text-center(style='font-family:Montserrat, sans-serif;') Auction Catalog
+										.table-responsive(style='font-family:Montserrat, sans-serif;margin:0;padding:29px;')
+											table.table
+												thead(style='font-size:20px;')
+													tr
+														th(colspan="2") Item
+														th Item Type
+														th Price Type
+												tbody
+													each item in items
+														tr
+															-if(item.jsonOtherSpecifications.hasOwnProperty('screensize'))
+																-if(!item.jsonOtherSpecifications.screensize.indexOf('screensize'))
+																	-item.jsonOtherSpecifications['screensize'] = item.jsonOtherSpecifications['screensize']+' inches';						
+															-if(item.jsonOtherSpecifications.hasOwnProperty('wattage'))
+																-if(item.jsonOtherSpecifications.wattage.indexOf('watts') < 0)
+																	-item.jsonOtherSpecifications['wattage'] = item.jsonOtherSpecifications['wattage']+' watts';
+															-if(item.jsonOtherSpecifications.hasOwnProperty('storage') && item.jsonOtherSpecifications.category == "Mobile")
+																-if(!item.jsonOtherSpecifications.storage.indexOf('storage'))
+																	-item.jsonOtherSpecifications['storage'] = item.jsonOtherSpecifications['storage']+' GB';
+															-if(item.jsonOtherSpecifications.hasOwnProperty('ram'))
+																-if(!item.jsonOtherSpecifications.ram.indexOf('RAM'))
+																	-item.jsonOtherSpecifications['ram'] = 'RAM '+item.jsonOtherSpecifications['ram']+' GB';
+															-var valuesOnly = Object.values(item.jsonOtherSpecifications)//-array values
+															-console.log(valuesOnly)
+															-var desc = item.jsonOtherSpecifications.Item+' ' 
+															-for(var x = 1; x < valuesOnly.length; x++)
+																-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "UOM"))
+																	-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "price")) 
+																		-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "quantity")) 
+																			-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "description")) 
+																				-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "id"))
+																					-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "category"))
+																						-desc = desc+' '+valuesOnly[x]
+															td #{desc}
+															td 
+																img(src='/assets/uploads/'+item.strPicture style='width: 132px')
+															td Single
+															td 
+																-if(item.booPrice == 0)
+																	span Non-reserved Price
+																-if(item.booPrice == 1)
+																	span Reserved Price
+													each bundle in bundles
+														tr
+															
+															td #{bundle.strBundleTitle}
+															td 
+																img(src='/assets/uploads/'+bundle.strBundlePicture style='width: 132px')
+															td Bundle
+															td 
+																| Non-Reserved Price
+													
+										
+												
+					section.card.myDivToPrint(style='visibility: hidden;')
+						#invoice-template.card-body
+							// Invoice Company Details
+							#invoice-company-details.row
+								div
+									.container
+										.row
+											.col-md-4
+											.col-md-4.text-center
+												img(src='/assets/shopmade/images/logo.png')
+											.col-md-4
+								div
+									.container
+										.row
+											.col-md-12
+												p.text-center(style='font-family:Montserrat, sans-serif;font-size:37px; font-weigh: bold') Auction Pride of the Philippines
+								div
+									.container
+										.row
+											.col-md-12
+												p.text-center(style='font-family:Montserrat, sans-serif;') Lot 21 Block 13, 13th Avenue, Suburbia East Subdivision
+												p.text-center(style='font-family:Montserrat, sans-serif;') +(63) 946 928-3820 / 985-8738
+												h1.text-center(style='font-family:Montserrat, sans-serif;font-size:36px;') Auction Number # #{items[0].intAuctionID}: #{items[0].strAuctionName}
+												p.text-center(style='font-family:Montserrat, sans-serif;') #{items[0].datDateStart} - #{items[0].datDateEnd}
+								h2.text-center(style='font-family:Montserrat, sans-serif;') Auction Catalog
+								.table-responsive(style='font-family:Montserrat, sans-serif;margin:0;padding:29px;')
+									table.table
+										thead(style='font-size:20px;')
+											tr
+												th(colspan="2") Item
+												th Item Type
+												th Price Type
+										tbody
+											each item in items
+												tr
+													-if(item.jsonOtherSpecifications.hasOwnProperty('screensize'))
+														-if(!item.jsonOtherSpecifications.screensize.indexOf('screensize'))
+															-item.jsonOtherSpecifications['screensize'] = item.jsonOtherSpecifications['screensize']+' inches';						
+													-if(item.jsonOtherSpecifications.hasOwnProperty('wattage'))
+														-if(item.jsonOtherSpecifications.wattage.indexOf('watts') < 0)
+															-item.jsonOtherSpecifications['wattage'] = item.jsonOtherSpecifications['wattage']+' watts';
+													-if(item.jsonOtherSpecifications.hasOwnProperty('storage') && item.jsonOtherSpecifications.category == "Mobile")
+														-if(!item.jsonOtherSpecifications.storage.indexOf('storage'))
+															-item.jsonOtherSpecifications['storage'] = item.jsonOtherSpecifications['storage']+' GB';
+													-if(item.jsonOtherSpecifications.hasOwnProperty('ram'))
+														-if(!item.jsonOtherSpecifications.ram.indexOf('RAM'))
+															-item.jsonOtherSpecifications['ram'] = 'RAM '+item.jsonOtherSpecifications['ram']+' GB';
+													-var valuesOnly = Object.values(item.jsonOtherSpecifications)//-array values
+													-console.log(valuesOnly)
+													-var desc = item.jsonOtherSpecifications.Item+' ' 
+													-for(var x = 1; x < valuesOnly.length; x++)
+														-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "UOM"))
+															-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "price")) 
+																-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "quantity")) 
+																	-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "description")) 
+																		-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "id"))
+																			-if(!(Object.keys(item.jsonOtherSpecifications)[x] == "category"))
+																				-desc = desc+' '+valuesOnly[x]
+													td #{desc}
+													td 
+														img(src='/assets/uploads/'+item.strPicture style='width: 132px')
+													td Single
+													td 
+														-if(item.booPrice == 0)
+															span Non-reserved Price
+														-if(item.booPrice == 1)
+															span Reserved Price
+
+							// / Invoice Footer
+
+					// / Basic Horizontal Timeline
+		// ////////////////////////////////////////////////////////////////////////////
+		.customizer.border-left-blue-grey.border-left-lighten-4.d-none.d-xl-block
+			a.customizer-close(href='#')
+				i.ft-x.font-medium-3
+			a.customizer-toggle.bg-danger.box-shadow-3(href='#')
+				i.ft-settings.font-medium-3.spinner.white
+			.customizer-content.p-2
+				h4.text-uppercase.mb-0 Theme Customizer
+				hr
+				p Customize & Preview in Real Time
+				h5.mt-1.mb-1.text-bold-500 Menu Color Options
+				.form-group
+					// Outline Button group
+					.btn-group.customizer-sidebar-options(role='group', aria-label='Basic example')
+						button.btn.btn-outline-info(type='button', data-sidebar='menu-light') Light Menu
+						button.btn.btn-outline-info(type='button', data-sidebar='menu-dark') Dark Menu
+				hr
+				h5.mt-1.text-bold-500 Layout Options
+				ul.nav.nav-tabs.nav-underline.nav-justified.layout-options
+					li.nav-item
+						a#baseIcon-tab21.nav-link.layouts.active(data-toggle='tab', aria-controls='tabIcon21', href='#tabIcon21', aria-expanded='true') Layouts
+					li.nav-item
+						a#baseIcon-tab22.nav-link.navigation(data-toggle='tab', aria-controls='tabIcon22', href='#tabIcon22', aria-expanded='false') Navigation
+					li.nav-item
+						a#baseIcon-tab23.nav-link.navbar(data-toggle='tab', aria-controls='tabIcon23', href='#tabIcon23', aria-expanded='false') Navbar
+				.tab-content.px-1.pt-1
+					#tabIcon21.tab-pane.active(role='tabpanel', aria-expanded='true', aria-labelledby='baseIcon-tab21')
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#collapsed-sidebar.custom-control-input(type='checkbox', name='collapsed-sidebar')
+								label.custom-control-label(for='collapsed-sidebar') Collapsed Menu
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#fixed-layout.custom-control-input(type='checkbox', name='fixed-layout')
+								label.custom-control-label(for='fixed-layout') Fixed Layout
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#boxed-layout.custom-control-input(type='checkbox', name='boxed-layout')
+								label.custom-control-label(for='boxed-layout') Boxed Layout
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#static-layout.custom-control-input(type='checkbox', name='static-layout')
+								label.custom-control-label(for='static-layout') Static Layout
+					#tabIcon22.tab-pane(aria-labelledby='baseIcon-tab22')
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#native-scroll.custom-control-input(type='checkbox', name='native-scroll')
+								label.custom-control-label(for='native-scroll') Native Scroll
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#right-side-icons.custom-control-input(type='checkbox', name='right-side-icons')
+								label.custom-control-label(for='right-side-icons') Right Side Icons
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#bordered-navigation.custom-control-input(type='checkbox', name='bordered-navigation')
+								label.custom-control-label(for='bordered-navigation') Bordered Navigation
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#flipped-navigation.custom-control-input(type='checkbox', name='flipped-navigation')
+								label.custom-control-label(for='flipped-navigation') Flipped Navigation
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#collapsible-navigation.custom-control-input(type='checkbox', name='collapsible-navigation')
+								label.custom-control-label(for='collapsible-navigation') Collapsible Navigation
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#static-navigation.custom-control-input(type='checkbox', name='static-navigation')
+								label.custom-control-label(for='static-navigation') Static Navigation
+					#tabIcon23.tab-pane(aria-labelledby='baseIcon-tab23')
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#brand-center.custom-control-input(type='checkbox', name='brand-center')
+								label.custom-control-label(for='brand-center') Brand Center
+						p
+							.d-inline-block.custom-control.custom-checkbox
+								input#navbar-static-top.custom-control-input(type='checkbox', name='navbar-static-top')
+								label.custom-control-label(for='navbar-static-top') Static Top
+				hr
+				h5.mt-1.text-bold-500 Navigation Color Options
+				ul.nav.nav-tabs.nav-underline.nav-justified.color-options
+					li.nav-item
+						a#color-opt-1.nav-link.nav-semi-light.active(data-toggle='tab', aria-controls='clrOpt1', href='#clrOpt1', aria-expanded='false') Semi Light
+					li.nav-item
+						a#color-opt-2.nav-link.nav-semi-dark(data-toggle='tab', aria-controls='clrOpt2', href='#clrOpt2', aria-expanded='false') Semi Dark
+					li.nav-item
+						a#color-opt-3.nav-link.nav-dark(data-toggle='tab', aria-controls='clrOpt3', href='#clrOpt3', aria-expanded='false') Dark
+					li.nav-item
+						a#color-opt-4.nav-link.nav-light(data-toggle='tab', aria-controls='clrOpt4', href='#clrOpt4', aria-expanded='true') Light
+				.tab-content.px-1.pt-1
+					#clrOpt1.tab-pane.active(role='tabpanel', aria-expanded='true', aria-labelledby='color-opt-1')
+						.row
+							.col-6
+								h6 Solid
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#default.custom-control-input.bg-blue-grey(type='radio', name='nav-slight-clr', data-bg='bg-blue-grey')
+										label.custom-control-label(for='default') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#primary.custom-control-input.bg-primary(type='radio', name='nav-slight-clr', data-bg='bg-primary')
+										label.custom-control-label(for='primary') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#danger.custom-control-input.bg-danger(type='radio', name='nav-slight-clr', data-bg='bg-danger')
+										label.custom-control-label(for='danger') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#success.custom-control-input.bg-success(type='radio', name='nav-slight-clr', data-bg='bg-success')
+										label.custom-control-label(for='success') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#blue.custom-control-input.bg-blue(type='radio', name='nav-slight-clr', data-bg='bg-blue')
+										label.custom-control-label(for='blue') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#cyan.custom-control-input.bg-cyan(type='radio', name='nav-slight-clr', data-bg='bg-cyan')
+										label.custom-control-label(for='cyan') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#pink.custom-control-input.bg-pink(type='radio', name='nav-slight-clr', data-bg='bg-pink')
+										label.custom-control-label(for='pink') Pink
+							.col-6
+								h6 Gradient
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-grey-blue.custom-control-input.bg-blue-grey(type='radio', name='nav-slight-clr', checked='', data-bg='bg-gradient-x-grey-blue')
+										label.custom-control-label(for='bg-gradient-x-grey-blue') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-primary.custom-control-input.bg-primary(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-primary')
+										label.custom-control-label(for='bg-gradient-x-primary') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-danger.custom-control-input.bg-danger(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-danger')
+										label.custom-control-label(for='bg-gradient-x-danger') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-success.custom-control-input.bg-success(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-success')
+										label.custom-control-label(for='bg-gradient-x-success') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-blue.custom-control-input.bg-blue(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-blue')
+										label.custom-control-label(for='bg-gradient-x-blue') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-cyan.custom-control-input.bg-cyan(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-cyan')
+										label.custom-control-label(for='bg-gradient-x-cyan') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-pink.custom-control-input.bg-pink(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-pink')
+										label.custom-control-label(for='bg-gradient-x-pink') Pink
+					#clrOpt2.tab-pane(aria-labelledby='color-opt-2')
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-default.custom-control-input.bg-default(type='radio', name='nav-sdark-clr', checked='', data-bg='bg-default')
+								label.custom-control-label(for='opt-default') Default
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-primary.custom-control-input.bg-primary(type='radio', name='nav-sdark-clr', data-bg='bg-primary')
+								label.custom-control-label(for='opt-primary') Primary
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-danger.custom-control-input.bg-danger(type='radio', name='nav-sdark-clr', data-bg='bg-danger')
+								label.custom-control-label(for='opt-danger') Danger
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-success.custom-control-input.bg-success(type='radio', name='nav-sdark-clr', data-bg='bg-success')
+								label.custom-control-label(for='opt-success') Success
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-blue.custom-control-input.bg-blue(type='radio', name='nav-sdark-clr', data-bg='bg-blue')
+								label.custom-control-label(for='opt-blue') Blue
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-cyan.custom-control-input.bg-cyan(type='radio', name='nav-sdark-clr', data-bg='bg-cyan')
+								label.custom-control-label(for='opt-cyan') Cyan
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#opt-pink.custom-control-input.bg-pink(type='radio', name='nav-sdark-clr', data-bg='bg-pink')
+								label.custom-control-label(for='opt-pink') Pink
+					#clrOpt3.tab-pane(aria-labelledby='color-opt-3')
+						.row
+							.col-6
+								h3 Solid
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-blue-grey.custom-control-input.bg-blue-grey(type='radio', name='nav-dark-clr', data-bg='bg-blue-grey')
+										label.custom-control-label(for='solid-blue-grey') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-primary.custom-control-input.bg-primary(type='radio', name='nav-dark-clr', data-bg='bg-primary')
+										label.custom-control-label(for='solid-primary') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-danger.custom-control-input.bg-danger(type='radio', name='nav-dark-clr', data-bg='bg-danger')
+										label.custom-control-label(for='solid-danger') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-success.custom-control-input.bg-success(type='radio', name='nav-dark-clr', data-bg='bg-success')
+										label.custom-control-label(for='solid-success') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-blue.custom-control-input.bg-blue(type='radio', name='nav-dark-clr', data-bg='bg-blue')
+										label.custom-control-label(for='solid-blue') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-cyan.custom-control-input.bg-cyan(type='radio', name='nav-dark-clr', data-bg='bg-cyan')
+										label.custom-control-label(for='solid-cyan') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#solid-pink.custom-control-input.bg-pink(type='radio', name='nav-dark-clr', data-bg='bg-pink')
+										label.custom-control-label(for='solid-pink') Pink
+							.col-6
+								h3 Gradient
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-grey-blue1.custom-control-input.bg-blue-grey(type='radio', name='nav-dark-clr', data-bg='bg-gradient-x-grey-blue')
+										label.custom-control-label(for='bg-gradient-x-grey-blue1') Default
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-primary1.custom-control-input.bg-primary(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-primary')
+										label.custom-control-label(for='bg-gradient-x-primary1') Primary
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-danger1.custom-control-input.bg-danger(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-danger')
+										label.custom-control-label(for='bg-gradient-x-danger1') Danger
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-success1.custom-control-input.bg-success(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-success')
+										label.custom-control-label(for='bg-gradient-x-success1') Success
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-blue1.custom-control-input.bg-blue(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-blue')
+										label.custom-control-label(for='bg-gradient-x-blue1') Blue
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-cyan1.custom-control-input.bg-cyan(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-cyan')
+										label.custom-control-label(for='bg-gradient-x-cyan1') Cyan
+								p
+									.d-inline-block.custom-control.custom-radio
+										input#bg-gradient-x-pink1.custom-control-input.bg-pink(type='radio', name='nav-dark-clr', checked='', data-bg='bg-gradient-x-pink')
+										label.custom-control-label(for='bg-gradient-x-pink1') Pink
+					#clrOpt4.tab-pane(aria-labelledby='color-opt-4')
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-blue-grey.custom-control-input.bg-blue-grey(type='radio', name='nav-light-clr', data-bg='bg-blue-grey bg-lighten-4')
+								label.custom-control-label(for='light-blue-grey') Default
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-primary.custom-control-input.bg-primary(type='radio', name='nav-light-clr', data-bg='bg-primary bg-lighten-4')
+								label.custom-control-label(for='light-primary') Primary
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-danger.custom-control-input.bg-danger(type='radio', name='nav-light-clr', data-bg='bg-danger bg-lighten-4')
+								label.custom-control-label(for='light-danger') Danger
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-success.custom-control-input.bg-success(type='radio', name='nav-light-clr', data-bg='bg-success bg-lighten-4')
+								label.custom-control-label(for='light-success') Success
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-blue.custom-control-input.bg-blue(type='radio', name='nav-light-clr', data-bg='bg-blue bg-lighten-4')
+								label.custom-control-label(for='light-blue') Blue
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-cyan.custom-control-input.bg-cyan(type='radio', name='nav-light-clr', data-bg='bg-cyan bg-lighten-4')
+								label.custom-control-label(for='light-cyan') Cyan
+						p
+							.d-inline-block.custom-control.custom-radio
+								input#light-pink.custom-control-input.bg-pink(type='radio', name='nav-light-clr', data-bg='bg-pink bg-lighten-4')
+								label.custom-control-label(for='light-pink') Pink
+		footer.footer.footer-transparent.footer-light.navbar-shadow
+			p.clearfix.blue-grey.lighten-2.text-sm-center.mb-0.px-2.container.center-layout
+				span.float-md-left.d-block.d-md-inline-block
+					| Copyright © 2018 
+					a.text-bold-800.grey.darken-2(href='https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent', target='_blank') PIXINVENT 
+					| , All rights reserved.
+				span.float-md-right.d-block.d-md-inline-blockd-none.d-lg-block
+					| Hand-crafted & Made with 
+					i.ft-heart.pink
+		input#hostname(type='hidden' value=hostname)
+		input#port(type='hidden' value=port)
+		// BEGIN VENDOR JS
+		script(src='/assets/vendors/js/vendors.min.js', type='text/javascript')
+		// BEGIN VENDOR JS
+		// BEGIN PAGE VENDOR JS
+		script(src='/assets/vendors/js/charts/chart.min.js', type='text/javascript')
+		script(type='text/javascript', src='/assets/vendors/js/ui/jquery.sticky.js')
+		script(src='/assets/vendors/js/charts/chartist.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/chartist-plugin-tooltip.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/raphael-min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/morris.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js', type='text/javascript')
+		script(src='/assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js', type='text/javascript')
+		script(src='/assets/data/jvector/visitor-data.js', type='text/javascript')
+		script(src='/assets/vendors/js/timeline/horizontal-timeline.js', type='text/javascript')
+		script(src='/assets/vendors/js/qrcode.js', type='text/javascript')
+		// END PAGE VENDOR JS
+		// BEGIN MODERN JS
+		script(src='/assets/js/core/app-menu.min.js', type='text/javascript')
+		script(src='/assets/js/core/app.min.js', type='text/javascript')
+		script(src='/assets/js/scripts/customizer.min.js', type='text/javascript')
+		// END MODERN JS
+		// BEGIN PAGE LEVEL JS
+		script(src='/assets/js/scripts/pages/dashboard-ecommerce.min.js', type='text/javascript')
+		script(src='/socket.io/socket.io.js')
+		script(src='/assets/vendors/js/notification.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/pages/dashboard-sales.min.js', type='text/javascript')
+		//- script(src='/assets/js/scripts/cards/card-charts.min.js', type='text/javascript')
+		// END PAGE LEVEL JS
+
+		
