@@ -2,11 +2,9 @@ var express = require('express');
 var router = express.Router();
 var routerConsignor = express.Router();
 var db = require('../../lib/database')();
-const multer = require('multer');
-const moment = require('moment');
-var MA = require('moving-average');
 
-var renameKeys = require('rename-keys');
+/* Multer is for file uploading */
+const multer = require('multer');
 var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		cb(null, 'public/assets/uploads')
@@ -16,9 +14,18 @@ var storage = multer.diskStorage({
 	}
 })
 var upload = multer({storage: storage})
+
+/* Using moving-average module for exponential mving average fr time-series analysis */
+var MA = require('moving-average');
+
+/* Moment JS is a module to parse, validate, manipulate, and display dates and times in JavaScript. */
+const moment = require('moment');
+
+var renameKeys = require('rename-keys');
 var ip = require('ip');
 var publicIp = require('public-ip');
 
+/* Middleware module */
 var authMiddleware = require('../auth/middlewares/auth');
 
 
@@ -279,7 +286,7 @@ routerConsignor.post('/consignment/create', (req, res) => {//dashboard
 
 				delete req.body.asset.quantity;
 				delete req.body.asset.description;
-				console.log('quan', quantity)
+				console.log('quantity: ', quantity)
 				if(arr.includes(JSON.stringify(req.body.asset))){
 					console.log('Item has already been added');
           res.send({indicator: 'Duplicate'})
@@ -288,7 +295,7 @@ routerConsignor.post('/consignment/create', (req, res) => {//dashboard
 					asset = req.body.asset
 					arr.push(JSON.stringify(asset));
 					console.log(arr);
-					console.log('obrigado', req.session.asset)
+					console.log('assets: ', req.session.asset)
 					if(req.session.asset){
 						if(req.session.asset.length > 0){
 							var highest = parseInt(req.session.asset[0].id)
@@ -311,7 +318,6 @@ routerConsignor.post('/consignment/create', (req, res) => {//dashboard
 					arrJSON.push(asset)
 					req.session.asset = arrJSON;
 					console.log(arrJSON);
-					console.log('-----')
 					console.log(req.session.asset);
 					res.send({indicator: 'success', asset: asset})
 					res.end();
@@ -354,7 +360,7 @@ routerConsignor.post('/consignment/savechanges', (req, res) => {//dashboard
         req.body.asset.price = parseInt(req.body.asset.price) 
         delete req.body.asset.quantity;
         delete req.body.asset.description;
-        console.log('quan', quantity)
+        console.log('quantity: ', quantity)
         if(arr.includes(JSON.stringify(req.body.asset))){
           console.log('Item has already been added');
           res.send({indicator: 'Duplicate'})
@@ -363,7 +369,7 @@ routerConsignor.post('/consignment/savechanges', (req, res) => {//dashboard
           asset = req.body.asset
           arr.push(JSON.stringify(asset));
           console.log(arr);
-          console.log('obrigado', req.session.asset)
+          console.log('assets:', req.session.asset)
           asset['id'] = req.body.assetId;
           asset['quantity'] = quantity;
           asset['description'] = description;
@@ -381,7 +387,8 @@ routerConsignor.post('/consignment/submit', (req, res) => {//edit asset
 					return res.send({indicator:'invalid'})
 				}
 				console.log(req.session.consignor)
-				console.log(req.session.asset)
+        console.log(req.session.asset)
+        
 				for(var i = 0; i < req.session.asset.length; i++){
 					req.session.asset[i] = renameKeys(req.session.asset[i], function(key, val) {
 						return capitalizeFirstLetter(key)
@@ -411,7 +418,7 @@ routerConsignor.post('/consignment/submit', (req, res) => {//edit asset
 									delete req.session.asset[i].Quantity
 									delete req.session.asset[i].UOM
 									delete req.session.asset[i].Id
-									console.log("req.session", req.session.asset[i])
+									console.log("Request session: ", req.session.asset[i])
 
 									insertDeadlock(insertId, description, price, category, UOM, req.session.asset[i], quantity)
 									
@@ -494,7 +501,7 @@ routerConsignor.post('/unsold', (req, res) => {
 			for(var i = 0; i < unsold.length; i++){
 				if(unsold[i].thestatus == 1 && unsold[i].intAuctionID == req.body.intAuctionID && unsold[i].intConsignmentConsignorID == req.session.consignor.intConsignorID && unsold[i].intBidlistBidderID == 0){
 				{   
-					console.log('lolunsold')
+					console.log('Unsold accessed')
 					var insertQuery = `INSERT INTO tbl_ar_detail (strARJson, strARItemID, intARDAuctionResultID, booType) VALUES (?, ?, ?, ?)`
 					db.query(insertQuery, [unsold[i].jsonOtherSpecifications, unsold[i].strItemID, req.body.intAuctionResultID, 3], (err, results, field) => {
 						if(err) return console.log(err);
@@ -538,7 +545,7 @@ routerConsignor.post('/cancelled', (req, res) => {
       for(var i = 0; i < cancelled.length; i++){
         if(cancelled[i].booSIStatus == 4 && cancelled[i].intAuctionID == req.body.intAuctionID && cancelled[i].intConsignmentConsignorID == req.session.consignor.intConsignorID && cancelled[i].intBidlistBidderID != 0){
         {
-          console.log('caaaancelled')
+          console.log('Cancelled accessed')
           var insertQuery = `INSERT INTO tbl_ar_detail (strARJson, strARItemID, intARDAuctionResultID, booType, intARQTY) VALUES (?, ?, ?, ?, ?)`
           db.query(insertQuery, [cancelled[i].jsonOtherSpecifications, cancelled[i].strItemID, req.body.intAuctionResultID, 2, cancelled[i].intSIDQty], (err, results, field) => {
             if(err) return console.log(err);
@@ -560,7 +567,7 @@ routerConsignor.post('/cancelled', (req, res) => {
 
 // routerConsignor.post('/payable', (req, res) => {
 
-//   var fuckQuery = `SELECT *
+//   var queryString = `SELECT *
 //      FROM tbl_consignment_item
 //      JOIN tbl_consignment
 //       ON intCIConsignment = intConsignmentID
@@ -574,7 +581,7 @@ routerConsignor.post('/cancelled', (req, res) => {
 //       ON intBidlistID = intRDBidlistID
 //      JOIN tbl_sales_invoice
 //       ON intSIDSalesInvoiceID = intSalesInvoiceID`;
-//  db.query(fuckQuery, [req.session.consignor.intConsignorID, req.body.intAuctionID ], (err, results, field) => {
+//  db.query(queryString, [req.session.consignor.intConsignorID, req.body.intAuctionID ], (err, results, field) => {
 //     if(err) return console.log(err);
 //     if(results.length > 0){
 //       console.log('=====payable====')
@@ -665,9 +672,7 @@ routerConsignor.get('/auctionresult/:intAuctionID', (req, res) => {
               if(err) return console.log(err);
               if(results.length > 0){
                 console.log(results)
-                console.log('^^^^^^^^^^^^')
                 for(var i = 0; i < results.length; i++){
-                  console.log('tangina ano na')
                   if(results[i].strARItemID.charAt(0) == 'I'){
                       results[i].strARJson = JSON.parse(results[i].strARJson)
                       console.log(results[i].strARJson)
@@ -710,7 +715,6 @@ routerConsignor.get('/auctionresult/:intAuctionID', (req, res) => {
 
           async function mainFunct(req, insertId){
             await firstFunct(req, insertId);
-            console.log('----hayip----')
 
             setTimeout(function(){
               var findQuery =  `SELECT * FROM tbl_auctionresult JOIN tbl_ar_detail ON intAuctionResultID = intARDAuctionResultID WHERE intARConsignorID = ? AND intARAuctionID = ?`;
@@ -718,7 +722,6 @@ routerConsignor.get('/auctionresult/:intAuctionID', (req, res) => {
                 if(err) return console.log(err);
                 if(results.length > 0){
                   console.log(results)
-                  console.log('^^^^^^^^^^^^')
                   for(var i = 0; i < results.length; i++){
                     if(results[i].strARItemID.charAt(0) == 'I'){
                       results[i].strARJson = JSON.parse(results[i].strARJson)
@@ -758,7 +761,6 @@ routerConsignor.get('/auctionresult/:intAuctionID', (req, res) => {
 //machine Learning
 routerConsignor
 			.post('/preset/next', (req, res) => {//category
-				console.log('eow')
 				var itemQuery = `SELECT * FROM tbl_preset WHERE `+req.body.query;
 				console.log(req.body.credential)
 				db.query(itemQuery, eval(req.body.credential), function (err, results, fields) {
@@ -820,12 +822,10 @@ routerConsignor.get('/consignment/monitor/:consignmentId', (req, res) => {
 })
 
 routerConsignor.post('/getinfo/consignor', (req,res) => {
-  console.log('wtf')
 		let consignorQuery = `SELECT * FROM tbl_consignor JOIN tbl_consignor_accounts ON intConsignorID = intCSConsignorID WHERE intConsignorID = ?`
 		
 		db.query(consignorQuery, [req.body.intConsignorID], (err, results, field) => {
       if(err) return console.log(err)
-        console.log('PUTA GIGIL')
 			if(results.length > 0){
 				
 				res.send({indicator: true, info: results[0]})
@@ -878,7 +878,7 @@ async function issue(req, insertId){
         throw err;
       }
       else{
-        var fuckQuery = `SELECT *, tbl_issues.intQTY AS quanty
+        var queryString = `SELECT *, tbl_issues.intQTY AS quanty
         FROM tbl_consignment_item
         JOIN tbl_consignment
           ON intCIConsignment = intConsignmentID
@@ -887,7 +887,7 @@ async function issue(req, insertId){
         JOIN tbl_reserved_price
           ON intRPConsignmentItemID = intConsignmentItemID
 				WHERE booIssueStatus = 0 AND tbl_consignment.intConsignmentConsignorID = ?;`;
-        conn.query(fuckQuery, [req.session.consignor.intConsignorID],(err, results, field) => {
+        conn.query(queryString, [req.session.consignor.intConsignorID],(err, results, field) => {
           if (err) {
             return conn.rollback(function() {
               throw err;
@@ -950,12 +950,12 @@ async function pullOut(req, insertId){
         throw err;
       }
       else{
-        var fuckQuery = `SELECT *
+        var queryString = `SELECT *
         FROM tbl_consignment_item
         JOIN tbl_consignment
           ON intCIConsignment = intConsignmentID
 				WHERE booItemStatus = 3 AND tbl_consignment.intConsignmentConsignorID = ?;`;
-        conn.query(fuckQuery, [req.session.consignor.intConsignorID],(err, results, field) => {
+        conn.query(queryString, [req.session.consignor.intConsignorID],(err, results, field) => {
           if (err) {
             return conn.rollback(function() {
               throw err;
@@ -998,7 +998,6 @@ async function loopPullout(pullouts, conn, req, insertId){
 }
 
 function subPullOut(pullout, conn, req, insertId){
-		console.log('YES')
 		var insertQuery = `INSERT INTO tbl_ar_detail (strARJson, strARItemID, intARDAuctionResultID, booType) VALUES (?, ?, ?, ?)`
 		conn.query(insertQuery, [pullout.jsonOtherSpecifications, pullout.strItemID, insertId, 5], (err, results, field) => {
 				if(err) return console.log(err);
@@ -1017,7 +1016,7 @@ async function unsoldSingle(req, insertId){
         throw err;
       }
       else{
-        var fuckQuery = `SELECT *
+        var queryString = `SELECT *
         FROM tbl_consignment_item
         JOIN tbl_consignment
           ON intCIConsignment = intConsignmentID
@@ -1028,7 +1027,7 @@ async function unsoldSingle(req, insertId){
         JOIN tbl_bidlist
           ON intCatalogID = intBidlistCatalogID
 				WHERE tbl_bidlist.booStatus = 1 AND tbl_bidlist.intBidlistBidderID = 0 AND tbl_auction.intAuctionID = ? AND tbl_consignment.intConsignmentConsignorID = ?;`;
-        conn.query(fuckQuery, [req.params.intAuctionID, req.session.consignor.intConsignorID],(err, results, field) => {
+        conn.query(queryString, [req.params.intAuctionID, req.session.consignor.intConsignorID],(err, results, field) => {
           if (err) {
             return conn.rollback(function() {
               throw err;
@@ -1089,7 +1088,7 @@ async function unsoldBundle(req, insertId){
         throw err;
       }
       else{
-        var fuckQuery = `
+        var queryString = `
           SELECT * FROM tbl_consignment JOIN tbl_bundle ON intBundleConsignmentID = intConsignmentID
           JOIN tbl_catalog
             ON strCatalogItemID = intBundleID
@@ -1098,7 +1097,7 @@ async function unsoldBundle(req, insertId){
           JOIN tbl_bidlist
             ON intCatalogID = intBidlistCatalogID
           WHERE tbl_bidlist.booStatus = 1 AND tbl_bidlist.intBidlistBidderID = 0 AND tbl_auction.intAuctionID = ? AND intConsignmentConsignorID = ?;`;
-        conn.query(fuckQuery, [req.params.intAuctionID, req.session.consignor.intConsignorID],(err, results, field) => {
+        conn.query(queryString, [req.params.intAuctionID, req.session.consignor.intConsignorID],(err, results, field) => {
           if (err) {
             return conn.rollback(function() {
               throw err;
@@ -1161,7 +1160,7 @@ async function cancelledBundle(req, insertId){
         throw err;
       }
       else{
-        var fuckQuery = `SELECT * FROM tbl_consignment JOIN tbl_bundle ON intBundleConsignmentID = intConsignmentID
+        var queryString = `SELECT * FROM tbl_consignment JOIN tbl_bundle ON intBundleConsignmentID = intConsignmentID
         JOIN tbl_catalog
           ON strCatalogItemID = intBundleID
         JOIN tbl_auction
@@ -1172,7 +1171,7 @@ async function cancelledBundle(req, insertId){
           ON intBidlistID = intRDBidlistID
         JOIN tbl_sales_invoice
 					ON intSIDSalesInvoiceID = intSalesInvoiceID`;
-        conn.query(fuckQuery, (err, results, field) => {
+        conn.query(queryString, (err, results, field) => {
           if (err) {
             return conn.rollback(function() {
               throw err;
@@ -1241,7 +1240,7 @@ async function cancelledSingle(req, insertId){
         throw err;
       }
       else{
-        var fuckQuery = `SELECT *
+        var queryString = `SELECT *
         FROM tbl_consignment_item
         JOIN tbl_consignment
           ON intCIConsignment = intConsignmentID
@@ -1255,7 +1254,7 @@ async function cancelledSingle(req, insertId){
           ON intBidlistID = intRDBidlistID
         JOIN tbl_sales_invoice
           ON intSIDSalesInvoiceID = intSalesInvoiceID`;
-        conn.query(fuckQuery, (err, results, field) => {
+        conn.query(queryString, (err, results, field) => {
           if (err) {
             return conn.rollback(function() {
               throw err;
@@ -1325,7 +1324,7 @@ async function payableBundle(req, insertId){
         throw err;
       }
       else{
-        var fuckQuery = `SELECT * FROM tbl_consignment JOIN tbl_bundle ON intBundleConsignmentID = intConsignmentID 
+        var queryString = `SELECT * FROM tbl_consignment JOIN tbl_bundle ON intBundleConsignmentID = intConsignmentID 
         JOIN tbl_catalog
           ON strCatalogItemID = intBundleID
         JOIN tbl_auction
@@ -1336,7 +1335,7 @@ async function payableBundle(req, insertId){
           ON intBidlistID = intRDBidlistID
         JOIN tbl_sales_invoice
 					ON intSIDSalesInvoiceID = intSalesInvoiceID`;
-        conn.query(fuckQuery, (err, results, field) => {
+        conn.query(queryString, (err, results, field) => {
           if (err) {
             return conn.rollback(function() {
               throw err;
@@ -1411,7 +1410,7 @@ async function payableSingle(req, insertId){
         throw err;
       }
       else{
-        var fuckQuery = `SELECT *
+        var queryString = `SELECT *
         FROM tbl_consignment_item
         JOIN tbl_consignment
           ON intCIConsignment = intConsignmentID
@@ -1425,7 +1424,7 @@ async function payableSingle(req, insertId){
           ON intBidlistID = intRDBidlistID
         JOIN tbl_sales_invoice
           ON intSIDSalesInvoiceID = intSalesInvoiceID`;
-        conn.query(fuckQuery, (err, results, field) => {
+        conn.query(queryString, (err, results, field) => {
           if (err) {
             return conn.rollback(function() {
               throw err;

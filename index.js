@@ -1,27 +1,25 @@
-/**
- * The 'dotenv' module basically reads data from a .env file
- * and loads it to process.env
- * 
- * Refer to https://github.com/motdotla/dotenv for the official documentation
- */
 require('dotenv').config();
-
-/**
- * This imports the ExpressJS module
- */
 var express = require('express');
-
-/**
- * Here we are creating a new ExpressJS app
- */
 var app = express();
 
+/* Moment JS is a module to parse, validate, manipulate, and display dates and times in JavaScript.
+*/
 var moment = require('moment');
+
+/* Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server
+*/
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 server.setMaxListeners(0);
 io.setMaxListeners(0);
+
+/* Create pooling for database connection
+*/
+
 var db = require('./app/lib/database')();
+
+/* To pass the io function to request
+*/
 
 app.use(function(req,res,next){
     req.io = io;
@@ -29,14 +27,15 @@ app.use(function(req,res,next){
     req.port = app.get('port');
 });
 
-io.on('connection', function(socket){
+/* Socket.io Listener */ 
 
+io.on('connection', function(socket){
     console.log('a user connected');
     socket.on('disconnect', function(){
         console.log('user disconnected');
     });
-
     console.log('socket room: ', socket.room);
+
     socket.join(socket.room);
 
     socket.on('bidding', function(price, catalogid){
@@ -50,18 +49,16 @@ io.on('connection', function(socket){
         })
     })
     socket.on('monitoring', (itemId, newStatus, consignmentId, callback) =>{
-        console.log(`SINEND{itemId: ${itemId}, newStatus: ${newStatus}, consignmentId: ${consignmentId}}`)
         io.in(`monitor${consignmentId}`).emit('updateStatus', itemId, newStatus)
         return callback();
     })
 
     socket.on('newConsignor', () =>{
-        console.log('luuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuh');
         var notifQuery = `INSERT INTO tbl_notification (strNotifTo, strNotifMessage, booNotifRead, datNotifDate) VALUES (?,?,?,?)`
         db.query(notifQuery, ['admin', 'New Consignor sent an application.', 0, new Date], (err, results, field) => {
             if(err) console.log(err);
             io.emit('newNotif', 'New Consignor sent an application.', 0 , moment(new Date).fromNow());
-            console.log('New Consignor')
+            console.log('New Consignor has registered.')
 
         }) 
     })
@@ -72,7 +69,7 @@ io.on('connection', function(socket){
         db.query(notifQuery, ['admin', 'New Bidder sent an application.', 0, new Date], (err, results, field) => {
             if(err) console.log(err);
             io.emit('newNotif', 'New Bidder sent an application.', 0 , moment(new Date).fromNow());
-            console.log('New Bidder')
+            console.log('New Bidder has registered.')
 
         }) 
     })
@@ -82,7 +79,6 @@ io.on('connection', function(socket){
         var notifQuery = `INSERT INTO tbl_notification (strNotifTo, strNotifMessage, booNotifRead, datNotifDate) VALUES (?,?,?,?)`
         db.query(notifQuery, ['admin', 'New pending award payment.', 0, new Date], (err, results, field) => {
             if(err) console.log(err);
-            console.log('===========')
             io.emit('newNotif', 'New pending award payment.', 0 , moment(new Date).fromNow());
             console.log('New Pending Payment')
 
@@ -100,17 +96,12 @@ io.on('connection', function(socket){
         }) 
     })
 });
-/**
- * We now pass the app instance to a custom module 'app' for bootstrapping
- * Refer to this link for what boostrapping means: https://stackoverflow.com/a/1254561
- */
+
+/* Socket Listener */ 
 
 
 require('./app')(app);
 
-/**
- * This tells the app instance to listen to a certain port for any requests
- */
 server.listen(app.get('port'), () => {
     console.log(`ExpressJS server listening to port ${app.get('port')}`);
 });

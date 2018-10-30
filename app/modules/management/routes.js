@@ -1,14 +1,13 @@
-
-var express = require('express');
-var router = express.Router();
-var db = require('../../lib/database')();
+const express = require('express');
+const router = express.Router();
+const db = require('../../lib/database')();
 const nodemailer = require('nodemailer');
 const multer = require('multer');
 const moment = require('moment');
-var smr = require('smr')
 var MA = require('moving-average');
 var timeseries = require("timeseries-analysis");
 var brain = require('brain.js');
+
 var storage = multer.diskStorage({
 destination: function (req, file, cb) {
 	cb(null, 'public/assets/uploads')
@@ -19,11 +18,11 @@ filename: function (req, file, cb) {
 })
 var upload = multer({storage: storage})
 var middleware = require('../auth/middlewares/auth');
-var intConsignorID = ''
 var renameKeys = require('rename-keys');
-var MLR = require('ml-regression-multivariate-linear');
 var ip = require('ip');
 var publicIp = require('public-ip');
+
+var intConsignorID = ''
 var arr = []
 var arrJSON = []
 var arrPosh = ''
@@ -647,7 +646,6 @@ router
 									console.log(arrPosh)
 									db.query(`SELECT * FROM tbl_preset WHERE ${arrPosh}`, function (err, results, fields) {
 										if(err) console.log(err);
-										console.log('FUCKEEER');
 										if(results.length > 0){
 											OGprice = results[0].dblOGPrice;
 											YearReleased = moment(new Date(results[0].datYearReleased+'-01-01')).format('MM/DD/YY h:mm:ss a');

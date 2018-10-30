@@ -24,11 +24,8 @@
     "express": "^4.15.3",
     "express-fingerprint": "^1.1.2",
     "express-session": "^1.15.4",
-<<<<<<< HEAD
-    "fs": "0.0.1-security",
-=======
     "file-saver": "^2.0.0-rc.3",
->>>>>>> 194455ef2a9cdce56c62e8d9c58ff59f012c68f9
+    "fs": "0.0.1-security",
     "ip": "^1.1.5",
     "method-override": "^2.3.9",
     "ml-regression-multivariate-linear": "^1.2.0",
