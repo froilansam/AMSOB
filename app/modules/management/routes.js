@@ -21,7 +21,7 @@ var middleware = require('../auth/middlewares/auth');
 var renameKeys = require('rename-keys');
 var ip = require('ip');
 var publicIp = require('public-ip');
-
+var MLR = require('ml-regression-multivariate-linear');
 var intConsignorID = ''
 var arr = []
 var arrJSON = []
