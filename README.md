@@ -7,19 +7,19 @@ It is consists of three (3) portals:
 * Auction Management Portal - Portal for the company staff, to manage consignor and bidder registration, to create an auction schedule, to manipulate inventory asset, to appraise assets.
 * Online Bidding Portal - A portal for bidder to bid anywhere they like.
 
-## Features/Functionlities
+## Features/Functionalities
 
 ### Mandatory Features/Functionalities
 The following are the mandatory features/functionalities of the project:
 
-CONSIGNOR PORTAL
+#### Consignor Portal
 
 * Consignor Registration
 * Creating Consignment
 * Consignment Monitoring
 * Consignment Reports
 
-AUCTION MANAGEMENT PORTAL
+#### Auction Management Portal
 
 * Asset Receiving
 * Asset Appraisal
@@ -35,7 +35,8 @@ AUCTION MANAGEMENT PORTAL
 * Award Maintenance
 * Sales Transaction
 
-ONLINE BIDDING
+#### Online Bidding Portal
+
 * Bidder Registration
 * Bidder Registration Fee Payment
 * Online Bidding
@@ -55,81 +56,34 @@ The following are the additional features/functionalities* of the project:
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+1. Fork this repository. The fork button should be at the upper right of this page. Fork it to your personal GitHub profiles. By doing so, you'll have a copy of this project in your respective profiles. To check, your URL should be like this: `https://github.com/your_username/AMSOB`
 
-Say what the step will be
+2. After forking, clone it to your local machines. Forking gives you ownership to the copy of the project, thus you'll have automatic read and write (pull and push) privileges. No need to authenticate through your professor as long as you have configured your SSH keys.
 
-```
-Give the example
-```
+3. After cloning, open a command line (terminal) and go to the boilerplate directory. Issue an `npm install` command. This will download module dependencies of the project. **Note that this requires a working internet connection**.
 
-And repeat
+4. After installing all the dependencies, open the `.env.sample` file and copy the contents of it. Create a new `.env` file and paste everything in there. The sample file has comments in it for each field present.
 
-```
-until finished
-```
+5. Run the application using `node index.js` or `nodemon` if you have installed it (`npm install nodemon -g`).
 
-End with an example of getting some data out of the system or using it for a little demo
+### Built With
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [ExpressJS](https://expressjs.com/) - Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+* [PUG](https://pugjs.org/api/getting-started.html) - Pug is a high-performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers.
+* [MySQL](https://www.npmjs.com/package/mysql) - MySQL Node is a node.js driver for mysql. It is written in JavaScript, does not require compiling, and is 100% MIT licensed.
+* [Socket.io](https://socket.io/) - Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server.
+* [Nodemailer](https://nodemailer.com/) - Nodemailer is a module for Node.js applications to allow easy as cake email sending.
+* [Paymaya Node SDK](https://developers.paymaya.com/) - PayMaya offers two integration options into our payment gateway platform: via our PayMaya Checkout (Online Payment Page) or PayMaya Payment Vault (Tokenization and Card Vault).
+* [jQuery](https://jquery.com/) - jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Froilan Sam Malibiran** - [froilansam](https://github.com/froilansam)
+* **Gramar Lacsina** - [lacsinagramar](https://github.com/lacsinagramar)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+See also the list of [contributors](https://github.com/AMSOB/contributors) who participated in this project.
 
 ## Acknowledgments
 
