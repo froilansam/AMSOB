@@ -90,4 +90,4 @@ See also the list of [contributors](https://github.com/AMSOB/contributors) who p
 ## Note: 
 
 * This is a capstone project, a requirement for the course CAPSTONE subject in **Polytechnic University of the Philippines**.
-* *Additional Features/Functionalities are the features/functionalities that is not a must-have for the requirement matrix of the project.
+* *Additional Features/Functionalities are the features/functionalities which are not a must-have for the requirement matrix of the project.
